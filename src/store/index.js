@@ -4,6 +4,7 @@ export default defineStore("Main",{
     actions:{
     },
     getters: {
+        //处理鼠标坐标返回值。
         get_mouse_position_x: (state) => state.mouse_position.x +"px",
         get_mouse_position_y: (state) => state.mouse_position.y +"px",
     },

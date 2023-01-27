@@ -20,6 +20,7 @@ const store = useStore()
 
 
   onMounted(()=>{
+    //监听鼠标移动，把鼠标坐标存入库
     window.addEventListener('mousemove', (e)=>{
         store.mouse_position.x = e.clientX
         store.mouse_position.y = e.clientY

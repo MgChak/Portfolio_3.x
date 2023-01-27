@@ -12,13 +12,14 @@ import {computed} from 'vue'
 import useStore from '../store/index.js'
 const store = useStore()
 
-    let tracker_position = computed(()=>{
+    //控制container移动
+    //从库中（getter）取值鼠标坐标，赋值给container。
+    let tracker_position = computed(()=>{ 
         return {
             left:store.get_mouse_position_x,
             top:store.get_mouse_position_y
         }
     })
-        
 
 
 
@@ -29,8 +30,12 @@ const store = useStore()
     width:100px;
     height:100px;
     background:rgb(117, 133, 225);
+    opacity: 0.5;
 
-    position:absolute;
+    position:fixed;
+
+    pointer-events: none;
+    transform: translate(-50%,-50%);
 }
 </style>
     
