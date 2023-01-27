@@ -1,4 +1,5 @@
 <template>
+<mouseTracker/>
 <h3 @click="handleclickE('1')">P1</h3>
 <h3 @click="handleclickE('2')">P2</h3>
 <h3 @click="handleIncrease()">{{theNum}}</h3>
@@ -7,6 +8,8 @@
 </template>
 
 <script setup>
+import mouseTracker from './components/mouseTracker.vue';
+
 import {computed} from 'vue'
 import {useRouter} from 'vue-router'
 import useStore from './store/index'
@@ -25,7 +28,7 @@ import useStore from './store/index'
     store.testDate = store.testDate + 2
   }
 
-  let theNum =computed(()=>store.testDate)
+  let theNum = computed(()=>store.testDate)
 
 
 </script>
