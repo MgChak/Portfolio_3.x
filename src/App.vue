@@ -5,6 +5,9 @@
 <h3 @click="handleIncrease()">{{theNum}}</h3>
 <router-view></router-view>
 
+<p>Whenever I start a new project. I always start with discovery research. I will interview target audience and review articles to deepen my understanding of the current situation of the whole industry or a particular kind of app to help me better identify the parts of the industry or apps that need to be improved. After identifying the problem, I start thinking about how my design can bring a better user experience to the users. Then I start designing and test my design with target users. This step will be  the longest in my entire design process. I will constantly revise my design based on user feedback until I get satisfactory results.
+</p>
+
 </template>
 
 <script setup>
@@ -25,6 +28,11 @@ const store = useStore()
         store.mouse_position.x = e.clientX
         store.mouse_position.y = e.clientY
     })
+    //监听鼠标滚轮滚动
+    window.addEventListener('wheel',(e)=>{
+      console.log(e.wheelDelta)
+    })
+
   })
 
 
@@ -48,6 +56,12 @@ const store = useStore()
 <style scoped>
 h3{
   cursor: pointer;
+}
+
+p{
+  font-family: 'Kanit', sans-serif;
+  font-size:15px;
+  
 }
 
 </style>
