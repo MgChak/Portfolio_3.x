@@ -16,8 +16,11 @@ export default defineStore("Main",{
                 y:0
             },
 
-            //当先打开的路径
+            //当前打开的路径
             path_now:'',
+
+            //navbar依赖的状态
+            is_navbar_open:true,
 
         }
     },

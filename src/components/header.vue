@@ -1,5 +1,5 @@
 <template>
-<div class="container">
+<div class="container" :style = "navbar_status">
 
     <div class="inner_container">
 
@@ -68,22 +68,35 @@ const store = useStore()
     //取出响应式的路径数据。模板中，dot会根据根据这一参数决定是否绑定active class
     let path_now = computed(()=>store.path_now)
 
-
-
+    //根据库中状态，相应navbar的开关
+    let navbar_status = computed(()=>{
+        if (store.is_navbar_open){
+            return {top:'0px'}
+        }else{
+            return {top:'-64px'}
+        }
+    })
 
 
 </script>
 
 <style scoped>
 .container{
-    background:rgb(87, 87, 87);
+    background:var(--color-glass-dark);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(9.5px); 
+    -webkit-backdrop-filter: blur(9.5px);
     width: 100%;
     height:64px;
 
     display:flex;
     justify-content: center;
     align-items: center;
-    
+
+    position:fixed;
+    left:0;
+
+    transition:all 0.3s ease-out;    
 }
 .inner_container{
     width:var(--content-width);
