@@ -29,6 +29,9 @@ export default defineStore("Main",{
             //navbar依赖的状态
             is_navbar_open:true,
 
+            //works page 的 slideshow 的以来数据
+            slides_on: 0,
+
         }
     },
     

@@ -1,14 +1,20 @@
 <template>
 
     <div class="container">
+
         <div class="view_window" :style="card_size">
-            <div class="list_conatiner">
+
+            <div class="list_conatiner" :style="{left:slides_position}">
+
                 <div class="card_container"> <abs/> </div>
                 <div class="card_container"> <cover/> </div>
                 <div class="card_container"> <letsgo/> </div>
                 <div class="card_container"> <transit/> </div>
+
             </div>
+            
         </div>
+
     </div>
     
 </template>
@@ -33,6 +39,15 @@ const store = useStore()
         }
     })
 
+    //======================================
+    //幻灯片逻辑控制
+    //======================================
+
+    let action_lock = false
+
+    //页面位置存放在库中
+    let slides_position = computed(()=>store.slides_on*-100 + '%')
+
 
 
 
@@ -51,11 +66,22 @@ const store = useStore()
 }
 .view_window{
     background: green;
+
+    position:relative;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
 }
 .list_conatiner{
     display:flex;
     align-items: center;
     gap:24px;
+
+    position:absolute;
+    top:0;
+
+    transition:all 0.3s ease-in-out;
 }
 
 </style>
