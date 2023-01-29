@@ -76,7 +76,7 @@ const store = useStore()
 .list_conatiner{
     display:flex;
     align-items: center;
-    gap:24px;
+    gap:0px;
 
     position:absolute;
     top:0;
