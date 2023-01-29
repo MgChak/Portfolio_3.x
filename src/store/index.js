@@ -12,6 +12,7 @@ export default defineStore("Main",{
         get_thumcard_width: (state) => state.page_width*0.4 +"px",
         get_thumcard_height: (state) => state.page_width*0.4*9/16 +"px",
         get_thumcard_container_width: (state) => state.page_width*0.4 + 48 +"px",
+        get_thumcard_container_width_number: (state) => state.page_width*0.4 + 48,
     },
     state:()=>{
         return{
