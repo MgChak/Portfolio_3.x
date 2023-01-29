@@ -98,6 +98,7 @@ const store = useStore()
 
     transition:all 0.3s ease-out;    
 }
+
 .inner_container{
     width:var(--content-width);
     height:100%;

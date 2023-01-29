@@ -1,7 +1,7 @@
 :root{
   font-family:'Kanit', sans-serif;
 
-  --content-width:1240px;
+  --content-width:85%;
   
   --main-light-100:rgba(245, 247, 251, 1);
   --main-light-60:rgba(245, 247, 251, 0.6);
