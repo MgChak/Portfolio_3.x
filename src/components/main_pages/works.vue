@@ -6,10 +6,18 @@
 
             <div class="list_conatiner" :style="{left:slides_position}">
 
-                <div class="card_container" :style="card_size"> <abs/> </div>
-                <div class="card_container" :style="card_size"> <cover/> </div>
-                <div class="card_container" :style="card_size"> <letsgo/> </div>
-                <div class="card_container" :style="card_size"> <transit/> </div>
+                <div class="card_container" :style="card_size"> 
+                    <abs @click="handle_card_click(0)"/> 
+                </div>
+                <div class="card_container" :style="card_size"> 
+                    <cover @click="handle_card_click(1)"/> 
+                </div>
+                <div class="card_container" :style="card_size"> 
+                    <letsgo @click="handle_card_click(2)"/> 
+                </div>
+                <div class="card_container" :style="card_size"> 
+                    <transit @click="handle_card_click(3)"/> 
+                </div>
 
             </div>
             
@@ -47,8 +55,29 @@ const store = useStore()
 
     let slides_on = ref(0)
 
-    //页面位置存放在库中
-    let slides_position = computed(()=>store.get_thumcard_container_width_number* slides_on.value + 'px')
+    //通过视窗宽度，计算翻页移动距离
+    let slides_position = computed(()=>store.get_thumcard_container_width_number* slides_on.value*-1 + 'px')
+
+    //控制翻页
+    let slides_move = (tar)=>{
+        if (tar == 'next'){
+            slides_on.value++
+        }else if (tar == 'pre'){
+            slides_on.value--
+        }
+    }
+    //处理点击事件
+    let handle_card_click = (id)=>{
+
+        if (id == slides_on.value){
+            console.log("触发路由-进入卡片："+id)
+        }else if( id > slides_on.value){
+            slides_move('next')
+        }else if( id < slides_on.value){
+            slides_move('pre')
+        }
+
+    }
 
 
 
