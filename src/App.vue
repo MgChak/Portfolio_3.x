@@ -11,11 +11,12 @@
 import mouse_tracker from './components/mouseTracker.vue';
 import the_header from './components/header.vue';
 //依赖引入
-import {computed,onMounted} from 'vue'
-import {useRouter} from 'vue-router'
+import {onMounted,watchEffect} from 'vue'
+import {useRoute} from 'vue-router'
 import useStore from './store/index.js'
-const router = useRouter()
 const store = useStore()
+const route = useRoute()
+    
 
 //逻辑
 
@@ -33,20 +34,9 @@ const store = useStore()
 
   })
 
+  //监听路由变化并存入数据库
+  watchEffect(()=>{store.path_now = route.name})
 
-
-  let handleclickE = (id)=>{
-    console.log(id)
-    router.push({
-      name:id
-    })
-  }
-
-  let handleIncrease = ()=>{
-    store.testDate = store.testDate + 2
-  }
-
-  let theNum = computed(()=>store.testDate)
 
 
 </script>

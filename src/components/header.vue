@@ -7,10 +7,12 @@
 
         <div class="nav_list_container">
 
+            <!-- 根据path_now属性是否等于自身navto属性，决定是否绑定active class -->
             <div 
                 class="nav_container" 
                 v-for="n in nav_list" :key="n.id"
                 @click="handle_nav_click(n.id,n.navto)"
+                :class="{ active : n.navto==path_now }"
             >
 
                 <div class="dot_container">
@@ -35,6 +37,7 @@
 
 <script setup>
 //依赖引入
+import {watchEffect,computed} from 'vue'
 import {useRouter} from 'vue-router'
 import useStore from '../store/index.js'
 const router = useRouter()
@@ -50,17 +53,20 @@ const store = useStore()
         {id:4,text:'Resume',navto:''},
     ]
 
+    //处理导航栏的点击事件
     let handle_nav_click = (id,navto) =>{
-        if (id!==4){//id为3不触发路由，直接转跳google drive
+        if (id!==4){//id为3不触发路由，
             //触发路由
-            console.log(id)
             router.push({
                 name:navto
             })
-        }else if(id == 4){
+        }else if(id == 4){//直接打开路径下的pdf
             window.open('http://chakshing.com/chak.pdf')
         }  
     }
+
+    //取出响应式的路径数据。模板中，dot会根据根据这一参数决定是否绑定active class
+    let path_now = computed(()=>store.path_now)
 
 
 
@@ -104,7 +110,7 @@ const store = useStore()
     display:flex;
     justify-content: center;
     align-items: center;
-    gap:4px;
+    gap:2px;
 
     cursor: pointer;
 }
@@ -121,22 +127,32 @@ const store = useStore()
 }
 
 .dot{
-    width:8px;
-    height:8px;
+    width:6px;
+    height:6px;
     background: var(--main-light-100);
     border-radius: 8px;
 
     position:absolute;
-    bottom:0;
+    bottom:-6px;
     right:0;
     left:0;
-    margin: 0 auto;
+    margin: auto;
+    transition:all 0.3s;
 }
 
 h1{
     color:var(--main-light-30);
-    font-size:12px;
+    font-size:10px;
     font-weight: 400;
+    line-height: 12px;
+    transition:all 0.3s ease-out;
+}
+
+.active > .dot_container >.dot{
+    bottom:2px;
+}
+.active > h1{
+    color:var(--main-light-100);
 }
 
 </style>

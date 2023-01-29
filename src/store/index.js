@@ -10,12 +10,15 @@ export default defineStore("Main",{
     },
     state:()=>{
         return{
-            testDate:1,
             //mouse_tracker的依赖状态
             mouse_position:{
                 x:0,
                 y:0
-            }
+            },
+
+            //当先打开的路径
+            path_now:'',
+
         }
     },
     
