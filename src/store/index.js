@@ -19,6 +19,9 @@ export default defineStore("Main",{
             //当前打开的路径
             path_now:'',
 
+            //当前窗口宽度
+            page_width:'',
+
             //navbar依赖的状态
             is_navbar_open:true,
 

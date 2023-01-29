@@ -27,9 +27,17 @@ const route = useRoute()
         store.mouse_position.x = e.clientX
         store.mouse_position.y = e.clientY
     })
+
     //监听鼠标滚轮滚动
     window.addEventListener('wheel',(e)=>{
       console.log(e.wheelDelta)
+    })
+
+    //开启页面后直接保存页面宽度到库
+    store.page_width = document.body.clientWidth
+    //开启页面后直接保存页面宽度到库
+    window.addEventListener('resize',()=>{
+      store.page_width = document.body.clientWidth
     })
 
   })
