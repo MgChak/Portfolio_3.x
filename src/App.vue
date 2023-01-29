@@ -1,8 +1,6 @@
 <template>
 <mouse_tracker/>
-<h3 @click="handleclickE('1')">P1</h3>
-<h3 @click="handleclickE('2')">P2</h3>
-<h3 @click="handleIncrease()">{{theNum}}</h3>
+
 <router-view></router-view>
 
 <p>Whenever I start a new project. I always start with discovery research. I will interview target audience and review articles to deepen my understanding of the current situation of the whole industry or a particular kind of app to help me better identify the parts of the industry or apps that need to be improved. After identifying the problem, I start thinking about how my design can bring a better user experience to the users. Then I start designing and test my design with target users. This step will be  the longest in my entire design process. I will constantly revise my design based on user feedback until I get satisfactory results.
