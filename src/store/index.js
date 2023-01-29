@@ -12,6 +12,7 @@ export default defineStore("Main",{
         get_thumcard_width: (state) => state.page_width*0.4 +"px",
         get_thumcard_height: (state) => state.page_width*0.4*9/16 +"px",
         get_thumcard_container_width: (state) => state.page_width*0.4 + 48 +"px",
+        get_thumcard_container_width_expand: (state) => state.page_width*0.85+"px",
         get_thumcard_container_width_number: (state) => state.page_width*0.4 + 48,
     },
     state:()=>{
@@ -30,6 +31,10 @@ export default defineStore("Main",{
 
             //navbar依赖的状态
             is_navbar_open:true,
+
+            //slide cards css改变依赖的状态
+            expand_page_number:0,
+            z_index_page_number:0,
 
         }
     },
