@@ -1,6 +1,6 @@
 <template>
 <mouse_tracker/>
-<header/>
+<the_header/>
 
 <router-view></router-view>
 
@@ -9,7 +9,7 @@
 <script setup>
 //组件引入
 import mouse_tracker from './components/mouseTracker.vue';
-import header from './components/header.vue';
+import the_header from './components/header.vue';
 //依赖引入
 import {computed,onMounted} from 'vue'
 import {useRouter} from 'vue-router'

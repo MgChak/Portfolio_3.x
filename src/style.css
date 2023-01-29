@@ -1,12 +1,28 @@
 :root{
   font-family:'Kanit', sans-serif;
+
+  --content-width:1240px;
   
   --main-light-100:rgba(245, 247, 251, 1);
   --main-light-60:rgba(245, 247, 251, 0.6);
   --main-light-30:rgba(245, 247, 251, 0.3);
 }
+*{
+  margin:0;
+}
 
+/* 通用类lib */
 
+.flex_c_c{/* flex 横向竖向居中子元素 */
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex_sb_c{/* flex 轴对齐+space-between */
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 body{
   background-color: black;
