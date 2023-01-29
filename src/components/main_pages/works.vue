@@ -26,7 +26,7 @@ import cover from'./works_thum_cards/cover.vue'
 import letsgo from'./works_thum_cards/letsgo.vue'
 import transit from'./works_thum_cards/transit.vue'
 //依赖引入
-import {computed} from 'vue'
+import {computed,ref} from 'vue'
 import useStore from '../../store/index.js'
 const store = useStore()
 
@@ -45,8 +45,10 @@ const store = useStore()
 
     let action_lock = false
 
+    let slides_on = ref(0)
+
     //页面位置存放在库中
-    let slides_position = computed(()=>store.slides_on*-100 + '%')
+    let slides_position = computed(()=>store.get_thumcard_container_width_number* slides_on.value + 'px')
 
 
 
