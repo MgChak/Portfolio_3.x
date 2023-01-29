@@ -11,6 +11,7 @@ export default defineStore("Main",{
         //处理首页卡片尺寸返回值。
         get_thumcard_width: (state) => state.page_width*0.4 +"px",
         get_thumcard_height: (state) => state.page_width*0.4*9/16 +"px",
+        get_thumcard_container_width: (state) => state.page_width*0.4 + 48 +"px",
     },
     state:()=>{
         return{
