@@ -6,10 +6,10 @@
 
             <div class="list_conatiner" :style="{left:slides_position}">
 
-                <div class="card_container"> <abs/> </div>
-                <div class="card_container"> <cover/> </div>
-                <div class="card_container"> <letsgo/> </div>
-                <div class="card_container"> <transit/> </div>
+                <div class="card_container" :style="card_size"> <abs/> </div>
+                <div class="card_container" :style="card_size"> <cover/> </div>
+                <div class="card_container" :style="card_size"> <letsgo/> </div>
+                <div class="card_container" :style="card_size"> <transit/> </div>
 
             </div>
             
@@ -34,7 +34,7 @@ const store = useStore()
     //从库中提取已经计算好的卡片尺寸_给视窗使用
     let card_size = computed(()=>{
         return {
-            width:store.get_thumcard_width,
+            width:store.get_thumcard_container_width,
             height:store.get_thumcard_height
         }
     })
@@ -82,6 +82,10 @@ const store = useStore()
     top:0;
 
     transition:all 0.3s ease-in-out;
+}
+.card_container{
+    display:flex;
+    justify-content: center;
 }
 
 </style>
