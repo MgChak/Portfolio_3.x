@@ -1,14 +1,16 @@
 <template>
 
-    <div class="container" :style="card_size" :class="[card_class,card_z_index]">
-
+    <div class="card_container" :style="card_conatiner_size"> 
+        <div class="container background" :style="card_size" :class="[card_class,card_z_index]" >
+            <img src="../../../assets/thum_cards/transit_hand.png" alt="">
+        </div>
     </div>
     
 </template>
 
 <script setup>
 //hooks引入
-import{handle_style_change,handle_class_change,handle_z_index_change} from '../../../hooks/use_works_slideshow_handle.js'
+import{handle_style_change,handle_class_change,handle_z_index_change,handle_view_window_resize} from '../../../hooks/use_works_slideshow_handle.js'
 //依赖引入
 import {computed} from 'vue'
 import useStore from '../../../store/index.js'
@@ -23,17 +25,17 @@ const store = useStore()
 
     let card_z_index = computed(()=>handle_z_index_change(card_id))
 
+    let card_conatiner_size = computed(()=>handle_view_window_resize(card_id))
+
 </script>
 
 <style scoped>
 .container{
-    background:rgb(77, 130, 144);
     position:absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     margin:0;
-    transition:all 0.3s ease-in-out;
 }
 .container_z_index_back{
     z-index: -3;
@@ -48,4 +50,35 @@ const store = useStore()
 .container_default{
 
 }
+.card_container{
+    position:relative;
+    left:0;
+    top:0;
+}
+
+.background{
+    background-image: url('../../../assets/thum_cards/transit_background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.container_default> img {
+    position: absolute;
+    bottom:0;
+    left:20%;
+    width:60%;
+    z-index:-1;
+    transition:all 0.3s ease-in;
+}
+.container_expand > img {
+    position: absolute;
+    bottom:0;
+    left:6%;
+    width:85%;
+    z-index:-1;
+    transition:var(--animation-slow);
+}
+
+
+
 </style>

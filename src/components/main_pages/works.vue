@@ -2,22 +2,22 @@
 
     <div class="container">
 
-        <div class="view_window" :style="card_size">
+        <div class="view_window" :style="view_window_size">
 
             <div class="list_conatiner" :style="{left:slides_position}">
 
-                <div class="card_container" :style="card_size"> 
+                
                     <abs @click="handle_card_click(0)"/> 
-                </div>
-                <div class="card_container" :style="card_size"> 
+       
+                
                     <cover @click="handle_card_click(1)"/> 
-                </div>
-                <div class="card_container" :style="card_size"> 
+               
+                
                     <letsgo @click="handle_card_click(2)"/> 
-                </div>
-                <div class="card_container" :style="card_size"> 
+
+                 
                     <transit @click="handle_card_click(3)"/> 
-                </div>
+
 
             </div>
             
@@ -39,13 +39,21 @@ import useStore from '../../store/index.js'
 const store = useStore()
 
 
-    //从库中提取已经计算好的卡片尺寸_给视窗使用
-    let card_size = computed(()=>{
-                return {
-                    width:store.get_thumcard_container_width,
-                    height:store.get_thumcard_height
-                }
-            })
+    //从库中提取已经计算好的卡片尺寸_给卡片盒子使用
+    let view_window_size = computed(()=>{
+        let view_window_animation_speed = 'all 0.3s ease-in'
+        if (view_window_resize_num.value==1){
+            view_window_animation_speed = 'all 0.3s ease-in'
+        }else{
+            view_window_animation_speed = 'var(--animation-slow)'
+        }
+        return {
+            width:store.get_thumcard_container_width_number*view_window_resize_num.value+'px',
+            height:store.get_thumcard_height,
+            transition:view_window_animation_speed
+        }
+    })
+
 
     //======================================
     //幻灯片逻辑控制
@@ -54,6 +62,9 @@ const store = useStore()
     let action_lock = false
 
     let slides_on = ref(0)
+    
+    let view_window_resize_num = ref(1.8)
+    
 
     //通过视窗宽度，计算翻页移动距离
     let slides_position = computed(()=>store.get_thumcard_container_width_number* slides_on.value*-1 + 'px')
@@ -73,14 +84,15 @@ const store = useStore()
 
         //卡片缩小
         update_cards_size('collapse')
+        view_window_resize('collapse')
 
         //0.3s后
         setTimeout(()=>{
             //卡片提升到默认层
             update_cards_z_index('front')
-            //列表移动
+            //列表移动-slide_on发生变动
             slides_move(val)
-        },300)
+        },250)
 
         //0.6s后
         setTimeout(()=>{
@@ -88,7 +100,8 @@ const store = useStore()
             update_cards_z_index('back')
             //卡片放大
             update_cards_size('expand')
-        },600)
+            view_window_resize('expand')
+        },550)
 
     }
 
@@ -117,7 +130,16 @@ const store = useStore()
     }
     
     //修改视窗宽度
+    let view_window_resize = (val)=>{
+        if (val == 'expand'){
+            view_window_resize_num.value = 1.8
+    
+        }else if(val == 'collapse'){
+            view_window_resize_num.value = 1
+        }  
+    }
 
+    
 
 
 
@@ -152,11 +174,6 @@ const store = useStore()
     top:0;
 
     transition:all 0.3s ease-out;
-}
-.card_container{
-    position:relative;
-    left:0;
-    top:0;
 }
 
 </style>
