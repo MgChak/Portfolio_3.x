@@ -17,7 +17,7 @@ const store = useStore()
 
     
     //监听对比需要展开的卡片id于自身id，并改变css
-    let card_id = 0
+    let card_id = 3
 
     let card_size = computed(()=>handle_style_change(card_id))
 

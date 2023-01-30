@@ -35,6 +35,8 @@ export default defineStore("Main",{
             //slide cards css改变依赖的状态
             expand_page_number:0,
             z_index_page_number:0,
+            infor_bar_status:true,
+            infor_show_witch:0
 
         }
     },

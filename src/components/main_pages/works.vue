@@ -7,16 +7,17 @@
             <div class="list_conatiner" :style="{left:slides_position}">
 
                 
-                    <abs @click="handle_card_click(0)"/> 
-       
-                
-                    <cover @click="handle_card_click(1)"/> 
+                     
+                    <cover @click="handle_card_click(0)"/> 
                
                 
-                    <letsgo @click="handle_card_click(2)"/> 
+                    <letsgo @click="handle_card_click(1)"/> 
 
                  
-                    <transit @click="handle_card_click(3)"/> 
+                    <transit @click="handle_card_click(2)"/> 
+
+
+                    <abs @click="handle_card_click(3)"/>
 
 
             </div>
@@ -24,6 +25,8 @@
         </div>
 
     </div>
+
+    <infor_bar/>
     
 </template>
 
@@ -33,6 +36,8 @@ import abs from'./works_thum_cards/abs.vue'
 import cover from'./works_thum_cards/cover.vue'
 import letsgo from'./works_thum_cards/letsgo.vue'
 import transit from'./works_thum_cards/transit.vue'
+
+import infor_bar from'./works_thum_cards/infor_bar.vue'
 //依赖引入
 import {computed,ref} from 'vue'
 import useStore from '../../store/index.js'
@@ -84,7 +89,10 @@ const store = useStore()
 
         //卡片缩小
         update_cards_size('collapse')
+        //视窗缩小
         view_window_resize('collapse')
+        //信息卡隐藏
+        store.infor_bar_status = false
 
         //0.3s后
         setTimeout(()=>{
@@ -92,6 +100,8 @@ const store = useStore()
             update_cards_z_index('front')
             //列表移动-slide_on发生变动
             slides_move(val)
+            //修改显示的信息
+            store.infor_show_witch = slides_on
         },250)
 
         //0.6s后
@@ -100,7 +110,10 @@ const store = useStore()
             update_cards_z_index('back')
             //卡片放大
             update_cards_size('expand')
+            //视窗放大
             view_window_resize('expand')
+            //信息卡出现
+            store.infor_bar_status = true
         },550)
 
     }

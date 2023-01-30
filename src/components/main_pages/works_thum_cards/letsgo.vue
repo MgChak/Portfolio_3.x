@@ -18,7 +18,7 @@ import useStore from '../../../store/index.js'
 const store = useStore()
 
     //监听对比需要展开的卡片id于自身id，并改变css
-    let card_id = 2
+    let card_id = 1
     
     let card_size = computed(()=>handle_style_change(card_id))
 
