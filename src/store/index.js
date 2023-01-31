@@ -73,25 +73,29 @@ export default defineStore("Main",{
                     name:'COVER',
                     bio:'TRAVEL APP - UX/UI STUDY CASE - SOLO DESIGNER',
                     time:'2022 spring',
-                    navto:''
+                    navto:'',
+                    background_color:'black',
                 },{ 
                     id:1,
                     name:'lets go',
                     bio:'TRAVEL APP - UX/UI STUDY CASE - SOLO DESIGNER',
                     time:'2022 spring',
-                    navto:'letsgo'
+                    navto:'letsgo',
+                    background_color:' linear-gradient(360deg, #2B3825 -3.36%, #000000 49.04%)',
                 },{ 
                     id:2,
                     name:'TRANSIT',
                     bio:'TRAVEL APP - UX/UI STUDY CASE - SOLO DESIGNER',
                     time:'2022 spring',
-                    navto:''
+                    navto:'',
+                    background_color:'linear-gradient(360deg, #25343D -3.36%, #000000 49.04%)',
                 },{ 
                     id:3,
                     name:'POSITION',
                     bio:'TRAVEL APP - UX/UI STUDY CASE - SOLO DESIGNER',
                     time:'2022 spring',
-                    navto:''
+                    navto:'',
+                    background_color:'linear-gradient(360deg, #3D2539 -3.36%, #000000 49.04%)',
                 }
             ]
 

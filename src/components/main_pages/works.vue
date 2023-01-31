@@ -1,6 +1,6 @@
 <template>
 
-    <div class="container">
+    <div class="container" :style="background_color">
 
         <div class="view_window" :style="view_window_size">
 
@@ -40,26 +40,7 @@ import useStore from '../../store/index.js'
 import router from '../../router'
 const store = useStore()
 
-
-    //从库中提取已经计算好的卡片尺寸_视窗使用
-    let view_window_size = computed(()=>{
-
-        if (store.view_window_status == 0){
-            return {
-                width:store.get_thumcard_width,
-                height:store.get_thumcard_height,
-                transition:'all 0.3s ease-in'
-            }
-           
-        }else if(store.view_window_status == 1){
-            return {
-                width:store.page_width+'px',
-                height:'100vh',
-                transition:'var(--animation-slow)'
-            }
-        }
-    })
-
+    //初始化
     onMounted(()=>{
         //z-index
         store.z_index_page_number = store.page_on
@@ -82,6 +63,50 @@ const store = useStore()
         },100)
         
     })
+
+    //路由出动画队列（进入文章）
+    let animation_queue_click_route_out = (id)=>{
+        //所有窗口隐藏
+        //navbar隐藏
+        store.is_navbar_open = false 
+        //信息栏隐藏
+        store.infor_bar_status = false
+        //关闭卡片偏移
+        store.card_positon_move = undefined
+        //开始路由
+        setTimeout(()=>{
+            router.push(store.index_array[id].navto)         
+        },300) 
+    }
+
+    //背景颜色改变
+    let background_color = computed(()=>{
+        return {
+            background:store.index_array[store.page_on].background_color
+        }
+    })
+
+
+    //从库中提取已经计算好的卡片尺寸_视窗使用
+    let view_window_size = computed(()=>{
+
+        if (store.view_window_status == 0){
+            return {
+                width:store.get_thumcard_width,
+                height:store.get_thumcard_height,
+                transition:'all 0.3s ease-in'
+            }
+           
+        }else if(store.view_window_status == 1){
+            return {
+                width:store.page_width+'px',
+                height:'100vh',
+                transition:'var(--animation-slow)'
+            }
+        }
+    })
+
+    
 
     //======================================
     //幻灯片逻辑控制
@@ -144,22 +169,6 @@ const store = useStore()
 
     }
 
-    //路由出动画队列
-    let animation_queue_click_route_out = (id)=>{
-        //所有窗口隐藏
-        //navbar隐藏
-        store.is_navbar_open = false 
-        //信息栏隐藏
-        store.infor_bar_status = false
-        //关闭卡片偏移
-        store.card_positon_move = undefined
-        //开始路由
-        setTimeout(()=>{
-            router.push(store.index_array[id].navto)         
-        },300) 
-    }
-
-
     //翻页
     let slides_move = (tar)=>{
             if (tar == 'next'){
@@ -201,5 +210,6 @@ const store = useStore()
 
     transition:all 0.3s ease-out;
 }
+
 
 </style>
