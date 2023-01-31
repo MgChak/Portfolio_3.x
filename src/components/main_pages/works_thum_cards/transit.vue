@@ -1,16 +1,14 @@
 <template>
 
-    <div class="card_container" :style="card_conatiner_size"> 
-        <div class="container background" :style="card_size" :class="[card_class,card_z_index]" >
+        <div class="container background" :style="[card_size,card_position]" :class="[card_class,card_z_index]" >
             <img src="../../../assets/thum_cards/transit_hand.png" alt="">
         </div>
-    </div>
     
 </template>
 
 <script setup>
 //hooks引入
-import{handle_style_change,handle_class_change,handle_z_index_change,handle_view_window_resize} from '../../../hooks/use_works_slideshow_handle.js'
+import{handle_style_change,handle_class_change,handle_z_index_change,handle_card_position_change} from '../../../hooks/use_works_slideshow_handle.js'
 //依赖引入
 import {computed} from 'vue'
 import useStore from '../../../store/index.js'
@@ -25,35 +23,26 @@ const store = useStore()
 
     let card_z_index = computed(()=>handle_z_index_change(card_id))
 
-    let card_conatiner_size = computed(()=>handle_view_window_resize(card_id))
+    let card_position = computed(()=>handle_card_position_change(card_id))
+
 
 </script>
 
 <style scoped>
 .container{
-    position:absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin:0;
 }
 .container_z_index_back{
-    z-index: -3;
+    z-index:0;
 }
 .container_z_index_front{
-    z-index:initial;
+    z-index:1;
 }
 .container_expand{
-    z-index:-3;
+
 
 }
 .container_default{
 
-}
-.card_container{
-    position:relative;
-    left:0;
-    top:0;
 }
 
 .background{

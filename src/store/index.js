@@ -11,9 +11,16 @@ export default defineStore("Main",{
         //处理首页卡片尺寸返回值。
         get_thumcard_width: (state) => state.page_width*0.4 +"px",
         get_thumcard_height: (state) => state.page_width*0.4*9/16 +"px",
-        get_thumcard_container_width: (state) => state.page_width*0.4 + 48 +"px",
-        get_thumcard_container_width_expand: (state) => state.page_width*0.85+"px",
-        get_thumcard_container_width_number: (state) => state.page_width*0.4 + 48,
+        //用来控制卡片盒子的状态
+        get_path_now_id:(state)=>{
+            var a 
+            state.index_array.forEach((item)=>{
+                if (item.navto == state.path_now){
+                    a = item.id 
+                }
+            })
+            return a
+        }
     },
     state:()=>{
         return{
@@ -33,10 +40,54 @@ export default defineStore("Main",{
             is_navbar_open:true,
 
             //slide cards css改变依赖的状态
+            page_on:0,
+
+            //控制卡片的状态,发生变化的时候，对应id的卡片放大
             expand_page_number:0,
+
+            //控制卡片偏移，当与page_on相等时触发偏移，为undefined时，关闭偏移
+            card_positon_move:undefined,
+
+            //控制卡片内容的动画状态（路由进出文章），当与page_on/get_path_now_id相等时进入文章内状态，为undefined时，恢复
+            router_on_page_number:undefined,
+
+            //视窗的状态:1=全屏，0=缩小
+            view_window_status:1,
+            
+            //控制z-index偏移，当与page_on相等时触发沉降到-3，为undefined时，卡片提升到默认层
             z_index_page_number:0,
-            infor_bar_status:true,
-            infor_show_witch:0
+
+            infor_bar_status:false,
+            infor_show_witch:0,
+
+            //目录导航数据
+            index_array:[
+                {   
+                    id:0,
+                    name:'COVER',
+                    bio:'TRAVEL APP - UX/UI STUDY CASE - SOLO DESIGNER',
+                    time:'2022 spring',
+                    navto:''
+                },{ 
+                    id:1,
+                    name:'lets go',
+                    bio:'TRAVEL APP - UX/UI STUDY CASE - SOLO DESIGNER',
+                    time:'2022 spring',
+                    navto:'letsgo'
+                },{ 
+                    id:2,
+                    name:'TRANSIT',
+                    bio:'TRAVEL APP - UX/UI STUDY CASE - SOLO DESIGNER',
+                    time:'2022 spring',
+                    navto:''
+                },{ 
+                    id:3,
+                    name:'POSITION',
+                    bio:'TRAVEL APP - UX/UI STUDY CASE - SOLO DESIGNER',
+                    time:'2022 spring',
+                    navto:''
+                }
+            ]
 
         }
     },

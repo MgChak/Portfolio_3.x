@@ -6,16 +6,12 @@
 
             <div class="list_conatiner" :style="{left:slides_position}">
 
-                
-                     
+
                     <cover @click="handle_card_click(0)"/> 
-               
-                
+
                     <letsgo @click="handle_card_click(1)"/> 
 
-                 
                     <transit @click="handle_card_click(2)"/> 
-
 
                     <abs @click="handle_card_click(3)"/>
 
@@ -39,122 +35,136 @@ import transit from'./works_thum_cards/transit.vue'
 
 import infor_bar from'./works_thum_cards/infor_bar.vue'
 //依赖引入
-import {computed,ref} from 'vue'
+import {computed,ref,onMounted} from 'vue'
 import useStore from '../../store/index.js'
+import router from '../../router'
 const store = useStore()
 
 
-    //从库中提取已经计算好的卡片尺寸_给卡片盒子使用
+    //从库中提取已经计算好的卡片尺寸_视窗使用
     let view_window_size = computed(()=>{
-        let view_window_animation_speed = 'all 0.3s ease-in'
-        if (view_window_resize_num.value==1){
-            view_window_animation_speed = 'all 0.3s ease-in'
-        }else{
-            view_window_animation_speed = 'var(--animation-slow)'
-        }
-        return {
-            width:store.get_thumcard_container_width_number*view_window_resize_num.value+'px',
-            height:store.get_thumcard_height,
-            transition:view_window_animation_speed
+
+        if (store.view_window_status == 0){
+            return {
+                width:store.get_thumcard_width,
+                height:store.get_thumcard_height,
+                transition:'all 0.3s ease-in'
+            }
+           
+        }else if(store.view_window_status == 1){
+            return {
+                width:store.page_width+'px',
+                height:'100vh',
+                transition:'var(--animation-slow)'
+            }
         }
     })
 
+    onMounted(()=>{
+        //重置导航栏
+        store.is_navbar_open = true
+        //z-index
+        store.z_index_page_number = store.page_on
+        //关闭卡片偏移
+        store.card_positon_move = undefined
+        setTimeout(()=>{
+            //重置信息栏
+            store.infor_bar_status = true
+            //重置视窗宽度
+            store.view_window_status = 1
+            //重置卡片盒子大小
+            store.expand_page_number = store.page_on
+            //打开卡片偏移
+            store.card_positon_move = store.page_on
+        
+        },100)
+        
+    })
 
     //======================================
     //幻灯片逻辑控制
     //======================================
 
     let action_lock = false
-
-    let slides_on = ref(0)
-    
-    let view_window_resize_num = ref(1.8)
-    
+ 
 
     //通过视窗宽度，计算翻页移动距离
-    let slides_position = computed(()=>store.get_thumcard_container_width_number* slides_on.value*-1 + 'px')
+    let slides_position = computed(()=>store.page_width*0.4* store.page_on*-1 + 'px')
     
     //处理点击事件-触发翻页动画队列
     let handle_card_click = (id)=>{
-        if (id == slides_on.value){
-            console.log("触发路由-进入卡片："+id)
-        }else if( id > slides_on.value){
-            animation_queue('next')
-        }else if( id < slides_on.value){
-            animation_queue('pre')
+        if (id == store.page_on){
+            animation_queue_click_route_out(id)
+        }else if( id > store.page_on){
+            animation_queue_click_pagemove('next')
+        }else if( id < store.page_on){
+            animation_queue_click_pagemove('pre')
         }
     }
-    //翻页动画队列
-    let animation_queue = (val)=>{
 
+    //翻页动画队列
+    let animation_queue_click_pagemove = (val)=>{
         //卡片缩小
-        update_cards_size('collapse')
+        store.expand_page_number = undefined
         //视窗缩小
-        view_window_resize('collapse')
+        store.view_window_status = 0
         //信息卡隐藏
         store.infor_bar_status = false
+        //关闭卡片偏移
+        store.card_positon_move = undefined
 
         //0.3s后
         setTimeout(()=>{
             //卡片提升到默认层
-            update_cards_z_index('front')
+            store.z_index_page_number = undefined
             //列表移动-slide_on发生变动
             slides_move(val)
-            //修改显示的信息
-            store.infor_show_witch = slides_on
-        },250)
+            //修改显示的信息 
+            store.infor_show_witch = store.page_on
+            //卡片沉降到-3
+            store.z_index_page_number = store.page_on
+        },300)
 
         //0.6s后
         setTimeout(()=>{
-            //卡片沉降到-3
-            update_cards_z_index('back')
             //卡片放大
-            update_cards_size('expand')
+            store.expand_page_number = store.page_on
             //视窗放大
-            view_window_resize('expand')
+            store.view_window_status = 1
             //信息卡出现
             store.infor_bar_status = true
+            //打开卡片偏移
+            store.card_positon_move = store.page_on
         },550)
 
     }
 
-    //改变store中的依赖
-    let update_cards_size = (val)=>{
-        if (val == 'expand'){
-            store.expand_page_number = slides_on.value
-        }else if(val == 'collapse'){
-            store.expand_page_number = -1
-        }  
+    //路由出动画队列
+    let animation_queue_click_route_out = (id)=>{
+        //所有窗口隐藏
+        //navbar隐藏
+        store.is_navbar_open = false 
+        //信息栏隐藏
+        store.infor_bar_status = false
+        //关闭卡片偏移
+        store.card_positon_move = undefined
+        //开始路由
+        setTimeout(()=>{
+            router.push(store.index_array[id].navto)         
+        },300) 
     }
-    let update_cards_z_index = (val)=>{
-        if (val == 'back'){
-            store.z_index_page_number = slides_on.value
-        }else if(val == 'front'){
-            store.z_index_page_number = -1
-        }  
-    }
+
+
     //翻页
     let slides_move = (tar)=>{
             if (tar == 'next'){
-                slides_on.value++
+                store.page_on++
             }else if (tar == 'pre'){
-                slides_on.value--
+                store.page_on--
             }
     }
     
-    //修改视窗宽度
-    let view_window_resize = (val)=>{
-        if (val == 'expand'){
-            view_window_resize_num.value = 1.8
-    
-        }else if(val == 'collapse'){
-            view_window_resize_num.value = 1
-        }  
-    }
-
-    
-
-
+   
 
 </script>
 
@@ -179,6 +189,7 @@ const store = useStore()
     bottom:0;
 }
 .list_conatiner{
+
     display:flex;
     align-items: center;
     gap:0px;

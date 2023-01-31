@@ -96,6 +96,8 @@ const store = useStore()
     position:fixed;
     left:0;
 
+    z-index:1;
+
     transition:all 0.3s ease-out;    
 }
 

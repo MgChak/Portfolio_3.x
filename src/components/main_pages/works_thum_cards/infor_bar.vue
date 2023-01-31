@@ -15,27 +15,8 @@ import useStore from '../../../store/index.js'
 const store = useStore()
 
 
-    let render_infor = computed(()=>infor_array[store.infor_show_witch])
+    let render_infor = computed(()=>store.index_array[store.infor_show_witch])
 
-    let infor_array = [
-        {
-            name:'COVER',
-            bio:'TRAVEL APP - UX/UI STUDY CASE - SOLO DESIGNER',
-            time:'2022 spring'
-        },{
-            name:'lets go',
-            bio:'TRAVEL APP - UX/UI STUDY CASE - SOLO DESIGNER',
-            time:'2022 spring'
-        },{
-            name:'TRANSIT',
-            bio:'TRAVEL APP - UX/UI STUDY CASE - SOLO DESIGNER',
-            time:'2022 spring'
-        },{
-            name:'POSITION',
-            bio:'TRAVEL APP - UX/UI STUDY CASE - SOLO DESIGNER',
-            time:'2022 spring'
-        }
-    ]
 
     let bar_position = computed(()=>{
         if(store.infor_bar_status){
@@ -46,7 +27,7 @@ const store = useStore()
     })
     
     let bar_width = computed(()=>{
-        return {width:store.get_thumcard_container_width_number*1.8+'px'}
+        return {width:store.page_width*0.75+'px'}
         })
 
 

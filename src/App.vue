@@ -1,15 +1,20 @@
 <template>
-<mouse_tracker/>
-<the_header/>
+  
+  <mouse_tracker/>
 
-<router-view></router-view>
+  <the_header/>
+
+
+  <router-view></router-view>
+
+
 
 </template>
 
 <script setup>
 //组件引入
-import mouse_tracker from './components/mouseTracker.vue';
-import the_header from './components/header.vue';
+import mouse_tracker from './components/mouseTracker.vue'
+import the_header from './components/header.vue'
 //依赖引入
 import {onMounted,watchEffect} from 'vue'
 import {useRoute} from 'vue-router'
