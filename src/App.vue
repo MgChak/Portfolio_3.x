@@ -24,9 +24,13 @@ const route = useRoute()
     
 
 //逻辑
-
-
   onMounted(()=>{
+      //开启页面后直接保存页面宽度到库
+      store.page_width = document.body.clientWidth
+      setTimeout(()=>{
+        store.page_height = document.body.clientHeight
+      },0)
+    
     //监听鼠标移动，把鼠标坐标存入库
     window.addEventListener('mousemove', (e)=>{
         store.mouse_position.x = e.clientX
@@ -39,10 +43,9 @@ const route = useRoute()
     })
 
     //开启页面后直接保存页面宽度到库
-    store.page_width = document.body.clientWidth
-    //开启页面后直接保存页面宽度到库
     window.addEventListener('resize',()=>{
       store.page_width = document.body.clientWidth
+      store.page_height = document.body.clientHeight
     })
 
   })

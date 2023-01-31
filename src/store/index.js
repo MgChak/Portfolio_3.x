@@ -8,9 +8,9 @@ export default defineStore("Main",{
         get_mouse_position_x: (state) => state.mouse_position.x +"px",
         get_mouse_position_y: (state) => state.mouse_position.y +"px",
 
-        //处理首页卡片尺寸返回值。
+        //处理首页卡片尺寸返回值。：高度：16/9 计算备用：state.page_width*0.4*9/16 +"px",
         get_thumcard_width: (state) => state.page_width*0.4 +"px",
-        get_thumcard_height: (state) => state.page_width*0.4*9/16 +"px",
+        get_thumcard_height: (state) => state.page_height*0.4+"px",
         //用来控制卡片盒子的状态
         get_path_now_id:(state)=>{
             var a 
@@ -35,6 +35,9 @@ export default defineStore("Main",{
 
             //当前窗口宽度
             page_width:0,
+
+            //当前窗口高度
+            page_height:0,
 
             //navbar依赖的状态
             is_navbar_open:true,
