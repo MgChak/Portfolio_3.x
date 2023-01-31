@@ -73,7 +73,7 @@ const store = useStore()
         if (store.is_navbar_open){
             return {top:'0px'}
         }else{
-            return {top:'-64px'}
+            return {top:'-80px'}
         }
     })
 
@@ -87,7 +87,7 @@ const store = useStore()
     backdrop-filter: blur(9.5px); 
     -webkit-backdrop-filter: blur(9.5px);
     width: 100%;
-    height:64px;
+    height:80px;
 
     display:flex;
     justify-content: center;
@@ -158,7 +158,7 @@ const store = useStore()
 
 h1{
     color:var(--main-light-30);
-    font-size:10px;
+    font-size:15px;
     font-weight: 400;
     line-height: 12px;
     transition:all 0.3s ease-out;

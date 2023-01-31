@@ -20,9 +20,9 @@ const store = useStore()
 
     let bar_position = computed(()=>{
         if(store.infor_bar_status){
-            return {bottom:'40px',transition:'var(--animation-slow)'}
+            return {bottom:'80px',transition:'var(--animation-slow)'}
         }else{
-            return {bottom:'-64px',transition:'all 0.3s ease-in'}
+            return {bottom:'-120px',transition:'all 0.3s ease-in'}
         }
     })
     
@@ -35,7 +35,7 @@ const store = useStore()
 
 <style scoped>
 .main_container{
-    height:64px;
+    height:120px;
     background:var(--color-glass-dark);
     /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
     backdrop-filter: blur(4px); 
@@ -62,16 +62,16 @@ const store = useStore()
     margin:24px 0;
 }
 h1{
-    font-size: 24px;
+    font-size: 40px;
     font-weight: 400;
-    margin-left:24px;
+    margin-left:60px;
     text-transform: uppercase;
 
 }
 h2{
-    font-size: 12px;
+    font-size: 20px;
     font-weight: 400;
-    margin-right:24px;
+    margin-right:60px;
     text-transform: uppercase;
 }
 
