@@ -73,7 +73,7 @@ const store = useStore()
         if (store.is_navbar_open){
             return {top:'0px'}
         }else{
-            return {top:'-80px'}
+            return {top:'-100px'}
         }
     })
 
@@ -87,7 +87,7 @@ const store = useStore()
     backdrop-filter: blur(9.5px); 
     -webkit-backdrop-filter: blur(9.5px);
     width: 100%;
-    height:80px;
+    height:100px;
 
     display:flex;
     justify-content: center;
