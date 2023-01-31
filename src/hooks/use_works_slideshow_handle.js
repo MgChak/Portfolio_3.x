@@ -62,11 +62,11 @@ let handle_card_position_change =(card_id)=>{
     const store = useStore()
     if (card_id == store.card_positon_move + 1){
         return {
-            transform:'translate(-25%, 0)',
+            transform:'translate(-28%, 0)',
             transition:'var(--animation-slow)'}
     }else if (card_id == store.card_positon_move - 1){
         return {
-            transform:'translate(25%, 0)',
+            transform:'translate(28%, 0)',
             transition:'var(--animation-slow)'}
     }else{
         return {
