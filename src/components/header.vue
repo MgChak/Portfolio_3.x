@@ -71,9 +71,9 @@ const store = useStore()
     //根据库中状态，相应navbar的开关
     let navbar_status = computed(()=>{
         if (store.is_navbar_open){
-            return {top:'0px'}
+            return {top:'0px',transition:'var(--animation-slow)'}
         }else{
-            return {top:'-100px'}
+            return {top:'-100px',transition:'all 0.3s ease-out'}
         }
     })
 
@@ -98,7 +98,7 @@ const store = useStore()
 
     z-index:1;
 
-    transition:all 0.3s ease-out;    
+        
 }
 
 .inner_container{
