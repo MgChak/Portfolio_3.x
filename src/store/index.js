@@ -39,8 +39,11 @@ export default defineStore("Main",{
             //当前窗口高度
             page_height:0,
 
-            //navbar依赖的状态
-            is_navbar_open:true,
+            //navbar是否打开
+            is_navbar_open:false,
+
+            //navbar的状态 0=默认,1=文章内
+            navbar_status:0,
 
             //slide cards css改变依赖的状态
             page_on:0,

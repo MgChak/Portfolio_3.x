@@ -61,13 +61,15 @@ const store = useStore()
     })
 
     onMounted(()=>{
-        //重置导航栏
-        store.is_navbar_open = true
         //z-index
         store.z_index_page_number = store.page_on
         //关闭卡片偏移
         store.card_positon_move = undefined
+        //修改导航栏状态到默认状态
+        store.navbar_status = 0
         setTimeout(()=>{
+            //打开导航栏
+            store.is_navbar_open = true
             //重置信息栏
             store.infor_bar_status = true
             //重置视窗宽度

@@ -9,12 +9,12 @@ import useStore from '../store/index'
     store.expand_page_number = store.get_path_now_id
     //初始化列表位置，
     store.page_on = store.get_path_now_id
-    //打开导航栏
-    store.is_navbar_open = true
-    //修改卡牌组件状态
-    store.is_navbar_open = true
-    //改变卡片内容的状态
+    //修改导航栏状态到文章内状态
+    store.navbar_status = 1
+
     setTimeout(()=>{
+        //打开导航栏
+        store.is_navbar_open = true
         //触发卡片内动画：进入文章内状态
         store.router_on_page_number = store.get_path_now_id
     },100)

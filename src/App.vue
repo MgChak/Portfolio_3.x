@@ -27,9 +27,8 @@ const route = useRoute()
   onMounted(()=>{
       //开启页面后直接保存页面宽度到库
       store.page_width = document.body.clientWidth
-      setTimeout(()=>{
-        store.page_height = document.body.clientHeight
-      },0)
+      store.page_height = window.innerHeight
+
     
     //监听鼠标移动，把鼠标坐标存入库
     window.addEventListener('mousemove', (e)=>{
