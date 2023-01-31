@@ -89,7 +89,10 @@ const store = useStore()
  
 
     //通过视窗宽度，计算翻页移动距离
-    let slides_position = computed(()=>store.page_width*0.4* store.page_on*-1 + 'px')
+    let slides_position = computed(()=>{
+        let a = store.page_width*0.4 + 16 
+        return a*store.page_on*-1 + 'px'
+    })
     
     //处理点击事件-触发翻页动画队列
     let handle_card_click = (id)=>{
@@ -180,8 +183,6 @@ const store = useStore()
     overflow: hidden;
 }
 .view_window{
-    /* background: green; */
-
     position:relative;
     left:0;
     right:0;
@@ -189,10 +190,9 @@ const store = useStore()
     bottom:0;
 }
 .list_conatiner{
-
     display:flex;
     align-items: center;
-    gap:0px;
+    gap:16px;
 
     position:absolute;
     top:0;
