@@ -18,7 +18,7 @@ let handle_style_change = (card_id)=>{
         return {
             width:'100%',
             height:'85vh',
-            transition:'all 0.3s ease-in'
+            transition:'var(--animation-slow)'
         }   
     }else{
         //小卡片状态

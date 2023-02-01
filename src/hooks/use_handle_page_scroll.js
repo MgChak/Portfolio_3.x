@@ -34,7 +34,7 @@ let use_handle_scroll = (e)=>{
             }else if (e.deltaY < 0 && store.scroll_position > 0){
 
                 //如果滚动位置与顶部之间的距离小于scroll_distance
-                if(store.scroll_position < scroll_distance){.
+                if(store.scroll_position < scroll_distance){
                     
                     //滚动 - 滚动位置直接归零
                     store.scroll_position = 0

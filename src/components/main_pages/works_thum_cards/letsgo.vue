@@ -92,7 +92,7 @@ const store = useStore()
     left: 8%;
     width: 81%;
     z-index:3;
-    transition:all 0.3s ease-in
+    transition:var(--animation-slow)
 }
 .container_router > .smallphone {
     position: absolute;
@@ -100,6 +100,6 @@ const store = useStore()
     left: 35%;
     width: 48%;
     z-index:3;
-    transition:all 0.3s ease-in
+    transition:var(--animation-slow)
 }
 </style>
