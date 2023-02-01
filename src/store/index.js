@@ -66,6 +66,15 @@ export default defineStore("Main",{
             infor_bar_status:false,
             infor_show_witch:0,
 
+            //滚动状态： 0= 文章的滚动
+            scroll_event_status:undefined,
+
+            //文章平滑滚动使用：由use_handle_scroll赋值。为0时文章处于顶部。
+            scroll_position:0,
+
+            //用户保存文章的高度
+            scroll_page_height:0,
+
             //目录导航数据
             index_array:[
                 {   

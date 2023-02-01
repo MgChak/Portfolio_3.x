@@ -4,8 +4,12 @@
 
   <the_header/>
 
+  <div class="main_view_window">
 
-  <router-view></router-view>
+    <router-view></router-view>
+
+  </div>
+  
 
 
 
@@ -15,6 +19,8 @@
 //组件引入
 import mouse_tracker from './components/mouseTracker.vue'
 import the_header from './components/header.vue'
+//hook引入
+import {use_handle_scroll} from './hooks/use_handle_page_scroll'
 //依赖引入
 import {onMounted,watchEffect} from 'vue'
 import {useRoute} from 'vue-router'
@@ -38,13 +44,13 @@ const route = useRoute()
 
     //监听鼠标滚轮滚动
     window.addEventListener('wheel',(e)=>{
-      console.log(e.wheelDelta)
+      use_handle_scroll(e)
     })
 
     //开启页面后直接保存页面宽度到库
     window.addEventListener('resize',()=>{
       store.page_width = document.body.clientWidth
-      store.page_height = document.body.clientHeight
+      store.page_height = window.innerHeight
     })
 
   })
@@ -52,11 +58,22 @@ const route = useRoute()
   //监听路由变化并存入数据库
   watchEffect(()=>{store.path_now = route.name})
 
+  
+
 
 
 </script>
 
 <style scoped>
+.main_view_window{
+  width:100%;
+  height:100vh;
 
+  position:fixed;
+  z-index: 0;
+
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
 
 </style>

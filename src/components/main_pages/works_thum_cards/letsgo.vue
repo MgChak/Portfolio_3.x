@@ -90,7 +90,7 @@ const store = useStore()
     position: absolute;
     bottom: 0;
     left: 8%;
-    width: 79%;
+    width: 81%;
     z-index:3;
     transition:all 0.3s ease-in
 }
