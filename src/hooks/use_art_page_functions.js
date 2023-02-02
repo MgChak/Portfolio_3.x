@@ -15,6 +15,8 @@ import {tracker_toggle} from '../hooks/use_mouse_tracker_toggle'
     store.navbar_status = 1
     //将滚动行为设置成0=文章滚动
     store.scroll_event_status = 0
+    //将文章的高度保存到库
+    store.scroll_page_height = document.getElementById('article_container_for_scroll').clientHeight
     setTimeout(()=>{
         //打开导航栏
         store.is_navbar_open = true
