@@ -1,8 +1,10 @@
 <template>
 
         <div class="container background" :style="[card_size,card_position]" :class="[card_class,card_z_index]" >
-            <img src="../../../assets/thum_cards/letsgo_large_p.png" class="largephone" alt="">
-            <img src="../../../assets/thum_cards/letsgo_small_p.png" class="smallphone" alt="">
+            
+                <img :style = "img_position" src="../../../assets/thum_cards/letsgo_large_p.png" class="largephone" alt="">
+                <img :style = "img_position" src="../../../assets/thum_cards/letsgo_small_p.png" class="smallphone" alt="">
+
         </div>
 
     
@@ -10,7 +12,7 @@
 
 <script setup>
 //hooks引入
-import{handle_style_change,handle_class_change,handle_z_index_change,handle_card_position_change} from '../../../hooks/use_works_slideshow_handle.js'
+import{handle_style_change,handle_class_change,handle_z_index_change,handle_card_position_change,handle_img_position_change} from '../../../hooks/use_works_slideshow_handle.js'
 //依赖引入
 import {computed} from 'vue'
 import useStore from '../../../store/index.js'
@@ -26,6 +28,8 @@ const store = useStore()
     let card_z_index = computed(()=>handle_z_index_change(card_id))
 
     let card_position = computed(()=>handle_card_position_change(card_id))
+
+    let img_position = computed(()=>handle_img_position_change(card_id))
 
 </script> 
 
@@ -72,15 +76,15 @@ const store = useStore()
 .container_expand > .largephone {
     position: absolute;
     bottom:0;
-    left:0;
-    width:93%;
+    left:-14%;
+    width:110%;
     z-index:3;
     transition:var(--animation-slow);
 }
 .container_expand > .smallphone {
     position: absolute;
     bottom:0%;
-    left:28%;
+    left:30%;
     width:65%;
     z-index:3;
     transition:var(--animation-slow);
@@ -89,17 +93,19 @@ const store = useStore()
 .container_router > .largephone {
     position: absolute;
     bottom: 0;
-    left: 8%;
-    width: 81%;
+    left: -2%;
+    width: 90%;
     z-index:3;
     transition:var(--animation-slow)
 }
 .container_router > .smallphone {
     position: absolute;
-    bottom: 5%;
+    bottom: -2%;
     left: 35%;
-    width: 48%;
+    width: 53%;
     z-index:3;
     transition:var(--animation-slow)
 }
+
+
 </style>

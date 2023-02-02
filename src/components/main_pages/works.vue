@@ -7,13 +7,13 @@
             <div class="list_conatiner" :style="{left:slides_position}">
 
 
-                    <cover @click="handle_card_click(0)"/> 
+                    <cover @click="handle_card_click(0)" @mouseover=" handle_card_hover(0)"/> 
 
-                    <letsgo @click="handle_card_click(1)"/> 
+                    <letsgo @click="handle_card_click(1)" @mouseover=" handle_card_hover(1)"/> 
 
-                    <transit @click="handle_card_click(2)"/> 
+                    <transit @click="handle_card_click(2)" @mouseover=" handle_card_hover(2)"/> 
 
-                    <abs @click="handle_card_click(3)"/>
+                    <abs @click="handle_card_click(3)" @mouseover=" handle_card_hover(3)"/>
 
 
             </div>
@@ -32,8 +32,9 @@ import abs from'./works_thum_cards/abs.vue'
 import cover from'./works_thum_cards/cover.vue'
 import letsgo from'./works_thum_cards/letsgo.vue'
 import transit from'./works_thum_cards/transit.vue'
-
 import infor_bar from'./works_thum_cards/infor_bar.vue'
+//hooks引入
+import {tracker_toggle} from '../../hooks/use_mouse_tracker_toggle'
 //依赖引入
 import {computed,ref,onMounted} from 'vue'
 import useStore from '../../store/index.js'
@@ -132,6 +133,17 @@ const store = useStore()
         }
     }
 
+    //处理hover事件-修改tracker的状态
+    let handle_card_hover = (id)=>{
+        if (id == store.page_on){
+            tracker_toggle('view_project')
+        }else if( id > store.page_on){
+            tracker_toggle('next')
+        }else if( id < store.page_on){
+            tracker_toggle('pre')
+        }
+    }
+
     //翻页动画队列
     let animation_queue_click_pagemove = (val)=>{
         //卡片缩小
@@ -192,6 +204,8 @@ const store = useStore()
     align-items: center;
 
     overflow: hidden;
+
+    cursor: none;
 }
 .view_window{
     position:relative;

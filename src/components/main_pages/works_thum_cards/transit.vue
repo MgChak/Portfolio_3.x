@@ -1,14 +1,14 @@
 <template>
 
         <div class="container background" :style="[card_size,card_position]" :class="[card_class,card_z_index]" >
-            <img src="../../../assets/thum_cards/transit_hand.png" alt="">
+            <img :style = "img_position" src="../../../assets/thum_cards/transit_hand.png" alt="">
         </div>
     
 </template>
 
 <script setup>
 //hooks引入
-import{handle_style_change,handle_class_change,handle_z_index_change,handle_card_position_change} from '../../../hooks/use_works_slideshow_handle.js'
+import{handle_style_change,handle_class_change,handle_z_index_change,handle_card_position_change,handle_img_position_change} from '../../../hooks/use_works_slideshow_handle.js'
 //依赖引入
 import {computed} from 'vue'
 import useStore from '../../../store/index.js'
@@ -24,6 +24,8 @@ const store = useStore()
     let card_z_index = computed(()=>handle_z_index_change(card_id))
 
     let card_position = computed(()=>handle_card_position_change(card_id))
+
+    let img_position = computed(()=>handle_img_position_change(card_id))
 
 
 </script>

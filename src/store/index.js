@@ -4,6 +4,9 @@ export default defineStore("Main",{
     actions:{
     },
     getters: {
+        //屏幕中心点
+        get_scrren_center_x:(state) => state.page_width/2,
+        get_scrren_center_y:(state) => state.page_height/2,
         //处理鼠标坐标返回值。
         get_mouse_position_x: (state) => state.mouse_position.x +"px",
         get_mouse_position_y: (state) => state.mouse_position.y +"px",
@@ -24,26 +27,47 @@ export default defineStore("Main",{
     },
     state:()=>{
         return{
-            //mouse_tracker的依赖状态
+        //=============================
+        //mouse_tracker的依赖状态
+        //=============================
+            //鼠标坐标
             mouse_position:{
                 x:0,
                 y:0
             },
 
+            //tracker的展示状态,该状态将作为class name直接赋予给tracker
+            //这个数据同时被用来控制首页卡片的hover偏移，当值为‘pre’和‘next’时触发
+            tracker_status: 'hidden',
+
+
+        //=============================
+        //路由追踪
+        //=============================
             //当前打开的路径
             path_now:'',
 
+        //=============================
+        //窗口尺寸
+        //=============================
             //当前窗口宽度
             page_width:0,
 
             //当前窗口高度
             page_height:0,
 
+        //=============================
+        //导航栏依赖
+        //=============================
             //navbar是否打开
             is_navbar_open:false,
 
             //navbar的状态 0=默认,1=文章内
             navbar_status:0,
+
+        //=============================
+        //首页slideshow依赖 + thum card 依赖
+        //=============================
 
             //slide cards css改变依赖的状态
             page_on:0,
@@ -60,20 +84,33 @@ export default defineStore("Main",{
             //视窗的状态:1=全屏，0=缩小
             view_window_status:1,
             
-            //控制z-index偏移，当与page_on相等时触发沉降到-3，为undefined时，卡片提升到默认层
+            //控制卡片z-index偏移，当与page_on相等时触发沉降到-3，为undefined时，卡片提升到默认层
             z_index_page_number:0,
 
+        //=============================
+        //首页底部信息栏依赖
+        //=============================
+            //底部信息栏的开启与关闭
             infor_bar_status:false,
+            
+            //底部信息栏显示内容
             infor_show_witch:0,
 
-            //滚动状态： 0= 文章的滚动
+        //=============================
+        //文章平滑滚动依赖
+        //=============================
+            //滚动状态： 0= 文章的滚动/开启滚动条
             scroll_event_status:undefined,
 
             //文章平滑滚动使用：由use_handle_scroll赋值。为0时文章处于顶部。
             scroll_position:0,
 
-            //用户保存文章的高度
+            //用于保存文章的高度
             scroll_page_height:0,
+
+        //=============================
+        //index render依赖
+        //=============================
 
             //目录导航数据
             index_array:[

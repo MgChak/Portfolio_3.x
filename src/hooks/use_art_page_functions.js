@@ -1,10 +1,12 @@
 import useStore from '../store/index'
-
+import {tracker_toggle} from '../hooks/use_mouse_tracker_toggle'
 
  
  //进入时初始化与动画队列
  let animation_queue_route_in =(page_id)=>{
     const store = useStore()
+    //关闭鼠标追踪器
+    tracker_toggle('hidden')
     //卡片放大
     store.expand_page_number = store.get_path_now_id
     //初始化列表位置，

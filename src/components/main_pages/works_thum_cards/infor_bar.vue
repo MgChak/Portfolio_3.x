@@ -53,6 +53,8 @@ const store = useStore()
     display:flex;
     justify-content: space-between;
     align-items: center;
+
+    cursor: none;
 }
 .sub_container{
     display:flex;

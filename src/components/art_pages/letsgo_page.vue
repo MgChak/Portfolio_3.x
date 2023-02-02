@@ -3,7 +3,7 @@
 <div class="main_container" id="article_container_for_scroll" :style="scroll_position">
 
     <letsgo/> 
-    
+
     <div class="placehoudler"></div>
     <p>123333</p>
 
@@ -40,6 +40,10 @@ const store = useStore()
         return {top:store.scroll_position*-1+'px'}
     })
 
+    let img_position = computed(()=>{
+        return {top:store.scroll_position+'px'}
+    })
+
 </script>
 
 <style scoped>
@@ -58,7 +62,11 @@ const store = useStore()
 .placehoudler{
     width:100%;
     height:2000px;
-    background:gray;
+    background:rgb(0, 0, 0);
 }
+p{
+    color:white;
+}
+
 
 </style>

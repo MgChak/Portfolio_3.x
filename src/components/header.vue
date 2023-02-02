@@ -1,5 +1,5 @@
 <template>
-<div :style = "navbar_status_style" :class="navbar_status_class">
+<div :style = "navbar_status_style" :class="navbar_status_class" @mouseover= "tracker_toggle('hidden')">
 
     <!-- 默认全功能导航 -->
 
@@ -70,6 +70,8 @@
 </template>
 
 <script setup>
+//hook 引入
+import{tracker_toggle} from '../hooks/use_mouse_tracker_toggle'
 //依赖引入
 import {computed} from 'vue'
 import {useRouter} from 'vue-router'
@@ -126,6 +128,8 @@ const store = useStore()
             return 'container_art'
         }
     })
+
+
 
 </script>
 

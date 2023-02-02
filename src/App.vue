@@ -2,7 +2,11 @@
   
   <mouse_tracker/>
 
+
   <the_header/>
+
+  <scroll_bar/>
+
 
   <div class="main_view_window">
 
@@ -19,6 +23,7 @@
 //组件引入
 import mouse_tracker from './components/mouseTracker.vue'
 import the_header from './components/header.vue'
+import scroll_bar from './components/scroll_bar.vue'
 //hook引入
 import {use_handle_scroll} from './hooks/use_handle_page_scroll'
 //依赖引入
@@ -74,6 +79,10 @@ const route = useRoute()
 
   overflow-x: hidden;
   overflow-y: hidden;
+
 }
+
+
+
 
 </style>
