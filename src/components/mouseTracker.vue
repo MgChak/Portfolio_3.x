@@ -95,7 +95,8 @@ const store = useStore()
 }
 
 
-.next > .background{
+.next > .background,
+.projects> .background{
     width:100%;
     height:100%;
 
@@ -108,7 +109,14 @@ const store = useStore()
     color: black;
     font-weight: 700;
 }
-.next > .background::after{
+.projects > .background::before{
+    content: 'WORKS';
+    font-size: 15px;
+    color: black;
+    font-weight: 700;
+}
+.next > .background::after,
+.projects> .background::after{
     content: '';
     background-image: url('../assets/icons/arrow_circle_right.svg');
     height:18px;
@@ -119,7 +127,8 @@ const store = useStore()
 }
 
 
-.pre > .background{
+.pre > .background,
+.cover > .background{
     width:100%;
     height:100%;
 
@@ -132,7 +141,14 @@ const store = useStore()
     color: black;
     font-weight: 700;
 }
-.pre > .background::before{
+.cover > .background::after{
+    content: 'COVER';
+    font-size: 15px;
+    color: black;
+    font-weight: 700;
+}
+.pre > .background::before,
+.cover > .background::before{
     content: '';
     background-image: url('../assets/icons/arrow_circle_right.svg');
     transform: rotate(180deg);

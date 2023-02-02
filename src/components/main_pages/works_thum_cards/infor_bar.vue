@@ -19,7 +19,7 @@ const store = useStore()
 
 
     let bar_position = computed(()=>{
-        if(store.infor_bar_status){
+        if(store.infor_bar_status && store.page_on != 0){
             return {bottom:'80px',transition:'var(--animation-slow)'}
         }else{
             return {bottom:'-120px',transition:'all 0.3s ease-in'}

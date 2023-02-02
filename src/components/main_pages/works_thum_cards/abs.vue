@@ -34,6 +34,7 @@ const store = useStore()
 <style scoped>
 .container{
     background:rgb(144, 77, 142);
+    cursor: none;
 }
 .container_z_index_back{
     z-index:0;

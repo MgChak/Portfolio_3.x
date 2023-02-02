@@ -1,6 +1,6 @@
 <template>
 
-    <div class="container" :style="background_color">
+    <div class="container" :style="[background_color,cursor_status]">
 
         <div class="view_window" :style="view_window_size">
 
@@ -87,6 +87,14 @@ const store = useStore()
         }
     })
 
+    let cursor_status = computed(()=>{
+        if(store.page_on!=0){
+            return{cursor: 'none'}
+        }else{
+            return{cursor: 'default'}
+        }
+    })
+
 
     //从库中提取已经计算好的卡片尺寸_视窗使用
     let view_window_size = computed(()=>{
@@ -136,11 +144,23 @@ const store = useStore()
     //处理hover事件-修改tracker的状态
     let handle_card_hover = (id)=>{
         if (id == store.page_on){
-            tracker_toggle('view_project')
+            if(id != 0 ){
+                tracker_toggle('view_project')
+            }else{
+                tracker_toggle('hidden')
+            }    
         }else if( id > store.page_on){
-            tracker_toggle('next')
+            if(store.page_on == 0 ){
+                tracker_toggle('projects')
+            }else{
+                tracker_toggle('next')
+            }   
         }else if( id < store.page_on){
-            tracker_toggle('pre')
+            if(id != 0 ){
+                tracker_toggle('pre')
+            }else{
+                tracker_toggle('cover')
+            }    
         }
     }
 
@@ -205,7 +225,6 @@ const store = useStore()
 
     overflow: hidden;
 
-    cursor: none;
 }
 .view_window{
     position:relative;
