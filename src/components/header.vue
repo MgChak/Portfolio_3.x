@@ -1,5 +1,5 @@
 <template>
-<div :style = "navbar_status_style" :class="navbar_status_class" @mouseover= "tracker_toggle('hidden')">
+<div :style = "navbar_status_style" :class="navbar_status_class" @mouseover= "handle_hover">
 
     <!-- 默认全功能导航 -->
 
@@ -128,6 +128,12 @@ const store = useStore()
             return 'container_art'
         }
     })
+
+
+    let handle_hover= ()=>{
+        tracker_toggle('hidden')
+        store.hover_id = undefined
+    }
 
 
 

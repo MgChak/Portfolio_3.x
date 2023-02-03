@@ -7,7 +7,7 @@
             <div class="list_conatiner" :style="{left:slides_position}">
 
 
-                    <cover @click="handle_card_click(0)" @mouseover=" handle_card_hover(0)"/> 
+                    <cover @click="handle_card_click(0)" @mouseover=" handle_card_hover(0)" /> 
 
                     <letsgo @click="handle_card_click(1)" @mouseover=" handle_card_hover(1)"/> 
 
@@ -39,6 +39,8 @@ import {tracker_toggle} from '../../hooks/use_mouse_tracker_toggle'
 import {computed,ref,onMounted, watchEffect} from 'vue'
 import useStore from '../../store/index.js'
 import router from '../../router'
+import { gsap } from "gsap"
+
 const store = useStore()
 
     //初始化
@@ -135,27 +137,25 @@ const store = useStore()
 
 
     //处理hover事件
-    let hover_id = ref(undefined)
     let handle_card_hover = (id)=>{
-        hover_id.value = id
-
+        store.hover_id = id
     }
     //监听id和page_on的变化，做出反应，改变tracker的class
     watchEffect(()=>{
-        if (hover_id.value == store.page_on){
-            if(hover_id.value != 0 ){
+        if (store.hover_id == store.page_on){
+            if(store.hover_id != 0 ){
                 tracker_toggle('view_project')
             }else{
                 tracker_toggle('hidden')
             }    
-        }else if( hover_id.value > store.page_on){
+        }else if( store.hover_id > store.page_on){
             if(store.page_on == 0 ){
                 tracker_toggle('projects')
             }else{
                 tracker_toggle('next')
             }   
-        }else if( hover_id.value < store.page_on){
-            if(hover_id.value != 0 ){
+        }else if( store.hover_id < store.page_on){
+            if(store.hover_id != 0 ){
                 tracker_toggle('pre')
             }else{
                 tracker_toggle('cover')

@@ -24,7 +24,6 @@
                 
             </div>
             
-            
         </div>
         
 
@@ -50,6 +49,9 @@ const store = useStore()
     let card_z_index = computed(()=>handle_z_index_change(card_id))
 
     let card_position = computed(()=>handle_card_position_change(card_id))
+
+
+
 
 
 </script>

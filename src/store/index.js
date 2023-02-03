@@ -40,6 +40,8 @@ export default defineStore("Main",{
             //这个数据同时被用来控制首页卡片的hover偏移，当值为‘pre’和‘next’时触发
             //同时用来控制默认鼠标的隐藏，只有为‘hidden’时才会显示默认的鼠标
             tracker_status: 'hidden',
+            //用来避免元素叠加时，mousetracker的监听不起作用，基本上等于被hover的thumcard的id。
+            hover_id:undefined,
 
 
         //=============================
