@@ -36,7 +36,7 @@ import infor_bar from'./works_thum_cards/infor_bar.vue'
 //hooks引入
 import {tracker_toggle} from '../../hooks/use_mouse_tracker_toggle'
 //依赖引入
-import {computed,ref,onMounted} from 'vue'
+import {computed,ref,onMounted, watchEffect} from 'vue'
 import useStore from '../../store/index.js'
 import router from '../../router'
 const store = useStore()
@@ -133,28 +133,36 @@ const store = useStore()
         }
     }
 
-    //处理hover事件-修改tracker的状态
+
+    //处理hover事件
+    let hover_id = ref(undefined)
     let handle_card_hover = (id)=>{
-        if (id == store.page_on){
-            if(id != 0 ){
+        hover_id.value = id
+
+    }
+    //监听id和page_on的变化，做出反应，改变tracker的class
+    watchEffect(()=>{
+        if (hover_id.value == store.page_on){
+            if(hover_id.value != 0 ){
                 tracker_toggle('view_project')
             }else{
                 tracker_toggle('hidden')
             }    
-        }else if( id > store.page_on){
+        }else if( hover_id.value > store.page_on){
             if(store.page_on == 0 ){
                 tracker_toggle('projects')
             }else{
                 tracker_toggle('next')
             }   
-        }else if( id < store.page_on){
-            if(id != 0 ){
+        }else if( hover_id.value < store.page_on){
+            if(hover_id.value != 0 ){
                 tracker_toggle('pre')
             }else{
                 tracker_toggle('cover')
             }    
         }
-    }
+    })
+
 
     //翻页动画队列
     let animation_queue_click_pagemove = (val)=>{
@@ -168,7 +176,6 @@ const store = useStore()
         store.infor_bar_status = false
         //关闭卡片偏移
         store.card_positon_move = undefined
-
         //0.3s后
         setTimeout(()=>{
             //卡片提升到默认层
