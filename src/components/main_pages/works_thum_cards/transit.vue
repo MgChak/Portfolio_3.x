@@ -32,7 +32,7 @@ const store = useStore()
 
 <style scoped>
 .container{
-    cursor: none
+   
 }
 .container_z_index_back{
     z-index:0;

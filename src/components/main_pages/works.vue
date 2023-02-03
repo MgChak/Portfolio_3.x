@@ -1,6 +1,6 @@
 <template>
 
-    <div class="container" :style="[background_color,cursor_status]">
+    <div class="container" :style="background_color">
 
         <div class="view_window" :style="view_window_size">
 
@@ -84,14 +84,6 @@ const store = useStore()
     let background_color = computed(()=>{
         return {
             background:store.index_array[store.page_on].background_color
-        }
-    })
-
-    let cursor_status = computed(()=>{
-        if(store.page_on!=0){
-            return{cursor: 'none'}
-        }else{
-            return{cursor: 'default'}
         }
     })
 

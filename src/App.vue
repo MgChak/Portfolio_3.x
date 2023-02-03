@@ -8,7 +8,7 @@
   <scroll_bar/>
 
 
-  <div class="main_view_window">
+  <div class="main_view_window" :style="cursor_status">
 
     <router-view></router-view>
 
@@ -27,7 +27,7 @@ import scroll_bar from './components/scroll_bar.vue'
 //hook引入
 import {use_handle_scroll} from './hooks/use_handle_page_scroll'
 //依赖引入
-import {onMounted,watchEffect} from 'vue'
+import {onMounted,watchEffect,computed} from 'vue'
 import {useRoute} from 'vue-router'
 import useStore from './store/index.js'
 const store = useStore()
@@ -64,7 +64,14 @@ const route = useRoute()
   watchEffect(()=>{store.path_now = route.name})
 
   
-
+  //检测鼠标状态
+  let cursor_status = computed(()=>{
+    if(store.tracker_status == 'hidden'){
+      return {cursor:'default'}
+    }else{
+      return {cursor:'none'}
+    }
+  })
 
 
 </script>
@@ -79,6 +86,8 @@ const route = useRoute()
 
   overflow-x: hidden;
   overflow-y: hidden;
+
+  
 
 }
 
