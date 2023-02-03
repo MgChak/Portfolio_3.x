@@ -39,7 +39,7 @@ let handle_style_change = (card_id)=>{
 let handle_class_change = (card_id)=>{
     const store = useStore()
 
-    if (card_id == store.expand_page_number && card_id != store.router_on_page_number){
+    if (card_id == store.expand_page_class_number && card_id != store.router_on_page_number){
         return 'container_expand'
     }else if (card_id == store.router_on_page_number){
         return 'container_router'

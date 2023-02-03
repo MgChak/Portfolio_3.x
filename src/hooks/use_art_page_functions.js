@@ -37,6 +37,8 @@ let animation_queue_route_out =(page_id)=>{
     store.is_navbar_open = false
     //将滚动行为初始化为锁定状态
     store.scroll_event_status = undefined
+    //重置首页内容物大小-直接放大
+    store.expand_page_class_number = store.page_on
 }
 
 

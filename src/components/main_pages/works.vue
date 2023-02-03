@@ -56,8 +56,8 @@ const store = useStore()
             store.infor_bar_status = true
             //重置视窗宽度
             store.view_window_status = 1
-            //重置卡片盒子大小
-            store.expand_page_number = store.page_on
+            //重置首页内容物大小
+            store.expand_page_class_number = store.page_on
             //打开卡片偏移
             store.card_positon_move = store.page_on
         
@@ -168,6 +168,8 @@ const store = useStore()
     let animation_queue_click_pagemove = (val)=>{
         //卡片缩小
         store.expand_page_number = undefined
+        //卡片内内容缩小
+        store.expand_page_class_number = undefined
         //视窗缩小
         store.view_window_status = 0
         //信息卡隐藏
@@ -191,6 +193,8 @@ const store = useStore()
         setTimeout(()=>{
             //卡片放大
             store.expand_page_number = store.page_on
+            //卡片内内容放大
+            store.expand_page_class_number = store.page_on
             //视窗放大
             store.view_window_status = 1
             //信息卡出现

@@ -75,6 +75,9 @@ export default defineStore("Main",{
             //控制卡片的状态,发生变化的时候，对应id的卡片放大
             expand_page_number:0,
 
+            //控制卡片的状态,发生变化的时候，对应id的卡片被赋予expand class name 
+            expand_page_class_number:undefined,
+
             //控制卡片偏移，当与page_on相等时触发偏移，为undefined时，关闭偏移
             card_positon_move:undefined,
 
