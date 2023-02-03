@@ -61,7 +61,7 @@ let handle_z_index_change = (card_id)=>{
 let handle_card_position_change =(card_id)=>{
     const store = useStore()
     if (card_id == store.card_positon_move + 1){
-        if(store.tracker_status == 'next'){
+        if(['next','projects'].includes(store.tracker_status)){
             return {
                 transform:'translate(-40%, 0)',
                 transition:'var(--animation-slow)'
@@ -74,7 +74,7 @@ let handle_card_position_change =(card_id)=>{
         }
         
     }else if (card_id == store.card_positon_move - 1){
-        if(store.tracker_status == 'pre'){
+        if(['pre','cover'].includes(store.tracker_status)){
             return {
                 transform:'translate(40%, 0)',
                 transition:'var(--animation-slow)'
