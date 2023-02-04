@@ -1,5 +1,5 @@
 <template>
-    <div class="main_container" :style="[bar_position,bar_width]">
+    <div class="main_container inforbar_conatiner" :style="[bar_width]">
         <h1>{{ render_infor.name}}</h1>
         <div class="sub_container">
             <h2>{{ render_infor.bio }}</h2>
@@ -10,19 +10,28 @@
 </template>
 
 <script setup>
-import { computed, reactive } from 'vue';
+import { watchPostEffect,computed} from 'vue';
 import useStore from '../../../store/index.js'
+import { gsap } from "gsap"
 const store = useStore()
 
 
     let render_infor = computed(()=>store.index_array[store.infor_show_witch])
 
 
-    let bar_position = computed(()=>{
+    watchPostEffect(()=>{
         if(store.infor_bar_status && store.page_on != 0){
-            return {bottom:'80px',transition:'var(--animation-slow)'}
+            gsap.to('.inforbar_conatiner',{
+                bottom :'80px',
+                duration:0.6,
+                ease:"power4.out",
+            })
         }else{
-            return {bottom:'-120px',transition:'all 0.3s ease-in'}
+            gsap.to('.inforbar_conatiner',{
+                bottom :'-120px',
+                duration:0.3,
+                ease:"none",
+            })
         }
     })
     

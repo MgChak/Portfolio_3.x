@@ -1,5 +1,5 @@
 <template>
-<div :style = "navbar_status_style" :class="navbar_status_class" @mouseover= "handle_hover">
+<div class="nav_main_container" :class="navbar_status_class" @mouseover= "handle_hover">
 
     <!-- 默认全功能导航 -->
 
@@ -73,9 +73,10 @@
 //hook 引入
 import{tracker_toggle} from '../hooks/use_mouse_tracker_toggle'
 //依赖引入
-import {computed} from 'vue'
+import {computed, watchPostEffect} from 'vue'
 import {useRouter} from 'vue-router'
 import useStore from '../store/index.js'
+import { gsap } from "gsap"
 const router = useRouter()
 const store = useStore()
 
@@ -111,11 +112,19 @@ const store = useStore()
     let path_now = computed(()=>store.path_now)
 
     //根据库中状态，相应navbar的开关
-    let navbar_status_style = computed(()=>{
+    watchPostEffect(()=>{
         if (store.is_navbar_open){
-            return {top:'0px',transition:'top 0.6s var(--animation-slow-cubic)'}
+           gsap.to('.nav_main_container',{
+                top : '0px',
+                duration:0.6,
+                ease:"power4.out",
+           })
         }else{
-            return {top:'-120px',transition:'all 0.3s ease-out'}
+            gsap.to('.nav_main_container',{
+                top : '-120px',
+                duration:0.3,
+                ease:"none",
+           })
         }
     })
 
@@ -254,7 +263,6 @@ h1{
     font-size:15px;
     font-weight: 400;
     line-height: 12px;
-    transition:all 0.3s ease-out;
 }
 
 .active > .dot_container >.dot{
@@ -268,7 +276,6 @@ h3{
     font-size:15px;
     font-weight: 500;
     line-height: 12px;
-    transition:all 0.3s ease-out;
 }
 
 </style>

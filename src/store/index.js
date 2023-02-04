@@ -72,7 +72,7 @@ export default defineStore("Main",{
         //首页slideshow依赖 + thum card 依赖
         //=============================
 
-            //slide cards css改变依赖的状态
+            //slide cards 移动依赖的状态
             page_on:0,
 
             //控制卡片的状态,发生变化的时候，对应id的卡片放大
@@ -92,6 +92,9 @@ export default defineStore("Main",{
             
             //控制卡片z-index偏移，当与page_on相等时触发沉降到-3，为undefined时，卡片提升到默认层
             z_index_page_number:0,
+
+            //记录是第一次打开还是从文章路由到work页面
+            is_route_to_work:true,
 
         //=============================
         //首页底部信息栏依赖
