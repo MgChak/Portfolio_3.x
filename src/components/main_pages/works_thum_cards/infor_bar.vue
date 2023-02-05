@@ -1,5 +1,5 @@
 <template>
-    <div class="main_container inforbar_conatiner" :style="[bar_width]">
+    <div class="main_container" :style="[bar_position,bar_width]">
         <h1>{{ render_infor.name}}</h1>
         <div class="sub_container">
             <h2>{{ render_infor.bio }}</h2>
@@ -10,36 +10,21 @@
 </template>
 
 <script setup>
-import { watchPostEffect,computed} from 'vue';
+import { computed, reactive } from 'vue';
 import useStore from '../../../store/index.js'
-import { gsap } from "gsap"
 const store = useStore()
-
-
     let render_infor = computed(()=>store.index_array[store.infor_show_witch])
-
-
-    watchPostEffect(()=>{
+    let bar_position = computed(()=>{
         if(store.infor_bar_status && store.page_on != 0){
-            gsap.to('.inforbar_conatiner',{
-                bottom :'80px',
-                duration:0.6,
-                ease:"power4.out",
-            })
+            return {bottom:'80px',transition:'var(--animation-slow)'}
         }else{
-            gsap.to('.inforbar_conatiner',{
-                bottom :'-120px',
-                duration:0.3,
-                ease:"none",
-            })
+            return {bottom:'-120px',transition:'all 0.3s ease-in'}
         }
     })
     
     let bar_width = computed(()=>{
         return {width:store.page_width*0.75+'px'}
         })
-
-
 </script>
 
 <style scoped>
@@ -50,19 +35,15 @@ const store = useStore()
     backdrop-filter: blur(4px); 
     -webkit-backdrop-filter: blur(4px);
     border-radius: 8px;
-
     position:fixed;
     bottom:0;
     left:0;
     right:0;
     margin: 0px auto;
-
     color:var(--main-light-100);
-
     display:flex;
     justify-content: space-between;
     align-items: center;
-
     cursor: none;
 }
 .sub_container{
@@ -77,7 +58,6 @@ h1{
     font-weight: 400;
     margin-left:60px;
     text-transform: uppercase;
-
 }
 h2{
     font-size: 20px;
@@ -85,5 +65,4 @@ h2{
     margin-right:60px;
     text-transform: uppercase;
 }
-
 </style>

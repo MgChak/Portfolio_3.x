@@ -12,8 +12,8 @@ export default defineStore("Main",{
         get_mouse_position_y: (state) => state.mouse_position.y +"px",
 
         //处理首页卡片尺寸返回值。：高度：16/9 计算备用：state.page_width*0.4*9/16 +"px",
-        get_thumcard_width: (state) => state.page_width*0.4 +"px",
-        get_thumcard_height: (state) => state.page_height*0.4+"px",
+        get_thumcard_width: (state) => state.page_width/2.5 +"px",
+        get_thumcard_height: (state) => state.page_height/2.5+"px",
         //用来控制卡片盒子的状态
         get_path_now_id:(state)=>{
             var a 
@@ -81,11 +81,15 @@ export default defineStore("Main",{
             //控制卡片的状态,发生变化的时候，对应id的卡片被赋予expand class name 
             expand_page_class_number:undefined,
 
-            //控制卡片偏移，当与page_on相等时触发偏移，为undefined时，关闭偏移
+            //控制卡片偏移，当与page_on相等时触发偏移,undefined时，卡片不偏移
             card_positon_move:undefined,
+
+            //控制卡片偏移,为true时卡片处于屏幕外
+            card_positon_move_hide:true,
 
             //控制卡片内容的动画状态（路由进出文章），当与page_on/get_path_now_id相等时进入文章内状态，为undefined时，恢复
             router_on_page_number:undefined,
+            
 
             //视窗的状态:1=全屏，0=缩小
             view_window_status:1,
@@ -93,8 +97,8 @@ export default defineStore("Main",{
             //控制卡片z-index偏移，当与page_on相等时触发沉降到-3，为undefined时，卡片提升到默认层
             z_index_page_number:0,
 
-            //记录是第一次打开还是从文章路由到work页面
-            is_route_to_work:true,
+            //记录是第一次打开还是从文章路由到work页面/用来初始化卡片内容
+            is_route_to_work:false,
 
         //=============================
         //首页底部信息栏依赖
@@ -152,6 +156,49 @@ export default defineStore("Main",{
                     navto:'',
                     background_color:'linear-gradient(360deg, #3D2539 -3.36%, #000000 49.04%)',
                 }
+            ],
+            //控制卡片尺寸逻辑队列
+            card_size_status:[
+                    {
+                        card_style:'',
+                        card_class:'',
+                        card_index:'',
+                        card_move:{
+                            t_scale:'',
+                            t_translate:'',
+                            t_transition:'',
+                            t_transition_backup:''
+                        }
+                    },{
+                        card_style:'',
+                        card_class:'',
+                        card_index:'',
+                        card_move:{
+                            t_scale:'',
+                            t_translate:'',
+                            t_transition:'',
+                            t_transition_backup:''
+                        }
+                    },{
+                        card_style:'',
+                        card_class:'',
+                        card_index:'',
+                        card_move:{
+                            t_scale:'',
+                            t_translate:'',
+                            t_transition:'',
+                            t_transition_backup:''
+                        }
+                    },{
+                        card_style:'',
+                        card_class:'',
+                        card_index:'',
+                        card_move:{
+                            t_scale:'',
+                            t_translate:'',
+                            t_transition:''
+                        }
+                    },
             ]
 
         }

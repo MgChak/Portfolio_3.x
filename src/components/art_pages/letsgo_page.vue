@@ -1,9 +1,8 @@
 <template>
 
 <div class="main_container" id="article_container_for_scroll" :style="scroll_position">
-
-    <letsgo/> 
-
+        <letsgo/> 
+    
     <div class="placehoudler"></div>
     <p>123333</p>
 
@@ -18,7 +17,7 @@ import letsgo from'../main_pages/works_thum_cards/letsgo.vue'
 //hook引入
 import {animation_queue_route_in,animation_queue_route_out} from'../../hooks/use_art_page_functions'
 //依赖引入
-import { computed,onMounted,nextTick } from 'vue'
+import { computed,onMounted,nextTick } from 'vue' 
 import useStore from '../../store/index'
 import { onBeforeRouteLeave } from 'vue-router';
 const store = useStore()
@@ -29,7 +28,7 @@ const store = useStore()
     })
 
     onBeforeRouteLeave((from,to,next)=>{
-        animation_queue_route_out()
+        animation_queue_route_out(page_id)
         setTimeout(()=>{
             next()
         },600)    
@@ -44,6 +43,7 @@ const store = useStore()
 </script>
 
 <style scoped>
+
 .main_container{
     width:100%;
     display:flex;

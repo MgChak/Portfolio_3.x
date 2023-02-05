@@ -33,7 +33,7 @@
 
 <script setup>
 //hooks引入
-import{handle_style_change,handle_class_change,handle_z_index_change,handle_card_position_change} from '../../../hooks/use_works_slideshow_handle.js'
+import{} from '../../../hooks/use_works_slideshow_handle.js'
 //依赖引入
 import {computed} from 'vue'
 import useStore from '../../../store/index.js'
@@ -42,13 +42,16 @@ const store = useStore()
     //监听对比需要展开的卡片id于自身id，并改变css
     let card_id = 0
 
-    let card_size = computed(()=>handle_style_change(card_id))
-
-    let card_class = computed(()=>handle_class_change(card_id))
-
-    let card_z_index = computed(()=>handle_z_index_change(card_id))
-
-    let card_position = computed(()=>handle_card_position_change(card_id))
+    let card_size = computed(()=>store.card_size_status[card_id].card_style)
+    let card_class = computed(()=>store.card_size_status[card_id].card_class)
+    let card_z_index = computed(()=>store.card_size_status[card_id].card_index)
+    let card_position = computed(()=>{
+        return {
+        transform:`${store.card_size_status[card_id].card_move.t_scale} ${store.card_size_status[card_id].card_move.t_translate}`,
+        transition:store.card_size_status[card_id].card_move.t_transition
+        }
+    })
+    // let img_position = computed(()=>handle_img_position_change(card_id))
 
 
 
@@ -59,7 +62,8 @@ const store = useStore()
 <style scoped>
 .container{
     background:linear-gradient(360deg, #253238 -3.36%, #000000 49.04%);
-    
+    will-change: z-index,transform;
+
 }
 .container_z_index_back{
     z-index:0;

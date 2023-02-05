@@ -2,9 +2,9 @@
 
     <div class="container" :style="background_color">
 
-        <div class="view_window work_slides_view_window">
+        <div class="view_window" :style="view_window_size">
 
-            <div class="list_conatiner work_slides_list_conatiner ">
+            <div class="list_conatiner" :style="{transform:slides_position}">
 
 
                     <cover @click="handle_card_click(0)" @mouseover=" handle_card_hover(0)" /> 
@@ -36,26 +36,20 @@ import infor_bar from'./works_thum_cards/infor_bar.vue'
 //hooks引入
 import {tracker_toggle} from '../../hooks/use_mouse_tracker_toggle'
 //依赖引入
-import {computed,ref,onMounted, watchPostEffect, watchEffect} from 'vue'
+import {computed,ref,onMounted, watchEffect, reactive} from 'vue'
 import useStore from '../../store/index.js'
 import router from '../../router'
-import { gsap } from "gsap"
-
-
 const store = useStore()
-
     //初始化
     onMounted(()=>{
         //z-index
         store.z_index_page_number = store.page_on
-        //关闭卡片偏移
-        store.card_positon_move = undefined
+        //卡片偏移到屏幕外
+        store.card_positon_move_hide = true
+        //初始化卡片偏移状态
+        store.card_positon_move = store.page_on
         //修改导航栏状态到默认状态
         store.navbar_status = 0
-        //将列表移动到对应的位置
-        gsap.set('.work_slides_list_conatiner',{
-                left : (store.page_width*0.4 + 16 )*store.page_on*-1 + 'px',
-            })
         setTimeout(()=>{
             //打开导航栏
             store.is_navbar_open = true
@@ -63,15 +57,12 @@ const store = useStore()
             store.infor_bar_status = true
             //重置视窗宽度
             store.view_window_status = 1
-            //重置首页内容物大小
-            store.expand_page_class_number = store.page_on
-            //打开卡片偏移
-            store.card_positon_move = store.page_on
+            //打开卡片偏移到屏幕内
+            store.card_positon_move_hide = false
         
         },100)
         
     })
-
     //路由出动画队列（进入文章）
     let animation_queue_click_route_out = (id)=>{
         //所有窗口隐藏
@@ -79,50 +70,56 @@ const store = useStore()
         store.is_navbar_open = false 
         //信息栏隐藏
         store.infor_bar_status = false
-        //关闭卡片偏移
-        store.card_positon_move = undefined
+        //卡片偏移到屏幕外
+        store.card_positon_move_hide = true
         //开始路由
         setTimeout(()=>{
             router.push(store.index_array[id].navto)         
         },300) 
     }
-
     //背景颜色改变
     let background_color = computed(()=>{
         return {
             background:store.index_array[store.page_on].background_color
         }
     })
-
-
     //从库中提取已经计算好的卡片尺寸_视窗使用
-    watchPostEffect(()=>{
-        
+    let view_window_size = computed(()=>{
         if (store.view_window_status == 0){
-            gsap.to('.work_slides_view_window',{
+            return {
                 width:store.get_thumcard_width,
                 height:store.get_thumcard_height,
-                duration:0.3,
-                ease:"none",
-            })
+                transition:'all 0.3s ease-in'
+            }
+           
         }else if(store.view_window_status == 1){
-            gsap.to('.work_slides_view_window',{
-                width:store.page_width+'px',
-                height:'100vh',
-                duration:0.6,
-                ease:"power4.out",
-            })
+            // return {
+            //     width:store.page_width+'px',
+            //     height:'100vh',
+            //     transition:'var(--animation-slow)'
+            // }
+            return {
+                width:store.get_thumcard_width,
+                height:store.get_thumcard_height,
+                transition:'all 0.3s ease-in'
+            }
         }
     })
-
     
-
     //======================================
     //幻灯片逻辑控制
     //======================================
-
     let action_lock = false
  
+    //通过视窗宽度，计算翻页移动距离
+    // let slides_position = computed(()=>{
+    //     let a = store.page_width*0.4 + 16 
+    //     return a*store.page_on*-1 + 'px'
+    // })
+    let slides_position = computed(()=>{
+        let a = store.page_width*0.4 + 16 
+        return `translateX(${a*store.page_on*-1}px`
+    })
     
     //处理点击事件-触发翻页动画队列
     let handle_card_click = (id)=>{
@@ -134,8 +131,6 @@ const store = useStore()
             animation_queue_click_pagemove('pre')
         }
     }
-
-
     //处理hover事件
     let handle_card_hover = (id)=>{
         store.hover_id = id
@@ -162,8 +157,6 @@ const store = useStore()
             }    
         }
     })
-
-
     //翻页动画队列
     let animation_queue_click_pagemove = (val)=>{
         //卡片缩小
@@ -174,7 +167,7 @@ const store = useStore()
         store.view_window_status = 0
         //信息卡隐藏
         store.infor_bar_status = false
-        //关闭卡片偏移
+        //卡片偏移归位
         store.card_positon_move = undefined
         //0.3s后
         setTimeout(()=>{
@@ -187,7 +180,6 @@ const store = useStore()
             //卡片沉降到-3
             store.z_index_page_number = store.page_on
         },300)
-
         //0.6s后
         setTimeout(()=>{
             //卡片放大
@@ -198,46 +190,117 @@ const store = useStore()
             store.view_window_status = 1
             //信息卡出现
             store.infor_bar_status = true
-            //打开卡片偏移
+            //卡片重新偏移
             store.card_positon_move = store.page_on
         },550)
-
     }
-
     //翻页
     let slides_move = (tar)=>{
-        if (tar == 'next'){
-            store.page_on++
-        }else if (tar == 'pre'){
-            store.page_on--
-        }
-        gsap.to('.work_slides_list_conatiner',{
-            left : (store.page_width*0.4 + 16 )*store.page_on*-1 + 'px',
-            duration:0.3,
-            ease:"none",
-        })
+            if (tar == 'next'){
+                store.page_on++
+            }else if (tar == 'pre'){
+                store.page_on--
+            }
     }
+
+
+    watchEffect(()=>{
+        store.card_size_status.forEach((item,index)=>{
+            if (index!=store.expand_page_number){
+                //默认小卡
+                item.card_style = {
+                    width:store.get_thumcard_width,
+                    height:store.get_thumcard_height,
+                    borderRadius: '8px',
+                    overflow: 'hidden',
+                    filter:' drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.25))',
+                } 
+                item.card_move.t_scale= 'scale(1,1)'
+                item.card_move.t_transition_backup= 'all ease-in 0.3s'
+                item.card_class =  'container_default'
+            }else{
+                //全屏大卡
+                item.card_style = {
+                    width:store.get_thumcard_width,
+                    height:store.get_thumcard_height,
+                    margin:'0',
+                }
+                item.card_move.t_transition_backup= 'var(--animation-slow)'
+                item.card_move.t_scale= 'scale(2.5,2.5)'
+                item.card_class =  'container_expand'
+            }
+        })
+    })
+
+    watchEffect(()=>{
+        store.card_size_status.forEach((item,index)=>{
+            if(index != store.z_index_page_number){
+                item.card_index = 'container_z_index_front'
+            }else{
+                item.card_index = 'container_z_index_back'
+            } 
+        })
+
+    })
+    
+    watchEffect(()=>{
+        store.card_size_status.forEach((item,index)=>{
+            if(index == store.card_positon_move + 1){
+                if(store.card_positon_move_hide){
+             
+                        item.card_move.t_translate = 'translate(100%, 0)'
+                        item.card_move.t_transition='var(--animation-slow)'
+                    
+                }else if(['next','projects'].includes(store.tracker_status)){
+                    item.card_move.t_translate ='translate(30%, 0)'
+                    item.card_move.t_transition='var(--animation-slow)'
+                    
+                }else{
+                    item.card_move.t_translate = 'translate(50%, 0)'
+                    item.card_move.t_transition='var(--animation-slow)'
+                    
+                }
+                
+            }else if(index == store.card_positon_move - 1){
+                if(store.card_positon_move_hide){
+                    item.card_move.t_translate = 'translate(-100%, 0)'
+                    item.card_move.t_transition='var(--animation-slow)'
+                    
+                }else if(['pre','cover'].includes(store.tracker_status)){
+                    item.card_move.t_translate = 'translate(-30%, 0)'
+                    item.card_move.t_transition='var(--animation-slow)'
+                    
+                }else{
+                    item.card_move.t_translate = 'translate(-50%, 0)'
+                    item.card_move.t_transition='var(--animation-slow)'
+                    
+                }
+            }else{
+                item.card_move.t_translate = 'translate(0, 0)'
+                item.card_move.t_transition =  item.card_move.t_transition_backup
+                
+            } 
+        })
+
+    })
 
     
    
-
 </script>
 
 <style scoped>
 .container{
     width:100%;
     height:100vh;
-
     display:flex;
     justify-content: center;
     align-items: center;
-
     overflow: hidden;
-
 }
 .view_window{
-    width:100vw;
+    will-change: width,height;
     height:100vh;
+    width:100vw;
     position:relative;
     left:0;
     right:0;
@@ -248,11 +311,10 @@ const store = useStore()
     display:flex;
     align-items: center;
     gap:16px;
-
     position:absolute;
     top:0;
-
+    left:0;
+    transition:all 0.3s ease-out;
 }
-
-
 </style>
+
