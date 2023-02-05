@@ -62,7 +62,7 @@ const store = useStore()
 <style scoped>
 .container{
     background:linear-gradient(360deg, #253238 -3.36%, #000000 49.04%);
-    will-change: z-index,transform;
+    will-change: z-index;
 
 }
 .container_z_index_back{
@@ -85,6 +85,7 @@ const store = useStore()
 .h1_conatiner{
     width:70%;
     overflow: hidden;
+    display: flex;
 }
  .h1_conatiner  >img{
     width:84%;
@@ -99,6 +100,7 @@ const store = useStore()
 .h2_conatiner{
     width:100%;
     overflow: hidden;
+    display: flex;
 }
 .h2_conatiner >img{
     width:33%;

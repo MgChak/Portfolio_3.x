@@ -30,17 +30,15 @@ import {use_handle_scroll} from './hooks/use_handle_page_scroll'
 import {onMounted,watchEffect,computed} from 'vue'
 import {useRoute} from 'vue-router'
 import useStore from './store/index.js'
+import { useWindowSize } from '@vueuse/core'
 const store = useStore()
 const route = useRoute()
+const w_size = useWindowSize()
     
 
 //逻辑
   onMounted(()=>{
-      //开启页面后直接保存页面宽度到库
-      store.page_width = document.body.clientWidth
-      store.page_height = window.innerHeight
-
-    
+  
     //监听鼠标移动，把鼠标坐标存入库
     window.addEventListener('mousemove', (e)=>{
         store.mouse_position.x = e.clientX
@@ -52,13 +50,12 @@ const route = useRoute()
       use_handle_scroll(e)
     })
 
-    //开启页面后直接保存页面宽度到库
-    window.addEventListener('resize',()=>{
-      store.page_width = document.body.clientWidth
-      store.page_height = window.innerHeight
-    })
-
   })
+
+
+  //保存屏幕尺寸到库
+  store.page_width = w_size.width
+  store.page_height = w_size.height
 
   //监听路由变化并存入数据库
   watchEffect(()=>{store.path_now = route.name})
@@ -83,6 +80,7 @@ const route = useRoute()
 
   position:fixed;
   z-index: 0;
+  top:0;
 
   overflow-x: hidden;
   overflow-y: hidden;

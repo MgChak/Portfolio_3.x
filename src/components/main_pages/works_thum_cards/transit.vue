@@ -33,7 +33,7 @@ const store = useStore()
 
 <style scoped>
 .container{
-    will-change: z-index,transform;
+    will-change: z-index;
 
 }
 img{

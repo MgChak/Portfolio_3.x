@@ -1,6 +1,6 @@
 <template>
 
-    <div class="container" :style="background_color">
+    <div class="works_container" :style="[background_color,works_container_size]">
 
         <div class="view_window" :style="view_window_size">
 
@@ -40,6 +40,21 @@ import {computed,ref,onMounted, watchEffect, reactive} from 'vue'
 import useStore from '../../store/index.js'
 import router from '../../router'
 const store = useStore()
+
+    //主窗口尺寸
+    let works_container_size = computed(()=>{
+        return{
+            height:store.page_height+'px',
+            width:store.page_width+'px'
+        }
+    })
+    //背景颜色改变
+    let background_color = computed(()=>{
+        return {
+            background:store.index_array[store.page_on].background_color
+        }
+    })
+
     //初始化
     onMounted(()=>{
         //z-index
@@ -60,8 +75,7 @@ const store = useStore()
             //打开卡片偏移到屏幕内
             store.card_positon_move_hide = false
         
-        },100)
-        
+        },100)   
     })
     //路由出动画队列（进入文章）
     let animation_queue_click_route_out = (id)=>{
@@ -77,32 +91,12 @@ const store = useStore()
             router.push(store.index_array[id].navto)         
         },300) 
     }
-    //背景颜色改变
-    let background_color = computed(()=>{
-        return {
-            background:store.index_array[store.page_on].background_color
-        }
-    })
     //从库中提取已经计算好的卡片尺寸_视窗使用
     let view_window_size = computed(()=>{
-        if (store.view_window_status == 0){
-            return {
-                width:store.get_thumcard_width,
-                height:store.get_thumcard_height,
-                transition:'all 0.3s ease-in'
-            }
-           
-        }else if(store.view_window_status == 1){
-            // return {
-            //     width:store.page_width+'px',
-            //     height:'100vh',
-            //     transition:'var(--animation-slow)'
-            // }
-            return {
-                width:store.get_thumcard_width,
-                height:store.get_thumcard_height,
-                transition:'all 0.3s ease-in'
-            }
+        return{
+            width:store.get_thumcard_width,
+            height:store.get_thumcard_height,
+            transition:'all 0.3s ease-in'
         }
     })
     
@@ -289,9 +283,7 @@ const store = useStore()
 </script>
 
 <style scoped>
-.container{
-    width:100%;
-    height:100vh;
+.works_container{
     display:flex;
     justify-content: center;
     align-items: center;
