@@ -5,7 +5,7 @@ let handle_img_position_change = (card_id)=>{
 
     const store = useStore()
     //全屏状态
-    if (card_id == store.expand_page_number && card_id != store.router_on_page_number){
+    if (card_id == store.expand_page_number && card_id != store.get_path_now_id){
         
         //运算x轴移动
 

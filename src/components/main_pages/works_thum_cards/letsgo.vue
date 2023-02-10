@@ -4,7 +4,7 @@
         
             <img :style="img_position" src="../../../assets/thum_cards/letsgo_large_p.webp" class="largephone" alt="">
             <img :style="img_position" src="../../../assets/thum_cards/letsgo_small_p.png" class="smallphone" alt="">
-
+            
     </div>
 
 
@@ -24,12 +24,10 @@ let card_size = computed(()=>store.card_size_status[card_id].card_style)
 let card_class = computed(()=>store.card_size_status[card_id].card_class)
 let card_z_index = computed(()=>store.card_size_status[card_id].card_index)
 let card_position = computed(()=>{
-
-        return {
-        transform:`${store.card_size_status[card_id].card_move.t_scale} ${store.card_size_status[card_id].card_move.t_translate}`,
-        transition:store.card_size_status[card_id].card_move.t_transition
-        }
-
+    return {
+    transform:`${store.card_size_status[card_id].card_move.t_scale} ${store.card_size_status[card_id].card_move.t_translate}`,
+    transition:store.card_size_status[card_id].card_move.t_transition
+    }
 })
 let img_position = computed(()=>handle_img_position_change(card_id))
 
@@ -40,6 +38,7 @@ let img_position = computed(()=>handle_img_position_change(card_id))
 <style scoped>
 .container{
     will-change:z-index;
+    overflow: hidden;
 }
 img{
     will-change:transform;
@@ -57,24 +56,25 @@ z-index:1;
 .container_router{
 }
 .background{
-background: linear-gradient(90deg, #2D3527 0%, #3F4F33 49.65%, #2D3527 100%);
+background: radial-gradient(42.7% 61.19% at 50% 50%, #343D2D 0%, #1A1C18 100%);
 position:relative;
 }
+
 .container_default> .largephone {
-position: absolute;
-bottom:0;
-left:5%;
-width:85%;
-z-index:1;
-transition:all 0.3s ease-in;
+    position: absolute;
+    bottom: 0%;
+    left:-14%;
+    width:100%;
+    z-index: 1;
+    transition: all 0.3s ease-in;
 }
 .container_default> .smallphone {
-position: absolute;
-bottom:10%;
-left:30%;
-width:50%;
-z-index:1;
-transition:all 0.3s ease-in;
+    position: absolute;
+    bottom: 0%;
+    left:28%;
+    width:50%;
+    z-index: 1;
+    transition: all 0.3s ease-in;
 }
 .container_expand > .largephone {
 position: absolute;
@@ -93,19 +93,20 @@ z-index:3;
 transition:var(--animation-slow);
 }
 .container_router > .largephone {
-position: absolute;
-bottom: 0;
-left: -2%;
-width: 90%;
-z-index:3;
-transition:var(--animation-slow)
+    position: absolute;
+    bottom: 0;
+    left: 3%;
+    width: 80%;
+    z-index: 3;
+    transition: var(--animation-slow);
 }
 .container_router > .smallphone {
-position: absolute;
-bottom: -2%;
-left: 35%;
-width: 53%;
-z-index:3;
-transition:var(--animation-slow)
+    position: absolute;
+    bottom: 0%;
+    left: 37%;
+    width: 43%;
+    z-index: 3;
+    transition: var(--animation-slow);
 }
+
 </style>

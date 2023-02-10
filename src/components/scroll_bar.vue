@@ -99,7 +99,6 @@ const store = useStore()
     position:fixed;
     z-index:8;
     bottom:0;
-    pointer-events: none;
 
 }
 .scroll_mark{
@@ -111,7 +110,7 @@ const store = useStore()
     transition:var(--animation-slow);
     pointer-events:all;
 }
-.main_container:hover .scroll_mark{
+.main_container:hover > .scroll_mark{
     width:15px;
     transition:var(--animation-slow)
 }

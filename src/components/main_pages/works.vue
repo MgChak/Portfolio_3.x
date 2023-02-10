@@ -7,13 +7,13 @@
             <div class="list_conatiner" :style="{transform:slides_position}">
 
 
-                    <cover @click="handle_card_click(0)" @mouseover=" handle_card_hover(0)" /> 
+                    <cover @click="handle_card_click(0)" @pointerover=" handle_card_hover(0,$event)" /> 
 
-                    <letsgo @click="handle_card_click(1)" @mouseover=" handle_card_hover(1)"/> 
+                    <letsgo @click="handle_card_click(1)" @pointerover=" handle_card_hover(1,$event)"/> 
 
-                    <transit @click="handle_card_click(2)" @mouseover=" handle_card_hover(2)"/> 
+                    <transit @click="handle_card_click(2)" @pointerover=" handle_card_hover(2,$event)"/> 
 
-                    <abs @click="handle_card_click(3)" @mouseover=" handle_card_hover(3)"/>
+                    <abs @click="handle_card_click(3)" @pointerover=" handle_card_hover(3,$event)"/>
 
 
             </div>
@@ -126,8 +126,10 @@ const store = useStore()
         }
     }
     //处理hover事件
-    let handle_card_hover = (id)=>{
-        store.hover_id = id
+    let handle_card_hover = (id,e)=>{
+           if(e.pointerType == 'mouse'){
+                store.hover_id = id
+            }
     }
     //监听id和page_on的变化，做出反应，改变tracker的class
     watchEffect(()=>{

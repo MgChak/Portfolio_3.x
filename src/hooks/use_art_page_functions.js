@@ -38,12 +38,12 @@ import {tracker_toggle} from '../hooks/use_mouse_tracker_toggle'
         //触发卡片内动画
         store.card_size_status[page_id].card_style = {
             width:'100vw',
-            height:'90vh',
+            height:'80vh',
             margin:'0',
         }
         store.card_size_status[page_id].card_move.t_transition_backup= 'var(--animation-slow)'
         store.card_size_status[page_id].card_move.t_scale= ''
-        store.card_size_status[page_id].card_class =  'container_expand'
+        store.card_size_status[page_id].card_class =  'container_router'
 
         store.card_size_status[page_id].card_move.t_translate = ''
         store.card_size_status[page_id].card_move.t_transition =  store.card_size_status[page_id].card_move.t_transition_backup

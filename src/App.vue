@@ -40,9 +40,11 @@ const w_size = useWindowSize()
   onMounted(()=>{
   
     //监听鼠标移动，把鼠标坐标存入库
-    window.addEventListener('mousemove', (e)=>{
+    window.addEventListener('pointermove', (e)=>{
+      if(e.pointerType == 'mouse'){
         store.mouse_position.x = e.clientX
         store.mouse_position.y = e.clientY
+      }
     })
 
     //监听鼠标滚轮滚动
@@ -53,7 +55,7 @@ const w_size = useWindowSize()
   })
 
 
-  //保存屏幕尺寸到库
+  //保存窗口尺寸
   store.page_width = w_size.width
   store.page_height = w_size.height
 
@@ -70,6 +72,8 @@ const w_size = useWindowSize()
     }
   })
 
+
+  
 
 </script>
 
