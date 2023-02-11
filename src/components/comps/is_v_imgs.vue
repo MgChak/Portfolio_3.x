@@ -36,7 +36,7 @@ import { ref } from 'vue'
 .background_container::before{
     content:'';
     position: absolute;
-    width: 80%;
+    width: 100%;
     height: 10%;
     left: 0px;
     top: 10%;

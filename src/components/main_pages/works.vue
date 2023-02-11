@@ -188,7 +188,7 @@ const store = useStore()
             store.infor_bar_status = true
             //卡片重新偏移
             store.card_positon_move = store.page_on
-        },550)
+        },600)
     }
     //翻页
     let slides_move = (tar)=>{

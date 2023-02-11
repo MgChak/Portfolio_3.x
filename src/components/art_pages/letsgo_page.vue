@@ -1,6 +1,6 @@
 <template>
 
-<div class="main_container" id="article_container_for_scroll" :style="scroll_position">
+<div class="main_container" id="article_container_for_scroll" :style="[scroll_position,store.scroll_animation]">
     <letsgo/> 
 
     <div class = "overview_sec">
@@ -293,7 +293,7 @@ const store = useStore()
 
     //依赖于库中的数据平滑滚动文章
     let scroll_position = computed(()=>{
-        return {top:store.scroll_position*-1+'px'}
+        return {transform: 'translateY('+ store.scroll_position*-1+'px)'}
     })
 
     //按钮依赖
@@ -311,7 +311,7 @@ const store = useStore()
 <style scoped>
 
 .main_container{
-    will-change: top;
+    will-change: transform;
     width:100%;
     display:flex;
     flex-direction: column;
@@ -323,7 +323,7 @@ const store = useStore()
 
     background: linear-gradient(90deg, #0B0C0B 0%, #141B0F 48.61%, #0D0D0C 100%);;
 
-    transition:var(--animation-slow);
+    
     /* top 1s cubic-bezier(0.36, 0.36, 0.31, 1) */
   
 }

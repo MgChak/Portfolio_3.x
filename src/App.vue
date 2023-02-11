@@ -8,7 +8,10 @@
   <scroll_bar/>
 
 
-  <div class="main_view_window" :style="cursor_status">
+  <div class="main_view_window" :style="cursor_status" 
+    @touchstart="use_handle_scroll_touch($event)"
+    @touchmove="use_handle_scroll_touch($event)"
+    @touchend="use_handle_scroll_touch($event)">
 
     <router-view></router-view>
 
@@ -25,7 +28,7 @@ import mouse_tracker from './components/mouseTracker.vue'
 import the_header from './components/header.vue'
 import scroll_bar from './components/scroll_bar.vue'
 //hook引入
-import {use_handle_scroll} from './hooks/use_handle_page_scroll'
+import {use_handle_scroll,use_handle_scroll_touch} from './hooks/use_handle_page_scroll'
 //依赖引入
 import {onMounted,watchEffect,computed} from 'vue'
 import {useRoute} from 'vue-router'
@@ -49,6 +52,8 @@ const w_size = useWindowSize()
 
     //监听鼠标滚轮滚动
     window.addEventListener('wheel',(e)=>{
+      //初始化滚动动画
+      store.scroll_animation = 'transition:var(--animation-slow)'
       use_handle_scroll(e)
     })
 

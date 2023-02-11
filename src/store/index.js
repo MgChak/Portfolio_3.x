@@ -112,6 +112,9 @@ export default defineStore("Main",{
         //=============================
         //文章平滑滚动依赖
         //=============================
+            //平滑滚动动画
+            scroll_animation:'transition:var(--animation-slow)',
+            
             //滚动状态： 0= 文章的滚动/开启滚动条
             scroll_event_status:undefined,
 
@@ -120,6 +123,31 @@ export default defineStore("Main",{
 
             //用于保存文章的高度
             scroll_page_height:0,
+        
+        //=============================
+        //触摸滑滚动依赖
+        //=============================
+            //开始滚动的位置。第一次由touchstart赋值，之后又move赋值
+            touch_start_point:0,
+
+            //最后滚动的位置。
+            touch_start_move:0,
+
+            //最后滚动前的时间。
+            touch_move_time_pre:undefined,
+
+            //最后滚动后的时间。第一次由touchstart赋值，之后又move赋值
+            touch_move_time_now:undefined,
+
+            //滚动方向用来计算最后的惯性方向,正上负下
+            touch_move_dr:undefined,
+
+            //滚动定时器
+            touch_move_timer:undefined,
+
+            
+
+
 
         //=============================
         //index render依赖

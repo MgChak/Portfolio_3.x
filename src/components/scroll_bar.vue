@@ -4,7 +4,7 @@
     <div 
         class="scroll_mark" 
         :style="scroll_mark_style" 
-        @mousedown="handle_drag_start"
+        @mousedown="handle_drag_start($event)"
     ></div>
 </div>
  
