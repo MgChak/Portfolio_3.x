@@ -1,6 +1,7 @@
 //依赖引入
 import useStore from '../store/index'
 
+//总入口-分流（鼠标）
 let use_handle_scroll = (e)=>{
     const store = useStore()
     switch (store.scroll_event_status) {
@@ -15,6 +16,7 @@ let use_handle_scroll = (e)=>{
 
 }
 
+//总入口-分流（触摸）
 let use_handle_scroll_touch = (e)=>{
     const store = useStore()
     switch (store.scroll_event_status) {
@@ -22,13 +24,17 @@ let use_handle_scroll_touch = (e)=>{
         case 0:
             scroll_mode_articel_touch(e)
         break;
+        //首页菜单阅读模式
+        case 1:
+            scroll_mode_index_touch(e)
+        break;
         default:
             console.log("滚动行为锁定")
         break;
     }
 }
 
-//文章滚动模式-滚轮限位，由本函数处理滚动的限位
+//文章滚动模式-限位，由本函数处理滚动的限位
 let scroll_mode_articel = (deltaY)=>{
     const store = useStore()
 
@@ -87,7 +93,7 @@ let scroll_mode_articel_touch = (e)=>{
 let scroll_mode_articel_touch_start = (e)=>{
     const store = useStore()
     //关闭之前的未完成滚动
-    clearInterval(store.touch_move_timer)
+    cancelAnimationFrame(store.touch_move_timer)
     //关闭滚动动画
     store.scroll_animation='none'
     //保存初始点位置
@@ -132,18 +138,113 @@ let scroll_mode_articel_touch_end = (e)=>{
 
     //初始化惯性滚动距离
     let position_change = b.toFixed(1)*30
+
+    
     //计算针动画，直到滚动距离小于1
-    store.touch_move_timer = setInterval(()=>{
+    store.touch_move_timer = requestAnimationFrame(function animation_set(){
+        console.log('动画')
         position_change = position_change *0.95
         scroll_mode_articel(position_change)
-        if(Math.abs(position_change) < 1 ){
-            clearInterval(store.touch_move_timer)
+        if(Math.abs(position_change) >=1 ){
+            store.touch_move_timer = requestAnimationFrame(animation_set)
+        }else{
+            cancelAnimationFrame(store.touch_move_timer)
         }
-        
-    },16)
+    })
     
-    console.log("结束",b)
 }
+
+
+
+
+
+//首页菜单滚动模式-触摸 - 分流器
+let scroll_mode_index_touch = (e)=>{
+    switch (e.type) {
+        //默认文章阅读模式
+        case "touchstart":
+            scroll_mode_index_touch_start(e)
+        break;
+        case "touchmove":
+            scroll_mode_index_touch_move(e)
+        break;
+        case "touchend":
+            scroll_mode_index_touch_end(e)
+        break;
+        default:
+            console.log("滚动行为锁定")
+        break;
+    }
+}
+//文章滚动模式-触摸 - 开始
+let scroll_mode_index_touch_start = (e)=>{
+    const store = useStore()
+    //保存初始点位置
+    store.touch_start_point = e.touches[0].clientX
+    store.touch_start_point_once = e.touches[0].clientX
+
+    //保存列表当前的位置坐标
+    store.slideshow_track_touch_position = store.get_slides_position
+
+}
+
+//文章滚动模式-触摸 - 移动
+let scroll_mode_index_touch_move = (e)=>{
+    const store = useStore()
+
+     //阻止默认事件
+     e.preventDefault();
+    
+     //根据初始点位置和当前移动的位置计算出移动的距离，
+     var a = store.touch_start_point - e.touches[0].clientX
+ 
+    //  //将距离发送给滚动函数
+    //  store.touch_move_dr = a
+    //  scroll_mode_articel(a)
+ 
+    //重新赋值start_point用于计算下一次移动
+    store.touch_start_point = e.touches[0].clientX
+
+
+    //关闭列表动画
+    store.slide_show_transition = 'none'
+
+    //关闭列表动画延迟时间
+    store.slide_show_animation_delay = 0
+
+    //开启列表追踪
+    store.is_touch_slidshow = true
+     //卡片缩小
+    store.expand_page_number = undefined
+    //卡片内内容缩小
+    store.expand_page_class_number = undefined
+    //视窗缩小
+    store.view_window_status = 0
+    //信息卡隐藏
+    store.infor_bar_status = false
+    //卡片偏移归位
+    store.card_positon_move = undefined
+
+    //更新列表的位置坐标
+    store.slideshow_track_touch_position = store.slideshow_track_touch_position-a
+ 
+    
+}
+
+//文章滚动模式-触摸 - 结束
+let scroll_mode_index_touch_end = (e)=>{
+    const store = useStore()
+
+    if(store.touch_start_point_once<store.touch_start_point){
+        store.triger_slieshow_page_move=1
+    }else if(store.touch_start_point_once>store.touch_start_point){
+        store.triger_slieshow_page_move=0
+    }
+
+    //开启列表动画
+    store.slide_show_transition = 'all 0.3s ease-out'
+}
+
 export {
     use_handle_scroll,
     use_handle_scroll_touch

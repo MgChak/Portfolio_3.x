@@ -33,11 +33,11 @@ const store = useStore()
 
 <style scoped>
 .container{
-    will-change: z-index;
+    will-change: z-index transform;
 
 }
 img{
-    will-change:transform;
+
 }
 .container_z_index_back{
     z-index:0;
@@ -58,6 +58,7 @@ img{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    position:relative;
 }
 .container_default> img {
     position: absolute;
@@ -75,7 +76,14 @@ img{
     z-index:-1;
     transition:var(--animation-slow);
 }
-
+.container_router > img {
+    position: absolute;
+    bottom:0;
+    left: 22%;
+    width: 54%;
+    z-index:-1;
+    transition:var(--animation-slow);
+}
 
 
 </style>

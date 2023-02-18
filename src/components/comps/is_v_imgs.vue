@@ -1,7 +1,7 @@
 <template>
 
-    <div class="background_container">
-        <div class="img_container" ref="target">
+    <div class="background_container" ref="target">
+        <div class="img_container" >
             <div  :class = '{show:is_show}' class="hide">
                 <slot ></slot>
             </div>
@@ -22,7 +22,7 @@ import { ref } from 'vue'
       ([{ isIntersecting }]) => {
         is_show.value = isIntersecting
       },{
-        threshold:0.3
+        threshold:0.2
       }
     )
 
@@ -33,7 +33,8 @@ import { ref } from 'vue'
     width:100%;
     position:relative;
 }
-.background_container::before{
+
+/* .background_container::before{
     content:'';
     position: absolute;
     width: 100%;
@@ -47,21 +48,22 @@ import { ref } from 'vue'
 
     opacity:1;
     
-}
+} */
 
 .img_container{
     width:100%;
     overflow: hidden;
+    /* will-change: transform; */
 }
 .hide{
-    opacity: 0;
+    /* opacity: 0; */
     transform: translateY(-100%);
-    transition:all 0.6s;
+    transition:transform 0.6s;
 }
 .show{
-    opacity: 1;
+    /* opacity: 1; */
     transform: translateY(0);
-    transition:var(--animation-slow);
+    transition:transform 0.6s var(--animation-slow-cubic);
 
 }
 

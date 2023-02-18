@@ -4,7 +4,7 @@
 
         <div class="view_window" :style="view_window_size">
 
-            <div class="list_conatiner" :style="{transform:slides_position}">
+            <div class="list_conatiner" :style="{transform:slides_position, transition:slides_transition}" >
 
 
                     <cover @click="handle_card_click(0)" @pointerover=" handle_card_hover(0,$event)" /> 
@@ -57,6 +57,10 @@ const store = useStore()
 
     //初始化
     onMounted(()=>{
+        //开启列表动画
+        store.slide_show_transition = 'all 0.3s ease-out'
+        //开启index页面的菜单滚动
+        store.scroll_event_status = 1
         //z-index
         store.z_index_page_number = store.page_on
         //卡片偏移到屏幕外
@@ -90,6 +94,8 @@ const store = useStore()
         setTimeout(()=>{
             router.push(store.index_array[id].navto)         
         },300) 
+        //关闭滚动
+        store.scroll_event_status = undefined
     }
     //从库中提取已经计算好的卡片尺寸_视窗使用
     let view_window_size = computed(()=>{
@@ -99,6 +105,10 @@ const store = useStore()
             transition:'all 0.3s ease-in'
         }
     })
+
+    //======================================
+    //触发函数
+    //======================================
     
     //======================================
     //幻灯片逻辑控制
@@ -111,9 +121,14 @@ const store = useStore()
     //     return a*store.page_on*-1 + 'px'
     // })
     let slides_position = computed(()=>{
-        let a = store.page_width*0.4 + 16 
-        return `translateX(${a*store.page_on*-1}px`
+        if (!store.is_touch_slidshow){
+            return `translateX(${store.get_slides_position}px`
+        }else{
+            return `translateX(${store.slideshow_track_touch_position}px`
+        }
+        
     })
+    let slides_transition=computed(()=>store.slide_show_transition)
     
     //处理点击事件-触发翻页动画队列
     let handle_card_click = (id)=>{
@@ -171,11 +186,13 @@ const store = useStore()
             store.z_index_page_number = undefined
             //列表移动-slide_on发生变动
             slides_move(val)
+            //关闭列表追踪
+            store.is_touch_slidshow = false
             //修改显示的信息 
             store.infor_show_witch = store.page_on
             //卡片沉降到-3
             store.z_index_page_number = store.page_on
-        },300)
+        },store.slide_show_animation_delay*300)
         //0.6s后
         setTimeout(()=>{
             //卡片放大
@@ -188,17 +205,34 @@ const store = useStore()
             store.infor_bar_status = true
             //卡片重新偏移
             store.card_positon_move = store.page_on
-        },600)
+            //开启列表动画延迟时间
+            store.slide_show_animation_delay = 1
+        },store.slide_show_animation_delay*400+200)
     }
     //翻页
     let slides_move = (tar)=>{
-            if (tar == 'next'){
-                store.page_on++
-            }else if (tar == 'pre'){
-                store.page_on--
-            }
+                if (tar == 'next'){
+                    if(store.page_on+1<=3){
+                        store.page_on++
+                    }
+                }else if (tar == 'pre'){
+                    if(store.page_on-1>=0){
+                        store.page_on--
+                    }
+                }
+            
     }
 
+    //监听翻页
+    watchEffect(()=>{
+        if(store.triger_slieshow_page_move == 0){
+            animation_queue_click_pagemove('next')
+        }else if (store.triger_slieshow_page_move == 1){
+            animation_queue_click_pagemove('pre')
+        }
+
+        store.triger_slieshow_page_move = undefined
+    })
 
     watchEffect(()=>{
         store.card_size_status.forEach((item,index)=>{
@@ -292,7 +326,6 @@ const store = useStore()
     overflow: hidden;
 }
 .view_window{
-    will-change: width,height;
     height:100vh;
     width:100vw;
     position:relative;
@@ -302,13 +335,13 @@ const store = useStore()
     bottom:0;
 }
 .list_conatiner{
+    will-change: transform;
     display:flex;
     align-items: center;
     gap:16px;
     position:absolute;
     top:0;
     left:0;
-    transition:all 0.3s ease-out;
 }
 </style>
 

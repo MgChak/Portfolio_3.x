@@ -53,7 +53,7 @@ const w_size = useWindowSize()
     //监听鼠标滚轮滚动
     window.addEventListener('wheel',(e)=>{
       //初始化滚动动画
-      store.scroll_animation = 'transition:var(--animation-slow)'
+      store.scroll_animation = 'transition:transform 0.6s var(--animation-slow-cubic)'
       use_handle_scroll(e)
     })
 

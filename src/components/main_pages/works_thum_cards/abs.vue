@@ -37,7 +37,7 @@ const store = useStore()
 <style scoped>
 .container{
     background:rgb(144, 77, 142);
-    will-change: z-index;
+    will-change: z-index transform;
 }
 .container_z_index_back{
     z-index:0;

@@ -1,6 +1,8 @@
 <template>
 
-<div class="main_container" id="article_container_for_scroll" :style="[scroll_position,store.scroll_animation]">
+<div class="main_container" 
+    id="article_container_for_scroll" 
+    :style="[scroll_position,store.scroll_animation]">
     <letsgo/> 
 
     <div class = "overview_sec">
@@ -95,9 +97,9 @@
             <h3>3_It is hard to make a group travel plan online since everyone has a different schedule. </h3>
             <h3>4_It is better to have one app that has all of the features they need for making a travel  plan or during the a trip.</h3>
         </div>
-        <div class="img_conatiner_s">
+        <is_v_imgs>
             <img src="../../assets/art_pages/letsgo/research01.png" alt="">
-        </div>
+        </is_v_imgs>
 
         <div class="section_inner_container">
             <h2>Main learnings of background research - Who is traveling </h2>
@@ -256,8 +258,174 @@
             <img src="../../assets/art_pages/letsgo/poster_3.png" alt="">
     </is_v_imgs>
 
-    <div class="placehoudler"></div>
-    <p>123333</p>
+    <div class="design_process_sec section_conatiner">
+
+        <h1>PREMARY FEATURE 02
+            <br> _TRAVEL PLAN EDITER
+        </h1>
+
+        <h3>
+            Travel plan editer is the second primary feature of LETS GO. It is a collection of all the functions that users can use to create travel plans. Users can create a brand new travel plan with their friends, while users can choose to use events saved from the online community to put together a travel plan they like. The travel plan editer includes four main sections. All the main information in the travel plan is shown in the overview section. Detail section shows all events, lodging and flight information for the travel plan. At the same time, users can set a budget and record the expenditure of the trip in the budget section, and the LETS GO will calculate the amount each tripmate needs to pay according to the setting. Finally, the chat section is where all tripmate communicate.
+        </h3>
+
+        <div class="prototype_links_container">
+
+            <prototype_links :prototype_links = 'prototype_2'/>
+
+            <prototype_links :prototype_links = 'prototype_3'/>
+
+            <prototype_links :prototype_links = 'prototype_4'/>
+
+        </div>
+
+        <div class="video_conatiner_s">
+            <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/796779524?h=b2e3e5af22&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="▶ Prototype_1 - IXD700_Chak - Google Chrome 2023-02-07 15-56-10"></iframe></div>
+        </div>
+
+    </div>
+
+    <div class="discover_research_sec section_conatiner">
+        <h1>USEABILITY TEST  
+           <br> _ADD NEW EVENTS
+        </h1>
+        <div class="section_inner_container">
+            <h2>Key feedback / Problem</h2>
+            <h3>In the first version of the design, there was a section called Explore. Explore section was the place for users to search for events and plans from the online community. 
+                    The result of the useability test shows that the feature of ADDING NEW EVENT and EXPLORE SECTION are duplicated. Those pages complicate the flow of adding an event. Also, users were confused about where they should search the content from the online community since there are three places where they can do the same thing.
+            </h3>
+        </div>
+        <div class="section_inner_container">
+            <h2>Ideas of solutions / Design goals</h2>
+            <h3>1. Delete the Explore section.
+                <br>2. Redesign the page for user to add location to the events.
+                <br>3. Adding the date option on this page for users to add the event to the date they want.
+                <br>4. Clarify the different of two ways to add event in this app.
+                <br>a)Adding from Saved events or plans.
+                <br>b)Adding by create a new event. 
+            </h3>
+            <is_v_imgs>
+                <img ref="imgs" src="../../assets/art_pages/letsgo/events_1.png" alt="">
+            </is_v_imgs>
+        </div>
+        <div class="section_inner_container">
+            <h2>User flow redesign</h2>
+            <h3>To better solve the problem, I decided to start with the user flow instead of the version.
+                <br>I rearranged the pages and deleted some unnecessary pages to help users better understand the whole flow and finish the flow with fewer steps.
+            </h3>
+            <is_v_imgs>
+                    <img ref="imgs"  src="../../assets/art_pages/letsgo/events_2.png" alt="">
+            </is_v_imgs>
+        </div>
+        <div class="section_inner_container">
+            <h2>Improvement</h2>
+            <h3>By removing unnecessary pages and rearranging the user flow. All of the three different ways users can innovate events require fewer steps. Now the flow is clearer and easier to understand.
+            </h3>
+            <is_v_imgs>
+                    <img ref="imgs"  src="../../assets/art_pages/letsgo/events_3.png" alt="">
+            </is_v_imgs>
+        </div>
+        <div class="section_inner_container">
+            <h2>Visual design</h2>
+            <h3>Now user can chose to add event form the saved list or create new one by their own on the first page. 
+                Date option has been added to the page, users now can choose to add event to any scheduled day in this page. Also, with explore disabled, only content that has been saved by the user will be displayed on the search result list.
+            </h3>
+            <is_v_imgs>
+                    <img ref="imgs"  src="../../assets/art_pages/letsgo/events_4.png" alt="">
+            </is_v_imgs>
+            <h3>The explore section was deleted. The only way users search for community content now is through online communities. This avoids confusion. Also, move the chat icon from the upper right corner of the screen to the original explore section's position.
+            </h3>
+            <is_v_imgs>
+                    <img ref="imgs"  src="../../assets/art_pages/letsgo/events_5.png" alt="">
+            </is_v_imgs>
+            <h3>To avoid users needing too many steps to save events from the community. Users can now choose to save their favorite events from the community to their profile or an existing plan.
+            </h3>
+            <is_v_imgs>
+                    <img ref="imgs"  src="../../assets/art_pages/letsgo/events_6.png" alt="">
+            </is_v_imgs>
+        </div>
+    </div>
+
+    <div class="discover_research_sec section_conatiner">
+        <h1>USEABILITY TEST
+           <br> _EVENT CARDS
+        </h1>
+        <div class="section_inner_container">
+            <h2>Key feedback / Problem</h2>
+            <h3>1. The top part is the same as the collapse version. If the name of the event has a lot of words, the name will still be incomplete in the expanded version.
+                <br> 2. It is better to see the bigger image of the event as the expanded version of the card.
+                <br>3. The top part is the same as the collapse version. If the name of the event has a lot of words, the name will still be incomplete in the expanded version.
+                <br>4. It is better to see the bigger image of the event at an expanded version of the card.
+            </h3>
+        </div>
+        <div class="section_inner_container">
+            <h2>Solutions</h2>
+            <h3>1. Delete the Explore section.
+                <br>2. Redesigned the top part, give more space to the event name area to make sure can display the whole name of the events.
+                <br>3. Move tags to the information area.
+                <br>4. More space for the larger img of the event.
+                <br>5. Change 'Move' to 'Date'
+                <br>6. Adding rearrange icon to the list
+                <br>7. Change 'add tickets and reservation' to 'attach' and also changed the icon to help users to understand the function
+            </h3>
+            <is_v_imgs>
+                <img ref="imgs" src="../../assets/art_pages/letsgo/expand_1.png" alt="">
+            </is_v_imgs>
+        </div>
+    </div>
+
+    <div class="discover_research_sec section_conatiner">
+        <h1>USEABILITY TEST
+           <br> _ADD NEW COST
+        </h1>
+        <div class="section_inner_container">
+            <h2>Key feedback / Problem</h2>
+            <h3>1. What if users want to add title from the events in the  plan detail list ?
+                <br> 2. It is so  annoying to tap on the check boxes of everyone in the list.
+                <br>3. User have to count how many friends they are split with by themself.
+            </h3>
+        </div>
+        <div class="section_inner_container">
+            <h2>Solutions</h2>
+            <h3>1. Add an list button for users to add the title by chose the event from the detail list.
+                <br>2.Add 'ALL' button for users to select all the friends by one tap.
+                <br>3. Add number count to show user how many friend they are split with.
+            </h3>
+            <is_v_imgs>
+                <img ref="imgs" src="../../assets/art_pages/letsgo/cost_1.png" alt="">
+            </is_v_imgs>
+        </div>
+    </div>
+
+    <div class="discover_research_sec section_conatiner">
+        <h1>DESIGN DETAIL
+           <br> _INFORMATION CARDS
+        </h1>
+        <div class="section_inner_container">
+            <h3>In the initial design, I used the similar visual design for the lodging and the event cards. This is a feasible solution, and it does not affect the user's use of the feature.
+                <br>But I find that lodging and event are really two different kinds of information. The users have different events every day, but lodging doesn't necessarily change every day. That is, if lodging didn't change, there would be a large space at the top of the list to show the same things every day. As a result, I decided to tweak the design of lodging to display the information in as little space as possible. It's also color-coded so that you don't have to read it again to know that it's lodging information.
+            </h3>
+            <is_v_imgs>
+                <img ref="imgs" src="../../assets/art_pages/letsgo/infor_1.png" alt="">
+            </is_v_imgs>
+        </div>
+    </div>
+
+    <div class="discover_research_sec section_conatiner">
+        <h1>DEFAULT DESIGN
+        </h1>
+        <div class="section_inner_container">
+            <h3>Data are missing when a user first log in to the app or creates a new travel plan. Therefore I designed a different version for the absence of data. For example the overview section and budget section. Before the user added any data to the plan, a description of the feature is displayed in a blank space, guiding the user to understand how to use the feature.
+            </h3>
+            <is_v_imgs>
+                <img ref="imgs" src="../../assets/art_pages/letsgo/default_1.png" alt="">
+            </is_v_imgs>
+        </div>
+    </div>
+
+    <the_footer :card_id = '2'>
+        <transit/>
+    </the_footer>   
+
 
 </div>
 
@@ -267,9 +435,11 @@
 <script setup>
 //组件引入
 import letsgo from'../main_pages/works_thum_cards/letsgo.vue'
+import transit from'../main_pages/works_thum_cards/transit.vue'
 import prototype_links from'../comps/prototype_links.vue'
 import is_v_imgs from'../comps/is_v_imgs.vue'
 import is_v_poster from'../comps/is_v_poster.vue'
+import the_footer from '../footer.vue'
 //hook引入
 import {animation_queue_route_in,animation_queue_route_out} from'../../hooks/use_art_page_functions'
 //依赖引入
@@ -284,11 +454,11 @@ const store = useStore()
         animation_queue_route_in(page_id)
     })
 
-    onBeforeRouteLeave((from,to,next)=>{
-        animation_queue_route_out(page_id)
+    onBeforeRouteLeave((to,from,next)=>{
+        animation_queue_route_out(page_id,to)
         setTimeout(()=>{
             next()
-        },600)    
+        },700)    
     })
 
     //依赖于库中的数据平滑滚动文章
@@ -300,6 +470,24 @@ const store = useStore()
     let prototype_1 = {
         color:'#8CDB4D',
         text:'USER FLOW TASK 1-1 : Search and save an trip plan from community.',
+        v_link:'',
+        f_link:'',
+    }
+    let prototype_2 = {
+        color:'#8CDB4D',
+        text:'USER FLOW TASK 2-1 : Create a new travel plan and send invite to friends.',
+        v_link:'',
+        f_link:'',
+    }
+    let prototype_3 = {
+        color:'#8CDB4D',
+        text:'USER FLOW TASK 2-2 : Add new event to the plan.',
+        v_link:'',
+        f_link:'',
+    }
+    let prototype_4 = {
+        color:'#8CDB4D',
+        text:'USER FLOW TASK 2-3 : Then Add new cost to a event and share it to the group chat.',
         v_link:'',
         f_link:'',
     }
@@ -321,7 +509,7 @@ const store = useStore()
     position:absolute;
     left:0;
 
-    background: linear-gradient(90deg, #0B0C0B 0%, #141B0F 48.61%, #0D0D0C 100%);;
+    background: linear-gradient(90deg, #101013 0%, #1C2415 48.61%, #101013 100%);
 
     
     /* top 1s cubic-bezier(0.36, 0.36, 0.31, 1) */
@@ -353,6 +541,7 @@ h2{
     /* identical to box height */
 
 
+
     /* light_main_100% */
 
     color: #F5F7FB;
@@ -363,6 +552,7 @@ h3{
     font-weight: 300;
     font-size: 20px;
     line-height: 30px;
+    max-width: 1400px;
     /* or 188% */
     /* light_main_60% */
     color: rgba(248, 251, 246, 0.85);
@@ -396,6 +586,9 @@ img{
     display: flex;
     flex-direction: column;
     gap:32px;
+}
+.section_inner_container > h2{
+    margin-bottom:-20px;
 }
 
 .overview_sec{
@@ -440,7 +633,11 @@ img{
     height: 100px;
 }
 
-
+.prototype_links_container{
+    display: flex;
+    flex-direction: column;
+    gap:24px;
+}
 
 
 
@@ -451,8 +648,7 @@ img{
 
 .placehoudler{
     width:100%;
-    height:2000px;
-    background:rgb(0, 0, 0);
+    height:200px;
 }
 p{
     color:white;

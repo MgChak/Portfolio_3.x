@@ -23,6 +23,11 @@ export default defineStore("Main",{
                 }
             })
             return a
+        },
+        //通过视窗宽度和当前所在页面，计算翻页移动距离
+        get_slides_position:(state)=>{
+            let a = state.page_width*0.4 + 16 
+            return a*state.page_on*-1
         }
     },
     state:()=>{
@@ -71,6 +76,21 @@ export default defineStore("Main",{
         //=============================
         //首页slideshow依赖 + thum card 依赖
         //=============================
+            
+            //用于触发翻页函数，当该函数为0触发向左翻页，当函数为1触发向右，为undefined时不动
+            triger_slieshow_page_move:undefined,
+
+            //用于开启和关闭触摸滑动时列表位置跟踪
+            is_touch_slidshow:false,
+
+            //列表位置跟踪时的坐标
+            slideshow_track_touch_position:1,
+
+            //列表移动的动画
+            slide_show_transition:'all 0.3s ease-out',
+
+            //列表动画队列延迟时间
+            slide_show_animation_delay:1,
 
             //slide cards 移动依赖的状态
             page_on:0,
@@ -110,12 +130,12 @@ export default defineStore("Main",{
             infor_show_witch:0,
 
         //=============================
-        //文章平滑滚动依赖
+        //滚动依赖
         //=============================
             //平滑滚动动画
-            scroll_animation:'transition:var(--animation-slow)',
+            scroll_animation:'transition: transform 0.6s var(--animation-slow-cubic)',
             
-            //滚动状态： 0= 文章的滚动/开启滚动条
+            //滚动状态： 0= 文章的滚动/开启滚动条 ，1= works页面的菜单滚动
             scroll_event_status:undefined,
 
             //文章平滑滚动使用：由use_handle_scroll赋值。为0时文章处于顶部。
@@ -130,8 +150,9 @@ export default defineStore("Main",{
             //开始滚动的位置。第一次由touchstart赋值，之后又move赋值
             touch_start_point:0,
 
-            //最后滚动的位置。
-            touch_start_move:0,
+            //开始滚动的位置。只由touchstart赋值赋值一次
+            touch_start_point_once:0,
+
 
             //最后滚动前的时间。
             touch_move_time_pre:undefined,
@@ -145,8 +166,13 @@ export default defineStore("Main",{
             //滚动定时器
             touch_move_timer:undefined,
 
-            
+        //=============================
+        //footer 状态依赖
+        //=============================
 
+            //是否开始router_out动画
+            footer_is_rout_out:false,
+            
 
 
         //=============================
@@ -174,7 +200,7 @@ export default defineStore("Main",{
                     name:'TRANSIT',
                     bio:'TRAVEL APP - UX/UI STUDY CASE - SOLO DESIGNER',
                     time:'2022 spring',
-                    navto:'',
+                    navto:'transit',
                     background_color:'linear-gradient(360deg, #25343D -3.36%, #000000 49.04%)',
                 },{ 
                     id:3,

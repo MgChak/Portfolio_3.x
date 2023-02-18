@@ -37,11 +37,11 @@ let img_position = computed(()=>handle_img_position_change(card_id))
 
 <style scoped>
 .container{
-    will-change:z-index;
+    will-change: z-index transform;
     overflow: hidden;
 }
 img{
-    will-change:transform;
+
 }
 .container_z_index_back{
 z-index:0;

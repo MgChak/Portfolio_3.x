@@ -7,10 +7,18 @@ import {tracker_toggle} from '../hooks/use_mouse_tracker_toggle'
     const store = useStore()
 
     console.log('chushihua')
+    //关闭footer的路由动画
+    store.footer_is_rout_out = false
+    //恢复滚动动画
+    store.scroll_animation='transition: transform 0.6s var(--animation-slow-cubic)',
     //关闭鼠标追踪器
     tracker_toggle('hidden')
     //初始化列表位置，
     store.page_on = store.get_path_now_id
+    //初始化底部信息栏
+    store.infor_show_witch = store.get_path_now_id
+    //初始化文章位置设置为0
+    store.scroll_position = 0
     //修改导航栏状态到文章内状态
     store.navbar_status = 1
     //将滚动行为设置成0=文章滚动
@@ -53,29 +61,50 @@ import {tracker_toggle} from '../hooks/use_mouse_tracker_toggle'
 
 
 //离开时复位与动画队列
-let animation_queue_route_out =(page_id)=>{
+let animation_queue_route_out =(page_id,to)=>{
     const store = useStore()
+    console.log(to)
     //触发卡片内动画：恢复index状态
     //触发卡片内动画
-    store.card_size_status[page_id].card_style = {
-        width:'100vw',
-        height:'100vh',
-        margin:'0',
+    //去works页面
+    if(to.name =='works'){
+        store.card_size_status[page_id].card_style = {
+            width:'100vw',
+            height:'100vh',
+            margin:'0',
+        }
+        store.card_size_status[page_id].card_move.t_transition_backup= 'var(--animation-slow)'
+        store.card_size_status[page_id].card_move.t_scale= 'scale(1,1)'
+        store.card_size_status[page_id].card_class =  'container_expand'
+    
+        store.card_size_status[page_id].card_move.t_translate = ''
+        store.card_size_status[page_id].card_move.t_transition =  store.card_size_status[page_id].card_move.t_transition_backup
+        //将文章滚动回顶部
+        store.scroll_position = 0
+        //关闭导航栏
+        store.is_navbar_open = false
+        //将滚动行为初始化为锁定状态
+        store.scroll_event_status = undefined
+        //重置首页内容物大小-直接放大
+        store.expand_page_number = store.page_on
+    //去艺术页面-由点击footer触发
+    }else if(store.index_array.findIndex((i)=>i.navto==to.name)>=0){
+        //开启footer的路由动画
+        store.footer_is_rout_out = true
+        //关闭导航栏
+        store.is_navbar_open = false
+        //重置首页内容物大小-直接放大
+        store.expand_page_number = store.page_on
+        //关闭滚动动画
+        store.scroll_animation='none',
+        setTimeout(()=>{
+            //初始化文章位置设置为0
+            store.scroll_position = 0
+        },600) 
+        
+        
     }
-    store.card_size_status[page_id].card_move.t_transition_backup= 'var(--animation-slow)'
-    store.card_size_status[page_id].card_move.t_scale= 'scale(1,1)'
-    store.card_size_status[page_id].card_class =  'container_expand'
-
-    store.card_size_status[page_id].card_move.t_translate = ''
-    store.card_size_status[page_id].card_move.t_transition =  store.card_size_status[page_id].card_move.t_transition_backup
-    //将文章滚动回顶部
-    store.scroll_position = 0
-    //关闭导航栏
-    store.is_navbar_open = false
-    //将滚动行为初始化为锁定状态
-    store.scroll_event_status = undefined
-    //重置首页内容物大小-直接放大
-    store.expand_page_number = store.page_on
+    
 }
 
 

@@ -62,7 +62,8 @@ const store = useStore()
 <style scoped>
 .container{
     background:linear-gradient(360deg, #253238 -3.36%, #000000 49.04%);
-    will-change: z-index;
+    will-change: z-index transform;
+
 
 }
 .container_z_index_back{

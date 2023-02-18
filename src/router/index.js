@@ -5,7 +5,7 @@ import playground from '../components/main_pages/playground.vue'
 import about from '../components/main_pages/about.vue'
 
 import letsgo from '../components/art_pages/letsgo_page.vue'
-
+import transit from '../components/art_pages/transit_page.vue'
 
 
 export default  createRouter({
@@ -33,6 +33,10 @@ export default  createRouter({
         name:'letsgo',
         path:'/letsgo',
         component: letsgo,
+      },{   
+        name:'transit',
+        path:'/transit',
+        component: transit,
       }
     ],    
   })
