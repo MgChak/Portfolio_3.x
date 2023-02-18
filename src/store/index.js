@@ -77,7 +77,7 @@ export default defineStore("Main",{
         //首页slideshow依赖 + thum card 依赖
         //=============================
             
-            //用于触发翻页函数，当该函数为0触发向左翻页，当函数为1触发向右，为undefined时不动
+            //用于触发翻页函数，当该函数为-1触发向左翻页，当函数为1触发向右，为undefined时不动
             triger_slieshow_page_move:undefined,
 
             //用于开启和关闭触摸滑动时列表位置跟踪

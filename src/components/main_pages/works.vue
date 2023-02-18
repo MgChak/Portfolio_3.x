@@ -207,16 +207,31 @@ const store = useStore()
             store.card_positon_move = store.page_on
             //开启列表动画延迟时间
             store.slide_show_animation_delay = 1
-        },store.slide_show_animation_delay*400+200)
+        },store.slide_show_animation_delay*300+300)
     }
     //翻页
     let slides_move = (tar)=>{
+
+        //卡片总数 从0开始
+        var cards_num = 3
                 if (tar == 'next'){
-                    if(store.page_on+1<=3){
+                    if(store.page_on+1<=cards_num){
                         store.page_on++
                     }
                 }else if (tar == 'pre'){
                     if(store.page_on-1>=0){
+                        store.page_on--
+                    }
+                }else if (tar == 'next2'){
+                    if(store.page_on+2<=cards_num){
+                        store.page_on=store.page_on+2
+                    }else if(store.page_on+1==cards_num){
+                        store.page_on++
+                    }
+                }else if (tar == 'pre2'){
+                    if(store.page_on-2>=0){
+                        store.page_on=store.page_on-2
+                    }else if(store.page_on-1==0){
                         store.page_on--
                     }
                 }
@@ -225,10 +240,16 @@ const store = useStore()
 
     //监听翻页
     watchEffect(()=>{
-        if(store.triger_slieshow_page_move == 0){
+        if(store.triger_slieshow_page_move == -1){
             animation_queue_click_pagemove('next')
         }else if (store.triger_slieshow_page_move == 1){
             animation_queue_click_pagemove('pre')
+        }else if (store.triger_slieshow_page_move == -2){
+            animation_queue_click_pagemove('next2')
+        }else if (store.triger_slieshow_page_move == 2){
+            animation_queue_click_pagemove('pre2')
+        }else if(store.triger_slieshow_page_move == 0){
+            animation_queue_click_pagemove('stay')
         }
 
         store.triger_slieshow_page_move = undefined

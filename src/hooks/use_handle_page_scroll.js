@@ -235,11 +235,28 @@ let scroll_mode_index_touch_move = (e)=>{
 let scroll_mode_index_touch_end = (e)=>{
     const store = useStore()
 
+    let touch_move_long = (store.touch_start_point_once-store.touch_start_point)/store.page_width
+
     if(store.touch_start_point_once<store.touch_start_point){
-        store.triger_slieshow_page_move=1
+        if(Math.abs(touch_move_long) > 0.65){
+            store.triger_slieshow_page_move=2
+        }else if(Math.abs(touch_move_long) > 0.05){
+            store.triger_slieshow_page_move=1
+        }else{
+            store.triger_slieshow_page_move=0
+        }
+        
     }else if(store.touch_start_point_once>store.touch_start_point){
-        store.triger_slieshow_page_move=0
+        if(Math.abs(touch_move_long)> 0.65){
+            store.triger_slieshow_page_move=-2
+        }else if(Math.abs(touch_move_long) > 0.05){
+            store.triger_slieshow_page_move=-1
+        }else{
+            store.triger_slieshow_page_move=0
+        }
     }
+
+    console.log(touch_move_long)
 
     //开启列表动画
     store.slide_show_transition = 'all 0.3s ease-out'
