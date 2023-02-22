@@ -211,7 +211,7 @@ export default defineStore("Main",{
                     background_color:'linear-gradient(360deg, #3D2539 -3.36%, #000000 49.04%)',
                 }
             ],
-            //控制卡片尺寸逻辑队列
+            //控制卡片尺寸逻辑队列 // 数量需要与首页index（上面的数列）数量相同
             card_size_status:[
                     {
                         card_style:'',

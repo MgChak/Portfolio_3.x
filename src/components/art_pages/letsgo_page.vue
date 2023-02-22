@@ -438,7 +438,6 @@ import letsgo from'../main_pages/works_thum_cards/letsgo.vue'
 import transit from'../main_pages/works_thum_cards/transit.vue'
 import prototype_links from'../comps/prototype_links.vue'
 import is_v_imgs from'../comps/is_v_imgs.vue'
-import is_v_poster from'../comps/is_v_poster.vue'
 import the_footer from '../footer.vue'
 //hook引入
 import {animation_queue_route_in,animation_queue_route_out} from'../../hooks/use_art_page_functions'

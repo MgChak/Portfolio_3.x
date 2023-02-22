@@ -26,7 +26,7 @@
 
 <script setup>
 
-    defineProps(['prototype_links'])
+    let props = defineProps(['prototype_links'])
 
     let handle_click = (id)=>{
         if(id == 1){

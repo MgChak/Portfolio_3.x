@@ -33,8 +33,12 @@
        
     </div>  
 
-
+    <div class="section_conatiner">
+        <img_slideshow :slideshow_arr = 'pc_arr_01'/> 
+    </div>
     <div class="placehoudler"></div>
+
+
     <p>==end==</p>
 
 </div>
@@ -47,13 +51,34 @@
 import transit from'../main_pages/works_thum_cards/transit.vue'
 import prototype_links from'../comps/prototype_links.vue'
 import is_v_imgs from'../comps/is_v_imgs.vue'
-import is_v_poster from'../comps/is_v_poster.vue'
-//hook引入
+import img_slideshow from '../comps/img_slideshow.vue'
+//引入图片
+import poc_4 from '../../assets/art_pages/transit/slideshow/poc_04.png'
+import poc_5 from '../../assets/art_pages/transit/slideshow/poc_05.png'
+import poc_6 from '../../assets/art_pages/transit/slideshow/poc_06.png'
+import poc_7 from '../../assets/art_pages/transit/slideshow/poc_07.png'
+import poc_8 from '../../assets/art_pages/transit/slideshow/poc_08.png'
+import poc_9 from '../../assets/art_pages/transit/slideshow/poc_09.png'
+import poc_13 from '../../assets/art_pages/transit/slideshow/poc_13.png'
+import poc_14 from '../../assets/art_pages/transit/slideshow/poc_14.png'
+import poc_15 from '../../assets/art_pages/transit/slideshow/poc_15.png'
+import poc_16 from '../../assets/art_pages/transit/slideshow/poc_16.png'
+import poc_17 from '../../assets/art_pages/transit/slideshow/poc_17.png'
+import poc_18 from '../../assets/art_pages/transit/slideshow/poc_18.png'
+import poc_20 from '../../assets/art_pages/transit/slideshow/poc_20.png'
+import poc_21 from '../../assets/art_pages/transit/slideshow/poc_21.png'
+import poc_22 from '../../assets/art_pages/transit/slideshow/poc_22.png'
+import poc_23 from '../../assets/art_pages/transit/slideshow/poc_23.png'
+import poc_24 from '../../assets/art_pages/transit/slideshow/poc_24.png'
+import poc_25 from '../../assets/art_pages/transit/slideshow/poc_25.png'
+
+//引入hooks
 import {animation_queue_route_in,animation_queue_route_out} from'../../hooks/use_art_page_functions'
 //依赖引入
 import { computed,onMounted} from 'vue' 
 import useStore from '../../store/index'
 import { onBeforeRouteLeave } from 'vue-router';
+
 
 const store = useStore()
 
@@ -76,6 +101,12 @@ const store = useStore()
 
 
 
+    //轮播图使用数列
+    let pc_arr_01 = {
+        color:'#00FFE0',
+        pics:[poc_4,poc_5,poc_6,poc_7,poc_8,poc_9]
+    }
+    
     
 
 </script>
@@ -94,10 +125,7 @@ const store = useStore()
     left:0;
 
     background: linear-gradient(90deg, #101013 0%, #191b2e 48.61%, #101013 100%);
-
-    
     /* top 1s cubic-bezier(0.36, 0.36, 0.31, 1) */
-  
 }
 
 h1{
@@ -190,6 +218,7 @@ img{
     display: flex;
     flex-direction: column;
     gap:4px;
+    
 }
 .overview_cum1{
     display: flex;
