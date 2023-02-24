@@ -37,8 +37,6 @@ let use_handle_scroll_touch = (e)=>{
 //文章滚动模式-限位，由本函数处理滚动的限位
 let scroll_mode_articel = (deltaY)=>{
     const store = useStore()
-
-    console.log('触发')
     //将文章的高度保存到库
     store.scroll_page_height = document.getElementById('article_container_for_scroll').clientHeight
     //单词滚动距离
@@ -176,7 +174,7 @@ let scroll_mode_index_touch = (e)=>{
         break;
     }
 }
-//文章滚动模式-触摸 - 开始
+//首页菜单滚动模式-触摸 - 开始
 let scroll_mode_index_touch_start = (e)=>{
     const store = useStore()
     //保存初始点位置
@@ -188,7 +186,7 @@ let scroll_mode_index_touch_start = (e)=>{
 
 }
 
-//文章滚动模式-触摸 - 移动
+//首页菜单滚动模式-触摸 - 移动
 let scroll_mode_index_touch_move = (e)=>{
     const store = useStore()
 
@@ -231,7 +229,7 @@ let scroll_mode_index_touch_move = (e)=>{
     
 }
 
-//文章滚动模式-触摸 - 结束
+//首页菜单滚动模式-触摸 - 结束
 let scroll_mode_index_touch_end = (e)=>{
     const store = useStore()
 

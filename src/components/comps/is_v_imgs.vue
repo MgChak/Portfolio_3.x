@@ -12,7 +12,7 @@
 
 <script setup>
 import { useIntersectionObserver } from '@vueuse/core'
-import { ref } from 'vue'
+import { ref,watchPostEffect } from 'vue'
 
     const target = ref(null)
     const is_show = ref(false)
@@ -25,6 +25,11 @@ import { ref } from 'vue'
         threshold:0.2
       }
     )
+    watchPostEffect(()=>{
+        if(is_show.value){
+            stop()
+        }
+    })
 
 </script>
 

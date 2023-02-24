@@ -1,21 +1,21 @@
 <template>
     <div class="is_v" ref="target"></div>
- <Teleport to=".main_view_window">
-    <div class="footer_main_conatiner" 
-    :class="{is_show:is_show}"
-    :style = "is_rout_out"
-    >
-        <h3 v-if="!store.footer_is_rout_out"> NEXT PROJECT</h3>
-        <div class="card_conatiner" 
-            @pointerover=" handle_card_hover(0,$event)"
-            @pointerleave=" handle_card_hover(1,$event)"
-            :class="{on_hover:is_hover&&!store.footer_is_rout_out}"
-            @click = "handle_click"
-            :style = "is_rout_out2">
-            <slot></slot>
+    <Teleport to=".main_view_window">
+        <div class="footer_main_conatiner" 
+        :class="{is_show:is_show}"
+        :style = "[is_rout_out,the_animation]"
+        >
+            <h3 v-if="!store.footer_is_rout_out"> NEXT PROJECT</h3>
+            <div class="card_conatiner" 
+                @pointerover=" handle_card_hover(0,$event)"
+                @pointerleave=" handle_card_hover(1,$event)"
+                :class="{on_hover:is_hover&&!store.footer_is_rout_out}"
+                @click = "handle_click"
+                :style = "[is_rout_out2,the_animation]">
+                <slot></slot>
+            </div>
         </div>
-    </div>
-</Teleport>
+    </Teleport>
 </template>
 
 <script setup>
@@ -80,7 +80,7 @@ const store = useStore()
     let is_rout_out= computed(()=>{
         if(!store.footer_is_rout_out){
             return{
-                height:'35vh'
+                height:'35vh',
             }
         }else{
             return{
@@ -102,6 +102,9 @@ const store = useStore()
         }
     })
 
+    let the_animation = computed(()=>{
+        return {transition:store.footer_animation}
+    })
 
 </script>
 
@@ -120,11 +123,10 @@ const store = useStore()
     position:absolute;
     bottom:-35vh;
     z-index: 3;
-    transition:all 0.3s;
+    
 }
 .is_show{
     bottom:0;
-    transition:var(--animation-slow)
 }
 h3{
     color:white;
@@ -141,11 +143,9 @@ h3{
     
     position:absolute;
     transform:translateY(0);
-    transition:var(--animation-slow)
 }
 .on_hover{
     transform:translateY(-100px);
-    transition:var(--animation-slow)
 }
 .position{
     position:absolute;

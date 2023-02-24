@@ -6,7 +6,7 @@ import about from '../components/main_pages/about.vue'
 
 import letsgo from '../components/art_pages/letsgo_page.vue'
 import transit from '../components/art_pages/transit_page.vue'
-
+import abs from '../components/art_pages/abs_page.vue'
 
 export default  createRouter({
     history: createWebHashHistory(),
@@ -37,6 +37,10 @@ export default  createRouter({
         name:'transit',
         path:'/transit',
         component: transit,
+      },{   
+        name:'abs',
+        path:'/abs',
+        component: abs,
       }
     ],    
   })

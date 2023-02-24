@@ -14,7 +14,7 @@
 //hooks引入
 import{handle_img_position_change} from '../../../hooks/use_works_slideshow_handle.js'
 //依赖引入
-import {computed,defineProps, onMounted} from 'vue'
+import {computed} from 'vue'
 import useStore from '../../../store/index.js'
 const store = useStore()
 //监听对比需要展开的卡片id于自身id，并改变css

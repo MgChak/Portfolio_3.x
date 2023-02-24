@@ -172,6 +172,9 @@ export default defineStore("Main",{
 
             //是否开始router_out动画
             footer_is_rout_out:false,
+
+            //footer 的动画
+            footer_animation: 'var(--animation-slow)',
             
 
 
@@ -207,7 +210,7 @@ export default defineStore("Main",{
                     name:'POSITION',
                     bio:'TRAVEL APP - UX/UI STUDY CASE - SOLO DESIGNER',
                     time:'2022 spring',
-                    navto:'',
+                    navto:'abs',
                     background_color:'linear-gradient(360deg, #3D2539 -3.36%, #000000 49.04%)',
                 }
             ],
@@ -250,7 +253,8 @@ export default defineStore("Main",{
                         card_move:{
                             t_scale:'',
                             t_translate:'',
-                            t_transition:''
+                            t_transition:'',
+                            t_transition_backup:''
                         }
                     },
             ]

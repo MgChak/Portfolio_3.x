@@ -186,9 +186,9 @@
         </is_v_imgs>
     </div>
 
-    <div class="img_conatiner_s">
+    <is_v_imgs>
             <img src="../../assets/art_pages/letsgo/poster_2.png" alt="">
-    </div>
+    </is_v_imgs>
 
     <div class="design_process_sec section_conatiner">
 
@@ -454,10 +454,7 @@ const store = useStore()
     })
 
     onBeforeRouteLeave((to,from,next)=>{
-        animation_queue_route_out(page_id,to)
-        setTimeout(()=>{
-            next()
-        },700)    
+        animation_queue_route_out(page_id,to,next)
     })
 
     //依赖于库中的数据平滑滚动文章

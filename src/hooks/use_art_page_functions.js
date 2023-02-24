@@ -40,6 +40,8 @@ import {tracker_toggle} from '../hooks/use_mouse_tracker_toggle'
         store.card_size_status[page_id].card_move.t_transition =  store.card_size_status[page_id].card_move.t_transition_backup
     
     setTimeout(()=>{
+        // 赋值路由动画速度
+        store.footer_animation = 'var(--animation-slow)'
         //打开导航栏
         store.is_navbar_open = true
 
@@ -61,13 +63,14 @@ import {tracker_toggle} from '../hooks/use_mouse_tracker_toggle'
 
 
 //离开时复位与动画队列
-let animation_queue_route_out =(page_id,to)=>{
+let animation_queue_route_out =(page_id,to,next)=>{
     const store = useStore()
     console.log(to)
     //触发卡片内动画：恢复index状态
     //触发卡片内动画
     //去works页面
     if(to.name =='works'){
+        var timer
         store.card_size_status[page_id].card_style = {
             width:'100vw',
             height:'100vh',
@@ -79,16 +82,31 @@ let animation_queue_route_out =(page_id,to)=>{
     
         store.card_size_status[page_id].card_move.t_translate = ''
         store.card_size_status[page_id].card_move.t_transition =  store.card_size_status[page_id].card_move.t_transition_backup
-        //将文章滚动回顶部
-        store.scroll_position = 0
         //关闭导航栏
         store.is_navbar_open = false
         //将滚动行为初始化为锁定状态
         store.scroll_event_status = undefined
         //重置首页内容物大小-直接放大
         store.expand_page_number = store.page_on
+        timer = requestAnimationFrame(function animation_set(){
+            //关闭滚动动画
+            store.scroll_animation='none'
+            store.scroll_position = store.scroll_position *0.90
+            console.log(3)
+            if(Math.abs(store.scroll_position) >=1 ){
+                timer = requestAnimationFrame(animation_set)
+                console.log(1)
+            }else{
+                cancelAnimationFrame(timer)
+                store.scroll_position = 0 
+                next()
+            }
+        })
+       
     //去艺术页面-由点击footer触发
     }else if(store.index_array.findIndex((i)=>i.navto==to.name)>=0){
+        //赋值路由动画速度
+        store.footer_animation = 'var(--animation-slow)'
         //开启footer的路由动画
         store.footer_is_rout_out = true
         //关闭导航栏
@@ -102,6 +120,11 @@ let animation_queue_route_out =(page_id,to)=>{
             store.scroll_position = 0
         },600) 
         
+        setTimeout(()=>{
+            //清空路由动画速度
+            store.footer_animation = 'null'
+            next()
+        },700)  
         
     }
     
