@@ -71,35 +71,39 @@ let animation_queue_route_out =(page_id,to,next)=>{
     //去works页面
     if(to.name =='works'){
         var timer
-        store.card_size_status[page_id].card_style = {
-            width:'100vw',
-            height:'100vh',
-            margin:'0',
-        }
-        store.card_size_status[page_id].card_move.t_transition_backup= 'var(--animation-slow)'
-        store.card_size_status[page_id].card_move.t_scale= 'scale(1,1)'
-        store.card_size_status[page_id].card_class =  'container_expand'
-    
-        store.card_size_status[page_id].card_move.t_translate = ''
-        store.card_size_status[page_id].card_move.t_transition =  store.card_size_status[page_id].card_move.t_transition_backup
-        //关闭导航栏
-        store.is_navbar_open = false
-        //将滚动行为初始化为锁定状态
-        store.scroll_event_status = undefined
-        //重置首页内容物大小-直接放大
-        store.expand_page_number = store.page_on
         timer = requestAnimationFrame(function animation_set(){
             //关闭滚动动画
             store.scroll_animation='none'
-            store.scroll_position = store.scroll_position *0.90
+            store.scroll_position = store.scroll_position *0.87
             console.log(3)
-            if(Math.abs(store.scroll_position) >=1 ){
+            if(Math.abs(store.scroll_position) >=10 ){
                 timer = requestAnimationFrame(animation_set)
                 console.log(1)
             }else{
                 cancelAnimationFrame(timer)
                 store.scroll_position = 0 
-                next()
+                
+                store.card_size_status[page_id].card_style = {
+                    width:'100vw',
+                    height:'100vh',
+                    margin:'0',
+                }
+                store.card_size_status[page_id].card_move.t_transition_backup= 'var(--animation-slow)'
+                store.card_size_status[page_id].card_move.t_scale= 'scale(1,1)'
+                store.card_size_status[page_id].card_class =  'container_expand'
+            
+                store.card_size_status[page_id].card_move.t_translate = ''
+                store.card_size_status[page_id].card_move.t_transition =  store.card_size_status[page_id].card_move.t_transition_backup
+                //关闭导航栏
+                store.is_navbar_open = false
+                //将滚动行为初始化为锁定状态
+                store.scroll_event_status = undefined
+                //重置首页内容物大小-直接放大
+                store.expand_page_number = store.page_on
+                setTimeout(()=>{
+                    next()
+                },700)  
+
             }
         })
        
