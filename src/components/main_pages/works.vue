@@ -57,6 +57,8 @@ const store = useStore()
 
     //初始化
     onMounted(()=>{
+        //图片追随鼠标偏移关闭
+        store.is_slide_img_moving = false
         //开启列表动画
         store.slide_show_transition = 'all 0.3s ease-out'
         //开启index页面的菜单滚动
@@ -78,12 +80,16 @@ const store = useStore()
             store.view_window_status = 1
             //打开卡片偏移到屏幕内
             store.card_positon_move_hide = false
+            //图片追随鼠标偏移开启
+            store.is_slide_img_moving = true
         
         },100)   
     })
     //路由出动画队列（进入文章）
     let animation_queue_click_route_out = (id)=>{
         //所有窗口隐藏
+        //图片追随鼠标偏移关闭
+        store.is_slide_img_moving = false
         //navbar隐藏
         store.is_navbar_open = false 
         //信息栏隐藏

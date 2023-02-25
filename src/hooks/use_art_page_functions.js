@@ -102,7 +102,7 @@ let animation_queue_route_out =(page_id,to,next)=>{
                 store.expand_page_number = store.page_on
                 setTimeout(()=>{
                     next()
-                },700)  
+                },600)  
 
             }
         })

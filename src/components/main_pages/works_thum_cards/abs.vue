@@ -1,20 +1,22 @@
 <template>
-        <div class="container" :style="[card_size,card_position]" :class="[card_class,card_z_index]" >
-            <img :style="img_position" src="../../../assets/thum_cards/abs_2.png" alt="">
-            <img :style="img_position" src="../../../assets/thum_cards/abs_1.png" alt="">
+        <div class="container" :style="[card_size,card_position]" :class="[card_class,card_z_index]" ref="el" >
+            <div class="el_conatiner" :style = "{width:el_container_size,height:el_container_size}"> 
+                <img :style="img_position" src="../../../assets/thum_cards/abs_2.png" alt="">
+                <img :style="img_position" src="../../../assets/thum_cards/abs_1.png" alt="">
+            </div>
         </div>
     
 </template>
 
 <script setup>
 //hooks引入
-import{handle_img_position_change} from '../../../hooks/use_works_slideshow_handle.js'
+import{handle_img_position_change,handle_el_container_size} from '../../../hooks/use_works_slideshow_handle.js'
 //依赖引入
-import {computed} from 'vue'
+import {computed,ref} from 'vue'
 import useStore from '../../../store/index.js'
+import { useElementSize } from '@vueuse/core'
 const store = useStore()
 
-    
     //监听对比需要展开的卡片id于自身id，并改变css
     let card_id = 3
 
@@ -28,10 +30,9 @@ const store = useStore()
         }
     })
     let img_position = computed(()=>handle_img_position_change(card_id))
-
-
-
-    
+    const el = ref(null)
+    const { width, height } = useElementSize(el)
+    let el_container_size = computed(()=>handle_el_container_size(card_id,width, height))
 
 
 </script>
@@ -39,9 +40,12 @@ const store = useStore()
 <style scoped>
 .container{
     background:linear-gradient(270.03deg, #F9193D 0.03%, #322632 35.03%, #1B2731 62.5%, #2F7DA1 99.97%);
-    will-change: z-index,transform;
+    will-change: z-index;
     overflow: hidden;
     position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .container_z_index_back{
     z-index:0;
@@ -49,46 +53,51 @@ const store = useStore()
 .container_z_index_front{
     z-index:1;
 }
-.container_expand > img:first-child{
+.el_conatiner{
+    position:relative;
+    /* background-color: green; */
+}
+
+.container_expand > .el_conatiner> img:first-child{
     position:absolute;
-    left:12%;
-    bottom: 10%;
-    width:70%;
+    right: 1%;
+    bottom: 18%;
+    width: 104%;
     transition:var(--animation-slow);
 }
-.container_expand > img:last-child{
+.container_expand> .el_conatiner > img:last-child{
     position:absolute;
-    right:18%;
-    bottom: 10%;
-    width:20%;
+    right: -1%;
+    bottom: 13%;
+    width: 40%;
     transition:var(--animation-slow);
 }
-.container_default> img:first-child{
+.container_default> .el_conatiner> img:first-child{
     position: absolute;
-    left: 17%;
-    bottom: 12%;
-    width: 56%;
+    right: 1%;
+    bottom: 18%;
+    width: 104%;
     transition: all 0.3s ease-in;
 }
-.container_default> img:last-child{
+.container_default> .el_conatiner> img:last-child{
     position: absolute;
-    right: 25%;
-    bottom: 14%;
-    width: 17%;
+    right: -1%;
+    bottom: 13%;
+    width: 40%;
     transition: all 0.3s ease-in;
 }
-.container_router> img:first-child{
+.container_router> .el_conatiner> img:first-child{
     position: absolute;
-    left: 19%;
-    bottom: 5%;
-    width: 57%;
+    right: 1%;
+    bottom: 18%;
+    width: 104%;
     transition: var(--animation-slow);
 }
-.container_router> img:last-child{
+.container_router> .el_conatiner> img:last-child{
     position: absolute;
-    right: 23%;
-    bottom: 2%;
-    width: 17%;
+    right: -1%;
+    bottom: 13%;
+    width: 40%;
     transition: var(--animation-slow);
 }
 </style>

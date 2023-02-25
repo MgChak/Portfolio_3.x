@@ -47,7 +47,12 @@ export default defineStore("Main",{
             tracker_status: 'hidden',
             //用来避免元素叠加时，mousetracker的监听不起作用，基本上等于被hover的thumcard的id。
             hover_id:undefined,
+        //=============================
+        //mouse_tracker的依赖状态
+        //=============================
 
+            //图片的偏移依赖
+            is_slide_img_moving:true,
 
         //=============================
         //路由追踪

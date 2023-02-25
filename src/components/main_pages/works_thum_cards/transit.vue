@@ -1,17 +1,20 @@
 <template>
 
-        <div class="container background" :style="[card_size,card_position]" :class="[card_class,card_z_index]" >
-            <img :style="img_position" src="../../../assets/thum_cards/transit_hand.png" alt="">
+        <div class="container background" :style="[card_size,card_position]" :class="[card_class,card_z_index]" ref="el">
+            <div class="el_conatiner" :style = "{width:el_container_size,height:el_container_size}">
+                <img :style="img_position" src="../../../assets/thum_cards/transit_2.png" alt="">
+        
+            </div>
         </div>
-    
 </template>
 
 <script setup>
 //hooks引入
-import{handle_img_position_change} from '../../../hooks/use_works_slideshow_handle.js'
+import{handle_img_position_change,handle_el_container_size} from '../../../hooks/use_works_slideshow_handle.js'
 //依赖引入
-import {computed} from 'vue'
+import {computed,ref} from 'vue'
 import useStore from '../../../store/index.js'
+import { useElementSize } from '@vueuse/core'
 const store = useStore()
 
     //监听对比需要展开的卡片id于自身id，并改变css
@@ -27,13 +30,21 @@ const store = useStore()
         }
     })
     let img_position = computed(()=>handle_img_position_change(card_id))
+    const el = ref(null)
+    const { width, height } = useElementSize(el)
+    let el_container_size = computed(()=>handle_el_container_size(card_id,width, height))
 
 
 </script>
 
 <style scoped>
 .container{
-    will-change: z-index,transform;
+    will-change: z-index;
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 
 }
 img{
@@ -52,6 +63,10 @@ img{
 .container_default{
 
 }
+.el_conatiner{
+    position:relative;
+    /* background-color: green; */
+}
 
 .background{
     background-image: url('../../../assets/thum_cards/transit_background.png');
@@ -60,27 +75,27 @@ img{
     background-repeat: no-repeat;
     position:relative;
 }
-.container_default> img {
+.container_default > .el_conatiner> img {
     position: absolute;
-    bottom:0;
-    left:20%;
-    width:60%;
+    bottom: -26%;
+    left: -54%;
+    width: 202%;
     z-index:-1;
     transition:all 0.3s ease-in;
 }
-.container_expand > img {
+.container_expand > .el_conatiner> img {
     position: absolute;
-    bottom:0;
-    left:6%;
-    width:85%;
+    bottom: -26%;
+    left: -54%;
+    width: 202%;
     z-index:-1;
     transition:var(--animation-slow);
 }
-.container_router > img {
+.container_router > .el_conatiner> img {
     position: absolute;
-    bottom:0;
-    left: 22%;
-    width: 54%;
+    bottom: -26%;
+    left: -37%;
+    width: 171%;
     z-index:-1;
     transition:var(--animation-slow);
 }
