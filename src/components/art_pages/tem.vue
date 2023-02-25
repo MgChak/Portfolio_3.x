@@ -264,5 +264,20 @@ p{
     color:white;
 }
 
-
+@media (max-width: 1000px){
+    .main_container{
+        gap:80px;
+    }
+    .section_conatine{
+        gap:40px;
+    }
+    .section_inner_container{
+        gap:20px;
+    }
+    .overview_container{
+        flex-direction: column;
+        gap:40px;
+        width: var(--content-width)
+    }
+}
 </style>

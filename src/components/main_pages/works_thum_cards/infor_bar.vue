@@ -45,6 +45,7 @@ const store = useStore()
     justify-content: space-between;
     align-items: center;
     cursor: none;
+    pointer-events: none;
 }
 .sub_container{
     display:flex;
@@ -64,5 +65,30 @@ h2{
     font-weight: 400;
     margin-right:60px;
     text-transform: uppercase;
+    text-align: end;
+}
+
+@media (max-width: 900px) {
+    .main_container{
+        flex-direction: column;
+        gap:0px;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .sub_container{
+        align-items: flex-start;
+        margin:0 0;
+    }
+    h1{
+        margin-left:24px;
+        font-size:30px;
+        text-align: start;
+    }
+    h2{
+        margin-left:24px;
+        font-size:15px;
+        margin-right: 0px;
+        text-align: start;
+    }
 }
 </style>

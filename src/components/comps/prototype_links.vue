@@ -78,5 +78,12 @@ h2{
     border-radius: 25px;
     
 }
-
+@media (max-width: 650px){
+   .buttons_container{
+    flex-direction: column;
+   }
+   .button{
+    width:240px;
+   }
+}
 </style>
