@@ -139,7 +139,11 @@ const store = useStore()
     //处理点击事件-触发翻页动画队列
     let handle_card_click = (id)=>{
         if (id == store.page_on){
-            animation_queue_click_route_out(id)
+            if (id == 0){//点击cover不触发任何事件
+                return 
+            }else{
+                animation_queue_click_route_out(id)
+            }
         }else if( id > store.page_on){
             animation_queue_click_pagemove('next')
         }else if( id < store.page_on){
