@@ -6,12 +6,15 @@
 
             <div class="list_conatiner" :style="{transform:slides_position, transition:slides_transition}" >
 
-
+                    <!-- 卡片的渲染排列顺序由html顺序决定，但是id必须是唯一的-->
+                    <!-- 卡片的顺序和id必须对应store.index_arry中的顺序和id否则会发生严重错误-->
+                    <!-- 在更新或者是添加卡片的时候，store.index_arry中的数据必须同步更新-->
                     <cover @click="handle_card_click(0)" @pointerover=" handle_card_hover(0,$event)" /> 
 
                     <letsgo @click="handle_card_click(1)" @pointerover=" handle_card_hover(1,$event)"/> 
 
                     <transit @click="handle_card_click(2)" @pointerover=" handle_card_hover(2,$event)"/> 
+
 
                     <abs @click="handle_card_click(3)" @pointerover=" handle_card_hover(3,$event)"/>
 
@@ -57,6 +60,7 @@ const store = useStore()
 
     //初始化
     onMounted(()=>{
+
         //图片追随鼠标偏移关闭
         store.is_slide_img_moving = false
         //开启列表动画

@@ -21,7 +21,6 @@ let handle_img_position_change = (card_id)=>{
             var d = c/store.get_scrren_center_y
             var y_move = d.toFixed(2) + '%'
 
-            console.log(x_move)
             return {
                 transform:`translate(${x_move}, ${y_move})`,
                 transition:'var(--animation-slow)'

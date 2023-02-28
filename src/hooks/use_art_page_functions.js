@@ -65,7 +65,6 @@ import {tracker_toggle} from '../hooks/use_mouse_tracker_toggle'
 //离开时复位与动画队列
 let animation_queue_route_out =(page_id,to,next)=>{
     const store = useStore()
-    console.log(to)
     //触发卡片内动画：恢复index状态
     //触发卡片内动画
     //去works页面
@@ -75,10 +74,8 @@ let animation_queue_route_out =(page_id,to,next)=>{
             //关闭滚动动画
             store.scroll_animation='none'
             store.scroll_position = store.scroll_position *0.87
-            console.log(3)
             if(Math.abs(store.scroll_position) >=10 ){
                 timer = requestAnimationFrame(animation_set)
-                console.log(1)
             }else{
                 cancelAnimationFrame(timer)
                 store.scroll_position = 0 

@@ -78,8 +78,6 @@ const store = useStore()
     let list_transform = computed(()=>{
         if(!is_touch.value){
 
-            console.log('fany')
-
             var a = page_on.value*(width.value+store.page_width*0.01)
 
             return `translateX(-${a}px)`
@@ -97,7 +95,7 @@ const store = useStore()
             return
         }else if(i > page_on.value){
             page_move('next')
-            console.log(i)
+        
         }else if (i < page_on.value){
             page_move('pre')
         }
@@ -143,7 +141,7 @@ const store = useStore()
                 touch_end(e)
             break;
             default:
-                console.log("滚动行为锁定")
+                
             break;
         }
     }

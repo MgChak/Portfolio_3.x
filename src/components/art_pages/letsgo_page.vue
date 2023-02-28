@@ -422,7 +422,7 @@
         </div>
     </div>
 
-    <the_footer :card_id = '2'>
+    <the_footer :card_id = "store.index_array.findIndex((item)=> item.name == 'TRANSIT' )">
         <transit/>
     </the_footer>   
 
@@ -448,7 +448,7 @@ import { onBeforeRouteLeave } from 'vue-router';
 
 const store = useStore()
 
-    let page_id = 1
+    let page_id = store.index_array.findIndex((item)=> item.name == 'LETS_GO' )
     onMounted(()=>{
         animation_queue_route_in(page_id)
     })

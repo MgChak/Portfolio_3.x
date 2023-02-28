@@ -187,18 +187,21 @@ export default defineStore("Main",{
         //index render依赖
         //=============================
 
-            //目录导航数据
+            //目录导航数据==数据中的id必须等于数据的index
+                //name作为检索值，而text作为渲染内容，不要修改name                     
             index_array:[
                 {   
                     id:0,
                     name:'COVER',
+                    text:'',
                     bio:'TRAVEL APP - UX/UI STUDY CASE ',
                     time:'2022 spring',
                     navto:'',
                     background_color:'black',
                 },{ 
                     id:1,
-                    name:'lets go',
+                    name:'LETS_GO',
+                    text:'Lets Go',
                     bio:'TRAVEL APP - UX/UI STUDY CASE',
                     time:'2022 spring',
                     navto:'letsgo',
@@ -206,13 +209,15 @@ export default defineStore("Main",{
                 },{ 
                     id:2,
                     name:'TRANSIT',
+                    text:'Transit',
                     bio:'TRAVEL APP - UX/UI STUDY CASE ',
                     time:'2022 spring',
                     navto:'transit',
                     background_color:'linear-gradient(360deg, #25343D -3.36%, #000000 49.04%)',
                 },{ 
                     id:3,
-                    name:'POSITION',
+                    name:'ABS_INTERNSHIP',
+                    text:'ABS Summer Intern',
                     bio:'TRAVEL APP - UX/UI STUDY CASE ',
                     time:'2022 spring',
                     navto:'abs',

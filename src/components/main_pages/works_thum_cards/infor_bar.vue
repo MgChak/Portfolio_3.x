@@ -1,6 +1,6 @@
 <template>
     <div class="main_container" :style="[bar_position,bar_width]">
-        <h1>{{ render_infor.name}}</h1>
+        <h1>{{ render_infor.text}}</h1>
         <div class="sub_container">
             <h2>{{ render_infor.bio }}</h2>
             <h2>{{ render_infor.time }}</h2>

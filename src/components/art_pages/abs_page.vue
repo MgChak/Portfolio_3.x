@@ -83,7 +83,7 @@ I combined vertical expand/collapse sections and horizontal sliding cards to mak
 
     </div>
 
-    <the_footer :card_id = '1'>
+    <the_footer :card_id = "store.index_array.findIndex((item)=> item.name == 'LETS_GO' )">
         <letsgo/>
     </the_footer>
 
@@ -110,7 +110,7 @@ import { onBeforeRouteLeave } from 'vue-router';
 
 const store = useStore()
 
-    let page_id = 3
+    let page_id = store.index_array.findIndex((item)=> item.name == 'ABS_INTERNSHIP' )
     onMounted(()=>{
         animation_queue_route_in(page_id)
     })

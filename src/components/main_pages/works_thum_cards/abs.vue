@@ -18,7 +18,7 @@ import { useElementSize } from '@vueuse/core'
 const store = useStore()
 
     //监听对比需要展开的卡片id于自身id，并改变css
-    let card_id = 3
+    let card_id = store.index_array.findIndex((item)=> item.name == 'ABS_INTERNSHIP' )
 
     let card_size = computed(()=>store.card_size_status[card_id].card_style)
     let card_class = computed(()=>store.card_size_status[card_id].card_class)
