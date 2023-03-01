@@ -202,13 +202,13 @@ const store = useStore()
             slides_move(val)
             //关闭列表追踪
             store.is_touch_slidshow = false
-            //修改显示的信息 
-            store.infor_show_witch = store.page_on
             //卡片沉降到-3
             store.z_index_page_number = store.page_on
         },store.slide_show_animation_delay*300)
         //0.6s后
         setTimeout(()=>{
+            //修改显示的信息 
+            store.infor_show_witch = store.page_on
             //卡片放大
             store.expand_page_number = store.page_on
             //卡片内内容放大
@@ -269,6 +269,17 @@ const store = useStore()
         store.triger_slieshow_page_move = undefined
     })
 
+
+
+    //当当前位置处于cover的时候，为右边第一个项目的thum card 添加弹跳动画，帮助用户更好的注意到主要内容。
+    watchEffect(()=>{
+        if(store.page_on == 0 && store.tracker_status=='hidden' && !store.is_touch_slidshow){
+            store.card_size_status[1].card_move.jump_animation = 'jump_animation'
+        }else{
+            store.card_size_status[1].card_move.jump_animation = ''
+        }
+    })
+
     watchEffect(()=>{
         store.card_size_status.forEach((item,index)=>{
             if (index!=store.expand_page_number){
@@ -312,18 +323,15 @@ const store = useStore()
         store.card_size_status.forEach((item,index)=>{
             if(index == store.card_positon_move + 1){
                 if(store.card_positon_move_hide){
-             
                         item.card_move.t_translate = 'translate(100%, 0)'
-                        item.card_move.t_transition='var(--animation-slow)'
-                    
+                        item.card_move.t_transition='var(--animation-slow)'    
                 }else if(['next','projects'].includes(store.tracker_status)){
                     item.card_move.t_translate ='translate(30%, 0)'
                     item.card_move.t_transition='var(--animation-slow)'
                     
                 }else{
                     item.card_move.t_translate = 'translate(50%, 0)'
-                    item.card_move.t_transition='var(--animation-slow)'
-                    
+                    item.card_move.t_transition='var(--animation-slow)'    
                 }
                 
             }else if(index == store.card_positon_move - 1){
@@ -338,7 +346,6 @@ const store = useStore()
                 }else{
                     item.card_move.t_translate = 'translate(-50%, 0)'
                     item.card_move.t_transition='var(--animation-slow)'
-                    
                 }
             }else{
                 item.card_move.t_translate = 'translate(0, 0)'

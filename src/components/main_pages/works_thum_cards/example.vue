@@ -1,6 +1,6 @@
 <template>
 
-        <div class="container background" :style="[card_size,card_position]" :class="[card_class,card_z_index]" ref="el">
+        <div class="container background" :style="[card_size,card_position]" :class="[card_class,card_z_index,jump_animation]" ref="el">
             <div class="el_conatiner" :style = "{width:el_container_size,height:el_container_size}">
                 <!-- 图片和内容一定要放在container里面来实现定位 -->
                 <img :style="img_position" src="../../../assets/thum_cards/transit_2.png" alt="">
@@ -35,6 +35,7 @@ const store = useStore()
     const el = ref(null)
     const { width, height } = useElementSize(el)
     let el_container_size = computed(()=>handle_el_container_size(card_id,width, height))
+    let jump_animation = computed(()=>store.card_size_status[card_id].card_move.jump_animation)
     //依赖代码块==控制thumb中的所有属性变化
 
 
@@ -55,6 +56,7 @@ const store = useStore()
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    position:relative;
 
 }
 img{
@@ -76,6 +78,18 @@ img{
 .el_conatiner{
     position:relative;
     /* background-color: green; */
+}
+.jump_animation{
+    animation: animation 5s infinite;
+    animation-delay: 1s;
+}
+@keyframes animation {
+    0%{left:0%}
+    5%{left:2.5%}
+    10%{left: -2%}
+    15%{left: 1.5%}
+    20%{left: 0%}
+    100%{left: 0%}
 }
 
 .background{

@@ -9,8 +9,11 @@ let use_handle_scroll = (e)=>{
         case 0:
             scroll_mode_articel(e.deltaY)
         break;
+        //index模式
+        case 1:
+            scroll_mode_index(e.deltaY)
+        break;
         default:
-            console.log("滚动行为锁定")
         break;
     }
 
@@ -29,7 +32,7 @@ let use_handle_scroll_touch = (e)=>{
             scroll_mode_index_touch(e)
         break;
         default:
-            console.log("滚动行为锁定")
+        
         break;
     }
 }
@@ -82,7 +85,7 @@ let scroll_mode_articel_touch = (e)=>{
             scroll_mode_articel_touch_end(e)
         break;
         default:
-            console.log("滚动行为锁定")
+
         break;
     }
 }
@@ -140,7 +143,6 @@ let scroll_mode_articel_touch_end = (e)=>{
     
     //计算针动画，直到滚动距离小于1
     store.touch_move_timer = requestAnimationFrame(function animation_set(){
-        console.log('动画')
         position_change = position_change *0.95
         scroll_mode_articel(position_change)
         if(Math.abs(position_change) >=1 ){
@@ -154,7 +156,23 @@ let scroll_mode_articel_touch_end = (e)=>{
 
 
 
-
+//首页菜单滚动模式-滚轮//目前的防抖为600毫秒
+let scroll_mode_index = (e)=>{
+    const store = useStore()
+    if(store.weel_scroll_locker){
+        return
+    }else{
+        store.weel_scroll_locker = true
+        if(e>0){
+            store.triger_slieshow_page_move=-1
+        }else if(e<0){
+            store.triger_slieshow_page_move=1
+        }
+        setTimeout(()=>{
+            store.weel_scroll_locker = false
+        },600)
+    }
+}
 
 //首页菜单滚动模式-触摸 - 分流器
 let scroll_mode_index_touch = (e)=>{
@@ -170,7 +188,7 @@ let scroll_mode_index_touch = (e)=>{
             scroll_mode_index_touch_end(e)
         break;
         default:
-            console.log("滚动行为锁定")
+         
         break;
     }
 }
@@ -253,8 +271,6 @@ let scroll_mode_index_touch_end = (e)=>{
             store.triger_slieshow_page_move=0
         }
     }
-
-    console.log(touch_move_long)
 
     //开启列表动画
     store.slide_show_transition = 'all 0.3s ease-out'

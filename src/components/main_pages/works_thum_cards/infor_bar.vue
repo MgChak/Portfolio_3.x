@@ -1,10 +1,16 @@
 <template>
     <div class="main_container" :style="[bar_position,bar_width]">
-        <h1>{{ render_infor.text}}</h1>
-        <div class="sub_container">
-            <h2>{{ render_infor.bio }}</h2>
-            <h2>{{ render_infor.time }}</h2>
+        <div class="bio_container" v-if="store.infor_show_witch!=0">
+            <h1>{{ render_infor.text}}</h1>
+            <div class="sub_container">
+                <h2>{{ render_infor.bio }}</h2>
+                <h2>{{ render_infor.time }}</h2>
+            </div>
         </div>
+        <div class="cover_container" v-if="store.infor_show_witch==0">
+            <h2>Please swipe, scroll or click on the card to see my works -></h2>
+        </div>
+        
     </div>
     
 </template>
@@ -15,7 +21,7 @@ import useStore from '../../../store/index.js'
 const store = useStore()
     let render_infor = computed(()=>store.index_array[store.infor_show_witch])
     let bar_position = computed(()=>{
-        if(store.infor_bar_status && store.page_on != 0){
+        if(store.infor_bar_status){
             return {bottom:'80px',transition:'var(--animation-slow)'}
         }else{
             return {bottom:'-120px',transition:'all 0.3s ease-in'}
@@ -29,12 +35,7 @@ const store = useStore()
 
 <style scoped>
 .main_container{
-    height:120px;
-    background:var(--color-glass-dark);
     /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
-    backdrop-filter: blur(4px); 
-    -webkit-backdrop-filter: blur(4px);
-    border-radius: 8px;
     position:fixed;
     bottom:0;
     left:0;
@@ -42,10 +43,27 @@ const store = useStore()
     margin: 0px auto;
     color:var(--main-light-100);
     display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.bio_container{
+    height:120px;
+    background:var(--color-glass-dark);
+    backdrop-filter: blur(4px); 
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 8px;
+    width:100%;
+    display:flex;
     justify-content: space-between;
     align-items: center;
     cursor: none;
     pointer-events: none;
+}
+.cover_container{
+    opacity: 0.5;
+}
+.cover_container > h2{
+    text-align: center;
 }
 .sub_container{
     display:flex;
@@ -69,7 +87,7 @@ h2{
 }
 
 @media (max-width: 900px) {
-    .main_container{
+    .bio_container{
         flex-direction: column;
         gap:0px;
         justify-content: center;
