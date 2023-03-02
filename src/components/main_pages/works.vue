@@ -40,6 +40,7 @@ import infor_bar from'./works_thum_cards/infor_bar.vue'
 import {tracker_toggle} from '../../hooks/use_mouse_tracker_toggle'
 //依赖引入
 import {computed,ref,onMounted, watchEffect, reactive} from 'vue'
+import { onBeforeRouteLeave } from 'vue-router'
 import useStore from '../../store/index.js'
 import router from '../../router'
 const store = useStore()
@@ -100,12 +101,6 @@ const store = useStore()
         store.infor_bar_status = false
         //卡片偏移到屏幕外
         store.card_positon_move_hide = true
-        //开始路由
-        setTimeout(()=>{
-            router.push(store.index_array[id].navto)         
-        },300) 
-        //关闭滚动
-        store.scroll_event_status = undefined
     }
     //从库中提取已经计算好的卡片尺寸_视窗使用
     let view_window_size = computed(()=>{
@@ -113,6 +108,19 @@ const store = useStore()
             width:store.get_thumcard_width,
             height:store.get_thumcard_height,
             transition:'all 0.3s ease-in'
+        }
+    })
+
+    onBeforeRouteLeave((to,from,next)=>{
+        //将滚动行为初始化为锁定状态
+        store.scroll_event_status = undefined
+        if(store.index_array.findIndex((i)=>i.navto==to.name)>=0){
+            animation_queue_click_route_out()
+            setTimeout(()=>{
+                next()        
+            },300) 
+        }else{
+            next()
         }
     })
 
@@ -146,7 +154,7 @@ const store = useStore()
             if (id == 0){//点击cover不触发任何事件
                 return 
             }else{
-                animation_queue_click_route_out(id)
+                router.push(store.index_array[id].navto) 
             }
         }else if( id > store.page_on){
             animation_queue_click_pagemove('next')

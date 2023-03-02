@@ -101,7 +101,7 @@ let animation_queue_route_out =(page_id,to,next)=>{
                     next()
                 },600)  
 
-            }
+            }          
         })
        
     //去艺术页面-由点击footer触发
@@ -125,8 +125,18 @@ let animation_queue_route_out =(page_id,to,next)=>{
             //清空路由动画速度
             store.footer_animation = 'null'
             next()
-        },700)  
-        
+        },700)   
+    }else{
+        //关闭导航栏
+        store.is_navbar_open = false
+        //将滚动行为初始化为锁定状态
+        store.scroll_event_status = undefined
+        //重置首页内容物大小-直接放大
+        store.expand_page_number = store.page_on
+        setTimeout(()=>{
+            next()
+        },200)  
+
     }
     
 }
