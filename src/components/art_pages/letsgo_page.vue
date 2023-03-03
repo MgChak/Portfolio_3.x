@@ -45,7 +45,7 @@
         <h1>DESIGN PROCESS</h1>
         <h3>Whenever I start a new project. I always start with discovery research. I will interview target audience and review articles to deepen my understanding of the current situation of the whole industry or a particular kind of app to help me better identify the parts of the industry or apps that need to be improved. After identifying the problem, I start thinking about how my design can bring a better user experience to the users. Then I start designing and test my design with target users. This step will be  the longest in my entire design process. I will constantly revise my design based on user feedback until I get satisfactory results.</h3>
         <is_v_imgs>
-        <img src="../../assets/art_pages/letsgo/process.png" alt="">
+        <img src="../../assets/art_pages/letsgo/process.jpg" alt="">
         </is_v_imgs>
     </div>
 
@@ -54,7 +54,7 @@
         <div class="section_inner_container">
             <h2>User Interview Key Feedbacks:</h2>
             <div class="interview_feedbacks">
-                <img src="../../assets/art_pages/letsgo/user1.png" alt="">
+                <img src="../../assets/art_pages/letsgo/user1.jpg" alt="">
                 <div class="interview_infor">
                     <h3>@Emma Wang (Graphic Design Student)</h3>
                     <h3 class = "style_italic">
@@ -63,7 +63,7 @@
                 </div>
             </div>
             <div class="interview_feedbacks">
-                <img src="../../assets/art_pages/letsgo/user2.png" alt="">
+                <img src="../../assets/art_pages/letsgo/user2.jpg" alt="">
                 <div class="interview_infor">
                     <h3>@Carro (Data Engineer) </h3>
                     <h3 class = "style_italic">
@@ -72,7 +72,7 @@
                 </div> 
             </div> 
             <div class="interview_feedbacks">
-                <img src="../../assets/art_pages/letsgo/user3.png" alt="">
+                <img src="../../assets/art_pages/letsgo/user3.jpg" alt="">
                 <div class="interview_infor">
                     <h3>@Daniel (Banker)</h3>
                     <h3 class = "style_italic">
@@ -81,7 +81,7 @@
                 </div> 
             </div>
             <div class="interview_feedbacks">
-                <img src="../../assets/art_pages/letsgo/user4.png" alt="">
+                <img src="../../assets/art_pages/letsgo/user4.jpg" alt="">
                 <div class="interview_infor">
                     <h3>@Sylvie (Supply Chain Analyst)</h3>
                     <h3 class = "style_italic">
@@ -98,7 +98,7 @@
             <h3>4_It is better to have one app that has all of the features they need for making a travel  plan or during the a trip.</h3>
         </div>
         <is_v_imgs>
-            <img src="../../assets/art_pages/letsgo/research01.png" alt="">
+            <img src="../../assets/art_pages/letsgo/research01.jpg" alt="">
         </is_v_imgs>
 
         <div class="section_inner_container">
@@ -158,7 +158,7 @@
     </div>
 
     <is_v_imgs>
-            <img src="../../assets/art_pages/letsgo/poster_1.png" alt="">
+            <img src="../../assets/art_pages/letsgo/poster_1.jpg" alt="">
     </is_v_imgs>
 
     <div class="design_process_sec section_conatiner">
@@ -166,7 +166,7 @@
         <h3>Through research, I find that the difficulties people encounter in the process of creating travel plans mainly focus on two parts.  First, if people do not want to create a travel plan by themselves, they will need to go to different websites or social media apps to search for the plan they want, and there is no easy way for them to save the plans or events they like. Also, it is even harder for users to put together a new travel plan from different plans.  Secondly, it is really hard for a group of users to create a travel plan together online. They will need so many different tools to help them to create the plane. 
         </h3>
         <is_v_imgs>
-            <img src="../../assets/art_pages/letsgo/problems.png" alt="">
+            <img src="../../assets/art_pages/letsgo/problems.jpg" alt="">
         </is_v_imgs>
     </div>
 
@@ -182,12 +182,12 @@
     <div class="design_process_sec section_conatiner">
         <h1>SITEMAP</h1>
         <is_v_imgs>
-            <img src="../../assets/art_pages/letsgo/sitemap.png" alt="">
+            <img src="../../assets/art_pages/letsgo/sitemap.jpg" alt="">
         </is_v_imgs>
     </div>
 
     <is_v_imgs>
-            <img src="../../assets/art_pages/letsgo/poster_2.png" alt="">
+            <img src="../../assets/art_pages/letsgo/poster_2.jpg" alt="">
     </is_v_imgs>
 
     <div class="design_process_sec section_conatiner">
@@ -203,7 +203,7 @@
         <prototype_links :prototype_links = 'prototype_1'/>
 
         <div class="video_conatiner_s">
-            <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/796779524?h=b2e3e5af22&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="▶ Prototype_1 - IXD700_Chak - Google Chrome 2023-02-07 15-56-10"></iframe></div>
+            <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/804014351?h=7deef408cc&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Letsgo_p_01.mp4"></iframe></div>
         </div>
 
     </div>
@@ -219,7 +219,7 @@
                <br> After more interviews, some users said they do not like the long press interaction. Because it is hard to tell whether they need to press the screen for longer time for harder push.
             </h3>
             <is_v_imgs>
-                <img ref="imgs"  src="../../assets/art_pages/letsgo/card_1.png" alt="">
+                <img ref="imgs"  src="../../assets/art_pages/letsgo/card_1.jpg" alt="">
             </is_v_imgs>
         </div>
         <div class="section_inner_container">
@@ -228,7 +228,7 @@
                <br>Unfortunately, after the first round of A/B testing, I didn't get the results I wanted. Although SOLUTION 1 shows the function more intuitively, it makes the picture very crowded and blocks more picture content. The addition of a three-dots icon in SOLUTION 2 continued to confuse users, and the first reaction of test participants was to single-click rather than long-press.
             </h3>
             <is_v_imgs>
-                <img ref="imgs" src="../../assets/art_pages/letsgo/card_2.png" alt="">
+                <img ref="imgs" src="../../assets/art_pages/letsgo/card_2.jpg" alt="">
             </is_v_imgs>
         </div>
         <div class="section_inner_container">
@@ -237,7 +237,7 @@
                <br>After the second round of A/B testing, I decided to use the SOLUTION 4 as the final solution. Since SOLUTION 4 has a cleaner visual design than SOLUTION 3, and these features are not commonly used by users, especially true when these features appear on a card before the user has read the article yet, so they don't need to be there forever.
             </h3>
             <is_v_imgs>
-                    <img ref="imgs"  src="../../assets/art_pages/letsgo/card_3.png" alt="">
+                    <img ref="imgs"  src="../../assets/art_pages/letsgo/card_3.jpg" alt="">
             </is_v_imgs>
         </div>
     </div>
@@ -249,13 +249,13 @@
             <h3>Version 1 is the original design. In version 2, I changed the way category tags are displayed ( in the “What’s popular” section). The category tags are displayed in two lines, and three-point icons were added to display more category tags. Also, in version 2, I used a larger font to make the content more readable. 
             In Version 3, I decided to keep the larger font but changed the way the category tags were displayed back to version 1. First of all, the what’s popular 'section doesn't need a lot of categories. Therefore the single-line display works fine. Secondly, but also more important, the home page, should use as much space as possible to show important content. The two lines display takes more space than the single-line display.</h3>
             <is_v_imgs>
-                <img src="../../assets/art_pages/letsgo/home.png" alt="">
+                <img src="../../assets/art_pages/letsgo/home.jpg" alt="">
             </is_v_imgs>
         </div>
     </div>
 
     <is_v_imgs>
-            <img src="../../assets/art_pages/letsgo/poster_3.png" alt="">
+            <img src="../../assets/art_pages/letsgo/poster_3.jpg" alt="">
     </is_v_imgs>
 
     <div class="design_process_sec section_conatiner">
@@ -279,7 +279,7 @@
         </div>
 
         <div class="video_conatiner_s">
-            <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/796779524?h=b2e3e5af22&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="▶ Prototype_1 - IXD700_Chak - Google Chrome 2023-02-07 15-56-10"></iframe></div>
+            <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/804014509?h=31cb53a3cb&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Letsgo_p_02"></iframe></div>
         </div>
 
     </div>
@@ -304,7 +304,7 @@
                 <br>b)Adding by create a new event. 
             </h3>
             <is_v_imgs>
-                <img ref="imgs" src="../../assets/art_pages/letsgo/events_1.png" alt="">
+                <img ref="imgs" src="../../assets/art_pages/letsgo/events_1.jpg" alt="">
             </is_v_imgs>
         </div>
         <div class="section_inner_container">
@@ -313,7 +313,7 @@
                 <br>I rearranged the pages and deleted some unnecessary pages to help users better understand the whole flow and finish the flow with fewer steps.
             </h3>
             <is_v_imgs>
-                    <img ref="imgs"  src="../../assets/art_pages/letsgo/events_2.png" alt="">
+                    <img ref="imgs"  src="../../assets/art_pages/letsgo/events_2.jpg" alt="">
             </is_v_imgs>
         </div>
         <div class="section_inner_container">
@@ -321,7 +321,7 @@
             <h3>By removing unnecessary pages and rearranging the user flow. All of the three different ways users can innovate events require fewer steps. Now the flow is clearer and easier to understand.
             </h3>
             <is_v_imgs>
-                    <img ref="imgs"  src="../../assets/art_pages/letsgo/events_3.png" alt="">
+                    <img ref="imgs"  src="../../assets/art_pages/letsgo/events_3.jpg" alt="">
             </is_v_imgs>
         </div>
         <div class="section_inner_container">
@@ -330,17 +330,17 @@
                 Date option has been added to the page, users now can choose to add event to any scheduled day in this page. Also, with explore disabled, only content that has been saved by the user will be displayed on the search result list.
             </h3>
             <is_v_imgs>
-                    <img ref="imgs"  src="../../assets/art_pages/letsgo/events_4.png" alt="">
+                    <img ref="imgs"  src="../../assets/art_pages/letsgo/events_4.jpg" alt="">
             </is_v_imgs>
             <h3>The explore section was deleted. The only way users search for community content now is through online communities. This avoids confusion. Also, move the chat icon from the upper right corner of the screen to the original explore section's position.
             </h3>
             <is_v_imgs>
-                    <img ref="imgs"  src="../../assets/art_pages/letsgo/events_5.png" alt="">
+                    <img ref="imgs"  src="../../assets/art_pages/letsgo/events_5.jpg" alt="">
             </is_v_imgs>
             <h3>To avoid users needing too many steps to save events from the community. Users can now choose to save their favorite events from the community to their profile or an existing plan.
             </h3>
             <is_v_imgs>
-                    <img ref="imgs"  src="../../assets/art_pages/letsgo/events_6.png" alt="">
+                    <img ref="imgs"  src="../../assets/art_pages/letsgo/events_6.jpg" alt="">
             </is_v_imgs>
         </div>
     </div>
@@ -368,7 +368,7 @@
                 <br>7. Change 'add tickets and reservation' to 'attach' and also changed the icon to help users to understand the function
             </h3>
             <is_v_imgs>
-                <img ref="imgs" src="../../assets/art_pages/letsgo/expand_1.png" alt="">
+                <img ref="imgs" src="../../assets/art_pages/letsgo/expand_1.jpg" alt="">
             </is_v_imgs>
         </div>
     </div>
@@ -391,7 +391,7 @@
                 <br>3. Add number count to show user how many friend they are split with.
             </h3>
             <is_v_imgs>
-                <img ref="imgs" src="../../assets/art_pages/letsgo/cost_1.png" alt="">
+                <img ref="imgs" src="../../assets/art_pages/letsgo/cost_1.jpg" alt="">
             </is_v_imgs>
         </div>
     </div>
@@ -405,7 +405,7 @@
                 <br>But I find that lodging and event are really two different kinds of information. The users have different events every day, but lodging doesn't necessarily change every day. That is, if lodging didn't change, there would be a large space at the top of the list to show the same things every day. As a result, I decided to tweak the design of lodging to display the information in as little space as possible. It's also color-coded so that you don't have to read it again to know that it's lodging information.
             </h3>
             <is_v_imgs>
-                <img ref="imgs" src="../../assets/art_pages/letsgo/infor_1.png" alt="">
+                <img ref="imgs" src="../../assets/art_pages/letsgo/infor_1.jpg" alt="">
             </is_v_imgs>
         </div>
     </div>
@@ -417,7 +417,7 @@
             <h3>Data are missing when a user first log in to the app or creates a new travel plan. Therefore I designed a different version for the absence of data. For example the overview section and budget section. Before the user added any data to the plan, a description of the feature is displayed in a blank space, guiding the user to understand how to use the feature.
             </h3>
             <is_v_imgs>
-                <img ref="imgs" src="../../assets/art_pages/letsgo/default_1.png" alt="">
+                <img ref="imgs" src="../../assets/art_pages/letsgo/default_1.jpg" alt="">
             </is_v_imgs>
         </div>
     </div>
@@ -466,26 +466,26 @@ const store = useStore()
     let prototype_1 = {
         color:'#8CDB4D',
         text:'USER FLOW TASK 1-1 : Search and save an trip plan from community.',
-        v_link:'',
-        f_link:'',
+        v_link:'https://vimeo.com/804014351',
+        f_link:'https://www.figma.com/proto/08kW2uqiWTZJbVe2J3MNG4/IXD700_Chak?node-id=736%3A62462&scaling=scale-down&page-id=736%3A28704&starting-point-node-id=736%3A62462',
     }
     let prototype_2 = {
         color:'#8CDB4D',
         text:'USER FLOW TASK 2-1 : Create a new travel plan and send invite to friends.',
-        v_link:'',
-        f_link:'',
+        v_link:'https://vimeo.com/804014509',
+        f_link:'https://www.figma.com/proto/08kW2uqiWTZJbVe2J3MNG4/IXD700_Chak?node-id=760%3A29241&scaling=scale-down&page-id=760%3A28956&starting-point-node-id=760%3A29241',
     }
     let prototype_3 = {
         color:'#8CDB4D',
         text:'USER FLOW TASK 2-2 : Add new event to the plan.',
-        v_link:'',
-        f_link:'',
+        v_link:'https://vimeo.com/804014467',
+        f_link:'https://www.figma.com/proto/08kW2uqiWTZJbVe2J3MNG4/IXD700_Chak?node-id=760%3A33036&scaling=scale-down&page-id=760%3A32574&starting-point-node-id=760%3A33036',
     }
     let prototype_4 = {
         color:'#8CDB4D',
         text:'USER FLOW TASK 2-3 : Then Add new cost to a event and share it to the group chat.',
-        v_link:'',
-        f_link:'',
+        v_link:'https://vimeo.com/804014401',
+        f_link:'https://www.figma.com/proto/08kW2uqiWTZJbVe2J3MNG4/IXD700_Chak?node-id=774%3A31505&scaling=scale-down&page-id=774%3A30724&starting-point-node-id=774%3A31505',
     }
 
     

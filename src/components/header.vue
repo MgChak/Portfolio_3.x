@@ -5,7 +5,7 @@
     
         <div class="inner_container" v-if="store.navbar_status == 0">
     
-            <img src="../assets/logo/logo.svg" alt="" class="web_logo">
+            <img src="../assets/logo/logo2.svg" alt="" class="web_logo">
     
             
             <div class="nav_list_container" >
@@ -77,7 +77,8 @@
     <div class="mv_nav_list_conatiner">
         <div class="mv_nav_list" :style="{right:mv_list_position}">
             <div class="mv_nav" v-for="n in nav_list" :key="n.id"
-                    @click="handle_nav_click(n.id,n.navto)">
+                    @click="handle_nav_click(n.id,n.navto)"
+                    >
 
                     <div class="v_button button">
                     <h4>{{n.text}}</h4>
@@ -116,13 +117,13 @@
         //用户渲染导航列表的数据_默认
         const nav_list = [
             {id:0,text:'Works',navto:'works'},
-            {id:1,text:'Playground',navto:'playground'},
+            // {id:1,text:'Playground',navto:'playground'},
             {id:2,text:'About',navto:'about'},
             {id:3,text:'Resume',navto:''},
         ]
         //用户渲染导航列表的数据_文章内
         const nav_list_in_article = [
-            {id:1,text:'Playground',navto:'playground'},
+            // {id:1,text:'Playground',navto:'playground'},
             {id:2,text:'About',navto:'about'},
             {id:3,text:'Resume',navto:''},
         ]

@@ -241,6 +241,7 @@ h2{
 }
 .contect_container > img{
     width: 60px;
+    flex:none;
 }
 .copy_container{
     display: flex;

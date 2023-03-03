@@ -81,7 +81,7 @@ img{
 }
 
 .background{
-    background-image: url('../../../assets/thum_cards/transit_background.png');
+    background-image: url('../../../assets/thum_cards/transit_background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

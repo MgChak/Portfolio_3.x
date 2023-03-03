@@ -65,23 +65,7 @@
         </is_v_imgs>
     </div>
 
-    <div class="design_process_sec section_conatiner">
 
-        <h1>FEATURE REDESIGN _ ROUT NAVIGATION
-        </h1>
-
-        <h3>
-            ABS allows customers to purchase multiple services at the same time. However, when choosing services, users can only select one package for the same service.
-I combined vertical expand/collapse sections and horizontal sliding cards to make it as easy as possible for the user to understand the purchase rules and naturally limit the user's behavior.
-        </h3>
-
-        <prototype_links :prototype_links = 'prototype_1'/>
-
-        <div class="video_conatiner_s">
-            <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/796779524?h=b2e3e5af22&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="▶ Prototype_1 - IXD700_Chak - Google Chrome 2023-02-07 15-56-10"></iframe></div>
-        </div>
-
-    </div>
 
     <the_footer :card_id = "store.index_array.findIndex((item)=> item.name == 'LETS_GO' )">
         <letsgo/>

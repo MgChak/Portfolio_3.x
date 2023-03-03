@@ -6,7 +6,6 @@ import {tracker_toggle} from '../hooks/use_mouse_tracker_toggle'
  let animation_queue_route_in =(page_id)=>{
     const store = useStore()
 
-    console.log('chushihua')
     //关闭footer的路由动画
     store.footer_is_rout_out = false
     //恢复滚动动画

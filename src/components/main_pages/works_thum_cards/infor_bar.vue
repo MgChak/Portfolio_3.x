@@ -98,14 +98,13 @@ h2{
         margin:0 0;
     }
     h1{
-        margin-left:24px;
+        margin:0 24px;
         font-size:30px;
         text-align: start;
     }
     h2{
-        margin-left:24px;
+        margin:0 24px;
         font-size:15px;
-        margin-right: 0px;
         text-align: start;
     }
 }
