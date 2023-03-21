@@ -40,7 +40,7 @@ const store = useStore()
 <style scoped>
 .container{
     background:linear-gradient(270.03deg, #F9193D 0.03%, #322632 35.03%, #1B2731 62.5%, #2F7DA1 99.97%);
-    will-change: z-index;
+    
     overflow: hidden;
     position:relative;
     display: flex;

@@ -8,7 +8,7 @@
   <scroll_bar/>
 
 
-  <div class="main_view_window" :style="cursor_status" 
+  <div class="main_view_window" :style="[cursor_status,page_height]" 
     @touchstart="use_handle_scroll_touch($event)"
     @touchmove="use_handle_scroll_touch($event)"
     @touchend="use_handle_scroll_touch($event)">
@@ -30,7 +30,7 @@ import scroll_bar from './components/scroll_bar.vue'
 //hook引入
 import {use_handle_scroll,use_handle_scroll_touch} from './hooks/use_handle_page_scroll'
 //依赖引入
-import {onMounted,watchEffect,computed} from 'vue'
+import {onMounted,watchEffect,computed,onBeforeUnmount} from 'vue'
 import {useRoute} from 'vue-router'
 import useStore from './store/index.js'
 import { useWindowSize } from '@vueuse/core'
@@ -41,6 +41,8 @@ const w_size = useWindowSize()
 
 //逻辑
   onMounted(()=>{
+
+
   
     //监听鼠标移动，把鼠标坐标存入库
     window.addEventListener('pointermove', (e)=>{
@@ -56,6 +58,13 @@ const w_size = useWindowSize()
       store.scroll_animation = 'transition:transform 0.6s var(--animation-slow-cubic)'
       use_handle_scroll(e)
     })
+
+    window.addEventListener('wheel',(e)=>{
+      //初始化滚动动画
+      store.scroll_animation = 'transition:transform 0.6s var(--animation-slow-cubic)'
+      use_handle_scroll(e)
+    })
+
 
   })
 
@@ -77,15 +86,16 @@ const w_size = useWindowSize()
     }
   })
 
+  let page_height = computed(()=>{
+    return {height : store.page_height+'px'}
+  })
 
-  
 
 </script>
 
 <style scoped>
 .main_view_window{
   width:100%;
-  height:100vh;
 
   position:fixed;
   z-index: 0;

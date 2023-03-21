@@ -39,7 +39,7 @@ const store = useStore()
 
 <style scoped>
 .container{
-    will-change: z-index;
+    
     position:relative;
     display: flex;
     justify-content: center;

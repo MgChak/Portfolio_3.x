@@ -2,7 +2,7 @@
 
     <div class="background_container" ref="target">
         <div class="img_container" >
-            <div  :class = '{show:is_show}' class="hide">
+            <div  :style = img_show >
                 <slot ></slot>
             </div>
         </div>
@@ -11,8 +11,8 @@
 </template>
 
 <script setup>
-import { useIntersectionObserver } from '@vueuse/core'
-import { ref,watchPostEffect } from 'vue'
+import { useIntersectionObserver,useElementSize } from '@vueuse/core'
+import { ref,watchPostEffect,computed } from 'vue'
 
     const target = ref(null)
     const is_show = ref(false)
@@ -25,9 +25,19 @@ import { ref,watchPostEffect } from 'vue'
         threshold:0.2
       }
     )
+    const { width, height } = useElementSize(target)
+    
     watchPostEffect(()=>{
         if(is_show.value){
             stop()
+        }
+    })
+
+    let img_show = computed(()=>{
+        if(!is_show.value){
+            return {top: height.value * -1 +"px"}
+        }else{
+            return {top:'0px'}
         }
     })
 
@@ -58,18 +68,16 @@ import { ref,watchPostEffect } from 'vue'
 .img_container{
     width:100%;
     overflow: hidden;
-    /* will-change: transform; */
-}
-.hide{
-    /* opacity: 0; */
-    transform: translateY(-100%);
-    transition:transform 0.6s;
-}
-.show{
-    /* opacity: 1; */
-    transform: translateY(0);
-    transition:transform 0.6s var(--animation-slow-cubic);
 
+    
 }
+.img_container > div{
+    position:relative;
+
+    left:0;
+    top:-100%;
+    transition:top 0.6s var(--animation-slow-cubic);
+}
+
 
 </style>

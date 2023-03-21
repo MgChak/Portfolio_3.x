@@ -6,6 +6,10 @@ import {tracker_toggle} from '../hooks/use_mouse_tracker_toggle'
  let animation_queue_route_in =(page_id)=>{
     const store = useStore()
 
+    //调用页面加载函数
+    // page_pre_loading()
+  
+
     //关闭footer的路由动画
     store.footer_is_rout_out = false
     //恢复滚动动画
@@ -28,7 +32,7 @@ import {tracker_toggle} from '../hooks/use_mouse_tracker_toggle'
         //触发卡片内动画
         store.card_size_status[page_id].card_style = {
             width:'100vw',
-            height:'100vh',
+            height:store.page_height+'px',
             margin:'0',
         }
         store.card_size_status[page_id].card_move.t_transition_backup= 'none'
@@ -81,7 +85,7 @@ let animation_queue_route_out =(page_id,to,next)=>{
                 
                 store.card_size_status[page_id].card_style = {
                     width:'100vw',
-                    height:'100vh',
+                    height:store.page_height+'px',
                     margin:'0',
                 }
                 store.card_size_status[page_id].card_move.t_transition_backup= 'var(--animation-slow)'
@@ -140,6 +144,31 @@ let animation_queue_route_out =(page_id,to,next)=>{
     
 }
 
+// let page_pre_loading = ()=>{
+   
+//     //创建数列
+//     let imgs  = document.getElementsByTagName('img')
+//     //加载成功的容器
+//     let count = 0;
+//     //循环确认是否
+//     for(let i = 0; i < imgs.length;i++ ) {
+//         if(imgs[i].onload) {
+//             count++;
+//             console.log('成功')
+//         }else{
+//             console.log('失败')
+//         }
+
+//     }
+
+//     if(count == imgs.length) {
+//         console.log('All images have been loaded');
+//     }else{
+//         console.log(count,imgs.length)
+//     }
+    
+// }
+       
 
 export {
     animation_queue_route_in,

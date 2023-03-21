@@ -47,7 +47,7 @@ const store = useStore()
 
 <style scoped>
 .container{
-    will-change: z-index, left;
+    
     overflow: hidden;
     position:relative;
 }

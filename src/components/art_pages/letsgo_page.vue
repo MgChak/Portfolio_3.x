@@ -495,7 +495,6 @@ const store = useStore()
 <style scoped>
 
 .main_container{
-    will-change: transform;
     width:100%;
     display:flex;
     flex-direction: column;
