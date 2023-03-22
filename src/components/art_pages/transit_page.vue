@@ -382,7 +382,7 @@
     </div>
 
 
-    <the_footer :card_id = "store.index_array.findIndex((item)=> item.name == 'ABS_INTERNSHIP' )">
+    <the_footer :index = "store.index_array.findIndex((item)=> item.name == 'ABS_INTERNSHIP' )">
         <abs/>
     </the_footer>
 
@@ -429,9 +429,9 @@ import poc_24 from '../../assets/art_pages/transit/slideshow/poc_24.jpg'
 import poc_25 from '../../assets/art_pages/transit/slideshow/poc_25.jpg'
 
 //引入hooks
-import {animation_queue_route_in,animation_queue_route_out} from'../../hooks/use_art_page_functions'
+import {animation_queue_route_in,animation_queue_route_out,animation_queue_before_route_in} from'../../hooks/use_art_page_functions'
 //依赖引入
-import { computed,onMounted} from 'vue' 
+import { computed,onMounted,onBeforeMount} from 'vue' 
 import useStore from '../../store/index'
 import { onBeforeRouteLeave } from 'vue-router';
 
@@ -439,6 +439,11 @@ import { onBeforeRouteLeave } from 'vue-router';
 const store = useStore()
 
     let page_id = store.index_array.findIndex((item)=> item.name == 'TRANSIT' )
+
+    onBeforeMount(()=>{
+        animation_queue_before_route_in(page_id)
+    })
+
     onMounted(()=>{
         animation_queue_route_in(page_id)
     })
@@ -448,8 +453,9 @@ const store = useStore()
     })
 
     //依赖于库中的数据平滑滚动文章
-    let scroll_position = computed(()=>{
-        return {transform: 'translateY('+ store.scroll_position*-1+'px)'}
+    //控制滚动
+    let scroll_position = computed(()=>{                    
+        return {top:store.scroll_position*-1+'px'}
     })
 
 

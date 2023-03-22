@@ -65,8 +65,13 @@ let scroll_mode_articel = (deltaY)=>{
         }
 
     //滚动的位置 >= 页面长度减去窗口的高度则不滚动 且 且 滚动的位置 《= 0 则不滚动 
-    }else if (store.scroll_position >= store.scroll_page_height - store.page_height|| store.scroll_position <= 0){
-        console.log('锁定')
+    }else if (store.scroll_position >= store.scroll_page_height - store.page_height && deltaY < 0){
+        store.scroll_position = store.scroll_position + deltaY
+    }else if(store.scroll_position <= 0 && deltaY > 0){
+        store.scroll_position = store.scroll_position + deltaY
+        console.log("122")
+    }else{
+        // console.log("suodin",store.scroll_position,store.scroll_page_height,store.page_height)
         return
     }
 }
@@ -137,20 +142,26 @@ let scroll_mode_articel_touch_end = (e)=>{
     //计算速度
     let b = store.touch_move_dr/a
 
-    //初始化惯性滚动距离
-    let position_change = b.toFixed(1)*30
 
-    
-    //计算针动画，直到滚动距离小于1
-    store.touch_move_timer = requestAnimationFrame(function animation_set(){
-        position_change = position_change *0.95
-        scroll_mode_articel(position_change)
-        if(Math.abs(position_change) >=1 ){
-            store.touch_move_timer = requestAnimationFrame(animation_set)
-        }else{
-            cancelAnimationFrame(store.touch_move_timer)
-        }
-    })
+    console.log(store.touch_move_dr)
+
+    //过滤抖动
+    if ( Math.abs(store.touch_move_dr) < 2){
+        return 
+    }else{
+        //初始化惯性滚动距离
+        let position_change = b.toFixed(1)*30
+        //计算针动画，直到滚动距离小于1
+        store.touch_move_timer = requestAnimationFrame(function animation_set(){
+            position_change = position_change *0.95
+            scroll_mode_articel(position_change)
+            if(Math.abs(position_change) >=1 ){
+                store.touch_move_timer = requestAnimationFrame(animation_set)
+            }else{
+                cancelAnimationFrame(store.touch_move_timer)
+            }
+        })
+    }
     
 }
 

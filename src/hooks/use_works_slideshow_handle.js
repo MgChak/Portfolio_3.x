@@ -31,7 +31,7 @@ let handle_img_position_change = (card_id)=>{
     }
 
 }
-let handle_el_container_size = (card_id,width, height)=>{
+let handle_el_container_size = (width, height)=>{
     const store = useStore()
     // if(card_id == store.get_path_now_id){
     //     if (store.page_height <= store.page_width){
@@ -54,7 +54,16 @@ let handle_el_container_size = (card_id,width, height)=>{
     }
 }
 
+let handle_card_class_change = (name)=>{
+    const store = useStore()
+    //用name找到数列中对应的索引值
+    var index = store.index_array.findIndex((i)=>i.name == name)
+    //用索引值返回对应class
+    return store.index_array[index].class
+}
+
 export {
     handle_img_position_change,
-    handle_el_container_size
+    handle_el_container_size,
+    handle_card_class_change
 }

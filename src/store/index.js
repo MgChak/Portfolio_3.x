@@ -1,4 +1,7 @@
 import { defineStore } from 'pinia'
+import abs from'../components/main_pages/works_thum_cards/abs.vue'
+import letsgo from'../components/main_pages/works_thum_cards/letsgo.vue'
+import transit from'../components/main_pages/works_thum_cards/transit.vue'
 
 export default defineStore("Main",{
     actions:{
@@ -45,8 +48,6 @@ export default defineStore("Main",{
             //这个数据同时被用来控制首页卡片的hover偏移，当值为‘pre’和‘next’时触发
             //同时用来控制默认鼠标的隐藏，只有为‘hidden’时才会显示默认的鼠标
             tracker_status: 'hidden',
-            //用来避免元素叠加时，mousetracker的监听不起作用，基本上等于被hover的thumcard的id。
-            hover_id:undefined,
         //=============================
         //mouse_tracker的依赖状态
         //=============================
@@ -82,66 +83,18 @@ export default defineStore("Main",{
         //首页slideshow依赖 + thum card 依赖
         //=============================
             
-            //用于对滚轮滚动index的行为进行锁定。                            
-            weel_scroll_locker : false,
-
-            //用于触发翻页函数，当该函数为-1触发向左翻页，当函数为1触发向右，为undefined时不动
-            triger_slieshow_page_move:undefined,
-
-            //用于开启和关闭触摸滑动时列表位置跟踪
-            is_touch_slidshow:false,
-
-            //列表位置跟踪时的坐标
-            slideshow_track_touch_position:1,
-
-            //列表移动的动画
-            slide_show_transition:'all 0.3s ease-out',
-
-            //列表动画队列延迟时间
-            slide_show_animation_delay:1,
-
-            //slide cards 移动依赖的状态
-            page_on:0,
-
-            //控制卡片的状态,发生变化的时候，对应id的卡片放大
-            expand_page_number:0,
-
-            //控制卡片的状态,发生变化的时候，对应id的卡片被赋予expand class name 
-            expand_page_class_number:undefined,
-
-            //控制卡片偏移，当与page_on相等时触发偏移,undefined时，卡片不偏移
-            card_positon_move:undefined,
-
-            //控制卡片偏移,为true时卡片处于屏幕外
-            card_positon_move_hide:true,
-
-            //控制卡片内容的动画状态（路由进出文章），当与page_on/get_path_now_id相等时进入文章内状态，为undefined时，恢复
-            router_on_page_number:undefined,
-            
-
-            //视窗的状态:1=全屏，0=缩小
-            view_window_status:1,
-            
-            //控制卡片z-index偏移，当与page_on相等时触发沉降到-3，为undefined时，卡片提升到默认层
-            z_index_page_number:0,
+            //开启路由动画的页面
+            router_page:0,
 
             //记录是第一次打开还是从文章路由到work页面/用来初始化卡片内容
             is_route_to_work:false,
 
-        //=============================
-        //首页底部信息栏依赖
-        //=============================
-            //底部信息栏的开启与关闭
-            infor_bar_status:false,
-            
-            //底部信息栏显示内容
-            infor_show_witch:0,
 
         //=============================
         //滚动依赖
         //=============================
             //平滑滚动动画
-            scroll_animation:'transition: transform 0.6s var(--animation-slow-cubic)',
+            scroll_animation:'transition: all 0.6s var(--animation-slow-cubic)',
             
             //滚动状态： 0= 文章的滚动/开启滚动条 ，1= works页面的菜单滚动
             scroll_event_status:undefined,
@@ -193,88 +146,38 @@ export default defineStore("Main",{
             //目录导航数据==数据中的id必须等于数据的index
                 //name作为检索值，而text作为渲染内容，不要修改name                     
             index_array:[
-                {   
-                    id:0,
-                    name:'COVER',
-                    text:'',
-                    bio:'TRAVEL APP - STUDY CASE ',
-                    time:'2022 spring',
-                    navto:'',
-                    background_color:'black',
-                },{ 
+                { 
                     id:1,
+                    comp:'letsgo',
                     name:'LETS_GO',
                     text:'Lets Go',
-                    bio:'TRAVEL APP - CASE STUDY',
-                    time:'2022 fall',
+                    bio:'TRAVEL APP - CASE STUDY - SOLO DESIGNER',
+                    time:'2022 fall - LIVE',
                     navto:'letsgo',
                     background_color:' linear-gradient(360deg, #2B3825 -3.36%, #000000 49.04%)',
+                    class:'',
                 },{ 
                     id:2,
+                    comp:'transit',
                     name:'TRANSIT',
                     text:'Transit',
-                    bio:'navigation APP - CASE STUDY',
+                    bio:'navigation APP - CASE STUDY - SOLO DESIGNER',
                     time:'2021 spring',
                     navto:'transit',
                     background_color:'linear-gradient(360deg, #25343D -3.36%, #000000 49.04%)',
+                    class:'',
                 },{ 
                     id:3,
+                    comp:'abs',
                     name:'ABS_INTERNSHIP',
                     text:'ABS Intern',
                     bio:'SUMMER INTERNSHIP CASE',
                     time:'2022 summer',
                     navto:'abs',
                     background_color:'linear-gradient(360deg, #3D2539 -3.36%, #000000 49.04%)',
+                    class:'',
                 }
             ],
-            //控制卡片尺寸逻辑队列 // 数量需要与首页index（上面的数列）数量相同
-            card_size_status:[
-                    {
-                        card_style:'',
-                        card_class:'',
-                        card_index:'',
-                        card_move:{
-                            t_scale:'',
-                            t_translate:'',
-                            t_transition:'',
-                            t_transition_backup:'',
-                            jump_animation:''
-                        }
-                    },{
-                        card_style:'',
-                        card_class:'',
-                        card_index:'',
-                        card_move:{
-                            t_scale:'',
-                            t_translate:'',
-                            t_transition:'',
-                            t_transition_backup:'',
-                            jump_animation:''
-                        }
-                    },{
-                        card_style:'',
-                        card_class:'',
-                        card_index:'',
-                        card_move:{
-                            t_scale:'',
-                            t_translate:'',
-                            t_transition:'',
-                            t_transition_backup:'',
-                            jump_animation:''
-                        }
-                    },{
-                        card_style:'',
-                        card_class:'',
-                        card_index:'',
-                        card_move:{
-                            t_scale:'',
-                            t_translate:'',
-                            t_transition:'',
-                            t_transition_backup:'',
-                            jump_animation:''
-                        }
-                    },
-            ]
 
         }
     },

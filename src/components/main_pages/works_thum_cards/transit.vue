@@ -1,8 +1,8 @@
 <template>
 
-        <div class="container background" :style="[card_size,card_position]" :class="[card_class,card_z_index,jump_animation]" ref="el">
+<div class="container background" :class="class_name" ref="el">
             <div class="el_conatiner" :style = "{width:el_container_size,height:el_container_size}">
-                <img :style="img_position" src="../../../assets/thum_cards/transit_2.png" alt="">
+                <img src="../../../assets/thum_cards/transit_2.png" alt="">
         
             </div>
         </div>
@@ -10,30 +10,26 @@
 
 <script setup>
 //hooks引入
-import{handle_img_position_change,handle_el_container_size} from '../../../hooks/use_works_slideshow_handle.js'
+import{handle_img_position_change,handle_el_container_size,handle_card_class_change} from '../../../hooks/use_works_slideshow_handle.js'
 //依赖引入
 import {computed,ref} from 'vue'
 import useStore from '../../../store/index.js'
 import { useElementSize } from '@vueuse/core'
 const store = useStore()
 
-    //监听对比需要展开的卡片id于自身id，并改变css
-    let card_id = store.index_array.findIndex((item)=> item.name == 'TRANSIT' )
+    let name = 'TRANSIT'
 
-    let card_size = computed(()=>store.card_size_status[card_id].card_style)
-    let card_class = computed(()=>store.card_size_status[card_id].card_class)
-    let card_z_index = computed(()=>store.card_size_status[card_id].card_index)
-    let card_position = computed(()=>{
-        return {
-        transform:`${store.card_size_status[card_id].card_move.t_scale} ${store.card_size_status[card_id].card_move.t_translate}`,
-        transition:store.card_size_status[card_id].card_move.t_transition
-        }
-    })
-    let img_position = computed(()=>handle_img_position_change(card_id))
+    // //计算内容物偏移的位置
+    // let img_position = computed(()=>handle_img_position_change(card_id))
+
+    //计算内容物固定框的尺寸
     const el = ref(null)
     const { width, height } = useElementSize(el)
-    let el_container_size = computed(()=>handle_el_container_size(card_id,width, height))
-    let jump_animation = computed(()=>store.card_size_status[card_id].card_move.jump_animation)
+    let el_container_size = computed(()=>handle_el_container_size(width, height))
+
+    //获取class
+    let class_name = computed(()=>handle_card_class_change(name))
+
 
 </script>
 
@@ -45,36 +41,11 @@ const store = useStore()
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    transition:var(--animation-slow);
 
 }
-img{
-
-}
-.jump_animation{
-    animation: animation 5s infinite;
-    animation-delay: 1s;
-}
-@keyframes animation {
-    0%{left:0%}
-    5%{left:2.5%}
-    10%{left: -2%}
-    15%{left: 1.5%}
-    20%{left: 0%}
-    100%{left: 0%}
-}
-.container_z_index_back{
-    z-index:0;
-}
-.container_z_index_front{
-    z-index:1;
-}
-.container_expand{
 
 
-}
-.container_default{
-
-}
 .el_conatiner{
     position:relative;
     /* background-color: green; */
@@ -87,28 +58,41 @@ img{
     background-repeat: no-repeat;
     position:relative;
 }
-.container_default > .el_conatiner> img {
+/* --------------------------------------------------- */
+.container_index{
+    width:100vw;
+    height:var(--thumcard_index_height);
+}
+.container_index> .el_conatiner> img {
     position: absolute;
     bottom: -26%;
     left: -54%;
     width: 202%;
-    z-index:-1;
+    z-index:0;
     transition:all 0.3s ease-in;
 }
-.container_expand > .el_conatiner> img {
+/* --------------------------------------------------- */
+.container_fullscreen{
+    height:var(--thumcard_fullscreen_height);
+    width:100vw;
+}
+.container_fullscreen > .el_conatiner> img {
     position: absolute;
     bottom: -26%;
     left: -54%;
     width: 202%;
-    z-index:-1;
     transition:var(--animation-slow);
 }
-.container_router > .el_conatiner> img {
+/* --------------------------------------------------- */
+.container_article{
+    height:var(--thumcard_article_height);
+    width:100%;
+}
+.container_article > .el_conatiner> img {
     position: absolute;
     bottom: -26%;
     left: -37%;
     width: 171%;
-    z-index:-1;
     transition:var(--animation-slow);
 }
 

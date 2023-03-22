@@ -422,9 +422,9 @@
         </div>
     </div>
 
-    <the_footer :card_id = "store.index_array.findIndex((item)=> item.name == 'TRANSIT' )">
+    <the_footer :index = "store.index_array.findIndex((item)=> item.name == 'TRANSIT' )">
         <transit/>
-    </the_footer>   
+    </the_footer>
 
 
 </div>
@@ -440,15 +440,20 @@ import prototype_links from'../comps/prototype_links.vue'
 import is_v_imgs from'../comps/is_v_imgs.vue'
 import the_footer from '../footer.vue'
 //hook引入
-import {animation_queue_route_in,animation_queue_route_out} from'../../hooks/use_art_page_functions'
+import {animation_queue_route_in,animation_queue_route_out,animation_queue_before_route_in} from'../../hooks/use_art_page_functions'
 //依赖引入
-import { computed,onMounted} from 'vue' 
+import { computed,onMounted,onBeforeMount} from 'vue' 
 import useStore from '../../store/index'
 import { onBeforeRouteLeave } from 'vue-router';
 
 const store = useStore()
 
     let page_id = store.index_array.findIndex((item)=> item.name == 'LETS_GO' )
+
+    onBeforeMount(()=>{
+        animation_queue_before_route_in(page_id)
+    })
+
     onMounted(()=>{
         animation_queue_route_in(page_id)
     })
@@ -458,8 +463,9 @@ const store = useStore()
     })
 
     //依赖于库中的数据平滑滚动文章
-    let scroll_position = computed(()=>{
-        return {transform: 'translateY('+ store.scroll_position*-1+'px)'}
+    //控制滚动
+    let scroll_position = computed(()=>{                    
+        return {top:store.scroll_position*-1+'px'}
     })
 
     //按钮依赖

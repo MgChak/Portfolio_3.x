@@ -30,20 +30,11 @@ import {tracker_toggle} from '../hooks/use_mouse_tracker_toggle'
 const store = useStore()
 
         
-     let {card_id} =  defineProps(['card_id'])
+     let {index} =  defineProps(['index'])
 
-        //初始化：将组件的对应状态保存到库
-        store.card_size_status[card_id].card_style = {
-            width:'100vw',
-            height:'100vh',
-            margin:'0',
-        }
-        store.card_size_status[card_id].card_move.t_transition_backup= 'none'
-        store.card_size_status[card_id].card_move.t_scale= 'scale(1,1)'
-        store.card_size_status[card_id].card_class =  'container_expand'
-
-        store.card_size_status[card_id].card_move.t_translate = ''
-        store.card_size_status[card_id].card_move.t_transition =  store.card_size_status[card_id].card_move.t_transition_backup
+     console.log(index)
+    //初始化：将组件全屏化
+    store.index_array[index].class = 'container_fullscreen'
 
     let is_hover = ref(false)
 
@@ -61,7 +52,7 @@ const store = useStore()
     }
 
     let handle_click = ()=>{
-        router.push(store.index_array[card_id].navto)
+        router.push(store.index_array[index].navto)
     }
 
 
@@ -122,7 +113,7 @@ const store = useStore()
     align-items: center;
     position:absolute;
     bottom:-35vh;
-    z-index: 3;
+    z-index: 10;
     
 }
 .is_show{

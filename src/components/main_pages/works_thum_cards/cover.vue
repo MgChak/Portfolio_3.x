@@ -1,6 +1,6 @@
 <template>
 
-    <div class="container" :style="[card_size,card_position]" :class="[card_class,card_z_index,jump_animation]" ref="el" >
+    <div class="container container_expand" :style="{height:cover_height}" ref="el" >
         <div class="el_conatiner" :style = "{width:el_container_size,height:el_container_size}">
 
             <div class="title_container">
@@ -15,9 +15,14 @@
                     <img src="../../../assets/thum_cards/design.svg" alt="">
                 </div>
             </div>
-            <img class="arrow" :style="img_position" src="../../../assets/thum_cards/cover_arrow.png" alt="">
         </div>
 
+        <div class="arrow_animation">
+            <div class="animation_box">
+                <img src="../../../assets/icons/arrow_downward.svg" alt="">
+            </div>
+        <h3>TO MY PROJECTS</h3>
+    </div>
     </div>
     
 </template>
@@ -31,62 +36,39 @@ import useStore from '../../../store/index.js'
 import { useElementSize } from '@vueuse/core'
 const store = useStore()
     
-    //监听对比需要展开的卡片id于自身id，并改变css
-    let card_id = store.index_array.findIndex((item)=> item.name == 'COVER' )
+    let name = 'LETS_GO'
 
-    let card_size = computed(()=>store.card_size_status[card_id].card_style)
-    let card_class = computed(()=>store.card_size_status[card_id].card_class)
-    let card_z_index = computed(()=>store.card_size_status[card_id].card_index)
-    let card_position = computed(()=>{
-        return {
-        transform:`${store.card_size_status[card_id].card_move.t_scale} ${store.card_size_status[card_id].card_move.t_translate}`,
-        transition:store.card_size_status[card_id].card_move.t_transition
-        }
-    })
-    let img_position = computed(()=>handle_img_position_change(card_id))
+    // //计算内容物偏移的位置
+    // let img_position = computed(()=>handle_img_position_change(card_id))
+
+    //计算内容物固定框的尺寸
     const el = ref(null)
     const { width, height } = useElementSize(el)
-    let el_container_size = computed(()=>handle_el_container_size(card_id,width, height))
-    let jump_animation = computed(()=>store.card_size_status[card_id].card_move.jump_animation)
+    let el_container_size = computed(()=>handle_el_container_size(width, height))
 
-
+    //使用屏幕的真实高度
+    let cover_height = computed(()=>store.page_height +'px')
 
 </script>
 
 <style scoped>
 .container{
-    background:linear-gradient(360deg, #253238 -3.36%, #000000 49.04%);
+    /* background:linear-gradient(360deg, #253238 -3.36%, #000000 49.04%); */
     
     overflow: hidden;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     position:relative;
+    width:100vw;
 
-}
-.container_z_index_back{
-    z-index:0;
-}
-.container_z_index_front{
-    z-index:1;
 }
 
 .el_conatiner{
     position:relative;
     /* background-color: green; */
 }
-.jump_animation{
-    animation: animation 5s infinite;
-    animation-delay: 1s;
-}
-@keyframes animation {
-    0%{left:0%}
-    5%{left:2.5%}
-    10%{left: -2%}
-    15%{left: 1.5%}
-    20%{left: 0%}
-    100%{left: 0%}
-}
+
 .title_container{
     display: flex;
     flex-direction: column;
@@ -116,18 +98,7 @@ const store = useStore()
     width: 100%;
     transform:translateY(102%);
 }
-.arrow{
-    position: absolute;
-    width: 42vw;
-    max-width: 1200px;
-    margin: auto;
-    top: 0%;
-    bottom: 0%;
-    left:-200%;
-}
-.container_expand > .el_conatiner > .arrow{
-    animation: ani_arrow 0.6s var(--animation-slow-cubic) 0.6s forwards;
-}
+
 .container_expand > .el_conatiner >.title_container > .box1 > img{
     animation: ani_font 0.6s var(--animation-slow-cubic) forwards;
 }
@@ -139,12 +110,7 @@ const store = useStore()
 }
 
 
-.container_default > .el_conatiner >.title_container > .box > img{
-    animation: ani_font2 0.3s ease-in forwards;
-}
-.container_default > .el_conatiner > .arrow{
-    animation: ani_arrow2 0.3s ease-in forwards;
-}
+
 h1,
 h2,
 h3,
@@ -161,12 +127,59 @@ h4{
     to{transform:translateY(102%);}
 }
 
-@keyframes ani_arrow {
-    from{left:-200%;}
-    to{left:-20%;}
+.arrow_animation{
+    position: absolute;
+    bottom:5vh;
+    margin:0 auto;
+    left:0;
+    right:0;
+    width:200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:24px;
 }
-@keyframes ani_arrow2 {
-    from{left:-20%;}
-    to{left:-200%;}
+h3{
+    font-size: 20px;
+    font-weight: 300;
+}
+.animation_box{
+    width:30px;
+    border: 2px solid white;
+    border-radius: 30px;
+    height:60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    opacity: 0.8;
+    
+}
+.animation_box > img{
+    width:20px;
+    position:relative;
+    animation:arrow linear 1.5s infinite;
+}
+
+@keyframes arrow {
+    from{top:-40px}
+    to{top:60px}
+}
+
+@media (max-width: 800px){
+    h3{
+        font-size: 15px;
+        font-weight: 300;
+    }
+    .arrow_animation{
+        gap:16px;
+    }
+    .animation_box{
+        width:20px;
+        height:40px;
+    }
+    .animation_box > img{
+        width:13px;
+    }
 }
 </style>
