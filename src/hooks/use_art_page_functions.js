@@ -6,8 +6,6 @@ import {tracker_toggle} from '../hooks/use_mouse_tracker_toggle'
 let animation_queue_before_route_in =(page_id)=>{
     const store = useStore()
 
-    //调用页面加载函数
-    // page_pre_loading()
 
     //将thum全屏化
     store.index_array[page_id].class = 'container_fullscreen'
@@ -31,6 +29,12 @@ let animation_queue_before_route_in =(page_id)=>{
  let animation_queue_route_in =(page_id)=>{
     const store = useStore()
 
+    //页面图片加载统计
+    // var imgCount = document.querySelectorAll('img').length
+    // page_pre_loading(imgCount)
+
+
+
     //将thum调整为文章内状态
     store.index_array[page_id].class = 'container_article'
     // 赋值路由动画速度
@@ -39,6 +43,7 @@ let animation_queue_before_route_in =(page_id)=>{
     store.is_navbar_open = true 
     //将文章的高度保存到库
     store.scroll_page_height = document.getElementById('article_container_for_scroll').clientHeight  
+
 }
 
 
@@ -114,32 +119,25 @@ let animation_queue_route_out =(page_id,to,next)=>{
     }
     
 }
-
-// let page_pre_loading = ()=>{
-   
-//     //创建数列
-//     let imgs  = document.getElementsByTagName('img')
-//     //加载成功的容器
-//     let count = 0;
-//     //循环确认是否
-//     for(let i = 0; i < imgs.length;i++ ) {
-//         if(imgs[i].onload) {
-//             count++;
-//             console.log('成功')
-//         }else{
-//             console.log('失败')
-//         }
-
-//     }
-
-//     if(count == imgs.length) {
-//         console.log('All images have been loaded');
-//     }else{
-//         console.log(count,imgs.length)
-//     }
-    
-// }
        
+// let page_pre_loading = (imgCount)=>{
+   
+//     const images = document.querySelectorAll('img')
+//     let loadedCount = 0
+//     for (let i = 0; i < images.length; i++) {
+//         const img = new Image()
+//         img.onload = () => {
+//             loadedCount++
+//             if (loadedCount === imgCount) {
+               
+//                 console.log('done')
+//             }
+//         }
+//         img.src = images[i].src
+//     }
+ 
+    
+//  }  
 
 export {
     animation_queue_route_in,

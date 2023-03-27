@@ -79,6 +79,9 @@ export default defineStore("Main",{
             //navbar的状态 0=默认,1=文章内
             navbar_status:0,
 
+            //表示手机端二级菜单的开关
+            is_mv_nav_open:false,
+
         //=============================
         //首页slideshow依赖 + thum card 依赖
         //=============================
@@ -104,6 +107,9 @@ export default defineStore("Main",{
 
             //用于保存文章的高度
             scroll_page_height:0,
+
+            //滚动数据（距离和方向）
+            scroll_di_dr:0,
         
         //=============================
         //触摸滑滚动依赖

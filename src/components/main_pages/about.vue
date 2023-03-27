@@ -74,6 +74,8 @@ const store = useStore()
 
     onMounted(()=>{
 
+        //复位路由路径
+        store.is_route_to_work = false
         //将滚动行为设置成0=文章滚动
         store.scroll_event_status = 0
         //修改导航栏状态到默认状态

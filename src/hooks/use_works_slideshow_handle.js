@@ -1,5 +1,6 @@
 
 import useStore from '../store'
+import {ref} from 'vue'
 
 let handle_img_position_change = (card_id)=>{
 
@@ -54,16 +55,31 @@ let handle_el_container_size = (width, height)=>{
     }
 }
 
-let handle_card_class_change = (name)=>{
+let handle_card_class_height_change = (name)=>{
     const store = useStore()
     //用name找到数列中对应的索引值
     var index = store.index_array.findIndex((i)=>i.name == name)
+
+    var a = store.index_array[index].class
+    var b
+
+   if (a =='container_fullscreen'){
+        b = store.page_height+'px '
+   }else if(a =='container_article'){
+        b = store.page_height *0.8+'px '
+   }else if(a =='container_index'){
+        b = store.page_height *0.7+'px '
+
+   }
+    
     //用索引值返回对应class
-    return store.index_array[index].class
+    return {class_name:a,height:b}
 }
+
+
 
 export {
     handle_img_position_change,
     handle_el_container_size,
-    handle_card_class_change
+    handle_card_class_height_change,
 }

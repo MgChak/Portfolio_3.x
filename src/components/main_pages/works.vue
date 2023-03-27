@@ -106,7 +106,8 @@ const store = useStore()
             //index化thum
             store.index_array[store.router_page].class = "container_index"
         }
-        
+        //复位路由路径
+        store.is_route_to_work = false
         
     })
 
@@ -134,7 +135,7 @@ const store = useStore()
     //修改index_array中的class属性
     let rewrite_index_class = ()=>{
         store.index_array.forEach((i)=>{
-            i.class = "container_index "
+            i.class = "container_index"
         })
     }
 

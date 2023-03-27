@@ -2,7 +2,8 @@
 
 <div class="main_container" :style="scroll_bar_style">
     <div 
-        class="scroll_mark" 
+        class="scroll_mark"
+       v-if = "!store.is_mv_nav_open"
         :style="scroll_mark_style" 
         @mousedown="handle_drag_start($event)"
     ></div>
@@ -29,9 +30,15 @@ const store = useStore()
 
         switch (store.scroll_event_status) {
             case 0:
-                scroll_bar_height = store.page_height +'px'
                 scroll_bar_right = 0
-                scroll_bar_height_num = store.page_height
+                if (store.navbar_status == 0){
+                    scroll_bar_height = store.page_height-100 +'px'
+                    scroll_bar_height_num = store.page_height-100
+                }else if(store.navbar_status == 1){
+                    scroll_bar_height = store.page_height +'px'
+                    scroll_bar_height_num = store.page_height
+                }
+                
             break;
             default:
                 scroll_bar_height = store.page_height +'px'
@@ -105,7 +112,7 @@ const store = useStore()
     width:4px;
     position:absolute;
     right:10px;
-    background:white;
+    background:rgba(255, 255, 255, 0.667);
     border-radius: 20px;
     transition:var(--animation-slow);
     pointer-events:all;

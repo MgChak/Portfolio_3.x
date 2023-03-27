@@ -93,7 +93,7 @@
         </div>
     </div>
     
-    <div class="mv_nav_list_background" v-if = "is_mv_nav_open" @click = "handle_mv_menu_click"></div>   
+    <div class="mv_nav_list_background" v-if = "store.is_mv_nav_open" @click = "handle_mv_menu_click"></div>   
     
     </template>
     
@@ -112,7 +112,6 @@
     const store = useStore()
 
 
-    let is_mv_nav_open = ref(false)
     //逻辑
         //用户渲染导航列表的数据_默认
         const nav_list = [
@@ -137,8 +136,8 @@
             }else if(id == 3){//直接打开路径下的pdf
                 window.open('http://chakshing.com/chak.pdf')
             }  
-
-            is_mv_nav_open.value = false
+            
+            store.is_mv_nav_open = false
         }
         //取出响应式的路径数据。模板中，dot会根据根据这一参数决定是否绑定active class
         let path_now = computed(()=>store.path_now)
@@ -170,7 +169,7 @@
        
 
         let mv_list_position = computed(()=>{
-            if (is_mv_nav_open.value){
+            if (store.is_mv_nav_open){
                 return '7.5%'
             }else {
                 return '-100%'
@@ -178,11 +177,11 @@
         })
 
         let handle_mv_menu_click = ()=>{
-            is_mv_nav_open.value = !is_mv_nav_open.value 
+            store.is_mv_nav_open = !store.is_mv_nav_open 
         }
 
         let icons = computed(()=>{
-            if(is_mv_nav_open.value){
+            if(store.is_mv_nav_open){
                 return close
             }else{
                 return menu
