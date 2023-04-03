@@ -1,6 +1,5 @@
 
 import useStore from '../store'
-import {ref} from 'vue'
 
 let handle_img_position_change = (card_id)=>{
 
@@ -63,14 +62,14 @@ let handle_card_class_height_change = (name)=>{
     var a = store.index_array[index].class
     var b
 
-   if (a =='container_fullscreen'){
-        b = store.page_height+'px '
-   }else if(a =='container_article'){
-        b = store.page_height *0.8+'px '
-   }else if(a =='container_index'){
-        b = store.page_height *0.7+'px '
+    if (a =='container_fullscreen'){
+            b = store.page_height+'px '
+    }else if(a =='container_article'){
+            b = store.page_height *0.8+'px '
+    }else if(a =='container_index'){
+            b = store.page_height *0.7+'px '
 
-   }
+    }
     
     //用索引值返回对应class
     return {class_name:a,height:b}

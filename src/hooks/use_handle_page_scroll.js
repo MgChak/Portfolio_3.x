@@ -40,6 +40,8 @@ let use_handle_scroll_touch = (e)=>{
 //文章滚动模式-限位，由本函数处理滚动的限位
 let scroll_mode_articel = (deltaY)=>{
     const store = useStore()
+    //将滚动方向和距离保存到库中
+    store.scroll_di_dr = deltaY
     //将文章的高度保存到库
     store.scroll_page_height = document.getElementById('article_container_for_scroll').clientHeight
     //单词滚动距离

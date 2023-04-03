@@ -72,7 +72,7 @@ const store = useStore()
 }
 /* --------------------------------------------------- */
 .container_fullscreen{
-    width:100vw;
+    width:100%;
 }
 .container_fullscreen > .el_conatiner> img {
     position: absolute;

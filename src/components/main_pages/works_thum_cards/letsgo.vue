@@ -1,11 +1,10 @@
 <template>
 
     <div class="container background" :class="card_size.class_name" :style="{height:card_size.height}" ref="el">
-
             <div class="el_conatiner" :style = "{width:el_container_size,height:el_container_size}">
 
-                <img  src="../../../assets/thum_cards/lp.png" class="largephone" alt="">
-                <img  src="../../../assets/thum_cards/letsgo_small_p.png" class="smallphone" alt="">
+                <img src="../../../assets/thum_cards/lp.png" class="largephone" alt="">
+                <img src="../../../assets/thum_cards/letsgo_small_p.png" class="smallphone" alt="">
             </div>
         
             
@@ -36,8 +35,6 @@ const store = useStore()
 
     //获取class和高度
     let card_size = computed(()=>handle_card_class_height_change(name))
-
-    
 
 </script>
 
@@ -123,5 +120,7 @@ align-items: center;
     z-index: 3;
     transition: var(--animation-slow);
 }
+
+
 
 </style>

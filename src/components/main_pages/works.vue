@@ -18,9 +18,7 @@
             <component :is="render_comp(i.comp)"/>
            
             <div class="bio_container">
-                <h1>{{ i.text}}</h1>
-                <h2>{{ i.bio }}</h2>
-                <h2>{{ i.time }}</h2>
+                <infor_bar :infor_obj="{text: i.text,bio:i.bio,time:i.time}"/>
             </div>
 
             <div class="breakline"></div>
@@ -37,10 +35,11 @@ import abs from'./works_thum_cards/abs.vue'
 import letsgo from'./works_thum_cards/letsgo.vue'
 import transit from'./works_thum_cards/transit.vue'
 import cover from './works_thum_cards/cover.vue'
+import infor_bar from './works_thum_cards/infor_bar.vue'
 //hooks引入
 import {tracker_toggle} from '../../hooks/use_mouse_tracker_toggle'
 //依赖引入
-import {computed,onMounted, watchEffect,onBeforeMount,shallowRef,markRaw} from 'vue'
+import {computed,onMounted, watch,onBeforeMount} from 'vue'
 import { onBeforeRouteLeave } from 'vue-router'
 import useStore from '../../store/index.js'
 import router from '../../router'
@@ -184,7 +183,6 @@ const store = useStore()
                 tracker_toggle(val)
             }
     }
-   
 </script>
 
 <style scoped>
@@ -193,6 +191,7 @@ const store = useStore()
     height:200px;
 }
 .main_conatiner{
+    width: 100vw;
     position:absolute;
     display:flex;
     flex-direction: column;
@@ -205,13 +204,15 @@ const store = useStore()
     display:flex;
     flex-direction: column;
     gap:40px;
+    width:100%;
 }
 .bio_container{
-    width:var(--content-width);
+    width:100%;
     margin: 0 auto;
     display:flex;
     flex-direction: column;
     pointer-events: none;
+    overflow: hidden;
 
 }
 h1{
