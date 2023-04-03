@@ -75,14 +75,14 @@ const store = useStore()
 }
 .container_fullscreen> .el_conatiner> img:first-child{
     position: absolute;
-    right: 8%;
+    right: 5%;
     bottom: 18%;
     width: 104%;
     transition: all 0.3s ease-in;
 }
 .container_fullscreen> .el_conatiner> img:last-child{
     position: absolute;
-    right: -4%;
+    right: -2%;
     bottom: 13%;
     width: 40%;
     transition: all 0.3s ease-in;

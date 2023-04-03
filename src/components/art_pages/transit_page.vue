@@ -161,9 +161,6 @@
     <div class="section_conatiner">
         <h1>PROBLEMS AND SOLUTIONS</h1>
         <h3>The two main issues for Transit currently are a lack of visual design and functionality. Although having strong functionality is essential for an app, according to HCI research, a well-designed visual design can make users perceive the app as more reliable. Users are more likely to choose an app with a visually appealing UI design over one with just strong functionality. This is a critical issue for Transit, as it is not able to stand out from its competitors with a superior UI design. With more and more competitors adding real-time location tracking, Transit is further losing its competitiveness. A weakness in functionality is another problem for Transit. Its single function cannot meet all of the users' needs when using public transportation. That's why in this redesign, I plan to design a brand new visual system for Transit and add more functions to ensure that Transit can meet all the needs of users when using public transportation, such as route saving, payment, security, and others.</h3>
-        <is_v_imgs>
-        <img src="../../assets/art_pages/transit/process.jpg" alt="">
-        </is_v_imgs>
     </div>
 
     <!-- FEATURE REDESIGN_ROUT NAVIGATION -->

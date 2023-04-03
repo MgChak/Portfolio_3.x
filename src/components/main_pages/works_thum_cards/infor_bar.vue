@@ -55,7 +55,7 @@ const store = useStore()
     const el = ref(null)
     const { width } = useElementSize(el)
     watchPostEffect(()=>{
-        if (width.value<store.page_width*2){
+        if (width.value<store.page_width*1.5){
             list_length.value = list_length.value + 2
             console.log(1)
         }

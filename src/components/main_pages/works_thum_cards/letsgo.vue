@@ -95,7 +95,7 @@ align-items: center;
 .container_fullscreen >.el_conatiner> .smallphone {
     position: absolute;
     bottom: 16%;
-    left: 21%;
+    left: 24%;
     width: 90%;
     z-index: 3;
     transition: var(--animation-slow);
