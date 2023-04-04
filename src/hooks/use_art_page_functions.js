@@ -49,15 +49,17 @@ let animation_queue_before_route_in =(page_id)=>{
 let animation_queue_route_out =(page_id,to,next)=>{
     const store = useStore()
 
-    //去works页面
-    store.is_route_to_work = true
-    //标记开启路由的页面
-    store.router_page = page_id
     if(to.name =='works'){
         scrollto(0,'smooth',
             ()=>{
                 //将thum全屏化
                 store.index_array[page_id].class = 'container_fullscreen'   
+                //关闭导航栏
+                store.is_navbar_open = false
+                //去works页面
+                store.is_route_to_work = true
+                //标记开启路由的页面
+                store.router_page = page_id
                 setTimeout(()=>{
                     next()
                 },600)} 
