@@ -1,6 +1,6 @@
 <template>
-    <div class="main_container" >
-        <div v-if = "store.page_width>=750" class="list_container" :style="{left : bar_move +'px'}" ref="el">
+    <div class="main_container" v-if="props.infor_obj.type=='main'">
+        <div v-if = "store.page_width>=750" class="list_container" :style="{left : bar_move +'%'}" ref="el">
             <div v-for = "i in list_length" class="item_container">
                 <h1>{{ props.infor_obj.text}}</h1>
                 <div class="sub_container">
@@ -26,6 +26,18 @@
         </div>
         
     </div>
+    <div class="main_container_sub" v-if="props.infor_obj.type=='sub' && store.page_width>=750">
+        <div  class="list_container_sub" :style="{right : bar_move +'%'}" ref="el">
+            <div v-for = "i in list_length" class="item_container_sub">
+                <h3>{{ props.infor_obj.text}}</h3>
+                <h3>{{ props.infor_obj.bio }}</h3>
+                <h3>{{ props.infor_obj.time }}</h3>
+                <div class="time_line_sub"></div>
+                
+            </div>
+        </div>
+        
+    </div>
     
 </template>
 
@@ -42,7 +54,7 @@ const store = useStore()
     let bar_move = computed(()=>{
         var a = store.scroll_position / store.scroll_page_height
         var b = a * width.value
-        return -b
+        return a.toFixed(2)*-100
     })
     
 
@@ -57,11 +69,9 @@ const store = useStore()
     const el = ref(null)
     const { width } = useElementSize(el)
     watchPostEffect(()=>{
-        if (width.value<store.page_width*1.5){
+        if (width.value<store.page_width*2){
             list_length.value = list_length.value + 2
-            console.log(1)
         }
-        console.log(width.value,store.page_width)
     })
 
 
@@ -74,13 +84,33 @@ const store = useStore()
     display: flex;
     overflow: hidden;
 }
+.main_container_sub{
+    width:100%;
+    height:40px;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
 .list_container{
     display: flex;
     gap:40px;
     position:relative;
     transition:var(--animation-slow);
 }
+.list_container_sub{
+    display: flex;
+    gap:40px;
+    position:absolute;
+    transition:var(--animation-slow);
+    opacity: 0.3;
+}
 .item_container{
+    display: flex;
+    align-items: center;
+    gap:16px;
+    flex:none;
+}
+.item_container_sub{
     display: flex;
     align-items: center;
     gap:16px;
@@ -101,6 +131,12 @@ const store = useStore()
     background-color: var(--main-light-100);
     height:20px;
 }
+.time_line_sub{
+    width:50px;
+    flex:1;
+    background-color: var(--main-light-100);
+    height:20px;
+}
 h1{
     font-size: 80px;
     line-height: 80px;
@@ -110,6 +146,13 @@ h1{
     flex:none;
 }
 h2{
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color:var(--main-light-100);
+    flex:none;
+}
+h3{
     font-size: 20px;
     font-weight: 400;
     text-transform: uppercase;

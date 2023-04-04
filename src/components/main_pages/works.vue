@@ -14,11 +14,14 @@
             @pointerover=" handle_card_hover('view_project',$event)"
             >
 
+            <div class="bio_container">
+                <infor_bar :infor_obj="{type:'sub',text: i.text,bio:i.bio,time:i.time}"/>
+            </div>
 
-            <component :is="render_comp(i.comp)"/>
+            <component class="comp" :is="render_comp(i.comp)"/>
            
             <div class="bio_container">
-                <infor_bar :infor_obj="{text: i.text,bio:i.bio,time:i.time}"/>
+                <infor_bar :infor_obj="{type:'main',text: i.text,bio:i.bio,time:i.time}"/>
             </div>
 
             <div class="breakline"></div>
@@ -40,7 +43,7 @@ import infor_bar from './works_thum_cards/infor_bar.vue'
 import {tracker_toggle} from '../../hooks/use_mouse_tracker_toggle'
 import {scrollto} from '../../hooks/use_scroll'
 //依赖引入
-import {computed,onMounted, watch,onBeforeMount,ref} from 'vue'
+import {onMounted,onBeforeMount,watchPostEffect, watch,computed} from 'vue'
 import { onBeforeRouteLeave } from 'vue-router'
 import {useElementSize } from '@vueuse/core'
 import useStore from '../../store/index.js'
@@ -152,7 +155,7 @@ const store = useStore()
     }
     //滚动到指定位置
     let srcoll_to = (index,val)=>{
-        let a = document.getElementsByClassName('comp_container')[index]
+        let a = document.getElementsByClassName('comp')[index]
         a.getBoundingClientRect().top
         scrollto(store.scroll_position + a.getBoundingClientRect().top,val)
     }
@@ -178,6 +181,21 @@ const store = useStore()
                 tracker_toggle(val)
             }
     }
+
+    // var timer
+
+    // //监听滚动
+    // watch(()=>store.scroll_position,()=>{
+    //     clearTimeout(timer)
+
+    //     store.el_container_scale.scale = 0.8
+    //     store.el_container_scale.animation = 'all 0.3s'
+
+    //     timer = setTimeout(()=>{
+    //         store.el_container_scale.scale = 1
+    //         store.el_container_scale.animation = 'var(--animation-slow)'
+    //     },100)
+    // })
 </script>
 
 <style scoped>
@@ -199,7 +217,7 @@ const store = useStore()
 .comp_container{
     display:flex;
     flex-direction: column;
-    gap:40px;
+    gap:16px;
     width:100%;
 }
 .bio_container{
@@ -227,9 +245,15 @@ h2{
 }
 .breakline{
     width:100vw;
-    height:1px;
-    background-color:rgba(255, 255, 255, 0.397);
-    margin-bottom:40px;
+    height:20px;
+    background-color:rgba(255, 255, 255, 0.185);
+    margin-bottom:16px;
+}
+@media (max-width: 750px) {
+    .breakline{
+        height:1px;
+    }
+    
 }
 </style>
 

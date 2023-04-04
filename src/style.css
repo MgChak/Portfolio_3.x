@@ -11,11 +11,11 @@
   --thumcard_fullscreen_height:100vh;
   --thumcard_article_height:80vh;
   
-  --main-light-100:rgba(245, 247, 251, 1);
+  --main-light-100:rgb(234, 236, 239);
   --main-light-60:rgba(245, 247, 251, 0.6);
   --main-light-30:rgba(245, 247, 251, 0.3);
 
-  --color-glass-dark:rgba(0, 0, 0, 0.395);
+  --color-glass-dark:#1517189f;
 }
 *{
   margin:0;
@@ -41,7 +41,7 @@ body {
 }
 
 body{
-  background-color: black;
+  background-color: #151718;
 }
 
 h1,

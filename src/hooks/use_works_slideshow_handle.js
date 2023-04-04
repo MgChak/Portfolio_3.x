@@ -76,7 +76,6 @@ let handle_card_class_height_change = (name)=>{
 }
 
 
-
 export {
     handle_img_position_change,
     handle_el_container_size,
