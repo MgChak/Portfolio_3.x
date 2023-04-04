@@ -1,16 +1,16 @@
 <template>
     <div class="is_v" ref="target"></div>
-    <Teleport to=".main_view_window">
+    <Teleport to=".footer_conatiner_fixed">
         <div class="footer_main_conatiner" 
         :class="{is_show:is_show}"
         :style = "[is_rout_out,the_animation]"
+        @click = "handle_click"
         >
             <h3 v-if="!store.footer_is_rout_out"> NEXT PROJECT</h3>
             <div class="card_conatiner" 
                 @pointerover=" handle_card_hover(0,$event)"
                 @pointerleave=" handle_card_hover(1,$event)"
                 :class="{on_hover:is_hover&&!store.footer_is_rout_out}"
-                @click = "handle_click"
                 :style = "[is_rout_out2,the_animation]">
                 <slot></slot>
             </div>
@@ -114,6 +114,7 @@ const store = useStore()
     position:absolute;
     bottom:-35vh;
     z-index: 10;
+    pointer-events: all;
     
 }
 .is_show{

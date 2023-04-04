@@ -2,7 +2,7 @@
 
     
 
-    <div class="main_container" id="article_container_for_scroll" :style="[scroll_position,store.scroll_animation]">
+    <div class="main_container" id="article_container_for_scroll">
         <!-- 头部头像显示 -->
         <div class="header_container">
             <div class="gif_container">
@@ -17,17 +17,17 @@
         <div class="section_conatier">
             <h1>CONTACT ME</h1>
             <div class="inner_conatiner">
-                <div class="contect_container">
+                <div class="contect_container" @pointerup ="handle_click_copy('chakshinglam@gmail.com')">
                     <img src="../../assets/about/g.svg" alt="">
-                    <h2>chakshinglam@gmail.com</h2>
+                    <h2 style="cursor: pointer;" :style="underline">{{emailtext}}</h2>
                 </div>
-                <div class="contect_container">
+                <div class="contect_container" @click ="handle_click('https://www.instagram.com/chakshinglam/')">
                     <img src="../../assets/about/i.svg" alt="">
-                    <h2>chakshinglam</h2>
+                    <h2 style="text-decoration: underline;cursor: pointer;">chakshinglam</h2>
                 </div>
-                <div class="contect_container">
-                    <img src="../../assets/about/l.svg" alt="">
-                    <h2>www.linkedin.com/in/chakshing-lam</h2>
+                <div class="contect_container" @click ="handle_click('https://www.linkedin.com/in/chakshing-lam')">
+                    <img src="../../assets/about/l.svg" alt="" >
+                    <h2 style="text-decoration: underline;cursor: pointer;">www.linkedin.com/in/chakshing-lam</h2>
                 </div>
             </div>
         </div>
@@ -68,24 +68,22 @@
 
 <script setup>
 import useStore from '../../store/index'
-import {onMounted,computed} from 'vue'
+import {onMounted,computed,ref} from 'vue'
 import { onBeforeRouteLeave } from 'vue-router'
+import {scrollto} from '../../hooks/use_scroll'
+
 const store = useStore()
 
     onMounted(()=>{
 
         //复位路由路径
         store.is_route_to_work = false
-        //将滚动行为设置成0=文章滚动
-        store.scroll_event_status = 0
         //修改导航栏状态到默认状态
         store.navbar_status = 0
         //初始化文章位置设置为0
-        store.scroll_position = 0
+        scrollto(0,'jump')
         //修改导航栏状态到初始状态
         store.navbar_status = 0
-        //将滚动行为设置成0=文章滚动
-        store.scroll_event_status = 0
         //将文章的高度保存到库
         store.scroll_page_height = document.getElementById('article_container_for_scroll').clientHeight
         setTimeout(()=>{
@@ -95,29 +93,74 @@ const store = useStore()
     })
 
     onBeforeRouteLeave((to,from,next)=>{
-        //将滚动行为初始化为锁定状态
-        store.scroll_event_status = undefined
-        //初始化文章位置设置为0
-        store.scroll_position = 0
-
         next()
-    
-    })
-
-    let scroll_position = computed(()=>{
-        return {transform: 'translateY('+ store.scroll_position*-1+'px)'}
     })
 
 
-    let copy_arry = [
-        'chakshinglam@gmail.com',
-        'chakshinglam',
-        'www.linkedin.com/in/chakshing-lam'
-    ]
-
-    let handle_copy = (id)=>{
-
+    let handle_click = (url)=>{
+        window.open(url)
     }
+
+    let emailtext =ref('chakshinglam@gmail.com')
+    let underline = computed(()=>{
+        if(emailtext.value =='chakshinglam@gmail.com'){
+            return {'text-decoration': 'underline'}
+        } else{
+            return {'text-decoration': 'none'}
+        }
+           
+        })
+    var timer
+
+    let handle_click_copy = (url)=>{
+
+        clearTimeout(timer)
+        
+        // 获取电子邮件地址
+        const email = url;
+
+        if(navigator.clipboard && navigator.clipboard.writeText){
+            // 复制电子邮件地址到剪贴板
+            navigator.clipboard.writeText(email)
+                    .then(() => {
+                        emailtext.value = `Copied to Clipboard!`
+                    })
+                    .catch((err) => {
+                        emailtext.value = `Failed to copy to clipboard`
+                    });
+            timer = setTimeout(()=>{
+                emailtext.value = 'chakshinglam@gmail.com'
+            },2000)
+        }else{
+            // 创建一个虚拟输入元素
+            const input = document.createElement("input");
+            
+            // 将电子邮件地址设置为输入元素的值
+            input.setAttribute("value", email);
+            
+            // 将输入元素添加到文档中
+            document.body.appendChild(input);
+            
+            // 选中输入元素中的文本
+            input.select();
+            
+            // 将文本复制到剪贴板
+            document.execCommand("copy");
+            
+            // 删除虚拟输入元素
+            document.body.removeChild(input);
+
+            emailtext.value = `Copied to Clipboard!`
+
+            timer = setTimeout(()=>{
+                emailtext.value = 'chakshinglam@gmail.com'
+            },2000)
+        }
+
+        
+        
+    }
+
 
 </script>
 

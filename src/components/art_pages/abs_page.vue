@@ -1,6 +1,6 @@
 <template>
 
-<div class="main_container" id="article_container_for_scroll" :style="[scroll_position,store.scroll_animation]">
+<div class="main_container" id="article_container_for_scroll">
     <abs/> 
 
     <div class = "overview_sec">
@@ -108,11 +108,6 @@ const store = useStore()
         animation_queue_route_out(page_id,to,next)
     })
 
-    //依赖于库中的数据平滑滚动文章
-    //控制滚动
-    let scroll_position = computed(()=>{                    
-        return {top:store.scroll_position*-1+'px'}
-    })
 
     //按钮依赖
     let prototype_1 = {

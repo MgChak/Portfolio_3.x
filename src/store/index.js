@@ -96,42 +96,12 @@ export default defineStore("Main",{
         //=============================
         //滚动依赖
         //=============================
-            //平滑滚动动画
-            scroll_animation:'transition: all 0.6s var(--animation-slow-cubic)',
-            
-            //滚动状态： 0= 文章的滚动/开启滚动条 ，1= works页面的菜单滚动
-            scroll_event_status:undefined,
+            //滚动数据（距离和方向）
 
-            //文章平滑滚动使用：由use_handle_scroll赋值。为0时文章处于顶部。
-            scroll_position:0,
-
-            //用于保存文章的高度
             scroll_page_height:0,
 
-            //滚动数据（距离和方向）
-            scroll_di_dr:0,
+            scroll_position:0,
         
-        //=============================
-        //触摸滑滚动依赖
-        //=============================
-            //开始滚动的位置。第一次由touchstart赋值，之后又move赋值
-            touch_start_point:0,
-
-            //开始滚动的位置。只由touchstart赋值赋值一次
-            touch_start_point_once:0,
-
-
-            //最后滚动前的时间。
-            touch_move_time_pre:undefined,
-
-            //最后滚动后的时间。第一次由touchstart赋值，之后又move赋值
-            touch_move_time_now:undefined,
-
-            //滚动方向用来计算最后的惯性方向,正上负下
-            touch_move_dr:undefined,
-
-            //滚动定时器
-            touch_move_timer:undefined,
 
         //=============================
         //footer 状态依赖

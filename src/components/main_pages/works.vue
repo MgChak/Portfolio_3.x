@@ -2,7 +2,7 @@
 
 
 
-    <div class="main_conatiner" :style="[scroll_position,store.scroll_animation]" id="article_container_for_scroll">
+    <div class="main_conatiner" id="article_container_for_scroll">
 
         <!-- <letsgo @click="handle_card_click(1)" @pointerover=" handle_card_hover(1,$event)"/> -->
 
@@ -38,9 +38,11 @@ import cover from './works_thum_cards/cover.vue'
 import infor_bar from './works_thum_cards/infor_bar.vue'
 //hooks引入
 import {tracker_toggle} from '../../hooks/use_mouse_tracker_toggle'
+import {scrollto} from '../../hooks/use_scroll'
 //依赖引入
-import {computed,onMounted, watch,onBeforeMount} from 'vue'
+import {computed,onMounted, watch,onBeforeMount,ref} from 'vue'
 import { onBeforeRouteLeave } from 'vue-router'
+import {useElementSize } from '@vueuse/core'
 import useStore from '../../store/index.js'
 import router from '../../router'
 const store = useStore()
@@ -65,20 +67,10 @@ const store = useStore()
         return array[index].comp
     }
  
-    //控制滚动
-    let scroll_position = computed(()=>{                    
-        return {top:store.scroll_position*-1+'px'}
-    })
-
-
     //初始化1
     onBeforeMount(()=>{
-        //关闭滚动动画  
-        store.scroll_animation='none'
         rewrite_index_class()
         if(!store.is_route_to_work){
-            //将滚动行为设置成0=文章滚动
-            store.scroll_event_status = 0
             //修改导航栏状态到默认状态
             store.navbar_status = 0
         }else{
@@ -97,13 +89,16 @@ const store = useStore()
         //修改导航栏状态到默认状态
         store.navbar_status = 0
         //将文章的高度保存到库
-        store.scroll_page_height = document.getElementById('article_container_for_scroll').clientHeight
         //根据router的路径执行不同的结果
         if(store.is_route_to_work){
             //跳转到指定位置
-            srcoll_to(store.router_page)
+            srcoll_to(store.router_page,'jump')
+            console.log("diao ")
             //index化thum
             store.index_array[store.router_page].class = "container_index"
+        }else{
+            //跳转到指定位置
+            scrollto(0,'jump')
         }
         //复位路由路径
         store.is_route_to_work = false
@@ -148,7 +143,7 @@ const store = useStore()
         //开启动画
         store.scroll_animation = 'transition:all 0.6s var(--animation-slow-cubic)'
         //滚动到指定位置
-        srcoll_to(index)
+        srcoll_to(index,'smooth')
 
        //全屏化thum
         store.index_array[index].class = 'container_fullscreen'
@@ -156,10 +151,10 @@ const store = useStore()
         
     }
     //滚动到指定位置
-    let srcoll_to = (index)=>{
+    let srcoll_to = (index,val)=>{
         let a = document.getElementsByClassName('comp_container')[index]
         a.getBoundingClientRect().top
-        store.scroll_position = store.scroll_position + a.getBoundingClientRect().top
+        scrollto(store.scroll_position + a.getBoundingClientRect().top,val)
     }
 
 
@@ -191,6 +186,7 @@ const store = useStore()
     height:200px;
 }
 .main_conatiner{
+    will-change: top;
     width: 100vw;
     position:absolute;
     display:flex;

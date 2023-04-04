@@ -30,7 +30,7 @@
 </template>
 
 <script setup>
-import { computed, ref,watchPostEffect} from 'vue';
+import { computed, ref,watchPostEffect,onMounted,onBeforeUnmount} from 'vue';
 import useStore from '../../../store/index.js'
 import { useElementSize } from '@vueuse/core'
 const store = useStore()
@@ -44,6 +44,8 @@ const store = useStore()
         var b = a * width.value
         return -b
     })
+    
+
 
     //列表长度
     let list_length = ref(3)
@@ -59,6 +61,7 @@ const store = useStore()
             list_length.value = list_length.value + 2
             console.log(1)
         }
+        console.log(width.value,store.page_width)
     })
 
 

@@ -63,11 +63,11 @@ let handle_card_class_height_change = (name)=>{
     var b
 
     if (a =='container_fullscreen'){
-            b = store.page_height+'px '
+            b = '100vh'
     }else if(a =='container_article'){
-            b = store.page_height *0.8+'px '
+            b = '80vh'
     }else if(a =='container_index'){
-            b = store.page_height *0.7+'px '
+            b = '70vh'
 
     }
     

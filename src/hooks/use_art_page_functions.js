@@ -1,5 +1,6 @@
 import useStore from '../store/index'
 import {tracker_toggle} from '../hooks/use_mouse_tracker_toggle'
+import {scrollto} from '../hooks/use_scroll'
 
 
 //进入前初始化
@@ -12,17 +13,14 @@ let animation_queue_before_route_in =(page_id)=>{
 
     //关闭footer的路由动画
     store.footer_is_rout_out = false
-    //恢复滚动动画
-    store.scroll_animation='transition: all 0.6s var(--animation-slow-cubic)',
+
     //关闭鼠标追踪器
     tracker_toggle('hidden')
     
     //初始化文章位置设置为0
-    store.scroll_position = 0
+    scrollto(0,'jump')
     //修改导航栏状态到文章内状态
     store.navbar_status = 1
-    //将滚动行为设置成0=文章滚动
-    store.scroll_event_status = 0
     
 }
  //进入时初始化与动画队列
@@ -50,39 +48,21 @@ let animation_queue_before_route_in =(page_id)=>{
 //离开时复位与动画队列
 let animation_queue_route_out =(page_id,to,next)=>{
     const store = useStore()
-    //触发卡片内动画：恢复index状态
-    //触发卡片内动画
+
     //去works页面
+    store.is_route_to_work = true
+    //标记开启路由的页面
+    store.router_page = page_id
     if(to.name =='works'){
-        var timer
-        timer = requestAnimationFrame(function animation_set(){
-            //关闭导航栏
-            store.is_navbar_open = false
-            //关闭滚动动画
-            store.scroll_animation='none'
-            store.scroll_position = store.scroll_position *0.87
-            if(Math.abs(store.scroll_position) >=10 ){
-                timer = requestAnimationFrame(animation_set)
-            }else{
-                cancelAnimationFrame(timer)
-
-                //全屏化thum
-                store.index_array[page_id].class = "container_fullscreen"
-
-                //标记为是由路由进入首页
-                store.is_route_to_work = true
-
-                //标记开启路由的页面
-                store.router_page = page_id
-
-
+        scrollto(0,'smooth',
+            ()=>{
+                //将thum全屏化
+                store.index_array[page_id].class = 'container_fullscreen'   
                 setTimeout(()=>{
                     next()
-                },600)  
+                },600)} 
+        )
 
-            }          
-        })
-       
     //去艺术页面-由点击footer触发
     }else if(store.index_array.findIndex((i)=>i.navto==to.name)>=0){
         //赋值路由动画速度
