@@ -9,7 +9,7 @@ let num = 0
 
 //loader function
 let get_all_imgs=()=>{
-    
+    var a = 0
     const store = useStore()
 
     let all_imgs_arr = document.getElementsByTagName("img")
