@@ -9,7 +9,7 @@ let num = 0
 
 //loader function
 let get_all_imgs=()=>{
-    var a = 0
+
     const store = useStore()
 
     let all_imgs_arr = document.getElementsByTagName("img")
@@ -29,7 +29,7 @@ let get_all_imgs=()=>{
                 document.getElementsByTagName('div')[0].style.display="block"
             }
             loading.value++	
-            store.loader_num = loading.value			
+            store.loader_num = loading.value/num*100			
         }
     }
 
@@ -66,20 +66,20 @@ let animation_queue_before_route_in =(page_id)=>{
     get_all_imgs()//统计图片
 
     watchEffect(()=>{
-        if(loading.value/num*100>=100){
-            //将thum调整为文章内状态
-            store.index_array[page_id].class = 'container_article'
-            // 赋值路由动画速度
-            store.footer_animation = 'var(--animation-slow)'
-            //打开导航栏
-            store.is_navbar_open = true 
-            //将文章的高度保存到库
-            store.scroll_page_height = document.getElementById('article_container_for_scroll').clientHeight 
-            //清空loading数据
-            loading.value = 0
-            store.loader_num = 0
-            //关闭loader
-            store.loader_status= false
+        if(store.loader_num>=100){
+            setTimeout(()=>{
+                //将thum调整为文章内状态
+                store.index_array[page_id].class = 'container_article'
+                // 赋值路由动画速度
+                store.footer_animation = 'var(--animation-slow)'
+                //打开导航栏
+                store.is_navbar_open = true 
+                //将文章的高度保存到库
+                store.scroll_page_height = document.getElementById('article_container_for_scroll').clientHeight 
+                //清空loading数据
+                loading.value = 0  
+            },1000)
+            
         }
     })
 }
