@@ -99,6 +99,8 @@
             <img src="../../assets/art_pages/letsgo/research01.jpg" alt="">
         </is_v_imgs>
 
+        <video_frams/>
+
         <div class="section_inner_container">
             <h2>Main learnings of background research - Who is traveling </h2>
             <div class="interview_feedbacks">
@@ -437,12 +439,14 @@ import transit from'../main_pages/works_thum_cards/transit.vue'
 import prototype_links from'../comps/prototype_links.vue'
 import is_v_imgs from'../comps/is_v_imgs.vue'
 import the_footer from '../footer.vue'
+import video_frams from '../comps/video_frams.vue'
 //hook引入
 import {animation_queue_route_in,animation_queue_route_out,animation_queue_before_route_in} from'../../hooks/use_art_page_functions'
 //依赖引入
 import { computed,onMounted,onBeforeMount} from 'vue' 
 import useStore from '../../store/index'
 import { onBeforeRouteLeave } from 'vue-router';
+
 
 const store = useStore()
 
@@ -454,6 +458,7 @@ const store = useStore()
 
     onMounted(()=>{
         animation_queue_route_in(page_id)
+       
     })
 
     onBeforeRouteLeave((to,from,next)=>{

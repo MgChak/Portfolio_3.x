@@ -10,7 +10,6 @@
 </template>
 
 <script setup>
-import { watchArray } from '@vueuse/core';
 import useStore from '../../store/index.js'
 import { ref,watch } from 'vue';
 const store = useStore()

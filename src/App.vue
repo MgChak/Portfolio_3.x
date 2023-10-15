@@ -97,8 +97,6 @@ const w_size = useWindowSize()
   pointer-events: none;
 }
 
-#article_container_for_scroll{
-  overflow: hidden;
-}
+
 
 </style>
