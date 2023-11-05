@@ -2,6 +2,7 @@ import useStore from '../store/index'
 import {watchEffect,ref} from 'vue'
 import {tracker_toggle} from '../hooks/use_mouse_tracker_toggle'
 import {scrollto} from '../hooks/use_scroll'
+import { s_lock,s_unlock } from '../hooks/use_page_scroll_locker'
 
 //loarder的status
 let loading = ref(0)
@@ -41,9 +42,11 @@ let get_all_imgs=()=>{
 let animation_queue_before_route_in =(page_id)=>{
     const store = useStore()
 
+    //锁定滚动
+    s_lock()
 
-    //将thum全屏化
-    store.index_array[page_id].class = 'container_fullscreen'
+    //将thum全屏化_set
+    store.index_array[page_id].class = 'container_fullscreen_set'
 
     //关闭footer的路由动画
     store.footer_is_rout_out = false
@@ -55,15 +58,21 @@ let animation_queue_before_route_in =(page_id)=>{
     scrollto(0,'jump')
     //修改导航栏状态到文章内状态
     store.navbar_status = 1
+
+    
     
 }
  //进入时初始化与动画队列
  let animation_queue_route_in =(page_id)=>{
     const store = useStore()
 
+
+
     store.loader_status = true//开启loader
 
     get_all_imgs()//统计图片
+
+
 
     watchEffect(()=>{
         if(store.loader_num>=100){
@@ -77,7 +86,9 @@ let animation_queue_before_route_in =(page_id)=>{
                 //将文章的高度保存到库
                 store.scroll_page_height = document.getElementById('article_container_for_scroll').clientHeight 
                 //清空loading数据
-                loading.value = 0  
+                loading.value = 0 
+                //解锁滚动
+                s_unlock() 
             },1000)
             
         }
@@ -88,6 +99,9 @@ let animation_queue_before_route_in =(page_id)=>{
 //离开时复位与动画队列
 let animation_queue_route_out =(page_id,to,next)=>{
     const store = useStore()
+
+    //锁定滚动
+    s_lock()
 
     if(to.name =='works'){
         scrollto(0,'smooth',
@@ -126,6 +140,8 @@ let animation_queue_route_out =(page_id,to,next)=>{
             //清空路由动画速度
             store.footer_animation = 'null'
             next()
+            //解锁滚动
+            s_unlock() 
         },700)   
     }else{
         //关闭导航栏
@@ -136,6 +152,8 @@ let animation_queue_route_out =(page_id,to,next)=>{
         store.expand_page_number = store.page_on
         setTimeout(()=>{
             next()
+            //解锁滚动
+            s_unlock() 
         },200)  
 
     }

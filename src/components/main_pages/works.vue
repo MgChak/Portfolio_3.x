@@ -14,9 +14,6 @@
             @pointerover=" handle_card_hover('view_project',$event)"
             >
 
-            <div class="bio_container">
-                <infor_bar :infor_obj="{type:'sub',text: i.text,bio:i.bio,time:i.time}"/>
-            </div>
 
             <component class="comp" :is="render_comp(i.comp)"/>
            
@@ -40,6 +37,7 @@ import transit from'./works_thum_cards/transit.vue'
 import cover from './works_thum_cards/cover.vue'
 import infor_bar from './works_thum_cards/infor_bar.vue'
 //hooks引入
+import { s_lock,s_unlock } from '../../hooks/use_page_scroll_locker'
 import {tracker_toggle} from '../../hooks/use_mouse_tracker_toggle'
 import {scrollto} from '../../hooks/use_scroll'
 //依赖引入
@@ -78,7 +76,13 @@ const store = useStore()
             store.navbar_status = 0
         }else{
             //全屏化thum
-            store.index_array[store.router_page].class = "container_fullscreen"
+            store.index_array.forEach((item,index)=>{
+                if(index != store.router_page){
+                    item.class = "container_index_set"
+                }else{
+                    item.class = "container_fullscreen_set"
+                }
+            })
         }
        
     })
@@ -103,6 +107,11 @@ const store = useStore()
             //跳转到指定位置
             scrollto(0,'jump')
         }
+        setTimeout(()=>{
+            //解锁滚动
+            s_unlock() 
+        },600)
+        
         //复位路由路径
         store.is_route_to_work = false
         
@@ -121,6 +130,8 @@ const store = useStore()
         }else{
             next()
         }
+        //锁滚动
+        s_lock() 
     })
 
 
@@ -157,6 +168,7 @@ const store = useStore()
     let srcoll_to = (index,val)=>{
         let a = document.getElementsByClassName('comp')[index]
         a.getBoundingClientRect().top
+        console.log("index:"+index,"a:"+a.getBoundingClientRect().top)
         scrollto(store.scroll_position + a.getBoundingClientRect().top,val)
     }
 

@@ -36,6 +36,10 @@ export default defineStore("Main",{
     state:()=>{
         return{
         //=============================
+        //页面滚动状态标记：由hook use_page_scroll_lock使用
+        //=============================
+        page_scroll_locker_status:false,
+        //=============================
         //加载器状态更新
         //=============================
         loader_status:false,
@@ -117,8 +121,16 @@ export default defineStore("Main",{
 
             //footer 的动画
             footer_animation: 'var(--animation-slow)',
-            
 
+        //=============================
+        //通用的动画参数
+        //=============================
+            
+            //动画速度
+            animation_speed: 0.8,
+
+            //曲线
+            animation_ease_c1:"M0,0 C0,0.396 0.217,0.648 0.347,0.773 0.626,1.04 0.858,1 1,1 ",
 
         //=============================
         //index render依赖

@@ -2,7 +2,7 @@
 
     <div class="content_container" ref="el_container" >
         <div class="view_window" ref="el_view_window">
-            <canvas id="my_canvas" :width="width" :height="height"></canvas>
+            <canvas id="my_canvas" :width="width" :height="width*0.5625"></canvas>
         </div>
     </div>
  
@@ -17,6 +17,10 @@ import fram_list from '../../assets/fram_animation_test/fames.js'
 
 
     const store = useStore()
+
+    //数据接收//引入props
+    //let fram_list = defineProps(['slideshow_arr'])
+
 
     //获取父元素size
     const el_view_window = ref(null)
@@ -87,16 +91,19 @@ onMounted(()=>{
 .content_container{
     height:400vh;
     width:100%;
-    background-color:rgb(141, 66, 66);
+    /* background-color:rgb(141, 66, 66); */
     overflow: visible;
 }
 .view_window{
     height:100vh;
     width:100%;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     position: sticky;
     top:0px;
     right:0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 </style>

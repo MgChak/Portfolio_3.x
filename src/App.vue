@@ -28,10 +28,11 @@ import loader from './components/comps/page_loader.vue'
 
 
 //依赖引入
-import {onMounted,watchEffect,computed} from 'vue'
+import {onMounted,watchEffect,computed,watch} from 'vue'
 import {useRoute} from 'vue-router'
 import useStore from './store/index.js'
 import { useWindowSize} from '@vueuse/core'
+import {page_scroll_locker_main, s_lock} from './hooks/use_page_scroll_locker'
 const store = useStore()
 const route = useRoute()
 const w_size = useWindowSize()
@@ -80,6 +81,16 @@ const w_size = useWindowSize()
   let page_height = computed(()=>{
     return {height : store.page_height+'px'}
   })
+  
+  page_scroll_locker_main()
+
+  //监听调用滚动锁
+  watch(()=>store.page_scroll_locker_status,()=>{
+    page_scroll_locker_main()
+  })
+
+
+
 
 
 </script>
