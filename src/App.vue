@@ -9,7 +9,7 @@
 
   <div class="footer_conatiner_fixed"></div>
 
-  <div class="main_view_window" :style="[cursor_status] " >
+  <div class="main_view_window" :style="[cursor_status]">
 
     <router-view></router-view>
 
@@ -28,7 +28,7 @@ import loader from './components/comps/page_loader.vue'
 
 
 //依赖引入
-import {onMounted,watchEffect,computed,watch} from 'vue'
+import {onMounted,watchEffect,computed,watch,ref} from 'vue'
 import {useRoute} from 'vue-router'
 import useStore from './store/index.js'
 import { useWindowSize} from '@vueuse/core'
@@ -56,6 +56,8 @@ const w_size = useWindowSize()
       store.scroll_page_height = document.getElementById('article_container_for_scroll').scrollHeight
     })
 
+    
+
   })
 
   
@@ -82,6 +84,7 @@ const w_size = useWindowSize()
     return {height : store.page_height+'px'}
   })
   
+
   page_scroll_locker_main()
 
   //监听调用滚动锁

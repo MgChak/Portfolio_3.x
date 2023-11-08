@@ -34,7 +34,9 @@ let smooth_to = (dr,fn) =>{
         }else{
             cancelAnimationFrame(timer)
             if(fn){fn()}
-        }          
+        }       
+        
+        console.log("run")
     })
 }
 

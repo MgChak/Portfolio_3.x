@@ -145,13 +145,16 @@
 
 
     <!-- PERSONAS -->
-    <div class="discover_research_sec section_conatiner">
+    <div class="overflow_cutoff">
+        <div class="discover_research_sec section_conatiner">
+            
+            <h1>PERSONAS</h1>
+            
+            <img_slideshow :slideshow_arr = 'pc_arr_02'/> 
         
-        <h1>PERSONAS</h1>
-        
-        <img_slideshow :slideshow_arr = 'pc_arr_02'/> 
-        
+        </div>
     </div>
+   
 
     <is_v_imgs>
             <img src="../../assets/art_pages/transit/poster_2.jpg" alt="">
@@ -182,10 +185,13 @@
     </div>
 
     <!-- PROOF OF CONCEPT_ROUT NAVIGATION -->
-    <div class="section_conatiner">
-        <h1>PROOF OF CONCEPT_ROUT NAVIGATION</h1>
-        <img_slideshow :slideshow_arr = 'pc_arr_01'/> 
+    <div class="overflow_cutoff">
+        <div class="section_conatiner">
+            <h1>PROOF OF CONCEPT_ROUT NAVIGATION</h1>
+            <img_slideshow :slideshow_arr = 'pc_arr_01'/> 
+        </div>
     </div>
+
 
     <!-- TEST RESULT _HOME PAGE -->
     <div class="discover_research_sec section_conatiner">
@@ -297,10 +303,13 @@
     </div>
 
      <!-- PROOF OF CONCEPT _PAYMENT -->
-     <div class="section_conatiner">
-        <h1>PROOF OF CONCEPT _PAYMENT</h1>
-        <img_slideshow :slideshow_arr = 'pc_arr_03'/> 
-    </div>
+     <div class="overflow_cutoff">
+        <div class="section_conatiner">
+            <h1>PROOF OF CONCEPT _PAYMENT</h1>
+            <img_slideshow :slideshow_arr = 'pc_arr_03'/> 
+        </div>
+     </div>
+     
 
     <!-- TEST RESULT _PAYMENT -->
     <div class="discover_research_sec section_conatiner">
@@ -349,9 +358,11 @@
     </div>
 
     <!-- PROOF OF CONCEPT_ROUT NAVIGATION -->
-    <div class="section_conatiner">
-        <h1>PROOF OF CONCEPT _REAL-TIME LOCATION SHARE</h1>
-        <img_slideshow :slideshow_arr = 'pc_arr_04'/> 
+    <div class="overflow_cutoff">
+        <div class="section_conatiner">
+            <h1>PROOF OF CONCEPT _REAL-TIME LOCATION SHARE</h1>
+            <img_slideshow :slideshow_arr = 'pc_arr_04'/> 
+        </div>
     </div>
 
     <!-- DESIGN DETAIL _REAL-TIME LOCATION SHARE -->
@@ -619,7 +630,13 @@ img{
 .overview{
     max-width: 550px;
 }
-
+.overflow_cutoff{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
 
 
 

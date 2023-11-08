@@ -512,6 +512,7 @@ const store = useStore()
     left:0;
 
     background: linear-gradient(90deg, #101013 0%, #1C2415 48.61%, #101013 100%);
+    
 
     
     /* top 1s cubic-bezier(0.36, 0.36, 0.31, 1) */
