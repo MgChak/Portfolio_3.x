@@ -5,25 +5,26 @@
 
             <div class="title_container">
                 <div class="box box1">
-                
-                    <img src="../../../assets/thum_cards/hi.svg" alt="">
+                    <img ref="img123" class="imgs" src="../../../assets/thum_cards/hi.svg" alt="">
                 </div>
                 <div class="box box2">
-                    <img src="../../../assets/thum_cards/im.svg" alt="">
+                    <img ref="img2" class="imgs" src="../../../assets/thum_cards/im.svg" alt="">
                 </div>
                 <div class="box box3">
-                    <img src="../../../assets/thum_cards/design.svg" alt="">
+                    <img ref="img3" class="imgs" src="../../../assets/thum_cards/design.svg" alt="">
                 </div>
             </div>
         </div>
 
-        <div class="arrow_animation">
+        <div ref="arrow_box" class="arrow_animation">
             <div class="animation_box">
                 <img src="../../../assets/icons/arrow_downward.svg" alt="">
             </div>
             <h3>TO MY PROJECTS</h3>
         </div>
-        <div class="background_anim_holder" ref="background" :style="handle_background_size"></div>
+        <div class="background_holder" >
+            <Background_Element/>
+        </div>
     </div>
     
 </template>
@@ -31,12 +32,16 @@
 <script setup>
 //hooks引入
 import{handle_img_position_change,handle_el_container_size} from '../../../hooks/use_works_slideshow_handle.js'
+import Background_Element from "../../comps/background_elements.vue"
 //依赖引入
-import {computed,onMounted,ref} from 'vue'
-import { gsap } from 'gsap/gsap-core'
+import {computed,onMounted,ref, watchEffect} from 'vue'
+
 import useStore from '../../../store/index.js'
 import { useElementSize } from '@vueuse/core'
+import { CustomEase } from "gsap/CustomEase";
+import gsap from 'gsap'
 const store = useStore()
+gsap.registerPlugin(CustomEase);
     
     let name = 'LETS_GO'
 
@@ -51,52 +56,59 @@ const store = useStore()
     //使用屏幕的真实高度
     let cover_height = computed(()=>store.page_height +'px')
 
-    //计算背景应有的尺寸
-    let handle_background_size = computed(()=>{
-        var w
-        var h
-        var b
-        if (store.page_height <= store.page_width){
-            w = store.page_width*2
-            h = store.page_width
-            b = w/4
-        }else {
-            w = store.page_height*2
-            h = store.page_height*2
-            b = store.page_height
-        }
-        return {
-            width:w+"px",
-            height:h+"px",
-            ["background-size"]:b+"px"
-        }
-    })
-
 
     //动画
-
-    let background = ref(null)
-
+    const img123 = ref(null)
+        const img2 = ref(null)
+        const img3 = ref(null)
+        const arrow_box = ref(null)
+    
 
     onMounted(()=>{
-        gsap.to(background.value,{
-            transformOrigin: "top,left",
-            xPercent:-50,
-            yPercent:25,
-            duration:30,
-            repeat:-1,
-            ease:"none",
-        })
+        
+
+    const stop = watchEffect(()=>{
+        console.log("执行")
+        if(store.cover_animation){
+            gsap.to(img123.value,{
+                yPercent:-100,
+                duration:0.6,
+                ease: CustomEase.create("custom", store.animation_ease_c1),
+            })
+            gsap.to(img2.value,{
+                yPercent:-100,
+                duration:0.6,
+                ease: CustomEase.create("custom", store.animation_ease_c1),
+                delay:0.3,
+            })
+            gsap.to(img3.value,{
+                yPercent:-100,
+                duration:0.6,
+                ease: CustomEase.create("custom", store.animation_ease_c1),
+                delay:0.6,
+            })
+            gsap.to(arrow_box.value,{
+                yPercent:-200,
+                duration:0.6,
+                ease: CustomEase.create("custom", store.animation_ease_c1),
+            })
+ 
+            store.cover_animation = false
+            stop()
+            
+        }
+    })
+        
+
     })
 
-   
+    
+
 
 </script>
 
 <style scoped>
-.container{
-    /* background:linear-gradient(360deg, #253238 -3.36%, #000000 49.04%); */
-    
+.container{    
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -105,12 +117,13 @@ const store = useStore()
     width:100vw;
 
 }
-.background_anim_holder{
-    background-image: url("../../../assets/main_elements.svg");
+.background_holder{
     position:absolute;
     left:0;
     bottom:0;
     z-index: -1;
+    width:100%;
+    height:100%;
 }
 
 .el_conatiner{
@@ -131,6 +144,7 @@ const store = useStore()
 .box{
     display: flex;
     overflow: hidden;
+    position:relative;
 }
 .box1{
     width: 60%;
@@ -143,21 +157,12 @@ const store = useStore()
 .box3{
     width:40%
 }
-.box > img{
+.imgs{
     width: 100%;
-    transform:translateY(102%);
+    position:relative;
+    left:0;
+    transform: translateY(100%);
 }
-
-.container_expand > .el_conatiner >.title_container > .box1 > img{
-    animation: ani_font 0.6s var(--animation-slow-cubic) forwards;
-}
-.container_expand > .el_conatiner >.title_container > .box2 > img{
-    animation: ani_font 0.6s var(--animation-slow-cubic) 0.3s forwards;
-}
-.container_expand > .el_conatiner >.title_container > .box3 > img{
-    animation: ani_font 0.6s var(--animation-slow-cubic) 0.6s forwards;
-}
-
 
 
 h1,
@@ -167,10 +172,7 @@ h4{
     color:var(--main-light-100);
 }
 
-@keyframes ani_font {
-    from{transform:translateY(102%);}
-    to{transform:translateY(0%);}
-}
+
 @keyframes ani_font2 {
     from{transform:translateY(0%);}
     to{transform:translateY(102%);}
@@ -187,6 +189,8 @@ h4{
     flex-direction: column;
     align-items: center;
     gap:24px;
+    overflow: hidden;
+    transform: translateY(200%);
 }
 h3{
     font-size: 20px;
@@ -202,6 +206,7 @@ h3{
     align-items: center;
     overflow: hidden;
     opacity: 0.8;
+
     
 }
 .animation_box > img{

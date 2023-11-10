@@ -74,9 +74,8 @@ let animation_queue_before_route_in =(page_id)=>{
 
 
 
-    watchEffect(()=>{
-        if(store.loader_num>=100){
-            setTimeout(()=>{
+    const stop =watchEffect(()=>{
+        if(store.is_loader_animation_finished){
                 //将thum调整为文章内状态
                 store.index_array[page_id].class = 'container_article'
                 // 赋值路由动画速度
@@ -89,8 +88,10 @@ let animation_queue_before_route_in =(page_id)=>{
                 loading.value = 0 
                 //解锁滚动
                 s_unlock() 
-            },1000)
-            
+                //复位动画状态
+                store.is_loader_animation_finished = false
+
+                stop()
         }
     })
 }
@@ -164,6 +165,7 @@ let animation_queue_route_out =(page_id,to,next)=>{
 export {
     animation_queue_route_in,
     animation_queue_route_out,
-    animation_queue_before_route_in
+    animation_queue_before_route_in,
+    get_all_imgs
 
 }

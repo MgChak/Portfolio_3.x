@@ -40,8 +40,9 @@ import infor_bar from './works_thum_cards/infor_bar.vue'
 import { s_lock,s_unlock } from '../../hooks/use_page_scroll_locker'
 import {tracker_toggle} from '../../hooks/use_mouse_tracker_toggle'
 import {scrollto} from '../../hooks/use_scroll'
+import {get_all_imgs} from'../../hooks/use_art_page_functions'
 //依赖引入
-import {onMounted,onBeforeMount,watchPostEffect, watch,computed} from 'vue'
+import {onMounted,onBeforeMount,watchEffect, watch,computed} from 'vue'
 import { onBeforeRouteLeave } from 'vue-router'
 import {useElementSize } from '@vueuse/core'
 import useStore from '../../store/index.js'
@@ -70,6 +71,8 @@ const store = useStore()
  
     //初始化1
     onBeforeMount(()=>{
+        //锁定滚动
+        s_lock()
         rewrite_index_class()
         if(!store.is_route_to_work){
             //修改导航栏状态到默认状态
@@ -84,6 +87,7 @@ const store = useStore()
                 }
             })
         }
+        
        
     })
 
@@ -91,26 +95,47 @@ const store = useStore()
 
     //初始化2
     onMounted(()=>{
-        //打开导航栏
-        store.is_navbar_open = true
-        //修改导航栏状态到默认状态
-        store.navbar_status = 0
-        //将文章的高度保存到库
         //根据router的路径执行不同的结果
         if(store.is_route_to_work){
             //跳转到指定位置
             srcoll_to(store.router_page,'jump')
-            console.log("diao ")
-            //index化thum
-            store.index_array[store.router_page].class = "container_index"
+            
         }else{
             //跳转到指定位置
             scrollto(0,'jump')
         }
-        setTimeout(()=>{
-            //解锁滚动
-            s_unlock() 
-        },600)
+
+        store.loader_status = true//开启loader
+
+        get_all_imgs()//统计图片
+
+        var stop = watchEffect(()=>{
+            if(store.is_loader_animation_finished){
+
+                //打开导航栏
+                store.is_navbar_open = true
+                //修改导航栏状态到默认状态
+                store.navbar_status = 0
+                //index化thum
+                store.index_array[store.router_page].class = "container_index"
+                //开启cover的动画
+                store.cover_animation = true
+                
+                setTimeout(()=>{
+                    //解锁滚动
+                    s_unlock() 
+                    
+                },600)
+
+                //复位动画状态
+                store.is_loader_animation_finished = false
+
+                stop()
+
+                
+                
+            }
+        })
         
         //复位路由路径
         store.is_route_to_work = false
@@ -194,20 +219,7 @@ const store = useStore()
             }
     }
 
-    // var timer
 
-    // //监听滚动
-    // watch(()=>store.scroll_position,()=>{
-    //     clearTimeout(timer)
-
-    //     store.el_container_scale.scale = 0.8
-    //     store.el_container_scale.animation = 'all 0.3s'
-
-    //     timer = setTimeout(()=>{
-    //         store.el_container_scale.scale = 1
-    //         store.el_container_scale.animation = 'var(--animation-slow)'
-    //     },100)
-    // })
 </script>
 
 <style scoped>

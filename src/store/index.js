@@ -44,6 +44,8 @@ export default defineStore("Main",{
         //=============================
         loader_status:false,
         loader_num:0,
+        is_loader_animation_finished:false,
+        cover_animation:false,
         //=============================
         //mouse_tracker的依赖状态
         //=============================

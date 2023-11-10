@@ -71,7 +71,6 @@ gsap.registerPlugin(ScrollTrigger);
             list_length.value = list_length.value + 1
         }
 
-        console.log(list_length.value)
     })
 
     onMounted(()=>{
