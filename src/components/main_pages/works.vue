@@ -14,14 +14,15 @@
             @pointerover=" handle_card_hover('view_project',$event)"
             >
 
-            <div class="bio_container">
-                <infor_bar :infor_obj="{type:'sub',text: i.text,bio:i.bio,time:i.time}"/>
-            </div>
+            
 
             <component class="comp" :is="render_comp(i.comp)"/>
            
             <div class="bio_container">
                 <infor_bar :infor_obj="{type:'main',text: i.text,bio:i.bio,time:i.time}"/>
+            </div>
+            <div class="bio_container">
+                <infor_bar :infor_obj="{type:'sub',text: i.text,bio:i.bio,time:i.time}"/>
             </div>
 
             <div class="breakline"></div>
