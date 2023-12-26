@@ -5,9 +5,11 @@
 
   <the_header/>
 
+  <loader/>
+
   <div class="footer_conatiner_fixed"></div>
 
-  <div class="main_view_window" :style="[cursor_status] " >
+  <div class="main_view_window" :style="[cursor_status]">
 
     <router-view></router-view>
 
@@ -22,13 +24,15 @@
 //组件引入
 import mouse_tracker from './components/mouseTracker.vue'
 import the_header from './components/header.vue'
+import loader from './components/comps/page_loader.vue'
 
 
 //依赖引入
-import {onMounted,watchEffect,computed} from 'vue'
+import {onMounted,watchEffect,computed,watch,ref} from 'vue'
 import {useRoute} from 'vue-router'
 import useStore from './store/index.js'
 import { useWindowSize} from '@vueuse/core'
+import {page_scroll_locker_main, s_lock} from './hooks/use_page_scroll_locker'
 const store = useStore()
 const route = useRoute()
 const w_size = useWindowSize()
@@ -51,6 +55,8 @@ const w_size = useWindowSize()
       store.scroll_position = window.scrollY
       store.scroll_page_height = document.getElementById('article_container_for_scroll').scrollHeight
     })
+
+    
 
   })
 
@@ -77,6 +83,17 @@ const w_size = useWindowSize()
   let page_height = computed(()=>{
     return {height : store.page_height+'px'}
   })
+  
+
+  page_scroll_locker_main()
+
+  //监听调用滚动锁
+  watch(()=>store.page_scroll_locker_status,()=>{
+    page_scroll_locker_main()
+  })
+
+
+
 
 
 </script>
@@ -94,8 +111,6 @@ const w_size = useWindowSize()
   pointer-events: none;
 }
 
-#article_container_for_scroll{
-  overflow: hidden;
-}
+
 
 </style>

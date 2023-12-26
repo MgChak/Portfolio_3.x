@@ -1,10 +1,10 @@
 <template>
 
-    <div class="container background" :class="card_size.class_name" :style="{height:card_size.height}" ref="el">
+    <div class="container background" ref="el">
             <div class="el_conatiner" :style = "{width:el_container_size,height:el_container_size}">
 
-                <img src="../../../assets/thum_cards/lp.png" class="largephone" alt="">
-                <img src="../../../assets/thum_cards/letsgo_small_p.png" class="smallphone" alt="">
+                <img ref="img1" src="../../../assets/thum_cards/lp.png" class="largephone" alt="">
+                <img ref="img2" src="../../../assets/thum_cards/letsgo_small_p.png" class="smallphone" alt="">
             </div>
         
             
@@ -16,9 +16,9 @@
 
 <script setup>
 //hooks引入
-import{handle_img_position_change,handle_el_container_size,handle_card_class_height_change} from '../../../hooks/use_works_slideshow_handle.js'
+import{handle_img_position_change,handle_el_container_size,thum_ani_render} from '../../../hooks/use_works_slideshow_handle.js'
 //依赖引入
-import {computed,ref} from 'vue'
+import {computed,ref,watchPostEffect} from 'vue'
 import useStore from '../../../store/index.js'
 import { useElementSize } from '@vueuse/core'
 const store = useStore()
@@ -33,8 +33,76 @@ const store = useStore()
     const { width, height } = useElementSize(el)
     let el_container_size = computed(()=>handle_el_container_size(width, height))
 
-    //获取class和高度
-    let card_size = computed(()=>handle_card_class_height_change(name))
+    const img1 = ref(null)
+    const img2 =ref(null)
+
+    watchPostEffect(()=>{
+        thum_ani_render(name,{
+            full:[
+                {
+                    el:el,
+                    animations:{
+                        height:'100vh',
+                    }
+                },{
+                    el:img1,
+                    animations:{
+                        xPercent: -4,
+                        yPercent: 0,
+                        scale:1.5,
+                    }
+                },{
+                    el:img2,
+                    animations:{
+                        xPercent: 4,
+                        yPercent: -2,
+                        scale:1.4,
+                    }
+                },
+
+            ],
+            article:[{
+                    el:el,
+                    animations:{
+                        height:'80vh',
+                    }
+                },{
+                    el:img1,
+                    animations:{
+                        xPercent: -4,
+                        yPercent: 20,
+                        scale:1.4,
+                    }
+                },{
+                    el:img2,
+                    animations:{
+                        xPercent: 4,
+                        yPercent: 10,
+                        scale:1.2,
+                    }
+                },],
+            index:[{
+                    el:el,
+                    animations:{
+                        height:'70vh',
+                    }
+                },{
+                    el:img1,
+                    animations:{
+                        xPercent: -3,
+                        yPercent: 0,
+                        scale:1.2,
+                    }
+                },{
+                    el:img2,
+                    animations:{
+                        xPercent: 4,
+                        yPercent: 0,
+                        scale:1.2,
+                    }
+                },]
+        })
+    })
 
 </script>
 
@@ -43,7 +111,7 @@ const store = useStore()
     
     overflow: hidden;
     position:relative;
-    transition:var(--animation-slow);
+    width:100vw;
 }
 
 .background{
@@ -58,69 +126,19 @@ align-items: center;
     /* background-color: green; */
 }
 
-/* --------------------------------------------------- */
-.container_index{
-    width:100vw;
-}
-
-.container_index> .el_conatiner> .largephone {
-    width: 156%;
-    position: absolute;
-    bottom: -12%;
-    left: -39%;
-    z-index: 3;
-    transition: var(--animation-slow);
-}
-.container_index> .el_conatiner> .smallphone {
-    position: absolute;
-    bottom: 10%;
-    left: 21%;
-    width: 101%;
-    z-index: 3;
-    transition: var(--animation-slow);
-}
-/* --------------------------------------------------- */
-.container_fullscreen{
-    width:100vw;
-}
-.container_fullscreen > .el_conatiner> .largephone {
+.largephone {
     width: 132%;
     position: absolute;
     bottom: 0%;
     left: -29%;
     z-index: 3;
-    transition: var(--animation-slow);
 }
-
-.container_fullscreen >.el_conatiner> .smallphone {
+.smallphone {
     position: absolute;
     bottom: 16%;
     left: 24%;
     width: 90%;
     z-index: 3;
-    transition: var(--animation-slow);
 }
-/* --------------------------------------------------- */
-.container_article{
-    width:100%;
-}
-.container_article > .el_conatiner> .largephone {
-    width: 121%;
-    position: absolute;
-    bottom: -1%;
-    left: -20%;
-    z-index: 3;
-    transition: var(--animation-slow);
-}
-.container_article > .el_conatiner> .smallphone {
-    position: absolute;
-    bottom: 16%;
-    left: 26%;
-    width: 85%;
-    z-index: 3;
-    transition: var(--animation-slow);
-}
-
-
 
 </style>

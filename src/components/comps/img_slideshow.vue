@@ -209,6 +209,7 @@ const store = useStore()
     flex-direction: column;
     gap:16px;
     align-items: center;
+
 }
 .view_window{
     width:100%;

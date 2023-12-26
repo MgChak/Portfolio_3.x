@@ -1,8 +1,8 @@
 <template>
 
-<div class="container background" :class="card_size.class_name" :style="{height:card_size.height}" ref="el">
+<div class="container background" ref="el">
             <div class="el_conatiner" :style = "{width:el_container_size,height:el_container_size}">
-                <img src="../../../assets/thum_cards/transit_2.png" alt="">
+                <img ref="img" src="../../../assets/thum_cards/transit_2.png" alt="">
         
             </div>
         </div>
@@ -10,9 +10,9 @@
 
 <script setup>
 //hooks引入
-import{handle_img_position_change,handle_el_container_size,handle_card_class_height_change} from '../../../hooks/use_works_slideshow_handle.js'
+import{handle_img_position_change,handle_el_container_size,thum_ani_render} from '../../../hooks/use_works_slideshow_handle.js'
 //依赖引入
-import {computed,ref} from 'vue'
+import {computed,ref,watchPostEffect} from 'vue'
 import useStore from '../../../store/index.js'
 import { useElementSize } from '@vueuse/core'
 const store = useStore()
@@ -27,8 +27,54 @@ const store = useStore()
     const { width, height } = useElementSize(el)
     let el_container_size = computed(()=>handle_el_container_size(width, height))
 
-    //获取class和高度
-    let card_size = computed(()=>handle_card_class_height_change(name))
+    const img =ref(null)
+
+    watchPostEffect(()=>{
+        thum_ani_render(name,{
+            full:[
+                {
+                    el:el,
+                    animations:{
+                        height:'100vh',
+                    }
+                },{
+                    el:img,
+                    animations:{
+                        xPercent: 0,
+                        yPercent: 0,
+                        scale:1.3,
+                    }
+                }
+
+            ],
+            article:[{
+                    el:el,
+                    animations:{
+                        height:'80vh',
+                    }
+                },{
+                    el:img,
+                    animations:{
+                        xPercent: 0,
+                        yPercent: 10,
+                        scale:1.2,
+                    }
+                }],
+            index:[{
+                    el:el,
+                    animations:{
+                        height:'70vh',
+                    }
+                },{
+                    el:img,
+                    animations:{
+                        xPercent: 0,
+                        yPercent: 10,
+                        scale:1.2,
+                    }
+                }]
+        })
+    })
 
 
 </script>
@@ -41,7 +87,7 @@ const store = useStore()
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    transition:var(--animation-slow);
+    width:100vw;
 
 }
 
@@ -58,40 +104,14 @@ const store = useStore()
     background-repeat: no-repeat;
     position:relative;
 }
-/* --------------------------------------------------- */
-.container_index{
-    width:100vw;
-}
-.container_index> .el_conatiner> img {
-    position: absolute;
-    bottom: -26%;
-    left: -54%;
-    width: 202%;
-    z-index:0;
-    transition:all 0.3s ease-in;
-}
-/* --------------------------------------------------- */
-.container_fullscreen{
-    width:100%;
-}
-.container_fullscreen > .el_conatiner> img {
+
+
+img {
     position: absolute;
     bottom: -15%;
     left: -42%;
     width: 179%;
-    transition: var(--animation-slow);
+    
 }
-/* --------------------------------------------------- */
-.container_article{
-    width:100%;
-}
-.container_article > .el_conatiner> img {
-    position: absolute;
-    bottom: -26%;
-    left: -37%;
-    width: 171%;
-    transition:var(--animation-slow);
-}
-
 
 </style>
