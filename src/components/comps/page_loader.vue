@@ -138,13 +138,14 @@ let container_animation = (val)=>{//展开和关闭动画
     position:fixed;
     top:-60px;
    
-    width:100vw;
+    width:100%;
     z-index:10;
     display: flex;
     align-items: center;
     justify-content: center;
 
     pointer-events: none;
+    overflow: hidden;
 }
 
 .loader{

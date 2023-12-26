@@ -228,8 +228,7 @@ const store = useStore()
     height:200px;
 }
 .main_conatiner{
-    will-change: top;
-    width: 100vw;
+    width: 100%;
     position:absolute;
     display:flex;
     flex-direction: column;
@@ -237,6 +236,8 @@ const store = useStore()
     gap:16px;
     position:absolute;
     left:0;
+    overflow: hidden;
+
 }
 .comp_container{
     display:flex;
