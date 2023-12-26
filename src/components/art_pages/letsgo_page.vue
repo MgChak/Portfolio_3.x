@@ -99,7 +99,14 @@
             <img src="../../assets/art_pages/letsgo/research01.jpg" alt="">
         </is_v_imgs>
 
-        <video_frams/>
+        <div class="video_frames_section_container">
+            <div class="video_frames_container">
+                <video_frams :frames_data="frames_01" @render_triger = "render_percen_1" />
+            </div>
+            <div class="text_conatiner"></div>
+        </div>
+
+        
 
         <div class="section_inner_container">
             <h2>Main learnings of background research - Who is traveling </h2>
@@ -442,6 +449,8 @@ import the_footer from '../footer.vue'
 import video_frams from '../comps/video_frams.vue'
 //hook引入
 import {animation_queue_route_in,animation_queue_route_out,animation_queue_before_route_in} from'../../hooks/use_art_page_functions'
+//frames 批量引入
+import frame_list from '../../assets/fram_animation_test/fames.js'
 //依赖引入
 import { computed,onMounted,onBeforeMount} from 'vue' 
 import useStore from '../../store/index'
@@ -465,7 +474,14 @@ const store = useStore()
         animation_queue_route_out(page_id,to,next)
     })
 
-    
+    //传入组件的图片序列
+    let frames_01 = {
+        frames:frame_list
+    }
+    //用于接收渲染进度
+    let render_percen_1 = (val)=>{
+       
+    }
 
 
 
@@ -510,6 +526,8 @@ const store = useStore()
 
     position:absolute;
     left:0;
+
+    overflow: hidden;
 
     background: linear-gradient(90deg, #101013 0%, #1C2415 48.61%, #101013 100%);
     
@@ -642,11 +660,14 @@ img{
     gap:24px;
 }
 
-
-
-
-
-
+.video_frames_section_container{
+    width:100%;
+    display: flex;
+}
+.video_frames_container{
+    width:50%;
+    height:100%;
+}
 
 
 .placehoudler{

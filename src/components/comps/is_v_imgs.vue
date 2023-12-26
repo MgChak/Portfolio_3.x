@@ -2,7 +2,7 @@
 
     <div class="background_container" ref="target">
         <div class="img_container" >
-            <div  :style = img_show >
+            <div ref="img" class="img">
                 <slot ></slot>
             </div>
         </div>
@@ -12,7 +12,13 @@
 
 <script setup>
 import { useIntersectionObserver,useElementSize } from '@vueuse/core'
+import useStore from '../../store/index.js'
 import { ref,watchPostEffect,computed } from 'vue'
+import { gsap } from 'gsap/gsap-core'
+import { CustomEase } from "gsap/CustomEase";
+gsap.registerPlugin(CustomEase);
+const store = useStore()
+
 
     const target = ref(null)
     const is_show = ref(false)
@@ -22,24 +28,33 @@ import { ref,watchPostEffect,computed } from 'vue'
       ([{ isIntersecting }]) => {
         is_show.value = isIntersecting
       },{
-        threshold:0.2
+        threshold:0.4
       }
     )
     const { width, height } = useElementSize(target)
+
+    let img = ref(null)
+
+    let img_animation = ()=>{
+
+        gsap.to(img.value,{
+            yPercent:-20,
+            opacity:1,
+            duration: 0.6,
+            ease: CustomEase.create("custom", store.animation_ease_c1),
+        })
+        console.log("动画运行")
+    }
     
-    watchPostEffect(()=>{
+    const stop_1 = watchPostEffect(()=>{
         if(is_show.value){
+            img_animation()
             stop()
+            stop_1()
         }
     })
 
-    let img_show = computed(()=>{
-        if(!is_show.value){
-            return {top: height.value * -1 +"px"}
-        }else{
-            return {top:'0px'}
-        }
-    })
+
 
 </script>
 
@@ -67,16 +82,11 @@ import { ref,watchPostEffect,computed } from 'vue'
 
 .img_container{
     width:100%;
-    overflow: hidden;
 
-    
 }
-.img_container > div{
-    position:relative;
-
-    left:0;
-    top:-100%;
-    transition:top 0.6s var(--animation-slow-cubic);
+.img{
+    opacity: 0;
+    transform: translateY(20%);
 }
 
 
