@@ -64,7 +64,11 @@ const store = useStore()
     //动画
     let list_transition = ref('var(--animation-slow)')
 
-    //幻灯片逻辑
+
+    
+    //=======================================================================================
+    //幻灯片逻辑==========================================================================
+    //=======================================================================================
     //页面 
     let page_on = ref(0)
 
@@ -145,6 +149,9 @@ const store = useStore()
             break;
         }
     }
+
+    var movedr = -1
+
     //处理触摸-开始
     let touch_start=(e)=>{
         //关闭动画
@@ -159,18 +166,26 @@ const store = useStore()
     }
     //处理触摸-移动
     let touch_move=(e)=>{
-        //阻止默认事件
-        e.preventDefault()
-        //根据初始点位置和当前移动的位置计算出移动的距离，
-        var a = touch_moving - e.touches[0].clientX
-        //重新赋值start_point用于计算下一次移动
-        touch_moving = e.touches[0].clientX
-        //更新列表的位置坐标
-        list_position.value = list_position.value+a
-        //防抖锁定文章滚动
-        if(Math.abs(touch_moving_start - e.touches[0].clientX)/store.page_width > 0.02){
-            store.scroll_event_status = undefined
+        //判断一次移动方向，并标记，当标记存在时不再重复判断
+        if (movedr==-1){if(Math.abs(touch_moving_start - e.touches[0].clientX)/store.page_width > 0.015){
+            movedr = 1  
+        }else{
+            movedr = 0
+        }}
+
+        if (movedr==1){
+            //阻止默认事件
+            e.preventDefault()
+            //根据初始点位置和当前移动的位置计算出移动的距离，
+            var a = touch_moving - e.touches[0].clientX
+            //重新赋值start_point用于计算下一次移动
+            touch_moving = e.touches[0].clientX
+            //更新列表的位置坐标
+            list_position.value = list_position.value+a
+        }else if(movedr==0){
+
         }
+
     }
     //处理触摸-结束
     let touch_end=(e)=>{
@@ -183,8 +198,8 @@ const store = useStore()
         list_transition.value = 'var(--animation-slow)'
         //关闭触摸跟随
         is_touch.value = false
-        //启动文章滚动
-        store.scroll_event_status = 0
+        //解除移动方向的锁定
+        movedr = -1
     }
 
 

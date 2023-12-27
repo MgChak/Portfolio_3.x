@@ -517,6 +517,7 @@ const store = useStore()
     flex-direction: column;
     align-items: center;
     gap:180px;
+    overflow: hidden;
 
     position:absolute;
     left:0;
