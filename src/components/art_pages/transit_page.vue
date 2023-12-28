@@ -154,11 +154,33 @@
         
         </div>
     </div>
+
+     <!-- PERSONAS -->
+     <div class="overflow_cutoff">
+        <div class="discover_research_sec section_conatiner">
+            
+            <h1>Video Test</h1>
+            
+            <img_slideshow :slideshow_arr = 'viedo_test_arry'/> 
+        
+        </div>
+    </div>
    
 
     <is_v_imgs>
             <img src="../../assets/art_pages/transit/poster_2.jpg" alt="">
     </is_v_imgs>
+
+     <!-- PERSONAS -->
+     <div class="overflow_cutoff">
+        <div class="discover_research_sec section_conatiner">
+            
+            <h1>Video Test</h1>
+            
+            <img_slideshow :slideshow_arr = 'viedo_test_arry2'/> 
+        
+        </div>
+    </div>
 
     <!-- PROBLEMS AND SOLUTIONS -->
     <div class="section_conatiner">
@@ -184,210 +206,6 @@
 
     </div>
 
-    <!-- PROOF OF CONCEPT_ROUT NAVIGATION -->
-    <div class="overflow_cutoff">
-        <div class="section_conatiner">
-            <h1>PROOF OF CONCEPT_ROUT NAVIGATION</h1>
-            <img_slideshow :slideshow_arr = 'pc_arr_01'/> 
-        </div>
-    </div>
-
-
-    <!-- TEST RESULT _HOME PAGE -->
-    <div class="discover_research_sec section_conatiner">
-        
-        <h1>TEST RESULT _HOME PAGE</h1>
-        <div class="section_inner_container">
-            <h2>Two rounds of A/B Test</h2>
-            <h3>This test aims to determine the layout of the app's home page. Two rounds of testing were conducted.
-                In the first round of testing, I presented two options: Option A used a hidden menu bar that required users to click on a hamburger icon to open, while option B used a traditional bottom navigation bar. Option A saved display space to a certain extent, allowing the home page to have more space to display other content. However, according to the results of the test, almost all users preferred the thick bottom navigation bar used in option B. This was because option B was more intuitive and in line with user’s habits. Most importantly, in option B, users could switch pages with just one step of operation, while in option A, the foldable navigation bar required users to take at least two steps to switch pages.
-                After determining the navigation bar, I conducted a second round of testing. In this test, I presented two display modes for the navigation bar: one at the top and one at the bottom. Although the top navigation bar was more traditional and in line with user operating habits, the bottom navigation bar was more popular among users. This was because the bottom navigation bar allowed users to activate functions without having to move their hands to the top, making it easier and faster for them to use the search function.
-            </h3>
-            <is_v_imgs>
-                <img src="../../assets/art_pages/transit/h_1.jpg" alt="">
-            </is_v_imgs>
-        </div>
-
-        <div class="section_inner_container">
-            <h2>Further improvement</h2>
-            <h3>The first two rounds of testing determined the display of the menu bar and search bar. For a long time in subsequent designs, I did not make any changes to the design of the home page. This changed until I added a route saving function to the search page and tested its useability. According to user feedback, they liked this feature very much. And in most use cases, users will repeatedly use the saved route (such as fixed commuters and students for their daily commuting). So I thought, if I could move this saved route to the home page, it would further reduce the number of steps required for the user to start navigation.
-                After determining the navigation bar, I conducted a second round of testing. In this test, I presented two display modes for the navigation bar: one at the top and one at the bottom. Although the top navigation bar was more traditional and in line with user operating habits, the bottom navigation bar was more popular among users. This was because the bottom navigation bar allowed users to activate functions without having to move their hands to the top, making it easier and faster for them to use the search function.
-            </h3>
-            <is_v_imgs>
-                <img src="../../assets/art_pages/transit/h_2.jpg" alt="">
-            </is_v_imgs>
-            <h3>So the saved routes will be displayed in a more concise way on the home page for quick user operation, and more detailed information will also be displayed on the search page.
-            </h3>
-            <is_v_imgs>
-                <img src="../../assets/art_pages/transit/h_3.jpg" alt="">
-            </is_v_imgs>
-        </div>
-
-    </div>
-
-
-    <!-- TEST RESULT - ROAD CARDS -->
-    <div class="discover_research_sec section_conatiner">
-        
-        <h1>TEST RESULT_ROAD CARDS</h1>
-        <div class="section_inner_container">
-            <h2>Key feedbacks and improvement of result list</h2>
-            <h3>In the initial design, I differentiated the expected arrival time by colors, with red being the fastest and green being the slowest. To display as many search results as possible on the screen, I used very small sized information cards and only displayed the most important information. However, user testing showed that users did not like this design. Firstly, the color differentiation for time caused confusion among users. On the other hand, users wanted to see more key information on the cards. So, I redesigned the search list again. After researching, I found that searches for public transportation routes wouldn't result in many search results. So, I didn't need to consider reducing the size of the information cards to display more results. Instead, to help users understand more key information faster, I should appropriately increase the size of the information cards. On the other hand, compared to differentiating by arrival time with color, differentiating by icon color can help users understand the types of transportation used in public transportation routes more quickly.
-            </h3>
-            <is_v_imgs>
-                <img src="../../assets/art_pages/transit/c_1.jpg" alt="">
-            </is_v_imgs>
-        </div>
-
-        <div class="section_inner_container">
-            <h2>Key feedbacks and improvement of road detail page</h2>
-            <h3> In the initial design, I designed the route detail page as a card expansion mode. After the user clicks on the information card of the search result, the card will expand the detailed information of the route. The advantage of this is that the user can see the detailed information without having to jump to a new page. However, test results show that users prefer to see maps on the detail page. Compared to text content, users can more intuitively understand the route from the map. So I redesigned the detail page.
-            </h3>
-            <is_v_imgs>
-                <img src="../../assets/art_pages/transit/c_2.jpg" alt="">
-            </is_v_imgs>
-            <h3>The new detail page is a standalone page where the user can adjust the size of the map display by dragging the bottom information bar.
-            </h3>
-            <is_v_imgs>
-                <img src="../../assets/art_pages/transit/c_3.jpg" alt="">
-            </is_v_imgs>
-            <h3>In public transportation route information, excessive stop names will be hidden to save space. The collapsed stop names will be displayed in a special form, and users can expand the collapsed stop names by clicking on the three dots icon.
-            </h3>
-            <is_v_imgs>
-                <img src="../../assets/art_pages/transit/c_4.jpg" alt="">
-            </is_v_imgs>
-        </div>
-
-    </div>
-
-       <!-- TEST RESULT - NAVIGATION -->
-    <div class="discover_research_sec section_conatiner">
-        
-        <h1>TEST RESULT - NAVIGATION</h1>
-        <div class="section_inner_container">
-            <h2>Key feedbacks and improvement</h2>
-            <h3>After testing, the navigation page has been redesigned. In the first design, I placed all the functions at the bottom of the screen. However, after testing, it was found that although the bottom of the screen did not show much content, it made users feel cluttered. The reason was that I used a similar design for all the content, and users could not distinguish between them at first glance. Therefore, in the new design, I reclassified all the content and used different display methods.
-                On the other hand, in the first design, if users wanted to use other functions such as "payment" and "sharing" in the navigation, they needed to return to the main page. This operation was too cumbersome, so I added side buttons in the new version to allow users to quickly open the function they need in the navigation.
-            </h3>
-            <is_v_imgs>
-                <img src="../../assets/art_pages/transit/n_1.jpg" alt="">
-            </is_v_imgs>
-            <is_v_imgs>
-                <img src="../../assets/art_pages/transit/n_2.jpg" alt="">
-            </is_v_imgs>
-        </div>
-
-
-    </div>
-    
-    <is_v_imgs>
-            <img src="../../assets/art_pages/transit/poster_3.jpg" alt="">
-    </is_v_imgs>
-
-    <!-- NEWLY ADDED FEATURE 01 _PAYMENT -->
-    <div class="design_process_sec section_conatiner">
-
-        <h1>NEWLY ADDED FEATURE 01 _PAYMENT
-        </h1>
-
-        <h3>
-            Adding a payment feature in Transit allows users to skip the unnecessary action of searching for their wallet or card when the vehicle arrives. Using a phone for payment is also more in line with the trend of future payment methods. Most importantly, electronic cards can effectively avoid the trouble of reapplying for a lost card.
-        </h3>
-
-        <prototype_links :prototype_links = 'prototype_2'/>
-
-        <div class="video_conatiner_s">
-            <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/804028251?h=948b149314&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="transit_p_02"></iframe></div>
-        </div>
-
-    </div>
-
-     <!-- PROOF OF CONCEPT _PAYMENT -->
-     <div class="overflow_cutoff">
-        <div class="section_conatiner">
-            <h1>PROOF OF CONCEPT _PAYMENT</h1>
-            <img_slideshow :slideshow_arr = 'pc_arr_03'/> 
-        </div>
-     </div>
-     
-
-    <!-- TEST RESULT _PAYMENT -->
-    <div class="discover_research_sec section_conatiner">
-        
-        <h1>TEST RESULT _PAYMENT</h1>
-        <div class="section_inner_container">
-            <h2>Key feedbacks and improvement</h2>
-            <h3>In the process of designing the payment system, I tried many different design solutions, including stacked cards, lists, and horizontal scrolling. After multiple tests and considerations of actual usage scenarios, I decided to use the horizontal scrolling card as the final solution. First, it combines the advantages of options 1 and 2, which is having a sufficiently large size to accommodate the QR code while also allowing users to quickly find the card they need. Of course, when there is a lot of content to look for, vertical scrolling seems to always be the best solution in terms of speed. However, the fact is that users will not store too many cards in a public transportation app. Moreover, most users only use 1 to 2 cards repeatedly every day. Therefore, using horizontal scrolling here will not reduce the speed of finding the card. On the other hand, using horizontal scrolling allows me to have enough space to add scan buttons, QR codes, and Tap prompts for payment functions. This design is to enable the app to support as many different payment methods in different cities and regions as possible.
-            </h3>
-            <is_v_imgs>
-                <img src="../../assets/art_pages/transit/p_1.jpg" alt="">
-            </is_v_imgs>
-        </div>
-
-        <div class="section_inner_container">
-            <h2>Visual improvement</h2>
-            <h3>In the process of designing the card window, I made several attempts that did not affect the function. These changes were more focused on bringing a better visual experience to the user. In the final design, I added a semi-transparent black background to the location of the card number to ensure the readability of the card information. At the same time, I separated the scan button from the card so that it would not move with the card switch.
-            </h3>
-            <is_v_imgs>
-                <img src="../../assets/art_pages/transit/p_2.jpg" alt="">
-            </is_v_imgs>
-        </div>
-
-    </div>
-
-    <is_v_imgs>
-            <img src="../../assets/art_pages/transit/poster_4.jpg" alt="">
-    </is_v_imgs>
-
-    <!-- NEWLY ADDED FEATURE 02 _REAL-TIME LOCATION SHARE -->
-    <div class="design_process_sec section_conatiner">
-
-        <h1>NEWLY ADDED FEATURE 02 _REAL-TIME LOCATION SHARE
-        </h1>
-
-        <h3>
-            The original intention of the design of the sharing function is to enhance the safety of users when using public transportation. This function allows users to share their real-time location with others through a unique URL. This means that the recipient does not need to download the Tranit app to view the location information of the sharer through any browser. I hope to deter criminals and increase the cost of crime through this function, thus protecting the safety of users to some extent.
-        </h3>
-
-        <prototype_links :prototype_links = 'prototype_3'/>
-
-        <div class="video_conatiner_s">
-            <div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/804035918?h=19626a6584&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="tansit_p_3.mp4"></iframe></div>
-        </div>
-
-    </div>
-
-    <!-- PROOF OF CONCEPT_ROUT NAVIGATION -->
-    <div class="overflow_cutoff">
-        <div class="section_conatiner">
-            <h1>PROOF OF CONCEPT _REAL-TIME LOCATION SHARE</h1>
-            <img_slideshow :slideshow_arr = 'pc_arr_04'/> 
-        </div>
-    </div>
-
-    <!-- DESIGN DETAIL _REAL-TIME LOCATION SHARE -->
-    <div class="discover_research_sec section_conatiner">
-        
-        <h1>DESIGN DETAIL _REAL-TIME LOCATION SHARE</h1>
-        <div class="section_inner_container">
-            <h3> The purpose of adding the sharing function is to protect the user's safety. However, as this function will allow others to view the user's real-time location information, I was very careful in its design. First, there is a confirmation page. The user's final step before enabling the sharing function is to view the confirmation page, which displays the name and phone number of the authorized contacts, and I use a countdown button to prevent users from acting too quickly and ignoring important information.
-            </h3>
-            <is_v_imgs>
-                <img src="../../assets/art_pages/transit/s_1.jpg" alt="">
-            </is_v_imgs>
-            <h3> At the same time, after the user turns on the sharing function, the share button will become a very prominent red color. This will always remind the user that they are sharing their location.
-            </h3>
-            <is_v_imgs>
-                <img src="../../assets/art_pages/transit/s_2.jpg" alt="">
-            </is_v_imgs>
-            <h3> To ensure the safety of users, the feature will not be automatically turned off once it is turned on, even if the user has arrived at their destination. However, Tranit will constantly ask the user through pop-up windows if they want to stop sharing their location information.
-            </h3>
-            <is_v_imgs>
-                <img src="../../assets/art_pages/transit/s_3.jpg" alt="">
-            </is_v_imgs>
-        </div>
-
-    </div>
 
 
     <the_footer :index = "store.index_array.findIndex((item)=> item.name == 'ABS_INTERNSHIP' )">
@@ -417,24 +235,15 @@ import the_footer from '../footer.vue'
 //引入图片
 import persona_1 from '../../assets/art_pages/transit/slideshow/persona_1.jpg'
 import persona_2 from '../../assets/art_pages/transit/slideshow/persona_2.jpg'
-import poc_4 from '../../assets/art_pages/transit/slideshow/poc_04.jpg'
-import poc_5 from '../../assets/art_pages/transit/slideshow/poc_05.jpg'
-import poc_6 from '../../assets/art_pages/transit/slideshow/poc_06.jpg'
-import poc_7 from '../../assets/art_pages/transit/slideshow/poc_07.jpg'
-import poc_8 from '../../assets/art_pages/transit/slideshow/poc_08.jpg'
-import poc_9 from '../../assets/art_pages/transit/slideshow/poc_09.jpg'
-import poc_13 from '../../assets/art_pages/transit/slideshow/poc_13.jpg'
-import poc_14 from '../../assets/art_pages/transit/slideshow/poc_14.jpg'
-import poc_15 from '../../assets/art_pages/transit/slideshow/poc_15.jpg'
-import poc_16 from '../../assets/art_pages/transit/slideshow/poc_16.jpg'
-import poc_17 from '../../assets/art_pages/transit/slideshow/poc_17.jpg'
-import poc_18 from '../../assets/art_pages/transit/slideshow/poc_18.jpg'
 import poc_20 from '../../assets/art_pages/transit/slideshow/poc_20.jpg'
 import poc_21 from '../../assets/art_pages/transit/slideshow/poc_21.jpg'
-import poc_22 from '../../assets/art_pages/transit/slideshow/poc_22.jpg'
-import poc_23 from '../../assets/art_pages/transit/slideshow/poc_23.jpg'
-import poc_24 from '../../assets/art_pages/transit/slideshow/poc_24.jpg'
-import poc_25 from '../../assets/art_pages/transit/slideshow/poc_25.jpg'
+//引入视频
+import vt1 from '../../assets/art_pages/transit/slideshow/video/vt1.mp4'
+import vt2 from '../../assets/art_pages/transit/slideshow/video/vt2.mp4'
+import vt3 from '../../assets/art_pages/transit/slideshow/video/vt3.mp4'
+import vt4 from '../../assets/art_pages/transit/slideshow/video/vt4.mp4'
+import vt5 from '../../assets/art_pages/transit/slideshow/video/vt5.mp4'
+import vt6 from '../../assets/art_pages/transit/slideshow/video/vt6.mp4'
 
 //引入hooks
 import {animation_queue_route_in,animation_queue_route_out,animation_queue_before_route_in} from'../../hooks/use_art_page_functions'
@@ -464,24 +273,39 @@ const store = useStore()
 
 
     //轮播图使用数列
-    let pc_arr_01 = {
-        color:'#00FFE0',
-        pics:[poc_4,poc_5,poc_6,poc_7,poc_8,poc_9]
-    }
 
     let pc_arr_02 = {//personas
         color:'#00FFE0',
-        pics:[persona_1,persona_2]
+        type:'img',
+        contents:[
+            [persona_1,"Use gestures to bring up the control interface."],
+            [persona_2,"Use gestures to bring up the control interface."],
+            [poc_20,"Use gestures to bring up the control interface."],
+            [poc_21,"Use gestures to bring up the control interface."]
+        ]
     }
 
-    let pc_arr_03 = {//功能2
+    
+    let viedo_test_arry = {
         color:'#00FFE0',
-        pics:[poc_13,poc_14,poc_15,poc_16,poc_17,poc_18]
+        type:'video',
+        contents:[
+            [vt1,"Use gestures to bring up the control interface.",persona_1],
+            [vt2,"Use gestures to bring up the control interface.",persona_1],
+            [vt3,"Use gestures to bring up the control interface.",persona_1]
+        ]
+            
     }
 
-    let pc_arr_04 = {//功能3
-        color:'#00FFE0',
-        pics:[poc_20,poc_21,poc_22,poc_23,poc_24,poc_25]
+    let viedo_test_arry2 = {
+        color:'#000000',
+        type:'video',
+        contents:[
+            [vt4,"Use gestures to bring up the control interface.",persona_1],
+            [vt5,"Use gestures to bring up the control interface.",persona_1],
+            [vt6,"Use gestures to bring up the control interface.",persona_1]
+        ]
+            
     }
 
 
@@ -522,13 +346,13 @@ const store = useStore()
     position:absolute;
     left:0;
 
-    background: linear-gradient(90deg, #000000 0%, #1C2024 53.82%, #000000 100%);
+    background: rgb(44, 44, 47);
     /* top 1s cubic-bezier(0.36, 0.36, 0.31, 1) */
 }
 
 h1{
     /* Section Title */
-    font-family: 'Kanit';
+    
     font-style: normal;
     font-weight: 600;
     font-size: 60px;
@@ -542,7 +366,7 @@ h1{
 
 }
 h2{
-    font-family: 'Kanit';
+   
     font-style: normal;
     font-weight: 600;
     font-size: 35px;
@@ -557,7 +381,7 @@ h2{
     color: #F5F7FB;
 }
 h3{
-    font-family: 'Kanit';
+    
     font-style: normal;
     font-weight: 300;
     font-size: 20px;

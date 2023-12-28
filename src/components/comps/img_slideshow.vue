@@ -1,28 +1,31 @@
 <template>
-    <div class="main_conatiner">
-        <div class = "view_window" ref='el'>
+    <div class="main_conatiner" ref="target">
+        <div class = "view_window" ref='el' :style="{height:height+'px'}">
             <div class="pic_list" 
                 :style="{width:list_width, transform:list_transform,transition:list_transition}" 
                 @touchstart="use_handle_touch($event)"
                 @touchmove="use_handle_touch($event)"
                 @touchend="use_handle_touch($event)"
             >
-                <div class="img_conatiner" v-for="p in pics" :key="p.id" 
+                <div class="img_conatiner" v-for="c in contents" :key="c.id" 
                     :style="{width:width+'px'}"
-                    :class = "{hide:p.id!=page_on}"
-                    @click="handle_img_click(p.id)"
-                    @pointerover=" handle_img_hover(0,p.id,$event)"
-                    @pointerleave=" handle_img_hover(1,p.id,$event)"
+                    :class = "{hide:c.id!=page_on}"
+                    @click="handle_img_click(c.id)"
+                    @pointerover=" handle_img_hover(0,c.id,$event)"
+                    @pointerleave=" handle_img_hover(1,c.id,$event)"
                 >
-                    <img :src="p.pic" alt="" >
+                    <img v-if="props.slideshow_arr.type =='img'" :src="c.contents[0]" alt="" >
+                    <video v-if="props.slideshow_arr.type =='video'" muted playsinline loop :poster="c.contents[2]" ref="videoRefs">
+                        <source :src="c.contents[0]" muted type="video/mp4"/>
+                    </video>
                 </div>
             </div>
         </div>
         <div class="dots_conatiner">
-            <div class="dots" v-for="p in pics" :key="p.id" 
+            <div class="dots" v-for="c in contents" :key="c.id" 
                 :style="{background:props.slideshow_arr.color}"
-                :class = "{hide:p.id!=page_on}"
-                @click="handle_dots_click(p.id)"
+                :class = "{hide:c.id!=page_on}"
+                @click="handle_dots_click(c.id)"
             ></div>
         </div>
     </div>
@@ -30,8 +33,8 @@
 </template>
 
 <script setup>
-import { ref,computed } from 'vue'
-import { useElementSize } from '@vueuse/core'
+import { ref,computed,watch} from 'vue'
+import { useIntersectionObserver,useElementSize } from '@vueuse/core'
 import {tracker_toggle} from '../../hooks/use_mouse_tracker_toggle'
 import useStore from '../../store/index'
 const store = useStore()
@@ -40,13 +43,13 @@ const store = useStore()
     let props = defineProps(['slideshow_arr'])
 
     //创建图片数列,根据props写入数列和id
-    let pics = computed(()=>{
+    let contents = computed(()=>{
 
         var b = []
 
-        props.slideshow_arr.pics.forEach((item,index)=>{
+        props.slideshow_arr.contents.forEach((item,index)=>{
             var a = {}
-            a.pic = item
+            a.contents = item
             a.id = index
             b.push(a)
         })
@@ -57,9 +60,10 @@ const store = useStore()
     //获取view——window size， 给img用
     let el = ref()
     const { width } = useElementSize(el)
+    let height = computed(()=>width.value*9/16) 
 
     //计算列表的总长度
-    let list_width = computed(()=>width.value*props.slideshow_arr.pics.length + store.page_width*0.01*(props.slideshow_arr.pics.length-1) + 'px')
+    let list_width = computed(()=>width.value*props.slideshow_arr.contents.length + store.page_width*0.01*(props.slideshow_arr.contents.length-1) + 'px')
 
     //动画
     let list_transition = ref('var(--animation-slow)')
@@ -90,6 +94,8 @@ const store = useStore()
             return `translateX(-${list_position.value}px)`
         }
     })
+    
+   
 
 
     //处理点击
@@ -131,6 +137,10 @@ const store = useStore()
     let touch_moving_start  = 0
     //触摸——刷新
     let touch_moving = 0
+    //起始点坐标
+    let startX = 0;
+    let startY = 0;
+
     //处理触摸
     let use_handle_touch = (e)=>{
         switch (e.type) {
@@ -163,11 +173,35 @@ const store = useStore()
         //保存初始点位置
         touch_moving_start = e.touches[0].clientX
         touch_moving = e.touches[0].clientX
+        //保存坐标
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+    }
+    //处理计算移动方向
+    let movedr_count = (e) =>{
+        const currentX = e.touches[0].clientX;
+        const currentY = e.touches[0].clientY;
+
+        const deltaX = currentX - startX;
+        const deltaY = currentY - startY;
+
+        // 计算手指移动的角度
+        const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+
+        // 根据角度确定手指移动的方向
+        let direction;
+        if (angle >= 45 && angle < 135 || angle >= -135 && angle < -45) {
+        direction = 0;
+        } else {
+        direction = 1;
+        }
+        return direction
+
     }
     //处理触摸-移动
     let touch_move=(e)=>{
         //判断一次移动方向，并标记，当标记存在时不再重复判断
-        if (movedr==-1){if(Math.abs(touch_moving_start - e.touches[0].clientX)/store.page_width > 0.015){
+        if (movedr==-1){if(movedr_count(e)){
             movedr = 1  
         }else{
             movedr = 0
@@ -202,17 +236,76 @@ const store = useStore()
         movedr = -1
     }
 
+    //获取所有的视频tag
+    const videoRefs = ref([]);
+
+    //控制视频播放
+    let video_control_play = ()=>{
+        videoRefs.value.forEach((v,i )=> {
+            if(i == page_on.value){
+                v.play()
+                // console.log("bofang_",v)
+            }else{
+                v.currentTime = 0
+                v.pause()
+                // console.log("tingzhi_",v)
+            }
+        })
+        
+    }
+    let video_control_all_stop = ()=>{
+        videoRefs.value.forEach((v)=> {
+                v.currentTime = 0
+                v.pause()
+                // console.log("tingzhi_",v)
+        })
+    }
+    let video_control_all_pause = ()=>{
+        videoRefs.value.forEach((v)=> {
+                v.pause()
+        })
+        // console.log("zanting_")
+    }
+
+
+    //监听视频是否在窗口内
+    const is_show = ref(false)
+    const target = ref(null)
+    const { stop } = useIntersectionObserver(
+      target,
+      ([{ isIntersecting }]) => {
+        is_show.value = isIntersecting
+      },{
+        threshold:0.4
+      }
+    )
+
+    watch(is_show, (newVal) => {
+      if (newVal) {
+        // 当 is_show 变为真时执行的代码
+        video_control_play();
+        
+      } else {
+        // 当 is_show 变为假时执行的代码
+        video_control_all_stop();
+        
+      }
+    });
 
     //翻页
     let page_move = (val)=>{
-        if (val== 'next' && page_on.value + 1 < props.slideshow_arr.pics.length){
+        video_control_all_pause()
+        if (val== 'next' && page_on.value + 1 < props.slideshow_arr.contents.length){
             page_on.value++
         }else if(val== 'pre' && page_on.value - 1 >= 0){
             page_on.value--
         }
+        setTimeout(video_control_play,600)
+        
         tracker_toggle('hidden')
     }
 
+    
 
 
 </script>
@@ -236,12 +329,18 @@ const store = useStore()
 .pic_list{
     display: flex;
     gap:1vw;
+    height:100%;
 }
 img{
     width:100%;
 }
+video{
+    width:100%;
+}
 .img_conatiner{
     transition:all 0.6s;
+    border-radius: 30px;
+    overflow: hidden;
 }
 .hide{
     opacity: 0.3;
