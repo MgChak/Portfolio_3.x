@@ -241,9 +241,7 @@ import poc_21 from '../../assets/art_pages/transit/slideshow/poc_21.jpg'
 import vt1 from '../../assets/art_pages/transit/slideshow/video/vt1.mp4'
 import vt2 from '../../assets/art_pages/transit/slideshow/video/vt2.mp4'
 import vt3 from '../../assets/art_pages/transit/slideshow/video/vt3.mp4'
-import vt4 from '../../assets/art_pages/transit/slideshow/video/vt4.mp4'
-import vt5 from '../../assets/art_pages/transit/slideshow/video/vt5.mp4'
-import vt6 from '../../assets/art_pages/transit/slideshow/video/vt6.mp4'
+
 
 //引入hooks
 import {animation_queue_route_in,animation_queue_route_out,animation_queue_before_route_in} from'../../hooks/use_art_page_functions'
@@ -278,10 +276,10 @@ const store = useStore()
         color:'#00FFE0',
         type:'img',
         contents:[
-            [persona_1,"Use gestures to bring up the control interface."],
-            [persona_2,"Use gestures to bring up the control interface."],
-            [poc_20,"Use gestures to bring up the control interface."],
-            [poc_21,"Use gestures to bring up the control interface."]
+            [persona_1,"1Use gestures to bring up the control interface."],
+            [persona_2,"2Use gestures to bring up the control interface."],
+            [poc_20,"3Use gestures to bring up the control interface."],
+            [poc_21,"4Use gestures to bring up the control interface."]
         ]
     }
 
@@ -289,10 +287,11 @@ const store = useStore()
     let viedo_test_arry = {
         color:'#00FFE0',
         type:'video',
+        resize:true,
         contents:[
-            [vt1,"Use gestures to bring up the control interface.",persona_1],
-            [vt2,"Use gestures to bring up the control interface.",persona_1],
-            [vt3,"Use gestures to bring up the control interface.",persona_1]
+            [vt1,"11Use gestures to bring up the control interface.",persona_1],
+            [vt2,"22Use gestures to bring up the control interface.",persona_1],
+            [vt3,"33Use gestures to bring up the control interface.",persona_1]
         ]
             
     }
@@ -300,10 +299,11 @@ const store = useStore()
     let viedo_test_arry2 = {
         color:'#000000',
         type:'video',
+        resize:true,
         contents:[
-            [vt4,"Use gestures to bring up the control interface.",persona_1],
-            [vt5,"Use gestures to bring up the control interface.",persona_1],
-            [vt6,"Use gestures to bring up the control interface.",persona_1]
+            [vt1,"12Use gestures to bring up the control interface.",persona_1],
+            [vt2,"13Use gestures to bring up the control interface.",persona_1],
+            [vt3,"14Use gestures to bring up the control interface.",persona_1]
         ]
             
     }

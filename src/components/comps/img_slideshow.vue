@@ -15,16 +15,17 @@
                     @pointerleave=" handle_img_hover(1,c.id,$event)"
                 >
                     <img v-if="props.slideshow_arr.type =='img'" :src="c.contents[0]" alt="" >
-                    <video v-if="props.slideshow_arr.type =='video'" muted playsinline loop :poster="c.contents[2]" ref="videoRefs">
+                    <video :style="{width:v_width+'px'}" v-if="props.slideshow_arr.type =='video'" muted playsinline loop :poster="c.contents[2]" ref="videoRefs">
                         <source :src="c.contents[0]" muted type="video/mp4"/>
                     </video>
                 </div>
             </div>
         </div>
+        <h2>{{ contents[page_on].contents[1] }}</h2>
         <div class="dots_conatiner">
             <div class="dots" v-for="c in contents" :key="c.id" 
                 :style="{background:props.slideshow_arr.color}"
-                :class = "{hide:c.id!=page_on}"
+                :class = "{activeOne:c.id==page_on}"
                 @click="handle_dots_click(c.id)"
             ></div>
         </div>
@@ -60,7 +61,33 @@ const store = useStore()
     //获取view——window size， 给img用
     let el = ref()
     const { width } = useElementSize(el)
-    let height = computed(()=>width.value*9/16) 
+    let height = computed(()=>{
+        var r_w
+        if(props.slideshow_arr.resize){//根据传入数据判断是否生效响应式
+            if(width.value>=800){
+                r_w = width.value*9/16
+            }else {
+                r_w = width.value
+            }
+        }else{
+            r_w = width.value*9/16
+        }
+        return r_w
+    }) 
+    //视频响应式高度
+    let v_width = computed(()=>{
+        var r_h
+        if(props.slideshow_arr.resize){//根据传入数据判断是否生效响应式
+            if(width.value>=800){
+                r_h = width.value
+            }else {
+                r_h = width.value*16/9
+            }
+        }else{
+            r_h = width.value
+        }
+        return r_h
+    })
 
     //计算列表的总长度
     let list_width = computed(()=>width.value*props.slideshow_arr.contents.length + store.page_width*0.01*(props.slideshow_arr.contents.length-1) + 'px')
@@ -200,6 +227,8 @@ const store = useStore()
     }
     //处理触摸-移动
     let touch_move=(e)=>{
+        //暂停视频
+        video_control_all_pause()
         //判断一次移动方向，并标记，当标记存在时不再重复判断
         if (movedr==-1){if(movedr_count(e)){
             movedr = 1  
@@ -311,11 +340,16 @@ const store = useStore()
 </script>
 
 <style scoped>
+h2{
+    color:white;
+    font-size: 24px;
+}
 .main_conatiner{
     width:100%;
     display: flex;
     flex-direction: column;
-    gap:16px;
+    justify-content: center;
+    gap:24px;
     align-items: center;
 
 }
@@ -323,7 +357,6 @@ const store = useStore()
     width:100%;
     display: flex;
     flex-direction: column;
-
     position:relative;
 }
 .pic_list{
@@ -335,33 +368,50 @@ img{
     width:100%;
 }
 video{
-    width:100%;
+    height:100%;
 }
 .img_conatiner{
     transition:all 0.6s;
     border-radius: 30px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-.hide{
-    opacity: 0.3;
-}
+
 
 .dots_conatiner{
     display: flex;
     height:24px;
-    gap:16px;
-    width:100%;
+    gap: 16px;
     align-items: center;
 }
-.dots_conatiner:hover > .dots{
-    height:24px;
-    transition:all 0.3s;
-}
+
 .dots{
-    flex:1;
-    height:3px;
+    height:15px;
+    width:15px;
     cursor: pointer;
-    border-radius: 3px;
+    border-radius: 15px;
     transition:all 0.3s;
+    opacity: 0.3;
 }
+.activeOne{
+    opacity: 1;
+    width:40px;
+}
+.hide{
+    opacity: 0.5;
+}
+@media (max-width: 1000px){
+.img_conatiner{
+    border-radius: 15px;
+}
+h2{
+    text-align: center;
+    font-size: 18px;
+    width:90%;
+}
+}
+
 </style>
