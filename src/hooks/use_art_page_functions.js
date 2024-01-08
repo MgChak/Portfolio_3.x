@@ -12,6 +12,12 @@ let num = 0
 let get_all_imgs=()=>{
 
     const store = useStore()
+    
+    //初始化！！
+    loading.value = 0
+    num = 0
+
+    console.log("基数"+loading.value+"基数2"+num)
 
     let all_imgs_arr = document.getElementsByTagName("img")
     console.log(all_imgs_arr)
