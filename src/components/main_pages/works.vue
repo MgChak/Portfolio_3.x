@@ -49,7 +49,7 @@ import useStore from '../../store/index.js'
 import router from '../../router'
 const store = useStore()
 
-    //thum注册队列
+    //thum组件注册队列
     let array = [
         {
             comp_name:'abs',

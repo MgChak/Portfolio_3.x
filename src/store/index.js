@@ -139,7 +139,7 @@ export default defineStore("Main",{
         //=============================
 
 
-            //目录导航数据==数据中的id必须等于数据的index
+            //目录导航数据==数据中的id必须等于数据的index，index从1开始
                 //name作为检索值，而text作为渲染内容，不要修改name  
                 //comp是work.vue中thum注册队列时对应的comp_name                   
             index_array:[
