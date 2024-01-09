@@ -16,29 +16,38 @@ let get_all_imgs=()=>{
     //初始化！！
     loading.value = 0
     num = 0
-
     console.log("基数"+loading.value+"基数2"+num)
 
+    //获取所有的图片和视频
     let all_imgs_arr = document.getElementsByTagName("img")
-    console.log(all_imgs_arr)
-    num = all_imgs_arr.length
+    let all_videos_arr = document.getElementsByTagName("video")
+    console.log(all_imgs_arr,all_videos_arr)
+    //统计总数
+    num = all_imgs_arr.length + all_videos_arr.length
     console.log(num)
-        for(let i=0;i<num;i++){
-            let imgs = new Image() //这是重点，必须new一张，如果直接用onload，在你还没执行到这段函数的时候，可能已经加载了一两个图片了，这时候就会出现加载不到100%！！！
-            imgs.src=  all_imgs_arr[i].src
-            imgs.onload =function(){add()}//必须用匿名函数，否则加载的函数不是load函数
-        }			
-        function add(){
-            //console.dir(loading.value/num*100+'%')
-            if(loading.value==num-1){//如果是最后一张图片了就让数值变为1，让所有图片显示
-                loading.value=num
-                //console.log(loading.value/num*100+'%')
-                document.getElementsByTagName('div')[0].style.display="block"
-            }
+    //循环监控图片加载进度
+    for(let i=0;i<all_imgs_arr.length;i++){
+        let imgs = new Image() //这是重点，必须new一张，如果直接用onload，在你还没执行到这段函数的时候，可能已经加载了一两个图片了，这时候就会出现加载不到100%！！！
+        imgs.src=  all_imgs_arr[i].src
+        imgs.onload =function(){add()}//必须用匿名函数，否则加载的函数不是load函数
+    }	
+    //循环监控视频加载进度
+    for (let i = 0; i < all_videos_arr.length; i++) {
+        let video = all_videos_arr[i]
+        video.onloadeddata = function() { add() }
+    }		
+    function add(){
+        //console.dir(loading.value/num*100+'%')
+        if(loading.value==num-1){//如果是最后一张图片了就让数值变为1，让所有图片显示
+            loading.value=num
+            //console.log(loading.value/num*100+'%')
+            document.getElementsByTagName('div')[0].style.display="block"
+        }else{
             loading.value++	
-            store.loader_num = loading.value/num*100			
         }
+        store.loader_num = loading.value/num*100			
     }
+}
 
 
 

@@ -144,8 +144,6 @@ const store = useStore()
 
     //复位
     onBeforeRouteLeave((to,from,next)=>{
-        //将滚动行为初始化为锁定状态
-        store.scroll_event_status = undefined
         var index = store.index_array.findIndex((i)=>i.navto==to.name)
         if(index >=0){
             animation_queue_click_route_out(index)
