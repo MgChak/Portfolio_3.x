@@ -15,7 +15,8 @@
   --main-light-60:rgba(245, 247, 251, 0.6);
   --main-light-30:rgba(245, 247, 251, 0.3);
 
-  --color-glass-dark:#1517189f;
+  --color-glass-dark:#151718dc;
+  --color-glass-light:#ffffffe6;
 }
 *{
   margin:0;

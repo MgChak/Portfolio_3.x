@@ -1,5 +1,6 @@
 <template>
-    <div :style = "navbar_status_style" :class="navbar_status_class" @mouseover= "handle_hover">
+<div class="outer_container" :style = "navbar_status_style" >
+    <div v-if="store.navbar_status == 0" class="outer2_container container"  @mouseover= "handle_hover()">
     
         <!-- 默认全功能导航 -->
     
@@ -35,44 +36,54 @@
             </div>
     
         </div> 
-        
-        <!-- 文章内导航 -->
-        <div class="inner_container" v-if="store.navbar_status == 1">
-    
-            <div class="back_conatiner" @click="handle_nav_click(0,'works')">
-                <img src="../assets/icons/arrow_circle_left.svg" alt="" class="icon">
-                <h3>Back to Index</h3>
-            </div>
-    
-            <div class="nav_list_container" >
-    
-                <!-- 根据path_now属性是否等于自身navto属性，决定是否绑定active class -->
-                <div 
-                    class="nav_container" 
-                    v-for="n in nav_list_in_article" :key="n.id"
-                    @click="handle_nav_click(n.id,n.navto)"
-                >
-    
-                    <div class="dot_container">
-                        
-                        <div class="dot"></div>
-                    
-                    </div>
-    
-                    <h1 class="nav_text">{{n.text}}</h1>
-    
-                </div>  
-    
-            </div> 
 
-                            
-            <div class="nav_list_container_mv"  @click = "handle_mv_menu_click">
-                <img :src="icons" alt="">
-            </div>
-    
-        </div>   
-    
     </div>
+    <div class="inart_con" v-if="store.navbar_status == 1">
+
+        <div  ref="con" class="outer2_container container_art" @mouseover= "handle_hover()">
+
+            <div class="inner_container" v-if="store.navbar_status == 1">
+
+                <div class="back_conatiner" @click="handle_nav_click(0,'works')">
+                    <img src="../assets/icons/arrow_circle_left.svg" alt="" class="icon">
+                    <h3>Back to Index</h3>
+                </div>
+
+                <div class="nav_list_container" >
+
+                    <!-- 根据path_now属性是否等于自身navto属性，决定是否绑定active class -->
+                    <div 
+                        class="nav_container" 
+                        v-for="n in nav_list_in_article" :key="n.id"
+                        @click="handle_nav_click(n.id,n.navto)"
+                    >
+
+                        <div class="dot_container">
+                            
+                            <div class="dot"></div>
+                        
+                        </div>
+
+                        <h1 class="nav_text">{{n.text}}</h1>
+
+                    </div>  
+
+                </div> 
+                
+            
+                <div class="nav_list_container_mv"  @click = "handle_mv_menu_click">
+                    <img :src="icons" alt="">
+                </div>
+
+            </div>   
+
+        </div>
+        <div ref="bac" class="backtotop" @click="handle_back_to_top()">
+            <img src="../assets/icons/backtotop.svg" alt="">
+        </div>
+
+    </div>
+</div>
     <!-- 收集导航折叠菜单 -->
     <div class="mv_nav_list_conatiner">
         <div class="mv_nav_list" :style="{right:mv_list_position}">
@@ -93,20 +104,24 @@
         </div>
     </div>
     
-    <div class="mv_nav_list_background" v-if = "store.is_mv_nav_open" @click = "handle_mv_menu_click"></div>   
+    <div class="mv_nav_list_background" v-if = "store.is_mv_nav_open" @click = "handle_mv_menu_click()"></div>   
     
     </template>
     
     <script setup>
     //hook 引入
     import{tracker_toggle} from '../hooks/use_mouse_tracker_toggle'
+    import {scrollto} from '../hooks/use_scroll'
     //依赖引入
-    import {computed,ref} from 'vue'
+    import {computed,ref,watch} from 'vue'
     import {useRouter} from 'vue-router'
     import useStore from '../store/index.js'
     //引入图标
     import close from '../assets/icons/close.svg'
     import menu from '../assets/icons/menu.svg'
+
+    import { gsap } from "gsap";
+    import { CustomEase } from "gsap/CustomEase";
 
     const router = useRouter()
     const store = useStore()
@@ -188,47 +203,184 @@
             }
         })
 
+
+        //
+        let nav_width = computed(()=>{
+            var a
+            if (store.scroll_position>=store.page_height && store.navbar_status == 1){
+                a = 80
+            }else{
+                a = 0
+            }
+            return a+"px"
+        })
+
+        let navbar_status_style2 = computed(()=>{
+            if(store.navbar_status == 0){
+                return '0px'
+            }else if(store.navbar_status == 1){
+                return '80px'
+            }
+        })
+
+        let con = ref(null)
+        let bac = ref(null)
+
+        
+
+        let animation_open = ()=>{
+            var tl = gsap.timeline(); 
+            tl.fromTo(con.value, {
+                width: "100%",
+            }, {
+                width: "calc(100% - 80px)",
+                duration: 0.3,
+                ease: CustomEase.create("custom", store.animation_ease_c1),
+            });
+            tl.fromTo(bac.value,{
+                width: "0px",
+                scale:0
+            }, {
+                width: "60px",
+                scale:0,
+                duration: 0.3,
+                ease: CustomEase.create("custom", store.animation_ease_c1),
+            },"<")
+            tl.fromTo(bac.value,{
+                scale:0
+            }, {
+                scale:1,
+                duration: 0.3,
+                ease: CustomEase.create("custom", store.animation_ease_c1),
+            },">")
+
+        }
+        let animation_close = ()=>{
+            var tl = gsap.timeline(); 
+            tl.fromTo(bac.value,{
+                scale:1,
+                width:"60px"
+            }, {
+                scale:0,
+                width:"60px",
+                duration: 0.3,
+                ease: CustomEase.create("custom", store.animation_ease_c1),
+            },"")
+            tl.fromTo(bac.value,{
+                width:"60px"
+            }, {
+                width:"0px",
+                duration: 0.1,
+                ease: CustomEase.create("custom", store.animation_ease_c1),
+            },">")
+            tl.to(con.value, {
+                width: "100%",
+                duration: 0.3,
+                ease: CustomEase.create("custom", store.animation_ease_c1),
+            });
+        }
+
+        //监听滚动位置
+        const isGreaterThanPageHeight = computed(() => store.scroll_position >= store.page_height);
+        watch(isGreaterThanPageHeight, (newValue, oldValue) => {
+            if(store.navbar_status == 1 && !store.is_mv_nav_open){
+                // 当条件从false变为true时触发动画
+                if (newValue && !oldValue) {
+                        animation_open()
+                }
+                // 当条件从true变为false时触发另一个动画
+                else if (!newValue && oldValue) {
+                    animation_close() 
+                }
+            }   
+            
+        });
+        //监听菜单打开
+        watch(()=>store.is_mv_nav_open,()=>{
+            if(store.scroll_position >= store.page_height){
+                if (store.is_mv_nav_open) { 
+                    animation_close()
+                }else{
+                    animation_open()
+                }
+            }
+            
+        })
+
+        let handle_back_to_top =()=>{
+            scrollto(0,'smooth')
+        }
+
     </script>
     
     <style scoped>
+    .outer_container{
+        position:fixed;
+        left:0;
+        right:0;
+        width:100%;
+        z-index:5; 
+        display: flex;
+        justify-content: center;
+    }
     .container{
-        background:var(--color-glass-dark);
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        backdrop-filter: blur(9.5px); 
-        -webkit-backdrop-filter: blur(9.5px);
         width: 100%;
         height:100px;
         display:flex;
-        justify-content: center;
-        align-items: center;
-        margin:0 auto;
-        position:fixed;
-        left:0;
-        right:0;
-        z-index:4;
-            
+        margin:0 auto;  
+    }
+    .container > div{
+        width:90%;
     }
     .container_art{
+        
+        height:66px;
+        border-radius: 40px;
+        display:flex;
+        justify-content: space-between;
+        border-radius: 60px;
+        
+            
+    }
+    .inart_con{
+        width:var(--content-width);
+        max-width:650px;
+        display: flex;
+        margin-top: 24px;
+        justify-content: space-between;
+    }
+    .outer2_container{
         background:var(--color-glass-dark);
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         backdrop-filter: blur(9.5px); 
         -webkit-backdrop-filter: blur(9.5px);
-        max-width: 650px;
-        width:var(--content-width);
-        height:80px;
-        border-radius: 40px;
-        margin:24px auto;
-        display:flex;
+        width:100%;
+        display: flex;
+        
         justify-content: center;
         align-items: center;
-        position:fixed;
-        left:0;
-        right:0;
-        z-index:5;
-            
+    }
+    .backtotop{
+        height:60px;
+        width:0px;
+        transform: scale(0,0);
+        flex:none;
+        background-color: var(--color-glass-light);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(9.5px); 
+        -webkit-backdrop-filter: blur(9.5px);
+        border-radius: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    .backtotop>img{
+        width:20px;
+        
     }
     .inner_container{
-        width:var(--content-width);
+        width:85%;
         height:100%;
         display:flex;
         justify-content: space-between;
@@ -261,7 +413,6 @@
         position:fixed;
         left:0;
         top:0;
-        z-index:3;
     }
     .nav_container{
         width:fit-content;
@@ -372,6 +523,11 @@
         
     }
 @media (max-width: 1000px){
+    .inner_container{
+        width:80%;
+        
+        
+    }
     .nav_list_container{
         display: none;
     }
@@ -383,6 +539,7 @@
     }
     .mv_nav_list_background{
         display: inline-block;
+        z-index: 4;
     }
 }
     </style>
