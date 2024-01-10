@@ -1,7 +1,7 @@
 <template>
 
 <div class="main_container" id="article_container_for_scroll">
-    <abs/> 
+    <cat/> 
 
     <div class = "overview_sec">
         <div style="{width:200px}">
@@ -9,7 +9,7 @@
         </div>
         <div class="overview_container">
             <div class="overview_cum1">
-                <h2>SUMMER INTERNSHIP 2022</h2>
+                <h2>MEOW MIND</h2>
             </div>
         </div>
     </div>  
@@ -79,7 +79,7 @@
 
 <script setup>
 //组件引入
-import abs from'../main_pages/works_thum_cards/abs.vue'
+import cat from'../main_pages/works_thum_cards/cat.vue'
 import letsgo from'../main_pages/works_thum_cards/letsgo.vue'
 import prototype_links from'../comps/prototype_links.vue'
 import is_v_imgs from'../comps/is_v_imgs.vue'
@@ -94,7 +94,7 @@ import { onBeforeRouteLeave } from 'vue-router';
 
 const store = useStore()
 
-    let page_id = store.index_array.findIndex((item)=> item.name == 'ABS_INTERNSHIP' )
+    let page_id = store.index_array.findIndex((item)=> item.name == 'MEOW_MIND' )
 
     onBeforeMount(()=>{
         animation_queue_before_route_in(page_id)

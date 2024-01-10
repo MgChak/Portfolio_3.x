@@ -97,7 +97,7 @@ let thum_ani_render = (name,data_obj)=>{
     }
 
 
-    let animation_render_loop = (type, render_data)=>{//根据传入的数据量，生成灯亮的gasp动画
+    let animation_render_loop = (type, render_data)=>{//根据传入的数据量，生成等量的gasp动画
         if (type == "set"){
 
             render_data.forEach((item)=> {//循环渲染动画

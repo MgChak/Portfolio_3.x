@@ -149,7 +149,7 @@
         <div class="discover_research_sec section_conatiner">
             
             <h1>PERSONAS</h1>
-            
+            <link_button :prototype_links = 'prototype_t'/>
             <img_slideshow :slideshow_arr = 'pc_arr_02'/> 
         
         </div>
@@ -175,7 +175,9 @@
      <div class="overflow_cutoff">
         <div class="discover_research_sec section_conatiner">
             
-            <h1>Video Test</h1>
+            <h1>Video Tes1111t</h1>
+
+            <link_button :prototype_links = 'prototype_t'/>
             
             <img_slideshow :slideshow_arr = 'viedo_test_arry2'/> 
         
@@ -208,8 +210,8 @@
 
 
 
-    <the_footer :index = "store.index_array.findIndex((item)=> item.name == 'ABS_INTERNSHIP' )">
-        <abs/>
+    <the_footer :index = "store.index_array.findIndex((item)=> item.name == 'MEOW_MIND' )">
+        <cat/>
     </the_footer>
 
     
@@ -227,8 +229,9 @@
 <script setup>
 //组件引入
 import transit from'../main_pages/works_thum_cards/transit.vue'
-import abs from'../main_pages/works_thum_cards/abs.vue'
+import cat from'../main_pages/works_thum_cards/cat.vue'
 import prototype_links from'../comps/prototype_links.vue'
+import link_button from'../comps/link_button.vue'
 import is_v_imgs from'../comps/is_v_imgs.vue'
 import img_slideshow from '../comps/img_slideshow.vue'
 import the_footer from '../footer.vue'
@@ -296,14 +299,20 @@ const store = useStore()
             
     }
 
+    var tt_1 = "https://player.vimeo.com/video/901211198?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+
+    var tt_2 = "https://player.vimeo.com/video/901211183?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+
+    var tt_3 = "https://player.vimeo.com/video/901211174?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+
     let viedo_test_arry2 = {
         color:'#000000',
-        type:'video',
+        type:'vimeo',
         resize:true,
         contents:[
-            [vt1,"12Use gestures to bring up the control interface.",persona_1],
-            [vt2,"13Use gestures to bring up the control interface.",persona_1],
-            [vt3,"14Use gestures to bring up the control interface.",persona_1]
+            [tt_3,"12Use gestures to bring up the control interface.",persona_1],
+            [tt_2,"13Use gestures to bring up the control interface.",persona_1],
+            [tt_1,"14Use gestures to bring up the control interface.",persona_1]
         ]
             
     }
@@ -327,6 +336,16 @@ const store = useStore()
         text:'USER FLOW TASK 3-1 : Share real-time location with mom and dad.',
         v_link:'https://vimeo.com/804035918',
         f_link:'https://www.figma.com/proto/3HQtCULnLSnwzNyZ61Hyw9/aau_2021f_wnm606_final_TRANSIT?node-id=1086%3A20272&scaling=scale-down&page-id=1086%3A20271&starting-point-node-id=1086%3A20272&show-proto-sidebar=1',
+    }
+
+
+    let prototype_t = {
+        color:'#00FFE0',
+        main_color:'#00FFE0',
+        sub_color:'#000000',
+        width:196,
+        text:'Video Prototype',
+        link:'https://vimeo.com/804035918',
     }
     
     
@@ -416,7 +435,7 @@ img{
 }
 .section_conatiner{
     width:var(--content-width);
-    max-width:var(--max-content-width) ;
+    max-width:1000px ;
     display: flex;
     flex-direction: column;
     gap:80px;

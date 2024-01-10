@@ -31,8 +31,9 @@
 </template>
 
 <script setup>
-import abs from'./works_thum_cards/abs.vue'
+import cat from'./works_thum_cards/cat.vue'
 import letsgo from'./works_thum_cards/letsgo.vue'
+import nebu from'./works_thum_cards/nebu.vue'
 import transit from'./works_thum_cards/transit.vue'
 import cover from './works_thum_cards/cover.vue'
 import infor_bar from './works_thum_cards/infor_bar.vue'
@@ -44,7 +45,6 @@ import {get_all_imgs} from'../../hooks/use_art_page_functions'
 //依赖引入
 import {onMounted,onBeforeMount,watchEffect, watch,computed} from 'vue'
 import { onBeforeRouteLeave } from 'vue-router'
-import {useElementSize } from '@vueuse/core'
 import useStore from '../../store/index.js'
 import router from '../../router'
 const store = useStore()
@@ -52,8 +52,11 @@ const store = useStore()
     //thum组件注册队列
     let array = [
         {
-            comp_name:'abs',
-            comp:abs
+            comp_name:'nebu',
+            comp:nebu
+        },{
+            comp_name:'cat',
+            comp:cat
         },{
             comp_name:'letsgo',
             comp:letsgo

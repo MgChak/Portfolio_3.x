@@ -18,6 +18,13 @@
                     <video :style="{width:v_width+'px'}" v-if="props.slideshow_arr.type =='video'" muted playsinline loop :poster="c.contents[2]" ref="videoRefs">
                         <source :src="c.contents[0]" muted type="video/mp4"/>
                     </video>
+                    <iframe v-if="props.slideshow_arr.type =='vimeo'"
+                        :style="{width:v_width+'px'}"
+                        :id="'vimeo-' + c.id"
+                        :src="c.contents[0]" 
+                        frameborder="0"  
+                        allow="autoplay; fullscreen; picture-in-picture" 
+                    ></iframe>
                 </div>
             </div>
         </div>
@@ -34,7 +41,8 @@
 </template>
 
 <script setup>
-import { ref,computed,watch} from 'vue'
+import Player from '@vimeo/player';
+import { ref,computed,watch,onMounted} from 'vue'
 import { useIntersectionObserver,useElementSize } from '@vueuse/core'
 import {tracker_toggle} from '../../hooks/use_mouse_tracker_toggle'
 import useStore from '../../store/index'
@@ -42,6 +50,9 @@ const store = useStore()
 
     //引入props
     let props = defineProps(['slideshow_arr'])
+
+    //确定轮播图种类
+    let slideshow_type = props.slideshow_arr.type
 
     //创建图片数列,根据props写入数列和id
     let contents = computed(()=>{
@@ -265,35 +276,82 @@ const store = useStore()
         movedr = -1
     }
 
+
+
+
+
     //获取所有的视频tag
-    const videoRefs = ref([]);
+    let videoRefs = ref([]);
+    let vimeoPlayers = [];
+
+    // 初始化 Vimeo 播放器
+    onMounted(() => {
+        if (slideshow_type =='vimeo'){
+            contents.value.forEach(content => {
+                let iframe = document.getElementById(`vimeo-${content.id}`);
+                let player = new Player(iframe);
+                vimeoPlayers.push({ id: content.id, player: player });
+                console.log("player"+player)
+            }); 
+            console.log("list:"+vimeoPlayers)
+        } 
+        
+    });
 
     //控制视频播放
     let video_control_play = ()=>{
-        videoRefs.value.forEach((v,i )=> {
-            if(i == page_on.value){
-                v.play()
-                // console.log("bofang_",v)
-            }else{
-                v.currentTime = 0
-                v.pause()
-                // console.log("tingzhi_",v)
-            }
-        })
-        
+        if (slideshow_type == "video"){
+            videoRefs.value.forEach((v,i)=> {
+                if(i == page_on.value){
+                    v.play()
+                    // console.log("bofang_",v)
+                }else{
+                    v.currentTime = 0
+                    v.pause()
+                    // console.log("tingzhi_",v)
+                }
+            })
+        }else if(slideshow_type == "vimeo"){
+            vimeoPlayers.forEach(vimeoPlayer => {
+                if (vimeoPlayer.id == page_on.value) {
+                    vimeoPlayer.player.play();
+                    console.log("开始播放——"+vimeoPlayer.player)
+                } else {
+                    vimeoPlayer.player.pause().then(() => {
+                        vimeoPlayer.player.setCurrentTime(0);
+                    });
+                }
+            });
+       
+        }else {
+            console.log(slideshow_type)
+        }  
     }
     let video_control_all_stop = ()=>{
-        videoRefs.value.forEach((v)=> {
+        if (slideshow_type == "video"){
+            videoRefs.value.forEach((v)=> {
                 v.currentTime = 0
                 v.pause()
                 // console.log("tingzhi_",v)
         })
+        }else if(slideshow_type == "vimeo"){
+            vimeoPlayers.forEach(vimeoPlayer => {
+                vimeoPlayer.player.pause().then(() => {
+                    vimeoPlayer.player.setCurrentTime(0);
+                });
+            });
+        } 
     }
     let video_control_all_pause = ()=>{
-        videoRefs.value.forEach((v)=> {
+        if (slideshow_type == "video"){
+            videoRefs.value.forEach((v)=> {
                 v.pause()
         })
-        // console.log("zanting_")
+        }else if(slideshow_type == "vimeo"){
+            vimeoPlayers.forEach(vimeoPlayer => {
+                vimeoPlayer.player.pause()
+            });
+        } 
     }
 
 
@@ -370,6 +428,10 @@ img{
 video{
     height:100%;
 }
+iframe{
+    height:100%;
+    pointer-events: none;
+}
 .img_conatiner{
     transition:all 0.6s;
     border-radius: 30px;
@@ -401,7 +463,7 @@ video{
     width:40px;
 }
 .hide{
-    opacity: 0.5;
+    opacity: 0.3;
 }
 @media (max-width: 1000px){
 .img_conatiner{

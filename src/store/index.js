@@ -1,7 +1,5 @@
 import { defineStore } from 'pinia'
-import abs from'../components/main_pages/works_thum_cards/abs.vue'
-import letsgo from'../components/main_pages/works_thum_cards/letsgo.vue'
-import transit from'../components/main_pages/works_thum_cards/transit.vue'
+
 
 export default defineStore("Main",{
     actions:{
@@ -156,6 +154,17 @@ export default defineStore("Main",{
                     class:'',
                 },{ 
                     id:2,
+                    comp:'nebu',
+                    name:'NEBU',
+                    text:'NEBU',
+                    bio:'SUMMER INTERNSHIP CASE',
+                    time:'2022 summer',
+                    sub_color:'#B71D39',
+                    navto:'nebu',
+                    background_color:'linear-gradient(360deg, #3D2539 -3.36%, #000000 49.04%)',
+                    class:'',
+                },{ 
+                    id:3,
                     comp:'transit',
                     name:'TRANSIT',
                     text:'Transit',
@@ -166,14 +175,14 @@ export default defineStore("Main",{
                     background_color:'linear-gradient(360deg, #25343D -3.36%, #000000 49.04%)',
                     class:'',
                 },{ 
-                    id:3,
-                    comp:'abs',
-                    name:'ABS_INTERNSHIP',
-                    text:'ABS Intern',
+                    id:4,
+                    comp:'cat',
+                    name:'MEOW_MIND',
+                    text:'MEOW MIND',
                     bio:'SUMMER INTERNSHIP CASE',
                     time:'2022 summer',
                     sub_color:'#B71D39',
-                    navto:'abs',
+                    navto:'cat',
                     background_color:'linear-gradient(360deg, #3D2539 -3.36%, #000000 49.04%)',
                     class:'',
                 }

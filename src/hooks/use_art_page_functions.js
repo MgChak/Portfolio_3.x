@@ -20,12 +20,12 @@ let get_all_imgs=()=>{
 
     //获取所有的图片和视频
     let all_imgs_arr = document.getElementsByTagName("img")
-    let all_videos_arr = document.getElementsByTagName("video")
+    // let all_videos_arr = document.getElementsByTagName("video")
     // console.log(all_imgs_arr,all_videos_arr)
     
-    //统计总数
-    num = all_imgs_arr.length + all_videos_arr.length
+    //统计总数+ all_videos_arr.length
     // console.log(num)
+    num = all_imgs_arr.length 
 
     //循环监控图片加载进度
     for(let i=0;i<all_imgs_arr.length;i++){
@@ -36,11 +36,11 @@ let get_all_imgs=()=>{
     }	
 
     //循环监控视频加载进度
-    for (let i = 0; i < all_videos_arr.length; i++) {
-        let video = all_videos_arr[i]
-        video.onloadeddata = add
-        video.onerror = add
-    }	
+    // for (let i = 0; i < all_videos_arr.length; i++) {
+    //     let video = all_videos_arr[i]
+    //     video.onloadeddata = add
+    //     video.onerror = add
+    // }	
     
     //累加函数
     function add(){
@@ -48,8 +48,6 @@ let get_all_imgs=()=>{
         store.loader_num = loading.value/num*100			
     }
 }
-
-
 
 
 

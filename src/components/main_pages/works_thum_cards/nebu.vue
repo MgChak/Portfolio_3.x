@@ -19,7 +19,7 @@ import useStore from '../../../store/index.js'
 import { useElementSize } from '@vueuse/core'
 const store = useStore()
 
-    let name = 'ABS_INTERNSHIP'
+    let name = 'NEBU'
 
     // //计算内容物偏移的位置
     // let img_position = computed(()=>handle_img_position_change(card_id))

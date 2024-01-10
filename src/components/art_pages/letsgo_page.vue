@@ -429,8 +429,8 @@
         </div>
     </div>
 
-    <the_footer :index = "store.index_array.findIndex((item)=> item.name == 'TRANSIT' )">
-        <transit/>
+    <the_footer :index = "store.index_array.findIndex((item)=> item.name == 'NEBU' )">
+        <nebu/>
     </the_footer>
 
 
@@ -442,7 +442,7 @@
 <script setup>
 //组件引入
 import letsgo from'../main_pages/works_thum_cards/letsgo.vue'
-import transit from'../main_pages/works_thum_cards/transit.vue'
+import nebu from'../main_pages/works_thum_cards/nebu.vue'
 import prototype_links from'../comps/prototype_links.vue'
 import is_v_imgs from'../comps/is_v_imgs.vue'
 import the_footer from '../footer.vue'
