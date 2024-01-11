@@ -1,9 +1,13 @@
 <template>
         <div class="container background" ref="el">
             <div class="el_conatiner" :style = "{width:el_container_size,height:el_container_size}"> 
-                <img ref="img1" src="../../../assets/thum_cards/abs_2.png" alt="">
-                <img ref="img2" src="../../../assets/thum_cards/abs_1.png" alt="">
+                <img class="img1" ref="img1" src="../../../assets/thum_cards/nebu/01.png" alt="">
+                <img class="img2" ref="img2" src="../../../assets/thum_cards/nebu/02.png" alt="">
+                <img class="img3" ref="img3" src="../../../assets/thum_cards/nebu/03.png" alt="">
+                <img class="img4" ref="img4" src="../../../assets/thum_cards/nebu/04.png" alt="">
+                <img class="img5" ref="img5" src="../../../assets/thum_cards/nebu/05.png" alt="">
             </div>
+            <img class="background_img" src="../../../assets/thum_cards/nebu/backgournd.jpg" alt="">
         </div>
     
 </template>
@@ -32,6 +36,9 @@ const store = useStore()
     //获取到所有需要操作的div
     const img1= ref(null)
     const img2= ref(null)
+    const img3= ref(null)
+    const img4= ref(null)
+    const img5= ref(null)
 
     //监听+执行动画
     watchPostEffect(()=>{
@@ -45,40 +52,80 @@ const store = useStore()
                 },{
                     el:img1,
                     animations:{
-                        xPercent: -10,
-                        yPercent: 0,
-                        scale:1.2,
+                        xPercent: -15,
+                        yPercent: 3,
+                        scale:0.5,
                     }
                 },{
                     el:img2,
                     animations:{
-                        xPercent: 14,
-                        yPercent: -4,
-                        scale:1.2,
+                        xPercent: 27,
+                        yPercent: -28,
+                        scale:1.5,
                     }
-                },
-
-            ],
+                },{
+                    el:img3,
+                    animations:{
+                        xPercent: -55,
+                        yPercent: -46,
+                        scale:0.2,
+                    }
+                },{
+                    el:img4,
+                    animations:{
+                        xPercent: -28,
+                        yPercent: 26,
+                        scale:1,
+                    }
+                },{
+                    el:img5,
+                    animations:{
+                        xPercent: -1,
+                        yPercent: 9,
+                        scale:0.7,
+                    }
+                }],
             article:[{
                     el:el,
                     animations:{
-                        height:'80vh',
+                        height:'55vh',
                     }
                 },{
                     el:img1,
                     animations:{
-                        xPercent: -4,
-                        yPercent: 0,
-                        scale:1.2,
+                        xPercent: -8,
+                        yPercent: -1,
+                        scale:0.5,
                     }
                 },{
                     el:img2,
                     animations:{
-                        xPercent: 4,
-                        yPercent: 10,
-                        scale:1.4,
+                        xPercent: 13,
+                        yPercent: -12,
+                        scale:1.2,
                     }
-                },],
+                },{
+                    el:img3,
+                    animations:{
+                        xPercent: -55,
+                        yPercent: -46,
+                        scale:0.3,
+                    }
+                },{
+                    el:img4,
+                    animations:{
+                        xPercent: -19,
+                        yPercent: 19,
+                        scale:0.8,
+                    }
+                },{
+                    el:img5,
+                    animations:{
+                        xPercent: 6,
+                        yPercent: 8,
+                        scale:0.7,
+                    }
+                }],
             index:[{
                     el:el,
                     animations:{
@@ -87,18 +134,39 @@ const store = useStore()
                 },{
                     el:img1,
                     animations:{
-                        xPercent: -3,
-                        yPercent: 0,
-                        scale:1.2,
+                        xPercent: -8,
+                        yPercent: -1,
+                        scale:0.5,
                     }
                 },{
                     el:img2,
                     animations:{
-                        xPercent: 4,
-                        yPercent: 0,
+                        xPercent: 13,
+                        yPercent: -12,
                         scale:1.2,
                     }
-                },]
+                },{
+                    el:img3,
+                    animations:{
+                        xPercent: -55,
+                        yPercent: -46,
+                        scale:0.3,
+                    }
+                },{
+                    el:img4,
+                    animations:{
+                        xPercent: -19,
+                        yPercent: 19,
+                        scale:0.8,
+                    }
+                },{
+                    el:img5,
+                    animations:{
+                        xPercent: 6,
+                        yPercent: 8,
+                        scale:0.7,
+                    }
+                }]
         })
     })
 
@@ -107,7 +175,6 @@ const store = useStore()
 
 <style scoped>
 .container{
-    background:linear-gradient(270.03deg, #F9193D 0.03%, #322632 35.03%, #1B2731 62.5%, #2F7DA1 99.97%);
     width:100%;
     overflow: hidden;
     position:relative;
@@ -117,21 +184,45 @@ const store = useStore()
 }
 .el_conatiner{
     position:relative;
+    /* border: 1px rgba(255, 255, 255, 0.454) solid; */
     /* background-color: green; */
+    z-index: 1;
 }
 
-img:first-child{
+img{
+    width:50%;
     position:absolute;
-    right: 1%;
-    bottom: 18%;
-    width: 104%;
+    
 }
-img:last-child{
-    position:absolute;
-    right: -1%;
-    bottom: 13%;
-    width: 40%;
 
+.background_img{
+    width: 100%;
+    height:100%;
+    position:absolute;
+    z-index: 0;
+    left:0;
+    bottom: 0;
 }
+.img1{
+    left:0;
+    top:0;
+}
+.img2{
+    right:0;
+    top:0;
+}
+.img3{
+    left:50%;
+    top:50%;
+}
+.img4{
+    left:0;
+    bottom:0;
+}
+.img5{
+    right:0;
+    bottom:0;
+}
+
 
 </style>

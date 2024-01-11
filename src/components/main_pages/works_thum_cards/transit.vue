@@ -2,8 +2,7 @@
 
 <div class="container background" ref="el">
             <div class="el_conatiner" :style = "{width:el_container_size,height:el_container_size}">
-                <img ref="img" src="../../../assets/thum_cards/transit_2.png" alt="">
-        
+                <img ref="img" src="../../../assets/thum_cards/tran/transit_2.png" alt="">
             </div>
         </div>
 </template>
@@ -42,7 +41,7 @@ const store = useStore()
                     animations:{
                         xPercent: 0,
                         yPercent: 0,
-                        scale:1.3,
+                        scale:0.8,
                     }
                 }
 
@@ -50,7 +49,7 @@ const store = useStore()
             article:[{
                     el:el,
                     animations:{
-                        height:'80vh',
+                        height:'55vh',
                     }
                 },{
                     el:img,
@@ -98,7 +97,7 @@ const store = useStore()
 }
 
 .background{
-    background-image: url('../../../assets/thum_cards/transit_background.jpg');
+    background-image: url('../../../assets/thum_cards//tran/transit_background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

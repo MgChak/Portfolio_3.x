@@ -3,8 +3,8 @@
     <div class="container background" ref="el">
             <div class="el_conatiner" :style = "{width:el_container_size,height:el_container_size}">
 
-                <img ref="img1" src="../../../assets/thum_cards/lp.png" class="largephone" alt="">
-                <img ref="img2" src="../../../assets/thum_cards/letsgo_small_p.png" class="smallphone" alt="">
+                <img ref="img1" src="../../../assets/thum_cards/let/L.png" class="largephone" alt="">
+                <img ref="img2" src="../../../assets/thum_cards/let/S.png" class="smallphone" alt="">
             </div>
         
             
@@ -47,40 +47,38 @@ const store = useStore()
                 },{
                     el:img1,
                     animations:{
-                        xPercent: -4,
-                        yPercent: 0,
-                        scale:1.5,
+                        xPercent: 0,
+                        yPercent: 31,
+                        scale:0.35,
                     }
                 },{
                     el:img2,
                     animations:{
-                        xPercent: 4,
-                        yPercent: -2,
-                        scale:1.4,
+                        xPercent: -2,
+                        yPercent: 19,
+                        scale:0.3,
                     }
-                },
-
-            ],
+                }],
             article:[{
                     el:el,
                     animations:{
-                        height:'80vh',
+                        height:'55vh',
                     }
                 },{
                     el:img1,
                     animations:{
-                        xPercent: -4,
-                        yPercent: 20,
-                        scale:1.4,
+                        xPercent: -3,
+                        yPercent: 41,
+                        scale:0.65,
                     }
                 },{
                     el:img2,
                     animations:{
-                        xPercent: 4,
-                        yPercent: 10,
-                        scale:1.2,
+                        xPercent: 10,
+                        yPercent: 26,
+                        scale:0.45,
                     }
-                },],
+                }],
             index:[{
                     el:el,
                     animations:{
@@ -89,18 +87,18 @@ const store = useStore()
                 },{
                     el:img1,
                     animations:{
-                        xPercent: -3,
-                        yPercent: 0,
-                        scale:1.2,
+                        xPercent: -4,
+                        yPercent: 31,
+                        scale:0.5,
                     }
                 },{
                     el:img2,
                     animations:{
-                        xPercent: 4,
-                        yPercent: 0,
-                        scale:1.2,
+                        xPercent: 1,
+                        yPercent: 24,
+                        scale:0.45,
                     }
-                },]
+                }]
         })
     })
 
@@ -135,7 +133,7 @@ align-items: center;
 }
 .smallphone {
     position: absolute;
-    bottom: 16%;
+    bottom: 0%;
     left: 24%;
     width: 90%;
     z-index: 3;

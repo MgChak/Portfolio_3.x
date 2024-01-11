@@ -5,7 +5,7 @@
   --animation-slow-cubic:cubic-bezier(0, 0, 0.33, 0.90);
 
   --content-width:85%;
-  --max-content-width:1280px;
+  --max-content-width:1000px;
 
   --thumcard_index_height:75vh;
   --thumcard_fullscreen_height:100vh;

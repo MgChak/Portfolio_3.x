@@ -434,7 +434,7 @@ iframe{
 }
 .img_conatiner{
     transition:all 0.6s;
-    border-radius: 30px;
+    border-radius: 20px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -466,9 +466,6 @@ iframe{
     opacity: 0.3;
 }
 @media (max-width: 1000px){
-.img_conatiner{
-    border-radius: 15px;
-}
 h2{
     text-align: center;
     font-size: 18px;

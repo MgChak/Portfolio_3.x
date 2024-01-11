@@ -5,9 +5,9 @@
         >
            <div class="contents">
                 <h3 ref="h3" :style="{color:prototype_links.sub_color}">
-                    Video Prototype
+                    {{prototype_links.text}}
                 </h3>
-                <div ref="dot" class="arrow_container" :style="{color:prototype_links.sub_color}">
+                <div ref="dot" class="arrow_container" :style="{background:prototype_links.sub_color}">
                     <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M11.9675 7.05293C12.2826 6.73785 12.2826 6.227 11.9675 5.91192L6.83296 0.777356C6.51788 0.462274 6.00703 0.462274 5.69195 0.777356C5.37687 1.09244 5.37687 1.60329 5.69195 1.91837L10.256 6.48242L5.69195 11.0465C5.37687 11.3616 5.37687 11.8724 5.69195 12.1875C6.00703 12.5026 6.51788 12.5026 6.83296 12.1875L11.9675 7.05293ZM0.101562 7.28924H11.397V5.6756H0.101562V7.28924Z" :fill="prototype_links.main_color"/>
                     </svg>
@@ -51,8 +51,9 @@ const store = useStore()
     )
 
     let stop_watch=watch(is_show, (newVal,oldVal) => {
-        console.log("_bofangdonghua ")
         if(newVal!=oldVal && newVal){
+            stop()
+            stop_watch()
             var tl = gsap.timeline() 
             tl.fromTo(button.value,{
                 scaleX: 0,
@@ -114,9 +115,6 @@ const store = useStore()
                 ease: CustomEase.create("custom", store.animation_ease_c1),
             })
         }
-        
-        // stop()
-        // stop_watch()
     });
     
 
@@ -129,13 +127,15 @@ const store = useStore()
     display: flex;
     align-items: center;
     height:51;
+    width:52.33px;
     gap:18px;
     padding:8px 0;
     border-radius: 50px;
     cursor: pointer;
-    border: 1px solid;
+    border: 1.5px solid;
     justify-content: flex-end;
     overflow: hidden;
+    transform: scale(0);
 }
 h3{
     font-size:15px;
@@ -148,6 +148,7 @@ h2{
     font-weight: 400;
 } 
 .arrow_container{
+    transform: scale(0);
     width:35px;
     height:35px;
     display: flex;

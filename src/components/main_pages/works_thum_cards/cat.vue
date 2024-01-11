@@ -1,8 +1,9 @@
 <template>
         <div class="container background" ref="el">
             <div class="el_conatiner" :style = "{width:el_container_size,height:el_container_size}"> 
-                <img ref="img1" src="../../../assets/thum_cards/abs_2.png" alt="">
-                <img ref="img2" src="../../../assets/thum_cards/abs_1.png" alt="">
+                <img class="img1" ref="img1" src="../../../assets/thum_cards/cat/1.svg" alt="">
+                <img class="img2" ref="img2" src="../../../assets/thum_cards/cat/2.png" alt="">
+                <img class="img3" ref="img3" src="../../../assets/thum_cards/cat/3.png" alt="">
             </div>
         </div>
     
@@ -32,6 +33,7 @@ const store = useStore()
     //获取到所有需要操作的div
     const img1= ref(null)
     const img2= ref(null)
+    const img3= ref(null)
 
     //监听+执行动画
     watchPostEffect(()=>{
@@ -45,40 +47,52 @@ const store = useStore()
                 },{
                     el:img1,
                     animations:{
-                        xPercent: -10,
-                        yPercent: 0,
-                        scale:1.2,
+                        xPercent: 50,
+                        yPercent: 79,
+                        scale:1.3,
                     }
                 },{
                     el:img2,
                     animations:{
-                        xPercent: 14,
-                        yPercent: -4,
+                        xPercent: 50,
+                        yPercent: -16,
+                        scale:0.3,
+                    }
+                },{
+                    el:img3,
+                    animations:{
+                        xPercent: 54,
+                        yPercent: 140,
                         scale:1.2,
                     }
-                },
-
-            ],
+                }],
             article:[{
                     el:el,
                     animations:{
-                        height:'80vh',
+                        height:'55vh',
                     }
                 },{
                     el:img1,
                     animations:{
-                        xPercent: -4,
-                        yPercent: 0,
-                        scale:1.2,
+                        xPercent: 50,
+                        yPercent: 116,
+                        scale:1.3,
                     }
                 },{
                     el:img2,
                     animations:{
-                        xPercent: 4,
-                        yPercent: 10,
-                        scale:1.4,
+                        xPercent: 50,
+                        yPercent: 26,
+                        scale:0.5,
                     }
-                },],
+                },{
+                    el:img3,
+                    animations:{
+                        xPercent: 54,
+                        yPercent: 257,
+                        scale:1.2,
+                    }
+                }],
             index:[{
                     el:el,
                     animations:{
@@ -87,18 +101,25 @@ const store = useStore()
                 },{
                     el:img1,
                     animations:{
-                        xPercent: -3,
-                        yPercent: 0,
-                        scale:1.2,
+                        xPercent: 50,
+                        yPercent: 79,
+                        scale:1.3,
                     }
                 },{
                     el:img2,
                     animations:{
-                        xPercent: 4,
-                        yPercent: 0,
+                        xPercent: 50,
+                        yPercent: -16,
+                        scale:0.3,
+                    }
+                },{
+                    el:img3,
+                    animations:{
+                        xPercent: 54,
+                        yPercent: 140,
                         scale:1.2,
                     }
-                },]
+                }]
         })
     })
 
@@ -107,7 +128,7 @@ const store = useStore()
 
 <style scoped>
 .container{
-    background:linear-gradient(270.03deg, #F9193D 0.03%, #322632 35.03%, #1B2731 62.5%, #2F7DA1 99.97%);
+    background:radial-gradient(72.2% 184.52% at 50.85% 5.78%, #FFD747 0%, #151614 100%);
     width:100%;
     overflow: hidden;
     position:relative;
@@ -120,18 +141,12 @@ const store = useStore()
     /* background-color: green; */
 }
 
-img:first-child{
+img{
     position:absolute;
-    right: 1%;
-    bottom: 18%;
-    width: 104%;
+    right: 50%;
+    bottom: 50%;
+    width: 50%;
 }
-img:last-child{
-    position:absolute;
-    right: -1%;
-    bottom: 13%;
-    width: 40%;
 
-}
 
 </style>
