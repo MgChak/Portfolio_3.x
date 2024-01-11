@@ -123,6 +123,12 @@ export default defineStore("Main",{
             footer_animation: 'var(--animation-slow)',
 
         //=============================
+        //work_about路由动画 状态依赖
+        //=============================
+
+            full_cover_class : 'top',
+
+        //=============================
         //通用的动画参数
         //=============================
             

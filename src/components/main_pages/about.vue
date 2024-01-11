@@ -68,32 +68,73 @@
 
 <script setup>
 import useStore from '../../store/index'
-import {onMounted,computed,ref} from 'vue'
+import { s_lock,s_unlock } from '../../hooks/use_page_scroll_locker'
+import {get_all_imgs} from'../../hooks/use_art_page_functions'
+import {onMounted,computed,ref,onBeforeMount,watchEffect} from 'vue'
 import { onBeforeRouteLeave } from 'vue-router'
 import {scrollto} from '../../hooks/use_scroll'
 
 const store = useStore()
 
+    //初始化1
+    onBeforeMount(()=>{
+        //锁定滚动
+        s_lock()
+    
+    })
+
     onMounted(()=>{
 
         //复位路由路径
         store.is_route_to_work = false
-        //修改导航栏状态到默认状态
-        store.navbar_status = 0
         //初始化文章位置设置为0
         scrollto(0,'jump')
         //修改导航栏状态到初始状态
         store.navbar_status = 0
         //将文章的高度保存到库
         store.scroll_page_height = document.getElementById('article_container_for_scroll').clientHeight
-        setTimeout(()=>{
-            //打开导航栏
-            store.is_navbar_open = true
-        },100)   
+        
+        //打开屏幕遮罩
+        store.full_cover_class = 'top'
+        setTimeout(() => {
+            store.full_cover_class = 'bottom'
+        }, 350);
+        
+        store.loader_status = true//开启loader
+
+        get_all_imgs()//统计图片
+
+        var stop = watchEffect(()=>{
+            if(store.is_loader_animation_finished){
+
+                //打开导航栏
+                store.is_navbar_open = true
+                
+                setTimeout(()=>{
+                    //解锁滚动
+                    s_unlock() 
+                    
+                },600)
+
+                //复位动画状态
+                store.is_loader_animation_finished = false
+
+                stop()
+
+                
+                
+            }
+        })
     })
 
     onBeforeRouteLeave((to,from,next)=>{
-        next()
+        //遮挡屏幕
+        store.full_cover_class = 'center'
+        //关闭导航栏
+        // store.is_navbar_open = false
+        setTimeout(()=>{
+            next()        
+        },600) 
     })
 
 
@@ -174,6 +215,7 @@ const store = useStore()
     flex-direction: column;
     align-items: center;
     gap:80px;
+    overflow: hidden;
 }
 .header_container{
     margin-top: 200px;

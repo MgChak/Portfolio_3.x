@@ -106,7 +106,14 @@ const store = useStore()
         }else{
             //跳转到指定位置
             scrollto(0,'jump')
+
+            //打开屏幕遮罩
+            store.full_cover_class = 'top'
+            setTimeout(() => {
+                store.full_cover_class = 'bottom'
+            }, 350);
         }
+
 
         store.loader_status = true//开启loader
 
@@ -154,7 +161,13 @@ const store = useStore()
                 next()        
             },650) 
         }else{
-            next()
+            //遮挡屏幕
+            store.full_cover_class = 'center'
+            //关闭导航栏
+            // store.is_navbar_open = false
+            setTimeout(()=>{
+                next()        
+            },600) 
         }
         //锁滚动
         s_lock() 

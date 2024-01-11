@@ -158,6 +158,8 @@ let animation_queue_route_out =(page_id,to,next)=>{
             s_unlock() 
         },700)   
     }else{
+         //遮挡屏幕
+         store.full_cover_class = 'center'
         //关闭导航栏
         store.is_navbar_open = false
         //将滚动行为初始化为锁定状态
@@ -168,7 +170,7 @@ let animation_queue_route_out =(page_id,to,next)=>{
             next()
             //解锁滚动
             s_unlock() 
-        },200)  
+        },600)  
 
     }
     

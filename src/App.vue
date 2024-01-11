@@ -14,6 +14,8 @@
     <router-view></router-view>
 
   </div>
+
+  <div class="router_full_cover" :class="store.full_cover_class"></div>
   
 
 
@@ -93,9 +95,6 @@ const w_size = useWindowSize()
   })
 
 
-
-
-
 </script>
 
 <style scoped>
@@ -110,7 +109,29 @@ const w_size = useWindowSize()
   z-index: 5;
   pointer-events: none;
 }
+.router_full_cover{
+  width:100vw;
+  height:100vh;
+  position: fixed;
+  top:0;
+  left:0;
+  background-color: black;
+  z-index:5;
+  pointer-events: none;
+  
+}
 
+.bottom{
+  transform: translateY(105%);
+}
+.center{
+  transform: translateY(0);
+  transition: all 0.3s;
+}
+.top{
+  transform: translateY(-105%);
+  transition: all 0.3s;
+}
 
 
 </style>

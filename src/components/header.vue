@@ -319,7 +319,7 @@
         left:0;
         right:0;
         width:100%;
-        z-index:5; 
+        z-index:8; 
         display: flex;
         justify-content: center;
     }
