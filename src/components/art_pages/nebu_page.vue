@@ -136,44 +136,109 @@ The primary objective of our project is to enhance the safety, ease, and comfort
         <div class="content_container">
             <div class="content_block_flex">
                 <h1>RESEARCH SUMMARY</h1>
-                <link_button :prototype_links = 'case_study_button_dark'/>
+                <link_button :prototype_links = 'research_button_dark'/>
             </div>
             <img_slideshow :slideshow_arr = 'research_arry'/> 
         </div>
     </div> 
 
 
-    <div class = "section_container bc_m">
+    <div class = "section_container">
         <div class="content_container">
+            
+            <h1 >DEFINE PROBLEMS</h1>
             <img src="../../assets/art_pages/letsgo/p1.jpg" alt="">
             <div class="content_block_texts">
-                <h1 class="fc_s">DEFINE PROBLEMS</h1>
-                <h3 class="fc_s">Planning group travel can be challenging for users due to the lack of adequate tools and resources. As a result, users often have a poor experience when trying to plan trips with a team.</h3>
+                <h2 >Boredom and Isolation </h2>
+                <h3 >During the extended journey, passengers may experience anxiety and boredom, longing for more entertaining ways to spend their time.</h3>
             </div>
-        </div>
-        <div class="breakline bc_s center"></div>
-        <div class="content_container">
-            <img src="../../assets/art_pages/letsgo/p2.jpg" alt="">
             <div class="content_block_texts">
-                <h1 class="fc_s">HOW MIGHT WE STATEMENT</h1>
-                <h3 class="fc_s">How might we help young adults with expendable income for travel, use mobile technology to be well prepared for a group trip? </h3>
+                <h2 >Health Issues in Zero Gravity</h2>
+                <h3 >In zero gravity, passengers may feel physical discomfort and uncertainty about maintaining their health, worrying about the prolonged impact on their bodies.</h3>
             </div>
         </div>
+        <img class="sp_background_img" src="../../assets/art_pages/nebu/background_2.jpg" alt="">
     </div> 
 
 
 
 
-    <div class = "section_container bc_m">
+    <div class = "section_container bc_b">
         <div class="content_container">
-            <h1 class="fc_s">PREMARY FEATURE 01<br>_CREATE NEW TRIP PLAN</h1>
-            <h3 class="fc_s">Users can effortlessly create a travel plan in Let's Go and begin adding their favorite events. During the creation process, they can also invite friends who will be traveling with them to join in shaping a unique and collaborative travel plan.</h3>
-            <div class="content_block_buttons">
-                <link_button :prototype_links = 'vp_button_1'/>
-                <link_button :prototype_links = 'fp_button_1'/>
-            </div>
-            <div class="pp_container" style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/901210479?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="l_p_create"></iframe></div>
+            <h1>HOLOGRAPHIC PROJECTION</h1>
+            <h3 >Equipped with two retractable hemispherical holographic projectors located at the top and bottom of its body, Nebu is capable of producing 360-degree holographic projections in any space. This feature unlocks endless possibilities for new modes of interaction, significantly enhancing Nebu's interactive capabilities.</h3>
+            <img src="../../assets/art_pages/nebu/s1_1.jpg" alt="">
         </div>
+
+        <div class="content_container">
+            <h2>Caption Display & Navigation</h2>
+            <h3 >To enhance communication between Nebu and its users, the words spoken by Nebu will be displayed in speech bubbles above its head. Additionally, when guiding users to their destination, Nebu will project a guiding line in front of the user, providing a more intuitive understanding of the direction to proceed.</h3>
+            <img src="../../assets/art_pages/nebu/s1_2.jpg" alt="">
+        </div>
+
+        <div class="content_container">
+            <h2>UI Display</h2>
+            <h3 >The holographic projection capability of Nebu takes user interaction to a new level by enabling the projection of complex UI content directly into the air. This innovation not only facilitates effortless reading but also simplifies the user's interaction with the system. By bringing data and controls into a more accessible, three-dimensional space, it enhances user engagement and ease of use.</h3>
+            <img src="../../assets/art_pages/nebu/s1_3.jpg" alt="">
+        </div>
+
+        <div class="content_container">
+            <h2>Environmental Simulation</h2>
+            <h3 >To mitigate the mental stress caused by spending extended periods in enclosed spaces, Nebu will use holographic projections to simulate scenes that the user enjoys. The selection process for these projected scenes is automated; Nebu's advanced AI system will analyze the user's preferences to choose the most suitable scene.</h3>
+            <img src="../../assets/art_pages/nebu/s1_4.jpg" alt="">
+        </div>
+    </div> 
+
+
+    <div class = "section_container">
+        <div class="content_container">
+            <h1>RESEARCH SUMMARY</h1>
+            <h3>In the process of environmental simulation, users have the flexibility to adjust the simulated scenes not only through voice command but also via a control panel. Nebu will project a control panel around the user's hand using holographic projection. Furthermore, Nebu will monitor the user's hand movements through a camera, enabling responsive interaction based on these gestures.</h3>
+            <link_button :prototype_links = 'vp_button_1'/>
+            <div class="pp_container" style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/901211459?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="最终输出_1080"></iframe></div>
+        </div>
+        <img class="sp_background_img" src="../../assets/art_pages/nebu/background_2.jpg" alt="">
+    </div> 
+
+    <div class = "section_container bc_b">
+        <div class="content_container">
+            <h2>Environmental Simulation _ Interaction</h2>
+            <h3 >Whenever the user lifts and opens their hand, the control panel is projected out.. Conversely, the panel automatically hides when the hand is not in this position.</h3>
+            <img src="../../assets/art_pages/nebu/s2_1.jpg" alt="">
+        </div>
+
+        <div class="content_container">
+            <h3 >In the interface, users select options by pointing their fingers at the target buttons. The selected button enlarges, and its function is displayed above it for clarity. Simultaneously, the left side of the panel shows the current menu level the user is navigating, ensuring an intuitive and user-friendly experience.</h3>
+            <img src="../../assets/art_pages/nebu/s2_2.jpg" alt="">
+        </div>
+
+        <div class="content_container">
+            <h3 >For menus with more than four options, additional buttons are minimized and hidden. Activating the scroll feature is as simple as using two fingers, which then displays a scrollbar at the top of the panel. Users can scroll through the menu to easily locate their desired function.</h3>
+            <img src="../../assets/art_pages/nebu/s2_3.jpg" alt="">
+        </div>
+
+        <div class="content_container">
+            <h3 >When users are in the third or fourth level of the menu, they can quickly return to the main menu using the 'Back To' feature. To activate this function, users simply extend a second finger while selecting the 'Back' button. </h3>
+            <img src="../../assets/art_pages/nebu/s2_4.jpg" alt="">
+        </div>
+    </div>
+    
+    <div class = "section_container">
+        <div class="content_container">
+            <h1>NEXT...</h1>
+            <h3>Designing a commercial space travel experience is a vast and challenging endeavor. Due to time constraints in production, our current focus has been primarily on the visual and interactive design of the companion robot Nebu. Beyond visual customization, we should consider expanding the range of features and activities available on the spaceship to cater to the diverse needs of travelers. Additionally, it would be beneficial to explore the types of activities and accommodations that NebuLine could offer on Mars, ensuring a well-rounded and satisfying experience for all. As for the future, we anticipate delving deeper into the broader aspects of interstellar travel, continually evolving and enhancing the user experience.</h3>
+            <link_button :prototype_links = 'case_study_button_dark'/>
+            <img src="../../assets/art_pages/nebu/s2_6.jpg" alt="">
+        </div>
+
+        <div class="breakline bc_w1"></div>
+
+        <div class="content_container">
+            <h1>THANKS</h1>
+            <h3>I would like to extend my special thanks to every member of Team Apogee. Your professionalism and exceptional design skills have significantly contributed to our project over the past fourteen weeks. I am deeply grateful for your dedication and the outstanding work each of you has delivered.</h3>
+            <img src="../../assets/art_pages/nebu/team.jpg" alt="">
+        </div>
+        <img class="sp_background_img" src="../../assets/art_pages/nebu/background_2.jpg" alt="">
     </div> 
 
 
@@ -250,10 +315,10 @@ const store = useStore()
         type:'img',
         resize:false,
         contents:[
-            [h1,"Searching Result Cards"],
-            [h2,"Treval Plan Detail Page"],
-            [h3,"Ai Assistant"],
-            [h4,"Ai Assistant"],
+            [h1,"Caption Display & Navigation"],
+            [h2,"Interface Display"],
+            [h3,"Environmental Simulation"],
+            [h4,"Environmental Simulation _ Interaction"],
         ]
     }    
 
@@ -264,11 +329,11 @@ const store = useStore()
         type:'img',
         resize:false,
         contents:[
-            [r1,"Competitive Analysis Overview"],
-            [r2,"Interview Results Summary"],
-            [r3,"Background Research Summary"],
-            [r4,"Background Research Summary"],
-            [r5,"Background Research Summary"]
+            [r1,"Research about robot shape"],
+            [r2,"Tracking human physical staus in space"],
+            [r3,"Tracking human physical staus in space"],
+            [r4,"About the maintenance of robots"],
+            [r5,"Issues might encounter in the spaceship"]
         ]
     }  
 
@@ -276,33 +341,34 @@ const store = useStore()
     let case_study_button = {
         main_color:'#000000',
         sub_color:'var(--p-color-main)',
-        width:165,
-        text:'CASE STUDY',
-        link:'https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=1-5902&t=DoNIWpc88yBJsBBQ-1&scaling=contain&page-id=1%3A2&mode=design',
+        width:180,
+        text:'PRESENTATION',
+        link:'https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=14-5230&t=QQI6hKGLwnpZBfID-1&scaling=min-zoom&page-id=14%3A3693&mode=design',
     }
     let case_study_button_dark = {
         main_color:'var(--p-color-sub)',
         sub_color:'var(--p-color-main)',
-        width:165,
-        text:'CASE STUDY',
-        link:'https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=1-5902&t=DoNIWpc88yBJsBBQ-1&scaling=contain&page-id=1%3A2&mode=design',
+        width:180,
+        text:'PRESENTATION',
+        link:'https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=14-5230&t=QQI6hKGLwnpZBfID-1&scaling=min-zoom&page-id=14%3A3693&mode=design',
+    }
+    let research_button_dark = {
+        main_color:'var(--p-color-sub)',
+        sub_color:'var(--p-color-main)',
+        width:157,
+        text:'RESEARCH',
+        link:'https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=14-6607&t=zi2twlrOCafqzPlO-1&scaling=min-zoom&page-id=14%3A6606&mode=design',
     }
 
     let vp_button_1 = {
-        main_color:'var(--p-color-sub)',
-        sub_color:'var(--p-color-main)',
+        main_color:'var(--p-color-main)',
+        sub_color:'var(--p-color-sub)',
         width:185,
         text:'Video Prototype',
         link:'https://vimeo.com/901210479?share=copy',
     }
 
-    let fp_button_1 = {
-        main_color:'var(--p-color-main)',
-        sub_color:'var(--p-color-sub)',
-        width:185,
-        text:'Figma Prototype',
-        link:'https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=13-5790&t=o80NHiywyoFzdJoz-1&scaling=scale-down&page-id=13%3A5789&starting-point-node-id=13%3A5790&mode=design',
-    }
+
 
 
 
@@ -431,6 +497,7 @@ h4{
     width:30px;
     height:30px;
     display: flex;
+    flex:none;
     justify-content: center;
     align-items: center;
 }
@@ -557,6 +624,19 @@ h4{
 .content_block_buttons{
     flex-direction: column;
 
+}
+
+.team_m{
+    flex-direction: row;
+    gap:24px;
+}
+.team_img{
+    width:65px;
+    height:65px;
+}
+.teaminfo{
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 

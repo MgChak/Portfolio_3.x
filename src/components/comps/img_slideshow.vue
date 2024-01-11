@@ -399,8 +399,11 @@ const store = useStore()
 
 <style scoped>
 h2{
-    color:white;
-    font-size: 24px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    color:var(--p-color-font-white-60);
 }
 .main_conatiner{
     width:100%;
