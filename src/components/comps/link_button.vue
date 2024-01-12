@@ -124,7 +124,6 @@ const store = useStore()
     let handle_hover = (val, e)=>{
 
         if(e.pointerType == 'mouse'){
-            console.log("1_chufa")
             if(val == 1){
                 gsap.to(button.value,{
                     scaleX: 1.1,
@@ -165,7 +164,7 @@ const store = useStore()
     justify-content: flex-end;
     overflow: hidden;
     transform: scale(0);
-    opacity: 0.9;
+
 }
 h3{
     font-size:15px;

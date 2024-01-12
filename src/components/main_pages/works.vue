@@ -16,6 +16,7 @@
 
 
             <component class="comp" :is="render_comp(i.comp)"/>
+     
            
             <div class="bio_container">
                 <infor_bar :infor_obj="{type:'main',text: i.text,bio:i.bio,time:i.time}"/>
@@ -105,6 +106,7 @@ const store = useStore()
             srcoll_to(store.router_page,'jump')
             
         }else{
+            console.log("跳转——top")
             //跳转到指定位置
             scrollto(0,'jump')
         }

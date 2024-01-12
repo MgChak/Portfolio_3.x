@@ -561,6 +561,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        opacity: 0.5;
     }
     .mv_nav_list_conatiner{
         position:fixed;
