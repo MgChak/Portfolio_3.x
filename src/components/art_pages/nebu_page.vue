@@ -149,7 +149,7 @@ The primary objective of our project is to enhance the safety, ease, and comfort
         <div class="content_container">
             
             <h1 >DEFINE PROBLEMS</h1>
-            <img src="../../assets/art_pages/letsgo/p1.png" alt="">
+            <img src="../../assets/art_pages/nebu/p_1.png" alt="">
             <div class="content_block_texts">
                 <h2 >Boredom and Isolation </h2>
                 <h3 >During the extended journey, passengers may experience anxiety and boredom, longing for more entertaining ways to spend their time.</h3>

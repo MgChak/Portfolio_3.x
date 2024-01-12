@@ -237,11 +237,11 @@ const store = useStore()
         type:'vimeo',
         resize:true,
         contents:[
-            [v_1,"Searching Result Cards"],
-            [v_2,"Treval Plan Detail Page"],
-            [v_3,"Ai Assistant"],
-            [v_4,"Ai Assistant"],
-            [v_5,"Ai Assistant"]
+            [v_1,"VR Mode"],
+            [v_2,"Home Page"],
+            [v_3,"Cat Emotion Scanner_Customization"],
+            [v_4,"Interaction Guide"],
+            [v_5,"Ai Chating"]
         ]
     }    
 
@@ -252,10 +252,10 @@ const store = useStore()
         type:'img',
         resize:false,
         contents:[
-            [r1,"Competitive Analysis Overview"],
-            [r2,"Interview Results Summary"],
-            [r3,"Background Research Summary"],
-            [r4,"Background Research Summary"],
+            [r1,"Background Research"],
+            [r2,"Background Research & Survey Feedback"],
+            [r3,"Survey Feedback"],
+            [r4,"Survey Feedback"],
         ]
     }  
 

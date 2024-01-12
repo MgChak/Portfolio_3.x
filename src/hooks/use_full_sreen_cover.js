@@ -2,7 +2,10 @@ import useStore from '../store/index'
 
 let screen_cover = ()=>{
     const store = useStore()
-    store.full_cover_class = 'center'
+    store.full_cover_class = 'bottom'
+    setTimeout(() => {
+        store.full_cover_class = 'center'
+    }, 10);
 
 }
 

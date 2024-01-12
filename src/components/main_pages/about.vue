@@ -126,7 +126,7 @@ const store = useStore()
         //遮挡屏幕
         screen_cover()
         //关闭导航栏
-        // store.is_navbar_open = false
+        store.is_navbar_open = false
         setTimeout(()=>{
             next()        
         },350) 
