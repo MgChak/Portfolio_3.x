@@ -1,6 +1,9 @@
 <template>
     
-        <div ref="button" class="button" @click="handle_click()" 
+        <div ref="button" class="button"
+            @click="handle_click()"
+            @pointerover="handle_hover(1,$event)" 
+            @pointerleave="handle_hover(0,$event)"
             :style="{background:prototype_links.main_color,'border-color':prototype_links.sub_color,width:prototype_links.width+'px'}"
         >
            <div class="contents">
@@ -116,6 +119,32 @@ const store = useStore()
             })
         }
     });
+
+
+    let handle_hover = (val, e)=>{
+
+        if(e.pointerType == 'mouse'){
+            console.log("1_chufa")
+            if(val == 1){
+                gsap.to(button.value,{
+                    scaleX: 1.1,
+                    scaleY:1.1,
+                    opacity:1,
+                    duration: 0.3,
+                    ease: CustomEase.create("custom", store.animation_ease_c1),
+                })
+            }else{
+                gsap.to(button.value,{
+                    scaleX: 1,
+                    scaleY:1,
+                    duration: 0.3,
+                    ease: CustomEase.create("custom", store.animation_ease_c1),
+                })
+                
+            }
+            
+        }
+    }
     
 
 
@@ -136,6 +165,7 @@ const store = useStore()
     justify-content: flex-end;
     overflow: hidden;
     transform: scale(0);
+    opacity: 0.9;
 }
 h3{
     font-size:15px;

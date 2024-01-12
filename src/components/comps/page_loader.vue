@@ -121,7 +121,10 @@ let container_animation = (val)=>{//展开和关闭动画
             y:0,
             onComplete:()=>{
                 store.is_loader_animation_finished = true
-                
+                gsap.set(load_bar.value,{
+                    scaleX: 0,
+                    transformOrigin: "left",
+                })    
             }
         })
         

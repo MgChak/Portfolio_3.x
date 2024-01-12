@@ -1,5 +1,5 @@
 <template>
-<div class="outer_container" :style = "navbar_status_style" >
+<div ref="outer_container" class="outer_container">
     <div v-if="store.navbar_status == 0" class="outer2_container container"  @mouseover= "handle_hover()">
     
         <!-- 默认全功能导航 -->
@@ -16,6 +16,8 @@
                     class="nav_container" 
                     v-for="n in nav_list" :key="n.id"
                     @click="handle_nav_click(n.id,n.navto)"
+                    @pointerover="handle_hover_1(1,$event)" 
+                    @pointerleave="handle_hover_1(0,$event)"
                     :class="{ active : n.navto==path_now }"
                 >
     
@@ -44,7 +46,10 @@
 
             <div class="inner_container" v-if="store.navbar_status == 1">
 
-                <div class="back_conatiner" @click="handle_nav_click(0,'works')">
+                <div class="back_conatiner" @click="handle_nav_click(0,'works')"
+                    @pointerover="handle_hover_1(1,$event)" 
+                    @pointerleave="handle_hover_1(0,$event)"
+                    >
                     <img src="../assets/icons/arrow_circle_left.svg" alt="" class="icon">
                     <h3>Back to Index</h3>
                 </div>
@@ -56,6 +61,8 @@
                         class="nav_container" 
                         v-for="n in nav_list_in_article" :key="n.id"
                         @click="handle_nav_click(n.id,n.navto)"
+                        @pointerover="handle_hover_1(1,$event)" 
+                        @pointerleave="handle_hover_1(0,$event)"
                     >
 
                         <div class="dot_container">
@@ -78,8 +85,12 @@
             </div>   
 
         </div>
-        <div ref="bac" class="backtotop" @click="handle_back_to_top()">
-            <img src="../assets/icons/backtotop.svg" alt="">
+        <div ref="bac" class="backtotop" 
+            @click="handle_back_to_top()" 
+            @pointerover="handle_hover_2(1,$event)" 
+            @pointerleave="handle_hover_2(0,$event)"
+        >
+            <img ref="backtotopimg" src="../assets/icons/backtotop.svg" alt="">
         </div>
 
     </div>
@@ -156,14 +167,42 @@
         }
         //取出响应式的路径数据。模板中，dot会根据根据这一参数决定是否绑定active class
         let path_now = computed(()=>store.path_now)
+
         //根据库中状态，相应navbar的开关
-        let navbar_status_style = computed(()=>{
+        const outer_container = ref()
+        watch(()=>store.is_navbar_open,()=>{
+            console.log("nav——")
             if (store.is_navbar_open){
-                return {top:'0px',transition:'top 0.6s var(--animation-slow-cubic)'}
+                console.log("nav——开")
+                gsap.to(outer_container.value,{
+                            y:120,
+                            duration: 0.6,
+                            ease: CustomEase.create("custom", store.animation_ease_c1),
+                        })
             }else{
-                return {top:'-120px',transition:'all 0.3s ease-out'}
+                console.log("nav——关")
+                gsap.to(outer_container.value,{
+                            y:0,
+                            duration: 0.3,
+                            ease: CustomEase.create("custom", store.animation_ease_c1),
+                        })
             }
         })
+
+        // let navbar_status_style = computed(()=>{
+        //     if (store.is_navbar_open){
+        //         return {top:'0px',transition:'top 0.6s var(--animation-slow-cubic)'}
+        //     }else{
+        //         return {top:'-120px',transition:'all 0.3s ease-out'}
+        //     }
+        // })
+
+
+
+
+
+
+
         //根据不同状态修改导航栏classname
         let navbar_status_class = computed(()=>{
             if(store.navbar_status == 0){
@@ -172,11 +211,61 @@
                 return 'container_art'
             }
         })
+
+        //处理hover
         let handle_hover= ()=>{
             tracker_toggle('hidden')
             store.hover_id = undefined
         }
 
+        let handle_hover_1 = (val, e)=>{
+            if (!e.target.classList.contains('active')) {
+                if(e.pointerType == 'mouse'){
+                    console.log(e)
+                    if(val == 1){
+                        gsap.to(e.target,{
+                            opacity:1,
+                            duration: 0.3,
+                            ease: CustomEase.create("custom", store.animation_ease_c1),
+                        })
+                    }else{
+                        gsap.to(e.target,{
+                            opacity:0.5,
+                            duration: 0.3,
+                            ease: CustomEase.create("custom", store.animation_ease_c1),
+                        })
+                        
+                    }
+                    
+                }
+            }
+        }
+
+        const backtotopimg =ref()
+
+        let handle_hover_2 = (val, e)=>{
+
+            if(e.pointerType == 'mouse'){
+                console.log(e)
+                if(val == 1){
+                    gsap.to(backtotopimg.value,{
+                        scaleX: 1.2,
+                        scaleY:1.2,
+                        duration: 0.3,
+                        ease: CustomEase.create("custom", store.animation_ease_c1),
+                    })
+                }else{
+                    gsap.to(backtotopimg.value,{
+                        scaleX: 1,
+                        scaleY:1,
+                        duration: 0.3,
+                        ease: CustomEase.create("custom", store.animation_ease_c1),
+                    })
+                    
+                }
+                
+            }
+        }
 
 
 
@@ -318,6 +407,7 @@
         position:fixed;
         left:0;
         right:0;
+        top:-120px;
         width:100%;
         z-index:8; 
         display: flex;
@@ -394,6 +484,7 @@
         align-items: center;
         gap:4px;
         cursor: pointer;
+        opacity: 0.5;
         
     }
     .nav_list_container{
@@ -423,6 +514,7 @@
         align-items: center;
         gap:2px;
         cursor: pointer;
+        opacity: 0.5;
     }
     .dot_container{
         width:12px;
@@ -438,14 +530,14 @@
         background: var(--main-light-100);
         border-radius: 8px;
         position:absolute;
-        bottom:-6px;
+        bottom:-10px;
         right:0;
         left:0;
         margin: auto;
         transition:all 0.3s;
     }
     h1{
-        color:var(--main-light-30);
+        color:var(--main-light-100);
         font-size:15px;
         font-weight: 400;
         line-height: 12px;
@@ -454,9 +546,9 @@
     .active > .dot_container >.dot{
         bottom:2px;
     }
-    .active > h1{
-        color:var(--main-light-100);
-    }
+    /* .active > h1{
+        font-weight: 900;
+    } */
     h3{
         color:var(--main-light-100);
         font-size:15px;
