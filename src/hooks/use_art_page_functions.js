@@ -3,6 +3,7 @@ import {watchEffect,ref} from 'vue'
 import {tracker_toggle} from '../hooks/use_mouse_tracker_toggle'
 import {scrollto} from '../hooks/use_scroll'
 import { s_lock,s_unlock } from '../hooks/use_page_scroll_locker'
+import {screen_cover} from '../hooks/use_full_sreen_cover'
 
 //loarder的status
 let loading = ref(0)
@@ -159,7 +160,7 @@ let animation_queue_route_out =(page_id,to,next)=>{
         },700)   
     }else{
          //遮挡屏幕
-         store.full_cover_class = 'center'
+         screen_cover()
         //关闭导航栏
         store.is_navbar_open = false
         //将滚动行为初始化为锁定状态
@@ -170,7 +171,7 @@ let animation_queue_route_out =(page_id,to,next)=>{
             next()
             //解锁滚动
             s_unlock() 
-        },600)  
+        },350)  
 
     }
     

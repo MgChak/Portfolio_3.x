@@ -4,7 +4,7 @@
     <nebu/> 
 
     <div class = "ov_section_container bc_s">
-        <div class="content_container">
+        <div class="ov_content_container">
             <h4>NEBU</h4>
             <div class="breakline bc_w1"></div>
             <overview_info :ov_data="ov_data" />
@@ -34,7 +34,7 @@
             </div>
             <h3>This project is centered on designing for space tourism, anticipating a future around 2060 when orbital space travel around Earth becomes commonplace. We envision a time when people are not only orbiting Earth but also seeking to travel to Mars.
 The primary objective of our project is to enhance the safety, ease, and comfort of tourists' journeys to Mars.</h3>
-            <img class="no_raius" src="../../assets/art_pages/nebu/o_1.jpg" alt="">
+            <img class="no_raius" src="../../assets/art_pages/nebu/o_1.png" alt="">
         </div>
     </div> 
 
@@ -106,7 +106,7 @@ The primary objective of our project is to enhance the safety, ease, and comfort
     <div class = "section_container">
         <div class="content_container">
             <h1 class="fc_m">LOGO & COLORS</h1>
-            <img class="cardshadow" src="../../assets/art_pages/nebu/logo.jpg" alt="">
+            <img class="cardshadow" src="../../assets/art_pages/nebu/logo.png" alt="">
         </div>
         <img class="sp_background_img" src="../../assets/art_pages/nebu/background_2.jpg" alt="">
     </div> 
@@ -125,8 +125,10 @@ The primary objective of our project is to enhance the safety, ease, and comfort
 
     <div class = "section_container">
         <div class="content_container">
-            <h1 class="fc_m">CUSTOMIZABLE</h1>
-            <h3>To cater to the diverse preferences of as many users as possible, we have equipped Nebu with a 360-degree display screen. This feature allows users to customize Nebu's 'skin' to their liking, whether they prefer solid colors, images, or even animations. This customization ensures that every user has a unique and personal companion robot experience.</h3>
+            <div class="content_block_texts_24">
+                <h1 class="fc_m">CUSTOMIZABLE</h1>
+                <h3>To cater to the diverse preferences of as many users as possible, we have equipped Nebu with a 360-degree display screen. This feature allows users to customize Nebu's 'skin' to their liking, whether they prefer solid colors, images, or even animations. This customization ensures that every user has a unique and personal companion robot experience.</h3>
+            </div>
             <div class="pp_container" style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/901211431?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="nebu_skin"></iframe></div>
         </div>
         <img class="sp_background_img" src="../../assets/art_pages/nebu/background_2.jpg" alt="">
@@ -147,7 +149,7 @@ The primary objective of our project is to enhance the safety, ease, and comfort
         <div class="content_container">
             
             <h1 >DEFINE PROBLEMS</h1>
-            <img src="../../assets/art_pages/letsgo/p1.jpg" alt="">
+            <img src="../../assets/art_pages/letsgo/p1.png" alt="">
             <div class="content_block_texts">
                 <h2 >Boredom and Isolation </h2>
                 <h3 >During the extended journey, passengers may experience anxiety and boredom, longing for more entertaining ways to spend their time.</h3>
@@ -165,35 +167,45 @@ The primary objective of our project is to enhance the safety, ease, and comfort
 
     <div class = "section_container bc_b">
         <div class="content_container">
-            <h1>HOLOGRAPHIC PROJECTION</h1>
-            <h3 >Equipped with two retractable hemispherical holographic projectors located at the top and bottom of its body, Nebu is capable of producing 360-degree holographic projections in any space. This feature unlocks endless possibilities for new modes of interaction, significantly enhancing Nebu's interactive capabilities.</h3>
-            <img src="../../assets/art_pages/nebu/s1_1.jpg" alt="">
+            <div class="content_block_texts_24">
+                <h1>HOLOGRAPHIC PROJECTION</h1>
+                <h3 >Equipped with two retractable hemispherical holographic projectors located at the top and bottom of its body, Nebu is capable of producing 360-degree holographic projections in any space. This feature unlocks endless possibilities for new modes of interaction, significantly enhancing Nebu's interactive capabilities.</h3>
+            </div>
+            <img src="../../assets/art_pages/nebu/s1_1.png" alt="">
         </div>
 
         <div class="content_container">
-            <h2>Caption Display & Navigation</h2>
-            <h3 >To enhance communication between Nebu and its users, the words spoken by Nebu will be displayed in speech bubbles above its head. Additionally, when guiding users to their destination, Nebu will project a guiding line in front of the user, providing a more intuitive understanding of the direction to proceed.</h3>
-            <img src="../../assets/art_pages/nebu/s1_2.jpg" alt="">
+            <div class="content_block_texts">
+                <h2>Caption Display & Navigation</h2>
+                <h3 >To enhance communication between Nebu and its users, the words spoken by Nebu will be displayed in speech bubbles above its head. Additionally, when guiding users to their destination, Nebu will project a guiding line in front of the user, providing a more intuitive understanding of the direction to proceed.</h3>
+            </div>
+            <img src="../../assets/art_pages/nebu/s1_2.png" alt="">
         </div>
 
         <div class="content_container">
-            <h2>UI Display</h2>
-            <h3 >The holographic projection capability of Nebu takes user interaction to a new level by enabling the projection of complex UI content directly into the air. This innovation not only facilitates effortless reading but also simplifies the user's interaction with the system. By bringing data and controls into a more accessible, three-dimensional space, it enhances user engagement and ease of use.</h3>
-            <img src="../../assets/art_pages/nebu/s1_3.jpg" alt="">
+            <div class="content_block_texts">
+                <h2>UI Display</h2>
+                <h3 >The holographic projection capability of Nebu takes user interaction to a new level by enabling the projection of complex UI content directly into the air. This innovation not only facilitates effortless reading but also simplifies the user's interaction with the system. By bringing data and controls into a more accessible, three-dimensional space, it enhances user engagement and ease of use.</h3>
+            </div>
+            <img src="../../assets/art_pages/nebu/s1_3.png" alt="">
         </div>
 
         <div class="content_container">
-            <h2>Environmental Simulation</h2>
-            <h3 >To mitigate the mental stress caused by spending extended periods in enclosed spaces, Nebu will use holographic projections to simulate scenes that the user enjoys. The selection process for these projected scenes is automated; Nebu's advanced AI system will analyze the user's preferences to choose the most suitable scene.</h3>
-            <img src="../../assets/art_pages/nebu/s1_4.jpg" alt="">
+            <div class="content_block_texts">
+                <h2>Environmental Simulation</h2>
+                <h3 >To mitigate the mental stress caused by spending extended periods in enclosed spaces, Nebu will use holographic projections to simulate scenes that the user enjoys. The selection process for these projected scenes is automated; Nebu's advanced AI system will analyze the user's preferences to choose the most suitable scene.</h3>
+            </div>
+            <img src="../../assets/art_pages/nebu/s1_4.png" alt="">
         </div>
     </div> 
 
 
     <div class = "section_container">
         <div class="content_container">
-            <h1>RESEARCH SUMMARY</h1>
-            <h3>In the process of environmental simulation, users have the flexibility to adjust the simulated scenes not only through voice command but also via a control panel. Nebu will project a control panel around the user's hand using holographic projection. Furthermore, Nebu will monitor the user's hand movements through a camera, enabling responsive interaction based on these gestures.</h3>
+            <div class="content_block_texts_24">
+                <h1>Environmental Simulation <br>_ Interaction & UX/UI</h1>
+                <h3>In the process of environmental simulation, users have the flexibility to adjust the simulated scenes not only through voice command but also via a control panel. Nebu will project a control panel around the user's hand using holographic projection. Furthermore, Nebu will monitor the user's hand movements through a camera, enabling responsive interaction based on these gestures.</h3>
+            </div>
             <link_button :prototype_links = 'vp_button_1'/>
             <div class="pp_container" style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/901211459?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="最终输出_1080"></iframe></div>
         </div>
@@ -202,41 +214,47 @@ The primary objective of our project is to enhance the safety, ease, and comfort
 
     <div class = "section_container bc_b">
         <div class="content_container">
-            <h2>Environmental Simulation _ Interaction</h2>
-            <h3 >Whenever the user lifts and opens their hand, the control panel is projected out.. Conversely, the panel automatically hides when the hand is not in this position.</h3>
-            <img src="../../assets/art_pages/nebu/s2_1.jpg" alt="">
+            <div class="content_block_texts">
+                <h2>Environmental Simulation _ Interaction</h2>
+                <h3 >Whenever the user lifts and opens their hand, the control panel is projected out.. Conversely, the panel automatically hides when the hand is not in this position.</h3>
+            </div>
+            <img src="../../assets/art_pages/nebu/s2_1.png" alt="">
         </div>
 
         <div class="content_container">
             <h3 >In the interface, users select options by pointing their fingers at the target buttons. The selected button enlarges, and its function is displayed above it for clarity. Simultaneously, the left side of the panel shows the current menu level the user is navigating, ensuring an intuitive and user-friendly experience.</h3>
-            <img src="../../assets/art_pages/nebu/s2_2.jpg" alt="">
+            <img src="../../assets/art_pages/nebu/s2_2.png" alt="">
         </div>
 
         <div class="content_container">
             <h3 >For menus with more than four options, additional buttons are minimized and hidden. Activating the scroll feature is as simple as using two fingers, which then displays a scrollbar at the top of the panel. Users can scroll through the menu to easily locate their desired function.</h3>
-            <img src="../../assets/art_pages/nebu/s2_3.jpg" alt="">
+            <img src="../../assets/art_pages/nebu/s2_3.png" alt="">
         </div>
 
         <div class="content_container">
             <h3 >When users are in the third or fourth level of the menu, they can quickly return to the main menu using the 'Back To' feature. To activate this function, users simply extend a second finger while selecting the 'Back' button. </h3>
-            <img src="../../assets/art_pages/nebu/s2_4.jpg" alt="">
+            <img src="../../assets/art_pages/nebu/s2_4.png" alt="">
         </div>
     </div>
     
     <div class = "section_container">
         <div class="content_container">
-            <h1>NEXT...</h1>
-            <h3>Designing a commercial space travel experience is a vast and challenging endeavor. Due to time constraints in production, our current focus has been primarily on the visual and interactive design of the companion robot Nebu. Beyond visual customization, we should consider expanding the range of features and activities available on the spaceship to cater to the diverse needs of travelers. Additionally, it would be beneficial to explore the types of activities and accommodations that NebuLine could offer on Mars, ensuring a well-rounded and satisfying experience for all. As for the future, we anticipate delving deeper into the broader aspects of interstellar travel, continually evolving and enhancing the user experience.</h3>
+            <div class="content_block_texts_24">
+                <h1>NEXT...</h1>
+                <h3>Designing a commercial space travel experience is a vast and challenging endeavor. Due to time constraints in production, our current focus has been primarily on the visual and interactive design of the companion robot Nebu. Beyond visual customization, we should consider expanding the range of features and activities available on the spaceship to cater to the diverse needs of travelers. Additionally, it would be beneficial to explore the types of activities and accommodations that NebuLine could offer on Mars, ensuring a well-rounded and satisfying experience for all. As for the future, we anticipate delving deeper into the broader aspects of interstellar travel, continually evolving and enhancing the user experience.</h3>
+            </div>
             <link_button :prototype_links = 'case_study_button_dark'/>
-            <img src="../../assets/art_pages/nebu/s2_6.jpg" alt="">
+            <img src="../../assets/art_pages/nebu/s2_6.png" alt="">
         </div>
 
         <div class="breakline bc_w1"></div>
 
         <div class="content_container">
-            <h1>THANKS</h1>
-            <h3>I would like to extend my special thanks to every member of Team Apogee. Your professionalism and exceptional design skills have significantly contributed to our project over the past fourteen weeks. I am deeply grateful for your dedication and the outstanding work each of you has delivered.</h3>
-            <img src="../../assets/art_pages/nebu/team.jpg" alt="">
+            <div class="content_block_texts_24">
+                <h1>THANKS</h1>
+                <h3>I would like to extend my special thanks to every member of Team Apogee. Your professionalism and exceptional design skills have significantly contributed to our project over the past fourteen weeks. I am deeply grateful for your dedication and the outstanding work each of you has delivered.</h3>
+            </div>
+            <img src="../../assets/art_pages/nebu/team.png" alt="">
         </div>
         <img class="sp_background_img" src="../../assets/art_pages/nebu/background_2.jpg" alt="">
     </div> 
@@ -267,16 +285,16 @@ import {onMounted,onBeforeMount} from 'vue'
 import useStore from '../../store/index'
 import { onBeforeRouteLeave } from 'vue-router';
 //img引入
-import r1 from "../../assets/art_pages/nebu/r_1.jpg"
-import r2 from "../../assets/art_pages/nebu/r_2.jpg"
-import r3 from "../../assets/art_pages/nebu/r_3.jpg"
-import r4 from "../../assets/art_pages/nebu/r_4.jpg"
-import r5 from "../../assets/art_pages/nebu/r_5.jpg"
+import r1 from "../../assets/art_pages/nebu/r_1.png"
+import r2 from "../../assets/art_pages/nebu/r_2.png"
+import r3 from "../../assets/art_pages/nebu/r_3.png"
+import r4 from "../../assets/art_pages/nebu/r_4.png"
+import r5 from "../../assets/art_pages/nebu/r_5.png"
 //img引入
-import h1 from "../../assets/art_pages/nebu/h_1.jpg"
-import h2 from "../../assets/art_pages/nebu/h_2.jpg"
-import h3 from "../../assets/art_pages/nebu/h_3.jpg"
-import h4 from "../../assets/art_pages/nebu/h_4.jpg"
+import h1 from "../../assets/art_pages/nebu/h_1.png"
+import h2 from "../../assets/art_pages/nebu/h_2.png"
+import h3 from "../../assets/art_pages/nebu/h_3.png"
+import h4 from "../../assets/art_pages/nebu/h_4.png"
 
 
 
@@ -451,12 +469,19 @@ h4{
     gap:40px
 }
 
-.content_container{
+.ov_content_container{
     width:var(--content-width);
     max-width:var(--max-content-width);
     display: flex;
     flex-direction: column;
     gap:24px
+}
+.content_container{
+    width:var(--content-width);
+    max-width:var(--max-content-width);
+    display: flex;
+    flex-direction: column;
+    gap:40px
 }
 .content_block_flex{
     width:100%;
@@ -469,6 +494,12 @@ h4{
     display: flex;
     flex-direction: column;
     gap:8px
+}
+.content_block_texts_24{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    gap:24px
 }
 .content_block_center{
     width:100%;
@@ -612,7 +643,7 @@ img{
 }    
 h4{
     font-size: 60px;
-    line-height: 40px; 
+    line-height: 60px; 
 
 }
 .content_block_flex{

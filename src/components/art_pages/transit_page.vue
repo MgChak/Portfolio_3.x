@@ -3,210 +3,237 @@
 <div class="main_container" id="article_container_for_scroll">
     <transit/> 
 
-    <div class = "overview_sec">
-        <div style="{width:200px}">
-            <img class="logo" src="../../assets/art_pages/transit/logo.svg" alt="">
+    <div class = "ov_section_container bc_s">
+        <div class="ov_content_container">
+            <h4>LET'S GO</h4>
+            <div class="breakline bc_w1"></div>
+            <overview_info :ov_data="ov_data" />
+            <div class="breakline bc_w1"></div>
+            <h3>Let's Go is a versatile travel planning app featuring AI-assisted itinerary creation and a dynamic online community, all designed to simplify and enhance the process of organizing travel plans.</h3>
         </div>
-        <div class="overview_container">
-            <div class="overview_cum1">
-                <div class="overview overview_infor">
-                    <h2>OVERVIEW</h2>
-                    <h3>Transit it is an app that tracks bus routes in real time and provides directions for users. Most importantly, this app provides all the information you need for the route, such as arrival time for a specific bus, and names of each bus stop on the route, and even the number of stops for a specific bus ride.</h3>
-                </div>
-                <div class="type overview_infor">
-                    <h2>TYPE OF PROJECT</h2>
-                    <h3>App Redesign</h3>
-                </div>
-            </div>
-            <div class="overview_cum2">
-                <div class="my_roll overview_infor">
-                    <h2>MY ROLL</h2>
-                    <h3>Solo designer
-                        <br>_Research
-                        <br>_UX Design
-                        <br>_Visual Design
-                        <br>_Prototyping
-                    </h3>
-                </div>
-            </div>
-        </div>
-       
     </div>  
 
-    <!-- grid_img -->
-    <div class="section_conatiner">
-        <is_v_imgs>
-            <img src="../../assets/art_pages/transit/grid.png" alt="">
-        </is_v_imgs>
-    </div>
-
-    <!-- design_process_sec -->
-    <div class="section_conatiner">
-        <h1>DESIGN PROCESS</h1>
-        <h3>This is a redesign project, so I believe before I start thinking about how to design, I should analyze the software to determine which strengths to retain and which weaknesses to address with targeted designs. After understanding the current state of the software, I will conduct background research to understand the industry landscape and my target user group, which will serve as the basis for my design. Testing and modification should be the longest and most time-consuming part of the process because it is a repetitive process. I will continue to cycle through this process until I produce a design that satisfies both me and the target users.</h3>
-        <is_v_imgs>
-        <img src="../../assets/art_pages/transit/process.jpg" alt="">
-        </is_v_imgs>
-    </div>
-
-    <is_v_imgs>
-            <img src="../../assets/art_pages/transit/poster_1.jpg" alt="">
-    </is_v_imgs>
-    
-    <!-- HEURISTIC EVALUATION -->
-    <div class="discover_research_sec section_conatiner">
-        
-        <h1>HEURISTIC EVALUATION</h1>
-        
-        <h3>Conducting a HEURISTIC EVALUATION is a crucial step in redesigning app, as it will aid in understanding the current issues and problems with the TRANSIT APP.</h3>
-        <div class="section_inner_container">
-            <h2>Usability</h2>
-            <h3>TRANSIT can effectively complete tasks of route search and navigation, with a simple and straightforward user experience. However, the lack of other commonly used features such as voice navigation and saving frequently used routes can cause inconvenience for users.
-            </h3>
-            
-            <h2>Functionality </h2>
-            <h3>Currently, the main function of TRANSIT is to search for public transportation routes to reach destinations. This is a crucial feature for users who frequently use public transportation, such as backpackers or residents of bustling cities. The most standout feature is the real-time tracking of the location of public transportation.
-            </h3>
-            
-            <h2>Accessibility</h2>
-            <h3>There are no voice reminders for walking navigation. Very unfriendly to users who use walking guidance. 
-            </h3>
-            
-            <h2>Visual Design  </h2>
-            <h3>Outdated UI design. 
-                <br>Having too many separate pages that are not necessary. There are many functions that can be grouped together on the same page.
-            </h3>
-            <is_v_imgs>
-                <img src="../../assets/art_pages/transit/old.jpg" alt="">
-            </is_v_imgs>
+    <div class = "section_container bc_b">
+        <div class="content_container">
+            <div class="content_block_texts_24">
+                <h1>OVERVIEW</h1>  
+                <h3>This redesign project focuses on enhancing Transit, an public transportation navigation app. Originally adept at assisting users in efficiently planning their routes and time, the app adapts to user habits, automatically suggesting routes and notifying users about changes in bus lines with alternative plans. In this redesign, I have incorporated two significant additions: an integrated payment system and enhanced safety features. The new payment system simplifies ticket purchasing and transit card management, while the safety features, including real-time location sharing, ensure a more secure environment for users in public transportation. These improvements aim to elevate the overall user experience, making Transit more intuitive, convenient, and safe.</h3>
+            </div>
+            <img class="no_raius" src="../../assets/art_pages/transit/o_1.png" alt="">
+            <img class="no_raius" src="../../assets/art_pages/transit/o_3-1.png" alt="">
+            <img class="no_raius" src="../../assets/art_pages/transit/o_3.png" alt="">
         </div>
-        
-    </div>
+    </div> 
 
-   
-
-    <!-- RESEARCH SUMMARY -->
-    <div class="discover_research_sec section_conatiner">
-        
-        <h1>RESEARCH SUMMARY</h1>
-        <div class="section_inner_container">
-            <h2>Target Audience</h2>
-            <h3>Age: 25-34
-                <br>Gender: Female 55%, Male 45%
-                <br>Income Range: 25k-45k
-                <br>Occupation: Employed
-            </h3>
-            <is_v_imgs>
-                <img src="../../assets/art_pages/transit/re_1.jpg" alt="">
-            </is_v_imgs>
-            <a href="https://www.apta.com/wp-content/uploads/Resources/resources/reportsandpublications/Documents/APTA-Who-Rides-Public-Transportation-2017.pdf" >By American Public Transportation Association, “Who Rides Public Transportation”</a>
+    <div class = "section_container bc_m">
+        <div class="content_container">
+            <h1 class="fc_s">LOGO & COLORS</h1>
+            <img class="cardshadow" src="../../assets/art_pages/transit/logo.png" alt="">
         </div>
+    </div> 
 
-        <div class="section_inner_container">
-            <h2>App Ratings</h2>
-            <h3>3.6out of 5
-                <br>The app store rating has shown a serious polarization. Some users consider the feature of being able to track the location of public transportation in real-time through the app as a great help and have given it a 5-star rating. On the other hand, another portion of users have given a 1-star rating mainly due to the app's difficulties in use and outdated UI design.
-            </h3>
-            <is_v_imgs>
-                <img src="../../assets/art_pages/transit/re_2.jpg" alt="">
-            </is_v_imgs>
-            <a href="https://apps.apple.com/us/app/transit-navigation/id561866269#see-all/reviews" >From Apple App Store</a>
+
+    <div class = "section_container bc_s">
+        <div class="content_container">
+            <h1>FEATURE HIGHLIGHTS</h1>
+            <img_slideshow :slideshow_arr = 'highlight_arry'/> 
         </div>
+    </div> 
 
-        <div class="section_inner_container">
-            <h2>U.S Public Transportation</h2>
-            <h3>In recent years, the public transportation system in the United States has developed rapidly. From these bar graphs, we can see that the reach of rail and bus is expanding, especially in bustling cities where the demand for public transportation is huge. At the same time, many convenient facilities have been added to the public transportation system. For example, the addition of WIFI and GPS systems has made real-time tracking of applications possible.
-            </h3>
-            <is_v_imgs>
-                <img src="../../assets/art_pages/transit/re_3.jpg" alt="">
-            </is_v_imgs>
-            <a href="https://www.apta.com/wp-content/uploads/APTA-2021-Fact-Book.pdf" >By American Public Transportation Association, “APTA 2021 Fact Book”</a>
+
+    <div class = "section_container bc_m">
+        <div class="content_container">
+            <div class="content_block_texts_24">
+                <h1 class="fc_s">OLD VERSION UI SCREENSHOT</h1>
+                <img src="../../assets/art_pages/transit/p_1.png" alt="">
+            </div>
+        </div>
+        <div class="breakline bc_s center"></div>
+        <div class="content_container">
+            <div class="content_block_texts_24">
+                <h1 class="fc_s">DEFINE PROBLEMS & SOLUTIONS </h1>
+                <h3 class="fc_s">The main challenges for Transit are its visual design and functionality. While functionality is crucial, HCI research indicates that a visually appealing design enhances user perception of an app's reliability. Users often prefer apps with attractive UI designs over those with mere functionality. This is a critical issue for Transit, as it struggles to distinguish itself with superior UI design amidst competitors, many of whom are incorporating real-time location tracking, further eroding Transit's competitive edge. Additionally, Transit's limited functionality fails to address all user needs in public transportation. In this redesign, I plan to develop a new visual system for Transit and introduce additional features to fulfill comprehensive user needs in public transportation, including route saving, payment, security, and more.</h3>
+            </div>
+        </div>
+    </div> 
+
+
+    <div class = "section_container bc_s">
+        <div class="content_container">
+            <div class="content_block_flex">
+                <h1>RESEARCH SUMMARY</h1>
+                <link_button :prototype_links = 'case_study_button_dark'/>
+            </div>
+            <img_slideshow :slideshow_arr = 'research_arry'/> 
+        </div>
+    </div> 
+
+    <div class = "section_container bc_m">
+        <div class="content_container">
+            <div class="content_block_texts_24">
+                <h1 class="fc_s">FEATURE REDESIGN<br>_ROUT NAVIGATION</h1>
+                <h3 class="fc_s">The navigation feature is central to Transit, and my aim is to ensure a swift and seamless user experience. To achieve this, I restructured the home page layout by positioning the operation area at the bottom of the screen, enhancing user accessibility. Additionally, I revamped the presentation of search results to enable users to quickly access pertinent information. </h3>
+            </div>
+            <div class="content_block_buttons">
+                <link_button :prototype_links = 'vp_button_1'/>
+                <link_button :prototype_links = 'fp_button_1'/>
+            </div>
+            <div class="pp_container" style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/901211038?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="t_p_road"></iframe></div>
+        </div>
+    </div> 
+
+
+    <div class = "section_container bc_b">
+        <div class="content_container">
+            <h1>TEST RESULT <br>_HOME PAGE</h1>
+            <div class="content_block_texts">
+                <h2>A/B Test Round 01</h2>
+                <h3>This test was conducted to determine the optimal layout for the app's home page, involving two rounds. In the first round, participants were presented with two layouts: Option A, featuring a hidden menu bar accessed via a hamburger icon, and Option B, utilizing a traditional bottom navigation bar. While Option A offered more display space for other content, the test results showed a clear preference for Option B's thicker bottom navigation bar. This preference was attributed to its intuitive design and alignment with user habits. Critically, Option B enabled one-step page switching, whereas Option A's foldable navigation required at least two steps, impacting user efficiency.</h3>
+            </div>
+            <img src="../../assets/art_pages/transit/s1_1.png" alt="">
         </div>
 
-        <div class="section_inner_container">
-            <h2>New Functions</h2>
-            <h3>WALKING NAVIGATION FEATURE
-                <br>To help people get to their destinations on time, according to the university's survey.  Transit Navigation app should add walking navigation.
-            </h3>
-            <is_v_imgs>
-                <img src="../../assets/art_pages/transit/re_4.jpg" alt="">
-            </is_v_imgs>
-            <a href="https://www.apta.com/wp-content/uploads/APTA-2021-Fact-Book.pdf" >By American Public Transportation Association, “APTA 2021 Fact Book”</a>
-            <h3>SAFTY FEATURE
-                <br>According to surveys, crime rates also rise in areas with well-developed public transportation. This is a fact that cannot be ignored. In order to protect public transportation users, it is highly necessary to add relevant security features to the app.
-            </h3>
-            <is_v_imgs>
-                <img src="../../assets/art_pages/transit/re_5.jpg" alt="">
-            </is_v_imgs>
-            <a href="https://www.metro-magazine.com/10111994/sexual-crime-and-harassment-on-public-transportation-a-study" >By A. Weinstein Agrawal, PhD A.Loukaitou-Sideris PhD”Sexual crime and harassment on public transportation: A study</a>
-            <a href="https://collected.jcu.edu/cgi/viewcontent.cgi?article=1003&context=jep" >By Morgan Neiss “Does Public Transit Affect Crime? The Addition of a Bus Line in Cleveland</a>
-        </div> 
-    </div>
-
-
-    <!-- PERSONAS -->
-    <div class="overflow_cutoff">
-        <div class="discover_research_sec section_conatiner">
-            
-            <h1>PERSONAS</h1>
-            <link_button :prototype_links = 'prototype_t'/>
-            <img_slideshow :slideshow_arr = 'pc_arr_02'/> 
-        
-        </div>
-    </div>
-
-     <!-- PERSONAS -->
-     <div class="overflow_cutoff">
-        <div class="discover_research_sec section_conatiner">
-            
-            <h1>Video Test</h1>
-            
-            <img_slideshow :slideshow_arr = 'viedo_test_arry'/> 
-        
-        </div>
-    </div>
-   
-
-    <is_v_imgs>
-            <img src="../../assets/art_pages/transit/poster_2.jpg" alt="">
-    </is_v_imgs>
-
-     <!-- PERSONAS -->
-     <div class="overflow_cutoff">
-        <div class="discover_research_sec section_conatiner">
-            
-            <h1>Video Tes1111t</h1>
-
-            <link_button :prototype_links = 'prototype_t'/>
-            
-            <img_slideshow :slideshow_arr = 'viedo_test_arry2'/> 
-        
-        </div>
-    </div>
-
-    <!-- PROBLEMS AND SOLUTIONS -->
-    <div class="section_conatiner">
-        <h1>PROBLEMS AND SOLUTIONS</h1>
-        <h3>The two main issues for Transit currently are a lack of visual design and functionality. Although having strong functionality is essential for an app, according to HCI research, a well-designed visual design can make users perceive the app as more reliable. Users are more likely to choose an app with a visually appealing UI design over one with just strong functionality. This is a critical issue for Transit, as it is not able to stand out from its competitors with a superior UI design. With more and more competitors adding real-time location tracking, Transit is further losing its competitiveness. A weakness in functionality is another problem for Transit. Its single function cannot meet all of the users' needs when using public transportation. That's why in this redesign, I plan to design a brand new visual system for Transit and add more functions to ensure that Transit can meet all the needs of users when using public transportation, such as route saving, payment, security, and others.</h3>
-    </div>
-
-    <!-- FEATURE REDESIGN_ROUT NAVIGATION -->
-    <div class="design_process_sec section_conatiner">
-
-        <h1>FEATURE REDESIGN_ROUT NAVIGATION
-        </h1>
-
-        <h3>
-            The navigation function is the core of Transit, and I hope to provide users with a fast and smooth user experience in this process. Firstly, I modified the layout of the home page, placing the operating area at the bottom of the screen, which will be more helpful for users to operate. At the same time, I also redesigned the display method of the search results, in order to allow users to quickly obtain useful information. More detailed information will be displayed in the prototype and subsequent text and graphics.
-        </h3>
-
-        <prototype_links :prototype_links = 'prototype_1'/>
-
-        <div class="video_conatiner_s">
-            <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/804028192?h=be0bf6d758&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="transit_p_01"></iframe></div>
+        <div class="content_container">
+            <div class="content_block_texts">
+                <h2>A/B Test Round 02</h2>
+                <h3>For the second round of testing, I focused on the placement of the navigation bar, presenting two options: a traditional top navigation bar and a more modern bottom navigation bar. Despite the top bar's alignment with traditional user habits, the bottom bar was favored by users. Its popularity stemmed from the convenience it offered, allowing users to access functions without moving their hands to the top of the screen, thus facilitating easier and quicker use of the search function.</h3>
+            </div>
+            <img src="../../assets/art_pages/transit/s1_2.png" alt="">
         </div>
 
-    </div>
+        <div class="content_container">
+            <div class="content_block_texts">
+                <h2>Further improvement</h2>
+                <h3>The first two rounds of testing established the layout for the menu and search bars. For a considerable period, I maintained this design for the home page without alterations. However, the addition of a route saving function to the search page, followed by usability testing, marked a significant change. User feedback was overwhelmingly positive, particularly among those who frequently reused saved routes, like daily commuters and students. This led me to consider relocating the saved route feature to the home page, aiming to reduce the number of steps needed for users to initiate navigation.</h3>
+            </div>
+            <img src="../../assets/art_pages/transit/s1_3.png" alt="">
+            <img src="../../assets/art_pages/transit/s1_4.png" alt="">
+        </div>
+
+        <div class="breakline bc_w1"></div>
+
+        <div class="content_container">
+            <h1>TEST RESULT<br>_ROAD CARDS</h1> 
+            <div class="content_block_texts">
+                <h2>Key feedback / Problem</h2>
+                <h3>In the initial design, I used color coding to indicate expected arrival times, with red for the fastest and green for the slowest. The information cards were small to display as many search results as possible, showing only essential information. User testing, however, revealed dissatisfaction with this approach. The color coding for time was confusing, and users desired more key information on the cards.</h3>
+                <h3>Consequently, I revisited the design of the search list. Research indicated that public transportation route searches typically yield few results, negating the need for smaller information cards to display more outcomes. To enhance user comprehension, I decided to increase the size of the information cards. Moreover, I found that using color-differentiated icons to represent various types of public transport was more effective and intuitive for users than the previous color scheme for arrival times.</h3>
+            </div>   
+            <img src="../../assets/art_pages/transit/s1_4-1.png" alt="">
+        </div>
+
+        <div class="content_container">
+            <div class="content_block_texts">
+                <h2>Key feedback / Problem</h2>
+                <h3>In my initial design, the route detail page featured an expandable card mode. Clicking on a search result's information card would reveal more detailed route information within the same view, avoiding the need to navigate to a new page. However, user testing indicated a preference for maps on the detail page. Users found maps more intuitive than text for understanding routes. Consequently, I redesigned the detail page to incorporate maps, enhancing the user's ability to visually grasp the route information.</h3>
+            </div>   
+            <img src="../../assets/art_pages/transit/s1_5.png" alt="">
+        </div>
+
+        <div class="content_container">
+            <h3>The redesigned detail page is now a standalone page, featuring an adjustable map display. Users can resize the map by dragging the bottom information bar, allowing for a customizable view.</h3>  
+            <img src="../../assets/art_pages/transit/s1_6.png" alt="">
+        </div>
+
+        <div class="content_container">
+            <h3>In the public transportation route information display, excessive stop names are hidden to conserve space. These collapsed names appear in a specialized format, and users can expand them by clicking on the three dots icon.</h3>  
+            <img src="../../assets/art_pages/transit/s1_7.png" alt="">
+        </div>
+
+        <div class="breakline bc_w1"></div>
+
+        <div class="content_container">
+            <h1>TEST RESULT<br>_NAVIGATION</h1> 
+            <div class="content_block_texts">
+                <h2>Key feedbacks & Improvement</h2>
+                <h3>The navigation page of the app underwent a redesign following user testing. In the initial design, all functions were placed at the bottom of the screen. Testing revealed that this layout, while not content-heavy, appeared cluttered to users due to the uniform design of all elements, making it difficult to distinguish between them at a glance. To address this, the new design reorganizes and differentiates the content using varied display methods.</h3>
+                <h3>Additionally, the original design required users to return to the main page to access other functions like "payment" and "sharing" during navigation, which was cumbersome. The updated version introduces side buttons, enabling users to quickly access these functions directly from the navigation interface.</h3>
+            </div>   
+            <img src="../../assets/art_pages/transit/s1_8.png" alt="">
+            <img src="../../assets/art_pages/transit/s1_9.png" alt="">
+        </div>
+    </div> 
+
+
+    <div class = "section_container bc_m">
+        <div class="content_container">
+            <div class="content_block_texts_24">
+                <h1 class="fc_s">NEWLY ADDED FEATURE 01<br>_PAYMENT</h1>
+                <h3 class="fc_s">Integrating a payment feature in Transit enables users to bypass the need to search for their wallet or card upon the vehicle's arrival. Paying with a phone aligns with the evolving trends in payment methods. Most significantly, electronic cards eliminate the hassle associated with losing and reapplying for physical cards.</h3>
+            </div>
+            <div class="content_block_buttons">
+                <link_button :prototype_links = 'vp_button_2'/>
+                <link_button :prototype_links = 'fp_button_2'/>
+            </div>
+            <div class="pp_container" style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/901211014?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="t_p_pay"></iframe></div>
+        </div>
+    </div> 
+
+    <div class = "section_container bc_b">
+        <div class="content_container">
+            <h1>TEST RESULT <br>_PAYMENT</h1>
+            <div class="content_block_texts">
+                <h2>Two rounds of A/B Test</h2>
+                <h3>This test, conducted to determine the app's home page layout, consisted of two rounds. In the first, users compared two designs: Option A with a hidden menu accessed via a hamburger icon, and Option B with a traditional bottom navigation bar. Despite Option A providing more space for content, users clearly favored Option B for its thicker, intuitive bottom bar and compatibility with user habits. Importantly, Option B allowed for one-step page switching, while Option A's collapsible menu necessitated at least two steps, affecting user efficiency.</h3>
+            </div>
+            <img src="../../assets/art_pages/transit/s2_1.png" alt="">
+        </div>
+
+        <div class="content_container">
+            <div class="content_block_texts">
+                <h2>Visual improvement</h2>
+                <h3>During the card window design process, I experimented with various aspects that wouldn't impact functionality but aimed to enhance the visual experience. In the final design, a semi-transparent black background was added behind the card number to ensure the legibility of the information. Additionally, I detached the scan button from the card, ensuring it remains stationary and doesn't shift with card switches.</h3>
+            </div>
+            <img src="../../assets/art_pages/transit/s2_2.png" alt="">
+        </div>      
+    </div> 
+
+
+    <div class = "section_container bc_m">
+        <div class="content_container">
+            <div class="content_block_texts_24">
+                <h1 class="fc_s">NEWLY ADDED FEATURE 02<br>_REAL-TIME LOCATION SHARE</h1>
+                <h3 class="fc_s">The design of the sharing function was conceived to improve user safety in public transportation. It enables users to share their real-time location via a unique URL, which can be accessed through any browser, eliminating the need for recipients to download the Transit app. This feature is intended to deter criminal activity and increase the cost of committing a crime, thereby enhancing user safety.</h3>
+            </div>
+            <div class="content_block_buttons">
+                <link_button :prototype_links = 'vp_button_3'/>
+                <link_button :prototype_links = 'fp_button_3'/>
+            </div>
+            <div class="pp_container" style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/901211073?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="t_p_safe"></iframe></div>
+        </div>
+    </div> 
+
+    <div class = "section_container bc_b">
+        <div class="content_container">
+            <div class="content_block_texts_24">
+                <h1>DESIGN DETAIL <br>_REAL-TIME LOCATION SHARE</h1>
+                <h3>The addition of the sharing function aims to safeguard user safety by allowing others to view the user's real-time location. In designing this feature, I prioritized caution and user awareness. A confirmation page serves as the final step before activation, displaying the names and phone numbers of authorized contacts. To ensure users don't overlook this crucial information, I incorporated a countdown button, preventing hasty actions and encouraging careful review.</h3>
+            </div>
+            <img src="../../assets/art_pages/transit/s2_1.png" alt="">
+        </div>
+
+        <div class="content_container">
+            <h3>Upon activating the sharing function, the share button changes to a prominent red color. This serves as a constant reminder to the user that their location is being shared.</h3>
+            <img src="../../assets/art_pages/transit/s2_2.png" alt="">
+        </div>      
+
+        <div class="content_container">
+            <h3>To prioritize user safety, the feature remains active even after the user reaches their destination and doesn't turn off automatically. However, Transit regularly prompts the user with pop-up windows to inquire if they wish to stop sharing their location information.</h3>
+            <img src="../../assets/art_pages/transit/s3_2.png" alt="">
+        </div>
+    </div> 
+
+
+    <div class = "section_container bc_m">
+        <div class="content_container">
+            <div class="content_block_texts_24">
+                <h1 class="fc_s">NEXT...</h1>
+                <h3 class="fc_s">As technology continually evolves, the smart devices people carry are no longer limited to just smartphones. If this project were to be expanded further, I would like to develop an app version of Transit for smartwatches, enabling users to use navigation services more effortlessly. Looking even further into the future, Transit could potentially have a VR version. This would allow navigation information to naturally float in front of the users, enhancing their experience with advanced, immersive technology.</h3>
+            </div>
+            <img src="../../assets/art_pages/transit/next.png" alt="">
+        </div>
+    </div>  
+
 
 
 
@@ -230,20 +257,17 @@
 //组件引入
 import transit from'../main_pages/works_thum_cards/transit.vue'
 import cat from'../main_pages/works_thum_cards/cat.vue'
-import prototype_links from'../comps/prototype_links.vue'
+import overview_info from '../comps/overview_info.vue'
 import link_button from'../comps/link_button.vue'
-import is_v_imgs from'../comps/is_v_imgs.vue'
 import img_slideshow from '../comps/img_slideshow.vue'
 import the_footer from '../footer.vue'
-//引入图片
-import persona_1 from '../../assets/art_pages/transit/slideshow/persona_1.jpg'
-import persona_2 from '../../assets/art_pages/transit/slideshow/persona_2.jpg'
-import poc_20 from '../../assets/art_pages/transit/slideshow/poc_20.jpg'
-import poc_21 from '../../assets/art_pages/transit/slideshow/poc_21.jpg'
-//引入视频
-import vt1 from '../../assets/art_pages/transit/slideshow/video/vt1.mp4'
-import vt2 from '../../assets/art_pages/transit/slideshow/video/vt2.mp4'
-import vt3 from '../../assets/art_pages/transit/slideshow/video/vt3.mp4'
+//img引入
+import r1 from "../../assets/art_pages/transit/r_1.png"
+import r2 from "../../assets/art_pages/transit/r_2.png"
+import r3 from "../../assets/art_pages/transit/r_3.png"
+import r4 from "../../assets/art_pages/transit/r_4.png"
+
+
 
 
 //引入hooks
@@ -271,268 +295,309 @@ const store = useStore()
     })
 
 
-
-
-    //轮播图使用数列
-
-    let pc_arr_02 = {//personas
-        color:'#00FFE0',
-        type:'img',
-        contents:[
-            [persona_1,"1Use gestures to bring up the control interface."],
-            [persona_2,"2Use gestures to bring up the control interface."],
-            [poc_20,"3Use gestures to bring up the control interface."],
-            [poc_21,"4Use gestures to bring up the control interface."]
-        ]
+        //overview_data数列
+        let ov_data = {
+        type:"App Redesign project",
+        roll:"Solo designer",
+        time:"2022 - 2023",
+        detail:"Brand, Web, UX, Motion"
     }
 
-    
-    let viedo_test_arry = {
-        color:'#00FFE0',
-        type:'video',
-        resize:true,
-        contents:[
-            [vt1,"11Use gestures to bring up the control interface.",persona_1],
-            [vt2,"22Use gestures to bring up the control interface.",persona_1],
-            [vt3,"33Use gestures to bring up the control interface.",persona_1]
-        ]
-            
-    }
 
-    var tt_1 = "https://player.vimeo.com/video/901211198?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
 
-    var tt_2 = "https://player.vimeo.com/video/901211183?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+    //高光功能
 
-    var tt_3 = "https://player.vimeo.com/video/901211174?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+    let v_1 = "https://player.vimeo.com/video/901211174?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+    let v_2 = "https://player.vimeo.com/video/901211198?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+    let v_3 = "https://player.vimeo.com/video/901211183?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
 
-    let viedo_test_arry2 = {
-        color:'#000000',
+
+    let highlight_arry = {
+        color:'var(--p-color-main)',
         type:'vimeo',
         resize:true,
         contents:[
-            [tt_3,"12Use gestures to bring up the control interface.",persona_1],
-            [tt_2,"13Use gestures to bring up the control interface.",persona_1],
-            [tt_1,"14Use gestures to bring up the control interface.",persona_1]
+            [v_1,"Route Detail"],
+            [v_3,"Payment"],
+            [v_2,"Location Share"],
         ]
-            
-    }
+    }    
 
 
-    //按钮依赖
-    let prototype_1 = {
-        color:'#00FFE0',
-        text:'USER FLOW TASK 1-1 : Start a road navigation to company.',
-        v_link:'https://vimeo.com/804028192',
-        f_link:'https://www.figma.com/proto/3HQtCULnLSnwzNyZ61Hyw9/aau_2021f_wnm606_final_TRANSIT?node-id=1206%3A21618&scaling=scale-down&page-id=1086%3A20271&starting-point-node-id=1206%3A21618&show-proto-sidebar=1',
-    }
-    let prototype_2 = {
-        color:'#00FFE0',
-        text:'USER FLOW TASK 2-1 : Pay with yellow visa card.',
-        v_link:'https://vimeo.com/804028251',
-        f_link:'https://www.figma.com/proto/3HQtCULnLSnwzNyZ61Hyw9/aau_2021f_wnm606_final_TRANSIT?node-id=1086%3A20272&scaling=scale-down&page-id=1086%3A20271&starting-point-node-id=1086%3A20272&show-proto-sidebar=1',
-    }
-    let prototype_3 = {
-        color:'#00FFE0',
-        text:'USER FLOW TASK 3-1 : Share real-time location with mom and dad.',
-        v_link:'https://vimeo.com/804035918',
-        f_link:'https://www.figma.com/proto/3HQtCULnLSnwzNyZ61Hyw9/aau_2021f_wnm606_final_TRANSIT?node-id=1086%3A20272&scaling=scale-down&page-id=1086%3A20271&starting-point-node-id=1086%3A20272&show-proto-sidebar=1',
+    //研究总结
+    let research_arry = {
+        color:'var(--p-color-main)',
+        type:'img',
+        resize:false,
+        contents:[
+            [r1,"U.S public transportation rasearch"],
+            [r2,"Walking navigation rasearch"],
+            [r3,"Public safety rasearch"],
+            [r4,"Public transportation users Summary"],
+        ]
+    }  
+
+     //按钮依赖
+    let case_study_button_dark = {
+        main_color:'var(--p-color-sub)',
+        sub_color:'var(--p-color-main)',
+        width:158,
+        text:'RESEARCH',
+        link:'https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=15-31111&t=bMrzmrL1eDR0NKJh-1&scaling=contain&page-id=15%3A29752&mode=design',
     }
 
-
-    let prototype_t = {
-        color:'#00FFE0',
-        main_color:'#00FFE0',
-        sub_color:'#000000',
-        width:196,
+    let vp_button_1 = {
+        main_color:'var(--p-color-sub)',
+        sub_color:'var(--p-color-main)',
+        width:185,
         text:'Video Prototype',
-        link:'https://vimeo.com/804035918',
+        link:'https://vimeo.com/901211038?share=copy',
     }
+
+    let fp_button_1 = {
+        main_color:'var(--p-color-main)',
+        sub_color:'var(--p-color-sub)',
+        width:185,
+        text:'Figma Prototype',
+        link:'https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=15-16511&t=3vja6HfrWkhfmFSp-1&scaling=scale-down&page-id=15%3A15458&starting-point-node-id=15%3A16511&mode=design',
+    }
+
+    let vp_button_2 = {
+        main_color:'var(--p-color-sub)',
+        sub_color:'var(--p-color-main)',
+        width:185,
+        text:'Video Prototype',
+        link:'https://vimeo.com/901211014?share=copy',
+    }
+
+    let fp_button_2 = {
+        main_color:'var(--p-color-main)',
+        sub_color:'var(--p-color-sub)',
+        width:185,
+        text:'Figma Prototype',
+        link:'https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=15-19902&t=QTjZC4BQvvSXUDwe-1&scaling=scale-down&page-id=15%3A15459&mode=design',
+    }
+
+    let vp_button_3 = {
+        main_color:'var(--p-color-sub)',
+        sub_color:'var(--p-color-main)',
+        width:185,
+        text:'Video Prototype',
+        link:'https://vimeo.com/901211073?share=copy',
+    }
+
+    let fp_button_3 = {
+        main_color:'var(--p-color-main)',
+        sub_color:'var(--p-color-sub)',
+        width:185,
+        text:'Figma Prototype',
+        link:'https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=36-10006&t=ceT7pfIR5yBYHIMo-1&scaling=scale-down&page-id=15%3A15460&mode=design',
+    }
+
+
+
+
     
     
 
 </script>
 
 <style scoped>
-
 .main_container{
     width:100%;
     display:flex;
     flex-direction: column;
     align-items: center;
-    gap:180px;
-    overflow: hidden;
-
     position:absolute;
     left:0;
+    overflow: hidden;
 
-    background: rgb(44, 44, 47);
-    /* top 1s cubic-bezier(0.36, 0.36, 0.31, 1) */
+    background: black;
+
+    --p-color-main:#67F1E0;
+    --p-color-sub:#141C1B;
+    --p-color-font-white-100:rgb(248, 251, 246);
+    --p-color-font-white-60: rgba(248, 251, 246, 0.60);
+  
 }
 
 h1{
-    /* Section Title */
-    
+    font-size: 40px;
     font-style: normal;
-    font-weight: 600;
-    font-size: 60px;
-    line-height: 60px;
-    /* or 100% */
-    /* #8CDB4D */
-
-    margin-bottom:-40px;
-
-    color: #00FFE0;;
+    font-weight: 700;
+    line-height: 40px; 
+    color:var(--p-color-main);
 
 }
 h2{
-   
+    font-size: 30px;
     font-style: normal;
-    font-weight: 600;
-    font-size: 35px;
-    line-height: 45px;
-    /* margin-bottom:-20px; */
-    /* identical to box height */
-
-
-
-    /* light_main_100% */
-
-    color: #F5F7FB;
+    font-weight: 900;
+    line-height: 30px;
+    color:var(--p-color-font-white-100);
 }
 h3{
-    
-    font-style: normal;
-    font-weight: 300;
     font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
     line-height: 30px;
-    max-width: 1400px;
-    /* or 188% */
-    /* light_main_60% */
-    color: rgba(248, 251, 246, 0.85);
-}
-a{
-    width:100%;
-    text-align: right;
-    color:rgba(248, 251, 246, 0.45);
-}
-.style_italic{
-    font-style: italic;
+    color:var(--p-color-font-white-60);
 }
 
-.img_conatiner_s_out{
+h4{
+    font-size: 90px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 90px;
+    color:var(--p-color-font-white-60);
+}
+
+
+
+
+.section_container{
+    width:100%;
+    padding:150px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:80px
+}
+.ov_section_container{
+    width:100%;
+    padding:80px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:40px
+}
+
+.ov_content_container{
     width:var(--content-width);
-    max-width:var(--max-content-width) ;
+    max-width:var(--max-content-width);
+    display: flex;
+    flex-direction: column;
+    gap:24px
 }
-.img_conatiner_s_out > img{
+.content_container{
+    width:var(--content-width);
+    max-width:var(--max-content-width);
+    display: flex;
+    flex-direction: column;
+    gap:40px
+}
+.content_block_flex{
     width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.content_block_texts{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    gap:8px
+}
+.content_block_texts_24{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    gap:24px
 }
 
+.content_block_buttons{
+    width:100%;
+    display: flex;
+
+    gap:24px
+}
+.pp_container{
+    overflow: hidden;
+    border-radius: 20px;
+
+}
+
+.cardshadow{
+    box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.50);
+}
+.breakline{
+    width: 70%;
+    max-width: 320px;
+    height:0.5px;
+    opacity: 0.3;
+}
+.center{
+    margin:0 auto;
+}
 img{
     width:100%;
+    border-radius: 20px;
 }
-.video_conatiner_s{
+.no_radius{
+    border-radius: 0px;
+}
+
+
+
+
+
+.fc_m{
+    color:var(--p-color-main)
+}
+.fc_s{
+    color:var(--p-color-sub)
+}
+.fc_w1{
+    color:var(--p-color-font-white-100)
+}
+.fc_w6{
+    color:var(--p-color-font-white-60)
+}
+.bc_m{
+    background:var(--p-color-main)
+}
+.bc_s{
+    background:var(--p-color-sub)
+}
+.bc_b{
+    background:black;
+}
+.bc_w6{
+    background:var(--p-color-font-white-60);
+}
+.bc_w1{
+    background:var(--p-color-font-white-100);
+}
+
+
+
+
+
+@media (max-width: 800px){
+
+.ov_section_container{
     width:100%;
+    padding:60px 0px;
+    gap:40px
+}    
+h4{
+    font-size: 60px;
+    line-height: 60px; 
+
 }
-.section_conatiner{
-    width:var(--content-width);
-    max-width:1000px ;
-    display: flex;
+.content_block_flex{
     flex-direction: column;
-    gap:80px;
-}
-.section_inner_container{
-    display: flex;
-    flex-direction: column;
-    gap:32px;
-}
-.section_inner_container > h2{
-    margin-bottom:-20px;
-}
-
-.overview_sec{
-    width:100%;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    gap:40px;
-}
-.overview_container{
-    display:flex;
-    gap:40px;
-}
-.overview_infor{
-    display: flex;
-    flex-direction: column;
-    gap:4px;
-    
-}
-.overview_cum1{
-    display: flex;
-    flex-direction: column;
-    gap:40px;
-}
-.overview{
-    max-width: 550px;
-}
-.overflow_cutoff{
-    width:100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-}
-
-
-
-
-
-
-.interview_feedbacks{
-    display:flex;
-    align-items: center;
-    gap:16px;
-}
-
-.interview_feedbacks > img{
-    width:100px;
-    height: 100px;
-}
-
-.prototype_links_container{
-    display: flex;
-    flex-direction: column;
+    align-items: flex-start;
     gap:24px;
 }
 
+.content_block_buttons{
+    flex-direction: column;
 
-
-
-
-
-
-
-.placehoudler{
-    width:100%;
-    height:200px;
-}
-p{
-    color:white;
 }
 
-@media (max-width: 1000px){
-    .main_container{
-        gap:80px;
-    }
-    .section_conatine{
-        gap:40px;
-    }
-    .section_inner_container{
-        gap:20px;
-    }
-    .overview_container{
-        flex-direction: column;
-        gap:40px;
-        width: var(--content-width)
-    }
+
 }
 </style>

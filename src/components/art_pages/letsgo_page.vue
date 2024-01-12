@@ -4,7 +4,7 @@
     <letsgo/> 
 
     <div class = "ov_section_container bc_s">
-        <div class="content_container">
+        <div class="ov_content_container">
             <h4>LET'S GO</h4>
             <div class="breakline bc_w1"></div>
             <overview_info :ov_data="ov_data" />
@@ -30,7 +30,7 @@
     <div class = "section_container bc_m">
         <div class="content_container">
             <h1 class="fc_s">LOGO & COLORS</h1>
-            <img class="cardshadow" src="../../assets/art_pages/letsgo/logo.jpg" alt="">
+            <img class="cardshadow" src="../../assets/art_pages/letsgo/logo.png" alt="">
         </div>
     </div> 
 
@@ -49,16 +49,16 @@
 
     <div class = "section_container bc_m">
         <div class="content_container">
-            <img src="../../assets/art_pages/letsgo/p1.jpg" alt="">
-            <div class="content_block_texts">
+            <img src="../../assets/art_pages/letsgo/p1.png" alt="">
+            <div class="content_block_texts_24">
                 <h1 class="fc_s">DEFINE PROBLEMS</h1>
                 <h3 class="fc_s">Planning group travel can be challenging for users due to the lack of adequate tools and resources. As a result, users often have a poor experience when trying to plan trips with a team.</h3>
             </div>
         </div>
         <div class="breakline bc_s center"></div>
         <div class="content_container">
-            <img src="../../assets/art_pages/letsgo/p2.jpg" alt="">
-            <div class="content_block_texts">
+            <img src="../../assets/art_pages/letsgo/p2.png" alt="">
+            <div class="content_block_texts_24">
                 <h1 class="fc_s">HOW MIGHT WE STATEMENT</h1>
                 <h3 class="fc_s">How might we help young adults with expendable income for travel, use mobile technology to be well prepared for a group trip? </h3>
             </div>
@@ -79,8 +79,10 @@
 
     <div class = "section_container bc_m">
         <div class="content_container">
-            <h1 class="fc_s">PREMARY FEATURE 01<br>_CREATE NEW TRIP PLAN</h1>
-            <h3 class="fc_s">Users can effortlessly create a travel plan in Let's Go and begin adding their favorite events. During the creation process, they can also invite friends who will be traveling with them to join in shaping a unique and collaborative travel plan.</h3>
+            <div class="content_block_texts_24">
+                <h1 class="fc_s">PREMARY FEATURE 01<br>_CREATE NEW TRIP PLAN</h1>
+                <h3 class="fc_s">Users can effortlessly create a travel plan in Let's Go and begin adding their favorite events. During the creation process, they can also invite friends who will be traveling with them to join in shaping a unique and collaborative travel plan.</h3>
+            </div>
             <div class="content_block_buttons">
                 <link_button :prototype_links = 'vp_button_1'/>
                 <link_button :prototype_links = 'fp_button_1'/>
@@ -98,7 +100,7 @@
                 <h2>Key feedback / Problems</h2>
                 <h3>In both the collapsed and expanded versions of the card, the top part remains the same.  If the event name is lengthy, it will still be truncated in the expanded version.  Therefore, showcasing a larger image of the event in the expanded card version is more effective.</h3>
             </div>
-            <img src="../../assets/art_pages/letsgo/s1_1.jpg" alt="">
+            <img src="../../assets/art_pages/letsgo/s1_1.png" alt="">
         </div>
 
         <div class="content_container">
@@ -106,23 +108,27 @@
                 <h2>Improvements</h2>
                 <h3>Compared to the old version where inviting friends and creating travel plans were separated into two different pages, the updated version now includes both on one page and displays the avatars of the top 10 friends in the user's friend list. Users can select friends by clicking on their avatars. If the desired friend is not among the top 10 displayed, users can browse the complete list of friends by clicking on the MORE icon at the bottom of the list.</h3>
             </div>
-            <img src="../../assets/art_pages/letsgo/s1_2.jpg" alt="">
+            <img src="../../assets/art_pages/letsgo/s1_2.png" alt="">
         </div>
 
         <div class="breakline bc_w1"></div>
 
         <div class="content_container">
-            <h1>DESIGN EXPLORATIONS <br>_ADDING LOADING ANIMATION</h1>    
-            <h3>Compared to the old version where inviting friends and creating travel plans were separated into two different pages, the updated version now includes both on one page and displays the avatars of the top 10 friends in the user's friend list. Users can select friends by clicking on their avatars. If the desired friend is not among the top 10 displayed, users can browse the complete list of friends by clicking on the MORE icon at the bottom of the list.</h3>
-            <img src="../../assets/art_pages/letsgo/s1_3.jpg" alt="">
+            <div class="content_block_texts_24">
+                <h1>DESIGN EXPLORATIONS <br>_ADDING LOADING ANIMATION</h1>    
+                <h3>Compared to the old version where inviting friends and creating travel plans were separated into two different pages, the updated version now includes both on one page and displays the avatars of the top 10 friends in the user's friend list. Users can select friends by clicking on their avatars. If the desired friend is not among the top 10 displayed, users can browse the complete list of friends by clicking on the MORE icon at the bottom of the list.</h3>
+            </div>
+            <img src="../../assets/art_pages/letsgo/s1_3.png" alt="">
         </div>
     </div> 
 
 
     <div class = "section_container bc_m">
         <div class="content_container">
-            <h1 class="fc_s">PREMARY FEATURE 02<br>_AI CHAT ASSISTANT</h1>
-            <h3 class="fc_s">The AI chat assistant will automatically generates or adjusts travel plans based on users' chat content in Let's Go. As users discuss their travel ideas using the group chat feature, an AI assistant continuously scans the conversation, creating viable travel plans based on the group conversation. Users can then vote to decide whether to include the AI-generated content in their travel itinerary.</h3>
+            <div class="content_block_texts_24">
+                <h1 class="fc_s">PREMARY FEATURE 02<br>_AI CHAT ASSISTANT</h1>
+                <h3 class="fc_s">The AI chat assistant will automatically generates or adjusts travel plans based on users' chat content in Let's Go. As users discuss their travel ideas using the group chat feature, an AI assistant continuously scans the conversation, creating viable travel plans based on the group conversation. Users can then vote to decide whether to include the AI-generated content in their travel itinerary.</h3>
+            </div>
             <div class="content_block_buttons">
                 <link_button :prototype_links = 'vp_button_2'/>
                 <link_button :prototype_links = 'fp_button_2'/>
@@ -139,7 +145,7 @@
                 <h2>A/B Test Round 1</h2>
                 <h3>In the first round of testing, most of the testers were more inclined towards option A because it did not interrupt the user's operation. Option B, on the other hand, completely disrupted the user's workflow and forced them to make a decision right away. This high level of intrusiveness made users resistant to this feature, especially since the window was triggered without any input from the user, and they had no advance warning that the window would appear.</h3>
             </div>
-            <img src="../../assets/art_pages/letsgo/s2_1.jpg" alt="">
+            <img src="../../assets/art_pages/letsgo/s2_1.png" alt="">
         </div>
 
         <div class="content_container">
@@ -147,7 +153,7 @@
                 <h2>A/B Test Round 2</h2>
                 <h3>After determining that users preferred a design with lower intrusiveness, I kept and modified option A, and designed a new option B with lower intrusiveness. Both options do not interrupt the user's current operation. I conducted new tests with these two options. However, the results did not provide a clear answer because the two options had different functionalities. Option B had some additional functions, which gave it a natural advantage, and this should not have been the case in this test.</h3>
             </div>
-            <img src="../../assets/art_pages/letsgo/s2_2.jpg" alt="">
+            <img src="../../assets/art_pages/letsgo/s2_2.png" alt="">
         </div>
 
         <div class="content_container">
@@ -155,8 +161,8 @@
                 <h2>A/B Test Round 3</h2>
                 <h3>In order to ensure the accuracy of the test results, I made further modifications to options A and B, and conducted a third round of testing. This time, both options had exactly the same functionality, with the only difference being in their display. Option A emerged as the winner in this test, so I ultimately decided to use option A as the final design</h3>
             </div>
-            <img src="../../assets/art_pages/letsgo/s2_3.jpg" alt="">
-            <img src="../../assets/art_pages/letsgo/s2_4.jpg" alt="">
+            <img src="../../assets/art_pages/letsgo/s2_3.png" alt="">
+            <img src="../../assets/art_pages/letsgo/s2_4.png" alt="">
         </div>
 
         <div class="breakline bc_w1"></div>
@@ -167,7 +173,7 @@
                 <h2>Improvements</h2>
                 <h3>The new version of the confirmation page will display more detailed information and includes a button for users to directly navigate to the corresponding position in the event list.</h3>
             </div>
-            <img src="../../assets/art_pages/letsgo/s2_5.jpg" alt="">
+            <img src="../../assets/art_pages/letsgo/s2_5.png" alt="">
         </div>
 
         <div class="breakline bc_w1"></div>
@@ -182,23 +188,27 @@
                 <h2>Solutions</h2>
                 <h3>I redesigned the top section to allocate more space for the event name, ensuring the full title is displayed.  Tags were relocated to the information area to provide more room for a larger event image.  Additionally, I replaced 'Move' with 'Date' for clarity, and introduced a rearrange icon to the list.  The 'Add tickets and reservation' feature was renamed to 'Attach' and its icon was changed to enhance user understanding of its functionality</h3>
             </div>
-            <img src="../../assets/art_pages/letsgo/s2_6.jpg" alt="">
+            <img src="../../assets/art_pages/letsgo/s2_6.png" alt="">
         </div>
 
         <div class="breakline bc_w1"></div>
 
         <div class="content_container">
-            <h1>DESIGN EXPLORATIONS <br>_INFORMATION CARDS</h1>    
-            <h3>In the original design, lodging and event cards shared a similar visual style. While this was functional and didn't hinder usage, I realized that lodging and events are distinct types of information. Events change daily, but lodging may remain the same, leading to redundant display of information at the list's top. Consequently, I modified the lodging design to occupy minimal space and introduced color-coding for immediate recognition as lodging information.</h3>
-            <img src="../../assets/art_pages/letsgo/s2_7.jpg" alt="">
+            <div class="content_block_texts_24">
+                <h1>DESIGN EXPLORATIONS <br>_INFORMATION CARDS</h1>    
+                <h3>In the original design, lodging and event cards shared a similar visual style. While this was functional and didn't hinder usage, I realized that lodging and events are distinct types of information. Events change daily, but lodging may remain the same, leading to redundant display of information at the list's top. Consequently, I modified the lodging design to occupy minimal space and introduced color-coding for immediate recognition as lodging information.</h3>
+            </div>
+            <img src="../../assets/art_pages/letsgo/s2_7.png" alt="">
         </div>
     </div> 
 
 
     <div class = "section_container bc_m">
         <div class="content_container">
-            <h1 class="fc_s">PREMARY FEATURE 03<br>_PACKING ASSISTANT</h1>
-            <h3 class="fc_s">The packing assistant feature provides users with a recommended packing list based on the weather forecast of their travel destination. For instance, in cold regions, Let's Go suggests bringing warm clothing. Additionally, users can utilize the luggage scanning function, where Let's Go identifies items in the camera view and automatically checks them off the list, aiding in efficient travel preparation.</h3>
+            <div class="content_block_texts_24">
+                <h1 class="fc_s">PREMARY FEATURE 03<br>_PACKING ASSISTANT</h1>
+                <h3 class="fc_s">The packing assistant feature provides users with a recommended packing list based on the weather forecast of their travel destination. For instance, in cold regions, Let's Go suggests bringing warm clothing. Additionally, users can utilize the luggage scanning function, where Let's Go identifies items in the camera view and automatically checks them off the list, aiding in efficient travel preparation.</h3>
+            </div>
             <div class="content_block_buttons">
                 <link_button :prototype_links = 'vp_button_3'/>
                 <link_button :prototype_links = 'fp_button_3'/>
@@ -214,7 +224,7 @@
                 <h2>Improvements</h2>
                 <h3>In the new version, the entire page has been redesigned with a broader scanning range than the previous version. Additionally, a prompt stating 'Please do not stack the items on top of each other' has been added above the scanning button.</h3>
             </div>
-            <img src="../../assets/art_pages/letsgo/s3_1.jpg" alt="">
+            <img src="../../assets/art_pages/letsgo/s3_1.png" alt="">
         </div>
 
         <div class="breakline bc_w1"></div>
@@ -225,7 +235,7 @@
                 <h2>Improvements</h2>
                 <h3>The latest version features a redesigned weather display, now presenting daily weather information for the entire travel plan in a list format, rather than only for the first day. Furthermore, the weather forecast and recommendation list have been combined into a horizontally scrollable component, substantially freeing up space to display the packing list.</h3>
             </div>
-            <img src="../../assets/art_pages/letsgo/s3_2.jpg" alt="">
+            <img src="../../assets/art_pages/letsgo/s3_2.png" alt="">
         </div>
        
     </div>
@@ -233,8 +243,10 @@
 
     <div class = "section_container bc_m">
         <div class="content_container">
-            <h1 class="fc_s">PREMARY FEATURE 04<br>_TRAVEL COMMUNITY</h1>
-            <h3 class="fc_s">The primary goal of this feature is to provide users with a platform to share, find, and store their travel plans. The homepage automatically recommends popular travel plans or destinations tailored to the user's travel preferences. On the search results page, users can conveniently swipe through images included in the plans. Furthermore, the Plan Details page features a system-generated summary of the plan's highlights at the top, enabling users to quickly ascertain whether the plan aligns with their needs.</h3>
+            <div class="content_block_texts_24">
+                <h1 class="fc_s">PREMARY FEATURE 04<br>_TRAVEL COMMUNITY</h1>
+                <h3 class="fc_s">The primary goal of this feature is to provide users with a platform to share, find, and store their travel plans. The homepage automatically recommends popular travel plans or destinations tailored to the user's travel preferences. On the search results page, users can conveniently swipe through images included in the plans. Furthermore, the Plan Details page features a system-generated summary of the plan's highlights at the top, enabling users to quickly ascertain whether the plan aligns with their needs.</h3>
+            </div>
             <div class="content_block_buttons">
                 <link_button :prototype_links = 'vp_button_4'/>
                 <link_button :prototype_links = 'fp_button_4'/>
@@ -250,7 +262,7 @@
                 <h2>Key feedback / Problems</h2>
                 <h3>In the initial design, users could access a secondary menu by long-pressing on a card. However, usability testing revealed that several participants were unaware of this feature. Further interviews indicated a preference against the long-press interaction, as it was unclear whether it required a longer press or a harder push.</h3>
             </div>
-            <img src="../../assets/art_pages/letsgo/s4_1.jpg" alt="">
+            <img src="../../assets/art_pages/letsgo/s4_1.png" alt="">
         </div>
 
         <div class="breakline bc_w1"></div>
@@ -260,7 +272,7 @@
                 <h2>Solutions & A/B Test Round 1</h2>
                 <h3>To resolve this issue, I tested four solutions across two A/B testing rounds. In the first round, I tried two approaches: SOLUTION 01 involved removing the secondary menu and adding feature icons directly on the card; SOLUTION 02 added a three-dots icon to indicate a long-press action. However, neither solution was effective. SOLUTION 01 overcrowded the card, obscuring the image, while SOLUTION 2 confused users, leading them to single-click instead of long-pressing.</h3>
             </div>
-            <img src="../../assets/art_pages/letsgo/s4_2.jpg" alt="">
+            <img src="../../assets/art_pages/letsgo/s4_2.png" alt="">
         </div>
 
         <div class="content_container">
@@ -269,7 +281,7 @@
                 <h3>Therefore, I developed SOLUTIONS 3 and 4. SOLUTION 3 added all feature icons to the card's bottom, while SOLUTION 4 used an expand-and-collapse approach with an arrow icon to hide these icons. At this stage, I also replaced the long-press interaction with a single-click, finding that long-press could disrupt the user's flow, even for just 1-2 seconds.</h3>
                 <h3>Following the second round of A/B testing, I chose SOLUTION 4 as the final design. It offers a cleaner visual than SOLUTION 3 and suits the infrequent use of these features by users. Since these features are less relevant before users have read the article, they don't need constant visibility on the card.</h3>
             </div>
-            <img src="../../assets/art_pages/letsgo/s4_3.jpg" alt="">
+            <img src="../../assets/art_pages/letsgo/s4_3.png" alt="">
         </div>
 
         <div class="breakline bc_w1"></div>
@@ -280,7 +292,7 @@
                 <h2>Round 1</h2>
                 <h3>Version 1 was the original design. In Version 2, I altered the 'What’s Popular' section's category tags to two lines with three-dot icons and used a larger font. In Version 3, while keeping the larger font, I reverted to Version 1's single-line tag display for space efficiency and content emphasis on the homepage.</h3>
             </div>
-            <img src="../../assets/art_pages/letsgo/s4_4.jpg" alt="">
+            <img src="../../assets/art_pages/letsgo/s4_4.png" alt="">
         </div>
 
         <div class="content_container">
@@ -288,7 +300,7 @@
                 <h2>Round 2</h2>
                 <h3>After completing the design of Version 3, I realized it presented too much information, making the interface appear cluttered and less streamlined. In fact, I wanted to highlight just two elements on the homepage: the search box and exquisite landscape photos. This led to the design of Version 4.</h3>
             </div>
-            <img src="../../assets/art_pages/letsgo/s4_5.jpg" alt="">
+            <img src="../../assets/art_pages/letsgo/s4_5.png" alt="">
         </div>
        
     </div>
@@ -296,10 +308,12 @@
 
     <div class = "section_container bc_m">
         <div class="content_container">
-            <h1 class="fc_s">NEXT...</h1>
-            <h3 class="fc_s">The primary goal of this feature is to provide users with a platform to share, find, and store their travel plans. The homepage automatically recommends popular travel plans or destinations tailored to the user's travel preferences. On the search results page, users can conveniently swipe through images included in the plans. Furthermore, the Plan Details page features a system-generated summary of the plan's highlights at the top, enabling users to quickly ascertain whether the plan aligns with their needs.</h3>
+            <div class="content_block_texts_24">
+                <h1 class="fc_s">NEXT...</h1>
+                <h3 class="fc_s">The primary goal of this feature is to provide users with a platform to share, find, and store their travel plans. The homepage automatically recommends popular travel plans or destinations tailored to the user's travel preferences. On the search results page, users can conveniently swipe through images included in the plans. Furthermore, the Plan Details page features a system-generated summary of the plan's highlights at the top, enabling users to quickly ascertain whether the plan aligns with their needs.</h3>
+            </div>
             <link_button :prototype_links = 'next_button'/>
-            <img src="../../assets/art_pages/letsgo/next.jpg" alt="">
+            <img src="../../assets/art_pages/letsgo/next.png" alt="">
         </div>
     </div>  
 
@@ -332,11 +346,11 @@ import useStore from '../../store/index'
 import { onBeforeRouteLeave } from 'vue-router';
 
 //img引入
-import r1 from "../../assets/art_pages/letsgo/r1.jpg"
-import r2 from "../../assets/art_pages/letsgo/r2.jpg"
-import r3 from "../../assets/art_pages/letsgo/r3.jpg"
-import r4 from "../../assets/art_pages/letsgo/r4.jpg"
-import r5 from "../../assets/art_pages/letsgo/r5.jpg"
+import r1 from "../../assets/art_pages/letsgo/r1.png"
+import r2 from "../../assets/art_pages/letsgo/r2.png"
+import r3 from "../../assets/art_pages/letsgo/r3.png"
+import r4 from "../../assets/art_pages/letsgo/r4.png"
+import r5 from "../../assets/art_pages/letsgo/r5.png"
 
 
 const store = useStore()
@@ -568,12 +582,19 @@ h4{
     gap:40px
 }
 
-.content_container{
+.ov_content_container{
     width:var(--content-width);
     max-width:var(--max-content-width);
     display: flex;
     flex-direction: column;
     gap:24px
+}
+.content_container{
+    width:var(--content-width);
+    max-width:var(--max-content-width);
+    display: flex;
+    flex-direction: column;
+    gap:40px
 }
 .content_block_flex{
     width:100%;
@@ -586,6 +607,12 @@ h4{
     display: flex;
     flex-direction: column;
     gap:8px
+}
+.content_block_texts_24{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    gap:24px
 }
 
 .content_block_buttons{
@@ -665,7 +692,7 @@ img{
 }    
 h4{
     font-size: 60px;
-    line-height: 40px; 
+    line-height: 60px; 
 
 }
 .content_block_flex{

@@ -47,6 +47,7 @@ import {onMounted,onBeforeMount,watchEffect, watch,computed} from 'vue'
 import { onBeforeRouteLeave } from 'vue-router'
 import useStore from '../../store/index.js'
 import router from '../../router'
+import { screen_cover, screen_open } from '../../hooks/use_full_sreen_cover'
 const store = useStore()
 
     //thum组件注册队列
@@ -106,14 +107,11 @@ const store = useStore()
         }else{
             //跳转到指定位置
             scrollto(0,'jump')
-
-            //打开屏幕遮罩
-            store.full_cover_class = 'top'
-            setTimeout(() => {
-                store.full_cover_class = 'bottom'
-            }, 350);
         }
 
+
+        //打开屏幕遮罩
+        screen_open()
 
         store.loader_status = true//开启loader
 
@@ -162,12 +160,12 @@ const store = useStore()
             },650) 
         }else{
             //遮挡屏幕
-            store.full_cover_class = 'center'
+            screen_cover()
             //关闭导航栏
             // store.is_navbar_open = false
             setTimeout(()=>{
                 next()        
-            },600) 
+            },350) 
         }
         //锁滚动
         s_lock() 

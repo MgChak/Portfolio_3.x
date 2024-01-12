@@ -73,6 +73,7 @@ import {get_all_imgs} from'../../hooks/use_art_page_functions'
 import {onMounted,computed,ref,onBeforeMount,watchEffect} from 'vue'
 import { onBeforeRouteLeave } from 'vue-router'
 import {scrollto} from '../../hooks/use_scroll'
+import { screen_open,screen_cover } from '../../hooks/use_full_sreen_cover'
 
 const store = useStore()
 
@@ -95,10 +96,7 @@ const store = useStore()
         store.scroll_page_height = document.getElementById('article_container_for_scroll').clientHeight
         
         //打开屏幕遮罩
-        store.full_cover_class = 'top'
-        setTimeout(() => {
-            store.full_cover_class = 'bottom'
-        }, 350);
+        screen_open()
         
         store.loader_status = true//开启loader
 
@@ -106,7 +104,6 @@ const store = useStore()
 
         var stop = watchEffect(()=>{
             if(store.is_loader_animation_finished){
-
                 //打开导航栏
                 store.is_navbar_open = true
                 
@@ -115,13 +112,11 @@ const store = useStore()
                     s_unlock() 
                     
                 },600)
-
                 //复位动画状态
                 store.is_loader_animation_finished = false
 
                 stop()
-
-                
+  
                 
             }
         })
@@ -129,12 +124,12 @@ const store = useStore()
 
     onBeforeRouteLeave((to,from,next)=>{
         //遮挡屏幕
-        store.full_cover_class = 'center'
+        screen_cover()
         //关闭导航栏
         // store.is_navbar_open = false
         setTimeout(()=>{
             next()        
-        },600) 
+        },350) 
     })
 
 

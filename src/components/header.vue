@@ -380,7 +380,8 @@
         
     }
     .inner_container{
-        width:85%;
+        width:100%;
+        margin:0 30px;
         height:100%;
         display:flex;
         justify-content: space-between;
