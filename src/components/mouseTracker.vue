@@ -38,8 +38,8 @@ const store = useStore()
 
 <style scoped>
 .mouse_tracker_container{
-    width:150px;
-    height:150px;
+    width:100px;
+    height:100px;
     /* background:rgb(117, 133, 225); */
     opacity: 1;
     
@@ -88,7 +88,7 @@ const store = useStore()
     
 }
 .view_project > .background::before{
-    content: 'VIEW PROJECT';
+    content: 'VIEW';
     font-size: 15px;
     color: black;
     font-weight: 700;
@@ -136,7 +136,7 @@ const store = useStore()
     
 }
 .pre > .background::after{
-    content: 'PREVIOUS';
+    content: 'PREV';
     font-size: 15px;
     color: black;
     font-weight: 700;

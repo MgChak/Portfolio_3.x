@@ -1,6 +1,6 @@
 <template>
 
-<div class="main_container" id="article_container_for_scroll">
+<div class="main_container">
     <transit/> 
 
     <div class = "ov_section_container bc_s">

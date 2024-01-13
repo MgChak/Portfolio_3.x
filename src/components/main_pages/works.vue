@@ -189,8 +189,7 @@ const store = useStore()
         store.is_slide_img_moving = false
         //navbar隐藏
         store.is_navbar_open = false 
-        //开启动画
-        store.scroll_animation = 'transition:all 0.6s var(--animation-slow-cubic)'
+        
         //滚动到指定位置
         srcoll_to(index,'smooth')
 

@@ -9,7 +9,7 @@
 
 <script setup>
 //hooks引入
-import{handle_img_position_change,handle_el_container_size,thum_ani_render} from '../../../hooks/use_works_slideshow_handle.js'
+import{handle_el_container_size,thum_ani_render} from '../../../hooks/use_works_slideshow_handle.js'
 //依赖引入
 import {computed,ref,watchPostEffect} from 'vue'
 import useStore from '../../../store/index.js'
@@ -18,8 +18,6 @@ const store = useStore()
 
     let name = 'TRANSIT'
 
-    // //计算内容物偏移的位置
-    // let img_position = computed(()=>handle_img_position_change(card_id))
 
     //计算内容物固定框的尺寸
     const el = ref(null)

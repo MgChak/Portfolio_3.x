@@ -31,7 +31,7 @@
 
 <script setup>
 //hooks引入
-import{handle_img_position_change,handle_el_container_size} from '../../../hooks/use_works_slideshow_handle.js'
+import{handle_el_container_size} from '../../../hooks/use_works_slideshow_handle.js'
 import Background_Element from "../../comps/background_elements.vue"
 //依赖引入
 import {computed,onMounted,ref, watchEffect} from 'vue'
@@ -45,8 +45,6 @@ gsap.registerPlugin(CustomEase);
     
     let name = 'LETS_GO'
 
-    // //计算内容物偏移的位置
-    // let img_position = computed(()=>handle_img_position_change(card_id))
 
     //计算内容物固定框的尺寸
     const el = ref(null)

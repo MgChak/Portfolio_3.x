@@ -55,7 +55,6 @@ const w_size = useWindowSize()
 
     window.addEventListener('scroll',(e)=>{
       store.scroll_position = window.scrollY
-      store.scroll_page_height = document.getElementById('article_container_for_scroll').scrollHeight
     })
 
     
@@ -82,11 +81,7 @@ const w_size = useWindowSize()
     }
   })
 
-  let page_height = computed(()=>{
-    return {height : store.page_height+'px'}
-  })
   
-
   page_scroll_locker_main()
 
   //监听调用滚动锁

@@ -50,6 +50,7 @@ import {scrollto} from '../../hooks/use_scroll'
 import { screen_open,screen_cover } from '../../hooks/use_full_sreen_cover'
 import { CustomEase } from "gsap/CustomEase";
 import link_button_for_about from "../comps/link_button_for_about.vue"
+import {tracker_toggle} from '../../hooks/use_mouse_tracker_toggle'
 import gsap from 'gsap'
 const store = useStore()
 gsap.registerPlugin(CustomEase);
@@ -132,14 +133,15 @@ gsap.registerPlugin(CustomEase);
 
     onMounted(()=>{
 
+        //隐藏鼠标追踪器
+        tracker_toggle('hidden')
         //复位路由路径
         store.is_route_to_work = false
         //初始化文章位置设置为0
         scrollto(0,'jump')
         //修改导航栏状态到初始状态
         store.navbar_status = 0
-        //将文章的高度保存到库
-        store.scroll_page_height = document.getElementById('article_container_for_scroll').clientHeight
+        
         
         //打开屏幕遮罩
         screen_open()

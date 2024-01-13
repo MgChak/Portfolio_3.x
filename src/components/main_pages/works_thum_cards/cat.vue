@@ -11,7 +11,7 @@
    
 <script setup>
 //hooks引入
-import{handle_img_position_change,handle_el_container_size,thum_ani_render} from '../../../hooks/use_works_slideshow_handle.js'
+import{handle_el_container_size,thum_ani_render} from '../../../hooks/use_works_slideshow_handle.js'
 //依赖引入
 
 

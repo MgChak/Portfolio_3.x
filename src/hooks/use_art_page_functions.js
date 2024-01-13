@@ -96,8 +96,6 @@ let animation_queue_before_route_in =(page_id)=>{
                 store.footer_animation = 'var(--animation-slow)'
                 //打开导航栏
                 store.is_navbar_open = true 
-                //将文章的高度保存到库
-                store.scroll_page_height = document.getElementById('article_container_for_scroll').clientHeight 
                 //清空loading数据
                 loading.value = 0 
                 //解锁滚动
@@ -144,13 +142,7 @@ let animation_queue_route_out =(page_id,to,next)=>{
         store.is_navbar_open = false
         //重置首页内容物大小-直接放大
         store.expand_page_number = store.page_on
-        //关闭滚动动画
-        store.scroll_animation='none',
-        setTimeout(()=>{
-            //初始化文章位置设置为0
-            store.scroll_position = 0
-        },600) 
-        
+
         setTimeout(()=>{
             //清空路由动画速度
             store.footer_animation = 'null'
@@ -163,8 +155,6 @@ let animation_queue_route_out =(page_id,to,next)=>{
          screen_cover()
         //关闭导航栏
         store.is_navbar_open = false
-        //将滚动行为初始化为锁定状态
-        store.scroll_event_status = undefined
         //重置首页内容物大小-直接放大
         store.expand_page_number = store.page_on
         setTimeout(()=>{
