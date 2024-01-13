@@ -1,81 +1,90 @@
 <template>
 
-    
-
-    <div class="main_container" id="article_container_for_scroll">
-        <!-- 头部头像显示 -->
-        <div class="header_container">
-            <div class="gif_container">
-                <img class="gif" src="../../assets/about/me.gif" alt="">
+<div class="about_main_container" id="article_container_for_scroll"  ref="el" >
+   <div class="placeholder"></div>
+    <div class="about_contents_container">
+        <div class="name">
+            <div class="box box1">
+                <img ref="img1" class="imgs img1" src="../../assets/about/CHAKSHING.svg" alt="">
             </div>
-            <img class="talkbar" src="../../assets/about/talk.svg" alt="">
-            <div class="background_conatiner">
-                <img class="header_back" src="../../assets/about/back.png" alt="">
-            </div>
-        </div>
-
-        <div class="section_conatier">
-            <h1>CONTACT ME</h1>
-            <div class="inner_conatiner">
-                <div class="contect_container" @pointerup ="handle_click_copy('chakshinglam@gmail.com')">
-                    <img src="../../assets/about/g.svg" alt="">
-                    <h2 style="cursor: pointer;" :style="underline">{{emailtext}}</h2>
+            <div class="subline">
+                <div class="box box2">
+                    <img ref="img2" class="imgs img2" src="../../assets/about/LAM.svg" alt="">
                 </div>
-                <div class="contect_container" @click ="handle_click('https://www.instagram.com/chakshinglam/')">
-                    <img src="../../assets/about/i.svg" alt="">
-                    <h2 style="text-decoration: underline;cursor: pointer;">chakshinglam</h2>
+                <div class="bobo_con">
+                    <img ref="img3" class="imgs img3" src="../../assets/about/bobo.svg" alt="">   
+                    <div ref="con" class="bobo_back"></div>
                 </div>
-                <div class="contect_container" @click ="handle_click('https://www.linkedin.com/in/chakshing-lam')">
-                    <img src="../../assets/about/l.svg" alt="" >
-                    <h2 style="text-decoration: underline;cursor: pointer;">www.linkedin.com/in/chakshing-lam</h2>
-                </div>
-            </div>
+            </div> 
         </div>
+    </div>
+    <div class="about_contents_container">
+        <img ref="me" class="me" src="../../assets/about/me.png" alt="">
+    </div>
 
-
-
-        <div class="section_conatier">
-            <h1>ABOUT ME</h1>
-            <h2>Hello, I'm Chakshing Lam, a UX/UI & product designer. I have a diverse educational background that includes UX/UI design, graphic design, fine arts, and front-end programming. My passion for design is what drives me, and I'm constantly seeking new ways to challenge myself and push the boundaries of what's possible. With each new project, I strive to create intuitive, engaging, and visually stunning designs that not only meet but exceed my clients' expectations. I look forward to bringing my skills and enthusiasm to any project that comes my way. Thank you for taking the time to learn a little bit about me.</h2>
+    <div class="about_contents_container">
+        <div ref="breakline1" class="breakline"></div>
+        <div class="flexbox">
+            <link_button_for_about :prototype_links = 'email_button'/>
+            <link_button_for_about :prototype_links = 'link_button'/>
+            <link_button_for_about :prototype_links = 'ins_button'/>
         </div>
-        <div class="section_conatier">
-            <h1>KEY WORDS</h1>
-            <div class="key_words_container">
-                <img src="../../assets/about/code.svg" alt="">
-                <h2>CODING _ During the process of learning UX/UI, I came across courses related to JS. I became fascinated by this language because I could use JS to turn my design concepts into real apps. So, I taught myself Vue.js, and the website you are currently seeing was built using Vue.</h2>
-            </div>
-            <div class="key_words_container">
-                <img src="../../assets/about/game.svg" alt="">
-                <h2>GAME _ I am a complete video game enthusiast. Compared to single-player games, I prefer multiplayer online games, such as WOW, FF14, LOL. I really enjoy the feeling of working together with teammates to achieve a common goal.</h2>
-            </div>
-            <div class="key_words_container">
-                <img src="../../assets/about/home.svg" alt="">
-                <h2>HOME _ Compared to going out, I prefer spending my leisure time at home. This includes exercising, which I also do at home. However, every year I still go on one or two trips with my friends.</h2>
-            </div>
-            <div class="key_words_container">
-                <img src="../../assets/about/pets.svg" alt="">
-                <h2>CAT _ I have a very cute Siamese cat! I love it very much, it's my everything. However, as it's getting older, its fur is starting to become darker lol. If you know how to prevent it from becoming black, please let me know.</h2>
-            </div>
-        </div>
+        <div ref="breakline2" class="breakline"></div>
+    </div>
+    <div ref="contents" class="about_contents_container contents" style="gap:24px">
+        <h1>ABOUT ME</h1>
+        <h3>Hello, I'm Chakshing Lam, a UX/UI & product designer with a multifaceted educational background encompassing UX/UI design, graphic design, fine arts, and front-end programming. My fervent passion for design fuels my constant quest for innovation and pushing the envelope in creativity. In every project, I aim to craft intuitive, captivating, and visually extraordinary designs that not only fulfill but surpass client expectations. I eagerly anticipate the opportunity to apply my skills and zeal to any upcoming projects. Thank you for your time in getting to know a bit about me.</h3>
+    </div>
+    <div class="placeholder"></div>
+</div>    
 
-
-
-        <div class="placeholder"></div>
-   </div>
-
-    
 </template>
 
 <script setup>
 import useStore from '../../store/index'
 import { s_lock,s_unlock } from '../../hooks/use_page_scroll_locker'
 import {get_all_imgs} from'../../hooks/use_art_page_functions'
-import {onMounted,computed,ref,onBeforeMount,watchEffect} from 'vue'
+import {onMounted,ref,onBeforeMount,watchEffect,reactive} from 'vue'
 import { onBeforeRouteLeave } from 'vue-router'
 import {scrollto} from '../../hooks/use_scroll'
 import { screen_open,screen_cover } from '../../hooks/use_full_sreen_cover'
-
+import { CustomEase } from "gsap/CustomEase";
+import link_button_for_about from "../comps/link_button_for_about.vue"
+import gsap from 'gsap'
 const store = useStore()
+gsap.registerPlugin(CustomEase);
+
+
+
+    //按钮array
+    let email_button =reactive({
+        ani:false,
+        main_color:'white',
+        sub_color:'black',
+        width:120,
+        text:'Email',
+        link:'https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=13-46685&t=YIt6F0pheIRRFmXT-1&scaling=min-zoom&page-id=13%3A45022&mode=design',
+    })
+    let link_button = reactive({
+        ani:false,
+        main_color:'white',
+        sub_color:'black',
+        width:140,
+        text:'LinkedIn',
+        link:'https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=13-46685&t=YIt6F0pheIRRFmXT-1&scaling=min-zoom&page-id=13%3A45022&mode=design',
+    })
+    let ins_button = reactive({
+        ani:false,
+        main_color:'white',
+        sub_color:'black',
+        width:150,
+        text:'Instagram',
+        link:'https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=13-46685&t=YIt6F0pheIRRFmXT-1&scaling=min-zoom&page-id=13%3A45022&mode=design',
+    })
+
+
+
+
 
     //初始化1
     onBeforeMount(()=>{
@@ -83,6 +92,43 @@ const store = useStore()
         s_lock()
     
     })
+
+    //动画
+    const img1 = ref(null)
+    const img2 = ref(null)
+    const img3 = ref(null)
+    const con = ref(null)
+    var me = ref(null)
+    var breakline1 = ref(null)
+    var breakline2 =ref(null)
+    var contents =ref(null)
+
+    var ani="M0,0 C0.39,0 0.589,1 1,1 "
+    var time = 0.2
+
+    let other_anis = ()=>{
+        gsap.to(me.value,{
+            opacity:1,
+            duration:0.6,
+            ease: CustomEase.create("custom", store.animation_ease_c1),
+        })
+        gsap.to(contents.value,{
+            opacity:1,
+            duration:0.6,
+            ease: CustomEase.create("custom", store.animation_ease_c1),
+        })
+        gsap.to(breakline1.value,{
+            scaleX:1,
+            duration:0.6,
+            ease: CustomEase.create("custom", store.animation_ease_c1),
+        })
+        gsap.to(breakline2.value,{
+            scaleX:1,
+            duration:0.6,
+            ease: CustomEase.create("custom", store.animation_ease_c1),
+        })
+
+    }
 
     onMounted(()=>{
 
@@ -104,20 +150,97 @@ const store = useStore()
 
         var stop = watchEffect(()=>{
             if(store.is_loader_animation_finished){
+                //复位动画状态
+                store.is_loader_animation_finished = false
+                stop()
                 //打开导航栏
                 store.is_navbar_open = true
+
+                //开启about的动画
+                store.about_animation = true
                 
                 setTimeout(()=>{
                     //解锁滚动
                     s_unlock() 
                     
-                },600)
-                //复位动画状态
-                store.is_loader_animation_finished = false
+                },600)   
+            }
+        })
 
-                stop()
-  
-                
+        
+        var stop2 = watchEffect(()=>{
+            console.log("执行")
+            var tl = gsap.timeline() 
+            if(store.about_animation){
+                store.about_animation = false
+                stop2() 
+                gsap.to(img1.value,{
+                    yPercent:-120,
+                    duration:0.6,
+                    ease: CustomEase.create("custom", store.animation_ease_c1),
+                })
+                gsap.to(img2.value,{
+                    yPercent:-120,
+                    duration:0.6,
+                    ease: CustomEase.create("custom", store.animation_ease_c1),
+                    delay:0.3,
+                })
+                gsap.to(con.value,{
+                    yPercent:-120,
+                    duration:0.3,
+                    ease: CustomEase.create("custom", ani),
+                    delay:0.6,
+                })
+                tl.to(img3.value,{
+                    yPercent:-118,
+                    scaleY:0.7,
+                    scaleX:1.3,
+                    duration:0.3,
+                    ease: CustomEase.create("custom", ani),
+                    delay:0.9,
+                })
+                tl.to(img3.value,{
+                    scaleY:1.2,
+                    scaleX:0.8,
+                    duration:time,
+                    ease: CustomEase.create("custom", ani),
+                })
+                tl.to(img3.value,{
+                    scaleY:0.8,
+                    scaleX:1.2,
+                    duration:time,
+                    ease: CustomEase.create("custom", ani),
+                })
+                tl.to(img3.value,{
+                    scaleY:1.1,
+                    scaleX:0.9,
+                    duration:time,
+                    ease: CustomEase.create("custom", ani),
+                })
+                tl.to(img3.value,{
+                    scaleY:0.95,
+                    scaleX:1.05,
+                    duration:time,
+                    ease: CustomEase.create("custom", ani),
+                    onComplete:()=>{
+                        email_button.ani = true
+                        link_button.ani = true
+                        ins_button.ani =true
+                        other_anis()
+                    },
+                })
+                tl.to(img3.value,{
+                    scaleY:1.02,
+                    scaleX:0.98,
+                    duration:time,
+                    ease: CustomEase.create("custom", ani),
+                })
+                tl.to(img3.value,{
+                    scaleY:1,
+                    scaleX:1,
+                    duration:time,
+                    ease: CustomEase.create("custom", ani),
+                })
             }
         })
     })
@@ -137,213 +260,167 @@ const store = useStore()
         window.open(url)
     }
 
-    let emailtext =ref('chakshinglam@gmail.com')
-    let underline = computed(()=>{
-        if(emailtext.value =='chakshinglam@gmail.com'){
-            return {'text-decoration': 'underline'}
-        } else{
-            return {'text-decoration': 'none'}
-        }
-           
-        })
-    var timer
+    
 
-    let handle_click_copy = (url)=>{
 
-        clearTimeout(timer)
-        
-        // 获取电子邮件地址
-        const email = url;
 
-        if(navigator.clipboard && navigator.clipboard.writeText){
-            // 复制电子邮件地址到剪贴板
-            navigator.clipboard.writeText(email)
-                    .then(() => {
-                        emailtext.value = `Copied to Clipboard!`
-                    })
-                    .catch((err) => {
-                        emailtext.value = `Failed to copy to clipboard`
-                    });
-            timer = setTimeout(()=>{
-                emailtext.value = 'chakshinglam@gmail.com'
-            },2000)
-        }else{
-            // 创建一个虚拟输入元素
-            const input = document.createElement("input");
-            
-            // 将电子邮件地址设置为输入元素的值
-            input.setAttribute("value", email);
-            
-            // 将输入元素添加到文档中
-            document.body.appendChild(input);
-            
-            // 选中输入元素中的文本
-            input.select();
-            
-            // 将文本复制到剪贴板
-            document.execCommand("copy");
-            
-            // 删除虚拟输入元素
-            document.body.removeChild(input);
-
-            emailtext.value = `Copied to Clipboard!`
-
-            timer = setTimeout(()=>{
-                emailtext.value = 'chakshinglam@gmail.com'
-            },2000)
-        }
-
-        
-        
-    }
+    
 
 
 </script>
 
 <style scoped>
-.main_container{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap:80px;
-    overflow: hidden;
+
+.placeholder{
+    width:1px;
+    height:80px;
 }
-.header_container{
-    margin-top: 200px;
-    width:40vw;
-    height:40vw;
-    max-width: 500px;
-    max-height: 500px;
-    position:relative;
-    
-}
-.gif_container{
-    width:100%;
-    height:100%;
+
+.about_main_container{    
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: black;
-    border-radius: 50%;
-}
-.gif{
-    width:120%;
-    
-}
-.background_conatiner{
+    position:relative;
     width:100%;
-    height:100%;
-    position:absolute;
-    z-index:-1;
-    top: 0;
-    left: 0;
+    background-color: linear-gradient(180deg, #162228 0%, #0A141A 100%);;
+    gap:80px;
 }
-.header_back{
-    width: 700%;
-    position: absolute;
-    top: -301%;
-    left: -300%;
-    z-index: -1;
-    animation:back_animation 6s linear infinite;
-}
-.talkbar{
-    position: absolute;
-    right: -22%;
-    top: -19%;
-    width: 81%;
-}
-@keyframes back_animation {
-    0%{opacity:1}
-    50%{opacity:0.5}
-    100%{opacity:1}
-}
-
-
-
-
-h1{
-    font-family: 'Kanit';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 60px;
-    line-height: 45px;
-    color: rgba(248, 251, 246, 0.85);
-
-}
-h2{
-    font-family: 'Kanit';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 20px;
-    line-height: 45px;
-    color: rgba(248, 251, 246, 0.85);
-
-}
-
-.section_conatier{
+.about_contents_container{
     width:var(--content-width);
-    max-width:1150px ;
+    max-width:800px;
     display: flex;
     flex-direction: column;
     gap:40px;
 }
-.key_words_container{
-    display: flex;
-    align-items: start;
-    gap:16px;
-}
-.key_words_container > img{
-    width:40px;
-}
-.key_words_container > h2{
-    margin-top:-10px;
-    flex:1;
+
+
+
+
+.background_holder{
+    position:absolute;
+    left:0;
+    bottom:0;
+    z-index: -1;
+    width:100%;
+    height:100%;
 }
 
-.contect_container{
-    display:flex;
-    align-items: center;
-    gap:16px;
+.subline{
+    display: flex;
+    align-items: end;
+    gap:24px;
 }
-.inner_conatiner{
+
+.imgs{
+    position:relative;
+    left:0;
+    overflow: hidden;
+}
+img{
+    overflow: hidden;
+    /* transform: translateY(100%); */
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position:relative;
+}
+.box1{
+    width:100%;
+}
+.img1{
+    width:100%;
+    transform: translateY(120%);
+}
+.box2{
+    width:35.62%;
 
 }
-.contect_container > h2{
-    pointer-events: all;
-    -webkit-user-select:auto;
-    -moz-user-select: auto;
-    -ms-user-select: auto;
-    user-select: auto;
+.img2{
+    width:100%;
+    transform: translateY(120%);
 }
-.contect_container > img{
-    width: 60px;
-    flex:none;
-}
-.copy_container{
+
+.bobo_con {
+
+    flex: 1;
+    height: 100%;
     display: flex;
-    cursor: pointer;
+    justify-content: center;
+    align-items: end;
+    position: relative;
+    overflow: hidden;
 }
-.copy_container > img {
-    width:20px;
+
+.img3 {
+    width: 50%;
+    z-index: 1;
+    transform-origin:center bottom;
+    transform: translateY(120%) scale(0.7,1.3);
 }
-.copy_container > h3{
-    font-family: 'Kanit';
+
+.bobo_back {
+    background-color: white; /* 确保这也是白色 */
+    width: 100%;
+    height: 76.8%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    transform: translateY(120%);
+}
+.me{
+    width:100%;
+    border-radius: 20px;
+    opacity: 0;
+}
+.flexbox{
+    display: flex;
+    gap:40px
+}
+.breakline{
+    width:100%;
+    height:1px;
+    background-color: white;
+    opacity: 0.3;
+    transform-origin: left center;
+    transform: scaleX(0);
+}
+.contents{
+    opacity: 0;
+}
+
+h1{
+    font-size: 40px;
     font-style: normal;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 45px;
-    color: rgba(248, 251, 246, 0.85);
-    text-decoration: underline;
+    font-weight: 700;
+    line-height: 40px; 
+    color:white;
+
 }
-.placeholder{
-    width:1px;
-    height:300px;
+h3{
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    color:rgba(255, 255, 255, 0.612);
+}
+
+@media (max-width: 750px) {
+    .flexbox{
+        flex-wrap: wrap;
+        gap:24px;
+    }
+    .about_main_container{
+        gap:40px;
+        
+    }
+    
 }
 
 </style>

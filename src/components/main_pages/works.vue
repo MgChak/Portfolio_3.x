@@ -122,6 +122,10 @@ const store = useStore()
         var stop = watchEffect(()=>{
             if(store.is_loader_animation_finished){
 
+                //复位动画状态
+                store.is_loader_animation_finished = false
+                stop()
+
                 //打开导航栏
                 store.is_navbar_open = true
                 //修改导航栏状态到默认状态
@@ -135,15 +139,7 @@ const store = useStore()
                     //解锁滚动
                     s_unlock() 
                     
-                },600)
-
-                //复位动画状态
-                store.is_loader_animation_finished = false
-
-                stop()
-
-                
-                
+                },600)               
             }
         })
         

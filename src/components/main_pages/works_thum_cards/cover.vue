@@ -70,6 +70,8 @@ gsap.registerPlugin(CustomEase);
     const stop = watchEffect(()=>{
         console.log("执行")
         if(store.cover_animation){
+            stop()
+            store.cover_animation = false
             gsap.to(img123.value,{
                 yPercent:-100,
                 duration:0.6,
@@ -92,9 +94,9 @@ gsap.registerPlugin(CustomEase);
                 duration:0.6,
                 ease: CustomEase.create("custom", store.animation_ease_c1),
             })
- 
-            store.cover_animation = false
-            stop()
+           
+            
+            
             
         }
     })

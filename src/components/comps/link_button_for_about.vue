@@ -42,21 +42,12 @@ const store = useStore()
 
 
 
-    //监听视频是否在窗口内
-    const is_show = ref(false)
-    const { stop } = useIntersectionObserver(
-        button,
-      ([{ isIntersecting }]) => {
-        is_show.value = isIntersecting
-      },{
-        threshold:0
-      }
-    )
 
-    let stop_watch=watch(is_show, (newVal,oldVal) => {
-        if(newVal!=oldVal && newVal){
-            stop()
+    let stop_watch=watch(()=>props.prototype_links.ani, () => {
+        console.log("动画执行————")
+        if(props.prototype_links.ani){           
             stop_watch()
+            console.log("动画执行")
             var tl = gsap.timeline() 
             tl.fromTo(button.value,{
                 scaleX: 0,
