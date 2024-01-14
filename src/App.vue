@@ -7,7 +7,7 @@
 
   <loader/>
 
-  <div class="footer_conatiner_fixed"></div>
+  <div class="footer_conatiner_fixed" :style="[cursor_status]"></div>
 
   <div class="main_view_window" :style="[cursor_status]">
 
@@ -94,7 +94,6 @@ const w_size = useWindowSize()
 
 <style scoped>
 
-
 .footer_conatiner_fixed{
   width:100vw;
   height:100vh;
@@ -104,6 +103,9 @@ const w_size = useWindowSize()
   z-index: 5;
   pointer-events: none;
 }
+
+
+/* 屏幕遮罩 */
 .router_full_cover{
   width:100vw;
   height:100vh;
@@ -125,7 +127,7 @@ const w_size = useWindowSize()
 }
 .top{
   transform: translateY(-105%);
-  transition: all 0.3s;
+  transition: all 0.6s;
 }
 
 

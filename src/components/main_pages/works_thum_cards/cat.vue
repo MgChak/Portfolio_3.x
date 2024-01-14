@@ -35,6 +35,8 @@ const store = useStore()
     const img2= ref(null)
     const img3= ref(null)
 
+
+
     //监听+执行动画
     watchPostEffect(()=>{
         thum_ani_render(name,{

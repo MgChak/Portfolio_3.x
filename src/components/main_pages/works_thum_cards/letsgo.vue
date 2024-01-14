@@ -107,7 +107,7 @@ const store = useStore()
     
     overflow: hidden;
     position:relative;
-    width:100vw;
+    width:100%;
 }
 
 .background{

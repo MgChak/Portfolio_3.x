@@ -1,5 +1,5 @@
 import useStore from '../store/index'
-import {watchEffect,ref} from 'vue'
+import {watchEffect,ref,watch} from 'vue'
 import {tracker_toggle} from '../hooks/use_mouse_tracker_toggle'
 import {scrollto} from '../hooks/use_scroll'
 import { s_lock,s_unlock } from '../hooks/use_page_scroll_locker'
@@ -59,6 +59,8 @@ let animation_queue_before_route_in =(page_id)=>{
     //锁定滚动
     s_lock()
 
+    console.log("iddddd"+page_id)
+
     //将thum全屏化_set
     store.index_array[page_id].class = 'container_fullscreen_set'
 
@@ -88,8 +90,12 @@ let animation_queue_before_route_in =(page_id)=>{
 
 
 
-    const stop =watchEffect(()=>{
+    const stop =watch(()=>store.is_loader_animation_finished,()=>{
         if(store.is_loader_animation_finished){
+                //停止监听
+                stop()
+                //复位动画状态
+                store.is_loader_animation_finished = false
                 //将thum调整为文章内状态
                 store.index_array[page_id].class = 'container_article'
                 // 赋值路由动画速度
@@ -100,10 +106,6 @@ let animation_queue_before_route_in =(page_id)=>{
                 loading.value = 0 
                 //解锁滚动
                 s_unlock() 
-                //复位动画状态
-                store.is_loader_animation_finished = false
-
-                stop()
         }
     })
 }

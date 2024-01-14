@@ -4,7 +4,6 @@
 
     <div class="main_conatiner" id="article_container_for_scroll">
 
-        <!-- <letsgo @click="handle_card_click(1)" @pointerover=" handle_card_hover(1,$event)"/> -->
 
         <cover  @pointerover=" handle_card_hover('hidden',$event)"/>
 
@@ -14,9 +13,9 @@
             @pointerover=" handle_card_hover('view_project',$event)"
             >
 
-
+            
             <component class="comp" :is="render_comp(i.comp)"/>
-     
+
            
             <div class="bio_container">
                 <infor_bar :infor_obj="{type:'main',text: i.text,bio:i.bio,time:i.time}"/>
@@ -43,8 +42,9 @@ import { s_lock,s_unlock } from '../../hooks/use_page_scroll_locker'
 import {tracker_toggle} from '../../hooks/use_mouse_tracker_toggle'
 import {scrollto} from '../../hooks/use_scroll'
 import {get_all_imgs} from'../../hooks/use_art_page_functions'
+import {throttle} from'../../hooks/throttle'
 //依赖引入
-import {onMounted,onBeforeMount,watchEffect, watch,computed} from 'vue'
+import {onMounted,onBeforeMount,watch} from 'vue'
 import { onBeforeRouteLeave } from 'vue-router'
 import useStore from '../../store/index.js'
 import router from '../../router'
@@ -73,15 +73,17 @@ const store = useStore()
         var index = array.findIndex((i)=>i.comp_name == name)
         return array[index].comp
     }
- 
+
+    
+
     //初始化1
     onBeforeMount(()=>{
         //锁定滚动
         s_lock()
-        rewrite_index_class()
         if(!store.is_route_to_work){
             //修改导航栏状态到默认状态
             store.navbar_status = 0
+            rewrite_index_class()
         }else{
             //全屏化thum
             store.index_array.forEach((item,index)=>{
@@ -119,13 +121,13 @@ const store = useStore()
 
         get_all_imgs()//统计图片
 
-        var stop = watchEffect(()=>{
+        var stop = watch(()=>store.is_loader_animation_finished,()=>{
             if(store.is_loader_animation_finished){
 
                 //复位动画状态
                 store.is_loader_animation_finished = false
+                //停止监听
                 stop()
-
                 //打开导航栏
                 store.is_navbar_open = true
                 //修改导航栏状态到默认状态
@@ -208,6 +210,8 @@ const store = useStore()
 
 
 
+
+
 // ============================================
 // 回事件触发/监听
 // ============================================
@@ -227,6 +231,16 @@ const store = useStore()
                 tracker_toggle(val)
             }
     }
+
+    //计算infor_bar滚动
+    const infor_bar_scroll = () => {
+        var a = store.scroll_position / document.documentElement.scrollHeight;
+        store.bar_move = a.toFixed(2) * -100;
+    }
+
+    watch(()=>store.scroll_position,()=>{
+        infor_bar_scroll()
+    })
 
 
 </script>
@@ -279,9 +293,9 @@ h2{
 }
 .breakline{
     width:100vw;
-    height:20px;
-    background-color:rgba(255, 255, 255, 0.185);
-    margin-bottom:16px;
+    height:1px;
+    background-color:rgba(255, 255, 255, 0.614);
+    margin-bottom:8px;
 }
 @media (max-width: 750px) {
     .breakline{

@@ -27,6 +27,7 @@ const store = useStore()
     const img =ref(null)
 
     watchPostEffect(()=>{
+        console.log("动画触发")
         thum_ani_render(name,{
             full:[
                 {
@@ -84,14 +85,13 @@ const store = useStore()
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    width:100vw;
+    width:100%;
 
 }
 
 
 .el_conatiner{
     position:relative;
-    /* background-color: green; */
 }
 
 .background{

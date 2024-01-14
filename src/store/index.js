@@ -34,6 +34,10 @@ export default defineStore("Main",{
     state:()=>{
         return{
         //=============================
+        //infor_bar滚动计算：由work修改，infor——bar使用
+        //=============================
+        bar_move:0,
+        //=============================
         //页面滚动状态标记：由hook use_page_scroll_lock使用
         //=============================
         page_scroll_locker_status:false,
@@ -109,7 +113,7 @@ export default defineStore("Main",{
         //=============================
             //滚动数据（距离和方向）
 
-            scroll_page_height:0,
+            scroll_page_height:10000,
 
             scroll_position:0,
         

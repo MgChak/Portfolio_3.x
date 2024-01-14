@@ -44,7 +44,7 @@
 import useStore from '../../store/index'
 import { s_lock,s_unlock } from '../../hooks/use_page_scroll_locker'
 import {get_all_imgs} from'../../hooks/use_art_page_functions'
-import {onMounted,ref,onBeforeMount,watchEffect,reactive} from 'vue'
+import {onMounted,ref,onBeforeMount,watch,reactive} from 'vue'
 import { onBeforeRouteLeave } from 'vue-router'
 import {scrollto} from '../../hooks/use_scroll'
 import { screen_open,screen_cover } from '../../hooks/use_full_sreen_cover'
@@ -64,7 +64,7 @@ gsap.registerPlugin(CustomEase);
         sub_color:'black',
         width:120,
         text:'Email',
-        link:'https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=13-46685&t=YIt6F0pheIRRFmXT-1&scaling=min-zoom&page-id=13%3A45022&mode=design',
+        link:'mailto:'+'chakshinglam@gmail.com',
     })
     let link_button = reactive({
         ani:false,
@@ -72,7 +72,7 @@ gsap.registerPlugin(CustomEase);
         sub_color:'black',
         width:140,
         text:'LinkedIn',
-        link:'https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=13-46685&t=YIt6F0pheIRRFmXT-1&scaling=min-zoom&page-id=13%3A45022&mode=design',
+        link:'https://www.linkedin.com/in/chakshing-lam/',
     })
     let ins_button = reactive({
         ani:false,
@@ -80,7 +80,7 @@ gsap.registerPlugin(CustomEase);
         sub_color:'black',
         width:150,
         text:'Instagram',
-        link:'https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=13-46685&t=YIt6F0pheIRRFmXT-1&scaling=min-zoom&page-id=13%3A45022&mode=design',
+        link:'https://www.instagram.com/chakshinglam/',
     })
 
 
@@ -150,10 +150,11 @@ gsap.registerPlugin(CustomEase);
 
         get_all_imgs()//统计图片
 
-        var stop = watchEffect(()=>{
+        var stop = watch(()=>store.is_loader_animation_finished,()=>{
             if(store.is_loader_animation_finished){
                 //复位动画状态
                 store.is_loader_animation_finished = false
+                //停止监听
                 stop()
                 //打开导航栏
                 store.is_navbar_open = true
@@ -170,8 +171,7 @@ gsap.registerPlugin(CustomEase);
         })
 
         
-        var stop2 = watchEffect(()=>{
-            console.log("执行")
+        var stop2 = watch(()=>store.about_animation,()=>{
             var tl = gsap.timeline() 
             if(store.about_animation){
                 store.about_animation = false
@@ -286,7 +286,7 @@ gsap.registerPlugin(CustomEase);
     align-items: center;
     position:relative;
     width:100%;
-    background-color: linear-gradient(180deg, #162228 0%, #0A141A 100%);;
+    background: linear-gradient(180deg, #1c2429 0%, #0A141A 100%);
     gap:80px;
 }
 .about_contents_container{

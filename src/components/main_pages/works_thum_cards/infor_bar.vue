@@ -1,6 +1,6 @@
 <template>
     <div class="main_container" v-if="props.infor_obj.type=='main'">
-        <div v-if = "store.page_width>=750" class="list_container" ref="el">
+        <div v-if = "store.page_width>=750" class="list_container" :style="{transform : 'translateX('+ store.bar_move +'%)'}" ref="el">
             <div v-for = "i in list_length" class="item_container">
                 <h1>{{ props.infor_obj.text}}</h1>
                 <div class="sub_container">
@@ -42,52 +42,28 @@
 </template>
 
 <script setup>
-import { computed, ref,watchPostEffect,onMounted,onBeforeUnmount} from 'vue';
-import { gsap } from 'gsap/gsap-core';
+import { computed, ref,watchPostEffect} from 'vue';
 import useStore from '../../../store/index.js'
 import { useElementSize } from '@vueuse/core'
-import { CustomEase } from "gsap/CustomEase";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 const store = useStore()
-gsap.registerPlugin(CustomEase);
-gsap.registerPlugin(ScrollTrigger);
 
     //引入props/接收数据
     let props = defineProps(['infor_obj'])
-                          
 
     //列表长度
-    let list_length = ref(1)
+    let list_length = ref(3)
 
-    
-
+    //动画
+    let scroll_animation = ref('var(--animation-slow)')
 
     //获取页面宽度和修改列表长度
     const el = ref(null)
     const { width } = useElementSize(el)
-
     watchPostEffect(()=>{
         if (width.value<store.page_width*2){
-            list_length.value = list_length.value + 1
+            list_length.value = list_length.value + 2
         }
-
     })
-
-    onMounted(()=>{
-
-        gsap.to(el.value,{
-            xPercent:-30,
-            duration: 10,
-            ease: "none",
-            scrollTrigger:{
-                trigger:el.value,
-                scrub:true,
-            }
-        })
-
-    })
-
-
 
 </script>
 
@@ -109,11 +85,13 @@ gsap.registerPlugin(ScrollTrigger);
     display: flex;
     gap:40px;
     position:relative;
+    transition:var(--animation-slow);
 }
 .list_container_sub{
     display: flex;
     gap:40px;
     position:absolute;
+    transition:var(--animation-slow);
     opacity: 0.3;
 }
 .item_container{
