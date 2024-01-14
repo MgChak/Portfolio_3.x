@@ -88,7 +88,7 @@ const store = useStore()
     
 }
 .view_project > .background::before{
-    content: 'VIEW';
+    content: 'EXPLORE';
     font-size: 15px;
     color: black;
     font-weight: 700;

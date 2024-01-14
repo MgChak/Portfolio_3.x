@@ -1,34 +1,37 @@
 <template>
 
     <div class="container container_expand" :style="{height:cover_height}" ref="el" >
-        <div class="el_conatiner" :style = "{width:el_container_size,height:el_container_size}">
-
-            <div class="title_container">
-                <div class="bobo_con">
-                    <img ref="img4" class="imgs img3" src="../../../assets/thum_cards/bobo.svg" alt="">   
-                    <div ref="con" class="bobo_back"></div>
+        <div class="flex_container" :style="{height:flex_height}">
+            <div class="el_conatiner" :style = "{width:el_container_size,height:el_container_size}">
+                <div class="title_container">
+                    <div class="bobo_con">
+                        <img ref="img4" class="imgs img3" src="../../../assets/thum_cards/bobo.svg" alt="">   
+                        <div ref="con" class="bobo_back"></div>
+                    </div>
+                    <div class="box box1">
+                        <img ref="img123" class="imgs" src="../../../assets/thum_cards/hi.svg" alt="">
+                    </div>
+                    <div class="box box2">
+                        <img ref="img2" class="imgs" src="../../../assets/thum_cards/im.svg" alt="">
+                    </div>
+                    <div class="box box3">
+                        <img ref="img3" class="imgs" src="../../../assets/thum_cards/design.svg" alt="">
+                    </div>
                 </div>
-                <div class="box box1">
-                    <img ref="img123" class="imgs" src="../../../assets/thum_cards/hi.svg" alt="">
+            
+            </div>
+            <div ref="arrow_box" class="arrow_animation">
+                <div class="animation_box">
+                    <img src="../../../assets/icons/arrow_downward.svg" alt="">
                 </div>
-                <div class="box box2">
-                    <img ref="img2" class="imgs" src="../../../assets/thum_cards/im.svg" alt="">
-                </div>
-                <div class="box box3">
-                    <img ref="img3" class="imgs" src="../../../assets/thum_cards/design.svg" alt="">
-                </div>
+                <h3>Explore More</h3>
             </div>
         </div>
-
-        <div ref="arrow_box" class="arrow_animation">
-            <div class="animation_box">
-                <img src="../../../assets/icons/arrow_downward.svg" alt="">
-            </div>
-            <h3>TO MY PROJECTS</h3>
-        </div>
+        
         <div class="background_holder" >
-            <Background_Element/>
+                <Background_Element/>
         </div>
+        
     </div>
     
 </template>
@@ -55,7 +58,8 @@ gsap.registerPlugin(CustomEase);
     let el_container_size = computed(()=>handle_el_container_size(width, height))
 
     //使用屏幕的真实高度
-    let cover_height = '100vh'//computed(()=>store.page_height +'px')
+    let cover_height = '100vh'//
+    let flex_height = computed(()=>store.page_height +'px')
 
 
     //动画
@@ -172,11 +176,19 @@ gsap.registerPlugin(CustomEase);
 .container{    
     overflow: hidden;
     display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    position:relative;
+    width:100vw;
+
+}
+.flex_container{
+    overflow: hidden;
+    display: flex;
     justify-content: center;
     align-items: center;
     position:relative;
     width:100vw;
-
 }
 .background_holder{
     position:absolute;
@@ -198,7 +210,7 @@ gsap.registerPlugin(CustomEase);
     position: absolute;
     width: 80%;
     max-width: 800px;
-    top:28%;
+    top:30%;
     left: 0;
     right:0;
     margin:0 auto;
@@ -244,7 +256,7 @@ h4{
 
 .arrow_animation{
     position: absolute;
-    bottom:5vh;
+    bottom:5%;
     margin:0 auto;
     left:0;
     right:0;
@@ -314,6 +326,8 @@ transform: translateY(120%);
     from{top:-40px}
     to{top:60px}
 }
+
+
 
 @media (max-width: 800px){
     h3{

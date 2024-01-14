@@ -464,6 +464,7 @@
         justify-content: center;
         align-items: center;
         cursor: pointer;
+        overflow: hidden;
     }
     .backtotop>img{
         width:20px;

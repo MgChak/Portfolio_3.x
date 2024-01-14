@@ -15,6 +15,7 @@
         <div v-if = "store.page_width < 750" class="list_container" :style="{width : 100+'%'}">
             <div class="item_container">
                 <h1>{{ props.infor_obj.text}}</h1>
+                <div class="time_line"></div>
                 <div class="sub_container">
                     <h2>{{ props.infor_obj.bio }}</h2>
                     <div class="time_container">
@@ -61,7 +62,8 @@ const store = useStore()
     const { width } = useElementSize(el)
     watchPostEffect(()=>{
         if (width.value<store.page_width*2){
-            list_length.value = list_length.value + 2
+            list_length.value = list_length.value + 5
+            console.log(props.infor_obj.text+":"+list_length.value)
         }
     })
 
@@ -128,7 +130,7 @@ const store = useStore()
     height:20px;
 }
 h1{
-    font-size: 80px;
+    font-size: 56px;
     line-height: 80px;
     font-weight: 600;
     text-transform: uppercase;
@@ -152,7 +154,7 @@ h3{
 
 @media (max-width: 1280px) {
     h1{
-    font-size: 60px;
+    font-size: 50px;
     line-height: 80px;
     font-weight: 600;
     text-transform: uppercase;
