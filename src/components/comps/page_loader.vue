@@ -26,59 +26,73 @@ let res = 1
 let time_fun = ()=>{
     let timer11 = setTimeout(()=>{
     
-    num.value = num.value+res
-    if (num.value<=10){
-        res = 10
-        speed.value = 50
-        time_fun()
-    }else if(num.value<=90){
-        if(store.loader_num >= 70 &&store.loader_num < 100){
-            res = 10
-            speed.value = 30
-            time_fun()
-        }else if (store.loader_num >=100){
-            num.value=100
-            setTimeout(()=>{
-                store.loader_status=false
-                speed.value= 100
-                setTimeout(()=>{
-                    num.value = 0
-                },300)
-                store.loader_num = 0
-            },300)
-        }else if (store.loader_num<70){
-            speed.value = 200
-            res = 1
-            time_fun()
-        }else if (store.loader_num<40){
-            speed.value = 600
-            res = 1
-            time_fun()
-        }
-    }else if(num.value>90){
-        if (store.loader_num >=100 || num.value>=100){
-            num.value=100
-            setTimeout(()=>{
-                store.loader_status=false
-                speed.value= 100
-                setTimeout(()=>{
-                    num.value = 0
-                },300)
-                store.loader_num = 0
-            },300)
-        }else if(store.loader_num <= 98 && num.value<=98){
-            speed.value = 500
-            res = 1
-            time_fun()
-        }else if (store.loader_num <= 99 || num.value<=99){
-            speed.value =200
-            res = 0
-            time_fun()
-        }
-    }
-    
-    load_bar_anim()
+    // num.value = num.value+res
+    // if (num.value<=10){
+    //     res = 10
+    //     speed.value = 50
+    //     time_fun()
+    // }else if(num.value<=90){
+    //     if(store.loader_num >= 70 &&store.loader_num < 100){
+    //         res = 10
+    //         speed.value = 30
+    //         time_fun()
+    //     }else if (store.loader_num >=100){
+    //         num.value=100
+    //         setTimeout(()=>{
+    //             store.loader_status=false
+    //             speed.value= 100
+    //             setTimeout(()=>{
+    //                 num.value = 0
+    //             },300)
+    //             store.loader_num = 0
+    //         },300)
+    //     }else if (store.loader_num<70){
+    //         speed.value = 200
+    //         res = 1
+    //         time_fun()
+    //     }else if (store.loader_num<40){
+    //         speed.value = 600
+    //         res = 1
+    //         time_fun()
+    //     }
+    // }else if(num.value>90){
+    //     if (store.loader_num >=100 || num.value>=100){
+    //         num.value=100
+    //         setTimeout(()=>{
+    //             store.loader_status=false
+    //             speed.value= 100
+    //             setTimeout(()=>{
+    //                 num.value = 0
+    //             },300)
+    //             store.loader_num = 0
+    //         },300)
+    //     }else if(store.loader_num <= 98 && num.value<=98){
+    //         speed.value = 500
+    //         res = 1
+    //         time_fun()
+    //     }else if (store.loader_num <= 99 || num.value<=99){
+    //         speed.value =200
+    //         res = 0
+    //         time_fun()
+    //     }
+    // }
 
+    if (store.loader_num >=100){
+            num.value = Math.floor(store.loader_num)
+            load_bar_anim()
+            setTimeout(()=>{
+                store.loader_status=false
+                speed.value= 100
+                setTimeout(()=>{
+                    num.value = 0
+                },300)
+                store.loader_num = 0
+            },300)   
+    }else{
+        num.value = Math.floor(store.loader_num)
+        time_fun()
+        load_bar_anim()
+    }
     },speed.value)
 }
 
