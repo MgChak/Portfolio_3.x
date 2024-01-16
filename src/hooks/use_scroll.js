@@ -32,6 +32,7 @@ let smooth_to = (dr,fn) =>{
         if(Math.abs(a) >=10 ){
             timer = requestAnimationFrame(animation_set)
         }else{
+            window.scroll(0,dr)
             cancelAnimationFrame(timer)
             if(fn){fn()}
         }       

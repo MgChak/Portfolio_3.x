@@ -119,7 +119,7 @@ gsap.registerPlugin(CustomEase);
                     scaleX:1.3,
                     duration:0.3,
                     ease: CustomEase.create("custom", ani),
-                    delay:0.9,
+                    delay:0.6,
                 })
                 tl.to(img4.value,{
                     scaleY:1.2,

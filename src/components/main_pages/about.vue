@@ -192,6 +192,12 @@ gsap.registerPlugin(CustomEase);
                     duration:0.3,
                     ease: CustomEase.create("custom", ani),
                     delay:0.6,
+                    onComplete:()=>{
+                        email_button.ani = true
+                        link_button.ani = true
+                        ins_button.ani =true
+                        other_anis()
+                    },
                 })
                 tl.to(img3.value,{
                     yPercent:-118,
@@ -199,7 +205,7 @@ gsap.registerPlugin(CustomEase);
                     scaleX:1.3,
                     duration:0.3,
                     ease: CustomEase.create("custom", ani),
-                    delay:0.9,
+                    delay:0.6,
                 })
                 tl.to(img3.value,{
                     scaleY:1.2,
@@ -224,12 +230,6 @@ gsap.registerPlugin(CustomEase);
                     scaleX:1.05,
                     duration:time,
                     ease: CustomEase.create("custom", ani),
-                    onComplete:()=>{
-                        email_button.ani = true
-                        link_button.ani = true
-                        ins_button.ani =true
-                        other_anis()
-                    },
                 })
                 tl.to(img3.value,{
                     scaleY:1.02,

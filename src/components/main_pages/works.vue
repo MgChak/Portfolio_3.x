@@ -186,9 +186,7 @@ const store = useStore()
 
     //路由出动画队列（进入文章）
     let animation_queue_click_route_out = (index)=>{
-        //所有窗口隐藏
-        //图片追随鼠标偏移关闭
-        store.is_slide_img_moving = false
+
         //navbar隐藏
         store.is_navbar_open = false 
         
