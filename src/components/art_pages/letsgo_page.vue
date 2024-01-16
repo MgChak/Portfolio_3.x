@@ -21,7 +21,7 @@
                 <h1>OVERVIEW</h1>
                 <link_button :prototype_links = 'case_study_button'/>
             </div>
-            <h3>Let's Go is a travel planning application designed to assist users in creating, searching, and sharing multi-person travel plans. Utilizing the latest AI technology, the app becomes smarter, aiding users in crafting travel plans during chats with their travel companions and offering packing suggestions based on their itineraries. Additionally, users can share their travel plans with other travelers in the online community for inspiration and advice. Let Let's Go be your ultimate travel companion for your next journey.</h3>
+            <h3>Let's Go is a travel planning application designed to assist users in creating, searching, and sharing multi-person travel plans. Utilizing the latest AI technology, the app becomes smarter, aiding users in creating travel plans during chats with their travel companions and offering packing suggestions based on their itineraries. Additionally, users can share their travel plans with other travelers in the online community for inspiration and advice. Let Let's Go be your ultimate travel companion for your next journey.</h3>
             <img class="no_raius" src="../../assets/art_pages/letsgo/o_1.png" alt="">
         </div>
     </div> 
@@ -52,7 +52,7 @@
             <img src="../../assets/art_pages/letsgo/p1.png" alt="">
             <div class="content_block_texts_24">
                 <h1 class="fc_s">DEFINE PROBLEMS</h1>
-                <h3 class="fc_s">Planning group travel can be challenging for users due to the lack of adequate tools and resources. As a result, users often have a poor experience when trying to plan trips with a team.</h3>
+                <h3 class="fc_s">Organizing group travel can be a daunting task for users, owing to the scarcity of appropriate tools and resources. Consequently, this often leads to a subpar experience when attempting to coordinate trips collaboratively.</h3>
             </div>
         </div>
         <div class="breakline bc_s center"></div>
@@ -81,7 +81,8 @@
         <div class="content_container">
             <div class="content_block_texts_24">
                 <h1 class="fc_s">PREMARY FEATURE 01<br>_CREATE NEW TRIP PLAN</h1>
-                <h3 class="fc_s">Users can effortlessly create a travel plan in Let's Go and begin adding their favorite events. During the creation process, they can also invite friends who will be traveling with them to join in shaping a unique and collaborative travel plan.</h3>
+                <h3 class="fc_s">
+Users can easily create a travel plan in Let's Go and start adding their favorite events. Throughout the creation process, they can also invite friends who will be traveling with them to participate in crafting a unique and collaborative travel itinerary.</h3>
             </div>
             <div class="content_block_buttons">
                 <link_button :prototype_links = 'vp_button_1'/>
@@ -95,10 +96,10 @@
 
     <div class = "section_container bc_b">
         <div class="content_container">
-            <h1>USEABILITY TEST<br>_INVITE FRIENDS</h1>
+            <h1>USABILITY TEST<br>_INVITE FRIENDS</h1>
             <div class="content_block_texts">
                 <h2>Key feedback / Problems</h2>
-                <h3>In both the collapsed and expanded versions of the card, the top part remains the same.  If the event name is lengthy, it will still be truncated in the expanded version.  Therefore, showcasing a larger image of the event in the expanded card version is more effective.</h3>
+                <h3>In the version used for the usability test, users can open their friend list and select friends they want to invite by clicking the "Invite" button during the process of creating a new travel plan. User feedback suggests that being able to invite friends directly from the new travel plan creation page would save a significant amount of time. The primary challenge faced in implementing this feature, however, lies in the limited space available on the travel plan creation page, which is insufficient to display a full list of friends.</h3>
             </div>
             <img src="../../assets/art_pages/letsgo/s1_1.png" alt="">
         </div>
@@ -106,7 +107,7 @@
         <div class="content_container">
             <div class="content_block_texts">
                 <h2>Improvements</h2>
-                <h3>Compared to the old version where inviting friends and creating travel plans were separated into two different pages, the updated version now includes both on one page and displays the avatars of the top 10 friends in the user's friend list. Users can select friends by clicking on their avatars. If the desired friend is not among the top 10 displayed, users can browse the complete list of friends by clicking on the MORE icon at the bottom of the list.</h3>
+                <h3>Compared to the previous version, where inviting friends and creating travel plans were split across two separate pages, the updated version combines these functions onto a single page. It shows the images of the top 10 friends from the user's friend list. Users can select friends by clicking on their avatars. If the friend they want to invite isn't in the top 10 displayed, they can view the full list of friends by clicking the "MORE" icon at the end of the list.</h3>
             </div>
             <img src="../../assets/art_pages/letsgo/s1_2.png" alt="">
         </div>
@@ -116,7 +117,7 @@
         <div class="content_container">
             <div class="content_block_texts_24">
                 <h1>DESIGN EXPLORATIONS <br>_ADDING LOADING ANIMATION</h1>    
-                <h3>Compared to the old version where inviting friends and creating travel plans were separated into two different pages, the updated version now includes both on one page and displays the avatars of the top 10 friends in the user's friend list. Users can select friends by clicking on their avatars. If the desired friend is not among the top 10 displayed, users can browse the complete list of friends by clicking on the MORE icon at the bottom of the list.</h3>
+                <h3>Animation has been added into the plan creation process. Now, when a user clicks the create button, they won't be taken directly to the plan page. Instead, an animation showing the process will be displayed, followed by a confirmation page. This change aims to enhance the user's trust in the app.</h3>
             </div>
             <img src="../../assets/art_pages/letsgo/s1_3.png" alt="">
         </div>
@@ -159,7 +160,7 @@
         <div class="content_container">
             <div class="content_block_texts">
                 <h2>A/B Test Round 3</h2>
-                <h3>In order to ensure the accuracy of the test results, I made further modifications to options A and B, and conducted a third round of testing. This time, both options had exactly the same functionality, with the only difference being in their display. Option A emerged as the winner in this test, so I ultimately decided to use option A as the final design</h3>
+                <h3>In order to ensure the accuracy of the test results, I made further modifications to options A and B, and conducted a third round of testing. This time, both options had exactly the same functionality, with the only difference being in their display. Option A emerged as the winner in this test, so I ultimately decided to use option A as the final design.</h3>
             </div>
             <img src="../../assets/art_pages/letsgo/s2_3.png" alt="">
             <img src="../../assets/art_pages/letsgo/s2_4.png" alt="">
@@ -179,14 +180,14 @@
         <div class="breakline bc_w1"></div>
 
         <div class="content_container">
-            <h1>USEABILITY TEST<br>_EVENT CARDS</h1>
+            <h1>USABILITY TEST<br>_EVENT CARDS</h1>
             <div class="content_block_texts">
                 <h2>Key feedback / Problems</h2>
                 <h3>In both the collapsed and expanded versions of the card, the top part remains the same.  If the event name is lengthy, it will still be truncated in the expanded version.  Therefore, showcasing a larger image of the event in the expanded card version is more effective.</h3>
             </div>
             <div class="content_block_texts">
                 <h2>Solutions</h2>
-                <h3>I redesigned the top section to allocate more space for the event name, ensuring the full title is displayed.  Tags were relocated to the information area to provide more room for a larger event image.  Additionally, I replaced 'Move' with 'Date' for clarity, and introduced a rearrange icon to the list.  The 'Add tickets and reservation' feature was renamed to 'Attach' and its icon was changed to enhance user understanding of its functionality</h3>
+                <h3>I redesigned the top section to allocate more space for the event name, ensuring the full title is displayed.  Tags were relocated to the information area to provide more room for a larger event image.  Additionally, I replaced 'Move' with 'Date' for clarity, and introduced a rearrange icon to the list.  The 'Add tickets and reservation' feature was renamed to 'Attach' and its icon was changed to enhance user understanding of its functionality.</h3>
             </div>
             <img src="../../assets/art_pages/letsgo/s2_6.png" alt="">
         </div>
@@ -219,7 +220,7 @@
 
     <div class = "section_container bc_b">
         <div class="content_container">
-            <h1>USEABILITY TEST <br>_SCANING</h1>
+            <h1>USABILITY TEST <br>_SCANING</h1>
             <div class="content_block_texts">
                 <h2>Improvements</h2>
                 <h3>In the new version, the entire page has been redesigned with a broader scanning range than the previous version. Additionally, a prompt stating 'Please do not stack the items on top of each other' has been added above the scanning button.</h3>
@@ -230,7 +231,7 @@
         <div class="breakline bc_w1"></div>
 
         <div class="content_container">
-            <h1>USEABILITY TEST <br>_ SECTION DISPLAY</h1>
+            <h1>USABILITY TEST <br>_ SECTION DISPLAY</h1>
             <div class="content_block_texts">
                 <h2>Improvements</h2>
                 <h3>The latest version features a redesigned weather display, now presenting daily weather information for the entire travel plan in a list format, rather than only for the first day. Furthermore, the weather forecast and recommendation list have been combined into a horizontally scrollable component, substantially freeing up space to display the packing list.</h3>
@@ -310,7 +311,7 @@
         <div class="content_container">
             <div class="content_block_texts_24">
                 <h1 class="fc_s">NEXT...</h1>
-                <h3 class="fc_s">The primary goal of this feature is to provide users with a platform to share, find, and store their travel plans. The homepage automatically recommends popular travel plans or destinations tailored to the user's travel preferences. On the search results page, users can conveniently swipe through images included in the plans. Furthermore, the Plan Details page features a system-generated summary of the plan's highlights at the top, enabling users to quickly ascertain whether the plan aligns with their needs.</h3>
+                <h3 class="fc_s">The reason behind my decision to design this travel app, 'Let's Go', arose during the winter of 2022 when I planned a trip with friends and we struggled to create a travel plan. Despite numerous attempts, we couldn't find an appropriate tool. 'Let's Go' was designed with the intent to make the process of planning trips more enjoyable and relaxed. With the progression of AI technology, I aim to continuously add more interesting features to 'Let's Go', and I look forward to the day when it becomes a real app.</h3>
             </div>
             <link_button :prototype_links = 'next_button'/>
             <img src="../../assets/art_pages/letsgo/next.png" alt="">
@@ -376,7 +377,6 @@ const store = useStore()
         type:"App Concept / Product Design",
         roll:"Solo designer",
         time:"2022 - 2023",
-        detail:"Brand, Web, UX, Motion"
     }
 
 
@@ -624,7 +624,22 @@ h4{
 .pp_container{
     overflow: hidden;
     border-radius: 20px;
+    background-color: black;
+    z-index: 0;
+}
 
+.pp_container::after{
+    content:'Loading...';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    color:var(--p-color-font-white-60);
+    position: absolute;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
 }
 
 .cardshadow{

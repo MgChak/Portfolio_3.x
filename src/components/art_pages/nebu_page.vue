@@ -185,7 +185,7 @@ The primary objective of our project is to enhance the safety, ease, and comfort
         <div class="content_container">
             <div class="content_block_texts">
                 <h2>UI Display</h2>
-                <h3 >The holographic projection capability of Nebu takes user interaction to a new level by enabling the projection of complex UI content directly into the air. This innovation not only facilitates effortless reading but also simplifies the user's interaction with the system. By bringing data and controls into a more accessible, three-dimensional space, it enhances user engagement and ease of use.</h3>
+                <h3 >The holographic projection capability of Nebu takes user interaction to a new level by enabling the projection of complex UI content directly into the air. This innovation not only facilitates effortless reading but also simplifies the user's interaction with the system. By bringing interface into a more accessible, three-dimensional space, it enhances user engagement and ease of use.</h3>
             </div>
             <img src="../../assets/art_pages/nebu/s1_3.png" alt="">
         </div>
@@ -215,8 +215,8 @@ The primary objective of our project is to enhance the safety, ease, and comfort
     <div class = "section_container bc_b">
         <div class="content_container">
             <div class="content_block_texts">
-                <h2>Environmental Simulation _ Interaction</h2>
-                <h3 >Whenever the user lifts and opens their hand, the control panel is projected out.. Conversely, the panel automatically hides when the hand is not in this position.</h3>
+                <h2>Environmental Simulation <br> _ Interaction & UX/UI</h2>
+                <h3 >Whenever the user lifts and opens their hand, the control panel is projected out. Conversely, the panel automatically hides when the hand is not in this position.</h3>
             </div>
             <img src="../../assets/art_pages/nebu/s2_1.png" alt="">
         </div>
@@ -234,6 +234,11 @@ The primary objective of our project is to enhance the safety, ease, and comfort
         <div class="content_container">
             <h3 >When users are in the third or fourth level of the menu, they can quickly return to the main menu using the 'Back To' feature. To activate this function, users simply extend a second finger while selecting the 'Back' button. </h3>
             <img src="../../assets/art_pages/nebu/s2_4.png" alt="">
+        </div>
+
+        <div class="content_container">
+            <h3 >Additionally, by bending the second finger, users can choose the specific menu level they want to return to, ensuring a swift and intuitive navigation experience.</h3>
+            <img src="../../assets/art_pages/nebu/s2_5.png" alt="">
         </div>
     </div>
     
@@ -383,7 +388,7 @@ const store = useStore()
         sub_color:'var(--p-color-sub)',
         width:185,
         text:'Video Prototype',
-        link:'https://vimeo.com/901210479?share=copy',
+        link:'https://vimeo.com/901211459?share=copy',
     }
 
 
@@ -543,7 +548,22 @@ h4{
 .pp_container{
     overflow: hidden;
     border-radius: 20px;
+    background-color: black;
+    z-index: 0;
+}
 
+.pp_container::after{
+    content:'Loading...';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    color:var(--p-color-font-white-60);
+    position: absolute;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
 }
 .cardshadow{
     box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.50);

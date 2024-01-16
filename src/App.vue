@@ -95,7 +95,7 @@ const w_size = useWindowSize()
 <style scoped>
 
 .footer_conatiner_fixed{
-  width:100vw;
+  width:100%;
   height:100vh;
   position:fixed;
   left:0;

@@ -136,7 +136,7 @@
     <div class = "section_container bc_b">
         <div class="content_container">
             <div class="content_block_texts_24">
-                <h1>Usability Test Result</h1>
+                <h1>USABILITY TEST</h1>
                 <h3>In addition to adding prompts, we have also relocated the options from above the input box to below the question, to improve user experience. This will make it easier for users to identify and select the appropriate option in response to the AI's question.</h3>
             </div>
             <img src="../../assets/art_pages/cat/s1_1.png" alt="">
@@ -147,7 +147,7 @@
             <img src="../../assets/art_pages/cat/s1_2.png" alt="">
         </div>
 
-        <div class="breakline bc_w1"></div>
+
 
         <div class="content_container">
             <h3>After testing, it was found that all subpages can be navigated back to the main page via the "back" icon. This renders the home icon in the bottom navigation bar redundant. To optimize space utilization, I have removed the home icon and relocated the AI-chat's input box to the bottom navigation bar. This modification not only frees up more space on the homepage for displaying additional content but also maintains seamless navigation across all pages.</h3> 
@@ -220,7 +220,7 @@ const store = useStore()
     let ov_data = {
         type:"App Concept / Product Design",
         roll:"Solo designer",
-        time:"2022 - 2023",
+        time:"2023",
         detail:"Brand, Web, UX, Motion"
     }
 
@@ -298,7 +298,7 @@ const store = useStore()
         sub_color:'var(--p-color-sub)',
         width:185,
         text:'Figma Prototype',
-        link:'https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=14-2051&t=W0tJ1wGtCG2OSKxB-1&scaling=scale-down&page-id=14%3A999&starting-point-node-id=14%3A2051&show-proto-sidebar=1&mode=design',
+        link:'https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=14-1012&t=bDH37igglG5z7QJC-1&scaling=scale-down&page-id=14%3A1000&starting-point-node-id=14%3A1012&mode=design',
     }
 
     let vp_button_3 = {
@@ -314,7 +314,7 @@ const store = useStore()
         sub_color:'var(--p-color-sub)',
         width:185,
         text:'Figma Prototype',
-        link:'https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=13-30097&t=65Qp4icfxrfJLnfI-1&scaling=scale-down&page-id=13%3A21900&starting-point-node-id=13%3A30097&mode=design',
+        link:'https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=14-2051&t=fhCavoPugSX5dXjZ-1&scaling=scale-down&page-id=14%3A999&starting-point-node-id=14%3A2051&mode=design',
     }
 
     let next_button = {
@@ -480,7 +480,22 @@ h4{
 .pp_container{
     overflow: hidden;
     border-radius: 20px;
+    background-color: black;
+    z-index: 0;
+}
 
+.pp_container::after{
+    content:'Loading...';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    color:var(--p-color-font-white-60);
+    position: absolute;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
 }
 .cardshadow{
     box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.50);

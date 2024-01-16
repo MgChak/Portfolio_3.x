@@ -13,10 +13,10 @@
             <img src="../../assets/icons/calendar_clock.svg" alt="">
             <h3>{{ ov_data.time }}</h3>
         </div>
-        <div class="block">
+        <!-- <div class="block">
             <img src="../../assets/icons/tactic.svg" alt="">
             <h3>{{ ov_data.detail }}</h3>
-        </div>
+        </div> -->
     </div>
  
 </template>

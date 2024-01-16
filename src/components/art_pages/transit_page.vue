@@ -72,7 +72,7 @@
         <div class="content_container">
             <div class="content_block_texts_24">
                 <h1 class="fc_s">FEATURE REDESIGN<br>_ROUT NAVIGATION</h1>
-                <h3 class="fc_s">The navigation feature is central to Transit, and my aim is to ensure a swift and seamless user experience. To achieve this, I restructured the home page layout by positioning the operation area at the bottom of the screen, enhancing user accessibility. Additionally, I revamped the presentation of search results to enable users to quickly access pertinent information. </h3>
+                <h3 class="fc_s">The navigation feature is central to Transit, and my aim is to ensure a swift and seamless user experience. To achieve this, I restructured the home page layout by positioning the operation area at the bottom of the screen, enhancing user accessibility. Additionally, I redesigned the presentation of search results to enable users to quickly access pertinent information. </h3>
             </div>
             <div class="content_block_buttons">
                 <link_button :prototype_links = 'vp_button_1'/>
@@ -88,7 +88,7 @@
             <h1>TEST RESULT <br>_HOME PAGE</h1>
             <div class="content_block_texts">
                 <h2>A/B Test Round 01</h2>
-                <h3>This test was conducted to determine the optimal layout for the app's home page, involving two rounds. In the first round, participants were presented with two layouts: Option A, featuring a hidden menu bar accessed via a hamburger icon, and Option B, utilizing a traditional bottom navigation bar. While Option A offered more display space for other content, the test results showed a clear preference for Option B's thicker bottom navigation bar. This preference was attributed to its intuitive design and alignment with user habits. Critically, Option B enabled one-step page switching, whereas Option A's foldable navigation required at least two steps, impacting user efficiency.</h3>
+                <h3>This test was carried out to identify the best layout for the app's home page and involved two stages. In the first stage, participants were shown two layouts: Option A, with a hidden menu bar accessed through a hamburger icon, and Option B, featuring a conventional bottom navigation bar. Although Option A provided more space for additional content, the test results revealed a strong preference for Option B's more prominent bottom navigation bar. This preference was due to its user-friendly design and familiarity. Importantly, Option B allowed for quick one-step page switching, whereas Option A's collapsible navigation required a minimum of two steps, affecting user efficiency.</h3>
             </div>
             <img src="../../assets/art_pages/transit/s1_1.png" alt="">
         </div>
@@ -174,7 +174,7 @@
             <h1>TEST RESULT <br>_PAYMENT</h1>
             <div class="content_block_texts">
                 <h2>Two rounds of A/B Test</h2>
-                <h3>This test, conducted to determine the app's home page layout, consisted of two rounds. In the first, users compared two designs: Option A with a hidden menu accessed via a hamburger icon, and Option B with a traditional bottom navigation bar. Despite Option A providing more space for content, users clearly favored Option B for its thicker, intuitive bottom bar and compatibility with user habits. Importantly, Option B allowed for one-step page switching, while Option A's collapsible menu necessitated at least two steps, affecting user efficiency.</h3>
+                <h3>While designing the payment system, I explored various designs including stacked cards, lists, and horizontal scrolling. After several tests and considering real-world use cases, I chose horizontal scrolling cards as the best solution. This design merges the benefits of both large displays for QR codes and quick card access. Although vertical scrolling is usually faster for browsing lots of content, users typically don't store many cards in a public transportation app and often use just 1 or 2 cards daily. So, horizontal scrolling won't slow down card selection. Additionally, this layout provides ample space for scan buttons, QR codes, and Tap prompts, crucial for supporting various payment methods across different cities and regions.</h3>
             </div>
             <img src="../../assets/art_pages/transit/s2_1.png" alt="">
         </div>
@@ -209,17 +209,17 @@
                 <h1>DESIGN DETAIL <br>_REAL-TIME LOCATION SHARE</h1>
                 <h3>The addition of the sharing function aims to safeguard user safety by allowing others to view the user's real-time location. In designing this feature, I prioritized caution and user awareness. A confirmation page serves as the final step before activation, displaying the names and phone numbers of authorized contacts. To ensure users don't overlook this crucial information, I incorporated a countdown button, preventing hasty actions and encouraging careful review.</h3>
             </div>
-            <img src="../../assets/art_pages/transit/s2_1.png" alt="">
+            <img src="../../assets/art_pages/transit/s3_1.png" alt="">
         </div>
 
         <div class="content_container">
             <h3>Upon activating the sharing function, the share button changes to a prominent red color. This serves as a constant reminder to the user that their location is being shared.</h3>
-            <img src="../../assets/art_pages/transit/s2_2.png" alt="">
+            <img src="../../assets/art_pages/transit/s3_2.png" alt="">
         </div>      
 
         <div class="content_container">
             <h3>To prioritize user safety, the feature remains active even after the user reaches their destination and doesn't turn off automatically. However, Transit regularly prompts the user with pop-up windows to inquire if they wish to stop sharing their location information.</h3>
-            <img src="../../assets/art_pages/transit/s3_2.png" alt="">
+            <img src="../../assets/art_pages/transit/s3_3.png" alt="">
         </div>
     </div> 
 
@@ -297,9 +297,9 @@ const store = useStore()
 
         //overview_data数列
         let ov_data = {
-        type:"App Redesign project",
+        type:"App Redesign Project",
         roll:"Solo designer",
-        time:"2022 - 2023",
+        time:"2022",
         detail:"Brand, Web, UX, Motion"
     }
 
@@ -516,7 +516,22 @@ h4{
 .pp_container{
     overflow: hidden;
     border-radius: 20px;
+    background-color: black;
+    z-index: 0;
+}
 
+.pp_container::after{
+    content:'Loading...';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    color:var(--p-color-font-white-60);
+    position: absolute;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
 }
 
 .cardshadow{

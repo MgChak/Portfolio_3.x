@@ -22,7 +22,7 @@ let get_all_imgs=()=>{
     //获取所有的图片和视频
     let all_imgs_arr = document.getElementsByTagName("img")
     // let all_videos_arr = document.getElementsByTagName("video")
-    // console.log(all_imgs_arr,all_videos_arr)
+    console.log(all_imgs_arr)
     
     //统计总数+ all_videos_arr.length
     // console.log(num)
