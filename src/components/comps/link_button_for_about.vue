@@ -44,10 +44,10 @@ const store = useStore()
 
 
     let stop_watch=watch(()=>props.prototype_links.ani, () => {
-        console.log("动画执行————")
+    
         if(props.prototype_links.ani){           
             stop_watch()
-            console.log("动画执行")
+        
             var tl = gsap.timeline() 
             tl.fromTo(button.value,{
                 scaleX: 0,

@@ -22,12 +22,10 @@ let get_all_imgs=()=>{
     //获取所有的图片和视频
     let all_imgs_arr = document.getElementsByTagName("img")
     // let all_videos_arr = document.getElementsByTagName("video")
-    console.log(all_imgs_arr)
+    // console.log(all_imgs_arr)
     
     //统计总数+ all_videos_arr.length
-    // console.log(num)
     num = all_imgs_arr.length 
-
     //循环监控图片加载进度
     for(let i=0;i<all_imgs_arr.length;i++){
         let imgs = new Image() //这是重点，必须new一张，如果直接用onload，在你还没执行到这段函数的时候，可能已经加载了一两个图片了，这时候就会出现加载不到100%！！！
@@ -59,7 +57,6 @@ let animation_queue_before_route_in =(page_id)=>{
     //锁定滚动
     s_lock()
 
-    console.log("iddddd"+page_id)
 
     //将thum全屏化_set
     store.index_array[page_id].class = 'container_fullscreen_set'

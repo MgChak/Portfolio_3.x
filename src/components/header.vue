@@ -171,16 +171,13 @@
         //根据库中状态，相应navbar的开关
         const outer_container = ref()
         watch(()=>store.is_navbar_open,()=>{
-            console.log("nav——")
             if (store.is_navbar_open){
-                console.log("nav——开")
                 gsap.to(outer_container.value,{
                             y:120,
                             duration: 0.6,
                             ease: CustomEase.create("custom", store.animation_ease_c1),
                         })
             }else{
-                console.log("nav——关")
                 gsap.to(outer_container.value,{
                             y:0,
                             duration: 0.3,
@@ -221,7 +218,6 @@
         let handle_hover_1 = (val, e)=>{
             if (!e.target.classList.contains('active')) {
                 if(e.pointerType == 'mouse'){
-                    console.log(e)
                     if(val == 1){
                         gsap.to(e.target,{
                             opacity:1,
@@ -246,7 +242,6 @@
         let handle_hover_2 = (val, e)=>{
 
             if(e.pointerType == 'mouse'){
-                console.log(e)
                 if(val == 1){
                     gsap.to(backtotopimg.value,{
                         scaleX: 1.2,

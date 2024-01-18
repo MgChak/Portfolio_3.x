@@ -63,7 +63,6 @@ const store = useStore()
     watchPostEffect(()=>{
         if (width.value<store.page_width*2){
             list_length.value = list_length.value + 5
-            console.log(props.infor_obj.text+":"+list_length.value)
         }
     })
 

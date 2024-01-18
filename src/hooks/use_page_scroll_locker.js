@@ -32,7 +32,7 @@ let page_scroll_locker_main = (el)=>{
         document.addEventListener('gesturestart', preventDefault, { passive: false });
         document.addEventListener('gesturechange', preventDefault, { passive: false });
         
-        console.log("锁定")
+        // console.log("锁定")
     } else {
         // 恢复页面滚动
         document.removeEventListener('mousewheel', preventDefault, { passive: false });
@@ -44,7 +44,7 @@ let page_scroll_locker_main = (el)=>{
         document.removeEventListener('gesturestart', preventDefault, { passive: false });
         document.removeEventListener('gesturechange', preventDefault, { passive: false });
         
-        console.log("解锁")
+        // console.log("解锁")
     } 
       
 }

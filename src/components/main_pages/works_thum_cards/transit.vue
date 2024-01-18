@@ -27,7 +27,7 @@ const store = useStore()
     const img =ref(null)
 
     watchPostEffect(()=>{
-        console.log("动画触发")
+
         thum_ani_render(name,{
             full:[
                 {

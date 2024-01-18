@@ -32,7 +32,6 @@ const store = useStore()
         
      let {index} =  defineProps(['index'])
 
-     console.log(index)
     //初始化：将组件全屏化
     store.index_array[index].class = 'container_fullscreen'
 

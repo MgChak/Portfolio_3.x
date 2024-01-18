@@ -78,7 +78,6 @@ gsap.registerPlugin(CustomEase);
         
 
     const stop = watchEffect(()=>{
-        console.log("执行")
         if(store.cover_animation){
             stop()
             store.cover_animation = false

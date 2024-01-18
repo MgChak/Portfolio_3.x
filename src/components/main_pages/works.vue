@@ -108,7 +108,7 @@ const store = useStore()
             srcoll_to(store.router_page,'jump')
             
         }else{
-            console.log("跳转——top")
+           
             //跳转到指定位置
             scrollto(0,'jump')
         }
@@ -202,7 +202,6 @@ const store = useStore()
     let srcoll_to = (index,val)=>{
         let a = document.getElementsByClassName('comp')[index]
         a.getBoundingClientRect().top
-        console.log("index:"+index,"a:"+a.getBoundingClientRect().top)
         scrollto(store.scroll_position + a.getBoundingClientRect().top,val)
     }
 

@@ -291,9 +291,7 @@ const store = useStore()
                 let iframe = document.getElementById(`vimeo-${content.id}`);
                 let player = new Player(iframe);
                 vimeoPlayers.push({ id: content.id, player: player });
-                console.log("player"+player)
             }); 
-            console.log("list:"+vimeoPlayers)
         } 
         
     });
@@ -315,7 +313,6 @@ const store = useStore()
             vimeoPlayers.forEach(vimeoPlayer => {
                 if (vimeoPlayer.id == page_on.value) {
                     vimeoPlayer.player.play();
-                    console.log("开始播放——"+vimeoPlayer.player)
                 } else {
                     vimeoPlayer.player.pause().then(() => {
                         vimeoPlayer.player.setCurrentTime(0);
@@ -324,7 +321,7 @@ const store = useStore()
             });
        
         }else {
-            console.log(slideshow_type)
+          
         }  
     }
     let video_control_all_stop = ()=>{
