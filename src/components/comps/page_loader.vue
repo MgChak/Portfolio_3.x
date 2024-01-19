@@ -1,8 +1,8 @@
 <template>
 
 <div class="main_container" ref="main_container">
-    <div class="loader" >
-        <h3>{{ num }}%</h3>
+    <div class="loader" :class = "store.loader_status ? 'loader_ani':''" >
+        <h3>LOADING: {{ num }}%</h3>
 
         <div class="load_bar_container" ref="load_bar_container">
             <div class="load_bar" ref="load_bar"></div>
@@ -162,7 +162,7 @@ let container_animation = (val)=>{//展开和关闭动画
     justify-content: center;
 
     pointer-events: none;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .loader{
@@ -180,6 +180,24 @@ let container_animation = (val)=>{//展开和关闭动画
     justify-content: space-around;
     /* overflow: hidden; */
     position: relative;
+    overflow: hidden;
+}
+.loader_ani::after{
+    content: '';
+    height:50px;
+    width:100%;
+    left:-100%;
+    position: absolute;
+    background-image:linear-gradient(90deg, #00000000 0%, rgba(148, 148, 148, 0.662) 50%, #00000000 100%);
+    opacity: 0.5;
+    /* background-color: white; */
+    z-index: -4;
+    animation: light 2s ease-in-out infinite;
+    animation-delay: 2.5s;
+}
+@keyframes light {
+    from{left:-100%}
+    to{left:130%}
 }
 .background_holder{
     width:100%;
@@ -213,9 +231,14 @@ h3{
     border-radius: 20px;
     position:relative;
     border:1px solid white;
+    overflow: hidden;
     /* overflow: hidden; */
 }
+
 .load_bar{
+    --color1:rgb(54, 54, 54);
+    --color2:white;
+    border-right: 1px white solid;
     height:4px;
     width:100%;
     background-color: rgb(255, 255, 255);
@@ -225,5 +248,6 @@ h3{
     transform: scaleX(0);
     transform-origin: left;
 }
+
 
 </style>
