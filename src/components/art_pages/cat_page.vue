@@ -221,7 +221,8 @@ const store = useStore()
         type:"App Concept / Product Design",
         roll:"Solo designer",
         time:"2023",
-        detail:"Brand, Web, UX, Motion"
+        detail:"Brand, Web, UX, Motion",
+        apps:"Figma, After Effects, Photoshop, Illustrator"
     }
 
     //高光功能

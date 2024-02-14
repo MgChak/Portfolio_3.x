@@ -40,7 +40,7 @@ The primary objective of our project is to enhance the safety, ease, and comfort
 
     <div class = "section_container bc_s">
         <div class="content_container">
-            <h1>DESIGND BY - TEAM APOGEE</h1>
+            <h1>DESIGNED BY - TEAM APOGEE</h1>
             <div class="content_block_flex">
                 <div class="team_m">
                     <img class="team_img" src="../../assets/art_pages/nebu/zeo.png" alt="">
@@ -81,7 +81,7 @@ The primary objective of our project is to enhance the safety, ease, and comfort
         </div>
         <div class="breakline bc_w1"></div>
         <div class="content_container">
-            <h1>MY MAIN TAKES</h1>
+            <h1>MY MAIN TASKS</h1>
             <div class="content_block_list">
                 <div class="list_i">
                     <div class="dot"></div>
@@ -327,7 +327,8 @@ const store = useStore()
         type:"Space Travel Companion Design",
         roll:"Team Apogee - My Roll: UX/UI Designer",
         time:"2023",
-        detail:"Brand, Web, UX, Motion"
+        detail:"Brand, Web, UX, Motion",
+        apps:"Figma, After Effects, Cinema 4D, Blender"
     }
 
 

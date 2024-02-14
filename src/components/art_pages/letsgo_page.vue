@@ -21,7 +21,7 @@
                 <h1>OVERVIEW</h1>
                 <link_button :prototype_links = 'case_study_button'/>
             </div>
-            <h3>Let's Go is a travel planning application designed to assist users in creating, searching, and sharing multi-person travel plans. Utilizing the latest AI technology, the app becomes smarter, aiding users in creating travel plans during chats with their travel companions and offering packing suggestions based on their itineraries. Additionally, users can share their travel plans with other travelers in the online community for inspiration and advice. Let Let's Go be your ultimate travel companion for your next journey.</h3>
+            <h3>Let's Go is a travel planning application designed to assist users in creating, searching, and sharing multi-person travel plans. Utilizing the latest AI technology, the app becomes smarter, aiding users in creating travel plans during chats with their travel companions and offering packing suggestions based on their itineraries. Additionally, users can share their travel plans with other travelers in the online community for inspiration and advice. Let's Go makes for your ultimate travel companion for your next journey.</h3>
             <img class="no_raius" src="../../assets/art_pages/letsgo/o_1.png" alt="">
         </div>
     </div> 
@@ -80,7 +80,7 @@
     <div class = "section_container bc_m">
         <div class="content_container">
             <div class="content_block_texts_24">
-                <h1 class="fc_s">PREMARY FEATURE 01<br>_CREATE NEW TRIP PLAN</h1>
+                <h1 class="fc_s">PRIMARY FEATURE 01<br>_CREATE NEW TRIP PLAN</h1>
                 <h3 class="fc_s">
 Users can easily create a travel plan in Let's Go and start adding their favorite events. Throughout the creation process, they can also invite friends who will be traveling with them to participate in crafting a unique and collaborative travel itinerary.</h3>
             </div>
@@ -127,7 +127,7 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
     <div class = "section_container bc_m">
         <div class="content_container">
             <div class="content_block_texts_24">
-                <h1 class="fc_s">PREMARY FEATURE 02<br>_AI CHAT ASSISTANT</h1>
+                <h1 class="fc_s">PRIMARY FEATURE 02<br>_AI CHAT ASSISTANT</h1>
                 <h3 class="fc_s">The AI chat assistant will automatically generates or adjusts travel plans based on users' chat content in Let's Go. As users discuss their travel ideas using the group chat feature, an AI assistant continuously scans the conversation, creating viable travel plans based on the group conversation. Users can then vote to decide whether to include the AI-generated content in their travel itinerary.</h3>
             </div>
             <div class="content_block_buttons">
@@ -169,7 +169,7 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
         <div class="breakline bc_w1"></div>
 
         <div class="content_container">
-            <h1>USABILITY RESULT<br>_AI ASSISTANT POP UP</h1>
+            <h1>USABILITY TEST<br>_AI ASSISTANT POP UP</h1>
             <div class="content_block_texts">
                 <h2>Improvements</h2>
                 <h3>The new version of the confirmation page will display more detailed information and includes a button for users to directly navigate to the corresponding position in the event list.</h3>
@@ -207,7 +207,7 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
     <div class = "section_container bc_m">
         <div class="content_container">
             <div class="content_block_texts_24">
-                <h1 class="fc_s">PREMARY FEATURE 03<br>_PACKING ASSISTANT</h1>
+                <h1 class="fc_s">PRIMARY FEATURE 03<br>_PACKING ASSISTANT</h1>
                 <h3 class="fc_s">The packing assistant feature provides users with a recommended packing list based on the weather forecast of their travel destination. For instance, in cold regions, Let's Go suggests bringing warm clothing. Additionally, users can utilize the luggage scanning function, where Let's Go identifies items in the camera view and automatically checks them off the list, aiding in efficient travel preparation.</h3>
             </div>
             <div class="content_block_buttons">
@@ -245,7 +245,7 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
     <div class = "section_container bc_m">
         <div class="content_container">
             <div class="content_block_texts_24">
-                <h1 class="fc_s">PREMARY FEATURE 04<br>_TRAVEL COMMUNITY</h1>
+                <h1 class="fc_s">PRIMARY FEATURE 04<br>_TRAVEL COMMUNITY</h1>
                 <h3 class="fc_s">The primary goal of this feature is to provide users with a platform to share, find, and store their travel plans. The homepage automatically recommends popular travel plans or destinations tailored to the user's travel preferences. On the search results page, users can conveniently swipe through images included in the plans. Furthermore, the Plan Details page features a system-generated summary of the plan's highlights at the top, enabling users to quickly ascertain whether the plan aligns with their needs.</h3>
             </div>
             <div class="content_block_buttons">
@@ -258,7 +258,7 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
 
     <div class = "section_container bc_b">
         <div class="content_container">
-            <h1>A/B TEST<br>_Search Result Cards</h1>
+            <h1>A/B TEST<br>_SEARCH RESULT CARDS</h1>
             <div class="content_block_texts">
                 <h2>Key feedback / Problems</h2>
                 <h3>In the initial design, users could access a secondary menu by long-pressing on a card. However, usability testing revealed that several participants were unaware of this feature. Further interviews indicated a preference against the long-press interaction, as it was unclear whether it required a longer press or a harder push.</h3>
@@ -377,6 +377,7 @@ const store = useStore()
         type:"App Concept / Product Design",
         roll:"Solo designer",
         time:"2022 - 2023",
+        apps:"Figma, After Effects, Photoshop, Illustrator"
     }
 
 

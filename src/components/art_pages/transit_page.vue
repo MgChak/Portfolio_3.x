@@ -5,11 +5,11 @@
 
     <div class = "ov_section_container bc_s">
         <div class="ov_content_container">
-            <h4>LET'S GO</h4>
+            <h4>TRANSIT</h4>
             <div class="breakline bc_w1"></div>
             <overview_info :ov_data="ov_data" />
             <div class="breakline bc_w1"></div>
-            <h3>Let's Go is a versatile travel planning app featuring AI-assisted itinerary creation and a dynamic online community, all designed to simplify and enhance the process of organizing travel plans.</h3>
+            <h3>This project is a redesign of Transit, with the revamped UI and functionality offering users a more stylish visual experience and an improved user experience.</h3>
         </div>
     </div>  
 
@@ -44,7 +44,7 @@
     <div class = "section_container bc_m">
         <div class="content_container">
             <div class="content_block_texts_24">
-                <h1 class="fc_s">OLD VERSION UI SCREENSHOT</h1>
+                <h1 class="fc_s">OLD VERSION UI SCREENSHOTS</h1>
                 <img src="../../assets/art_pages/transit/p_1.png" alt="">
             </div>
         </div>
@@ -71,7 +71,7 @@
     <div class = "section_container bc_m">
         <div class="content_container">
             <div class="content_block_texts_24">
-                <h1 class="fc_s">FEATURE REDESIGN<br>_ROUT NAVIGATION</h1>
+                <h1 class="fc_s">FEATURE REDESIGN<br>_ROUTE NAVIGATION</h1>
                 <h3 class="fc_s">The navigation feature is central to Transit, and my aim is to ensure a swift and seamless user experience. To achieve this, I restructured the home page layout by positioning the operation area at the bottom of the screen, enhancing user accessibility. Additionally, I redesigned the presentation of search results to enable users to quickly access pertinent information. </h3>
             </div>
             <div class="content_block_buttons">
@@ -103,7 +103,7 @@
 
         <div class="content_container">
             <div class="content_block_texts">
-                <h2>Further improvement</h2>
+                <h2>Further Improvement</h2>
                 <h3>The first two rounds of testing established the layout for the menu and search bars. For a considerable period, I maintained this design for the home page without alterations. However, the addition of a route saving function to the search page, followed by usability testing, marked a significant change. User feedback was overwhelmingly positive, particularly among those who frequently reused saved routes, like daily commuters and students. This led me to consider relocating the saved route feature to the home page, aiming to reduce the number of steps needed for users to initiate navigation.</h3>
             </div>
             <img src="../../assets/art_pages/transit/s1_3.png" alt="">
@@ -181,7 +181,7 @@
 
         <div class="content_container">
             <div class="content_block_texts">
-                <h2>Visual improvement</h2>
+                <h2>Visual Improvement</h2>
                 <h3>During the card window design process, I experimented with various aspects that wouldn't impact functionality but aimed to enhance the visual experience. In the final design, a semi-transparent black background was added behind the card number to ensure the legibility of the information. Additionally, I detached the scan button from the card, ensuring it remains stationary and doesn't shift with card switches.</h3>
             </div>
             <img src="../../assets/art_pages/transit/s2_2.png" alt="">
@@ -300,7 +300,8 @@ const store = useStore()
         type:"App Redesign Project",
         roll:"Solo designer",
         time:"2022",
-        detail:"Brand, Web, UX, Motion"
+        detail:"Brand, Web, UX, Motion",
+        apps:"Figma, After Effects, Photoshop, Illustrator"
     }
 
 
