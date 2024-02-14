@@ -6,7 +6,7 @@
                 <div class="sub_container">
                     <h2>{{ props.infor_obj.bio }}</h2>
                     <div class="time_container">
-                        <h2>{{ props.infor_obj.time }}</h2>
+                        <!-- <h2>{{ props.infor_obj.time }}</h2> -->
                         <div class="time_line"></div>
                     </div>
                 </div> 
@@ -19,7 +19,7 @@
                 <div class="sub_container">
                     <h2>{{ props.infor_obj.bio }}</h2>
                     <div class="time_container">
-                        <h2>{{ props.infor_obj.time }}</h2>
+                        <!-- <h2>{{ props.infor_obj.time }}</h2> -->
                         <div class="time_line"></div>
                     </div>
                 </div> 
@@ -32,7 +32,7 @@
             <div v-for = "i in list_length" class="item_container_sub">
                 <h3>{{ props.infor_obj.text}}</h3>
                 <h3>{{ props.infor_obj.bio }}</h3>
-                <h3>{{ props.infor_obj.time }}</h3>
+                <!-- <h3>{{ props.infor_obj.time }}</h3> -->
                 <div class="time_line_sub"></div>
                 
             </div>
@@ -47,7 +47,6 @@ import { computed, ref,watchPostEffect} from 'vue';
 import useStore from '../../../store/index.js'
 import { useElementSize } from '@vueuse/core'
 const store = useStore()
-
     //引入props/接收数据
     let props = defineProps(['infor_obj'])
 
@@ -111,6 +110,7 @@ const store = useStore()
     display: flex;
     flex-direction: column;
     flex:none;
+    gap:5px;
 }
 .time_container{
     display: flex;
@@ -120,7 +120,7 @@ const store = useStore()
 .time_line{
     flex:1;
     background-color: var(--main-light-100);
-    height:20px;
+    height:18px;
 }
 .time_line_sub{
     width:50px;
@@ -141,6 +141,7 @@ h2{
     font-weight: 400;
     text-transform: uppercase;
     color:var(--main-light-100);
+    line-height: 20px;
     flex:none;
 }
 h3{
