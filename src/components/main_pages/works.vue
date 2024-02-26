@@ -11,6 +11,7 @@
             v-for="i in store.index_array" :key="i.id" 
             @click="handle_card_click(i.id)"
             @pointerover=" handle_card_hover('view_project',$event)"
+            @pointerleave=" handle_card_hover('hidden',$event)" 
             >
 
             
@@ -23,6 +24,10 @@
 
             <div class="breakline"></div>
         </div>
+
+        <play/>
+
+        <com_footer/>
         <!-- <div class="placeholder" ></div> -->
     </div>
     
@@ -36,7 +41,9 @@ import letsgo from'./works_thum_cards/letsgo.vue'
 import nebu from'./works_thum_cards/nebu.vue'
 import transit from'./works_thum_cards/transit.vue'
 import cover from './works_thum_cards/cover.vue'
+import play from './works_thum_cards/play.vue'
 import infor_bar from './works_thum_cards/infor_bar.vue'
+import com_footer from '../com_footer.vue'
 //hooks引入
 import { s_lock,s_unlock } from '../../hooks/use_page_scroll_locker'
 import {tracker_toggle} from '../../hooks/use_mouse_tracker_toggle'
@@ -253,7 +260,7 @@ const store = useStore()
     display:flex;
     flex-direction: column;
     align-items: center;
-    gap:16px;
+    /* gap:16px; */
     position:absolute;
     left:0;
     overflow: hidden;

@@ -36,12 +36,14 @@
         <h3>Hello, I'm Chakshing Lam, a UX/UI & product designer with a multifaceted educational background encompassing UX/UI design, graphic design, fine arts, and front-end programming. My fervent passion for design fuels my constant quest for innovation and pushing the envelope in creativity. In every project, I aim to craft intuitive, captivating, and visually extraordinary designs that not only fulfill but surpass client expectations. I eagerly anticipate the opportunity to apply my skills and zeal to any upcoming projects. Thank you for your time in getting to know a bit about me.</h3>
     </div>
     <div class="placeholder"></div>
+    <com_footer/>
 </div>    
 
 </template>
 
 <script setup>
 import useStore from '../../store/index'
+import com_footer from '../com_footer.vue'
 import { s_lock,s_unlock } from '../../hooks/use_page_scroll_locker'
 import {get_all_imgs} from'../../hooks/use_art_page_functions'
 import {onMounted,ref,onBeforeMount,watch,reactive} from 'vue'

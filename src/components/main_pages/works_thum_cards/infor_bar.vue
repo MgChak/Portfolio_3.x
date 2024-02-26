@@ -18,10 +18,7 @@
                 <div class="time_line"></div>
                 <div class="sub_container">
                     <h2>{{ props.infor_obj.bio }}</h2>
-                    <div class="time_container">
-                        <!-- <h2>{{ props.infor_obj.time }}</h2> -->
-                        <div class="time_line"></div>
-                    </div>
+                    
                 </div> 
             </div>
         </div>

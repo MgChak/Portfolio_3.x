@@ -1,5 +1,9 @@
 <template>
     <div class="main_conatiner" ref="target">
+        <div  class="play_text_container" v-if="props.slideshow_arr.isPlaySection">
+            <h3>{{ contents[page_on].contents[1] }}</h3>
+            <h4>{{ contents[page_on].contents[2] }}</h4>
+        </div>
         <div class = "view_window" ref='el' :style="{height:height+'px'}">
             <div class="pic_list" 
                 :style="{width:list_width, transform:list_transform,transition:list_transition}" 
@@ -11,7 +15,7 @@
                     :style="{width:width+'px'}"
                     :class = "{hide:c.id!=page_on}"
                     @click="handle_img_click(c.id)"
-                    @pointerover=" handle_img_hover(0,c.id,$event)"
+                    @pointerenter=" handle_img_hover(0,c.id,$event)"
                     @pointerleave=" handle_img_hover(1,c.id,$event)"
                 >
                     <img v-if="props.slideshow_arr.type =='img'" :src="c.contents[0]" alt="" >
@@ -24,11 +28,12 @@
                         :src="c.contents[0]" 
                         frameborder="0"  
                         allow="autoplay; fullscreen; picture-in-picture" 
+                        
                     ></iframe>
                 </div>
             </div>
         </div>
-        <h2>{{ contents[page_on].contents[1] }}</h2>
+        <h2 v-if="!props.slideshow_arr.isPlaySection">{{ contents[page_on].contents[1] }}</h2>
         <div class="dots_conatiner">
             <div class="dots" v-for="c in contents" :key="c.id" 
                 :style="{background:props.slideshow_arr.color}"
@@ -376,17 +381,23 @@ const store = useStore()
       }
     });
 
+
+
     //翻页
     let page_move = (val)=>{
         video_control_all_pause()
+
         if (val== 'next' && page_on.value + 1 < props.slideshow_arr.contents.length){
             page_on.value++
         }else if(val== 'pre' && page_on.value - 1 >= 0){
             page_on.value--
         }
+
         setTimeout(video_control_play,600)
         
         tracker_toggle('hidden')
+        
+
     }
 
     
@@ -401,6 +412,19 @@ h2{
     font-weight: 400;
     line-height: 30px;
     color:var(--p-color-font-white-60);
+}
+h3{
+    color:white;
+    font-size:24px;
+    font-weight:200
+}
+h4{
+    color:white;
+    font-size: 18px;
+    font-weight:200
+}
+.play_text_container{
+    width:100%;
 }
 .main_conatiner{
     width:100%;
@@ -482,6 +506,7 @@ iframe{
 .hide{
     opacity: 0.5;
 }
+
 @media (max-width: 1000px){
 h2{
     text-align: center;
