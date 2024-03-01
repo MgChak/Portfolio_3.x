@@ -29,8 +29,8 @@
 
     <div class = "section_container bc_m">
         <div class="content_container">
-            <h1 class="fc_s">LOGO & COLORS</h1>
-            <img class="cardshadow" src="../../assets/art_pages/letsgo/logo.png" alt="">
+            <h1 class="fc_s">STYLE GUIDE</h1>
+            <img_slideshow :slideshow_arr = 'style_arry'/> 
         </div>
     </div> 
 
@@ -352,7 +352,15 @@ import r2 from "../../assets/art_pages/letsgo/r2.png"
 import r3 from "../../assets/art_pages/letsgo/r3.png"
 import r4 from "../../assets/art_pages/letsgo/r4.png"
 import r5 from "../../assets/art_pages/letsgo/r5.png"
+import r6 from "../../assets/art_pages/letsgo/r6.png"
+import r7 from "../../assets/art_pages/letsgo/r7.png"
 
+import l1 from "../../assets/art_pages/letsgo/l1.png"
+import l2 from "../../assets/art_pages/letsgo/l2.png"
+import l3 from "../../assets/art_pages/letsgo/l3.png"
+import l4 from "../../assets/art_pages/letsgo/l4.png"
+import l5 from "../../assets/art_pages/letsgo/l5.png"
+import l6 from "../../assets/art_pages/letsgo/l6.png"
 
 const store = useStore()
 
@@ -403,6 +411,20 @@ const store = useStore()
         ]
     }    
 
+        //style guid
+    let style_arry = {
+        color:'var(--p-color-sub)',
+        type:'img',
+        resize:false,
+        contents:[
+            [l1,""],
+            [l2,""],
+            [l3,""],
+            [l4,""],
+            [l5,""],
+            [l6,""]
+        ]
+    }  
 
     //研究总结
     let research_arry = {
@@ -410,11 +432,13 @@ const store = useStore()
         type:'img',
         resize:false,
         contents:[
-            [r1,"Competitive Analysis Overview"],
-            [r2,"Interview Results Summary"],
+            [r1,"Background Research Summary"],
+            [r2,"Background Research Summary"],
             [r3,"Background Research Summary"],
             [r4,"Background Research Summary"],
-            [r5,"Background Research Summary"]
+            [r5,"Background Research Summary"],
+            [r6,"Interview Results Summary"],
+            [r7,"Competitive Analysis Overview"]
         ]
     }  
 
