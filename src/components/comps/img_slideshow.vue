@@ -343,7 +343,6 @@ const store = useStore()
 
     //开始拖拽
     let  drag_start =(e)=>{
-        console.log(is_touch.value+'touch')
         //关闭动画
         list_transition.value = null
         //打开触摸跟随
