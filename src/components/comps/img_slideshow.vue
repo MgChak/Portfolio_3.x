@@ -10,6 +10,10 @@
                 @touchstart="use_handle_touch($event)"
                 @touchmove="use_handle_touch($event)"
                 @touchend="use_handle_touch($event)"
+                @pointerdown="use_handle_drag($event)"
+                @pointermove="use_handle_drag($event)"
+                @pointerup="use_handle_drag($event)"
+                @pointerleave="use_handle_drag($event)"
             >
                 <div class="img_conatiner" v-for="c in contents" :key="c.id" 
                     :style="{width:width+'px'}"
@@ -143,15 +147,22 @@ const store = useStore()
 
     //处理点击
     let handle_img_click = (i)=>{
-        
-        if(i == page_on.value){
-            return
-        }else if(i > page_on.value){
-            page_move('next')
-        
-        }else if (i < page_on.value){
-            page_move('pre')
+
+        if(!isDrag){
+            console.log("jujue")
+            if(i == page_on.value){
+                return
+            }else if(i > page_on.value){
+                page_move('next')
+            
+            }else if (i < page_on.value){
+                page_move('pre')
+            }
+        }else{
+            isDrag = false
         }
+        
+        
     }
 
     let handle_dots_click = (i) =>{
@@ -183,6 +194,8 @@ const store = useStore()
     //起始点坐标
     let startX = 0;
     let startY = 0;
+    //防止click和drag冲突
+    let isDrag = false
 
     //处理触摸
     let use_handle_touch = (e)=>{
@@ -198,7 +211,6 @@ const store = useStore()
                 touch_end(e)
             break;
             default:
-                
             break;
         }
     }
@@ -224,6 +236,26 @@ const store = useStore()
     let movedr_count = (e) =>{
         const currentX = e.touches[0].clientX;
         const currentY = e.touches[0].clientY;
+
+        const deltaX = currentX - startX;
+        const deltaY = currentY - startY;
+
+        // 计算手指移动的角度
+        const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+
+        // 根据角度确定手指移动的方向
+        let direction;
+        if (angle >= 45 && angle < 135 || angle >= -135 && angle < -45) {
+        direction = 0;
+        } else {
+        direction = 1;
+        }
+        return direction
+
+    }
+    let movedr_count_drag = (e) =>{
+        const currentX = e.clientX;
+        const currentY = e.clientY;
 
         const deltaX = currentX - startX;
         const deltaY = currentY - startY;
@@ -280,7 +312,106 @@ const store = useStore()
         //解除移动方向的锁定
         movedr = -1
     }
+    
+    
+    
+    
+    //处理拖拽
+    let use_handle_drag = (e)=>{
+        e.preventDefault()
+        if(e.pointerType == 'mouse'){
+            switch (e.type) {
+            //默认文章阅读模式
+            case "pointerdown":
+                drag_start(e)
+            break;
+            case "pointermove":
+                if(is_touch.value){ drag_move(e)}
+            break;
+            case "pointerup":
+                if(is_touch.value){ drag_end(e)}
+            break;
+            case "pointerleave":
+                if(is_touch.value){ drag_end(e)}
+            break;
+            default:
+            break;
+        }
+        }
+        
+    }
 
+    //开始拖拽
+    let  drag_start =(e)=>{
+        console.log(is_touch.value+'touch')
+        //关闭动画
+        list_transition.value = null
+        //打开触摸跟随
+        is_touch.value = true
+        //保存列表的当前位置
+        list_position.value = page_on.value*(width.value+store.page_width*0.01)
+        //保存初始点位置
+        touch_moving_start = e.clientX
+        touch_moving = e.clientX
+        //保存坐标
+        startX = e.clientX;
+        startY = e.clientY;
+
+    }
+
+    //拖拽移动
+    let drag_move=(e)=>{
+        //禁用点击事件
+        isDrag = true
+        console.log(isDrag)
+        //开启特殊鼠标
+        tracker_toggle('drag')
+        //暂停视频
+        video_control_all_pause()
+        //判断一次移动方向，并标记，当标记存在时不再重复判断
+        if (movedr==-1){if(movedr_count_drag(e)){
+            movedr = 1  
+        }else{
+            movedr = 0
+        }}
+
+        if (movedr==1){
+            //阻止默认事件
+            e.preventDefault()
+            //根据初始点位置和当前移动的位置计算出移动的距离，
+            var a = touch_moving - e.clientX
+            //重新赋值start_point用于计算下一次移动
+            touch_moving = e.clientX
+            //更新列表的位置坐标
+            list_position.value = list_position.value+a
+        }else if(movedr==0){
+
+        }
+
+    }
+    //拖拽结束
+    let drag_end=(e)=>{
+        if(isDrag){
+            console.log("拖动")
+            if(touch_moving_start >= touch_moving){
+                page_move('next')
+                console.log('next')
+            }else if(touch_moving_start < touch_moving){
+                page_move('pre')
+                console.log('pre')
+            }
+            //关闭特殊鼠标
+            tracker_toggle('hidden')
+          
+        }
+         //打开动画
+         list_transition.value = 'var(--animation-slow)'
+        //关闭触摸跟随
+        is_touch.value = false
+        //解除移动方向的锁定
+        movedr = -1
+        
+    }
 
 
 
@@ -388,6 +519,7 @@ const store = useStore()
         video_control_all_pause()
 
         if (val== 'next' && page_on.value + 1 < props.slideshow_arr.contents.length){
+            console.log('cgebgfib')
             page_on.value++
         }else if(val== 'pre' && page_on.value - 1 >= 0){
             page_on.value--

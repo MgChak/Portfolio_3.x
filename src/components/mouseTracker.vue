@@ -158,5 +158,25 @@ const store = useStore()
     background-size:100%;
     background-repeat: no-repeat;
 }
+.drag > .background{
+    width:100%;
+    height:50%;
+    border-radius: 100px;
+    transition:all 0.3s ;
+    
+}
+.drag > .background::before{
+    content: '';
+    background-image: url('../assets/icons/arrows_outward.svg');
+    font-size: 15px;
+    color: black;
+    font-weight: 700;
+    height:48px;
+    width:48px;
+    background-position: center;
+    background-size:100%;
+    background-repeat: no-repeat;
+}
+
 </style>
     
