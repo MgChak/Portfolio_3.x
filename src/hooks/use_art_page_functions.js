@@ -81,30 +81,48 @@ let animation_queue_before_route_in =(page_id)=>{
 
 
 
-    store.loader_status = true//开启loader
+    // store.loader_status = true//开启loader
 
-    get_all_imgs()//统计图片
+    // get_all_imgs()//统计图片
 
 
 
-    const stop =watch(()=>store.is_loader_animation_finished,()=>{
-        if(store.is_loader_animation_finished){
-                //停止监听
-                stop()
-                //复位动画状态
-                store.is_loader_animation_finished = false
-                //将thum调整为文章内状态
-                store.index_array[page_id].class = 'container_article'
-                // 赋值路由动画速度
-                store.footer_animation = 'var(--animation-slow)'
-                //打开导航栏
-                store.is_navbar_open = true 
-                //清空loading数据
-                loading.value = 0 
-                //解锁滚动
-                s_unlock() 
-        }
-    })
+    // const stop =watch(()=>store.is_loader_animation_finished,()=>{
+    //     if(store.is_loader_animation_finished){
+    //             //停止监听
+    //             stop()
+    //             //复位动画状态
+    //             store.is_loader_animation_finished = false
+    //             //将thum调整为文章内状态
+    //             store.index_array[page_id].class = 'container_article'
+    //             // 赋值路由动画速度
+    //             store.footer_animation = 'var(--animation-slow)'
+    //             //打开导航栏
+    //             store.is_navbar_open = true 
+    //             //清空loading数据
+    //             loading.value = 0 
+    //             //解锁滚动
+    //             s_unlock() 
+    //     }
+    // })
+
+    //关闭路由后存在，否则删掉
+    
+         //将thum调整为文章内状态
+        store.index_array[page_id].class = 'container_article'
+        // 赋值路由动画速度
+        store.footer_animation = 'var(--animation-slow)'
+        //打开导航栏
+        store.is_navbar_open = true 
+        //清空loading数据
+        loading.value = 0 
+        
+        setTimeout(()=>{
+            //解锁滚动
+            s_unlock() 
+        },600)
+        
+    
 }
 
 

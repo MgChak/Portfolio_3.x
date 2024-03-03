@@ -147,31 +147,50 @@ gsap.registerPlugin(CustomEase);
         
         //打开屏幕遮罩
         screen_open()
-        
-        store.loader_status = true//开启loader
 
-        get_all_imgs()//统计图片
+        if(store.aboutpage_laod){
+            //打开导航栏-存在于loading关闭
+            store.is_navbar_open = true
 
-        var stop = watch(()=>store.is_loader_animation_finished,()=>{
-            if(store.is_loader_animation_finished){
-                //复位动画状态
-                store.is_loader_animation_finished = false
-                //停止监听
-                stop()
-                //打开导航栏
-                store.is_navbar_open = true
-
+            
+            setTimeout(()=>{
+                //解锁滚动
+                s_unlock() 
                 //开启about的动画
-                store.about_animation = true
-                
-                setTimeout(()=>{
-                    //解锁滚动
-                    s_unlock() 
-                    
-                },600)   
-            }
-        })
+            store.about_animation = true
 
+                
+            },600) 
+        }else{
+
+            store.aboutpage_laod = true
+
+            store.loader_status = true//开启loader
+
+            get_all_imgs()//统计图片
+
+            var stop = watch(()=>store.is_loader_animation_finished,()=>{
+                if(store.is_loader_animation_finished){
+                    //复位动画状态
+                    store.is_loader_animation_finished = false
+                    //停止监听
+                    stop()
+                    //打开导航栏
+                    store.is_navbar_open = true
+
+                    //开启about的动画
+                    store.about_animation = true
+                    
+                    setTimeout(()=>{
+                        //解锁滚动
+                        s_unlock() 
+                        
+                    },600)   
+                }
+            })
+
+        }
+        
         
         var stop2 = watch(()=>store.about_animation,()=>{
             var tl = gsap.timeline() 
@@ -245,6 +264,8 @@ gsap.registerPlugin(CustomEase);
                     duration:time,
                     ease: CustomEase.create("custom", ani),
                 })
+            }else{
+                console.log(store.about_animation)
             }
         })
     })

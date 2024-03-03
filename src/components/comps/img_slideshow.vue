@@ -22,7 +22,7 @@
                     @pointerenter=" handle_img_hover(0,c.id,$event)"
                     @pointerleave=" handle_img_hover(1,c.id,$event)"
                 >
-                    <img v-if="props.slideshow_arr.type =='img'" :src="c.contents[0]" alt="" >
+                    <v-lazy-image :src="c.contents[0][0]" :src-placeholder="c.contents[0][1]" v-if="props.slideshow_arr.type =='img'"/>
                     <video :style="{width:v_width+'px'}" v-if="props.slideshow_arr.type =='video'" muted playsinline loop :poster="c.contents[2]" ref="videoRefs">
                         <source :src="c.contents[0]" muted type="video/mp4"/>
                     </video>
@@ -55,6 +55,7 @@ import { ref,computed,watch,onMounted} from 'vue'
 import { useIntersectionObserver,useElementSize } from '@vueuse/core'
 import {tracker_toggle} from '../../hooks/use_mouse_tracker_toggle'
 import useStore from '../../store/index'
+import VLazyImage from "v-lazy-image"
 const store = useStore()
 
     //引入props
@@ -159,7 +160,7 @@ const store = useStore()
                 page_move('pre')
             }
         }else{
-            isDrag = false
+            // isDrag = false
         }
         
         
@@ -253,26 +254,8 @@ const store = useStore()
         return direction
 
     }
-    let movedr_count_drag = (e) =>{
-        const currentX = e.clientX;
-        const currentY = e.clientY;
 
-        const deltaX = currentX - startX;
-        const deltaY = currentY - startY;
 
-        // 计算手指移动的角度
-        const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
-
-        // 根据角度确定手指移动的方向
-        let direction;
-        if (angle >= 45 && angle < 135 || angle >= -135 && angle < -45) {
-        direction = 0;
-        } else {
-        direction = 1;
-        }
-        return direction
-
-    }
     //处理触摸-移动
     let touch_move=(e)=>{
         //暂停视频
@@ -341,6 +324,8 @@ const store = useStore()
         
     }
 
+    let stopTimer
+
     //开始拖拽
     let  drag_start =(e)=>{
         //关闭动画
@@ -360,6 +345,9 @@ const store = useStore()
 
     //拖拽移动
     let drag_move=(e)=>{
+        
+        clearTimeout(stopTimer)
+        
         //禁用点击事件
         isDrag = true
         console.log(isDrag)
@@ -368,11 +356,9 @@ const store = useStore()
         //暂停视频
         video_control_all_pause()
         //判断一次移动方向，并标记，当标记存在时不再重复判断
-        if (movedr==-1){if(movedr_count_drag(e)){
-            movedr = 1  
-        }else{
-            movedr = 0
-        }}
+        if (movedr==-1){
+            movedr = 1 
+        }
 
         if (movedr==1){
             //阻止默认事件
@@ -383,21 +369,17 @@ const store = useStore()
             touch_moving = e.clientX
             //更新列表的位置坐标
             list_position.value = list_position.value+a
-        }else if(movedr==0){
-
         }
 
     }
     //拖拽结束
     let drag_end=(e)=>{
         if(isDrag){
-            console.log("拖动")
+           
             if(touch_moving_start >= touch_moving){
                 page_move('next')
-                console.log('next')
             }else if(touch_moving_start < touch_moving){
                 page_move('pre')
-                console.log('pre')
             }
             //关闭特殊鼠标
             tracker_toggle('hidden')
@@ -409,6 +391,9 @@ const store = useStore()
         is_touch.value = false
         //解除移动方向的锁定
         movedr = -1
+        stopTimer = setTimeout(()=>{
+            isDrag = false
+        },600)
         
     }
 

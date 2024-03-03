@@ -19,16 +19,16 @@
                 <h1>OVERVIEW</h1>  
                 <h3>This redesign project focuses on enhancing Transit, an public transportation navigation app. Originally adept at assisting users in efficiently planning their routes and time, the app adapts to user habits, automatically suggesting routes and notifying users about changes in bus lines with alternative plans. In this redesign, I have incorporated two significant additions: an integrated payment system and enhanced safety features. The new payment system simplifies ticket purchasing and transit card management, while the safety features, including real-time location sharing, ensure a more secure environment for users in public transportation. These improvements aim to elevate the overall user experience, making Transit more intuitive, convenient, and safe.</h3>
             </div>
-            <img class="no_raius" src="../../assets/art_pages/transit/o_1.png" alt="">
-            <img class="no_raius" src="../../assets/art_pages/transit/o_3-1.png" alt="">
-            <img class="no_raius" src="../../assets/art_pages/transit/o_3.png" alt="">
+            <v-lazy-image :src="images['o_1.png']" :src-placeholder="images['o_1@s.png']"/>
+            <v-lazy-image :src="images['o_3-1.png']" :src-placeholder="images['o_3-1@s.png']"/>
+            <v-lazy-image :src="images['o_3.png']" :src-placeholder="images['o_3@s.png']"/>
         </div>
     </div> 
 
     <div class = "section_container bc_m">
         <div class="content_container">
             <h1 class="fc_s">LOGO & COLORS</h1>
-            <img class="cardshadow" src="../../assets/art_pages/transit/logo.png" alt="">
+            <v-lazy-image :src="images['logo.png']" :src-placeholder="images['logo@s.png']"/>
         </div>
     </div> 
 
@@ -45,7 +45,7 @@
         <div class="content_container">
             <div class="content_block_texts_24">
                 <h1 class="fc_s">OLD VERSION UI SCREENSHOTS</h1>
-                <img src="../../assets/art_pages/transit/p_1.png" alt="">
+                <v-lazy-image :src="images['p_1.png']" :src-placeholder="images['p_1@s.png']"/>
             </div>
         </div>
         <div class="breakline bc_s center"></div>
@@ -90,7 +90,7 @@
                 <h2>A/B Test Round 01</h2>
                 <h3>This test was carried out to identify the best layout for the app's home page and involved two stages. In the first stage, participants were shown two layouts: Option A, with a hidden menu bar accessed through a hamburger icon, and Option B, featuring a conventional bottom navigation bar. Although Option A provided more space for additional content, the test results revealed a strong preference for Option B's more prominent bottom navigation bar. This preference was due to its user-friendly design and familiarity. Importantly, Option B allowed for quick one-step page switching, whereas Option A's collapsible navigation required a minimum of two steps, affecting user efficiency.</h3>
             </div>
-            <img src="../../assets/art_pages/transit/s1_1.png" alt="">
+            <v-lazy-image :src="images['s1_1.png']" :src-placeholder="images['s1_1@s.png']"/>
         </div>
 
         <div class="content_container">
@@ -98,7 +98,7 @@
                 <h2>A/B Test Round 02</h2>
                 <h3>For the second round of testing, I focused on the placement of the navigation bar, presenting two options: a traditional top navigation bar and a more modern bottom navigation bar. Despite the top bar's alignment with traditional user habits, the bottom bar was favored by users. Its popularity stemmed from the convenience it offered, allowing users to access functions without moving their hands to the top of the screen, thus facilitating easier and quicker use of the search function.</h3>
             </div>
-            <img src="../../assets/art_pages/transit/s1_2.png" alt="">
+            <v-lazy-image :src="images['s1_2.png']" :src-placeholder="images['s1_2@s.png']"/>
         </div>
 
         <div class="content_container">
@@ -106,8 +106,8 @@
                 <h2>Further Improvement</h2>
                 <h3>The first two rounds of testing established the layout for the menu and search bars. For a considerable period, I maintained this design for the home page without alterations. However, the addition of a route saving function to the search page, followed by usability testing, marked a significant change. User feedback was overwhelmingly positive, particularly among those who frequently reused saved routes, like daily commuters and students. This led me to consider relocating the saved route feature to the home page, aiming to reduce the number of steps needed for users to initiate navigation.</h3>
             </div>
-            <img src="../../assets/art_pages/transit/s1_3.png" alt="">
-            <img src="../../assets/art_pages/transit/s1_4.png" alt="">
+            <v-lazy-image :src="images['s1_3.png']" :src-placeholder="images['s1_3@s.png']"/>
+            <v-lazy-image :src="images['s1_4.png']" :src-placeholder="images['s1_4@s.png']"/>
         </div>
 
         <div class="breakline bc_w1"></div>
@@ -119,7 +119,7 @@
                 <h3>In the initial design, I used color coding to indicate expected arrival times, with red for the fastest and green for the slowest. The information cards were small to display as many search results as possible, showing only essential information. User testing, however, revealed dissatisfaction with this approach. The color coding for time was confusing, and users desired more key information on the cards.</h3>
                 <h3>Consequently, I revisited the design of the search list. Research indicated that public transportation route searches typically yield few results, negating the need for smaller information cards to display more outcomes. To enhance user comprehension, I decided to increase the size of the information cards. Moreover, I found that using color-differentiated icons to represent various types of public transport was more effective and intuitive for users than the previous color scheme for arrival times.</h3>
             </div>   
-            <img src="../../assets/art_pages/transit/s1_4-1.png" alt="">
+            <v-lazy-image :src="images['s1_4-1.png']" :src-placeholder="images['s1_4-1@s.png']"/>
         </div>
 
         <div class="content_container">
@@ -127,17 +127,17 @@
                 <h2>Key feedback / Problem</h2>
                 <h3>In my initial design, the route detail page featured an expandable card mode. Clicking on a search result's information card would reveal more detailed route information within the same view, avoiding the need to navigate to a new page. However, user testing indicated a preference for maps on the detail page. Users found maps more intuitive than text for understanding routes. Consequently, I redesigned the detail page to incorporate maps, enhancing the user's ability to visually grasp the route information.</h3>
             </div>   
-            <img src="../../assets/art_pages/transit/s1_5.png" alt="">
+            <v-lazy-image :src="images['s1_5.png']" :src-placeholder="images['s1_5@s.png']"/>
         </div>
 
         <div class="content_container">
             <h3>The redesigned detail page is now a standalone page, featuring an adjustable map display. Users can resize the map by dragging the bottom information bar, allowing for a customizable view.</h3>  
-            <img src="../../assets/art_pages/transit/s1_6.png" alt="">
+            <v-lazy-image :src="images['s1_6.png']" :src-placeholder="images['s1_6@s.png']"/>
         </div>
 
         <div class="content_container">
             <h3>In the public transportation route information display, excessive stop names are hidden to conserve space. These collapsed names appear in a specialized format, and users can expand them by clicking on the three dots icon.</h3>  
-            <img src="../../assets/art_pages/transit/s1_7.png" alt="">
+            <v-lazy-image :src="images['s1_7.png']" :src-placeholder="images['s1_7@s.png']"/>
         </div>
 
         <div class="breakline bc_w1"></div>
@@ -149,8 +149,8 @@
                 <h3>The navigation page of the app underwent a redesign following user testing. In the initial design, all functions were placed at the bottom of the screen. Testing revealed that this layout, while not content-heavy, appeared cluttered to users due to the uniform design of all elements, making it difficult to distinguish between them at a glance. To address this, the new design reorganizes and differentiates the content using varied display methods.</h3>
                 <h3>Additionally, the original design required users to return to the main page to access other functions like "payment" and "sharing" during navigation, which was cumbersome. The updated version introduces side buttons, enabling users to quickly access these functions directly from the navigation interface.</h3>
             </div>   
-            <img src="../../assets/art_pages/transit/s1_8.png" alt="">
-            <img src="../../assets/art_pages/transit/s1_9.png" alt="">
+            <v-lazy-image :src="images['s1_8.png']" :src-placeholder="images['s1_8@s.png']"/>
+            <v-lazy-image :src="images['s1_9.png']" :src-placeholder="images['s1_9@s.png']"/>
         </div>
     </div> 
 
@@ -176,7 +176,7 @@
                 <h2>Two rounds of A/B Test</h2>
                 <h3>While designing the payment system, I explored various designs including stacked cards, lists, and horizontal scrolling. After several tests and considering real-world use cases, I chose horizontal scrolling cards as the best solution. This design merges the benefits of both large displays for QR codes and quick card access. Although vertical scrolling is usually faster for browsing lots of content, users typically don't store many cards in a public transportation app and often use just 1 or 2 cards daily. So, horizontal scrolling won't slow down card selection. Additionally, this layout provides ample space for scan buttons, QR codes, and Tap prompts, crucial for supporting various payment methods across different cities and regions.</h3>
             </div>
-            <img src="../../assets/art_pages/transit/s2_1.png" alt="">
+            <v-lazy-image :src="images['s2_1.png']" :src-placeholder="images['s2_1@s.png']"/>
         </div>
 
         <div class="content_container">
@@ -184,7 +184,7 @@
                 <h2>Visual Improvement</h2>
                 <h3>During the card window design process, I experimented with various aspects that wouldn't impact functionality but aimed to enhance the visual experience. In the final design, a semi-transparent black background was added behind the card number to ensure the legibility of the information. Additionally, I detached the scan button from the card, ensuring it remains stationary and doesn't shift with card switches.</h3>
             </div>
-            <img src="../../assets/art_pages/transit/s2_2.png" alt="">
+            <v-lazy-image :src="images['s2_2.png']" :src-placeholder="images['s2_2@s.png']"/>
         </div>      
     </div> 
 
@@ -209,17 +209,17 @@
                 <h1>DESIGN DETAIL <br>_REAL-TIME LOCATION SHARE</h1>
                 <h3>The addition of the sharing function aims to safeguard user safety by allowing others to view the user's real-time location. In designing this feature, I prioritized caution and user awareness. A confirmation page serves as the final step before activation, displaying the names and phone numbers of authorized contacts. To ensure users don't overlook this crucial information, I incorporated a countdown button, preventing hasty actions and encouraging careful review.</h3>
             </div>
-            <img src="../../assets/art_pages/transit/s3_1.png" alt="">
+            <v-lazy-image :src="images['s3_1.png']" :src-placeholder="images['s3_1@s.png']"/>
         </div>
 
         <div class="content_container">
             <h3>Upon activating the sharing function, the share button changes to a prominent red color. This serves as a constant reminder to the user that their location is being shared.</h3>
-            <img src="../../assets/art_pages/transit/s3_2.png" alt="">
+            <v-lazy-image :src="images['s3_2.png']" :src-placeholder="images['s3_2@s.png']"/>
         </div>      
 
         <div class="content_container">
             <h3>To prioritize user safety, the feature remains active even after the user reaches their destination and doesn't turn off automatically. However, Transit regularly prompts the user with pop-up windows to inquire if they wish to stop sharing their location information.</h3>
-            <img src="../../assets/art_pages/transit/s3_3.png" alt="">
+            <v-lazy-image :src="images['s3_3.png']" :src-placeholder="images['s3_3@s.png']"/>
         </div>
     </div> 
 
@@ -230,7 +230,7 @@
                 <h1 class="fc_s">NEXT...</h1>
                 <h3 class="fc_s">As technology continually evolves, the smart devices people carry are no longer limited to just smartphones. If this project were to be expanded further, I would like to develop an app version of Transit for smartwatches, enabling users to use navigation services more effortlessly. Looking even further into the future, Transit could potentially have a VR version. This would allow navigation information to naturally float in front of the users, enhancing their experience with advanced, immersive technology.</h3>
             </div>
-            <img src="../../assets/art_pages/transit/next.png" alt="">
+            <v-lazy-image :src="images['next.png']" :src-placeholder="images['next@s.png']"/>
         </div>
     </div>  
 
@@ -245,9 +245,6 @@
 
 
 
-
-    <p>==end==</p>
-
 </div>
 
     
@@ -261,11 +258,8 @@ import overview_info from '../comps/overview_info.vue'
 import link_button from'../comps/link_button.vue'
 import img_slideshow from '../comps/img_slideshow.vue'
 import the_footer from '../footer.vue'
-//img引入
-import r1 from "../../assets/art_pages/transit/r_1.png"
-import r2 from "../../assets/art_pages/transit/r_2.png"
-import r3 from "../../assets/art_pages/transit/r_3.png"
-import r4 from "../../assets/art_pages/transit/r_4.png"
+
+import VLazyImage from "v-lazy-image"
 
 
 
@@ -294,9 +288,18 @@ const store = useStore()
         animation_queue_route_out(page_id,to,next)  
     })
 
+    // 使用 import.meta.globEager 同步导入图片
+    const imageModules = import.meta.globEager('../../assets/art_pages/transit/*');
+    // 直接使用普通对象存储导入的图片路径
+    const images = Object.entries(imageModules).reduce((acc, [path, module]) => {
+        const imageName = path.split('/').pop();
+        acc[imageName] = module.default;
+        return acc;
+    }, {});
 
-        //overview_data数列
-        let ov_data = {
+
+    //overview_data数列
+    let ov_data = {
         type:"App Redesign Project",
         roll:"Solo designer",
         time:"2022",
@@ -331,10 +334,10 @@ const store = useStore()
         type:'img',
         resize:false,
         contents:[
-            [r1,"U.S public transportation rasearch"],
-            [r2,"Walking navigation rasearch"],
-            [r3,"Public safety rasearch"],
-            [r4,"Public transportation users Summary"],
+            [[images['r_1.png'],images['r_1@s.png']],"U.S public transportation rasearch"],
+            [[images['r_2.png'],images['r_2@s.png']],"Walking navigation rasearch"],
+            [[images['r_3.png'],images['r_3@s.png']],"Public safety rasearch"],
+            [[images['r_4.png'],images['r_4@s.png']],"Public transportation users Summary"],
         ]
     }  
 

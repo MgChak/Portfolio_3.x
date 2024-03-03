@@ -20,7 +20,7 @@
                 <link_button :prototype_links = 'case_study_button'/>
             </div>
             <h3>MEOW MIND is an AI-powered app designed to enhance interactions with cats by understanding the meanings behind their behaviors. The app analyzes cat’s body language through the camera, displaying the cat's current mood above its head with emojis for easy emotional reading by the user. Additionally, MEOW MIND offers features such as health monitoring and real-time guidance for engaging with cats based on their movements, further assisting in the care and understanding of these pets.</h3>
-            <img class="no_raius" src="../../assets/art_pages/cat/o_1.png" alt="">
+            <v-lazy-image :src="images['o_1.png']" :src-placeholder="images['o_1@s.png']"/>
         </div>
 
         <div class="breakline bc_w1"></div>
@@ -30,14 +30,14 @@
                 <h1>MOBILE & VR MODE</h1>
                 <h3>To cater to a wider audience and ensure easy access without the need for VR headsets, MEOW MIND also offers a mobile app version. Both the VR and mobile versions feature identical functionalities, allowing users to choose based on their specific needs.</h3>
             </div>
-            <img class="no_raius" src="../../assets/art_pages/cat/o_2.png" alt="">
+            <v-lazy-image :src="images['o_2.png']" :src-placeholder="images['o_2@s.png']"/>
         </div>
     </div> 
 
     <div class = "section_container bc_m">
         <div class="content_container">
             <h1 class="fc_s">LOGO & COLORS</h1>
-            <img class="cardshadow" src="../../assets/art_pages/cat/logo.png" alt="">
+            <v-lazy-image :src="images['logo.png']" :src-placeholder="images['logo@s.png']"/>
         </div>
     </div> 
 
@@ -53,7 +53,7 @@
 
     <div class = "section_container bc_m">
         <div class="content_container">
-            <img src="../../assets/art_pages/cat/p_1.png" alt="">
+            <v-lazy-image :src="images['p_1.png']" :src-placeholder="images['p_1@s.png']"/>
             <div class="content_block_texts_24">
                 <h1 class="fc_s">DEFINE PROBLEMS</h1>
                 <h3 class="fc_s">Cats use their behavior to convey their feelings and emotions. However, without professional knowledge or expertise, it can be difficult for humans to understand what a cat is trying to communicate. This can potentially lead to harm on both sides during human-cat interactions. For example, certain unintentional provocative behaviors by humans can trigger sudden attacks by cats. Alternatively, cats may misunderstand human behavior and attempt to interact at inappropriate times. On the other hand, if humans cannot correctly understand a cat's signals of pain or discomfort, it can result in delayed treatment for the cat's illness.</h3>
@@ -63,7 +63,7 @@
         <div class="breakline bc_s center"></div>
 
         <div class="content_container">
-            <img src="../../assets/art_pages/cat/p_2.png" alt="">
+            <v-lazy-image :src="images['p_2.png']" :src-placeholder="images['p_2@s.png']"/>
             <div class="content_block_texts_24">
                 <h1 class="fc_s">How can we assist users in improving their lives with cats?</h1>
                 <div class="content_block_list">
@@ -139,19 +139,19 @@
                 <h1>USABILITY TEST</h1>
                 <h3>In addition to adding prompts, we have also relocated the options from above the input box to below the question, to improve user experience. This will make it easier for users to identify and select the appropriate option in response to the AI's question.</h3>
             </div>
-            <img src="../../assets/art_pages/cat/s1_1.png" alt="">
+            <v-lazy-image :src="images['s1_1.png']" :src-placeholder="images['s1_1@s.png']"/>
         </div>
 
         <div class="content_container">
             <h3>I have enhanced the chat interface by adding a header, which aims to improve user comprehension. The 'category' selection box has been redesigned for greater prominence, and we have incorporated prompts to facilitate a deeper understanding of its use. Additionally, the input box has been upgraded to enable users to send both audio and image content to the AI.</h3>
-            <img src="../../assets/art_pages/cat/s1_2.png" alt="">
+            <v-lazy-image :src="images['s1_2.png']" :src-placeholder="images['s1_2@s.png']"/>
         </div>
 
 
 
         <div class="content_container">
             <h3>After testing, it was found that all subpages can be navigated back to the main page via the "back" icon. This renders the home icon in the bottom navigation bar redundant. To optimize space utilization, I have removed the home icon and relocated the AI-chat's input box to the bottom navigation bar. This modification not only frees up more space on the homepage for displaying additional content but also maintains seamless navigation across all pages.</h3> 
-            <img src="../../assets/art_pages/cat/s1_3.png" alt="">
+            <v-lazy-image :src="images['s1_3.png']" :src-placeholder="images['s1_3@s.png']"/>
         </div>
     </div> 
 
@@ -163,7 +163,7 @@
                 <h3 class="fc_s">My initial inspiration for designing MEOW MIND was to capitalize on the vast advancements in AI and VR technologies. My goal was to use this technology to strengthen the bond between humans and cats, enabling people to gain a deeper understanding of their feline companions - what they think and what they need. I hope that with the continuous evolution of technology, this concept will one day become a reality.</h3>
             </div>
             <link_button :prototype_links = 'next_button'/>
-            <img src="../../assets/art_pages/cat/next.png" alt="">
+            <v-lazy-image :src="images['next.png']" :src-placeholder="images['next@s.png']"/>
         </div>
     </div>  
 
@@ -186,6 +186,8 @@ import the_footer from '../footer.vue'
 import overview_info from '../comps/overview_info.vue'
 import link_button from '../comps/link_button.vue'
 import img_slideshow from '../comps/img_slideshow.vue'
+import VLazyImage from "v-lazy-image"
+
 //引入hooks
 import {animation_queue_route_in,animation_queue_route_out,animation_queue_before_route_in} from'../../hooks/use_art_page_functions'
 //依赖引入
@@ -215,6 +217,16 @@ const store = useStore()
     onBeforeRouteLeave((to,from,next)=>{
         animation_queue_route_out(page_id,to,next)
     })
+
+    // 使用 import.meta.globEager 同步导入图片
+    const imageModules = import.meta.globEager('../../assets/art_pages/cat/*');
+    // 直接使用普通对象存储导入的图片路径
+    const images = Object.entries(imageModules).reduce((acc, [path, module]) => {
+        const imageName = path.split('/').pop();
+        acc[imageName] = module.default;
+        return acc;
+    }, {});
+
 
     //overview_data数列
     let ov_data = {
@@ -253,10 +265,10 @@ const store = useStore()
         type:'img',
         resize:false,
         contents:[
-            [r1,"Background Research"],
-            [r2,"Background Research & Survey Feedback"],
-            [r3,"Survey Feedback"],
-            [r4,"Survey Feedback"],
+            [[images['r_1.png'],images['r_1@s.png']],"Background Research"],
+            [[images['r_2.png'],images['r_2@s.png']],"Background Research & Survey Feedback"],
+            [[images['r_3.png'],images['r_3@s.png']],"Survey Feedback"],
+            [[images['r_4.png'],images['r_4@s.png']],"Survey Feedback"],
         ]
     }  
 

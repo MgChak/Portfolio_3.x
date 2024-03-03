@@ -22,7 +22,7 @@
                 <link_button :prototype_links = 'case_study_button'/>
             </div>
             <h3>Let's Go is a travel planning application designed to assist users in creating, searching, and sharing multi-person travel plans. Utilizing the latest AI technology, the app becomes smarter, aiding users in creating travel plans during chats with their travel companions and offering packing suggestions based on their itineraries. Additionally, users can share their travel plans with other travelers in the online community for inspiration and advice. Let's Go makes for your ultimate travel companion for your next journey.</h3>
-            <img class="no_raius" src="../../assets/art_pages/letsgo/o_1.png" alt="">
+            <v-lazy-image :src="images['o_1.png']" :src-placeholder="images['o_1@s.png']"/>
         </div>
     </div> 
 
@@ -49,7 +49,7 @@
 
     <div class = "section_container bc_m">
         <div class="content_container">
-            <img src="../../assets/art_pages/letsgo/p1.png" alt="">
+            <v-lazy-image :src="images['p1.png']" :src-placeholder="images['p1@s.png']"/>
             <div class="content_block_texts_24">
                 <h1 class="fc_s">DEFINE PROBLEMS</h1>
                 <h3 class="fc_s">Organizing group travel can be a daunting task for users, owing to the scarcity of appropriate tools and resources. Consequently, this often leads to a subpar experience when attempting to coordinate trips collaboratively.</h3>
@@ -57,7 +57,7 @@
         </div>
         <div class="breakline bc_s center"></div>
         <div class="content_container">
-            <img src="../../assets/art_pages/letsgo/p2.png" alt="">
+            <v-lazy-image :src="images['p2.png']" :src-placeholder="images['p2@s.png']"/>
             <div class="content_block_texts_24">
                 <h1 class="fc_s">HOW MIGHT WE STATEMENT</h1>
                 <h3 class="fc_s">How might we help young adults with expendable income for travel, use mobile technology to be well prepared for a group trip? </h3>
@@ -101,7 +101,7 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
                 <h2>Key feedback / Problems</h2>
                 <h3>In the version used for the usability test, users can open their friend list and select friends they want to invite by clicking the "Invite" button during the process of creating a new travel plan. User feedback suggests that being able to invite friends directly from the new travel plan creation page would save a significant amount of time. The primary challenge faced in implementing this feature, however, lies in the limited space available on the travel plan creation page, which is insufficient to display a full list of friends.</h3>
             </div>
-            <img src="../../assets/art_pages/letsgo/s1_1.png" alt="">
+            <v-lazy-image :src="images['s1_1.png']" :src-placeholder="images['s1_1@s.png']"/>
         </div>
 
         <div class="content_container">
@@ -109,7 +109,7 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
                 <h2>Improvements</h2>
                 <h3>Compared to the previous version, where inviting friends and creating travel plans were split across two separate pages, the updated version combines these functions onto a single page. It shows the images of the top 10 friends from the user's friend list. Users can select friends by clicking on their avatars. If the friend they want to invite isn't in the top 10 displayed, they can view the full list of friends by clicking the "MORE" icon at the end of the list.</h3>
             </div>
-            <img src="../../assets/art_pages/letsgo/s1_2.png" alt="">
+            <v-lazy-image :src="images['s1_2.png']" :src-placeholder="images['s1_2@s.png']"/>
         </div>
 
         <div class="breakline bc_w1"></div>
@@ -119,7 +119,7 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
                 <h1>DESIGN EXPLORATIONS <br>_ADDING LOADING ANIMATION</h1>    
                 <h3>Animation has been added into the plan creation process. Now, when a user clicks the create button, they won't be taken directly to the plan page. Instead, an animation showing the process will be displayed, followed by a confirmation page. This change aims to enhance the user's trust in the app.</h3>
             </div>
-            <img src="../../assets/art_pages/letsgo/s1_3.png" alt="">
+            <v-lazy-image :src="images['s1_3.png']" :src-placeholder="images['s1_3@s.png']"/>
         </div>
     </div> 
 
@@ -146,7 +146,7 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
                 <h2>A/B Test Round 1</h2>
                 <h3>In the first round of testing, most of the testers were more inclined towards option A because it did not interrupt the user's operation. Option B, on the other hand, completely disrupted the user's workflow and forced them to make a decision right away. This high level of intrusiveness made users resistant to this feature, especially since the window was triggered without any input from the user, and they had no advance warning that the window would appear.</h3>
             </div>
-            <img src="../../assets/art_pages/letsgo/s2_1.png" alt="">
+            <v-lazy-image :src="images['s2_1.png']" :src-placeholder="images['s2_1@s.png']"/>
         </div>
 
         <div class="content_container">
@@ -154,7 +154,7 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
                 <h2>A/B Test Round 2</h2>
                 <h3>After determining that users preferred a design with lower intrusiveness, I kept and modified option A, and designed a new option B with lower intrusiveness. Both options do not interrupt the user's current operation. I conducted new tests with these two options. However, the results did not provide a clear answer because the two options had different functionalities. Option B had some additional functions, which gave it a natural advantage, and this should not have been the case in this test.</h3>
             </div>
-            <img src="../../assets/art_pages/letsgo/s2_2.png" alt="">
+            <v-lazy-image :src="images['s2_2.png']" :src-placeholder="images['s2_2@s.png']"/>
         </div>
 
         <div class="content_container">
@@ -162,8 +162,8 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
                 <h2>A/B Test Round 3</h2>
                 <h3>In order to ensure the accuracy of the test results, I made further modifications to options A and B, and conducted a third round of testing. This time, both options had exactly the same functionality, with the only difference being in their display. Option A emerged as the winner in this test, so I ultimately decided to use option A as the final design.</h3>
             </div>
-            <img src="../../assets/art_pages/letsgo/s2_3.png" alt="">
-            <img src="../../assets/art_pages/letsgo/s2_4.png" alt="">
+            <v-lazy-image :src="images['s2_3.png']" :src-placeholder="images['s2_3@s.png']"/>
+            <v-lazy-image :src="images['s2_4.png']" :src-placeholder="images['s2_4@s.png']"/>
         </div>
 
         <div class="breakline bc_w1"></div>
@@ -174,7 +174,7 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
                 <h2>Improvements</h2>
                 <h3>The new version of the confirmation page will display more detailed information and includes a button for users to directly navigate to the corresponding position in the event list.</h3>
             </div>
-            <img src="../../assets/art_pages/letsgo/s2_5.png" alt="">
+            <v-lazy-image :src="images['s2_5.png']" :src-placeholder="images['s2_5@s.png']"/>
         </div>
 
         <div class="breakline bc_w1"></div>
@@ -189,7 +189,7 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
                 <h2>Solutions</h2>
                 <h3>I redesigned the top section to allocate more space for the event name, ensuring the full title is displayed.  Tags were relocated to the information area to provide more room for a larger event image.  Additionally, I replaced 'Move' with 'Date' for clarity, and introduced a rearrange icon to the list.  The 'Add tickets and reservation' feature was renamed to 'Attach' and its icon was changed to enhance user understanding of its functionality.</h3>
             </div>
-            <img src="../../assets/art_pages/letsgo/s2_6.png" alt="">
+            <v-lazy-image :src="images['s2_6.png']" :src-placeholder="images['s2_6@s.png']"/>
         </div>
 
         <div class="breakline bc_w1"></div>
@@ -199,7 +199,7 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
                 <h1>DESIGN EXPLORATIONS <br>_INFORMATION CARDS</h1>    
                 <h3>In the original design, lodging and event cards shared a similar visual style. While this was functional and didn't hinder usage, I realized that lodging and events are distinct types of information. Events change daily, but lodging may remain the same, leading to redundant display of information at the list's top. Consequently, I modified the lodging design to occupy minimal space and introduced color-coding for immediate recognition as lodging information.</h3>
             </div>
-            <img src="../../assets/art_pages/letsgo/s2_7.png" alt="">
+            <v-lazy-image :src="images['s2_7.png']" :src-placeholder="images['s2_7@s.png']"/>
         </div>
     </div> 
 
@@ -225,7 +225,7 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
                 <h2>Improvements</h2>
                 <h3>In the new version, the entire page has been redesigned with a broader scanning range than the previous version. Additionally, a prompt stating 'Please do not stack the items on top of each other' has been added above the scanning button.</h3>
             </div>
-            <img src="../../assets/art_pages/letsgo/s3_1.png" alt="">
+            <v-lazy-image :src="images['s3_1.png']" :src-placeholder="images['s3_1@s.png']"/>
         </div>
 
         <div class="breakline bc_w1"></div>
@@ -236,7 +236,7 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
                 <h2>Improvements</h2>
                 <h3>The latest version features a redesigned weather display, now presenting daily weather information for the entire travel plan in a list format, rather than only for the first day. Furthermore, the weather forecast and recommendation list have been combined into a horizontally scrollable component, substantially freeing up space to display the packing list.</h3>
             </div>
-            <img src="../../assets/art_pages/letsgo/s3_2.png" alt="">
+            <v-lazy-image :src="images['s3_2.png']" :src-placeholder="images['s3_2@s.png']"/>
         </div>
        
     </div>
@@ -263,7 +263,7 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
                 <h2>Key feedback / Problems</h2>
                 <h3>In the initial design, users could access a secondary menu by long-pressing on a card. However, usability testing revealed that several participants were unaware of this feature. Further interviews indicated a preference against the long-press interaction, as it was unclear whether it required a longer press or a harder push.</h3>
             </div>
-            <img src="../../assets/art_pages/letsgo/s4_1.png" alt="">
+            <v-lazy-image :src="images['s4_1.png']" :src-placeholder="images['s4_1@s.png']"/>
         </div>
 
         <div class="breakline bc_w1"></div>
@@ -273,7 +273,7 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
                 <h2>Solutions & A/B Test Round 1</h2>
                 <h3>To resolve this issue, I tested four solutions across two A/B testing rounds. In the first round, I tried two approaches: SOLUTION 01 involved removing the secondary menu and adding feature icons directly on the card; SOLUTION 02 added a three-dots icon to indicate a long-press action. However, neither solution was effective. SOLUTION 01 overcrowded the card, obscuring the image, while SOLUTION 2 confused users, leading them to single-click instead of long-pressing.</h3>
             </div>
-            <img src="../../assets/art_pages/letsgo/s4_2.png" alt="">
+            <v-lazy-image :src="images['s4_2.png']" :src-placeholder="images['s4_2@s.png']"/>
         </div>
 
         <div class="content_container">
@@ -282,7 +282,7 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
                 <h3>Therefore, I developed SOLUTIONS 3 and 4. SOLUTION 3 added all feature icons to the card's bottom, while SOLUTION 4 used an expand-and-collapse approach with an arrow icon to hide these icons. At this stage, I also replaced the long-press interaction with a single-click, finding that long-press could disrupt the user's flow, even for just 1-2 seconds.</h3>
                 <h3>Following the second round of A/B testing, I chose SOLUTION 4 as the final design. It offers a cleaner visual than SOLUTION 3 and suits the infrequent use of these features by users. Since these features are less relevant before users have read the article, they don't need constant visibility on the card.</h3>
             </div>
-            <img src="../../assets/art_pages/letsgo/s4_3.png" alt="">
+            <v-lazy-image :src="images['s4_3.png']" :src-placeholder="images['s4_3@s.png']"/>
         </div>
 
         <div class="breakline bc_w1"></div>
@@ -293,7 +293,7 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
                 <h2>Round 1</h2>
                 <h3>Version 1 was the original design. In Version 2, I altered the 'What’s Popular' section's category tags to two lines with three-dot icons and used a larger font. In Version 3, while keeping the larger font, I reverted to Version 1's single-line tag display for space efficiency and content emphasis on the homepage.</h3>
             </div>
-            <img src="../../assets/art_pages/letsgo/s4_4.png" alt="">
+            <v-lazy-image :src="images['s4_4.png']" :src-placeholder="images['s4_4@s.png']"/>
         </div>
 
         <div class="content_container">
@@ -301,7 +301,7 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
                 <h2>Round 2</h2>
                 <h3>After completing the design of Version 3, I realized it presented too much information, making the interface appear cluttered and less streamlined. In fact, I wanted to highlight just two elements on the homepage: the search box and exquisite landscape photos. This led to the design of Version 4.</h3>
             </div>
-            <img src="../../assets/art_pages/letsgo/s4_5.png" alt="">
+            <v-lazy-image :src="images['s4_5.png']" :src-placeholder="images['s4_5@s.png']"/>
         </div>
        
     </div>
@@ -314,7 +314,7 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
                 <h3 class="fc_s">The reason behind my decision to design this travel app, 'Let's Go', arose during the winter of 2022 when I planned a trip with friends and we struggled to create a travel plan. Despite numerous attempts, we couldn't find an appropriate tool. 'Let's Go' was designed with the intent to make the process of planning trips more enjoyable and relaxed. With the progression of AI technology, I aim to continuously add more interesting features to 'Let's Go', and I look forward to the day when it becomes a real app.</h3>
             </div>
             <link_button :prototype_links = 'next_button'/>
-            <img src="../../assets/art_pages/letsgo/next.png" alt="">
+            <v-lazy-image :src="images['next.png']" :src-placeholder="images['next@s.png']"/>
         </div>
     </div>  
 
@@ -338,6 +338,9 @@ import the_footer from '../footer.vue'
 import overview_info from '../comps/overview_info.vue'
 import link_button from '../comps/link_button.vue'
 import img_slideshow from '../comps/img_slideshow.vue'
+import VLazyImage from "v-lazy-image"
+
+
 //hook引入
 import {animation_queue_route_in,animation_queue_route_out,animation_queue_before_route_in} from'../../hooks/use_art_page_functions'
 
@@ -346,21 +349,7 @@ import {onMounted,onBeforeMount} from 'vue'
 import useStore from '../../store/index'
 import { onBeforeRouteLeave } from 'vue-router';
 
-//img引入
-import r1 from "../../assets/art_pages/letsgo/r1.png"
-import r2 from "../../assets/art_pages/letsgo/r2.png"
-import r3 from "../../assets/art_pages/letsgo/r3.png"
-import r4 from "../../assets/art_pages/letsgo/r4.png"
-import r5 from "../../assets/art_pages/letsgo/r5.png"
-import r6 from "../../assets/art_pages/letsgo/r6.png"
-import r7 from "../../assets/art_pages/letsgo/r7.png"
 
-import l1 from "../../assets/art_pages/letsgo/l1.png"
-import l2 from "../../assets/art_pages/letsgo/l2.png"
-import l3 from "../../assets/art_pages/letsgo/l3.png"
-import l4 from "../../assets/art_pages/letsgo/l4.png"
-import l5 from "../../assets/art_pages/letsgo/l5.png"
-import l6 from "../../assets/art_pages/letsgo/l6.png"
 
 const store = useStore()
 
@@ -378,6 +367,15 @@ const store = useStore()
     onBeforeRouteLeave((to,from,next)=>{
         animation_queue_route_out(page_id,to,next)
     })
+
+    // 使用 import.meta.globEager 同步导入图片
+    const imageModules = import.meta.globEager('../../assets/art_pages/letsgo/*');
+    // 直接使用普通对象存储导入的图片路径
+    const images = Object.entries(imageModules).reduce((acc, [path, module]) => {
+        const imageName = path.split('/').pop();
+        acc[imageName] = module.default;
+        return acc;
+    }, {});
 
 
     //overview_data数列
@@ -417,12 +415,12 @@ const store = useStore()
         type:'img',
         resize:false,
         contents:[
-            [l1,""],
-            [l2,""],
-            [l3,""],
-            [l4,""],
-            [l5,""],
-            [l6,""]
+            [[images['l1.png'],images['l1@s.png']],""],
+            [[images['l2.png'],images['l2@s.png']],""],
+            [[images['l3.png'],images['l3@s.png']],""],
+            [[images['l4.png'],images['l4@s.png']],""],
+            [[images['l5.png'],images['l5@s.png']],""],
+            [[images['l6.png'],images['l6@s.png']],""]
         ]
     }  
 
@@ -432,13 +430,13 @@ const store = useStore()
         type:'img',
         resize:false,
         contents:[
-            [r1,"Background Research Summary"],
-            [r2,"Background Research Summary"],
-            [r3,"Background Research Summary"],
-            [r4,"Background Research Summary"],
-            [r5,"Background Research Summary"],
-            [r6,"Interview Results Summary"],
-            [r7,"Competitive Analysis Overview"]
+            [[images['r1.png'],images['r1@s.png']],"Background Research Summary"],
+            [[images['r2.png'],images['r2@s.png']],"Background Research Summary"],
+            [[images['r3.png'],images['r3@s.png']],"Background Research Summary"],
+            [[images['r4.png'],images['r4@s.png']],"Background Research Summary"],
+            [[images['r5.png'],images['r5@s.png']],"Background Research Summary"],
+            [[images['r6.png'],images['r6@s.png']],"Interview Results Summary"],
+            [[images['r7.png'],images['r7@s.png']],"Competitive Analysis Overview"]
         ]
     }  
 

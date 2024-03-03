@@ -50,6 +50,9 @@ export default defineStore("Main",{
         cover_animation:false,
         about_animation:false,
         about_animation_step2:false,
+
+        homepage_load:false,
+        aboutpage_laod:false,
         //=============================
         //mouse_tracker的依赖状态
         //=============================
@@ -96,6 +99,8 @@ export default defineStore("Main",{
 
             //表示手机端二级菜单的开关
             is_mv_nav_open:false,
+
+
 
         //=============================
         //首页slideshow依赖 + thum card 依赖

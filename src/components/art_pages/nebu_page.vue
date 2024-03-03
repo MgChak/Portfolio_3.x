@@ -17,11 +17,13 @@
     <div class = "section_container">
         <div class="content_container">
             <div class="content_block_center">
-                <img class="sp_nasa_img" src="../../assets/art_pages/nebu/nasa.png" alt="">
+                <v-lazy-image class="sp_nasa_img" :src="images['nasa.png']" :src-placeholder="images['nasa@s.png']"/>
+
                 <h3 style="text-align:center;">A collaborative project <br>sponsored by NASA.</h3>
             </div>
         </div>
-        <img class="sp_background_img" src="../../assets/art_pages/nebu/background_2.jpg" alt="">
+        
+        <v-lazy-image :src="images['background_2.jpg']" :src-placeholder="images['background_2@s.jpg']" class="sp_background_img"/>
     </div> 
 
 
@@ -34,7 +36,7 @@
             </div>
             <h3>This project is centered on designing for space tourism, anticipating a future around 2060 when orbital space travel around Earth becomes commonplace. We envision a time when people are not only orbiting Earth but also seeking to travel to Mars.
 The primary objective of our project is to enhance the safety, ease, and comfort of tourists' journeys to Mars.</h3>
-            <img class="no_raius" src="../../assets/art_pages/nebu/o_1.png" alt="">
+        <v-lazy-image :src="images['o_1.png']" :src-placeholder="images['o_1@s.png']"/>
         </div>
     </div> 
 
@@ -43,35 +45,35 @@ The primary objective of our project is to enhance the safety, ease, and comfort
             <h1>DESIGNED BY - TEAM APOGEE</h1>
             <div class="content_block_flex">
                 <div class="team_m">
-                    <img class="team_img" src="../../assets/art_pages/nebu/zeo.png" alt="">
+                    <v-lazy-image :src="images['zeo.png']" :src-placeholder="images['zeo@s.png']"/>
                     <div class="teaminfo">
                         <h3>Zeo Zhang</h3>
                         <h3>Industrial</h3>
                     </div>
                 </div>
                 <div class="team_m">
-                    <img class="team_img" src="../../assets/art_pages/nebu/emily.png" alt="">
+                    <v-lazy-image :src="images['emily.png']" :src-placeholder="images['emily@s.png']"/>
                     <div class="teaminfo">
                         <h3>Emily Tedja</h3>
                         <h3>Industrial</h3>
                     </div>
                 </div>
                 <div class="team_m">
-                    <img class="team_img" src="../../assets/art_pages/nebu/chak.png" alt="">
+                    <v-lazy-image :src="images['chak.png']" :src-placeholder="images['chak@s.png']"/>
                     <div class="teaminfo">
                         <h3>Chashing Lam</h3>
                         <h3>UX/UI</h3>
                     </div>
                 </div>
                 <div class="team_m">
-                    <img class="team_img" src="../../assets/art_pages/nebu/edward.png" alt="">
+                    <v-lazy-image :src="images['edward.png']" :src-placeholder="images['edward@s.png']"/>
                     <div class="teaminfo">
                         <h3>Edward Tsai</h3>
                         <h3>UX/UI</h3>
                     </div>
                 </div>
                 <div class="team_m">
-                    <img class="team_img" src="../../assets/art_pages/nebu/jiayu.png" alt="">
+                    <v-lazy-image :src="images['jiayu.png']" :src-placeholder="images['jiayu@s.png']"/>
                     <div class="teaminfo">
                         <h3>Jiayu Wang</h3>
                         <h3>Graphic</h3>
@@ -106,9 +108,9 @@ The primary objective of our project is to enhance the safety, ease, and comfort
     <div class = "section_container">
         <div class="content_container">
             <h1 class="fc_m">LOGO & COLORS</h1>
-            <img class="cardshadow" src="../../assets/art_pages/nebu/logo.png" alt="">
+            <v-lazy-image :src="images['logo.png']" :src-placeholder="images['logo@s.png']"/>
         </div>
-        <img class="sp_background_img" src="../../assets/art_pages/nebu/background_2.jpg" alt="">
+        <v-lazy-image :src="images['background_2.jpg']" :src-placeholder="images['background_2@s.jpg']" class="sp_background_img"/>
     </div> 
 
 
@@ -131,7 +133,7 @@ The primary objective of our project is to enhance the safety, ease, and comfort
             </div>
             <div class="pp_container" style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/901211431?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="nebu_skin"></iframe></div>
         </div>
-        <img class="sp_background_img" src="../../assets/art_pages/nebu/background_2.jpg" alt="">
+        <v-lazy-image :src="images['background_2.jpg']" :src-placeholder="images['background_2@s.jpg']" class="sp_background_img"/>
     </div> 
 
     <div class = "section_container bc_s">
@@ -149,7 +151,7 @@ The primary objective of our project is to enhance the safety, ease, and comfort
         <div class="content_container">
             
             <h1 >DEFINE PROBLEMS</h1>
-            <img src="../../assets/art_pages/nebu/p_1.png" alt="">
+            <v-lazy-image :src="images['p_1.png']" :src-placeholder="images['p_1@s.png']"/>
             <div class="content_block_texts">
                 <h2 >Boredom and Isolation </h2>
                 <h3 >During the extended journey, passengers may experience anxiety and boredom, longing for more entertaining ways to spend their time.</h3>
@@ -159,7 +161,7 @@ The primary objective of our project is to enhance the safety, ease, and comfort
                 <h3 >In zero gravity, passengers may feel physical discomfort and uncertainty about maintaining their health, worrying about the prolonged impact on their bodies.</h3>
             </div>
         </div>
-        <img class="sp_background_img" src="../../assets/art_pages/nebu/background_2.jpg" alt="">
+        <v-lazy-image :src="images['background_2.jpg']" :src-placeholder="images['background_2@s.jpg']" class="sp_background_img"/>
     </div> 
 
 
@@ -171,7 +173,7 @@ The primary objective of our project is to enhance the safety, ease, and comfort
                 <h1>HOLOGRAPHIC PROJECTION</h1>
                 <h3 >Equipped with two retractable hemispherical holographic projectors located at the top and bottom of its body, Nebu is capable of producing 360-degree holographic projections in any space. This feature unlocks endless possibilities for new modes of interaction, significantly enhancing Nebu's interactive capabilities.</h3>
             </div>
-            <img src="../../assets/art_pages/nebu/s1_1.png" alt="">
+            <v-lazy-image :src="images['s1_1.png']" :src-placeholder="images['s1_1@s.png']"/>
         </div>
 
         <div class="content_container">
@@ -179,7 +181,7 @@ The primary objective of our project is to enhance the safety, ease, and comfort
                 <h2>Caption Display & Navigation</h2>
                 <h3 >To enhance communication between Nebu and its users, the words spoken by Nebu will be displayed in speech bubbles above its head. Additionally, when guiding users to their destination, Nebu will project a guiding line in front of the user, providing a more intuitive understanding of the direction to proceed.</h3>
             </div>
-            <img src="../../assets/art_pages/nebu/s1_2.png" alt="">
+            <v-lazy-image :src="images['s1_2.png']" :src-placeholder="images['s1_2@s.png']"/>
         </div>
 
         <div class="content_container">
@@ -187,7 +189,7 @@ The primary objective of our project is to enhance the safety, ease, and comfort
                 <h2>UI Display</h2>
                 <h3 >The holographic projection capability of Nebu takes user interaction to a new level by enabling the projection of complex UI content directly into the air. This innovation not only facilitates effortless reading but also simplifies the user's interaction with the system. By bringing interface into a more accessible, three-dimensional space, it enhances user engagement and ease of use.</h3>
             </div>
-            <img src="../../assets/art_pages/nebu/s1_3.png" alt="">
+            <v-lazy-image :src="images['s1_3.png']" :src-placeholder="images['s1_3@s.png']"/>
         </div>
 
         <div class="content_container">
@@ -195,7 +197,7 @@ The primary objective of our project is to enhance the safety, ease, and comfort
                 <h2>Environmental Simulation</h2>
                 <h3 >To mitigate the mental stress caused by spending extended periods in enclosed spaces, Nebu will use holographic projections to simulate scenes that the user enjoys. The selection process for these projected scenes is automated; Nebu's advanced AI system will analyze the user's preferences to choose the most suitable scene.</h3>
             </div>
-            <img src="../../assets/art_pages/nebu/s1_4.png" alt="">
+            <v-lazy-image :src="images['s1_4.png']" :src-placeholder="images['s1_4@s.png']"/>
         </div>
     </div> 
 
@@ -209,7 +211,7 @@ The primary objective of our project is to enhance the safety, ease, and comfort
             <link_button :prototype_links = 'vp_button_1'/>
             <div class="pp_container" style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/901211459?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="最终输出_1080"></iframe></div>
         </div>
-        <img class="sp_background_img" src="../../assets/art_pages/nebu/background_2.jpg" alt="">
+        <v-lazy-image :src="images['background_2.jpg']" :src-placeholder="images['background_2@s.jpg']" class="sp_background_img"/>
     </div> 
 
     <div class = "section_container bc_b">
@@ -218,27 +220,27 @@ The primary objective of our project is to enhance the safety, ease, and comfort
                 <h2>Environmental Simulation <br> _ Interaction & UX/UI</h2>
                 <h3 >Whenever the user lifts and opens their hand, the control panel is projected out. Conversely, the panel automatically hides when the hand is not in this position.</h3>
             </div>
-            <img src="../../assets/art_pages/nebu/s2_1.png" alt="">
+            <v-lazy-image :src="images['s2_1.png']" :src-placeholder="images['s2_1@s.png']"/>
         </div>
 
         <div class="content_container">
             <h3 >In the interface, users select options by pointing their fingers at the target buttons. The selected button enlarges, and its function is displayed above it for clarity. Simultaneously, the left side of the panel shows the current menu level the user is navigating, ensuring an intuitive and user-friendly experience.</h3>
-            <img src="../../assets/art_pages/nebu/s2_2.png" alt="">
+            <v-lazy-image :src="images['s2_2.png']" :src-placeholder="images['s2_2@s.png']"/>
         </div>
 
         <div class="content_container">
             <h3 >For menus with more than four options, additional buttons are minimized and hidden. Activating the scroll feature is as simple as using two fingers, which then displays a scrollbar at the top of the panel. Users can scroll through the menu to easily locate their desired function.</h3>
-            <img src="../../assets/art_pages/nebu/s2_3.png" alt="">
+            <v-lazy-image :src="images['s2_3.png']" :src-placeholder="images['s2_3@s.png']"/>
         </div>
 
         <div class="content_container">
             <h3 >When users are in the third or fourth level of the menu, they can quickly return to the main menu using the 'Back To' feature. To activate this function, users simply extend a second finger while selecting the 'Back' button. </h3>
-            <img src="../../assets/art_pages/nebu/s2_4.png" alt="">
+            <v-lazy-image :src="images['s2_4.png']" :src-placeholder="images['s2_4@s.png']"/>
         </div>
 
         <div class="content_container">
             <h3 >Additionally, by bending the second finger, users can choose the specific menu level they want to return to, ensuring a swift and intuitive navigation experience.</h3>
-            <img src="../../assets/art_pages/nebu/s2_5.png" alt="">
+            <v-lazy-image :src="images['s2_5.png']" :src-placeholder="images['s2_5@s.png']"/>
         </div>
     </div>
     
@@ -249,7 +251,7 @@ The primary objective of our project is to enhance the safety, ease, and comfort
                 <h3>Designing a commercial space travel experience is a vast and challenging endeavor. Due to time constraints in production, our current focus has been primarily on the visual and interactive design of the companion robot Nebu. Beyond visual customization, we should consider expanding the range of features and activities available on the spaceship to cater to the diverse needs of travelers. Additionally, it would be beneficial to explore the types of activities and accommodations that NebuLine could offer on Mars, ensuring a well-rounded and satisfying experience for all. As for the future, we anticipate delving deeper into the broader aspects of interstellar travel, continually evolving and enhancing the user experience.</h3>
             </div>
             <link_button :prototype_links = 'case_study_button_dark'/>
-            <img src="../../assets/art_pages/nebu/s2_6.png" alt="">
+            <v-lazy-image :src="images['s2_6.png']" :src-placeholder="images['s2_6@s.png']"/>
         </div>
 
         <div class="breakline bc_w1"></div>
@@ -259,9 +261,9 @@ The primary objective of our project is to enhance the safety, ease, and comfort
                 <h1>THANKS</h1>
                 <h3>I would like to extend my special thanks to every member of Team Apogee. Your professionalism and exceptional design skills have significantly contributed to our project over the past fourteen weeks. I am deeply grateful for your dedication and the outstanding work each of you has delivered.</h3>
             </div>
-            <img src="../../assets/art_pages/nebu/team.png" alt="">
+            <v-lazy-image :src="images['team.png']" :src-placeholder="images['team@s.png']"/>
         </div>
-        <img class="sp_background_img" src="../../assets/art_pages/nebu/background_2.jpg" alt="">
+        <v-lazy-image :src="images['background_2.jpg']" :src-placeholder="images['background_2@s.jpg']" class="sp_background_img"/>
     </div> 
 
 
@@ -283,23 +285,14 @@ import the_footer from '../footer.vue'
 import overview_info from '../comps/overview_info.vue'
 import link_button from '../comps/link_button.vue'
 import img_slideshow from '../comps/img_slideshow.vue'
+import VLazyImage from "v-lazy-image"
 //引入hooks
 import {animation_queue_route_in,animation_queue_route_out,animation_queue_before_route_in} from'../../hooks/use_art_page_functions'
 //依赖引入
 import {onMounted,onBeforeMount} from 'vue' 
 import useStore from '../../store/index'
 import { onBeforeRouteLeave } from 'vue-router';
-//img引入
-import r1 from "../../assets/art_pages/nebu/r_1.png"
-import r2 from "../../assets/art_pages/nebu/r_2.png"
-import r3 from "../../assets/art_pages/nebu/r_3.png"
-import r4 from "../../assets/art_pages/nebu/r_4.png"
-import r5 from "../../assets/art_pages/nebu/r_5.png"
-//img引入
-import h1 from "../../assets/art_pages/nebu/h_1.png"
-import h2 from "../../assets/art_pages/nebu/h_2.png"
-import h3 from "../../assets/art_pages/nebu/h_3.png"
-import h4 from "../../assets/art_pages/nebu/h_4.png"
+
 
 
 
@@ -318,6 +311,15 @@ const store = useStore()
     onBeforeRouteLeave((to,from,next)=>{
         animation_queue_route_out(page_id,to,next)
     })
+
+    // 使用 import.meta.globEager 同步导入图片
+    const imageModules = import.meta.globEager('../../assets/art_pages/nebu/*');
+    // 直接使用普通对象存储导入的图片路径
+    const images = Object.entries(imageModules).reduce((acc, [path, module]) => {
+        const imageName = path.split('/').pop();
+        acc[imageName] = module.default;
+        return acc;
+    }, {});
 
 
 
@@ -339,10 +341,10 @@ const store = useStore()
         type:'img',
         resize:false,
         contents:[
-            [h1,"Caption Display & Navigation"],
-            [h2,"Interface Display"],
-            [h3,"Environmental Simulation"],
-            [h4,"Environmental Simulation _ Interaction"],
+            [[images['h_1.png'],images['h_1@s.png']],"Caption Display & Navigation"],
+            [[images['h_2.png'],images['h_2@s.png']],"Interface Display"],
+            [[images['h_3.png'],images['h_3@s.png']],"Environmental Simulation"],
+            [[images['h_4.png'],images['h_4@s.png']],"Environmental Simulation _ Interaction"],
         ]
     }    
 
@@ -353,11 +355,11 @@ const store = useStore()
         type:'img',
         resize:false,
         contents:[
-            [r1,"Research about robot shape"],
-            [r2,"Tracking human physical staus in space"],
-            [r3,"Tracking human physical staus in space"],
-            [r4,"About the maintenance of robots"],
-            [r5,"Issues might encounter in the spaceship"]
+            [[images['r_1.png'],images['r_1@s.png']],"Research about robot shape"],
+            [[images['r_2.png'],images['r_2@s.png']],"Tracking human physical staus in space"],
+            [[images['r_3.png'],images['r_3@s.png']],"Tracking human physical staus in space"],
+            [[images['r_4.png'],images['r_4@s.png']],"About the maintenance of robots"],
+            [[images['r_5.png'],images['r_5@s.png']],"Issues might encounter in the spaceship"]
         ]
     }  
 

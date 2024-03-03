@@ -57,8 +57,6 @@ const w_size = useWindowSize()
       store.scroll_position = window.scrollY
     })
 
-    
-
   })
 
   

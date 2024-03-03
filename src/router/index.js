@@ -10,6 +10,7 @@ import cat from '../components/art_pages/cat_page.vue'
 import nebu from '../components/art_pages/nebu_page.vue'
 
 export default  createRouter({
+  //正式版去掉‘。/’
     history: createWebHashHistory(),
     routes:[
       //main pages

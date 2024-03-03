@@ -124,36 +124,60 @@ const store = useStore()
         //打开屏幕遮罩
         screen_open()
 
-        store.loader_status = true//开启loader
-
-        get_all_imgs()//统计图片
-
-        var stop = watch(()=>store.is_loader_animation_finished,()=>{
-            if(store.is_loader_animation_finished){
-
-                //复位动画状态
-                store.is_loader_animation_finished = false
-                //停止监听
-                stop()
-                //打开导航栏
-                store.is_navbar_open = true
-                //修改导航栏状态到默认状态
-                store.navbar_status = 0
-                //index化thum
-                store.index_array[store.router_page].class = "container_index"
+        //判断是否为第一次打开homepage
+        if (store.homepage_load){
+            //打开导航栏
+            store.is_navbar_open = true
+            //修改导航栏状态到默认状态
+            store.navbar_status = 0
+            //index化thum
+            store.index_array[store.router_page].class = "container_index"
+            setTimeout(()=>{
                 //开启cover的动画
                 store.cover_animation = true
+            },100)
+            
+            
+            setTimeout(()=>{
+                //解锁滚动
+                s_unlock() 
                 
-                setTimeout(()=>{
-                    //解锁滚动
-                    s_unlock() 
+            },600)  
+            
+            //复位路由路径
+            store.is_route_to_work = false
+        }
+        else{
+            store.homepage_load = true
+            //loading bar 代码
+            store.loader_status = true//开启loader
+
+            get_all_imgs()//统计图片
+
+            var stop = watch(()=>store.is_loader_animation_finished,()=>{
+                if(store.is_loader_animation_finished){
+
+                    //复位动画状态
+                    store.is_loader_animation_finished = false
+                    //停止监听
+                    stop()
+                    //打开导航栏
+                    store.is_navbar_open = true
+                    //修改导航栏状态到默认状态
+                    store.navbar_status = 0
+                    //index化thum
+                    store.index_array[store.router_page].class = "container_index"
+                    //开启cover的动画
+                    store.cover_animation = true
                     
-                },600)               
-            }
-        })
-        
-        //复位路由路径
-        store.is_route_to_work = false
+                    setTimeout(()=>{
+                        //解锁滚动
+                        s_unlock() 
+                        
+                    },600)               
+                }
+            })
+        }
         
     })
 
