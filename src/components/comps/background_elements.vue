@@ -38,16 +38,16 @@ let handle_background_size = computed(()=>{
 
     let background = ref(null)
 
-    onMounted(()=>{
-        gsap.to(background.value,{
-            transformOrigin: "top,left",
-            xPercent:-50,
-            yPercent:25,
-            duration:30,
-            repeat:-1,
-            ease:"none",
-        })
-    })
+    // onMounted(()=>{
+    //     gsap.to(background.value,{
+    //         transformOrigin: "top,left",
+    //         xPercent:-50,
+    //         yPercent:25,
+    //         duration:30,
+    //         repeat:-1,
+    //         ease:"none",
+    //     })
+    // })
 
 
 
@@ -61,5 +61,18 @@ let handle_background_size = computed(()=>{
     left:0;
     bottom:0;
     z-index: -1;
+    transform-origin: "top,left";
+    animation: ani 10s forwards;
+}
+
+
+@keyframes ani {
+         from {
+            transform: translate(0, 0);
+        }
+        to {
+            transform: translate(-50%, 25%);
+        }
+    
 }
 </style>
