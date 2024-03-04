@@ -17,14 +17,22 @@
                     <div class="box box3">
                         <img ref="img3" class="imgs" src="../../../assets/thum_cards/design.svg" alt="">
                     </div>
+                    <div style="width:1px;height:5%;"></div>
+                    <div ref="line1" class="breakline"></div>
+                    <div class="img5_con">
+                        <div class="box box4">
+                            <img ref="img5" class="imgs" src="../../../assets/thum_cards/code.svg" alt="">    
+                        </div>
+                    </div>
+                    <div ref="line2" class="breakline"></div>
                 </div>
             
             </div>
             <div ref="arrow_box" class="arrow_animation">
-                <div class="animation_box">
-                    <img src="../../../assets/icons/arrow_downward.svg" alt="">
-                </div>
                 <h3>Explore More</h3>
+                <div class="animation_box">
+                    <img src="../../../assets/thum_cards/arrow.svg" alt="">
+                </div>
             </div>
         </div>
         
@@ -68,8 +76,10 @@ gsap.registerPlugin(CustomEase);
         const img3 = ref(null)
         const arrow_box = ref(null)
         const img4 = ref(null)
+        const img5 =ref(null)
         const con = ref(null)
-
+        const line1 = ref(null)
+        const line2 = ref(null)
         var ani="M0,0 C0.39,0 0.589,1 1,1 "
     var time = 0.2
     
@@ -94,6 +104,24 @@ gsap.registerPlugin(CustomEase);
             })
             gsap.to(img3.value,{
                 yPercent:-100,
+                duration:0.6,
+                ease: CustomEase.create("custom", store.animation_ease_c1),
+                delay:0.6,
+            })
+            gsap.to(img5.value,{
+                yPercent:-100,
+                duration:0.6,
+                ease: CustomEase.create("custom", store.animation_ease_c1),
+                delay:1,
+            })
+            gsap.to(line1.value,{
+                scaleX:1,
+                duration:0.6,
+                ease: CustomEase.create("custom", store.animation_ease_c1),
+                delay:0.6,
+            })
+            gsap.to(line2.value,{
+                scaleX:1,
                 duration:0.6,
                 ease: CustomEase.create("custom", store.animation_ease_c1),
                 delay:0.6,
@@ -209,7 +237,7 @@ gsap.registerPlugin(CustomEase);
     position: absolute;
     width: 80%;
     max-width: 800px;
-    top:30%;
+    top:26%;
     left: 0;
     right:0;
     margin:0 auto;
@@ -231,6 +259,23 @@ gsap.registerPlugin(CustomEase);
 }
 .box3{
     width:40%
+}
+.box4{
+    width:30%;
+}
+.img5_con{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.breakline{
+    width:100%;
+    height:0.5px;
+    background-color: rgba(255, 255, 255, 0.292);
+    margin:16px 0;
+    transform: scaleX(0);
 }
 .imgs{
     width: 100%;
@@ -263,20 +308,19 @@ h4{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap:24px;
+    gap:4px;
     overflow: hidden;
     transform: translateY(200%);
     opacity: 0;
 }
 h3{
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 300;
 }
 .animation_box{
-    width:30px;
-    border: 2px solid white;
+    width:80px;
     border-radius: 30px;
-    height:60px;
+    height:30px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -286,7 +330,7 @@ h3{
     
 }
 .animation_box > img{
-    width:20px;
+    width:40px;
     position:relative;
     animation:arrow linear 1.5s infinite;
 }
@@ -322,8 +366,9 @@ transform: translateY(120%);
 }
 
 @keyframes arrow {
-    from{top:-40px}
-    to{top:60px}
+    0%{top:-40px;opacity: 0;}
+    50%{opacity: 1;}
+    100%{top:40px;opacity: 0;}
 }
 
 
@@ -337,11 +382,14 @@ transform: translateY(120%);
         gap:16px;
     }
     .animation_box{
-        width:20px;
+        width:80px;
         height:40px;
     }
     .animation_box > img{
-        width:13px;
+        width:40px;
+    }
+    .box4{
+        width:50%;
     }
 }
 </style>

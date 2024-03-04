@@ -8,7 +8,6 @@
 <script setup>
 //依赖引入
 import {computed,onMounted,ref} from 'vue'
-import { gsap } from 'gsap/gsap-core'
 import useStore from '../../store/index'
 const store = useStore()
 
