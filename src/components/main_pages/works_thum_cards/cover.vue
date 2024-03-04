@@ -258,7 +258,8 @@ gsap.registerPlugin(CustomEase);
     margin-top:-5%;
 }
 .box3{
-    width:40%
+    width:40%;
+    margin-top:1%;
 }
 .box4{
     width:30%;
