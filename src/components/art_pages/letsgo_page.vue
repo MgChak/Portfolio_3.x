@@ -27,22 +27,31 @@
     </div> 
 
 
-    <div class = "section_container bc_m">
-        <div class="content_container">
-            <h1 class="fc_s">STYLE GUIDE</h1>
-            <img_slideshow :slideshow_arr = 'style_arry'/> 
-        </div>
-    </div> 
-
-
 
     <div class = "section_container bc_s">
-        <div class="content_container">
-            <div class="content_block_flex">
-                <h1>FEATURE HIGHLIGHTS</h1>
-                <link_button :prototype_links = 'case_study_button_dark'/>
+        <div class="content_container" style="gap:100px">
+            <div class="content_block_texts_24">
+                <div class="content_block_flex">
+                    <h1><span class="AI">AI</span> POWERD<br>FEATURE HIGHLIGHTS</h1>
+                    <link_button :prototype_links = 'case_study_button_dark'/>
+                </div>
+                <h3>Planning group travel can be challenging for users due to the lack of adequate tools and resources. As a result, users often have a poor experience when trying to plan trips with a team.</h3>
+                <vimeo_container :vimeolink="{radio:16,link:'https://player.vimeo.com/video/920302342?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
             </div>
-            <img_slideshow :slideshow_arr = 'highlight_arry'/> 
+            <div class="content_block_row_defult">
+                <div class="content_block_texts">
+                    <h2>Conversation Scanner</h2>
+                    <h3>Planning group travel can be challenging for users due to the lack of adequate tools and resources. As a result, users often have a poor experience when trying to plan trips with a team.</h3>
+                </div>
+                <vimeo_container class="content_block_row_iframe" :vimeolink="{radio:4,link:'https://player.vimeo.com/video/920279092?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
+            </div>
+            <div class="content_block_row_defult content_block_row_flex-reverse">
+                <div class="content_block_texts">
+                    <h2>Conversation Scanner</h2>
+                    <h3>Planning group travel can be challenging for users due to the lack of adequate tools and resources. As a result, users often have a poor experience when trying to plan trips with a team.</h3>
+                </div>
+                <vimeo_container class="content_block_row_iframe" :vimeolink="{radio:4,link:'https://player.vimeo.com/video/920279110?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
+            </div>
         </div>
     </div> 
 
@@ -306,6 +315,13 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
        
     </div>
 
+    <div class = "section_container bc_s">
+        <div class="content_container">
+            <h1 class="fc_m">STYLE GUIDE</h1>
+            <img_slideshow :slideshow_arr = 'style_arry'/> 
+        </div>
+    </div> 
+
 
     <div class = "section_container bc_m">
         <div class="content_container">
@@ -331,6 +347,14 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
 </template>
 
 <script setup>
+//依赖引入
+import useStore from '../../store/index'
+import { onBeforeRouteLeave } from 'vue-router'
+import {onMounted,onBeforeMount} from 'vue' 
+
+//hook引入
+import {animation_queue_route_in,animation_queue_route_out,animation_queue_before_route_in} from'../../hooks/use_art_page_functions.js'
+
 //组件引入
 import letsgo from'../main_pages/works_thum_cards/letsgo.vue'
 import nebu from'../main_pages/works_thum_cards/nebu.vue'
@@ -339,15 +363,12 @@ import overview_info from '../comps/overview_info.vue'
 import link_button from '../comps/link_button.vue'
 import img_slideshow from '../comps/img_slideshow.vue'
 import VLazyImage from "v-lazy-image"
+import vimeo_container from "../comps/vimeo_container.vue"
 
 
-//hook引入
-import {animation_queue_route_in,animation_queue_route_out,animation_queue_before_route_in} from'../../hooks/use_art_page_functions'
 
-//依赖引入
-import {onMounted,onBeforeMount} from 'vue' 
-import useStore from '../../store/index'
-import { onBeforeRouteLeave } from 'vue-router';
+
+
 
 
 
@@ -390,28 +411,13 @@ const store = useStore()
 
     //高光功能
 
-    let v_1 = "https://player.vimeo.com/video/901210718?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-    let v_2 = "https://player.vimeo.com/video/901210736?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-    let v_3 = "https://player.vimeo.com/video/901210750?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-    let v_4 = "https://player.vimeo.com/video/901210768?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-    let v_5 = "https://player.vimeo.com/video/901210786?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-
-    let highlight_arry = {
-        color:'var(--p-color-main)',
-        type:'vimeo',
-        resize:true,
-        contents:[
-            [v_1,"Searching Result Cards"],
-            [v_2,"Treval Plan Detail Page"],
-            [v_3,"Ai Assistant"],
-            [v_4,"Ai Assistant"],
-            [v_5,"Ai Assistant"]
-        ]
-    }    
+    let highlight_arry_1={
+        radio:4,link:'https://player.vimeo.com/video/920279092?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
+    } 
 
         //style guid
     let style_arry = {
-        color:'var(--p-color-sub)',
+        color:'var(--p-color-main)',
         type:'img',
         resize:false,
         contents:[
@@ -547,6 +553,7 @@ const store = useStore()
 
     --p-color-main:#B1EF62;
     --p-color-sub:#191C19;
+    --p-color-sub-2:#171717;
     --p-color-font-white-100:rgb(248, 251, 246);
     --p-color-font-white-60: rgba(248, 251, 246, 0.60);
   
@@ -637,6 +644,19 @@ h4{
     flex-direction: column;
     gap:24px
 }
+.content_block_row_defult{
+    width:100%;
+    display: flex;
+    gap:24px
+}
+.content_block_row_iframe {
+    width:100%;
+    max-width: 550px;
+    flex:none;
+    display: flex;
+    flex-direction: column;
+}
+
 
 .content_block_buttons{
     width:100%;
@@ -707,6 +727,9 @@ img{
 .bc_s{
     background:var(--p-color-sub)
 }
+.bc_s{
+    background:var(--p-color-sub-2)
+}
 .bc_b{
     background:black;
 }
@@ -717,9 +740,27 @@ img{
     background:var(--p-color-font-white-100);
 }
 
+.AI{
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 80px;
+    background: linear-gradient(53deg, #81FF13 -0.36%, #12FAFA 42.8%, #F798FF 83.44%);
+    background-size: 100% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    /* animation: gradient-animation 1s linear infinite; */
+}
+@keyframes gradient-animation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
-
-
+.content_block_row_flex-reverse{
+    flex-direction: row-reverse;
+}
 
 @media (max-width: 800px){
 
@@ -744,6 +785,12 @@ h4{
 
 }
 
+.content_block_row_flex-reverse{
+    flex-direction: column;
+}
+.content_block_row_defult{
+    flex-direction: column;
+}
 
 }
 
