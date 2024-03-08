@@ -63,7 +63,7 @@ const store = useStore()
       ([{ isIntersecting }]) => {
         is_show.value = isIntersecting
       },{
-        threshold:0.8
+        threshold:0.95
       }
     )
 

@@ -29,28 +29,48 @@
 
 
     <div class = "section_container bc_s">
-        <div class="content_container" style="gap:100px">
+        <div class="content_container" style="gap:80px">
             <div class="content_block_texts_24">
                 <div class="content_block_flex">
                     <h1><span class="AI">AI</span> POWERD<br>FEATURE HIGHLIGHTS</h1>
                     <link_button :prototype_links = 'case_study_button_dark'/>
                 </div>
-                <h3>Planning group travel can be challenging for users due to the lack of adequate tools and resources. As a result, users often have a poor experience when trying to plan trips with a team.</h3>
+                <h3>Let's Go leverages its integrated AI and vast database to simplify travel preparations for users. It aims to make journey planning more efficient and less stressful.</h3>
                 <vimeo_container :vimeolink="{radio:16,link:'https://player.vimeo.com/video/920302342?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
             </div>
+            <div class="breakline bc_w6 center"></div>
             <div class="content_block_row_defult">
                 <div class="content_block_texts">
-                    <h2>Conversation Scanner</h2>
-                    <h3>Planning group travel can be challenging for users due to the lack of adequate tools and resources. As a result, users often have a poor experience when trying to plan trips with a team.</h3>
+                    <h2>AI Generator <br>
+                        Based on Conversation</h2>
+                    <h3>Let's Go will automatically scan and analyze the chat content within groups, and based on the results, it will complete and generate corresponding events.</h3>
                 </div>
                 <vimeo_container class="content_block_row_iframe" :vimeolink="{radio:4,link:'https://player.vimeo.com/video/920279092?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
             </div>
+            <div class="breakline bc_w6 center"></div>
             <div class="content_block_row_defult content_block_row_flex-reverse">
                 <div class="content_block_texts">
-                    <h2>Conversation Scanner</h2>
-                    <h3>Planning group travel can be challenging for users due to the lack of adequate tools and resources. As a result, users often have a poor experience when trying to plan trips with a team.</h3>
+                    <h2>Group Voting</h2>
+                    <h3>The AI initiates a vote on event suggestions to match group preferences. Events confirmed by over half the members are added to the plan.</h3>
                 </div>
                 <vimeo_container class="content_block_row_iframe" :vimeolink="{radio:4,link:'https://player.vimeo.com/video/920279110?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
+            </div>
+            <div class="breakline bc_w6 center"></div>
+            <div class="content_block_row_defult">
+                <div class="content_block_texts">
+                    <h2>AI Packing <br>
+                    Recommendation</h2>
+                    <h3>The AI recommends items to carry based on the travel destination, showing how many travelers have taken these items there before, for user reference.</h3>
+                </div>
+                <vimeo_container class="content_block_row_iframe" :vimeolink="{radio:4,link:'https://player.vimeo.com/video/920618338?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
+            </div>
+            <div class="breakline bc_w6 center"></div>
+            <div class="content_block_row_defult content_block_row_flex-reverse">
+                <div class="content_block_texts">
+                    <h2>AI Packing Sanner</h2>
+                    <h3>The AI recommends items to carry based on the travel destination, showing how many travelers have taken these items there before, for user reference.</h3>
+                </div>
+                <vimeo_container class="content_block_row_iframe" :vimeolink="{radio:4,link:'https://player.vimeo.com/video/920749676?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
             </div>
         </div>
     </div> 
@@ -570,7 +590,7 @@ h1{
 h2{
     font-size: 30px;
     font-style: normal;
-    font-weight: 900;
+    font-weight: 600;
     line-height: 30px;
     color:var(--p-color-font-white-100);
 }
@@ -647,7 +667,8 @@ h4{
 .content_block_row_defult{
     width:100%;
     display: flex;
-    gap:24px
+    gap:24px;
+    align-items: center;
 }
 .content_block_row_iframe {
     width:100%;
