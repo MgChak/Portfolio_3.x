@@ -67,7 +67,7 @@
             <div class="breakline bc_w6 center"></div>
             <div class="content_block_row_defult content_block_row_flex-reverse">
                 <div class="content_block_texts">
-                    <h2>AI Packing Sanner</h2>
+                    <h2>AI Packing Scanner</h2>
                     <h3>The AI recommends items to carry based on the travel destination, showing how many travelers have taken these items there before, for user reference.</h3>
                 </div>
                 <vimeo_container class="content_block_row_iframe" :vimeolink="{radio:4,link:'https://player.vimeo.com/video/920749676?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
