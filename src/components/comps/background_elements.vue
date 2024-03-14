@@ -28,7 +28,7 @@ let handle_background_size = computed(()=>{
         return {
             width:w+"px",
             height:h+"px",
-            ["background-size"]:b+"px"
+            ["background-size"]:b*0.6+"px"
         }
     })
 

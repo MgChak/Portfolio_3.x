@@ -1,14 +1,12 @@
 <template>
+
+
     <div class="main_container" v-if="props.infor_obj.type=='main'">
-        <div v-if = "store.page_width>=750" class="list_container" :style="{transform : 'translateX('+ store.bar_move +'%)'}" ref="el">
-            <div v-for = "i in list_length" class="item_container">
+        <div v-if = "store.page_width>=750" class="list_container" ref="el">
+            <div class="item_container">
                 <h1>{{ props.infor_obj.text}}</h1>
                 <div class="sub_container">
                     <h2>{{ props.infor_obj.bio }}</h2>
-                    <div class="time_container">
-                        <!-- <h2>{{ props.infor_obj.time }}</h2> -->
-                        <div class="time_line"></div>
-                    </div>
                 </div> 
             </div>
         </div>
@@ -20,18 +18,6 @@
                     <h2>{{ props.infor_obj.bio }}</h2>
                     
                 </div> 
-            </div>
-        </div>
-        
-    </div>
-    <div class="main_container_sub" v-if="props.infor_obj.type=='sub' && store.page_width>=750">
-        <div  class="list_container_sub" :style="{right : bar_move +'%'}" ref="el">
-            <div v-for = "i in list_length" class="item_container_sub">
-                <h3>{{ props.infor_obj.text}}</h3>
-                <h3>{{ props.infor_obj.bio }}</h3>
-                <!-- <h3>{{ props.infor_obj.time }}</h3> -->
-                <div class="time_line_sub"></div>
-                
             </div>
         </div>
         
@@ -54,13 +40,13 @@ const store = useStore()
     let scroll_animation = ref('var(--animation-slow)')
 
     //获取页面宽度和修改列表长度
-    const el = ref(null)
-    const { width } = useElementSize(el)
-    watchPostEffect(()=>{
-        if (width.value<store.page_width*2){
-            list_length.value = list_length.value + 5
-        }
-    })
+    // const el = ref(null)
+    // const { width } = useElementSize(el)
+    // watchPostEffect(()=>{
+    //     if (width.value<store.page_width*2){
+    //         list_length.value = list_length.value + 5
+    //     }
+    // })
 
 </script>
 
@@ -80,6 +66,7 @@ const store = useStore()
 }
 .list_container{
     display: flex;
+    width:100%;
     gap:40px;
     position:relative;
     transition:var(--animation-slow);
@@ -93,7 +80,9 @@ const store = useStore()
 }
 .item_container{
     display: flex;
+    width:100%;
     align-items: center;
+    justify-content: space-between;
     gap:16px;
     flex:none;
 }
@@ -126,7 +115,7 @@ const store = useStore()
     height:20px;
 }
 h1{
-    font-size: 56px;
+    font-size: 45px;
     line-height: 80px;
     font-weight: 600;
     text-transform: uppercase;
@@ -149,23 +138,7 @@ h3{
     flex:none;
 }
 
-@media (max-width: 1280px) {
-    h1{
-    font-size: 50px;
-    line-height: 80px;
-    font-weight: 600;
-    text-transform: uppercase;
-    color:var(--main-light-100);
-    flex:none;
-}
-    h2{
-        font-size: 18px;
-        font-weight: 400;
-        text-transform: uppercase;
-        color:var(--main-light-100);
-        flex:none;
-    }
-}
+
 
 @media (max-width: 900px) {
     h1{

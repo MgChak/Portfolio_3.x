@@ -2,12 +2,12 @@
 
     <div class="container container_expand" :style="{height:cover_height}" ref="el" >
         <div class="flex_container" :style="{height:flex_height}">
-            <div class="el_conatiner" :style = "{width:el_container_size,height:el_container_size}">
+            <div class="el_conatiner" >
                 <div class="title_container">
-                    <div class="bobo_con">
+                    <!-- <div class="bobo_con">
                         <img ref="img4" class="imgs img3" src="../../../assets/thum_cards/bobo.svg" alt="">   
                         <div ref="con" class="bobo_back"></div>
-                    </div>
+                    </div> -->
                     <div class="box box1">
                         <img ref="img123" class="imgs" src="../../../assets/thum_cards/hi.svg" alt="">
                     </div>
@@ -18,22 +18,22 @@
                         <img ref="img3" class="imgs" src="../../../assets/thum_cards/design.svg" alt="">
                     </div>
                     <div style="width:1px;height:5%;"></div>
-                    <div ref="line1" class="breakline"></div>
+                    <!-- <div ref="line1" class="breakline"></div>
                     <div class="img5_con">
                         <div class="box box4">
                             <img ref="img5" class="imgs" src="../../../assets/thum_cards/code.svg" alt="">    
                         </div>
                     </div>
-                    <div ref="line2" class="breakline"></div>
+                    <div ref="line2" class="breakline"></div> -->
                 </div>
             
             </div>
-            <div ref="arrow_box" class="arrow_animation">
+            <!-- <div ref="arrow_box" class="arrow_animation">
                 <h3>Explore More</h3>
                 <div class="animation_box">
                     <img src="../../../assets/thum_cards/arrow.svg" alt="">
                 </div>
-            </div>
+            </div> -->
         </div>
         
         <div class="background_holder" >
@@ -66,8 +66,8 @@ gsap.registerPlugin(CustomEase);
     let el_container_size = computed(()=>handle_el_container_size(width, height))
 
     //使用屏幕的真实高度
-    let cover_height = '100vh'//
-    let flex_height = computed(()=>store.page_height +'px')
+    let cover_height = '60vh'//
+    let flex_height = '100%'
 
 
     //动画
@@ -75,9 +75,9 @@ gsap.registerPlugin(CustomEase);
         const img2 = ref(null)
         const img3 = ref(null)
         const arrow_box = ref(null)
-        const img4 = ref(null)
+        // const img4 = ref(null)
         const img5 =ref(null)
-        const con = ref(null)
+        // const con = ref(null)
         const line1 = ref(null)
         const line2 = ref(null)
         var ani="M0,0 C0.39,0 0.589,1 1,1 "
@@ -132,58 +132,58 @@ gsap.registerPlugin(CustomEase);
                 duration:0.6,
                 ease: CustomEase.create("custom", store.animation_ease_c1),
             })
-            gsap.to(con.value,{
-                    yPercent:-120,
-                    duration:0.3,
-                    ease: CustomEase.create("custom", ani),
-                    delay:0.6,
-            })
+            // gsap.to(con.value,{
+            //         yPercent:-120,
+            //         duration:0.3,
+            //         ease: CustomEase.create("custom", ani),
+            //         delay:0.6,
+            // })
 
-            var tl = gsap.timeline()
-            tl.to(img4.value,{
-                    yPercent:-118,
-                    scaleY:0.7,
-                    scaleX:1.3,
-                    duration:0.3,
-                    ease: CustomEase.create("custom", ani),
-                    delay:0.6,
-                })
-                tl.to(img4.value,{
-                    scaleY:1.2,
-                    scaleX:0.8,
-                    duration:time,
-                    ease: CustomEase.create("custom", ani),
-                })
-                tl.to(img4.value,{
-                    scaleY:0.8,
-                    scaleX:1.2,
-                    duration:time,
-                    ease: CustomEase.create("custom", ani),
-                })
-                tl.to(img4.value,{
-                    scaleY:1.1,
-                    scaleX:0.9,
-                    duration:time,
-                    ease: CustomEase.create("custom", ani),
-                })
-                tl.to(img4.value,{
-                    scaleY:0.95,
-                    scaleX:1.05,
-                    duration:time,
-                    ease: CustomEase.create("custom", ani),
-                })
-                tl.to(img4.value,{
-                    scaleY:1.02,
-                    scaleX:0.98,
-                    duration:time,
-                    ease: CustomEase.create("custom", ani),
-                })
-                tl.to(img4.value,{
-                    scaleY:1,
-                    scaleX:1,
-                    duration:time,
-                    ease: CustomEase.create("custom", ani),
-                })
+            // var tl = gsap.timeline()
+            // tl.to(img4.value,{
+            //         yPercent:-118,
+            //         scaleY:0.7,
+            //         scaleX:1.3,
+            //         duration:0.3,
+            //         ease: CustomEase.create("custom", ani),
+            //         delay:0.6,
+            //     })
+            //     tl.to(img4.value,{
+            //         scaleY:1.2,
+            //         scaleX:0.8,
+            //         duration:time,
+            //         ease: CustomEase.create("custom", ani),
+            //     })
+            //     tl.to(img4.value,{
+            //         scaleY:0.8,
+            //         scaleX:1.2,
+            //         duration:time,
+            //         ease: CustomEase.create("custom", ani),
+            //     })
+            //     tl.to(img4.value,{
+            //         scaleY:1.1,
+            //         scaleX:0.9,
+            //         duration:time,
+            //         ease: CustomEase.create("custom", ani),
+            //     })
+            //     tl.to(img4.value,{
+            //         scaleY:0.95,
+            //         scaleX:1.05,
+            //         duration:time,
+            //         ease: CustomEase.create("custom", ani),
+            //     })
+            //     tl.to(img4.value,{
+            //         scaleY:1.02,
+            //         scaleX:0.98,
+            //         duration:time,
+            //         ease: CustomEase.create("custom", ani),
+            //     })
+            //     tl.to(img4.value,{
+            //         scaleY:1,
+            //         scaleX:1,
+            //         duration:time,
+            //         ease: CustomEase.create("custom", ani),
+            //     })
            
             
             
@@ -207,6 +207,7 @@ gsap.registerPlugin(CustomEase);
     align-items: center; */
     position:relative;
     width:100vw;
+    background: linear-gradient(0deg, #000 0%, #454545 100%);
 
 }
 .flex_container{
@@ -221,25 +222,29 @@ gsap.registerPlugin(CustomEase);
     position:absolute;
     left:0;
     bottom:0;
-    z-index: -1;
+    z-index: 0;
     width:100%;
-    height:100%;
+    height:100vh;
+    opacity: 0.5;
 }
 
 .el_conatiner{
     position:relative;
+    max-width: 800px;
+    transform: translateY(50px);
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
     /* background-color: green; */
 }
 
 .title_container{
     display: flex;
     flex-direction: column;
-    position: absolute;
-    width: 80%;
-    max-width: 800px;
-    top:26%;
-    left: 0;
-    right:0;
+    width: 100%;
+    
     margin:0 auto;
     z-index: 1;
 

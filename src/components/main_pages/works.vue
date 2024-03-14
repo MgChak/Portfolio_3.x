@@ -6,16 +6,15 @@
 
 
         <cover  @pointerover=" handle_card_hover('hidden',$event)"/>
-
+        <div style ="{width:1px;height:40px;}"></div>
         <div class = 'comp_container' 
             v-for="i in store.index_array" :key="i.id" 
+            >
+            <component class="comp" :class="store.is_thum_hover? 'comp_h':''" :is="render_comp(i.comp)"
             @click="handle_card_click(i.id)"
             @pointerover=" handle_card_hover('view_project',$event)"
             @pointerleave=" handle_card_hover('hidden',$event)" 
-            >
-
-            
-            <component class="comp" :is="render_comp(i.comp)"/>
+            />
 
            
             <div class="bio_container">
@@ -101,7 +100,6 @@ const store = useStore()
                 }
             })
         }
-        
        
     })
 
@@ -141,6 +139,8 @@ const store = useStore()
             setTimeout(()=>{
                 //解锁滚动
                 s_unlock() 
+                //解锁thumb 的hover
+                store.is_thum_hover = true
                 
             },600)  
             
@@ -173,6 +173,8 @@ const store = useStore()
                     setTimeout(()=>{
                         //解锁滚动
                         s_unlock() 
+                        //解锁thumb 的hover
+                        store.is_thum_hover = true
                         
                     },600)               
                 }
@@ -247,6 +249,8 @@ const store = useStore()
     
     //处理点击事件-触发翻页动画队列    
     let handle_card_click = (id)=>{
+        //锁定thumb 的hover
+        store.is_thum_hover = false
         
         var index = store.index_array.findIndex((i)=>i.id == id)
         router.push(store.index_array[index].navto) 
@@ -260,15 +264,7 @@ const store = useStore()
             }
     }
 
-    //计算infor_bar滚动
-    const infor_bar_scroll = () => {
-        var a = store.scroll_position / document.documentElement.scrollHeight;
-        store.bar_move = a.toFixed(2) * -100;
-    }
 
-    watch(()=>store.scroll_position,()=>{
-        infor_bar_scroll()
-    })
 
 
 </script>
@@ -288,16 +284,19 @@ const store = useStore()
     position:absolute;
     left:0;
     overflow: hidden;
+    background-color: black;
 
 }
 .comp_container{
     display:flex;
     flex-direction: column;
+    align-items: center;
     gap:16px;
     width:100%;
 }
 .bio_container{
-    width:100%;
+    width:80%;
+    max-width: 1200px;
     margin: 0 auto;
     display:flex;
     flex-direction: column;
@@ -320,16 +319,24 @@ h2{
     color:var(--main-light-100);
 }
 .breakline{
-    width:100vw;
+    margin:40px 0;
+    width:50%;
+    max-width: 600px;
     height:1px;
     background-color:rgba(255, 255, 255, 0.614);
-    margin-bottom:8px;
 }
 @media (max-width: 750px) {
     .breakline{
         height:1px;
     }
     
+}
+.comp_h{
+    transition: all 0.3s;
+}
+.comp_h:hover:hover{
+    transform: scale(1.05);
+    transition: all 0.3s;
 }
 </style>
 

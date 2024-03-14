@@ -24,6 +24,15 @@ const store = useStore()
     const { width, height } = useElementSize(el)
     let el_container_size = computed(()=>handle_el_container_size(width, height))
 
+    let thum_height = ()=>{
+        if (width.value >=900){
+            return width.value*7.5/16 + "px"
+        }else{
+            return width.value*3/4 + "px"
+        }
+        
+    }
+
     const img =ref(null)
 
     watchPostEffect(()=>{
@@ -34,6 +43,8 @@ const store = useStore()
                     el:el,
                     animations:{
                         height:'100vh',
+                        width:'100%',
+                        maxWidth:'100%',
                     }
                 },{
                     el:img,
@@ -49,6 +60,8 @@ const store = useStore()
                     el:el,
                     animations:{
                         height:'55vh',
+                        width:'100%',
+                        maxWidth:'100%',
                     }
                 },{
                     el:img,
@@ -61,7 +74,11 @@ const store = useStore()
             index:[{
                     el:el,
                     animations:{
-                        height:'70vh',
+                        height:thum_height(),
+                        width:'80%',
+                        maxWidth:'1200px',
+                        borderRadius:'20px',
+
                     }
                 },{
                     el:img,
