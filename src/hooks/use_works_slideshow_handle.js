@@ -43,10 +43,10 @@ let thum_ani_render = (name,data_obj)=>{
     
 
     let animation_setting_normal = {//通用动画设置
-        duration: 0.6,
-        ease: CustomEase.create("custom", store.animation_ease_c1),
+        duration: 0.4,
+        ease:"ease"
     }
-
+// CustomEase.create("custom", store.animation_ease_c1)
 
     let animation_render_loop = (type, render_data)=>{//根据传入的数据量，生成等量的gasp动画
         if (type == "set"){

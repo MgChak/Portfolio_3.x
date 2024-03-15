@@ -158,7 +158,7 @@ const store = useStore()
             animation_queue_click_route_out(index)
             setTimeout(()=>{
                 next()        
-            },650) 
+            },450) 
         }else{
             //遮挡屏幕
             screen_cover()
