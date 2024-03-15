@@ -49,7 +49,7 @@ import {tracker_toggle} from '../../hooks/use_mouse_tracker_toggle'
 import {scrollto} from '../../hooks/use_scroll'
 
 //依赖引入
-import {onMounted,onBeforeMount,watch, nextTick} from 'vue'
+import {onMounted,onBeforeMount} from 'vue'
 import { onBeforeRouteLeave } from 'vue-router'
 import useStore from '../../store/index.js'
 import router from '../../router'

@@ -45,7 +45,6 @@
 import useStore from '../../store/index'
 import com_footer from '../com_footer.vue'
 import { s_lock,s_unlock } from '../../hooks/use_page_scroll_locker'
-import {get_all_imgs} from'../../hooks/use_art_page_functions'
 import {onMounted,ref,onBeforeMount,watch,reactive} from 'vue'
 import { onBeforeRouteLeave } from 'vue-router'
 import {scrollto} from '../../hooks/use_scroll'

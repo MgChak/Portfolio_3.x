@@ -186,19 +186,6 @@
             }
         })
 
-        // let navbar_status_style = computed(()=>{
-        //     if (store.is_navbar_open){
-        //         return {top:'0px',transition:'top 0.6s var(--animation-slow-cubic)'}
-        //     }else{
-        //         return {top:'-120px',transition:'all 0.3s ease-out'}
-        //     }
-        // })
-
-
-
-
-
-
 
         //根据不同状态修改导航栏classname
         let navbar_status_class = computed(()=>{

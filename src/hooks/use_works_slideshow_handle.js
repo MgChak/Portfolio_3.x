@@ -6,18 +6,6 @@ import { CustomEase } from "gsap/CustomEase";
 
 let handle_el_container_size = (width, height)=>{
     const store = useStore()
-    // if(card_id == store.get_path_now_id){
-    //     if (store.page_height <= store.page_width){
-    //         return '100vh'
-    //     }else{
-    //         return '100vw'
-    //     }
-    // }else if (store.page_height <= store.page_width){
-
-    //     return '40vh'
-    // }else{
-    //     return '40vw'
-    // }
 
     if (width.value <= height.value){
          

@@ -42,18 +42,6 @@ export default defineStore("Main",{
         //=============================
         page_scroll_locker_status:false,
         //=============================
-        //加载器状态更新
-        //=============================
-        loader_status:false,
-        loader_num:0,
-        is_loader_animation_finished:false,
-        cover_animation:false,
-        about_animation:false,
-        about_animation_step2:false,
-
-        homepage_load:false,
-        aboutpage_laod:false,
-        //=============================
         //mouse_tracker的依赖状态
         //=============================
             //鼠标坐标
