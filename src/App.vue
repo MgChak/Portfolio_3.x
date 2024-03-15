@@ -142,11 +142,11 @@ const w_size = useWindowSize()
 
 .show{
   opacity: 0;
-  transition: all 0.6s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .cover{
   opacity: 1;
-  transition: all 0.6s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 

@@ -1,13 +1,10 @@
 <template>
         <div class="container background" ref="el" :style="z_index">
             <div class="el_conatiner" :style = "{width:el_container_size,height:el_container_size}"> 
-                <img class="img1" ref="img1" src="../../../assets/thum_cards/nebu/01.png" alt="">
-                <img class="img2" ref="img2" src="../../../assets/thum_cards/nebu/02.png" alt="">
-                <img class="img3" ref="img3" src="../../../assets/thum_cards/nebu/03.png" alt="">
-                <img class="img4" ref="img4" src="../../../assets/thum_cards/nebu/04.png" alt="">
-                <img class="img5" ref="img5" src="../../../assets/thum_cards/nebu/05.png" alt="">
+                <img class="img1" ref="img1" src="../../../assets/thum_cards/nebu/hand.png" alt="">
+                <img class="img2" ref="img2" src="../../../assets/thum_cards/nebu/nebu.png" alt="">
             </div>
-            <img class="background_img" src="../../../assets/thum_cards/nebu/backgournd.jpg" alt="">
+            
         </div>
     
 </template>
@@ -40,8 +37,7 @@ const store = useStore()
     const img1= ref(null)
     const img2= ref(null)
     const img3= ref(null)
-    const img4= ref(null)
-    const img5= ref(null)
+
 
     //监听+执行动画
     watchPostEffect(()=>{
@@ -68,27 +64,6 @@ const store = useStore()
                         yPercent: -28,
                         scale:1.5,
                     }
-                },{
-                    el:img3,
-                    animations:{
-                        xPercent: -55,
-                        yPercent: -46,
-                        scale:0.2,
-                    }
-                },{
-                    el:img4,
-                    animations:{
-                        xPercent: -28,
-                        yPercent: 26,
-                        scale:1,
-                    }
-                },{
-                    el:img5,
-                    animations:{
-                        xPercent: -1,
-                        yPercent: 9,
-                        scale:0.7,
-                    }
                 }],
             article:[{
                     el:el,
@@ -100,37 +75,16 @@ const store = useStore()
                 },{
                     el:img1,
                     animations:{
-                        xPercent: -8,
-                        yPercent: -1,
-                        scale:0.5,
+                        xPercent: 40,
+                        yPercent: 15,
+                        scale:1.8,
                     }
                 },{
                     el:img2,
                     animations:{
-                        xPercent: 13,
-                        yPercent: -12,
-                        scale:1.2,
-                    }
-                },{
-                    el:img3,
-                    animations:{
-                        xPercent: -55,
-                        yPercent: -46,
+                        xPercent: -30,
+                        yPercent: -20,
                         scale:0.3,
-                    }
-                },{
-                    el:img4,
-                    animations:{
-                        xPercent: -19,
-                        yPercent: 19,
-                        scale:0.8,
-                    }
-                },{
-                    el:img5,
-                    animations:{
-                        xPercent: 6,
-                        yPercent: 8,
-                        scale:0.7,
                     }
                 }],
             index:[{
@@ -145,37 +99,16 @@ const store = useStore()
                 },{
                     el:img1,
                     animations:{
-                        xPercent: -8,
-                        yPercent: -1,
-                        scale:0.5,
+                        xPercent: 40,
+                        yPercent: 15,
+                        scale:1.8,
                     }
                 },{
                     el:img2,
                     animations:{
-                        xPercent: 13,
-                        yPercent: -12,
-                        scale:1.2,
-                    }
-                },{
-                    el:img3,
-                    animations:{
-                        xPercent: -55,
-                        yPercent: -46,
+                        xPercent: -30,
+                        yPercent: -20,
                         scale:0.3,
-                    }
-                },{
-                    el:img4,
-                    animations:{
-                        xPercent: -19,
-                        yPercent: 19,
-                        scale:0.8,
-                    }
-                },{
-                    el:img5,
-                    animations:{
-                        xPercent: 6,
-                        yPercent: 8,
-                        scale:0.7,
                     }
                 }]
         })
@@ -192,6 +125,10 @@ const store = useStore()
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url("../../../assets/thum_cards/nebu/back.jpg");
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .el_conatiner{
     position:relative;
@@ -201,7 +138,7 @@ const store = useStore()
 }
 
 img{
-    width:50%;
+    width:100%;
     position:absolute;
     
 }
@@ -213,27 +150,17 @@ img{
     z-index: 0;
     left:0;
     bottom: 0;
+    background-color: black;
 }
 .img1{
-    left:0;
-    top:0;
+    right:0;
+    bottom:0;
 }
 .img2{
-    right:0;
+    left:0;
     top:0;
 }
-.img3{
-    left:50%;
-    top:50%;
-}
-.img4{
-    left:0;
-    bottom:0;
-}
-.img5{
-    right:0;
-    bottom:0;
-}
+
 
 
 </style>

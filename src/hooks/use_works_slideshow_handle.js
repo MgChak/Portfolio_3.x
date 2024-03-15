@@ -43,7 +43,7 @@ let thum_ani_render = (name,data_obj)=>{
     
 
     let animation_setting_normal = {//通用动画设置
-        duration: 0.4,
+        duration: 0.3,
         ease:"ease"
     }
 // CustomEase.create("custom", store.animation_ease_c1)

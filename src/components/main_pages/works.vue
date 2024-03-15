@@ -49,7 +49,7 @@ import {tracker_toggle} from '../../hooks/use_mouse_tracker_toggle'
 import {scrollto} from '../../hooks/use_scroll'
 
 //依赖引入
-import {onMounted,onBeforeMount,watch} from 'vue'
+import {onMounted,onBeforeMount,watch, nextTick} from 'vue'
 import { onBeforeRouteLeave } from 'vue-router'
 import useStore from '../../store/index.js'
 import router from '../../router'
@@ -141,7 +141,7 @@ const store = useStore()
             //解锁thumb 的hover
             store.is_thum_hover = true
             
-        },600)  
+        },350)  
         
         //复位路由路径
         store.is_route_to_work = false
@@ -163,7 +163,7 @@ const store = useStore()
 
             setTimeout(()=>{
                 next()        
-            },500) 
+            },350) 
         }else{
             //遮挡屏幕
             screen_cover()
@@ -223,9 +223,11 @@ const store = useStore()
     
     //处理点击事件-触发翻页动画队列    
     let handle_card_click = (id)=>{
+        //锁定thumb动画
+        store.is_thum_hover = false
+
         var index = store.index_array.findIndex((i)=>i.id == id)
         router.push(store.index_array[index].navto) 
-        
         
     }
     //处理hover事件

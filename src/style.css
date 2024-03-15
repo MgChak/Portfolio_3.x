@@ -1,7 +1,7 @@
 :root{
   font-family: 'Hanken Grotesk', sans-serif;
 
-  --animation-slow: all 0.6s cubic-bezier(0, 0, 0.33, 0.90);
+  --animation-slow: all 0.3s cubic-bezier(0, 0, 0.33, 0.90);
   --animation-slow-cubic:cubic-bezier(0, 0, 0.33, 0.90);
 
   --content-width:85%;

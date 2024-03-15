@@ -122,7 +122,7 @@ let animation_queue_before_route_in =(page_id)=>{
         setTimeout(()=>{
             //解锁滚动
             s_unlock() 
-        },600)
+        },350)
         
     
 }
@@ -150,7 +150,7 @@ let animation_queue_route_out =(page_id,to,next)=>{
                 store.router_page = page_id
                 setTimeout(()=>{
                     next()
-                },600)} 
+                },350)} 
         )
 
     //去艺术页面-由点击footer触发
@@ -170,7 +170,7 @@ let animation_queue_route_out =(page_id,to,next)=>{
             next()
             //解锁滚动
             s_unlock() 
-        },700)   
+        },400)   
     }else{
          //遮挡屏幕
          screen_cover()
