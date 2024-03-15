@@ -122,8 +122,6 @@ const store = useStore()
         //打开屏幕遮罩
         screen_open()
 
-        //判断是否为第一次打开homepage
-        if (store.homepage_load){
             //打开导航栏
             store.is_navbar_open = true
             //修改导航栏状态到默认状态
@@ -146,46 +144,16 @@ const store = useStore()
             
             //复位路由路径
             store.is_route_to_work = false
-        }
-        else{
-            store.homepage_load = true
-            //loading bar 代码
-            store.loader_status = true//开启loader
-
-            get_all_imgs()//统计图片
-
-            var stop = watch(()=>store.is_loader_animation_finished,()=>{
-                if(store.is_loader_animation_finished){
-
-                    //复位动画状态
-                    store.is_loader_animation_finished = false
-                    //停止监听
-                    stop()
-                    //打开导航栏
-                    store.is_navbar_open = true
-                    //修改导航栏状态到默认状态
-                    store.navbar_status = 0
-                    //index化thum
-                    store.index_array[store.router_page].class = "container_index"
-                    //开启cover的动画
-                    store.cover_animation = true
-                    
-                    setTimeout(()=>{
-                        //解锁滚动
-                        s_unlock() 
-                        //解锁thumb 的hover
-                        store.is_thum_hover = true
-                        
-                    },600)               
-                }
-            })
-        }
+       
         
     })
 
     //复位
     onBeforeRouteLeave((to,from,next)=>{
         var index = store.index_array.findIndex((i)=>i.navto==to.name)
+        //锁定thumb动画
+        store.is_thum_hover = false
+
         if(index >=0){
             animation_queue_click_route_out(index)
             setTimeout(()=>{
@@ -220,6 +188,7 @@ const store = useStore()
     //路由出动画队列（进入文章）
     let animation_queue_click_route_out = (index)=>{
 
+
         //navbar隐藏
         store.is_navbar_open = false 
         
@@ -249,9 +218,6 @@ const store = useStore()
     
     //处理点击事件-触发翻页动画队列    
     let handle_card_click = (id)=>{
-        //锁定thumb 的hover
-        store.is_thum_hover = false
-        
         var index = store.index_array.findIndex((i)=>i.id == id)
         router.push(store.index_array[index].navto) 
         

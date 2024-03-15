@@ -25,7 +25,7 @@ import { gsap } from "gsap";
 import { CustomEase } from "gsap/CustomEase";
 import { useIntersectionObserver} from '@vueuse/core'
 import useStore from '../../store'
-import {ref,watch} from "vue";
+import {onMounted, ref,watch} from "vue";
 const store = useStore()
 
     gsap.registerPlugin(CustomEase);
@@ -42,74 +42,70 @@ const store = useStore()
 
 
 
+    onMounted(()=>{
+        var tl = gsap.timeline() 
+        tl.fromTo(button.value,{
+            scaleX: 0,
+            scaleY:0,
+            width: '52.33px'
+        },{
+            scaleX: 1,
+            scaleY:1,
+            width: '52.33px',
+            duration: 0.6,
+            ease: CustomEase.create("custom", store.animation_ease_c1),
+        })
 
-    let stop_watch=watch(()=>props.prototype_links.ani, () => {
+        tl.fromTo(dot.value,{
+            scaleX: 0,
+            scaleY:0,
+            width: '35px',
+        },{
+            scaleX: 1,
+            scaleY:1,
+            width: "35px",
+            duration: 0.6,
+            ease: CustomEase.create("custom", store.animation_ease_c1),
+        },"<")
+
+        tl.fromTo(button.value,{
+            scaleX: 1,
+            scaleY:1,
+            width: '52.33px'
+        },{
+            scaleX: 1,
+            scaleY:1,
+            width: props.prototype_links.width+"px",
+            duration: 0.3,
+            ease: CustomEase.create("custom", store.animation_ease_c1),
+        },)
+
+        tl.fromTo(dot.value,{
+            scaleX: 1,
+            scaleY:1,
+            width: '35px'
+        },{
+            scaleX: 1,
+            scaleY:1,
+            width: props.prototype_links.width-16+"px",
+            duration: 0.3,
+            ease: CustomEase.create("custom", store.animation_ease_c1),
+        },"<")
+
+        tl.fromTo(dot.value,{
+            scaleX: 1,
+            scaleY:1,
+            width: props.prototype_links.width-16+"px"
+        },{
+            scaleX: 1,
+            scaleY:1,
+            width: "35px",
+            duration: 0.6,
+            ease: CustomEase.create("custom", store.animation_ease_c1),
+        })
+
+    })
     
-        if(props.prototype_links.ani){           
-            stop_watch()
-        
-            var tl = gsap.timeline() 
-            tl.fromTo(button.value,{
-                scaleX: 0,
-                scaleY:0,
-                width: '52.33px'
-            },{
-                scaleX: 1,
-                scaleY:1,
-                width: '52.33px',
-                duration: 0.6,
-                ease: CustomEase.create("custom", store.animation_ease_c1),
-            })
-
-            tl.fromTo(dot.value,{
-                scaleX: 0,
-                scaleY:0,
-                width: '35px',
-            },{
-                scaleX: 1,
-                scaleY:1,
-                width: "35px",
-                duration: 0.6,
-                ease: CustomEase.create("custom", store.animation_ease_c1),
-            },"<")
-
-            tl.fromTo(button.value,{
-                scaleX: 1,
-                scaleY:1,
-                width: '52.33px'
-            },{
-                scaleX: 1,
-                scaleY:1,
-                width: props.prototype_links.width+"px",
-                duration: 0.3,
-                ease: CustomEase.create("custom", store.animation_ease_c1),
-            },)
-
-            tl.fromTo(dot.value,{
-                scaleX: 1,
-                scaleY:1,
-                width: '35px'
-            },{
-                scaleX: 1,
-                scaleY:1,
-                width: props.prototype_links.width-16+"px",
-                duration: 0.3,
-                ease: CustomEase.create("custom", store.animation_ease_c1),
-            },"<")
-
-            tl.fromTo(dot.value,{
-                scaleX: 1,
-                scaleY:1,
-                width: props.prototype_links.width-16+"px"
-            },{
-                scaleX: 1,
-                scaleY:1,
-                width: "35px",
-                duration: 0.6,
-                ease: CustomEase.create("custom", store.animation_ease_c1),
-            })
-        }
-    });
 
 
     let handle_hover = (val, e)=>{

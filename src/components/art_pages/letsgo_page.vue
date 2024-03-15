@@ -656,13 +656,13 @@ h4{
     width:100%;
     display: flex;
     flex-direction: column;
-    gap:8px
+    gap:8px;
 }
 .content_block_texts_24{
     width:100%;
     display: flex;
     flex-direction: column;
-    gap:24px
+    gap:24px;
 }
 .content_block_row_defult{
     width:100%;

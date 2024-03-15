@@ -70,68 +70,68 @@ gsap.registerPlugin(CustomEase);
     let flex_height = '100%'
 
 
-    //动画
-    const img123 = ref(null)
-        const img2 = ref(null)
-        const img3 = ref(null)
-        const arrow_box = ref(null)
-        // const img4 = ref(null)
-        const img5 =ref(null)
-        // const con = ref(null)
-        const line1 = ref(null)
-        const line2 = ref(null)
-        var ani="M0,0 C0.39,0 0.589,1 1,1 "
-    var time = 0.2
+    // //动画
+    // const img123 = ref(null)
+    //     const img2 = ref(null)
+    //     const img3 = ref(null)
+    //     const arrow_box = ref(null)
+    //     // const img4 = ref(null)
+    //     const img5 =ref(null)
+    //     // const con = ref(null)
+    //     const line1 = ref(null)
+    //     const line2 = ref(null)
+    //     var ani="M0,0 C0.39,0 0.589,1 1,1 "
+    // var time = 0.2
     
 
-    onMounted(()=>{
+    // onMounted(()=>{
         
 
-    const stop = watchEffect(()=>{
-        if(store.cover_animation){
-            stop()
-            store.cover_animation = false
-            gsap.to(img123.value,{
-                yPercent:-100,
-                duration:0.6,
-                ease: CustomEase.create("custom", store.animation_ease_c1),
-            })
-            gsap.to(img2.value,{
-                yPercent:-100,
-                duration:0.6,
-                ease: CustomEase.create("custom", store.animation_ease_c1),
-                delay:0.3,
-            })
-            gsap.to(img3.value,{
-                yPercent:-100,
-                duration:0.6,
-                ease: CustomEase.create("custom", store.animation_ease_c1),
-                delay:0.6,
-            })
-            gsap.to(img5.value,{
-                yPercent:-100,
-                duration:0.6,
-                ease: CustomEase.create("custom", store.animation_ease_c1),
-                delay:1,
-            })
-            gsap.to(line1.value,{
-                scaleX:1,
-                duration:0.6,
-                ease: CustomEase.create("custom", store.animation_ease_c1),
-                delay:0.6,
-            })
-            gsap.to(line2.value,{
-                scaleX:1,
-                duration:0.6,
-                ease: CustomEase.create("custom", store.animation_ease_c1),
-                delay:0.6,
-            })
-            gsap.to(arrow_box.value,{
-                yPercent:-200,
-                opacity:1,
-                duration:0.6,
-                ease: CustomEase.create("custom", store.animation_ease_c1),
-            })
+    // const stop = watchEffect(()=>{
+    //     if(store.cover_animation){
+    //         stop()
+    //         store.cover_animation = false
+    //         gsap.to(img123.value,{
+    //             yPercent:-100,
+    //             duration:0.6,
+    //             ease: CustomEase.create("custom", store.animation_ease_c1),
+    //         })
+    //         gsap.to(img2.value,{
+    //             yPercent:-100,
+    //             duration:0.6,
+    //             ease: CustomEase.create("custom", store.animation_ease_c1),
+    //             delay:0.3,
+    //         })
+    //         gsap.to(img3.value,{
+    //             yPercent:-100,
+    //             duration:0.6,
+    //             ease: CustomEase.create("custom", store.animation_ease_c1),
+    //             delay:0.6,
+    //         })
+    //         gsap.to(img5.value,{
+    //             yPercent:-100,
+    //             duration:0.6,
+    //             ease: CustomEase.create("custom", store.animation_ease_c1),
+    //             delay:1,
+    //         })
+    //         gsap.to(line1.value,{
+    //             scaleX:1,
+    //             duration:0.6,
+    //             ease: CustomEase.create("custom", store.animation_ease_c1),
+    //             delay:0.6,
+    //         })
+    //         gsap.to(line2.value,{
+    //             scaleX:1,
+    //             duration:0.6,
+    //             ease: CustomEase.create("custom", store.animation_ease_c1),
+    //             delay:0.6,
+    //         })
+    //         gsap.to(arrow_box.value,{
+    //             yPercent:-200,
+    //             opacity:1,
+    //             duration:0.6,
+    //             ease: CustomEase.create("custom", store.animation_ease_c1),
+    //         })
             // gsap.to(con.value,{
             //         yPercent:-120,
             //         duration:0.3,
@@ -188,11 +188,11 @@ gsap.registerPlugin(CustomEase);
             
             
             
-        }
-    })
+    //     }
+    // })
         
 
-    })
+    // })
 
     
 
@@ -287,7 +287,7 @@ gsap.registerPlugin(CustomEase);
     width: 100%;
     position:relative;
     left:0;
-    transform: translateY(100%);
+    /* transform: translateY(100%); */
 }
 
 

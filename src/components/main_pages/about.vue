@@ -96,42 +96,6 @@ gsap.registerPlugin(CustomEase);
     
     })
 
-    //动画
-    const img1 = ref(null)
-    const img2 = ref(null)
-    const img3 = ref(null)
-    const con = ref(null)
-    var me = ref(null)
-    var breakline1 = ref(null)
-    var breakline2 =ref(null)
-    var contents =ref(null)
-
-    var ani="M0,0 C0.39,0 0.589,1 1,1 "
-    var time = 0.2
-
-    let other_anis = ()=>{
-        gsap.to(me.value,{
-            opacity:1,
-            duration:0.6,
-            ease: CustomEase.create("custom", store.animation_ease_c1),
-        })
-        gsap.to(contents.value,{
-            opacity:1,
-            duration:0.6,
-            ease: CustomEase.create("custom", store.animation_ease_c1),
-        })
-        gsap.to(breakline1.value,{
-            scaleX:1,
-            duration:0.6,
-            ease: CustomEase.create("custom", store.animation_ease_c1),
-        })
-        gsap.to(breakline2.value,{
-            scaleX:1,
-            duration:0.6,
-            ease: CustomEase.create("custom", store.animation_ease_c1),
-        })
-
-    }
 
     onMounted(()=>{
 
@@ -148,126 +112,20 @@ gsap.registerPlugin(CustomEase);
         //打开屏幕遮罩
         screen_open()
 
-        if(store.aboutpage_laod){
-            //打开导航栏-存在于loading关闭
-            store.is_navbar_open = true
+       
+        //打开导航栏-存在于loading关闭
+        store.is_navbar_open = true
+
+        
+        setTimeout(()=>{
+            //解锁滚动
+            s_unlock() 
+            //开启about的动画
+        store.about_animation = true
 
             
-            setTimeout(()=>{
-                //解锁滚动
-                s_unlock() 
-                //开启about的动画
-            store.about_animation = true
-
-                
-            },600) 
-        }else{
-
-            store.aboutpage_laod = true
-
-            store.loader_status = true//开启loader
-
-            get_all_imgs()//统计图片
-
-            var stop = watch(()=>store.is_loader_animation_finished,()=>{
-                if(store.is_loader_animation_finished){
-                    //复位动画状态
-                    store.is_loader_animation_finished = false
-                    //停止监听
-                    stop()
-                    //打开导航栏
-                    store.is_navbar_open = true
-
-                    //开启about的动画
-                    store.about_animation = true
-                    
-                    setTimeout(()=>{
-                        //解锁滚动
-                        s_unlock() 
-                        
-                    },600)   
-                }
-            })
-
-        }
-        
-        
-        var stop2 = watch(()=>store.about_animation,()=>{
-            var tl = gsap.timeline() 
-            if(store.about_animation){
-                store.about_animation = false
-                stop2() 
-                gsap.to(img1.value,{
-                    yPercent:-120,
-                    duration:0.6,
-                    ease: CustomEase.create("custom", store.animation_ease_c1),
-                })
-                gsap.to(img2.value,{
-                    yPercent:-120,
-                    duration:0.6,
-                    ease: CustomEase.create("custom", store.animation_ease_c1),
-                    delay:0.3,
-                })
-                gsap.to(con.value,{
-                    yPercent:-120,
-                    duration:0.3,
-                    ease: CustomEase.create("custom", ani),
-                    delay:0.6,
-                    onComplete:()=>{
-                        email_button.ani = true
-                        link_button.ani = true
-                        ins_button.ani =true
-                        other_anis()
-                    },
-                })
-                tl.to(img3.value,{
-                    yPercent:-118,
-                    scaleY:0.7,
-                    scaleX:1.3,
-                    duration:0.3,
-                    ease: CustomEase.create("custom", ani),
-                    delay:0.6,
-                })
-                tl.to(img3.value,{
-                    scaleY:1.2,
-                    scaleX:0.8,
-                    duration:time,
-                    ease: CustomEase.create("custom", ani),
-                })
-                tl.to(img3.value,{
-                    scaleY:0.8,
-                    scaleX:1.2,
-                    duration:time,
-                    ease: CustomEase.create("custom", ani),
-                })
-                tl.to(img3.value,{
-                    scaleY:1.1,
-                    scaleX:0.9,
-                    duration:time,
-                    ease: CustomEase.create("custom", ani),
-                })
-                tl.to(img3.value,{
-                    scaleY:0.95,
-                    scaleX:1.05,
-                    duration:time,
-                    ease: CustomEase.create("custom", ani),
-                })
-                tl.to(img3.value,{
-                    scaleY:1.02,
-                    scaleX:0.98,
-                    duration:time,
-                    ease: CustomEase.create("custom", ani),
-                })
-                tl.to(img3.value,{
-                    scaleY:1,
-                    scaleX:1,
-                    duration:time,
-                    ease: CustomEase.create("custom", ani),
-                })
-            }else{
-                console.log(store.about_animation)
-            }
-        })
+        },600) 
+    
     })
 
     onBeforeRouteLeave((to,from,next)=>{
@@ -284,13 +142,6 @@ gsap.registerPlugin(CustomEase);
     let handle_click = (url)=>{
         window.open(url)
     }
-
-    
-
-
-
-    
-
 
 </script>
 
@@ -319,9 +170,6 @@ gsap.registerPlugin(CustomEase);
     flex-direction: column;
     gap:40px;
 }
-
-
-
 
 .background_holder{
     position:absolute;
@@ -358,7 +206,7 @@ img{
 }
 .img1{
     width:100%;
-    transform: translateY(120%);
+   
 }
 .box2{
     width:35.62%;
@@ -366,7 +214,7 @@ img{
 }
 .img2{
     width:100%;
-    transform: translateY(120%);
+   
 }
 
 .bobo_con {
@@ -384,7 +232,6 @@ img{
     width: 50%;
     z-index: 1;
     transform-origin:center bottom;
-    transform: translateY(120%) scale(0.7,1.3);
 }
 
 .bobo_back {
@@ -397,12 +244,12 @@ img{
     z-index: 0;
     border-radius: 20px;
     overflow: hidden;
-    transform: translateY(120%);
+
 }
 .me{
     width:100%;
     border-radius: 20px;
-    opacity: 0;
+    opacity: 1;
 }
 .flexbox{
     display: flex;
@@ -414,10 +261,10 @@ img{
     background-color: white;
     opacity: 0.3;
     transform-origin: left center;
-    transform: scaleX(0);
+  
 }
 .contents{
-    opacity: 0;
+    opacity: 1;
 }
 
 h1{

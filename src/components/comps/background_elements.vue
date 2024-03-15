@@ -28,7 +28,7 @@ let handle_background_size = computed(()=>{
         return {
             width:w+"px",
             height:h+"px",
-            ["background-size"]:b*0.6+"px"
+            ["background-size"]:b*0.5+"px"
         }
     })
 
@@ -61,7 +61,7 @@ let handle_background_size = computed(()=>{
     bottom:0;
     z-index: -1;
     transform-origin: "top,left";
-    animation: ani 10s forwards;
+    animation: ani 80s infinite linear;
 }
 
 
