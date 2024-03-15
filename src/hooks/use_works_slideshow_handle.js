@@ -88,8 +88,32 @@ let thum_ani_render = (name,data_obj)=>{
     
 }
 
+let handle_z_index = (name)=>{
+    const store = useStore()
+    //用name找到数列中对应的索引值
+    var index = store.index_array.findIndex((i)=>i.name == name)
 
+    return{'z-index':store.index_array[index].zindex} 
+}
+
+
+let thum_height = ()=>{
+    const store = useStore()
+    var max_w
+    if (store.page_width >= 1280){
+        max_w = 1280*7.5/16
+    }else if (store.page_width <1280 && store.page_width >=900){
+        max_w = store.page_width*0.8*7.5/16
+    }else{
+        max_w = store.page_width*0.8*3/4
+    }
+    console.log(store.page_width)
+    return max_w + "px"
+    
+}
 export {
     handle_el_container_size,
-    thum_ani_render
+    thum_ani_render,
+    handle_z_index,
+    thum_height
 }

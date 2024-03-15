@@ -1,5 +1,5 @@
 <template>
-        <div class="container background" ref="el">
+        <div class="container background" ref="el" :style="z_index">
             <div class="el_conatiner" :style = "{width:el_container_size,height:el_container_size}"> 
                 <img class="img1" ref="img1" src="../../../assets/thum_cards/cat/1.svg" alt="">
                 <img class="img2" ref="img2" src="../../../assets/thum_cards/cat/2.png" alt="">
@@ -11,7 +11,7 @@
    
 <script setup>
 //hooks引入
-import{handle_el_container_size,thum_ani_render} from '../../../hooks/use_works_slideshow_handle.js'
+import{handle_el_container_size,thum_ani_render,handle_z_index,thum_height} from '../../../hooks/use_works_slideshow_handle.js'
 //依赖引入
 
 
@@ -30,14 +30,8 @@ const store = useStore()
     const { width, height } = useElementSize(el)
     let el_container_size = computed(()=>handle_el_container_size(width, height))
 
-    let thum_height = ()=>{
-        if (width.value >=900){
-            return width.value*7.5/16 + "px"
-        }else{
-            return width.value*3/4 + "px"
-        }
-        
-    }
+
+    let z_index = computed(()=>handle_z_index(name))
 
 
     //获取到所有需要操作的div
@@ -83,7 +77,7 @@ const store = useStore()
             article:[{
                     el:el,
                     animations:{
-                        height:'55vh',
+                        height:thum_height(),
                         width:'100%',
                         maxWidth:'100%',
                     }

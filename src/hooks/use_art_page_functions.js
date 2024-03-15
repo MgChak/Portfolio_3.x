@@ -3,7 +3,7 @@ import {watchEffect,ref,watch} from 'vue'
 import {tracker_toggle} from '../hooks/use_mouse_tracker_toggle'
 import {scrollto} from '../hooks/use_scroll'
 import { s_lock,s_unlock } from '../hooks/use_page_scroll_locker'
-import {screen_cover} from '../hooks/use_full_sreen_cover'
+import {screen_cover,contents_open, contents_cover} from '../hooks/use_full_sreen_cover'
 
 //loarder的status
 let loading = ref(0)
@@ -59,7 +59,7 @@ let animation_queue_before_route_in =(page_id)=>{
 
 
     //将thum全屏化_set
-    store.index_array[page_id].class = 'container_fullscreen_set'
+    store.index_array[page_id].class = 'container_article_set'
 
     //关闭footer的路由动画
     store.footer_is_rout_out = false
@@ -113,7 +113,9 @@ let animation_queue_before_route_in =(page_id)=>{
         // 赋值路由动画速度
         store.footer_animation = 'var(--animation-slow)'
         //打开导航栏
-        store.is_navbar_open = true 
+        store.is_navbar_open = true
+        //打开文字内容
+        contents_open()
         //清空loading数据
         loading.value = 0 
         
@@ -137,7 +139,9 @@ let animation_queue_route_out =(page_id,to,next)=>{
         scrollto(0,'smooth',
             ()=>{
                 //将thum全屏化
-                store.index_array[page_id].class = 'container_fullscreen'   
+                store.index_array[page_id].class = 'container_index'  
+                //遮罩文字
+                contents_cover(page_id)
                 //关闭导航栏
                 store.is_navbar_open = false
                 //去works页面

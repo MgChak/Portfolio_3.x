@@ -47,14 +47,13 @@ import com_footer from '../com_footer.vue'
 import { s_lock,s_unlock } from '../../hooks/use_page_scroll_locker'
 import {tracker_toggle} from '../../hooks/use_mouse_tracker_toggle'
 import {scrollto} from '../../hooks/use_scroll'
-import {get_all_imgs} from'../../hooks/use_art_page_functions'
-import {throttle} from'../../hooks/throttle'
+
 //依赖引入
 import {onMounted,onBeforeMount,watch} from 'vue'
 import { onBeforeRouteLeave } from 'vue-router'
 import useStore from '../../store/index.js'
 import router from '../../router'
-import { screen_cover, screen_open } from '../../hooks/use_full_sreen_cover'
+import { screen_cover, screen_open,contents_open, contents_cover } from '../../hooks/use_full_sreen_cover'
 const store = useStore()
 
     //thum组件注册队列
@@ -93,11 +92,7 @@ const store = useStore()
         }else{
             //全屏化thum
             store.index_array.forEach((item,index)=>{
-                if(index != store.router_page){
-                    item.class = "container_index_set"
-                }else{
-                    item.class = "container_fullscreen_set"
-                }
+                item.class = "container_index_set"
             })
         }
        
@@ -107,8 +102,10 @@ const store = useStore()
 
     //初始化2
     onMounted(()=>{
+
         //根据router的路径执行不同的结果
         if(store.is_route_to_work){
+
             //跳转到指定位置
             srcoll_to(store.router_page,'jump')
             
@@ -122,28 +119,32 @@ const store = useStore()
         //打开屏幕遮罩
         screen_open()
 
-            //打开导航栏
-            store.is_navbar_open = true
-            //修改导航栏状态到默认状态
-            store.navbar_status = 0
-            //index化thum
-            store.index_array[store.router_page].class = "container_index"
-            setTimeout(()=>{
-                //开启cover的动画
-                store.cover_animation = true
-            },100)
+        //打开内容遮罩
+        //遮挡内容
+        contents_open()
+
+        //打开导航栏
+        store.is_navbar_open = true
+        //修改导航栏状态到默认状态
+        store.navbar_status = 0
+        //index化thum
+        store.index_array[store.router_page].class = "container_index"
+        setTimeout(()=>{
+            //开启cover的动画
+            store.cover_animation = true
+        },100)
+        
+        
+        setTimeout(()=>{
+            //解锁滚动
+            s_unlock() 
+            //解锁thumb 的hover
+            store.is_thum_hover = true
             
-            
-            setTimeout(()=>{
-                //解锁滚动
-                s_unlock() 
-                //解锁thumb 的hover
-                store.is_thum_hover = true
-                
-            },600)  
-            
-            //复位路由路径
-            store.is_route_to_work = false
+        },600)  
+        
+        //复位路由路径
+        store.is_route_to_work = false
        
         
     })
@@ -156,9 +157,13 @@ const store = useStore()
 
         if(index >=0){
             animation_queue_click_route_out(index)
+
+            //遮挡内容
+            contents_cover(index)
+
             setTimeout(()=>{
                 next()        
-            },450) 
+            },500) 
         }else{
             //遮挡屏幕
             screen_cover()
@@ -181,7 +186,7 @@ const store = useStore()
     //修改index_array中的class属性
     let rewrite_index_class = ()=>{
         store.index_array.forEach((i)=>{
-            i.class = "container_index"
+            i.class = "container_index_set"
         })
     }
 
@@ -196,7 +201,7 @@ const store = useStore()
         srcoll_to(index,'smooth')
 
        //全屏化thum
-        store.index_array[index].class = 'container_fullscreen'
+        store.index_array[index].class = 'container_article'
 
         
     }

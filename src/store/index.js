@@ -142,10 +142,11 @@ export default defineStore("Main",{
             footer_animation: 'var(--animation-slow)',
 
         //=============================
-        //work_about路由动画 状态依赖
+        //work_about;work_art路由动画 状态依赖
         //=============================
 
             full_cover_class : 'top',
+            full_cover_class_2 : 'show',
 
         //=============================
         //通用的动画参数
@@ -177,6 +178,7 @@ export default defineStore("Main",{
                     navto:'letsgo',
                     background_color:' linear-gradient(360deg, #2B3825 -3.36%, #000000 49.04%)',
                     class:'',
+                    zindex:1,
                 },{ 
                     id:2,
                     comp:'nebu',
@@ -188,6 +190,7 @@ export default defineStore("Main",{
                     navto:'nebu',
                     background_color:'linear-gradient(360deg, #3D2539 -3.36%, #000000 49.04%)',
                     class:'',
+                    zindex:1,
                 },{ 
                     id:3,
                     comp:'transit',
@@ -199,6 +202,7 @@ export default defineStore("Main",{
                     navto:'transit',
                     background_color:'linear-gradient(360deg, #25343D -3.36%, #000000 49.04%)',
                     class:'',
+                    zindex:1,
                 },{ 
                     id:4,
                     comp:'cat',
@@ -210,6 +214,7 @@ export default defineStore("Main",{
                     navto:'cat',
                     background_color:'linear-gradient(360deg, #3D2539 -3.36%, #000000 49.04%)',
                     class:'',
+                    zindex:1,
                 }
             ],
 

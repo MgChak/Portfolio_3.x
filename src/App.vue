@@ -13,6 +13,8 @@
 
     <router-view></router-view>
 
+    <div class="router_full_cover_2" :class="store.full_cover_class_2" ></div>
+
   </div>
 
   <div class="router_full_cover" :class="store.full_cover_class"></div>
@@ -111,9 +113,19 @@ const w_size = useWindowSize()
   top:0;
   left:0;
   background-color: black;
-  z-index:5;
+  z-index:9;
   pointer-events: none;
   
+}
+.router_full_cover_2{
+  width:100vw;
+  height:100vh;
+  position: fixed;
+  top:0;
+  left:0;
+  background-color: rgb(0, 0, 0);
+  z-index:5;
+  pointer-events: none;
 }
 
 .bottom{
@@ -126,6 +138,15 @@ const w_size = useWindowSize()
 .top{
   transform: translateY(-105%);
   transition: all 0.6s;
+}
+
+.show{
+  opacity: 0;
+  transition: all 0.6s ease-in-out;
+}
+.cover{
+  opacity: 1;
+  transition: all 0.6s ease-in-out;
 }
 
 

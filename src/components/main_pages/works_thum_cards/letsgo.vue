@@ -1,6 +1,6 @@
 <template>
 
-    <div class="container background" ref="el">
+    <div class="container background" ref="el" :style="z_index">
             <div class="el_conatiner" :style = "{width:el_container_size,height:el_container_size}">
 
                 <img ref="img1" src="../../../assets/thum_cards/let/L.png" class="largephone" alt="">
@@ -16,7 +16,7 @@
 
 <script setup>
 //hooks引入
-import{handle_el_container_size,thum_ani_render} from '../../../hooks/use_works_slideshow_handle.js'
+import{handle_el_container_size,thum_ani_render,handle_z_index,thum_height} from '../../../hooks/use_works_slideshow_handle.js'
 //依赖引入
 import {computed,ref,watchPostEffect} from 'vue'
 import useStore from '../../../store/index.js'
@@ -31,14 +31,7 @@ const store = useStore()
     const { width, height } = useElementSize(el)
     let el_container_size = computed(()=>handle_el_container_size(width, height))
 
-    let thum_height = ()=>{
-        if (width.value >=900){
-            return width.value*7.5/16 + "px"
-        }else{
-            return width.value*3/4 + "px"
-        }
-        
-    }
+    let z_index = computed(()=>handle_z_index(name))
 
     const img1 = ref(null)
     const img2 =ref(null)
@@ -49,9 +42,10 @@ const store = useStore()
                 {
                     el:el,
                     animations:{
-                        height:'100vh',
+                        height:'55vh',
                         width:'100%',
                         maxWidth:'100%',
+                        zIndex:'8',
                     }
                 },{
                     el:img1,
@@ -71,7 +65,7 @@ const store = useStore()
             article:[{
                     el:el,
                     animations:{
-                        height:'55vh',
+                        height:thum_height(),
                         width:'100%',
                         maxWidth:'100%',
                     }

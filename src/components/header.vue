@@ -405,7 +405,7 @@
         right:0;
         top:-120px;
         width:100%;
-        z-index:8; 
+        z-index:15; 
         display: flex;
         justify-content: center;
     }
