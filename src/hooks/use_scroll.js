@@ -17,28 +17,44 @@ let scrollto = (dr,val,fn)=>{
 }
 
 
-let smooth_to = (dr,fn) =>{
-    const store = useStore()
+let smooth_to = (dr, fn) => {
+    const store = useStore();
+    var animation_time = 300
 
-    var updown = 0
+    let timerCompleted = false; // 倒计时完成状态
+    let animationCompleted = false; // 动画完成状态
 
-    // 判断滚动方向
-    var timer = requestAnimationFrame(function animation_set(){
+    console.log("chaeck",timerCompleted , animationCompleted)
 
-        var a = store.scroll_position - dr
-
-        window.scroll(0,store.scroll_position + a*-0.2)
-
-        if(Math.abs(a) >=10 ){
-            timer = requestAnimationFrame(animation_set)
+    // 检查并执行fn函数
+    const checkAndExecuteFn = () => {
+        if (timerCompleted && animationCompleted) {
+            if (fn) fn();
         }else{
-            window.scroll(0,dr)
-            cancelAnimationFrame(timer)
-            if(fn){fn()}
-        }       
-        
-    })
-}
+            console.log(timerCompleted , animationCompleted)
+        }
+    };
+
+    // 设置一个300毫秒的倒计时
+    setTimeout(() => {
+        timerCompleted = true;
+        checkAndExecuteFn(); // 检查是否都完成了，如果是，则执行fn
+    }, animation_time);
+
+    let requestAnimationFrameId = requestAnimationFrame(function animation_set() {
+        var a = store.scroll_position - dr;
+        window.scroll(0, store.scroll_position + a * -0.2);
+
+        if (Math.abs(a) >= 10) {
+            requestAnimationFrameId = requestAnimationFrame(animation_set);
+        } else {
+            window.scroll(0, dr);
+            cancelAnimationFrame(requestAnimationFrameId);
+            animationCompleted = true; // 标记动画完成
+            checkAndExecuteFn(); // 再次检查是否都完成了，如果是，则执行fn
+        }
+    });
+};
 
 let jump_to = (dr)=>{
 

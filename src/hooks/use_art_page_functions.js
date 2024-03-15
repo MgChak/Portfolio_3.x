@@ -136,21 +136,20 @@ let animation_queue_route_out =(page_id,to,next)=>{
     s_lock()
 
     if(to.name =='works'){
+        //关闭导航栏
+        store.is_navbar_open = false
+        //去works页面
+        store.is_route_to_work = true
+        //标记开启路由的页面
+        store.router_page = page_id
+        //将thum全屏化
+        store.index_array[page_id].class = 'container_index'  
+        //遮罩文字
+        contents_cover(page_id)
+
         scrollto(0,'smooth',
             ()=>{
-                //将thum全屏化
-                store.index_array[page_id].class = 'container_index'  
-                //遮罩文字
-                contents_cover(page_id)
-                //关闭导航栏
-                store.is_navbar_open = false
-                //去works页面
-                store.is_route_to_work = true
-                //标记开启路由的页面
-                store.router_page = page_id
-                setTimeout(()=>{
-                    next()
-                },350)} 
+                next()}
         )
 
     //去艺术页面-由点击footer触发

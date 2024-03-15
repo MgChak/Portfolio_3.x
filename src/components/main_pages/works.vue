@@ -156,14 +156,19 @@ const store = useStore()
         store.is_thum_hover = false
 
         if(index >=0){
-            animation_queue_click_route_out(index)
+             //navbar隐藏
+            store.is_navbar_open = false 
+            
+            //滚动到指定位置
+            srcoll_to(index,'smooth',()=>{
+                next() 
+            })
+            //全屏化thum
+            store.index_array[index].class = 'container_article'
 
             //遮挡内容
             contents_cover(index)
 
-            setTimeout(()=>{
-                next()        
-            },350) 
         }else{
             //遮挡屏幕
             screen_cover()
@@ -194,22 +199,15 @@ const store = useStore()
     let animation_queue_click_route_out = (index)=>{
 
 
-        //navbar隐藏
-        store.is_navbar_open = false 
-        
-        //滚动到指定位置
-        srcoll_to(index,'smooth')
-
-       //全屏化thum
-        store.index_array[index].class = 'container_article'
+       
 
         
     }
     //滚动到指定位置
-    let srcoll_to = (index,val)=>{
+    let srcoll_to = (index,val,fn)=>{
         let a = document.getElementsByClassName('comp')[index]
         a.getBoundingClientRect().top
-        scrollto(store.scroll_position + a.getBoundingClientRect().top,val)
+        scrollto(store.scroll_position + a.getBoundingClientRect().top,val,fn)
     }
 
 
