@@ -26,6 +26,7 @@ import router from '../router'
 import { useIntersectionObserver } from '@vueuse/core'
 //hooks引入
 import {tracker_toggle} from '../hooks/use_mouse_tracker_toggle'
+import {contents_cover} from '../hooks/use_full_sreen_cover'
 
 const store = useStore()
 
@@ -33,7 +34,7 @@ const store = useStore()
      let {index} =  defineProps(['index'])
 
     //初始化：将组件全屏化
-    store.index_array[index].class = 'container_fullscreen'
+    store.index_array[index].class = 'container_index_set'
 
     let is_hover = ref(false)
 
@@ -51,6 +52,8 @@ const store = useStore()
     }
 
     let handle_click = ()=>{
+        store.index_array[index].class = 'container_article'
+        contents_cover(index)
         router.push(store.index_array[index].navto)
     }
 
@@ -130,10 +133,13 @@ h3{
     height:100vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
     overflow: hidden;
     
     position:absolute;
     transform:translateY(0);
+    z-index: 10;
+
 }
 .on_hover{
     transform:translateY(-100px);

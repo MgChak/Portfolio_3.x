@@ -100,7 +100,7 @@ const w_size = useWindowSize()
   position:fixed;
   left:0;
   right:0;
-  z-index: 5;
+  z-index: 10;
   pointer-events: none;
 }
 

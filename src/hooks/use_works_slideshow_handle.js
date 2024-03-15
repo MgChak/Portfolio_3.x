@@ -107,7 +107,6 @@ let thum_height = ()=>{
     }else{
         max_w = store.page_width*0.8*3/4
     }
-    console.log(store.page_width)
     return max_w + "px"
     
 }

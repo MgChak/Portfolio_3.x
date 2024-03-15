@@ -45,7 +45,7 @@ const store = useStore()
     
 
     position:fixed;
-    z-index:10;
+    z-index:20;
 
     pointer-events: none;
     transform: translate(-50%,-50%);
