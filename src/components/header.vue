@@ -489,6 +489,7 @@
         position:fixed;
         left:0;
         top:0;
+        z-index:14
     }
     .nav_container{
         width:fit-content;
@@ -552,7 +553,7 @@
         right:0;
         top:120px;
         width:100%;
-        z-index: 5;
+        z-index: 15;
         display: none;
         flex-direction: column;
         gap:20px;
@@ -617,7 +618,7 @@
     }
     .mv_nav_list_background{
         display: inline-block;
-        z-index: 4;
+        z-index: 14;
     }
 }
     </style>
