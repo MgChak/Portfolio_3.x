@@ -26,6 +26,7 @@
 
         <!-- <play/> -->
 
+        <div class="flex_holder" :style="{height:flex_height_num+'vh'}"></div>
         <com_footer/>
         <!-- <div class="placeholder" ></div> -->
     </div>
@@ -49,7 +50,7 @@ import {tracker_toggle} from '../../hooks/use_mouse_tracker_toggle'
 import {scrollto} from '../../hooks/use_scroll'
 
 //依赖引入
-import {onMounted,onBeforeMount} from 'vue'
+import {onMounted,onBeforeMount,ref,computed} from 'vue'
 import { onBeforeRouteLeave } from 'vue-router'
 import useStore from '../../store/index.js'
 import router from '../../router'
@@ -122,6 +123,8 @@ const store = useStore()
         //打开内容遮罩
         //遮挡内容
         contents_open()
+        //关闭多余滚动空间
+        flex_close()
 
         //打开导航栏
         store.is_navbar_open = true
@@ -158,10 +161,15 @@ const store = useStore()
         if(index >=0){
              //navbar隐藏
             store.is_navbar_open = false 
+
+            //增加多余的滚动空间
+            flex_open()
             
             //滚动到指定位置
             srcoll_to(index,'smooth',()=>{
                 next() 
+                //关闭多余的滚动空间
+                flex_close()
             })
             //全屏化thum
             store.index_array[index].class = 'container_article'
@@ -235,6 +243,17 @@ const store = useStore()
             }
     }
 
+
+    
+    // 处理伸缩占位避免无法滚动到头
+    let flex_height = ref(false)
+    let flex_height_num = computed(()=> flex_height.value?100:0)
+    let flex_open = ()=>{
+        flex_height.value = true
+    }
+    let flex_close = ()=>{
+        flex_height.value = false
+    }
 
 
 
