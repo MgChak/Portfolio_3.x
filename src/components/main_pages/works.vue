@@ -24,7 +24,7 @@
             <div class="breakline"></div>
         </div>
 
-        <play/>
+        <!-- <play/> -->
 
         <com_footer/>
         <!-- <div class="placeholder" ></div> -->
@@ -291,10 +291,10 @@ h2{
 }
 .breakline{
     margin:40px 0;
-    width:50%;
+    width:1px;
     max-width: 600px;
     height:1px;
-    background-color:rgba(255, 255, 255, 0.614);
+    background-color:rgba(0, 0, 0, 0.614);
 }
 @media (max-width: 750px) {
     .breakline{
