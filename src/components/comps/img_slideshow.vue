@@ -350,7 +350,7 @@ const store = useStore()
         
         //禁用点击事件
         isDrag = true
-        console.log(isDrag)
+       
         //开启特殊鼠标
         tracker_toggle('drag')
         //暂停视频
@@ -503,7 +503,7 @@ const store = useStore()
         video_control_all_pause()
 
         if (val== 'next' && page_on.value + 1 < props.slideshow_arr.contents.length){
-            console.log('cgebgfib')
+            
             page_on.value++
         }else if(val== 'pre' && page_on.value - 1 >= 0){
             page_on.value--

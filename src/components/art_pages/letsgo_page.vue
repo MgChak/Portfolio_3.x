@@ -95,14 +95,235 @@
     </div> 
 
 
-    <div class = "section_container bc_s">
+    <div class = "section_container bc_b">
         <div class="content_container">
             <div class="content_block_flex">
-                <h1>RESEARCH SUMMARY</h1>
-                <link_button :prototype_links = 'case_study_button_dark'/>
+                <h1>BACKGROUND RESEARCH</h1>
+                <link_button :prototype_links = 'research_button'/>
             </div>
+        </div>
+
+        <div class="breakline_fullwidth bc_w1"></div>
+
+        <div class="content_container">
+            <h2>Learning Goals</h2>
+        </div>
+
+        <div class="content_container gap_set_80">
+            <div class="content_block_texts_24">
+                <h3 class="fc_w1">Going into the project, I had a few assumptions I wanted to validate...</h3>
+                <div class="content_block_list">
+                    <div class="list_i">
+                        <div class="dot"></div>
+                        <h3>The travel industry are still growing.</h3>
+                    </div>
+                    <div class="list_i">
+                        <div class="dot"></div>
+                        <h3>Users would like an app that can help them to create a group travel plan and prepare for the trip.</h3>
+                    </div>
+                    <div class="list_i">
+                        <div class="dot"></div>
+                        <h3>AI generator features can really help users.</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="breakline_dots"></div>
+            <div class="content_block_texts_24">
+                <h3 class="fc_w1">As well as a few things I wanted to learn more about ...</h3>
+                <div class="content_block_list">
+                    <div class="list_i">
+                        <div class="dot"></div>
+                        <h3>Do users make a travel plan and how they create it this days?</h3>
+                    </div>
+                    <div class="list_i">
+                        <div class="dot"></div>
+                        <h3>Do people prefer to travel in a group or alone?</h3>
+                    </div>
+                    <div class="list_i">
+                        <div class="dot"></div>
+                        <h3>What kind of problems users are facing when they creating a group travel plan and preparing for a trip?</h3>
+                    </div>
+                    <div class="list_i">
+                        <div class="dot"></div>
+                        <h3>How AI can help users in preparing for a travel?</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="breakline_fullwidth bc_w1"></div>
+
+        <div class="content_container">
+            <h2>Research Methodology and Main Learnings</h2>
+        </div>
+
+        <div class="content_container gap_set_80">
+            <div class="content_block_texts_40">
+                <div class="content_block_texts">
+                    <h3 class="fc_w1">1. User Interviews Implementation</h3>
+                    <div class="content_block_list">
+                        <div class="list_i">
+                            <div class="dot"></div>
+                            <h3>Conducted in-depth interviews with 4 diverse participants from varied fields to ensure a comprehensive understanding of user experiences and perspectives. <a :href="atag_link" target="_blank">( Click to view the full research document. )</a> </h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <v-lazy-image :src="images['re1.png']" :src-placeholder="images['re1@s.png']"/>
+            </div>
+
+            <div class="breakline_dots"></div>
+            
+            <div class="content_block_texts_40 gap_set_80">
+                <div class="content_block_texts"> 
+                    <h3 class="fc_w1">2. Utilizing Online Survey Tools</h3>
+                    <div class="content_block_list">
+                        <div class="list_i">
+                            <div class="dot"></div>
+                            <h3>Conducted surveys using Google Forms to efficiently gather and analyze participant responses. <a :href="atag_link" target="_blank">( Click to view the full research document. )</a> </h3>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="content_block_row_defult content_block_row_flex-reverse">
+                    <div class="content_block_texts">
+                        <div class="list_i">
+                            <div class="dot"></div>
+                            <h3>More people prefer group travel<br> rather than travel alone.</h3>
+                        </div>
+                    </div>
+                    <v-lazy-image :src="images['re2.png']" :src-placeholder="images['re2@s.png']"/>
+                </div>
+
+                <div class="content_block_row_defult">
+                    <div class="content_block_texts">
+                        <div class="list_i">
+                            <div class="dot"></div>
+                            <h3>Most users have experienced forgetting to bring a piece of luggage to their travel destination, with over half of them having a negative experience as a result.</h3>
+                        </div>
+                    </div>
+                    <v-lazy-image :src="images['re3.png']" :src-placeholder="images['re3@s.png']"/>
+                </div>
+
+                <div class="content_block_row_defult content_block_row_flex-reverse">
+                    <div class="content_block_texts">
+                        <div class="list_i">
+                            <div class="dot"></div>
+                            <h3>One of the main issues faced by users with diverse preferences when creating a group travel plan.</h3>
+                        </div>
+                    </div>
+                    <v-lazy-image :src="images['re4.png']" :src-placeholder="images['re4@s.png']"/>
+                </div>
+            </div>
+
+            <div class="breakline_dots"></div>
+
+            <div class="content_block_texts_40 gap_set_80">
+                <div class="content_block_texts"> 
+                    <h3 class="fc_w1">3. Literature Review of Related Travel Articles and Reports</h3>
+                    <div class="content_block_list">
+                        <div class="list_i">
+                            <div class="dot"></div>
+                            <h3>Obtain the needed information by reading articles and industry reports.. <a :href="atag_link" target="_blank">( Click to view the full research document. )</a> </h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content_block_texts_24">
+                    <div class="content_block_list">
+                        <div class="list_i">
+                            <div class="dot"></div>
+                            <h3>The travel industry are still growing. Latest UNWTO data shows a <span class="hilight_infor_s">38%</span>  increase in international tourists to 975 million in the first three quarters of 2023, with a <span class="hilight_infor_s">22% rise</span> in the third quarter, indicating strong summer demand in the Northern Hemisphere.</h3>
+                        </div>
+                    </div>
+                    <v-lazy-image :src="images['re5.png']" :src-placeholder="images['re5@s.png']"/>
+                </div>
+
+                <div class="content_block_texts_24">
+                    <div class="content_block_list">
+                        <div class="list_i">
+                            <div class="dot"></div>
+                            <h3>More users like to make plans by referring to their travel itineraries or travel videos on social media.</h3>
+                        </div>     
+                    </div>
+                    <v-lazy-image :src="images['re6.png']" :src-placeholder="images['re6@s.png']"/>
+                </div>
+                
+                
+               
+            </div>
+        </div>
+
+        <div class="breakline_fullwidth bc_w1"></div>
+
+        <div class="content_container">
+            <div class="content_block_flex">
+                <h2>More Research</h2>
+                <link_button :prototype_links = 'research_button'/>
+            </div>
+
             <img_slideshow :slideshow_arr = 'research_arry'/> 
         </div>
+    </div> 
+
+
+    <div class = "section_container bc_s">
+
+        <div class="content_container">
+            <div class="content_block_flex">
+                <h1>Usability Testing <br>_AI GENARETOR POP UP</h1>
+                <link_button :prototype_links = 'testing_button'/>
+            </div>
+            
+        </div>
+
+        <div class="content_container">
+            <div class="content_block_texts">
+                <h2>Feature Introduction</h2>
+                <h3>During the chat, the AI automatically detects the content of the users' conversations. When users express a desire to do something during their trip, such as visiting a specific restaurant or traveling to a certain attraction, the AI will pop up a window asking if the user wants to add this activity to their plan.</h3>
+            </div>
+        </div>
+
+        <div class="content_container">
+            <div class="content_block_texts">
+                <h2>Goal</h2>
+                <h3>Without forcibly interrupting the users' chat process, reminds the users to make a choice.</h3>
+            </div>
+        </div>
+
+        <div class="content_container">
+            <div class="content_block_texts">
+                <h2>Usability Test Round 1</h2>
+                <h3>In the first round of testing, most of the testers were more inclined towards option A because it did not interrupt the user's operation. Option B, on the other hand, completely disrupted the user's workflow and forced them to make a decision right away. This high level of intrusiveness made users resistant to this feature, especially since the window was triggered without any input from the user, and they had no advance warning that the window would appear.</h3>
+            </div>
+            <vimeo_container  :vimeolink="{radio:16,link:'https://player.vimeo.com/video/924794040?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
+        </div>
+
+        <div class="content_container">
+            <div class="content_block_texts">
+                <h2>Usability Test Round 2</h2>
+                <h3>After determining that users preferred a design with lower intrusiveness, I kept and modified option A, and designed a new option B with lower intrusiveness. Both options do not interrupt the user's current operation. I conducted new tests with these two options. However, the results did not provide a clear answer because the two options had different functionalities. Option B had some additional functions, which gave it a natural advantage, and this should not have been the case in this test.</h3>
+            </div>
+            <vimeo_container  :vimeolink="{radio:16,link:'https://player.vimeo.com/video/924794056?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
+        </div>
+
+        <div class="content_container">
+            <div class="content_block_texts">
+                <h2>Usanility Test Round 3</h2>
+                <h3>In order to ensure the accuracy of the test results, I made further modifications to options A and B, and conducted a third round of testing. This time, both options had exactly the same functionality, with the only difference being in their display. Option A emerged as the winner in this test, so I ultimately decided to use option A as the final design.</h3>
+            </div>
+            <vimeo_container  :vimeolink="{radio:16,link:'https://player.vimeo.com/video/924794062?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
+        </div>
+
+        <div class="content_container">
+            <div class="content_block_flex">
+                <h2>More Testing</h2>
+                <link_button :prototype_links = 'testing_button'/>
+            </div>
+
+            <img_slideshow :slideshow_arr = 'testing_arry'/> 
+        </div>
+
     </div> 
 
 
@@ -117,43 +338,11 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
                 <link_button :prototype_links = 'vp_button_1'/>
                 <link_button :prototype_links = 'fp_button_1'/>
             </div>
-            <div class="pp_container" style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/901210479?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="l_p_create"></iframe></div>
-        </div>
-    </div> 
-
-
-
-    <div class = "section_container bc_b">
-        <div class="content_container">
-            <h1>USABILITY TEST<br>_INVITE FRIENDS</h1>
-            <div class="content_block_texts">
-                <h2>Key feedback / Problems</h2>
-                <h3>In the version used for the usability test, users can open their friend list and select friends they want to invite by clicking the "Invite" button during the process of creating a new travel plan. User feedback suggests that being able to invite friends directly from the new travel plan creation page would save a significant amount of time. The primary challenge faced in implementing this feature, however, lies in the limited space available on the travel plan creation page, which is insufficient to display a full list of friends.</h3>
-            </div>
-            <v-lazy-image :src="images['s1_1.png']" :src-placeholder="images['s1_1@s.png']"/>
+            <vimeo_container  :vimeolink="{radio:16,link:'https://player.vimeo.com/video/901210479?muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
         </div>
 
-        <div class="content_container">
-            <div class="content_block_texts">
-                <h2>Improvements</h2>
-                <h3>Compared to the previous version, where inviting friends and creating travel plans were split across two separate pages, the updated version combines these functions onto a single page. It shows the images of the top 10 friends from the user's friend list. Users can select friends by clicking on their avatars. If the friend they want to invite isn't in the top 10 displayed, they can view the full list of friends by clicking the "MORE" icon at the end of the list.</h3>
-            </div>
-            <v-lazy-image :src="images['s1_2.png']" :src-placeholder="images['s1_2@s.png']"/>
-        </div>
+        <div class="breakline_fullwidth bc_b"></div>
 
-        <div class="breakline bc_w1"></div>
-
-        <div class="content_container">
-            <div class="content_block_texts_24">
-                <h1>DESIGN EXPLORATIONS <br>_ADDING LOADING ANIMATION</h1>    
-                <h3>Animation has been added into the plan creation process. Now, when a user clicks the create button, they won't be taken directly to the plan page. Instead, an animation showing the process will be displayed, followed by a confirmation page. This change aims to enhance the user's trust in the app.</h3>
-            </div>
-            <v-lazy-image :src="images['s1_3.png']" :src-placeholder="images['s1_3@s.png']"/>
-        </div>
-    </div> 
-
-
-    <div class = "section_container bc_m">
         <div class="content_container">
             <div class="content_block_texts_24">
                 <h1 class="fc_s">PRIMARY FEATURE 02<br>_AI CHAT ASSISTANT</h1>
@@ -163,77 +352,12 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
                 <link_button :prototype_links = 'vp_button_2'/>
                 <link_button :prototype_links = 'fp_button_2'/>
             </div>
-            <div class="pp_container" style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/901210458?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="l_p_ai"></iframe></div>
-        </div>
-    </div> 
-
-
-    <div class = "section_container bc_b">
-        <div class="content_container">
-            <h1>A/B TEST <br>_AI ASSISTANT POP UP</h1>
-            <div class="content_block_texts">
-                <h2>A/B Test Round 1</h2>
-                <h3>In the first round of testing, most of the testers were more inclined towards option A because it did not interrupt the user's operation. Option B, on the other hand, completely disrupted the user's workflow and forced them to make a decision right away. This high level of intrusiveness made users resistant to this feature, especially since the window was triggered without any input from the user, and they had no advance warning that the window would appear.</h3>
-            </div>
-            <v-lazy-image :src="images['s2_1.png']" :src-placeholder="images['s2_1@s.png']"/>
+            <vimeo_container  :vimeolink="{radio:16,link:'https://player.vimeo.com/video/901210458?muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
+        
         </div>
 
-        <div class="content_container">
-            <div class="content_block_texts">
-                <h2>A/B Test Round 2</h2>
-                <h3>After determining that users preferred a design with lower intrusiveness, I kept and modified option A, and designed a new option B with lower intrusiveness. Both options do not interrupt the user's current operation. I conducted new tests with these two options. However, the results did not provide a clear answer because the two options had different functionalities. Option B had some additional functions, which gave it a natural advantage, and this should not have been the case in this test.</h3>
-            </div>
-            <v-lazy-image :src="images['s2_2.png']" :src-placeholder="images['s2_2@s.png']"/>
-        </div>
+        <div class="breakline_fullwidth bc_b"></div>
 
-        <div class="content_container">
-            <div class="content_block_texts">
-                <h2>A/B Test Round 3</h2>
-                <h3>In order to ensure the accuracy of the test results, I made further modifications to options A and B, and conducted a third round of testing. This time, both options had exactly the same functionality, with the only difference being in their display. Option A emerged as the winner in this test, so I ultimately decided to use option A as the final design.</h3>
-            </div>
-            <v-lazy-image :src="images['s2_3.png']" :src-placeholder="images['s2_3@s.png']"/>
-            <v-lazy-image :src="images['s2_4.png']" :src-placeholder="images['s2_4@s.png']"/>
-        </div>
-
-        <div class="breakline bc_w1"></div>
-
-        <div class="content_container">
-            <h1>USABILITY TEST<br>_AI ASSISTANT POP UP</h1>
-            <div class="content_block_texts">
-                <h2>Improvements</h2>
-                <h3>The new version of the confirmation page will display more detailed information and includes a button for users to directly navigate to the corresponding position in the event list.</h3>
-            </div>
-            <v-lazy-image :src="images['s2_5.png']" :src-placeholder="images['s2_5@s.png']"/>
-        </div>
-
-        <div class="breakline bc_w1"></div>
-
-        <div class="content_container">
-            <h1>USABILITY TEST<br>_EVENT CARDS</h1>
-            <div class="content_block_texts">
-                <h2>Key feedback / Problems</h2>
-                <h3>In both the collapsed and expanded versions of the card, the top part remains the same.  If the event name is lengthy, it will still be truncated in the expanded version.  Therefore, showcasing a larger image of the event in the expanded card version is more effective.</h3>
-            </div>
-            <div class="content_block_texts">
-                <h2>Solutions</h2>
-                <h3>I redesigned the top section to allocate more space for the event name, ensuring the full title is displayed.  Tags were relocated to the information area to provide more room for a larger event image.  Additionally, I replaced 'Move' with 'Date' for clarity, and introduced a rearrange icon to the list.  The 'Add tickets and reservation' feature was renamed to 'Attach' and its icon was changed to enhance user understanding of its functionality.</h3>
-            </div>
-            <v-lazy-image :src="images['s2_6.png']" :src-placeholder="images['s2_6@s.png']"/>
-        </div>
-
-        <div class="breakline bc_w1"></div>
-
-        <div class="content_container">
-            <div class="content_block_texts_24">
-                <h1>DESIGN EXPLORATIONS <br>_INFORMATION CARDS</h1>    
-                <h3>In the original design, lodging and event cards shared a similar visual style. While this was functional and didn't hinder usage, I realized that lodging and events are distinct types of information. Events change daily, but lodging may remain the same, leading to redundant display of information at the list's top. Consequently, I modified the lodging design to occupy minimal space and introduced color-coding for immediate recognition as lodging information.</h3>
-            </div>
-            <v-lazy-image :src="images['s2_7.png']" :src-placeholder="images['s2_7@s.png']"/>
-        </div>
-    </div> 
-
-
-    <div class = "section_container bc_m">
         <div class="content_container">
             <div class="content_block_texts_24">
                 <h1 class="fc_s">PRIMARY FEATURE 03<br>_PACKING ASSISTANT</h1>
@@ -243,35 +367,11 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
                 <link_button :prototype_links = 'vp_button_3'/>
                 <link_button :prototype_links = 'fp_button_3'/>
             </div>
-            <div class="pp_container" style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/901210506?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="l_p_scan"></iframe></div>
-        </div>
-    </div> 
-
-    <div class = "section_container bc_b">
-        <div class="content_container">
-            <h1>USABILITY TEST <br>_SCANING</h1>
-            <div class="content_block_texts">
-                <h2>Improvements</h2>
-                <h3>In the new version, the entire page has been redesigned with a broader scanning range than the previous version. Additionally, a prompt stating 'Please do not stack the items on top of each other' has been added above the scanning button.</h3>
-            </div>
-            <v-lazy-image :src="images['s3_1.png']" :src-placeholder="images['s3_1@s.png']"/>
+            <vimeo_container  :vimeolink="{radio:16,link:'https://player.vimeo.com/video/901210506?muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
         </div>
 
-        <div class="breakline bc_w1"></div>
+        <div class="breakline_fullwidth bc_b"></div>
 
-        <div class="content_container">
-            <h1>USABILITY TEST <br>_ SECTION DISPLAY</h1>
-            <div class="content_block_texts">
-                <h2>Improvements</h2>
-                <h3>The latest version features a redesigned weather display, now presenting daily weather information for the entire travel plan in a list format, rather than only for the first day. Furthermore, the weather forecast and recommendation list have been combined into a horizontally scrollable component, substantially freeing up space to display the packing list.</h3>
-            </div>
-            <v-lazy-image :src="images['s3_2.png']" :src-placeholder="images['s3_2@s.png']"/>
-        </div>
-       
-    </div>
-
-
-    <div class = "section_container bc_m">
         <div class="content_container">
             <div class="content_block_texts_24">
                 <h1 class="fc_s">PRIMARY FEATURE 04<br>_TRAVEL COMMUNITY</h1>
@@ -281,59 +381,11 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
                 <link_button :prototype_links = 'vp_button_4'/>
                 <link_button :prototype_links = 'fp_button_4'/>
             </div>
-            <div class="pp_container" style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/901210543?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="l_p_search"></iframe></div>
+            <vimeo_container  :vimeolink="{radio:16,link:'https://player.vimeo.com/video/901210543?muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
         </div>
-    </div>  
+    </div> 
 
-    <div class = "section_container bc_b">
-        <div class="content_container">
-            <h1>A/B TEST<br>_SEARCH RESULT CARDS</h1>
-            <div class="content_block_texts">
-                <h2>Key feedback / Problems</h2>
-                <h3>In the initial design, users could access a secondary menu by long-pressing on a card. However, usability testing revealed that several participants were unaware of this feature. Further interviews indicated a preference against the long-press interaction, as it was unclear whether it required a longer press or a harder push.</h3>
-            </div>
-            <v-lazy-image :src="images['s4_1.png']" :src-placeholder="images['s4_1@s.png']"/>
-        </div>
 
-        <div class="breakline bc_w1"></div>
-
-        <div class="content_container">
-            <div class="content_block_texts">
-                <h2>Solutions & A/B Test Round 1</h2>
-                <h3>To resolve this issue, I tested four solutions across two A/B testing rounds. In the first round, I tried two approaches: SOLUTION 01 involved removing the secondary menu and adding feature icons directly on the card; SOLUTION 02 added a three-dots icon to indicate a long-press action. However, neither solution was effective. SOLUTION 01 overcrowded the card, obscuring the image, while SOLUTION 2 confused users, leading them to single-click instead of long-pressing.</h3>
-            </div>
-            <v-lazy-image :src="images['s4_2.png']" :src-placeholder="images['s4_2@s.png']"/>
-        </div>
-
-        <div class="content_container">
-            <div class="content_block_texts">
-                <h2>Solutions & A/B Test Round 2</h2>
-                <h3>Therefore, I developed SOLUTIONS 3 and 4. SOLUTION 3 added all feature icons to the card's bottom, while SOLUTION 4 used an expand-and-collapse approach with an arrow icon to hide these icons. At this stage, I also replaced the long-press interaction with a single-click, finding that long-press could disrupt the user's flow, even for just 1-2 seconds.</h3>
-                <h3>Following the second round of A/B testing, I chose SOLUTION 4 as the final design. It offers a cleaner visual than SOLUTION 3 and suits the infrequent use of these features by users. Since these features are less relevant before users have read the article, they don't need constant visibility on the card.</h3>
-            </div>
-            <v-lazy-image :src="images['s4_3.png']" :src-placeholder="images['s4_3@s.png']"/>
-        </div>
-
-        <div class="breakline bc_w1"></div>
-
-        <div class="content_container">
-            <h1>DESIGN EXPLORATIONS <br>_HOME PAGE</h1>
-            <div class="content_block_texts">
-                <h2>Round 1</h2>
-                <h3>Version 1 was the original design. In Version 2, I altered the 'What’s Popular' section's category tags to two lines with three-dot icons and used a larger font. In Version 3, while keeping the larger font, I reverted to Version 1's single-line tag display for space efficiency and content emphasis on the homepage.</h3>
-            </div>
-            <v-lazy-image :src="images['s4_4.png']" :src-placeholder="images['s4_4@s.png']"/>
-        </div>
-
-        <div class="content_container">
-            <div class="content_block_texts">
-                <h2>Round 2</h2>
-                <h3>After completing the design of Version 3, I realized it presented too much information, making the interface appear cluttered and less streamlined. In fact, I wanted to highlight just two elements on the homepage: the search box and exquisite landscape photos. This led to the design of Version 4.</h3>
-            </div>
-            <v-lazy-image :src="images['s4_5.png']" :src-placeholder="images['s4_5@s.png']"/>
-        </div>
-       
-    </div>
 
     <div class = "section_container bc_s">
         <div class="content_container">
@@ -466,6 +518,20 @@ const store = useStore()
         ]
     }  
 
+      //研究总结
+      let testing_arry = {
+        color:'var(--p-color-main)',
+        type:'img',
+        resize:false,
+        contents:[
+            [[images['t1.png'],images['t1@s.png']]],
+            [[images['t2.png'],images['t2@s.png']]],
+            [[images['t3.png'],images['t3@s.png']]],
+            [[images['t4.png'],images['t4@s.png']]],
+            [[images['t5.png'],images['t5@s.png']]]
+        ]
+    }  
+
      //按钮依赖
     let case_study_button = {
         main_color:'#000000',
@@ -480,6 +546,22 @@ const store = useStore()
         width:165,
         text:'CASE STUDY',
         link:'https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=1-5902&t=DoNIWpc88yBJsBBQ-1&scaling=contain&page-id=1%3A2&mode=design',
+    }
+
+    let research_button = {
+        main_color:'#000000',
+        sub_color:'var(--p-color-main)',
+        width:225,
+        text:'FULL RESEARCH DOC',
+        link:'https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=2-10876&t=kefJsVXSXZ3rlsUC-1&scaling=contain&page-id=2%3A6138&mode=design',
+    }
+
+    let testing_button = {
+        main_color:'var(--p-color-sub)',
+        sub_color:'var(--p-color-main)',
+        width:210,
+        text:'FULL TESTING DOC',
+        link:'https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=1-9076&t=McW1tpJ5YyYDo6kp-1&scaling=contain&page-id=1%3A3&mode=design',
     }
 
     let vp_button_1 = {
@@ -554,6 +636,8 @@ const store = useStore()
         link:'https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=1-5902&t=DoNIWpc88yBJsBBQ-1&scaling=contain&page-id=1%3A2&mode=design',
     }
 
+    let atag_link = "https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=2-10876&t=kefJsVXSXZ3rlsUC-1&scaling=contain&page-id=2%3A6138&mode=design"
+
     
 
 </script>
@@ -609,8 +693,14 @@ h4{
     line-height: 90px;
     color:var(--p-color-font-white-60);
 }
-
-
+a{
+    text-decoration: underline;
+    cursor: pointer;
+    color:inherit;
+}
+a:hover{
+    color:var(--p-color-main)
+}
 
 
 .section_container{
@@ -664,6 +754,12 @@ h4{
     flex-direction: column;
     gap:24px;
 }
+.content_block_texts_40{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    gap:40px;
+}
 .content_block_row_defult{
     width:100%;
     display: flex;
@@ -714,6 +810,18 @@ h4{
     max-width: 320px;
     height:0.5px;
     opacity: 0.3;
+}
+.breakline_fullwidth{
+    width: 100%;
+    max-width: 1000px;
+    height:0.5px;
+    opacity: 0.5;
+}
+.breakline_dots{
+    width: 40%;
+    height:0.5px;
+    border-bottom: dashed 0.3px rgb(255, 255, 255);
+    opacity: 0.2;
 }
 .center{
     margin:0 auto;
@@ -773,6 +881,41 @@ img{
     display: inline-block;
     /* animation: gradient-animation 1s linear infinite; */
 }
+
+.content_block_list{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    gap:8px
+}
+.list_i{
+    display: flex;
+}
+.dot{
+    width:30px;
+    height:30px;
+    display: flex;
+    flex:none;
+    justify-content: center;
+    align-items: center;
+}
+.dot::after{
+    display: block;
+    content:'';
+    width:4px;
+    height:4px;
+    background-color: var(--p-color-font-white-60);
+    border-radius: 4px;
+}
+.hilight_infor_s{
+    color:var(--p-color-main)
+}
+.gap_set_80{
+    gap:80px;
+}
+.gap_set_40{
+    gap:40px;
+}
 @keyframes gradient-animation {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -784,6 +927,7 @@ img{
 }
 
 @media (max-width: 800px){
+
 
 .ov_section_container{
     width:100%;

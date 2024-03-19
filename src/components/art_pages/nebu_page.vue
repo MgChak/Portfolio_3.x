@@ -26,109 +26,136 @@
         <v-lazy-image :src="images['background_2.jpg']" :src-placeholder="images['background_2@s.jpg']" class="sp_background_img"/>
     </div> 
 
+    <div class = "section_container bc_s">
+        <div class="content_container">
+            
+            
+            <div class="content_block_flex_2">
+                
+                <div class="content_container_inflex">
+                    <h1>My Main Tasks</h1>
+                    <div class="content_block_list">
+                        <div class="list_i">
+                            <div class="dot"></div>
+                            <h3>Environmental simulation <br>_ interaction & UX/UI design.</h3>
+                        </div>
+                        <div class="list_i">
+                            <div class="dot"></div>
+                            <h3>Robot-face display design.</h3>
+                        </div>
+                        <div class="list_i">
+                            <div class="dot"></div>
+                            <h3>Robot skins and animation design.</h3>
+                        </div>
+                        <div class="list_i">
+                            <div class="dot"></div>
+                            <h3>Navigation feature design.</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="breakline_h bc_w1"></div>
+
+                <div class="content_container_inflex">
+                    <h1>Team APOGEE</h1>
+                    <div class="content_block_list">
+                        <div class="list_i">
+                            <div class="dot"></div>
+                            <h3>Chakshing Lam ( IXD )</h3>
+                        </div>
+                        <div class="list_i">
+                            <div class="dot"></div>
+                            <h3>Edward Tsai ( IXD )</h3>
+                        </div>
+                        <div class="list_i">
+                            <div class="dot"></div>
+                            <h3>Zeo Zhang ( IND )</h3>
+                        </div>
+                        <div class="list_i">
+                            <div class="dot"></div>
+                            <h3>Emily Tedja  ( IND )</h3>
+                        </div>
+                        <div class="list_i">
+                            <div class="dot"></div>
+                            <h3>Jiayu Wang ( GR )</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div> 
+
 
 
     <div class = "section_container bc_b">
         <div class="content_container">
             <div class="content_block_flex">
-                <h1>OVERVIEW</h1>
+                <h1>NABU</h1>
                 <link_button :prototype_links = 'case_study_button'/>
             </div>
-            <h3>This project is centered on designing for space tourism, anticipating a future around 2060 when orbital space travel around Earth becomes commonplace. We envision a time when people are not only orbiting Earth but also seeking to travel to Mars.
+            <div class="content_block_texts">
+                <h2>Space Travel Companion</h2>
+                <h3>This project is centered on designing for space tourism, anticipating a future around 2060 when orbital space travel around Earth becomes commonplace. We envision a time when people are not only orbiting Earth but also seeking to travel to Mars.
 The primary objective of our project is to enhance the safety, ease, and comfort of tourists' journeys to Mars.</h3>
-        <v-lazy-image :src="images['o_1.png']" :src-placeholder="images['o_1@s.png']"/>
-        </div>
-    </div> 
-
-    <div class = "section_container bc_s">
-        <div class="content_container">
-            <h1>DESIGNED BY - TEAM APOGEE</h1>
-            <div class="content_block_flex">
-                <div class="team_m">
-                    <v-lazy-image :src="images['zeo.png']" :src-placeholder="images['zeo@s.png']"/>
-                    <div class="teaminfo">
-                        <h3>Zeo Zhang</h3>
-                        <h3>Industrial</h3>
-                    </div>
-                </div>
-                <div class="team_m">
-                    <v-lazy-image :src="images['emily.png']" :src-placeholder="images['emily@s.png']"/>
-                    <div class="teaminfo">
-                        <h3>Emily Tedja</h3>
-                        <h3>Industrial</h3>
-                    </div>
-                </div>
-                <div class="team_m">
-                    <v-lazy-image :src="images['chak.png']" :src-placeholder="images['chak@s.png']"/>
-                    <div class="teaminfo">
-                        <h3>Chashing Lam</h3>
-                        <h3>UX/UI</h3>
-                    </div>
-                </div>
-                <div class="team_m">
-                    <v-lazy-image :src="images['edward.png']" :src-placeholder="images['edward@s.png']"/>
-                    <div class="teaminfo">
-                        <h3>Edward Tsai</h3>
-                        <h3>UX/UI</h3>
-                    </div>
-                </div>
-                <div class="team_m">
-                    <v-lazy-image :src="images['jiayu.png']" :src-placeholder="images['jiayu@s.png']"/>
-                    <div class="teaminfo">
-                        <h3>Jiayu Wang</h3>
-                        <h3>Graphic</h3>
-                    </div>
-                </div>
             </div>
-        </div>
-        <div class="breakline bc_w1"></div>
-        <div class="content_container">
-            <h1>MY MAIN TASKS</h1>
-            <div class="content_block_list">
-                <div class="list_i">
-                    <div class="dot"></div>
-                    <h3>Environmental simulation _ interaction & UX/UI design.</h3>
-                </div>
-                <div class="list_i">
-                    <div class="dot"></div>
-                    <h3>Robot-face display design.</h3>
-                </div>
-                <div class="list_i">
-                    <div class="dot"></div>
-                    <h3>Robot skins and animation design.</h3>
-                </div>
-                <div class="list_i">
-                    <div class="dot"></div>
-                    <h3>Navigation feature design.</h3>
-                </div>
+            <v-lazy-image :src="images['o_1.png']" :src-placeholder="images['o_1@s.png']"/>
+            <div class="content_block_texts">
+                <h2>Holographic Projection</h2>
+                <h3>Nebu, equipped with two retractable hemispherical holographic projectors, can create 360-degree holographic projections, greatly enhancing interaction possibilities.</h3>
             </div>
-        </div>
-    </div> 
-
-    <div class = "section_container">
-        <div class="content_container">
-            <h1 class="fc_m">LOGO & COLORS</h1>
-            <v-lazy-image :src="images['logo.png']" :src-placeholder="images['logo@s.png']"/>
-        </div>
-        <v-lazy-image :src="images['background_2.jpg']" :src-placeholder="images['background_2@s.jpg']" class="sp_background_img"/>
-    </div> 
-
-
-
-    <div class = "section_container bc_s">
-        <div class="content_container">
-            <div class="content_block_flex">
-                <h1>STORYBOARD HIGHLIGHTS</h1>
-                <link_button :prototype_links = 'case_study_button_dark'/>
+            <v-lazy-image :src="images['s1_1.png']" :src-placeholder="images['s1_1@s.png']"/>
+            <div class="content_block_texts">
+                <h2>Environmental Simulation</h2>
+                <h3>Nebu uses holographic projections to simulate enjoyable scenes, reducing mental stress in enclosed spaces. Its AI analyzes user preferences to automatically select the most suitable scene.</h3>
             </div>
-            <img_slideshow :slideshow_arr = 'highlight_arry'/> 
+            <v-lazy-image :src="images['n1.png']" :src-placeholder="images['n1@s.png']"/>
         </div>
     </div> 
+
 
     <div class = "section_container">
         <div class="content_container">
             <div class="content_block_texts_24">
-                <h1 class="fc_m">CUSTOMIZABLE</h1>
+                <h1>Environmental Simulation <br>_ Interaction & UX/UI</h1>
+                <h3>In the process of environmental simulation, users have the flexibility to adjust the simulated scenes not only through voice command but also via a control panel. Nebu will project a control panel around the user's hand using holographic projection. Furthermore, Nebu will monitor the user's hand movements through a camera, enabling responsive interaction based on these gestures.</h3>
+            </div>
+            <link_button :prototype_links = 'vp_button_1'/>
+            <vimeo_container  :vimeolink="{radio:16,link:'https://player.vimeo.com/video/901211459?muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
+        </div>
+        <v-lazy-image :src="images['background_2.jpg']" :src-placeholder="images['background_2@s.jpg']" class="sp_background_img"/>
+    </div> 
+
+    <div class = "section_container bc_b">
+        <div class="content_container">
+            <div class="content_block_texts">
+                <h2>Interaction _ Select</h2>
+                <h3 >In the interface, users select options by pointing their fingers at the target buttons. The selected button enlarges, and its function is displayed above it for clarity. Simultaneously, the left side of the panel shows the current menu level the user is navigating, ensuring an intuitive and user-friendly experience</h3>
+            </div>
+            <vimeo_container  :vimeolink="{radio:16,link:'https://player.vimeo.com/video/924237286?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
+        </div>
+
+        <div class="content_container">
+            <div class="content_block_texts">
+                <h2>Interaction _ Swipe</h2>
+                <h3 >For menus with more than four options, additional buttons are minimized and hidden. Activating the scroll feature is as simple as using two fingers, which then displays a scrollbar at the top of the panel. Users can scroll through the menu to easily locate their desired function.</h3>
+            </div>
+            <vimeo_container  :vimeolink="{radio:16,link:'https://player.vimeo.com/video/924237278?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
+        </div>
+
+        <div class="content_container">
+            <div class="content_block_texts">
+                <h2>Interaction _ Back To</h2>
+                <h3 >When users are in the third or fourth level of the menu, they can quickly return to the main menu using the 'Back To' feature. To activate this function, users simply extend a second finger while selecting the 'Back' button. <br> Additionally, by bending the second finger, users can choose the specific menu level they want to return to, ensuring a swift and intuitive navigation experience.</h3>
+            </div>
+            <vimeo_container  :vimeolink="{radio:16,link:'https://player.vimeo.com/video/924237270?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
+        </div>
+    </div>
+
+    <div class = "section_container">
+        <div class="content_container">
+            <div class="content_block_texts_24">
+                <h1 class="fc_m">Customizable</h1>
                 <h3>To cater to the diverse preferences of as many users as possible, we have equipped Nebu with a 360-degree display screen. This feature allows users to customize Nebu's 'skin' to their liking, whether they prefer solid colors, images, or even animations. This customization ensures that every user has a unique and personal companion robot experience.</h3>
             </div>
             <div class="pp_container" style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/901211431?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="nebu_skin"></iframe></div>
@@ -136,18 +163,14 @@ The primary objective of our project is to enhance the safety, ease, and comfort
         <v-lazy-image :src="images['background_2.jpg']" :src-placeholder="images['background_2@s.jpg']" class="sp_background_img"/>
     </div> 
 
-    <div class = "section_container bc_s">
-        <div class="content_container">
-            <div class="content_block_flex">
-                <h1>RESEARCH SUMMARY</h1>
-                <link_button :prototype_links = 'research_button_dark'/>
-            </div>
-            <img_slideshow :slideshow_arr = 'research_arry'/> 
-        </div>
-    </div> 
+    
 
 
-    <div class = "section_container">
+
+
+
+
+    <!-- <div class = "section_container">
         <div class="content_container">
             
             <h1 >DEFINE PROBLEMS</h1>
@@ -162,7 +185,7 @@ The primary objective of our project is to enhance the safety, ease, and comfort
             </div>
         </div>
         <v-lazy-image :src="images['background_2.jpg']" :src-placeholder="images['background_2@s.jpg']" class="sp_background_img"/>
-    </div> 
+    </div>  -->
 
 
 
@@ -170,10 +193,8 @@ The primary objective of our project is to enhance the safety, ease, and comfort
     <div class = "section_container bc_b">
         <div class="content_container">
             <div class="content_block_texts_24">
-                <h1>HOLOGRAPHIC PROJECTION</h1>
-                <h3 >Equipped with two retractable hemispherical holographic projectors located at the top and bottom of its body, Nebu is capable of producing 360-degree holographic projections in any space. This feature unlocks endless possibilities for new modes of interaction, significantly enhancing Nebu's interactive capabilities.</h3>
+                <h1>Additional Applications:</h1>
             </div>
-            <v-lazy-image :src="images['s1_1.png']" :src-placeholder="images['s1_1@s.png']"/>
         </div>
 
         <div class="content_container">
@@ -192,57 +213,18 @@ The primary objective of our project is to enhance the safety, ease, and comfort
             <v-lazy-image :src="images['s1_3.png']" :src-placeholder="images['s1_3@s.png']"/>
         </div>
 
-        <div class="content_container">
-            <div class="content_block_texts">
-                <h2>Environmental Simulation</h2>
-                <h3 >To mitigate the mental stress caused by spending extended periods in enclosed spaces, Nebu will use holographic projections to simulate scenes that the user enjoys. The selection process for these projected scenes is automated; Nebu's advanced AI system will analyze the user's preferences to choose the most suitable scene.</h3>
+
+        <!-- <div class="content_container">
+            <div class="content_block_flex">
+                <h2>More Storyboards</h2>
+                <link_button :prototype_links = 'case_study_button_dark'/>
             </div>
-            <v-lazy-image :src="images['s1_4.png']" :src-placeholder="images['s1_4@s.png']"/>
-        </div>
+            <img_slideshow :slideshow_arr = 'highlight_arry'/> 
+        </div> -->
     </div> 
 
 
-    <div class = "section_container">
-        <div class="content_container">
-            <div class="content_block_texts_24">
-                <h1>Environmental Simulation <br>_ Interaction & UX/UI</h1>
-                <h3>In the process of environmental simulation, users have the flexibility to adjust the simulated scenes not only through voice command but also via a control panel. Nebu will project a control panel around the user's hand using holographic projection. Furthermore, Nebu will monitor the user's hand movements through a camera, enabling responsive interaction based on these gestures.</h3>
-            </div>
-            <link_button :prototype_links = 'vp_button_1'/>
-            <div class="pp_container" style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/901211459?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="最终输出_1080"></iframe></div>
-        </div>
-        <v-lazy-image :src="images['background_2.jpg']" :src-placeholder="images['background_2@s.jpg']" class="sp_background_img"/>
-    </div> 
-
-    <div class = "section_container bc_b">
-        <div class="content_container">
-            <div class="content_block_texts">
-                <h2>Environmental Simulation <br> _ Interaction & UX/UI</h2>
-                <h3 >Whenever the user lifts and opens their hand, the control panel is projected out. Conversely, the panel automatically hides when the hand is not in this position.</h3>
-            </div>
-            <v-lazy-image :src="images['s2_1.png']" :src-placeholder="images['s2_1@s.png']"/>
-        </div>
-
-        <div class="content_container">
-            <h3 >In the interface, users select options by pointing their fingers at the target buttons. The selected button enlarges, and its function is displayed above it for clarity. Simultaneously, the left side of the panel shows the current menu level the user is navigating, ensuring an intuitive and user-friendly experience.</h3>
-            <v-lazy-image :src="images['s2_2.png']" :src-placeholder="images['s2_2@s.png']"/>
-        </div>
-
-        <div class="content_container">
-            <h3 >For menus with more than four options, additional buttons are minimized and hidden. Activating the scroll feature is as simple as using two fingers, which then displays a scrollbar at the top of the panel. Users can scroll through the menu to easily locate their desired function.</h3>
-            <v-lazy-image :src="images['s2_3.png']" :src-placeholder="images['s2_3@s.png']"/>
-        </div>
-
-        <div class="content_container">
-            <h3 >When users are in the third or fourth level of the menu, they can quickly return to the main menu using the 'Back To' feature. To activate this function, users simply extend a second finger while selecting the 'Back' button. </h3>
-            <v-lazy-image :src="images['s2_4.png']" :src-placeholder="images['s2_4@s.png']"/>
-        </div>
-
-        <div class="content_container">
-            <h3 >Additionally, by bending the second finger, users can choose the specific menu level they want to return to, ensuring a swift and intuitive navigation experience.</h3>
-            <v-lazy-image :src="images['s2_5.png']" :src-placeholder="images['s2_5@s.png']"/>
-        </div>
-    </div>
+   
     
     <div class = "section_container">
         <div class="content_container">
@@ -286,6 +268,7 @@ import overview_info from '../comps/overview_info.vue'
 import link_button from '../comps/link_button.vue'
 import img_slideshow from '../comps/img_slideshow.vue'
 import VLazyImage from "v-lazy-image"
+import vimeo_container from '../comps/vimeo_container.vue'
 //引入hooks
 import {animation_queue_route_in,animation_queue_route_out,animation_queue_before_route_in} from'../../hooks/use_art_page_functions'
 //依赖引入
@@ -426,7 +409,7 @@ const store = useStore()
 h1{
     font-size: 40px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 40px; 
     color:var(--p-color-main);
 
@@ -434,7 +417,7 @@ h1{
 h2{
     font-size: 30px;
     font-style: normal;
-    font-weight: 900;
+    font-weight: 500;
     line-height: 30px;
     color:var(--p-color-font-white-100);
 }
@@ -491,11 +474,26 @@ h4{
     flex-direction: column;
     gap:40px
 }
+
 .content_block_flex{
     width:100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.content_block_flex_2{
+    width:100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: top;
+}
+.content_container_inflex{
+    max-width:var(--max-content-width);
+    display: flex;
+    flex-direction: column;
+    width:340px;
+    gap:40px;
+    
 }
 .content_block_texts{
     width:100%;
@@ -578,6 +576,14 @@ h4{
     height:0.5px;
     opacity: 0.3;
 }
+.breakline_h{
+    height: 160px;
+    max-width: 320px;
+    width:0.5px;
+    opacity: 0.3;
+    margin-top: auto;
+    margin-bottom: auto;
+}
 .center{
     margin:0 auto;
 }
@@ -658,6 +664,9 @@ img{
 
 
 @media (max-width: 800px){
+    .breakline_h{
+        display: none;
+    }
 
 .ov_section_container{
     width:100%;
@@ -673,6 +682,11 @@ h4{
     flex-direction: column;
     align-items: flex-start;
     gap:24px;
+}
+.content_block_flex_2{
+    flex-direction: column;
+    align-items: flex-start;
+    gap:80px;
 }
 
 .content_block_buttons{

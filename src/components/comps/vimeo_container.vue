@@ -21,7 +21,6 @@ const store = useStore()
 
     //引入props
     let props = defineProps(['vimeolink'])
-    console.log(props.vimeolink)
 
     //获取view——window size， 给img用
     let el = ref()
