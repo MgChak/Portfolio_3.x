@@ -229,7 +229,7 @@ The primary objective of our project is to enhance the safety, ease, and comfort
     <div class = "section_container">
         <div class="content_container">
             <div class="content_block_texts_24">
-                <h1>NEXT...</h1>
+                <h1>Next...</h1>
                 <h3>Designing a commercial space travel experience is a vast and challenging endeavor. Due to time constraints in production, our current focus has been primarily on the visual and interactive design of the companion robot Nebu. Beyond visual customization, we should consider expanding the range of features and activities available on the spaceship to cater to the diverse needs of travelers. Additionally, it would be beneficial to explore the types of activities and accommodations that NebuLine could offer on Mars, ensuring a well-rounded and satisfying experience for all. As for the future, we anticipate delving deeper into the broader aspects of interstellar travel, continually evolving and enhancing the user experience.</h3>
             </div>
             <link_button :prototype_links = 'case_study_button_dark'/>
@@ -240,7 +240,7 @@ The primary objective of our project is to enhance the safety, ease, and comfort
 
         <div class="content_container">
             <div class="content_block_texts_24">
-                <h1>THANKS</h1>
+                <h1>Thanks</h1>
                 <h3>I would like to extend my special thanks to every member of Team Apogee. Your professionalism and exceptional design skills have significantly contributed to our project over the past fourteen weeks. I am deeply grateful for your dedication and the outstanding work each of you has delivered.</h3>
             </div>
             <v-lazy-image :src="images['team.png']" :src-placeholder="images['team@s.png']"/>

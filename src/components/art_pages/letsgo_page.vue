@@ -18,7 +18,7 @@
     <div class = "section_container bc_b">
         <div class="content_container">
             <div class="content_block_flex">
-                <h1>OVERVIEW</h1>
+                <h1>Overview</h1>
                 <link_button :prototype_links = 'case_study_button'/>
             </div>
             <h3>Let's Go is a travel planning application designed to assist users in creating, searching, and sharing multi-person travel plans. Utilizing the latest AI technology, the app becomes smarter, aiding users in creating travel plans during chats with their travel companions and offering packing suggestions based on their itineraries. Additionally, users can share their travel plans with other travelers in the online community for inspiration and advice. Let's Go makes for your ultimate travel companion for your next journey.</h3>
@@ -32,7 +32,7 @@
         <div class="content_container" style="gap:80px">
             <div class="content_block_texts_24">
                 <div class="content_block_flex">
-                    <h1><span class="AI">AI</span> POWERD<br>FEATURE HIGHLIGHTS</h1>
+                    <h1><span class="AI">AI</span> Powerd<br>Feature Highlights</h1>
                     <link_button :prototype_links = 'case_study_button_dark'/>
                 </div>
                 <h3>Let's Go leverages its integrated AI and vast database to simplify travel preparations for users. It aims to make journey planning more efficient and less stressful.</h3>
@@ -80,7 +80,7 @@
         <div class="content_container">
             <v-lazy-image :src="images['p1.png']" :src-placeholder="images['p1@s.png']"/>
             <div class="content_block_texts_24">
-                <h1 class="fc_s">DEFINE PROBLEMS</h1>
+                <h1 class="fc_s">Define Problems</h1>
                 <h3 class="fc_s">Organizing group travel can be a daunting task for users, owing to the scarcity of appropriate tools and resources. Consequently, this often leads to a subpar experience when attempting to coordinate trips collaboratively.</h3>
             </div>
         </div>
@@ -88,7 +88,7 @@
         <div class="content_container">
             <v-lazy-image :src="images['p2.png']" :src-placeholder="images['p2@s.png']"/>
             <div class="content_block_texts_24">
-                <h1 class="fc_s">HOW MIGHT WE STATEMENT</h1>
+                <h1 class="fc_s">How Might We ...</h1>
                 <h3 class="fc_s">How might we help young adults with expendable income for travel, use mobile technology to be well prepared for a group trip? </h3>
             </div>
         </div>
@@ -98,7 +98,7 @@
     <div class = "section_container bc_b">
         <div class="content_container">
             <div class="content_block_flex">
-                <h1>BACKGROUND RESEARCH</h1>
+                <h1>Background Research</h1>
                 <link_button :prototype_links = 'research_button'/>
             </div>
         </div>
@@ -324,7 +324,7 @@
         <div class="content_container">
             <v-lazy-image :src="images['ta.png']" :src-placeholder="images['ta@s.png']"/>
             <div class="content_block_texts_24">
-                <h1 class="fc_s">TARGET AUDIENCE:</h1>
+                <h1 class="fc_s">Target Audience</h1>
                 <div class="content_block_list">
                     <div class="list_i">
                         <div class="dot dot_dark"></div>
@@ -352,7 +352,7 @@
         <div class="breakline bc_s center"></div>
         <div class="content_container">
             <div class="content_block_texts_24">
-                <h1 class="fc_s">PERSONAS</h1>
+                <h1 class="fc_s">Personas</h1>
                 <div class="content_block_row_defult content_block_row_flex-reverse">
                     <div class="flex_half_size_img_100">
                         <v-lazy-image :src="images['persona2.png']" :src-placeholder="images['persona2@s.png']"/>
@@ -367,7 +367,7 @@
         <div class="breakline bc_s center"></div>
         <div class="content_container">
             <div class="content_block_texts_24">
-                <h1 class="fc_s">TASK FLOWS</h1>
+                <h1 class="fc_s">Task Flows</h1>
                 <img_slideshow :slideshow_arr = 'task_arry'/> 
             </div>
         </div>
@@ -375,7 +375,7 @@
         <div class="breakline bc_s center"></div>
         <div class="content_container">
             <div class="content_block_texts_24">
-                <h1 class="fc_s">WIREFRAMES</h1>
+                <h1 class="fc_s"> Wireframes</h1>
                 <v-lazy-image :src="images['w.png']" :src-placeholder="images['w@s.png']"/>
             </div>
         </div>
@@ -386,7 +386,7 @@
 
         <div class="content_container">
             <div class="content_block_flex">
-                <h1>Usability Testing <br>_AI GENARETOR POP UP</h1>
+                <h1>Usability Testing <br>_AI Genaretor Pop Up</h1>
                 <link_button :prototype_links = 'testing_button'/>
             </div>
             
@@ -445,7 +445,7 @@
     <div class = "section_container bc_m">
         <div class="content_container">
             <div class="content_block_texts_24">
-                <h1 class="fc_s">PRIMARY FEATURE 01<br>_CREATE NEW TRIP PLAN</h1>
+                <h1 class="fc_s">Primary Feature 01<br>_Create a New Trip Plan</h1>
                 <h3 class="fc_s">
 Users can easily create a travel plan in Let's Go and start adding their favorite events. Throughout the creation process, they can also invite friends who will be traveling with them to participate in crafting a unique and collaborative travel itinerary.</h3>
             </div>
@@ -460,7 +460,7 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
 
         <div class="content_container">
             <div class="content_block_texts_24">
-                <h1 class="fc_s">PRIMARY FEATURE 02<br>_AI CHAT ASSISTANT</h1>
+                <h1 class="fc_s">Primary Feature 02<br>_AI Chat Assistant</h1>
                 <h3 class="fc_s">The AI chat assistant will automatically generates or adjusts travel plans based on users' chat content in Let's Go. As users discuss their travel ideas using the group chat feature, an AI assistant continuously scans the conversation, creating viable travel plans based on the group conversation. Users can then vote to decide whether to include the AI-generated content in their travel itinerary.</h3>
             </div>
             <div class="content_block_buttons">
@@ -475,7 +475,7 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
 
         <div class="content_container">
             <div class="content_block_texts_24">
-                <h1 class="fc_s">PRIMARY FEATURE 03<br>_PACKING ASSISTANT</h1>
+                <h1 class="fc_s">Primary Feature 03<br>_Packing Assistant</h1>
                 <h3 class="fc_s">The packing assistant feature provides users with a recommended packing list based on the weather forecast of their travel destination. For instance, in cold regions, Let's Go suggests bringing warm clothing. Additionally, users can utilize the luggage scanning function, where Let's Go identifies items in the camera view and automatically checks them off the list, aiding in efficient travel preparation.</h3>
             </div>
             <div class="content_block_buttons">
@@ -489,7 +489,7 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
 
         <div class="content_container">
             <div class="content_block_texts_24">
-                <h1 class="fc_s">PRIMARY FEATURE 04<br>_TRAVEL COMMUNITY</h1>
+                <h1 class="fc_s">Primary Feature 04<br>_Travel Community</h1>
                 <h3 class="fc_s">The primary goal of this feature is to provide users with a platform to share, find, and store their travel plans. The homepage automatically recommends popular travel plans or destinations tailored to the user's travel preferences. On the search results page, users can conveniently swipe through images included in the plans. Furthermore, the Plan Details page features a system-generated summary of the plan's highlights at the top, enabling users to quickly ascertain whether the plan aligns with their needs.</h3>
             </div>
             <div class="content_block_buttons">
@@ -504,7 +504,7 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
 
     <div class = "section_container bc_s">
         <div class="content_container">
-            <h1 class="fc_m">STYLE GUIDE</h1>
+            <h1 class="fc_m">Style Guide</h1>
             <img_slideshow :slideshow_arr = 'style_arry'/> 
         </div>
     </div> 
@@ -513,7 +513,7 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
     <div class = "section_container bc_m">
         <div class="content_container">
             <div class="content_block_texts_24">
-                <h1 class="fc_s">NEXT...</h1>
+                <h1 class="fc_s">Next...</h1>
                 <h3 class="fc_s">The reason behind my decision to design this travel app, 'Let's Go', arose during the winter of 2022 when I planned a trip with friends and we struggled to create a travel plan. Despite numerous attempts, we couldn't find an appropriate tool. 'Let's Go' was designed with the intent to make the process of planning trips more enjoyable and relaxed. With the progression of AI technology, I aim to continuously add more interesting features to 'Let's Go', and I look forward to the day when it becomes a real app.</h3>
             </div>
             <link_button :prototype_links = 'next_button'/>
