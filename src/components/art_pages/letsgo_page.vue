@@ -22,7 +22,7 @@
                 <link_button :prototype_links = 'case_study_button'/>
             </div>
             <h3>Let's Go is a travel planning application designed to assist users in creating, searching, and sharing multi-person travel plans. Utilizing the latest AI technology, the app becomes smarter, aiding users in creating travel plans during chats with their travel companions and offering packing suggestions based on their itineraries. Additionally, users can share their travel plans with other travelers in the online community for inspiration and advice. Let's Go makes for your ultimate travel companion for your next journey.</h3>
-            <vimeo_container :vimeolink="{radio:16,link:'https://player.vimeo.com/video/925225758?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
+            <v-lazy-image :src="images['o_1.png']" :src-placeholder="images['o_1@s.png']"/>
         </div>
     </div> 
 
@@ -32,7 +32,7 @@
         <div class="content_container" style="gap:80px">
             <div class="content_block_texts_24">
                 <div class="content_block_flex">
-                    <h1><span class="AI">AI</span> Powerd<br>Feature Highlights</h1>
+                    <h1><span class="AI">AI</span> Powered<br>Feature Highlights</h1>
                     <link_button :prototype_links = 'case_study_button_dark'/>
                 </div>
                 <h3>Let's Go leverages its integrated AI and vast database to simplify travel preparations for users. It aims to make journey planning more efficient and less stressful.</h3>
@@ -279,7 +279,7 @@
             </div>
             <div class="breakline_dots"></div>
             <div class="content_block_texts_24">
-                <h3 class="fc_w1">Ai Packing Assistant</h3>
+                <h3 class="fc_w1">AI Packing Assistant</h3>
                 <div class="content_block_list">
                     <div class="list_i">
                         <div class="dot"></div>
@@ -385,7 +385,7 @@
 
         <div class="content_container">
             <div class="content_block_flex">
-                <h1>Usability Testing <br>_AI Genaretor Pop Up</h1>
+                <h1>Usability Testing <br>_AI Generator Pop Up</h1>
                 <link_button :prototype_links = 'testing_button'/>
             </div>
             
