@@ -11,7 +11,7 @@ import nebu from '../components/art_pages/nebu_page.vue'
 
 export default  createRouter({
   //正式版去掉'/new-version-testing/'
-    history: createWebHashHistory('/new-version-testing/'),
+    history: createWebHashHistory(),
     routes:[
       //main pages
       {   

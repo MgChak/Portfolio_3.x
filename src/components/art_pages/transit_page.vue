@@ -421,7 +421,7 @@ const store = useStore()
     --p-color-main:#67F1E0;
     --p-color-sub:#141C1B;
     --p-color-font-white-100:rgb(248, 251, 246);
-    --p-color-font-white-60: rgba(248, 251, 246, 0.60);
+    --p-color-font-white-60: rgb(171, 171, 171);
   
 }
 
@@ -429,24 +429,34 @@ h1{
     font-size: 40px;
     font-style: normal;
     font-weight: 700;
-    line-height: 40px; 
+    line-height: 50px; 
     color:var(--p-color-main);
 
 }
 h2{
     font-size: 30px;
     font-style: normal;
-    font-weight: 900;
-    line-height: 30px;
+    font-weight: 600;
+    line-height: 40px;
     color:var(--p-color-font-white-100);
 }
 h3{
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 30px;
+    line-height: 40px;
     color:var(--p-color-font-white-60);
 }
+    h3.fc_s{
+        font-weight: 600;
+        opacity: 0.9;
+    }
+    h2.fc_s{
+        font-weight: 700;
+    }
+    h1.fc_s{
+        font-weight: 900;
+    }
 
 h4{
     font-size: 90px;

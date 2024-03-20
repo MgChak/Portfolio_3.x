@@ -402,32 +402,33 @@ const store = useStore()
     --p-color-main:#77DEFF;
     --p-color-sub:#141416;
     --p-color-font-white-100:rgb(248, 251, 246);
-    --p-color-font-white-60: rgba(248, 251, 246, 0.60);
+    --p-color-font-white-60: rgb(171, 171, 171);
   
 }
 
 h1{
     font-size: 40px;
     font-style: normal;
-    font-weight: 600;
-    line-height: 40px; 
+    font-weight: 700;
+    line-height: 50px; 
     color:var(--p-color-main);
 
 }
 h2{
     font-size: 30px;
     font-style: normal;
-    font-weight: 500;
-    line-height: 30px;
+    font-weight: 600;
+    line-height: 40px;
     color:var(--p-color-font-white-100);
 }
 h3{
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 30px;
+    line-height: 40px;
     color:var(--p-color-font-white-60);
 }
+
 
 h4{
     font-size: 90px;

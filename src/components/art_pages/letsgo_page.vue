@@ -22,7 +22,7 @@
                 <link_button :prototype_links = 'case_study_button'/>
             </div>
             <h3>Let's Go is a travel planning application designed to assist users in creating, searching, and sharing multi-person travel plans. Utilizing the latest AI technology, the app becomes smarter, aiding users in creating travel plans during chats with their travel companions and offering packing suggestions based on their itineraries. Additionally, users can share their travel plans with other travelers in the online community for inspiration and advice. Let's Go makes for your ultimate travel companion for your next journey.</h3>
-            <v-lazy-image :src="images['o_1.png']" :src-placeholder="images['o_1@s.png']"/>
+            <vimeo_container :vimeolink="{radio:16,link:'https://player.vimeo.com/video/925225758?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
         </div>
     </div> 
 
@@ -36,10 +36,9 @@
                     <link_button :prototype_links = 'case_study_button_dark'/>
                 </div>
                 <h3>Let's Go leverages its integrated AI and vast database to simplify travel preparations for users. It aims to make journey planning more efficient and less stressful.</h3>
-                <vimeo_container :vimeolink="{radio:16,link:'https://player.vimeo.com/video/920302342?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
             </div>
             <div class="breakline bc_w6 center"></div>
-            <div class="content_block_row_defult">
+            <div class="content_block_row_defult content_block_row_flex-reverse">
                 <div class="content_block_texts">
                     <h2>AI Generator <br>
                         Based on Conversation</h2>
@@ -48,7 +47,7 @@
                 <vimeo_container class="content_block_row_iframe" :vimeolink="{radio:4,link:'https://player.vimeo.com/video/920279092?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
             </div>
             <div class="breakline bc_w6 center"></div>
-            <div class="content_block_row_defult content_block_row_flex-reverse">
+            <div class="content_block_row_defult">
                 <div class="content_block_texts">
                     <h2>Group Voting</h2>
                     <h3>The AI initiates a vote on event suggestions to match group preferences. Events confirmed by over half the members are added to the plan.</h3>
@@ -56,7 +55,7 @@
                 <vimeo_container class="content_block_row_iframe" :vimeolink="{radio:4,link:'https://player.vimeo.com/video/920279110?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
             </div>
             <div class="breakline bc_w6 center"></div>
-            <div class="content_block_row_defult">
+            <div class="content_block_row_defult content_block_row_flex-reverse">
                 <div class="content_block_texts">
                     <h2>AI Packing <br>
                     Recommendation</h2>
@@ -65,7 +64,7 @@
                 <vimeo_container class="content_block_row_iframe" :vimeolink="{radio:4,link:'https://player.vimeo.com/video/920618338?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
             </div>
             <div class="breakline bc_w6 center"></div>
-            <div class="content_block_row_defult content_block_row_flex-reverse">
+            <div class="content_block_row_defult ">
                 <div class="content_block_texts">
                     <h2>AI Packing Scanner</h2>
                     <h3>The AI recommends items to carry based on the travel destination, showing how many travelers have taken these items there before, for user reference.</h3>
@@ -788,7 +787,7 @@ const store = useStore()
     --p-color-sub:#191C19;
     --p-color-sub-2:#171717;
     --p-color-font-white-100:rgb(248, 251, 246);
-    --p-color-font-white-60: rgba(248, 251, 246, 0.60);
+    --p-color-font-white-60: rgb(171, 171, 171);
   
 }
 
@@ -796,7 +795,7 @@ h1{
     font-size: 40px;
     font-style: normal;
     font-weight: 700;
-    line-height: 40px; 
+    line-height: 50px; 
     color:var(--p-color-main);
 
 }
@@ -804,16 +803,26 @@ h2{
     font-size: 30px;
     font-style: normal;
     font-weight: 600;
-    line-height: 30px;
+    line-height: 40px;
     color:var(--p-color-font-white-100);
 }
 h3{
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 30px;
+    line-height: 40px;
     color:var(--p-color-font-white-60);
 }
+    h3.fc_s{
+        font-weight: 600;
+        opacity: 0.9;
+    }
+    h2.fc_s{
+        font-weight: 700;
+    }
+    h1.fc_s{
+        font-weight: 900;
+    }
 
 h4{
     font-size: 90px;
@@ -971,7 +980,7 @@ img{
     color:var(--p-color-main)
 }
 .fc_s{
-    color:var(--p-color-sub)
+    color:var(--p-color-sub);
 }
 .fc_w1{
     color:var(--p-color-font-white-100)

@@ -43,6 +43,7 @@ const store = useStore()
     onMounted(() => {
         player = new Player(iframe_vimeo.value);
         video_control_stop()
+
     });
 
     //控制视频播放
@@ -77,6 +78,8 @@ const store = useStore()
         
       }
     });
+
+
 
 </script>
 
