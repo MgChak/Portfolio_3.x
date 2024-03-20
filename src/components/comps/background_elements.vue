@@ -1,5 +1,5 @@
 <template>
-   <div class="background_anim_holder" ref="background" :style="handle_background_size">
+   <div class="background_anim_holder"  :style="handle_background_size">
         </div>
    
    
@@ -7,7 +7,7 @@
 
 <script setup>
 //依赖引入
-import {computed,onMounted,ref} from 'vue'
+import {computed} from 'vue'
 import useStore from '../../store/index'
 const store = useStore()
 
@@ -31,23 +31,6 @@ let handle_background_size = computed(()=>{
             ["background-size"]:b*0.5+"px"
         }
     })
-
-
-    //动画
-
-    let background = ref(null)
-
-    // onMounted(()=>{
-    //     gsap.to(background.value,{
-    //         transformOrigin: "top,left",
-    //         xPercent:-50,
-    //         yPercent:25,
-    //         duration:30,
-    //         repeat:-1,
-    //         ease:"none",
-    //     })
-    // })
-
 
 
 </script>

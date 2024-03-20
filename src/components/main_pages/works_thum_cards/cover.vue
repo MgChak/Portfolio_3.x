@@ -4,10 +4,6 @@
         <div class="flex_container" :style="{height:flex_height}">
             <div class="el_conatiner" >
                 <div class="title_container">
-                    <!-- <div class="bobo_con">
-                        <img ref="img4" class="imgs img3" src="../../../assets/thum_cards/bobo.svg" alt="">   
-                        <div ref="con" class="bobo_back"></div>
-                    </div> -->
                     <div class="box box1">
                         <img ref="img123" class="imgs" src="../../../assets/thum_cards/hi.svg" alt="">
                     </div>
@@ -18,13 +14,6 @@
                         <img ref="img3" class="imgs" src="../../../assets/thum_cards/design.svg" alt="">
                     </div>
                     <div style="width:1px;height:5%;"></div>
-                    <!-- <div ref="line1" class="breakline"></div>
-                    <div class="img5_con">
-                        <div class="box box4">
-                            <img ref="img5" class="imgs" src="../../../assets/thum_cards/code.svg" alt="">    
-                        </div>
-                    </div>
-                    <div ref="line2" class="breakline"></div> -->
                 </div>
             
             </div>
@@ -37,6 +26,7 @@
         </div>
         
         <div class="background_holder" >
+                <div class="top_cover"></div>
                 <Background_Element/>
         </div>
         
@@ -49,15 +39,12 @@
 import{handle_el_container_size} from '../../../hooks/use_works_slideshow_handle.js'
 import Background_Element from "../../comps/background_elements.vue"
 //依赖引入
-import {computed,onMounted,ref, watchEffect} from 'vue'
+import {computed,ref} from 'vue'
 
 import useStore from '../../../store/index.js'
 import { useElementSize } from '@vueuse/core'
-import { CustomEase } from "gsap/CustomEase";
-import gsap from 'gsap'
 const store = useStore()
-gsap.registerPlugin(CustomEase);
-    
+
 
 
     //计算内容物固定框的尺寸
@@ -70,132 +57,6 @@ gsap.registerPlugin(CustomEase);
     let flex_height = '100%'
 
 
-    // //动画
-    // const img123 = ref(null)
-    //     const img2 = ref(null)
-    //     const img3 = ref(null)
-    //     const arrow_box = ref(null)
-    //     // const img4 = ref(null)
-    //     const img5 =ref(null)
-    //     // const con = ref(null)
-    //     const line1 = ref(null)
-    //     const line2 = ref(null)
-    //     var ani="M0,0 C0.39,0 0.589,1 1,1 "
-    // var time = 0.2
-    
-
-    // onMounted(()=>{
-        
-
-    // const stop = watchEffect(()=>{
-    //     if(store.cover_animation){
-    //         stop()
-    //         store.cover_animation = false
-    //         gsap.to(img123.value,{
-    //             yPercent:-100,
-    //             duration:0.6,
-    //             ease: CustomEase.create("custom", store.animation_ease_c1),
-    //         })
-    //         gsap.to(img2.value,{
-    //             yPercent:-100,
-    //             duration:0.6,
-    //             ease: CustomEase.create("custom", store.animation_ease_c1),
-    //             delay:0.3,
-    //         })
-    //         gsap.to(img3.value,{
-    //             yPercent:-100,
-    //             duration:0.6,
-    //             ease: CustomEase.create("custom", store.animation_ease_c1),
-    //             delay:0.6,
-    //         })
-    //         gsap.to(img5.value,{
-    //             yPercent:-100,
-    //             duration:0.6,
-    //             ease: CustomEase.create("custom", store.animation_ease_c1),
-    //             delay:1,
-    //         })
-    //         gsap.to(line1.value,{
-    //             scaleX:1,
-    //             duration:0.6,
-    //             ease: CustomEase.create("custom", store.animation_ease_c1),
-    //             delay:0.6,
-    //         })
-    //         gsap.to(line2.value,{
-    //             scaleX:1,
-    //             duration:0.6,
-    //             ease: CustomEase.create("custom", store.animation_ease_c1),
-    //             delay:0.6,
-    //         })
-    //         gsap.to(arrow_box.value,{
-    //             yPercent:-200,
-    //             opacity:1,
-    //             duration:0.6,
-    //             ease: CustomEase.create("custom", store.animation_ease_c1),
-    //         })
-            // gsap.to(con.value,{
-            //         yPercent:-120,
-            //         duration:0.3,
-            //         ease: CustomEase.create("custom", ani),
-            //         delay:0.6,
-            // })
-
-            // var tl = gsap.timeline()
-            // tl.to(img4.value,{
-            //         yPercent:-118,
-            //         scaleY:0.7,
-            //         scaleX:1.3,
-            //         duration:0.3,
-            //         ease: CustomEase.create("custom", ani),
-            //         delay:0.6,
-            //     })
-            //     tl.to(img4.value,{
-            //         scaleY:1.2,
-            //         scaleX:0.8,
-            //         duration:time,
-            //         ease: CustomEase.create("custom", ani),
-            //     })
-            //     tl.to(img4.value,{
-            //         scaleY:0.8,
-            //         scaleX:1.2,
-            //         duration:time,
-            //         ease: CustomEase.create("custom", ani),
-            //     })
-            //     tl.to(img4.value,{
-            //         scaleY:1.1,
-            //         scaleX:0.9,
-            //         duration:time,
-            //         ease: CustomEase.create("custom", ani),
-            //     })
-            //     tl.to(img4.value,{
-            //         scaleY:0.95,
-            //         scaleX:1.05,
-            //         duration:time,
-            //         ease: CustomEase.create("custom", ani),
-            //     })
-            //     tl.to(img4.value,{
-            //         scaleY:1.02,
-            //         scaleX:0.98,
-            //         duration:time,
-            //         ease: CustomEase.create("custom", ani),
-            //     })
-            //     tl.to(img4.value,{
-            //         scaleY:1,
-            //         scaleX:1,
-            //         duration:time,
-            //         ease: CustomEase.create("custom", ani),
-            //     })
-           
-            
-            
-            
-    //     }
-    // })
-        
-
-    // })
-
-    
-
 
 </script>
 
@@ -207,9 +68,22 @@ gsap.registerPlugin(CustomEase);
     align-items: center; */
     position:relative;
     width:100vw;
-    background: linear-gradient(0deg, #000 0%, #454545 100%);
-
+    background: linear-gradient(0deg, #000 30%, #0B7BE2 100%);
 }
+.top_cover{    
+    overflow: hidden;
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    position:absolute;
+    left:0;
+    top:0;
+    z-index: 1;
+    width:100%;
+    height:100%;
+    background: linear-gradient(0deg, #000 0%, #00000000 50%);
+}
+
 .flex_container{
     overflow: hidden;
     display: flex;
@@ -225,7 +99,7 @@ gsap.registerPlugin(CustomEase);
     z-index: 0;
     width:100%;
     height:100vh;
-    opacity: 0.5;
+    
 }
 
 .el_conatiner{
