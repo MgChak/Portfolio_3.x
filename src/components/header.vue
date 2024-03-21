@@ -42,7 +42,7 @@
     </div>
     <div class="inart_con" v-if="store.navbar_status == 1">
 
-        <div  ref="con" class="outer2_container container_art" @mouseover= "handle_hover()">
+        <div  ref="con" class="outer3_container container_art" @mouseover= "handle_hover()">
 
             <div class="inner_container" v-if="store.navbar_status == 1">
 
@@ -424,6 +424,17 @@
     }
     .outer2_container{
         background:var(--color-glass-dark);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(9.5px); 
+        -webkit-backdrop-filter: blur(9.5px);
+        width:100%;
+        display: flex;
+        
+        justify-content: center;
+        align-items: center;
+    }
+    .outer3_container{
+        background:var(--color-glass-dark-full);
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         backdrop-filter: blur(9.5px); 
         -webkit-backdrop-filter: blur(9.5px);

@@ -6,6 +6,7 @@
 
 
         <cover  @pointerover=" handle_card_hover('hidden',$event)"/>
+        <code_c/>
         <div style ="{width:1px;height:40px;}"></div>
         <div class = 'comp_container' 
             v-for="i in store.index_array" :key="i.id" 
@@ -44,6 +45,7 @@ import cover from './works_thum_cards/cover.vue'
 import play from './works_thum_cards/play.vue'
 import infor_bar from './works_thum_cards/infor_bar.vue'
 import com_footer from '../com_footer.vue'
+import code_c from './works_thum_cards/code_c.vue'
 //hooks引入
 import { s_lock,s_unlock } from '../../hooks/use_page_scroll_locker'
 import {tracker_toggle} from '../../hooks/use_mouse_tracker_toggle'
@@ -329,4 +331,4 @@ h2{
     transition: all 0.3s;
 }
 </style>
-
+./works_thum_cards/code_c.vue/index.js

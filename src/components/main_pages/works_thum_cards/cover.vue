@@ -1,32 +1,15 @@
 <template>
 
-    <div class="container container_expand" :style="{height:cover_height}" ref="el" >
+    <div class="container container_expand"  ref="el" >
         <div class="flex_container" :style="{height:flex_height}">
             <div class="el_conatiner" >
-                <div class="title_container">
-                    <div class="box box1">
-                        <img ref="img123" class="imgs" src="../../../assets/thum_cards/hi.svg" alt="">
-                    </div>
-                    <div class="box box2">
-                        <img ref="img2" class="imgs" src="../../../assets/thum_cards/im.svg" alt="">
-                    </div>
-                    <div class="box box3">
-                        <img ref="img3" class="imgs" src="../../../assets/thum_cards/design.svg" alt="">
-                    </div>
-                    <div style="width:1px;height:5%;"></div>
-                </div>
-            
+                <img class="title_container" src="../../../assets/thum_cards/intro.svg" alt="">
             </div>
-            <!-- <div ref="arrow_box" class="arrow_animation">
-                <h3>Explore More</h3>
-                <div class="animation_box">
-                    <img src="../../../assets/thum_cards/arrow.svg" alt="">
-                </div>
-            </div> -->
         </div>
         
         <div class="background_holder" >
                 <div class="top_cover"></div>
+                <div class="top_cover_2"></div>
                 <Background_Element/>
         </div>
         
@@ -61,6 +44,7 @@ const store = useStore()
 </script>
 
 <style scoped>
+
 .container{    
     overflow: hidden;
     display: flex;
@@ -68,7 +52,8 @@ const store = useStore()
     align-items: center; */
     position:relative;
     width:100vw;
-    background: linear-gradient(0deg, #000 30%, #0B7BE2 100%);
+    /* max-height:650px; */
+    background: linear-gradient(0deg, #000 0%, #0B7BE2 100%);
 }
 .top_cover{    
     overflow: hidden;
@@ -81,8 +66,9 @@ const store = useStore()
     z-index: 1;
     width:100%;
     height:100%;
-    background: linear-gradient(0deg, #000 0%, #00000000 50%);
+    background: linear-gradient(0deg, #000 0%, #00000000 100%);
 }
+
 
 .flex_container{
     overflow: hidden;
@@ -98,15 +84,14 @@ const store = useStore()
     bottom:0;
     z-index: 0;
     width:100%;
-    height:100vh;
+    height:100%;
     
 }
 
 .el_conatiner{
     position:relative;
-    max-width: 800px;
-    transform: translateY(50px);
-    width: 70%;
+    max-width: 700px;
+    width:70%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -118,52 +103,11 @@ const store = useStore()
     display: flex;
     flex-direction: column;
     width: 100%;
-    
-    margin:0 auto;
+    margin:45% 0px 10px 0px;
     z-index: 1;
 
-}
-.box{
-    display: flex;
-    overflow: hidden;
-    position:relative;
-}
-.box1{
-    width: 60%;
-}
-.box2{
-    width:100%;
-    z-index:1;
-    margin-top:-5%;
-}
-.box3{
-    width:40%;
-    margin-top:1%;
-}
-.box4{
-    width:30%;
-}
-.img5_con{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.breakline{
-    width:100%;
-    height:0.5px;
-    background-color: rgba(255, 255, 255, 0.292);
-    margin:16px 0;
-    transform: scaleX(0);
 }
-.imgs{
-    width: 100%;
-    position:relative;
-    left:0;
-    /* transform: translateY(100%); */
-}
-
 
 h1,
 h2,
@@ -171,7 +115,21 @@ h3,
 h4{
     color:var(--main-light-100);
 }
-
+h3{
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    color:rgba(255, 255, 255, 0.466);
+}
+a{
+    text-decoration: underline;
+    cursor: pointer;
+    color:inherit;
+}
+a:hover{
+    color:#FFD600;
+}
 
 @keyframes ani_font2 {
     from{transform:translateY(0%);}
@@ -244,6 +202,15 @@ border-radius: 20px;
 overflow: hidden;
 transform: translateY(120%);
 }
+.code_box{
+    position: absolute;
+    bottom:0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform:translateY(-8vh);
+}
 
 @keyframes arrow {
     0%{top:-40px;opacity: 0;}
@@ -252,24 +219,20 @@ transform: translateY(120%);
 }
 
 
+@media (max-width: 1300px){
+
+    .title_container{
+        margin:30% 0px 0px 0px;
+    }
+}
 
 @media (max-width: 800px){
     h3{
         font-size: 15px;
         font-weight: 300;
     }
-    .arrow_animation{
-        gap:16px;
-    }
-    .animation_box{
-        width:80px;
-        height:40px;
-    }
-    .animation_box > img{
-        width:40px;
-    }
-    .box4{
-        width:50%;
+    .title_container{
+        margin:200px 0px 0px 0px;
     }
 }
 </style>

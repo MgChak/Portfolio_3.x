@@ -17,7 +17,8 @@
 
   --nav-active_color:#1ae8f7;
 
-  --color-glass-dark:#000000be;
+  --color-glass-dark:linear-gradient(90deg, #000 10%,#00000000 50%, #000000 90%);
+  --color-glass-dark-full:rgba(0, 0, 0, 0.779);
   --color-glass-light:#ffffffe6;
 }
 *{

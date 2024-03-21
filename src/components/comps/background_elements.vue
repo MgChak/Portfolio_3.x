@@ -13,21 +13,22 @@ const store = useStore()
 
 //计算背景应有的尺寸
 let handle_background_size = computed(()=>{
-        var w
-        var h
-        var b
-        if (store.page_height <= store.page_width){
-            w = store.page_width*2
-            h = store.page_width
-            b = w/4
-        }else {
-            w = store.page_height*2
-            h = store.page_height*2
-            b = store.page_height
+        
+        var b = store.page_width
+        
+        if (b >= 1400){
+            b = 1400
+        }else if (b <=900){
+            b = 900
         }
+
+
+
+
+
         return {
-            width:w+"px",
-            height:h+"px",
+            width:'100%',
+            height:'100%',
             ["background-size"]:b*0.5+"px"
         }
     })
@@ -44,8 +45,16 @@ let handle_background_size = computed(()=>{
     bottom:0;
     z-index: -1;
     transform-origin: "top,left";
-    animation: ani 80s infinite linear;
+    /* animation: ani 100s infinite linear; */
+    opacity: 1;
 }
+/* .background_anim_holder::before{
+    content:'';
+    position: absolute;
+    width:100%;
+    height:100%;
+    background:linear-gradient(0deg, #0b7ae2 10%,#0b7ae2bf 30%,#0b7ae290 55%, #0b7ae200 80%);
+} */
 
 
 @keyframes ani {
