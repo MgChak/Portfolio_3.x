@@ -160,7 +160,7 @@
                     name:navto
                 })
             }else if(id == 3){//直接打开路径下的pdf
-                window.open('http://chakshing.com/chak.pdf')
+                window.open('http://www.chakshing.com/chak.pdf')
             }  
             
             store.is_mv_nav_open = false

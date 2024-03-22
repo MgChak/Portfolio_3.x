@@ -7,7 +7,7 @@
 
         <cover  @pointerover=" handle_card_hover('hidden',$event)"/>
         <code_c/>
-        <div style ="{width:1px;height:40px;}"></div>
+        <div style ="width:1px;height:40px;"></div>
         <div class = 'comp_container' 
             v-for="i in store.index_array" :key="i.id" 
             >
