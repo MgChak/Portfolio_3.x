@@ -237,8 +237,8 @@
 
 
 
-    <the_footer :index = "store.index_array.findIndex((item)=> item.name == 'MEOW_MIND' )">
-        <cat/>
+    <the_footer :index = "store.index_array.findIndex((item)=> item.name == 'LETS_GO' )">
+        <lets/>
     </the_footer>
 
     
@@ -253,7 +253,7 @@
 <script setup>
 //组件引入
 import transit from'../main_pages/works_thum_cards/transit.vue'
-import cat from'../main_pages/works_thum_cards/cat.vue'
+import lets from'../main_pages/works_thum_cards/letsgo.vue'
 import overview_info from '../comps/overview_info.vue'
 import link_button from'../comps/link_button.vue'
 import img_slideshow from '../comps/img_slideshow.vue'

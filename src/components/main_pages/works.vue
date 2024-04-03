@@ -37,12 +37,12 @@
 </template>
 
 <script setup>
-import cat from'./works_thum_cards/cat.vue'
+// import cat from'./works_thum_cards/cat.vue'
 import letsgo from'./works_thum_cards/letsgo.vue'
 import nebu from'./works_thum_cards/nebu.vue'
 import transit from'./works_thum_cards/transit.vue'
 import cover from './works_thum_cards/cover.vue'
-import play from './works_thum_cards/play.vue'
+// import play from './works_thum_cards/play.vue'
 import infor_bar from './works_thum_cards/infor_bar.vue'
 import com_footer from '../com_footer.vue'
 import code_c from './works_thum_cards/code_c.vue'
@@ -64,9 +64,6 @@ const store = useStore()
         {
             comp_name:'nebu',
             comp:nebu
-        },{
-            comp_name:'cat',
-            comp:cat
         },{
             comp_name:'letsgo',
             comp:letsgo

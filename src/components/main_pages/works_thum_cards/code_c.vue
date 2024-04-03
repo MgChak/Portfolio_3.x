@@ -3,7 +3,7 @@
     <div class="code_container" >
     
         <div class="code_box">
-            <h3> <  Explore my website code on <a target="_blank" href="https://github.com/MgChak/Portfolio_3.x"> GitHub </a>. > </h3>
+            <h3> &lt;  Explore my website code on <a target="_blank" href="https://github.com/MgChak/Portfolio_3.x"> GitHub </a>. &lt; </h3>
         </div>
 
     </div>

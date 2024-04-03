@@ -191,18 +191,6 @@ export default defineStore("Main",{
                     background_color:'linear-gradient(360deg, #25343D -3.36%, #000000 49.04%)',
                     class:'',
                     zindex:1,
-                },{ 
-                    id:4,
-                    comp:'cat',
-                    name:'MEOW_MIND',
-                    text:'MEOW MIND',
-                    bio:'AI & VR APP DESIGN - SOLO DESIGNER',
-                    time:'2023 spring',
-                    sub_color:'#B71D39',
-                    navto:'cat',
-                    background_color:'linear-gradient(360deg, #3D2539 -3.36%, #000000 49.04%)',
-                    class:'',
-                    zindex:1,
                 }
             ],
 

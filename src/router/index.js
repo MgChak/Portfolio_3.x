@@ -6,7 +6,6 @@ import about from '../components/main_pages/about.vue'
 
 import letsgo from '../components/art_pages/letsgo_page.vue'
 import transit from '../components/art_pages/transit_page.vue'
-import cat from '../components/art_pages/cat_page.vue'
 import nebu from '../components/art_pages/nebu_page.vue'
 
 export default  createRouter({
@@ -43,10 +42,6 @@ export default  createRouter({
         name:'nebu',
         path:'/nebu',
         component: nebu,
-      },{   
-        name:'cat',
-        path:'/cat',
-        component: cat,
       }
     ],    
   })
