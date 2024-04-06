@@ -38,14 +38,14 @@ const store = useStore()
 
     watchPostEffect(()=>{
         thum_ani_render(name,{
-            full:[
+            footer:[
                 {
                     el:el,
                     animations:{
-                        height:'55vh',
-                        width:'100%',
-                        maxWidth:'100%',
-                        zIndex:'8',
+                        height:thum_height(),
+                        width:'80vw',
+                        maxWidth:'800px',
+                        borderRadius:'20px',
                     }
                 },{
                     el:img1,
@@ -66,8 +66,9 @@ const store = useStore()
                     el:el,
                     animations:{
                         height:thum_height(),
-                        width:'100%',
-                        maxWidth:'100%',
+                        width:'100vw',
+                        maxWidth:'100vw',
+                        borderRadius:'0px',
                     }
                 },{
                     el:img1,
@@ -88,7 +89,7 @@ const store = useStore()
                     el:el,
                     animations:{
                         height:thum_height(),
-                        width:'80%',
+                        width:'80vw',
                         maxWidth:'1200px',
                         borderRadius:'20px',
 

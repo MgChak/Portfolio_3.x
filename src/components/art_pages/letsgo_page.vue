@@ -162,8 +162,24 @@
                         </div>
                     </div>
                 </div>
-                
-                <v-lazy-image :src="images['re1.png']" :src-placeholder="images['re1@s.png']"/>
+                <div class="content_block_multi_grid">
+                    <div class="content_block_multi_grid_line">
+                        <div class="content_block_multi_grid_item">
+                            <v-lazy-image :src="images['in1.png']" :src-placeholder="images['in1@s.png']"/>
+                        </div>
+                        <div class="content_block_multi_grid_item">
+                            <v-lazy-image :src="images['in2.png']" :src-placeholder="images['in2@s.png']"/>
+                        </div>
+                    </div>
+                    <div class="content_block_multi_grid_line">
+                        <div class="content_block_multi_grid_item">
+                            <v-lazy-image :src="images['in3.png']" :src-placeholder="images['in3@s.png']"/>
+                        </div>
+                        <div class="content_block_multi_grid_item">
+                            <v-lazy-image :src="images['in4.png']" :src-placeholder="images['in4@s.png']"/>
+                        </div>
+                    </div> 
+                </div>
             </div>
 
             <div class="breakline_dots"></div>
@@ -530,7 +546,12 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
 
 
 
-    <the_footer :index = "store.index_array.findIndex((item)=> item.name == 'NEBU' )">
+    <the_footer :use_data="{
+        index: store.index_array.findIndex((item)=> item.name == 'NEBU'),
+        b_color:'--p-color-main',
+        f_color:'#000000',
+        t_color:'#ffffff'
+    }">
         <nebu/>
     </the_footer>
 
@@ -926,6 +947,22 @@ a:hover{
     flex-direction: column;
 }
 
+.content_block_multi_grid{
+    width:100%;
+    display: flex;
+    gap:24px;
+}
+    .content_block_multi_grid_line{
+        width:100%;
+        flex:1;
+        display:flex;
+        gap:24px;
+    }
+        .content_block_multi_grid_item{
+            width:100%;
+            flex:1;
+        }
+
 
 .content_block_buttons{
     width:100%;
@@ -1131,6 +1168,14 @@ h4{
     width:100%;
     flex:none;
 }
+
+}
+@media (max-width: 800px){
+
+.content_block_multi_grid{
+    flex-direction: column;
+}
+
 
 }
 

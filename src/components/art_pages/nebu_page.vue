@@ -249,7 +249,12 @@ The primary objective of our project is to enhance the safety, ease, and comfort
     </div> 
 
 
-    <the_footer :index = "store.index_array.findIndex((item)=> item.name == 'TRANSIT' )">
+    <the_footer :use_data="{
+        index: store.index_array.findIndex((item)=> item.name == 'TRANSIT'),
+        b_color:'#000000',
+        f_color:'#ffffff',
+        t_color:'#000000'
+    }">
         <transit/>
     </the_footer>
 

@@ -48,7 +48,8 @@
     align-items: center;
     padding-bottom: 40px;
     gap:40px;
-    background-color: rgba(0, 0, 0, 0.542);
+    background-color: rgb(0, 0, 0);
+    z-index: 15;
 }
 .breakline{
     height:1px;

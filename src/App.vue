@@ -10,16 +10,19 @@
   <div class="footer_conatiner_fixed" :style="[cursor_status]"></div>
 
   <div class="main_view_window" :style="[cursor_status]">
-
+    
+    
     <router-view></router-view>
+
+    
 
     <div class="router_full_cover_2" :class="store.full_cover_class_2" ></div>
 
   </div>
 
-  <div class="router_full_cover" :class="store.full_cover_class"></div>
   
 
+  <div class="router_full_cover" :class="store.full_cover_class"></div>
 
 
 </template>
@@ -29,6 +32,7 @@
 import mouse_tracker from './components/mouseTracker.vue'
 import the_header from './components/header.vue'
 import loader from './components/comps/page_loader.vue'
+
 
 
 //依赖引入

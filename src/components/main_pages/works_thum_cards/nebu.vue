@@ -42,35 +42,37 @@ const store = useStore()
     //监听+执行动画
     watchPostEffect(()=>{
         thum_ani_render(name,{
-            full:[//全屏
+            footer:[//全屏
                 {
                     el:el,//动画对象
                     animations:{
-                        height:'100vh',
-                        width:'100%',
-                        maxWidth:'100%',
+                        height:thum_height(),
+                        width:'80vw',
+                        maxWidth:'800px',
+                        borderRadius:'20px',
                     }
                 },{
                     el:img1,
                     animations:{
-                        xPercent: -15,
-                        yPercent: 3,
-                        scale:0.5,
+                        xPercent: 40,
+                        yPercent: 15,
+                        scale:1.8,
                     }
                 },{
                     el:img2,
                     animations:{
-                        xPercent: 27,
-                        yPercent: -28,
-                        scale:1.5,
+                        xPercent: -30,
+                        yPercent: -20,
+                        scale:0.3,
                     }
                 }],
             article:[{
                     el:el,
                     animations:{
                         height:thum_height(),
-                        width:'100%',
-                        maxWidth:'100%',
+                        width:'100vw',
+                        maxWidth:'100vw',
+                        borderRadius:'0px',
                     }
                 },{
                     el:img1,
@@ -91,7 +93,7 @@ const store = useStore()
                     el:el,
                     animations:{
                         height:thum_height(),
-                        width:'80%',
+                        width:'80vw',
                         maxWidth:'1200px',
                         borderRadius:'20px',
 

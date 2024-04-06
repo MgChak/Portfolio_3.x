@@ -237,7 +237,12 @@
 
 
 
-    <the_footer :index = "store.index_array.findIndex((item)=> item.name == 'LETS_GO' )">
+    <the_footer :use_data="{
+        index: store.index_array.findIndex((item)=> item.name == 'LETS_GO'),
+        b_color:'--p-color-main',
+        f_color:'#000000',
+        t_color:'#ffffff'
+    }">
         <lets/>
     </the_footer>
 

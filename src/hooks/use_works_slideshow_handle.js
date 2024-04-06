@@ -59,14 +59,14 @@ let thum_ani_render = (name,data_obj)=>{
     }
 
     //执行动画函数
-    if (a =='container_fullscreen'){
-        animation_render_loop('ani',data_obj.full)
+    if (a =='container_footer'){
+        animation_render_loop('ani',data_obj.footer)
     }else if(a =='container_article'){
         animation_render_loop('ani',data_obj.article)
     }else if(a =='container_index'){            
         animation_render_loop('ani',data_obj.index)
-    }else if (a =='container_fullscreen_set'){
-        animation_render_loop('set',data_obj.full)
+    }else if (a =='container_footer_set'){
+        animation_render_loop('set',data_obj.footer)
     }else if(a =='container_article_set'){
         animation_render_loop('set',data_obj.article)
     }else if(a =='container_index_set'){            

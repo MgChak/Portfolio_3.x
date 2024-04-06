@@ -409,7 +409,6 @@ const store = useStore()
         if (slideshow_type =='vimeo'){
             contents.value.forEach(content => {
                 let iframe = document.getElementById(`vimeo-${content.id}`);
-                console.log(iframe)
                 let player = new Player(iframe);
                 vimeoPlayers.push({ id: content.id, player: player });
             }); 
