@@ -4,10 +4,10 @@
         <div style="width:100%" class="breakline"></div>
         <div class="footer_content_container">
             <div class="contact_container">
-                <h3 class="linkout" @click="handle_linkout(1)">LINKEDIN</h3>
-                <h3 class="linkout" @click="handle_linkout(2)">INSTAGRAM</h3>
-                <h3>562-832-5022</h3>
-                <h3>chakshinglam@gmail.com</h3>
+                <h3 class="linkout icon" @click="handle_linkout(1)">LinkedIn</h3>
+                <h3 class="linkout icon" @click="handle_linkout(2)">Instagram</h3>
+                <h3 class=" icon">562-832-5022</h3>
+                <h3 class=" icon">chakshinglam@gmail.com</h3>
             </div>
             <div style="width:100%; opacity: 0.2; " class="breakline hideline"></div>
             <div class="logo_container">
@@ -94,6 +94,32 @@ img{
     left:4px;
     top:2px;
 }
+
+.icon::before{
+    content: ' ';
+    display: inline-block;
+    width:18px;
+    height:18px;
+    background-size: cover;
+    position: relative;
+    top:2px;
+    margin-right: 16px;
+}
+    .icon:nth-child(1)::before{
+        background-image: url('../assets/logo/link.svg');
+    }
+    .icon:nth-child(2)::before{
+        background-image: url('../assets/logo/ins.svg');
+    }
+    .icon:nth-child(3)::before{
+        background-image: url('../assets/logo/call.svg');
+    }
+    .icon:nth-child(4)::before{
+        background-image: url('../assets/logo/mail.svg');
+        width:18px;
+        height:15px;
+    }
+
 h1{
     margin-top: 20px;
     color:white;

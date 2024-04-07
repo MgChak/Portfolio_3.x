@@ -24,10 +24,11 @@
 
     <div class="about_contents_container">
         <div ref="breakline1" class="breakline"></div>
-        <div class="flexbox">
-            <link_button_for_about :prototype_links = 'email_button'/>
-            <link_button_for_about :prototype_links = 'link_button'/>
-            <link_button_for_about :prototype_links = 'ins_button'/>
+        <div class="contact_container">
+                <h3 class="linkout icon" @click="handle_linkout(1)">LinkedIn</h3>
+                <h3 class="linkout icon" @click="handle_linkout(2)">Instagram</h3>
+                <h3 class=" icon">562-832-5022</h3>
+                <h3 class=" icon">chakshinglam@gmail.com</h3>
         </div>
         <div ref="breakline2" class="breakline"></div>
     </div>
@@ -50,7 +51,6 @@ import { onBeforeRouteLeave } from 'vue-router'
 import {scrollto} from '../../hooks/use_scroll'
 import { screen_open,screen_cover } from '../../hooks/use_full_sreen_cover'
 import { CustomEase } from "gsap/CustomEase";
-import link_button_for_about from "../comps/link_button_for_about.vue"
 import {tracker_toggle} from '../../hooks/use_mouse_tracker_toggle'
 import gsap from 'gsap'
 const store = useStore()
@@ -84,6 +84,16 @@ gsap.registerPlugin(CustomEase);
         link:'https://www.instagram.com/chakshinglam/',
     })
 
+    let links = ["https://www.linkedin.com/in/chakshing-lam/","https://www.instagram.com/chakshinglam/"]
+    let handle_linkout = (val)=>{
+        var tar = ''
+        if(val==1){
+            tar = links[0]
+        }else{
+            tar = links[1]
+        }
+        window.open(tar)
+    }
 
 
 
@@ -281,6 +291,49 @@ h3{
     line-height: 30px;
     color:rgba(255, 255, 255, 0.612);
 }
+
+.linkout{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.linkout::after{
+    content: ' ';
+    display: inline-block;
+    width:18px;
+    height:18px;
+    background-image: url('../../assets/icons/arrow_circle_right_w.svg');
+    background-size: cover;
+    position: relative;
+    left:4px;
+    top:2px;
+    opacity: 0.7;
+}
+
+.icon::before{
+    content: ' ';
+    display: inline-block;
+    width:18px;
+    height:18px;
+    background-size: cover;
+    position: relative;
+    top:2px;
+    margin-right: 16px;
+    opacity: 0.7;
+}
+    .icon:nth-child(1)::before{
+        background-image: url('../../assets/logo/link.svg');
+    }
+    .icon:nth-child(2)::before{
+        background-image: url('../../assets/logo/ins.svg');
+    }
+    .icon:nth-child(3)::before{
+        background-image: url('../../assets/logo/call.svg');
+    }
+    .icon:nth-child(4)::before{
+        background-image: url('../../assets/logo/mail.svg');
+        width:18px;
+        height:15px;
+    }
 
 @media (max-width: 750px) {
     .flexbox{
