@@ -46,8 +46,8 @@ const store = useStore()
                     el:img,
                     animations:{
                         xPercent: 0,
-                        yPercent: 0,
-                        scale:0.8,
+                        yPercent: 10,
+                        scale:1.2,
                     }
                 }
 
@@ -65,7 +65,7 @@ const store = useStore()
                     animations:{
                         xPercent: 0,
                         yPercent: 10,
-                        scale:1.2,
+                        scale:1.3,
                     }
                 }],
             index:[{
@@ -106,6 +106,7 @@ const store = useStore()
 
 .el_conatiner{
     position:relative;
+    z-index: 1;
 }
 
 .background{
@@ -113,7 +114,6 @@ const store = useStore()
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    position:relative;
 }
 
 

@@ -160,7 +160,7 @@ The primary objective of our project is to enhance the safety, ease, and comfort
         <div class="content_container">
             <div class="content_block_texts">
                 <h2>Issue</h2>
-                <h3 >In this design, users can control holographic simulations via a panel, achieving all intended functionalities. Yet, it lacks the futuristic feel we aimed for and doesn't significantly advance beyond traditional interactions. Its complexity might also confuse new users. I'll aim for a more natural and innovative approach to reduce distractions and enhance the immersive relaxation experience</h3>
+                <h3 >In this design, users can control holographic simulations via a panel, achieving all intended functionalities. Yet, it lacks the futuristic feel we aimed for and doesn't significantly advance beyond traditional interactions. Its complexity might also confuse new users. I'll aim for a more natural and innovative approach to reduce distractions and enhance the immersive relaxation experience.</h3>
             </div>
             <v-lazy-image :src="images['in3.png']" :src-placeholder="images['in3@s.png']"/>
         </div>
@@ -168,7 +168,7 @@ The primary objective of our project is to enhance the safety, ease, and comfort
         <div class="content_container">
             <div class="content_block_texts">
                 <h2>New Sketch</h2>
-                <h3 >Therefore, I started sketching again. This time, I wanted to use as simple visual presentations as possible to allow users to control complex functions. At the same time, I aimed to pair this with intuitive gesture controls to minimize the learning curve</h3>
+                <h3 >Therefore, I started sketching again. This time, I wanted to use as simple visual presentations as possible to allow users to control complex functions. At the same time, I aimed to pair this with intuitive gesture controls to minimize the learning curve.</h3>
             </div>
             <v-lazy-image :src="images['in4.png']" :src-placeholder="images['in4@s.png']"/>
         </div>
@@ -179,7 +179,7 @@ The primary objective of our project is to enhance the safety, ease, and comfort
         <div class="content_container">
             <div class="content_block_texts">
                 <h2>Interaction _ Select</h2>
-                <h3 >In the interface, users select options by pointing their fingers at the target buttons. The selected button enlarges, and its function is displayed above it for clarity. Simultaneously, the left side of the panel shows the current menu level the user is navigating, ensuring an intuitive and user-friendly experience</h3>
+                <h3 >In the interface, users select options by pointing their fingers at the target buttons. The selected button enlarges, and its function is displayed above it for clarity. Simultaneously, the left side of the panel shows the current menu level the user is navigating, ensuring an intuitive and user-friendly experience.</h3>
             </div>
             <vimeo_container  :vimeolink="{radio:16,link:'https://player.vimeo.com/video/924237286?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
         </div>
