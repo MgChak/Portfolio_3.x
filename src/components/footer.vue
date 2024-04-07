@@ -32,7 +32,7 @@
 <script setup>
 //依赖引入
 import useStore from '../store/index'
-import {onMounted,defineProps,ref, computed, vShow} from 'vue' 
+import {onMounted,defineProps,ref, computed, vShow, watch} from 'vue' 
 import router from '../router'
 import { useIntersectionObserver,useElementSize } from '@vueuse/core'
 import com_footer from './com_footer.vue'
@@ -82,9 +82,20 @@ const store = useStore()
       ([{ isIntersecting }]) => {
         is_show.value = isIntersecting
       },{
-        threshold:0.5
+        threshold:0.4
       }
     )
+
+    watch(is_show,()=>{
+        console.log(is_show)
+        if(is_show.value){
+            store.footer_card_is_show = true
+        }else{
+            store.footer_card_is_show = false
+        }
+    },{
+        immediate:true
+    })
 
     let is_rout_out= computed(()=>{
         if(!store.footer_is_rout_out){
@@ -126,7 +137,6 @@ const store = useStore()
                 p='-35vh'
             }
             return {bottom:p}
-
         }
         
     })

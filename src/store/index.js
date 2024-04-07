@@ -129,6 +129,9 @@ export default defineStore("Main",{
             //footer 的动画
             footer_animation: 'var(--animation-slow)',
 
+            //footer卡片是否被显示
+            footer_card_is_show:false,
+
         //=============================
         //work_about;work_art路由动画 状态依赖
         //=============================

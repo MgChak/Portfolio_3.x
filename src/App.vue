@@ -7,7 +7,7 @@
 
   <loader/>
 
-  <div class="footer_conatiner_fixed" :style="[cursor_status]"></div>
+  <div class="footer_conatiner_fixed" :style="[cursor_status]" :class="blur_change"></div>
 
   <div class="main_view_window" :style="[cursor_status]">
     
@@ -94,6 +94,14 @@ const w_size = useWindowSize()
   })
 
 
+  let blur_change = computed(()=>{
+    if (store.footer_card_is_show){
+      return 'footer_blur'
+    }else{
+      return ''
+    }
+  })
+
 </script>
 
 <style scoped>
@@ -152,6 +160,10 @@ const w_size = useWindowSize()
   opacity: 1;
   transition: all 0.3s ease-in-out;
 }
-
+.footer_blur{
+  background-color: rgba(0, 0, 0, 0.188);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
 
 </style>

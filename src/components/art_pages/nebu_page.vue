@@ -126,6 +126,55 @@ The primary objective of our project is to enhance the safety, ease, and comfort
         <v-lazy-image :src="images['background_2.jpg']" :src-placeholder="images['background_2@s.jpg']" class="sp_background_img"/>
     </div> 
 
+    <div class = "section_container bc_s">
+        <div class="content_container">
+            <div class="content_block_texts">
+                    <h2>Task</h2>
+                    <h3 >Design an interactive mode that allows users to adjust the environmental content of holographic projections, including lighting, seasons, and scenery.</h3>
+            </div>
+        </div>
+
+        <div class="content_container">
+            <div class="content_block_texts">
+                <h2>Challenge</h2>
+                <h3 >This was the first time I attempted to design an interface and interaction mode in 3D space. As with all design challenges, I look forward to taking them on so I can grow and learn. So, before I even jumped into Figma, I did some initial sketching and explorations on paper to gather some ideas.</h3>
+            </div>
+        </div>
+
+        <div class="content_container">
+            <div class="content_block_texts">
+                <h2>Initial Sketch</h2>
+            </div>
+            <v-lazy-image :src="images['in1.png']" :src-placeholder="images['in1@s.png']"/>
+        </div>
+
+
+        <div class="content_container">
+            <div class="content_block_texts">
+                <h2>Design</h2>
+                <h3 >Unlike designing traditional screen interfaces, when designing interactive pages in 3D space, the addition of a completely new dimension requires me to consider the real-world usage scenarios of users interacting with these UIs.</h3>
+            </div>
+            <v-lazy-image :src="images['in2.png']" :src-placeholder="images['in2@s.png']"/>
+        </div>
+
+        <div class="content_container">
+            <div class="content_block_texts">
+                <h2>Issue</h2>
+                <h3 >In this design, users can control holographic simulations via a panel, achieving all intended functionalities. Yet, it lacks the futuristic feel we aimed for and doesn't significantly advance beyond traditional interactions. Its complexity might also confuse new users. I'll aim for a more natural and innovative approach to reduce distractions and enhance the immersive relaxation experience</h3>
+            </div>
+            <v-lazy-image :src="images['in3.png']" :src-placeholder="images['in3@s.png']"/>
+        </div>
+
+        <div class="content_container">
+            <div class="content_block_texts">
+                <h2>New Sketch</h2>
+                <h3 >Therefore, I started sketching again. This time, I wanted to use as simple visual presentations as possible to allow users to control complex functions. At the same time, I aimed to pair this with intuitive gesture controls to minimize the learning curve</h3>
+            </div>
+            <v-lazy-image :src="images['in4.png']" :src-placeholder="images['in4@s.png']"/>
+        </div>
+            
+    </div> 
+
     <div class = "section_container bc_b">
         <div class="content_container">
             <div class="content_block_texts">
@@ -161,7 +210,67 @@ The primary objective of our project is to enhance the safety, ease, and comfort
             <div class="pp_container" style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/901211431?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="nebu_skin"></iframe></div>
         </div>
         <v-lazy-image :src="images['background_2.jpg']" :src-placeholder="images['background_2@s.jpg']" class="sp_background_img"/>
+        
+        <div class="content_container">
+            <div class="content_block_texts_24">
+                <div class="content_block_multi_grid">
+                    <div class="content_block_multi_grid_line">
+                        <div class="content_block_multi_grid_item">
+                            <v-lazy-image :src="images['c1.png']" :src-placeholder="images['c1@s.png']"/>
+                        </div>
+                        <div class="content_block_multi_grid_item">
+                            <v-lazy-image :src="images['c2.png']" :src-placeholder="images['c2@s.png']"/>
+                        </div>
+                    </div>
+                    <div class="content_block_multi_grid_line">
+                        <div class="content_block_multi_grid_item">
+                            <v-lazy-image :src="images['c3.png']" :src-placeholder="images['c3@s.png']"/>
+                        </div>
+                        <div class="content_block_multi_grid_item">
+                            <v-lazy-image :src="images['c4.png']" :src-placeholder="images['c4@s.png']"/>
+                        </div>
+                    </div> 
+                </div>
+                <div class="content_block_multi_grid">
+                    <div class="content_block_multi_grid_line">
+                        <div class="content_block_multi_grid_item">
+                            <v-lazy-image :src="images['c5.png']" :src-placeholder="images['c5@s.png']"/>
+                        </div>
+                        <div class="content_block_multi_grid_item">
+                            <v-lazy-image :src="images['c6.png']" :src-placeholder="images['c6@s.png']"/>
+                        </div>
+                    </div>
+                    <div class="content_block_multi_grid_line">
+                        <div class="content_block_multi_grid_item">
+                            <v-lazy-image :src="images['c7.png']" :src-placeholder="images['c7@s.png']"/>
+                        </div>
+                        <div class="content_block_multi_grid_item">
+                            <v-lazy-image :src="images['c8.png']" :src-placeholder="images['c8@s.png']"/>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
     </div> 
+
+    <div class = "section_container bc_s">
+
+        <div class="content_container">
+            <div class="content_block_texts">
+                <h2>Challenge</h2>
+                <h3 >Due to the tight project timeline, our team had to work on the hardware and UI designs simultaneously. So, before we decided on the final shape of the robot, I began designing the facial display for Nebu. I explored many possibilities, including detailed animal images and simple geometric combinations. Ultimately, to make Nebu appeal to as wide an audience as possible (as a companion robot for space commercial travel), we decided on a simple facial design with customizable skin displays.</h3>
+            </div>
+        </div>
+        <div class="content_container">
+            <div class="content_block_texts">
+                <h2>Initial Sketch</h2>
+            </div>
+            <v-lazy-image :src="images['f1.png']" :src-placeholder="images['f1@s.png']"/>
+            <v-lazy-image :src="images['f2.png']" :src-placeholder="images['f2@s.png']"/>
+        </div>
+
+    </div> 
+
 
     
 
@@ -200,7 +309,7 @@ The primary objective of our project is to enhance the safety, ease, and comfort
         <div class="content_container">
             <div class="content_block_texts">
                 <h2>Caption Display & Navigation</h2>
-                <h3 >To enhance communication between Nebu and its users, the words spoken by Nebu will be displayed in speech bubbles above its head. Additionally, when guiding users to their destination, Nebu will project a guiding line in front of the user, providing a more intuitive understanding of the direction to proceed.</h3>
+                <h3>To enhance communication between Nebu and its users, the words spoken by Nebu will be displayed in speech bubbles above its head. Additionally, when guiding users to their destination, Nebu will project a guiding line in front of the user, providing a more intuitive understanding of the direction to proceed.</h3>
             </div>
             <v-lazy-image :src="images['s1_2.png']" :src-placeholder="images['s1_2@s.png']"/>
         </div>
@@ -208,7 +317,7 @@ The primary objective of our project is to enhance the safety, ease, and comfort
         <div class="content_container">
             <div class="content_block_texts">
                 <h2>UI Display</h2>
-                <h3 >The holographic projection capability of Nebu takes user interaction to a new level by enabling the projection of complex UI content directly into the air. This innovation not only facilitates effortless reading but also simplifies the user's interaction with the system. By bringing interface into a more accessible, three-dimensional space, it enhances user engagement and ease of use.</h3>
+                <h3>The holographic projection capability of Nebu takes user interaction to a new level by enabling the projection of complex UI content directly into the air. This innovation not only facilitates effortless reading but also simplifies the user's interaction with the system. By bringing interface into a more accessible, three-dimensional space, it enhances user engagement and ease of use.</h3>
             </div>
             <v-lazy-image :src="images['s1_3.png']" :src-placeholder="images['s1_3@s.png']"/>
         </div>
@@ -572,6 +681,21 @@ h4{
     transform: translate(-50%, -50%);
     z-index: -1;
 }
+.content_block_multi_grid{
+    width:100%;
+    display: flex;
+    gap:24px;
+}
+    .content_block_multi_grid_line{
+        width:100%;
+        flex:1;
+        display:flex;
+        gap:24px;
+    }
+        .content_block_multi_grid_item{
+            width:100%;
+            flex:1;
+        }
 .cardshadow{
     box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.50);
 }
