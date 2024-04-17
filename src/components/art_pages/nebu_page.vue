@@ -181,7 +181,7 @@ The primary objective of our project is to enhance the safety, ease, and comfort
                 <h2>Interaction _ Select</h2>
                 <h3 >In the interface, users select options by pointing their fingers at the target buttons. The selected button enlarges, and its function is displayed above it for clarity. Simultaneously, the left side of the panel shows the current menu level the user is navigating, ensuring an intuitive and user-friendly experience.</h3>
             </div>
-            <vimeo_container  :vimeolink="{radio:16,link:'https://player.vimeo.com/video/924237286?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
+            <vimeo_container  :vimeolink="{radio:16,link:'https://player.vimeo.com/video/924237286?muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
         </div>
 
         <div class="content_container">
@@ -189,7 +189,7 @@ The primary objective of our project is to enhance the safety, ease, and comfort
                 <h2>Interaction _ Swipe</h2>
                 <h3 >For menus with more than four options, additional buttons are minimized and hidden. Activating the scroll feature is as simple as using two fingers, which then displays a scrollbar at the top of the panel. Users can scroll through the menu to easily locate their desired function.</h3>
             </div>
-            <vimeo_container  :vimeolink="{radio:16,link:'https://player.vimeo.com/video/924237278?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
+            <vimeo_container  :vimeolink="{radio:16,link:'https://player.vimeo.com/video/924237278?muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
         </div>
 
         <div class="content_container">
@@ -197,7 +197,7 @@ The primary objective of our project is to enhance the safety, ease, and comfort
                 <h2>Interaction _ Back To</h2>
                 <h3 >When users are in the third or fourth level of the menu, they can quickly return to the main menu using the 'Back To' feature. To activate this function, users simply extend a second finger while selecting the 'Back' button. <br> Additionally, by bending the second finger, users can choose the specific menu level they want to return to, ensuring a swift and intuitive navigation experience.</h3>
             </div>
-            <vimeo_container  :vimeolink="{radio:16,link:'https://player.vimeo.com/video/924237270?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
+            <vimeo_container  :vimeolink="{radio:16,link:'https://player.vimeo.com/video/924237270?muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
         </div>
     </div>
 
@@ -207,7 +207,7 @@ The primary objective of our project is to enhance the safety, ease, and comfort
                 <h1 class="fc_m">Customizable</h1>
                 <h3>To cater to the diverse preferences of as many users as possible, we have equipped Nebu with a 360-degree display screen. This feature allows users to customize Nebu's 'skin' to their liking, whether they prefer solid colors, images, or even animations. This customization ensures that every user has a unique and personal companion robot experience.</h3>
             </div>
-            <div class="pp_container" style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/901211431?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="nebu_skin"></iframe></div>
+            <div class="pp_container" style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/901211431?muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="nebu_skin"></iframe></div>
         </div>
         <v-lazy-image :src="images['background_2.jpg']" :src-placeholder="images['background_2@s.jpg']" class="sp_background_img"/>
         

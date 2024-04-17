@@ -1,6 +1,7 @@
 <template>
-    <div class="main_conatiner" ref="el">
+    <div class="main_conatiner" ref="el"  @click='handle_click()'>
         <iframe 
+           
             ref="iframe_vimeo"
             :src="props.vimeolink.link" 
             :style="{height:height+'px'}"
@@ -46,9 +47,14 @@ const store = useStore()
 
     });
 
+    let handle_click=()=>{
+        console.log("121314")
+    }
+
     //控制视频播放
     let video_control_play = ()=>{
         player.play()
+        
     }
     let video_control_stop = ()=>{
         player.pause().then(() => {
@@ -96,6 +102,7 @@ const store = useStore()
     border-radius: 20px;
     overflow: hidden;
     background-color: black;
+ 
 
 }
 
@@ -103,6 +110,7 @@ iframe{
     width:100%;
     height:100%;
     z-index: 2;
+    pointer-events: all;
 }
 
 
