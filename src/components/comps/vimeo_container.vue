@@ -1,5 +1,5 @@
 <template>
-    <div class="main_conatiner" ref="el"  @click='handle_click()'>
+    <div class="main_conatiner_vc" ref="el"  @click='handle_click()'>
         <iframe 
            
             ref="iframe_vimeo"
@@ -91,7 +91,7 @@ const store = useStore()
 
 <style scoped>
 
-.main_conatiner{
+.main_conatiner_vc{
     width:100%;
     display: flex;
     flex-direction: column;

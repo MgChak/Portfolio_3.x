@@ -1,6 +1,6 @@
 <template>
 
-<div class="main_container" ref="main_container">
+<!-- <div class="main_container" ref="main_container">
     <div class="loader" :class = "store.loader_status ? 'loader_ani':''" >
         <h3>LOADING: {{ num }}%</h3>
 
@@ -8,7 +8,7 @@
             <div class="load_bar" ref="load_bar"></div>
         </div>
     </div>
-</div>
+</div> -->
 
 </template>
 

@@ -7,8 +7,23 @@
 
         <cover  @pointerover=" handle_card_hover('hidden',$event)"/>
         <code_c/>
-        <div style ="width:1px;height:40px;"></div>
-        <div class = 'comp_container' 
+        <div style ="width:1px;height:30px;"></div>
+        <div class="comp_container" >
+            <div class="switch_container" ref="el">
+                <h3 @click="handle_page_switch_click(0)" :class="works_pages_status==0?'on_active':'not_active'">
+                    <span class="desk_h3">Product Designs</span>
+                    <span class="mobile_h3">Designs</span>
+                </h3>
+                <h3 @click="handle_page_switch_click(1)" :class="works_pages_status==1?'on_active':'not_active'" >
+                    <span class="desk_h3">Coding Demos</span>
+                    <span class="mobile_h3">Codings</span>
+                </h3>
+                <div :style="switch_background_style" class="switch_background"></div>
+            </div>
+        </div>
+        <div style ="width:1px;height:80px;"></div>
+        <!-- design -->
+        <div class = 'comp_container' v-show = "works_pages_status == 0 "
             v-for="i in store.index_array" :key="i.id" 
             >
             <component class="comp" :class="store.is_thum_hover? 'comp_h':''" :is="render_comp(i.comp)"
@@ -23,6 +38,28 @@
             </div>
 
             <div class="breakline"></div>
+        </div>
+
+        <!-- coding -->
+
+        <div class="coding_container" v-show = "works_pages_status == 1 ">
+            <!-- <h1>Coding Pages</h1> -->
+            <div class="coding_demo_container" v-for = "i in coding_demos" :key="i.id">
+            
+                <div class="content_block_row_defult">
+
+                    <vimeo_container class="content_block_row_iframe" :vimeolink="i.v_link" />
+
+                    <div class="content_block_texts">
+                        <h1>{{i.h1}}</h1>
+                        <h2>{{i.h2}}</h2>
+                        <h3>{{i.h3}}</h3>
+                    </div>
+                   
+                </div>
+
+            </div>
+            <div style ="width:1px;height:50px;"></div>
         </div>
 
         <!-- <play/> -->
@@ -46,6 +83,7 @@ import cover from './works_thum_cards/cover.vue'
 import infor_bar from './works_thum_cards/infor_bar.vue'
 import com_footer from '../com_footer.vue'
 import code_c from './works_thum_cards/code_c.vue'
+import vimeo_container from '../comps/vimeo_container.vue'
 //hooks引入
 import { s_lock,s_unlock } from '../../hooks/use_page_scroll_locker'
 import {tracker_toggle} from '../../hooks/use_mouse_tracker_toggle'
@@ -57,7 +95,11 @@ import { onBeforeRouteLeave } from 'vue-router'
 import useStore from '../../store/index.js'
 import router from '../../router'
 import { screen_cover, screen_open,contents_open, contents_cover } from '../../hooks/use_full_sreen_cover'
+import { useElementSize } from '@vueuse/core'
 const store = useStore()
+
+     //默认展示设计
+     var works_pages_status =ref (0) //0：design；1:coding
 
     //thum组件注册队列
     let array = [
@@ -79,6 +121,51 @@ const store = useStore()
         return array[index].comp
     }
 
+
+    //coding demo arry
+    let coding_demos = [
+        {   
+            id:0,
+            v_link:{
+                radio:4,link:'https://player.vimeo.com/video/951197454?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
+            },
+            h1:'Scroll Interaction',
+            h2:'HTML - CSS - JS - VUE 2',
+            h3:'Lets Go is a travel planner app witch allowed users to create, search, and share their Group travel plans. Lets Go also allowed users to have group chat and multiple editors to the travel plan. ',
+        },{   
+            id:1,
+            v_link:{
+                radio:4,link:'https://player.vimeo.com/video/952067967?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
+            },
+            h1:'Mobile Web App',
+            h2:'HTML - CSS - JS - JQ',
+            h3:'Lets Go is a travel planner app witch allowed users to create, search, and share their Group travel plans. Lets Go also allowed users to have group chat and multiple editors to the travel plan. ',
+        },{   
+            id:2,
+            v_link:{
+                radio:4,link:'https://player.vimeo.com/video/952068037?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
+            },
+            h1:'Web Comp - Slideshow',
+            h2:'HTML - CSS - JS - VUE 3',
+            h3:'Lets Go is a travel planner app witch allowed users to create, search, and share their Group travel plans. Lets Go also allowed users to have group chat and multiple editors to the travel plan. ',
+        },{   
+            id:3,
+            v_link:{
+                radio:4,link:'https://player.vimeo.com/video/952068021?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
+            },
+            h1:'Rout Animations',
+            h2:'HTML - CSS - JS - VUE 3',
+            h3:'Lets Go is a travel planner app witch allowed users to create, search, and share their Group travel plans. Lets Go also allowed users to have group chat and multiple editors to the travel plan. ',
+        },{   
+            id:4,
+            v_link:{
+                radio:4,link:'https://player.vimeo.com/video/952067956?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
+            },
+            h1:'Web Comp - Back to Top',
+            h2:'HTML - CSS - JS - VUE 3',
+            h3:'Lets Go is a travel planner app witch allowed users to create, search, and share their Group travel plans. Lets Go also allowed users to have group chat and multiple editors to the travel plan. ',
+        }
+    ]
     
 
     //初始化1
@@ -95,6 +182,8 @@ const store = useStore()
                 item.class = "container_index_set"
             })
         }
+
+       
        
     })
 
@@ -190,6 +279,7 @@ const store = useStore()
     })
 
 
+
 // ============================================
 // 回调函数
 // ============================================
@@ -225,6 +315,39 @@ const store = useStore()
 // 回事件触发/监听
 // ============================================
 
+    //控制页面切换
+    let handle_page_switch_click = (id)=>{
+        works_pages_status.value = id
+      
+    }
+
+
+    let el = ref()
+    const { width,height } = useElementSize(el)
+
+    var x = 5
+
+    var move = 98
+
+    //背景样式
+    let switch_background_style = computed(()=>{
+        var t
+        if(works_pages_status.value == 0){
+            t = x
+        }else{
+            t = width.value/2 +x
+        }
+
+        return {
+           'transform': 'translateX('+t+'px)',
+           'width': width.value/2 - x*2 +'px',
+           'height': height.value - x*2  +'px',
+           'top':x+'px',
+           
+        }
+    })
+
+    
     
     //处理点击事件-触发翻页动画队列    
     let handle_card_click = (id)=>{
@@ -307,6 +430,27 @@ h2{
     text-transform: uppercase;
     color:var(--main-light-100);
 }
+
+.content_block_texts > h1{
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color:var(--main-light-100);
+}
+.content_block_texts > h2{
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color:var(--main-light-100);
+}
+.content_block_texts > h3{
+    font-size: 15px;
+    font-weight: 200;
+    color:var(--main-light-100);
+    opacity: 0.7;
+}
+
 .breakline{
     margin:40px 0;
     width:1px;
@@ -314,12 +458,52 @@ h2{
     height:1px;
     background-color:rgba(0, 0, 0, 0.614);
 }
-@media (max-width: 750px) {
-    .breakline{
-        height:1px;
-    }
+
+.switch_container{
+    border-radius: 50px;
+    border:white 0.5px solid;
+    display: flex;
     
+    width:80%;
+    max-width: 500px;
+    position: relative;
+    /* transform: scale(0.8); */
+   
 }
+.switch_container > h3 {
+    width: 50%;
+    font-size: 18px;
+    padding:16px 0px;
+    text-align: center;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.desk_h3{
+    display:inline-block;
+}
+.mobile_h3{
+    display:none;
+}
+
+.switch_background{
+    position:absolute;
+    background-color: white;
+    z-index: 0;
+    border-radius: 50px;
+    transition: var(--animation-slow);
+}
+.on_active{
+    color:black;
+    font-weight: 700;
+    transition: var(--animation-slow);
+}
+.not_active{
+    color:rgba(255, 255, 255, 0.564);
+    font-weight: 500;
+    transition: var(--animation-slow);
+}
+
 .comp_h{
     transition: all 0.3s;
 }
@@ -327,5 +511,73 @@ h2{
     transform: scale(1.05);
     transition: all 0.3s;
 }
+.coding_container{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:80px;
+}
+.coding_demo_container{
+    width:var(--content-width);
+    max-width: var(--max-content-width);
+    position:relative;
+    display: flex;
+}
+
+.content_block_row_defult{
+    width:100%;
+    display: flex;
+    gap:24px;
+    align-items: center;
+}
+.content_block_texts{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    gap:16px;
+}
+.content_block_row_iframe {
+    width:100%;
+    max-width: 550px;
+    flex:none;
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media (max-width: 750px) {
+    .breakline{
+        height:1px;
+    }
+    .desk_h3{
+        display:none;
+    }
+    .mobile_h3{
+        display:inline-block;
+    }
+    .switch_container > h3 {
+        font-size: 15px;
+    }
+
+    .coding_demo_container{
+        flex-direction: column;
+    }
+    .content_block_row_defult{
+    flex-direction: column;
+}
+
+.content_block_texts > h1{
+    font-size: 25px;
+    line-height: 25px;
+
+}
+.content_block_texts > h2{
+    font-size: 18px;
+
+}
+    
+}
 </style>
-./works_thum_cards/code_c.vue/index.js
+
