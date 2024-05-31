@@ -131,39 +131,39 @@ const store = useStore()
             },
             h1:'Scroll Interaction',
             h2:'HTML - CSS - JS - VUE 2',
-            h3:'Lets Go is a travel planner app witch allowed users to create, search, and share their Group travel plans. Lets Go also allowed users to have group chat and multiple editors to the travel plan. ',
+            h3:'I always like to try some simple but interesting interactive animations. This is the header I made for the first version of my portfolio site. It was also the first interactive component I coded after learning Vue.',
         },{   
             id:1,
             v_link:{
                 radio:4,link:'https://player.vimeo.com/video/952067967?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
             },
             h1:'Mobile Web App',
-            h2:'HTML - CSS - JS - JQ',
-            h3:'Lets Go is a travel planner app witch allowed users to create, search, and share their Group travel plans. Lets Go also allowed users to have group chat and multiple editors to the travel plan. ',
+            h2:'HTML - CSS - JS - JQ - PHP - MYSQL',
+            h3:'This is an app designed to record stray cats encountered in daily life. It is a web-based app that uses jQuery for front-end development and PHP for backend communication with the database. The database utilized is MySQL.',
         },{   
             id:2,
             v_link:{
                 radio:4,link:'https://player.vimeo.com/video/952068037?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
             },
-            h1:'Web Comp - Slideshow',
+            h1:'Slideshow',
             h2:'HTML - CSS - JS - VUE 3',
-            h3:'Lets Go is a travel planner app witch allowed users to create, search, and share their Group travel plans. Lets Go also allowed users to have group chat and multiple editors to the travel plan. ',
+            h3:' This is a slideshow component I coded for the latest version of my portfolio website. It supports finger swipe navigation on mobile devices and mouse drag navigation on desktops. Additionally, on desktops, the cursor changes according to different user interactions.',
         },{   
             id:3,
             v_link:{
                 radio:4,link:'https://player.vimeo.com/video/952068021?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
             },
-            h1:'Rout Animations',
+            h1:'Route Animations',
             h2:'HTML - CSS - JS - VUE 3',
-            h3:'Lets Go is a travel planner app witch allowed users to create, search, and share their Group travel plans. Lets Go also allowed users to have group chat and multiple editors to the travel plan. ',
+            h3:'Based on monitoring the router status and utilizing Vue lifecycle hooks, I created lots of animations to make the transitions between pages appear smoother.',
         },{   
             id:4,
             v_link:{
                 radio:4,link:'https://player.vimeo.com/video/952067956?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
             },
-            h1:'Web Comp - Back to Top',
+            h1:'Back to Top',
             h2:'HTML - CSS - JS - VUE 3',
-            h3:'Lets Go is a travel planner app witch allowed users to create, search, and share their Group travel plans. Lets Go also allowed users to have group chat and multiple editors to the travel plan. ',
+            h3:'The Back to Top button appears after the page is scrolled down a certain distance. The page scroll animation is implemented using requestAnimationFrame() to ensure smooth scrolling across as many browsers as possible.',
         }
     ]
     
