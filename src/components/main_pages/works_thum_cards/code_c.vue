@@ -21,14 +21,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position:relative;
+    position:absolute;
+    bottom:0;
     width:100vw;
 
 }
 .code_box{
     width:var(--content-width);
     max-width:var(--max-content-width);
-    margin:50px 0px;
+    margin:80px 0px;
     z-index: 2;
     display: flex;
     flex-direction: column;

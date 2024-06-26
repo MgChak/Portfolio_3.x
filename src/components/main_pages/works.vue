@@ -6,7 +6,7 @@
 
 
         <cover  @pointerover=" handle_card_hover('hidden',$event)"/>
-        <code_c/>
+        
         <div style ="width:1px;height:30px;"></div>
         <div class="comp_container" >
             <div class="switch_container" ref="el">
@@ -82,7 +82,7 @@ import cover from './works_thum_cards/cover.vue'
 // import play from './works_thum_cards/play.vue'
 import infor_bar from './works_thum_cards/infor_bar.vue'
 import com_footer from '../com_footer.vue'
-import code_c from './works_thum_cards/code_c.vue'
+
 import vimeo_container from '../comps/vimeo_container.vue'
 //hooks引入
 import { s_lock,s_unlock } from '../../hooks/use_page_scroll_locker'
@@ -396,7 +396,7 @@ const store = useStore()
     position:absolute;
     left:0;
     overflow: hidden;
-    background-color: black;
+    background-color:#242427;
 
 }
 .comp_container{

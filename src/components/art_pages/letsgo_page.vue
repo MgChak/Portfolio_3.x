@@ -591,6 +591,7 @@ import link_button from '../comps/link_button.vue'
 import img_slideshow from '../comps/img_slideshow.vue'
 import VLazyImage from "v-lazy-image"
 import vimeo_container from "../comps/vimeo_container.vue"
+import bubble_animation from '../comps/bubble_animation.vue'
 
 
 
