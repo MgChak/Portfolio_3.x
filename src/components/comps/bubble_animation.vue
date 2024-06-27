@@ -15,9 +15,12 @@
   const balls = [];
 
 
+
   var props = defineProps(['img_width']);
 
   var main_size = computed(()=>props.img_width.value/4)
+
+  var bubble_color = ()=>'#00F0FF'
 
   onMounted(() => {
         restartAnimation();  // 确保在组件挂载后立即启动动画
@@ -27,7 +30,7 @@
   const { width, height } = useElementSize(container);
   
   function createBall(centerX, centerY, initial = false) {
-    const numberOfBalls = initial ? 10 : Math.floor(Math.random() * 4) + 1;
+    const numberOfBalls = initial ? 10 : Math.floor(Math.random() * 4) + 2;
     for (let i = 0; i < numberOfBalls; i++) {
         const angle = Math.random() * Math.PI * 2;
         const speed = 3.5;
@@ -55,14 +58,14 @@
       ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
       ctx.beginPath();
       ctx.arc(centerX, centerY, main_size.value, 0, Math.PI * 2);
-      ctx.fillStyle = 'black';
+      ctx.fillStyle = bubble_color();
       ctx.fill();
       ctx.closePath();
   
       balls.forEach(ball => {
           ctx.beginPath();
           ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
-          ctx.fillStyle = 'black';
+          ctx.fillStyle = bubble_color();
           ctx.fill();
           ctx.closePath();
   
@@ -109,14 +112,14 @@
   .bubble_container {
     width: 100%;
     height: 120%;
-    filter:contrast(15);
+    filter:contrast(20);
     position:relative;
     top:-10%;
     transform: translateY(50px);
   }
   .ball-canvas {
     display: block;
-    background-color: #ffffff;
+    background-color: #171819;
     width: 100%;
     height: 100%;
     filter:blur(15px)

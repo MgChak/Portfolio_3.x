@@ -2,8 +2,7 @@ import useStore from '../store/index'
 import {tracker_toggle} from '../hooks/use_mouse_tracker_toggle'
 import {scrollto} from '../hooks/use_scroll'
 import { s_lock,s_unlock } from '../hooks/use_page_scroll_locker'
-import {screen_cover,contents_open, contents_cover} from '../hooks/use_full_sreen_cover'
-
+import {screen_cover,screen_open,contents_open, contents_cover} from '../hooks/use_full_sreen_cover'
 
 
 
@@ -13,7 +12,6 @@ let animation_queue_before_route_in =(page_id)=>{
 
     //锁定滚动
     s_lock()
-
 
     //将thum全屏化_set
     store.index_array[page_id].class = 'container_article_set'
@@ -35,6 +33,9 @@ let animation_queue_before_route_in =(page_id)=>{
  //进入时初始化与动画队列
  let animation_queue_route_in =(page_id)=>{
     const store = useStore()
+
+    //打开屏幕遮罩
+    screen_open()
 
     //关闭路由后存在，否则删掉
     

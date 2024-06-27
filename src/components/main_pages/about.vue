@@ -138,10 +138,14 @@ gsap.registerPlugin(CustomEase);
     })
 
     onBeforeRouteLeave((to,from,next)=>{
+        var index = store.index_array.findIndex((i)=>i.navto==to.name)
         //遮挡屏幕
         screen_cover()
-        //关闭导航栏
-        store.is_navbar_open = false
+        if(index >=0){
+            //关闭导航栏
+             store.is_navbar_open = false
+        }
+        
         setTimeout(()=>{
             next()        
         },350) 

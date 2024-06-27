@@ -268,7 +268,7 @@ const store = useStore()
             //遮挡屏幕
             screen_cover()
             //关闭导航栏
-            store.is_navbar_open = false
+            // store.is_navbar_open = false
             setTimeout(()=>{
                 next()        
             },350) 
@@ -415,7 +415,7 @@ const store = useStore()
 }
 .bio_container{
     width:80%;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     display:flex;
     flex-direction: column;

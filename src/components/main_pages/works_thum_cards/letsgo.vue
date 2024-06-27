@@ -90,7 +90,7 @@ const store = useStore()
                     animations:{
                         height:thum_height(),
                         width:'80vw',
-                        maxWidth:'1200px',
+                        maxWidth:'1000px',
                         borderRadius:'20px',
 
                     }

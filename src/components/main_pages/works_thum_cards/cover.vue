@@ -95,7 +95,7 @@ const store = useStore()
     position:absolute;
     left:0;
     top:0;
-    background-color: rgba(10, 10, 10, 0.92);
+    background-color: rgba(10, 10, 10, 0.7);
     z-index: 1;
 }
 .el_conatiner{

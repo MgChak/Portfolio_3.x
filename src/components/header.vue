@@ -47,8 +47,6 @@
             <div class="inner_container" v-if="store.navbar_status == 1">
 
                 <div class="back_conatiner" @click="handle_nav_click(0,'works')"
-                    @pointerover="handle_hover_1(1,$event)" 
-                    @pointerleave="handle_hover_1(0,$event)"
                     >
                     <img src="../assets/icons/arrow_circle_left.svg" alt="" class="icon">
                     <h3>Back to Index</h3>
@@ -61,8 +59,6 @@
                         class="nav_container" 
                         v-for="n in nav_list_in_article" :key="n.id"
                         @click="handle_nav_click(n.id,n.navto)"
-                        @pointerover="handle_hover_1(1,$event)" 
-                        @pointerleave="handle_hover_1(0,$event)"
                     >
 
                         <div class="dot_container">
@@ -202,27 +198,6 @@
             store.hover_id = undefined
         }
 
-        let handle_hover_1 = (val, e)=>{
-            if (!e.target.classList.contains('active')) {
-                if(e.pointerType == 'mouse'){
-                    if(val == 1){
-                        gsap.to(e.target,{
-                            opacity:1,
-                            duration: 0.3,
-                            ease: CustomEase.create("custom", store.animation_ease_c1),
-                        })
-                    }else{
-                        gsap.to(e.target,{
-                            opacity:0.5,
-                            duration: 0.3,
-                            ease: CustomEase.create("custom", store.animation_ease_c1),
-                        })
-                        
-                    }
-                    
-                }
-            }
-        }
 
         const backtotopimg =ref()
 
@@ -466,6 +441,7 @@
     }
     .inner_container{
         width:100%;
+        max-width: 1000px;
         margin:0 30px;
         height:100%;
         display:flex;
@@ -479,8 +455,6 @@
         align-items: center;
         gap:4px;
         cursor: pointer;
-        opacity: 0.5;
-        
     }
     .nav_list_container{
         width:fit-content;
@@ -510,7 +484,13 @@
         align-items: center;
         gap:2px;
         cursor: pointer;
+    }
+    .nav_container>h1{
         opacity: 0.5;
+    }
+    .nav_container>h1:hover{
+        opacity: 1;
+        font-weight: 500;
     }
     .dot_container{
         width:12px;
@@ -523,7 +503,7 @@
     .dot{
         width:6px;
         height:6px;
-        background: var(--main-light-100);
+        background: #FFD600;
         border-radius: 8px;
         position:absolute;
         bottom:-10px;
@@ -541,6 +521,11 @@
     }
     .active > .dot_container >.dot{
         bottom:2px;
+    }
+    .active > h1 {
+        color:#FFD600;
+        font-weight: 500;
+        opacity: 1;
     }
     /* .active > h1{
         font-weight: 900;
