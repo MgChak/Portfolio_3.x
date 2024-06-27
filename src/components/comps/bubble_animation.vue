@@ -27,7 +27,7 @@
   const { width, height } = useElementSize(container);
   
   function createBall(centerX, centerY, initial = false) {
-    const numberOfBalls = initial ? 10 : Math.floor(Math.random() * 6) + 1;
+    const numberOfBalls = initial ? 10 : Math.floor(Math.random() * 4) + 1;
     for (let i = 0; i < numberOfBalls; i++) {
         const angle = Math.random() * Math.PI * 2;
         const speed = 3.5;

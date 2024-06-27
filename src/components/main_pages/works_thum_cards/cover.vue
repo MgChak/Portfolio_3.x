@@ -1,6 +1,7 @@
 <template>
 
     <div class="container container_expand"  ref="el" >
+        <div class="shadowing"></div>
         <div class="flex_container" :style="{height:flex_height}" >
             <div class="el_conatiner"  ref="img" >
                 <img class="title_container" src="../../../assets/thum_cards/intro.svg" alt="">
@@ -57,6 +58,17 @@ const store = useStore()
     width:100vw;
     /* max-height:650px; */
     background-color: #171718;
+    
+}
+
+.shadowing{
+    width:100%;
+    height:20px;
+    background-color: rgb(0, 0, 0);
+    position:absolute;
+    z-index: 5;
+    top:100%;
+    box-shadow: 0px -4px 6px 0px rgb(0 0 0 / 24%), 0px -10px 40px 0px rgb(0 0 0 / 24%)
 }
 
 
@@ -76,8 +88,6 @@ const store = useStore()
     z-index: 0;
     width:100%;
     height:100%;
-
-    
 }
 .top_cover{
     width:100%;
@@ -85,15 +95,15 @@ const store = useStore()
     position:absolute;
     left:0;
     top:0;
-    background-color: rgba(0, 0, 0, 0.92);
+    background-color: rgba(10, 10, 10, 0.92);
     z-index: 1;
 }
 .el_conatiner{
     position:relative;
     padding-top:100px;
-    max-width: 700px;
+    max-width: 750px;
     width:70%;
-    height:550px;
+    height:600px;
     display: flex;
     justify-content: center;
     align-items: center;

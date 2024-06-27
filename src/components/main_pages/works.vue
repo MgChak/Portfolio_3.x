@@ -7,8 +7,7 @@
 
         <cover  @pointerover=" handle_card_hover('hidden',$event)"/>
         
-        <div style ="width:1px;height:30px;"></div>
-        <div class="comp_container" >
+        <div class="comp_container_switch" >
             <div class="switch_container" ref="el">
                 <h3 @click="handle_page_switch_click(0)" :class="works_pages_status==0?'on_active':'not_active'">
                     <span class="desk_h3">Product Designs</span>
@@ -405,6 +404,14 @@ const store = useStore()
     align-items: center;
     gap:16px;
     width:100%;
+}
+.comp_container_switch{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    padding-top:80px;
 }
 .bio_container{
     width:80%;
