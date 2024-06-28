@@ -36,6 +36,8 @@ const store = useStore()
     const img1 = ref(null)
     const img2 =ref(null)
 
+    
+
     watchPostEffect(()=>{
         thum_ani_render(name,{
             footer:[
@@ -117,13 +119,20 @@ const store = useStore()
 <style scoped>
 .container{
     
+    width:100%;
     overflow: hidden;
     position:relative;
-    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../../../assets/thum_cards/let/back.jpg");
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .background{
-background: radial-gradient(42.7% 61.19% at 50% 50%, #343D2D 0%, #1A1C18 100%);
+
 display: flex;
 justify-content: center;
 align-items: center;

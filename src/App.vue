@@ -154,11 +154,11 @@ const w_size = useWindowSize()
 
 .show{
   opacity: 0;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-out;
 }
 .cover{
   opacity: 1;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in;
 }
 .footer_blur{
   background-color: rgba(0, 0, 0, 0.188);

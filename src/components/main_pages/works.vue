@@ -249,17 +249,11 @@ const store = useStore()
              //navbar隐藏
             store.is_navbar_open = false 
 
-            //增加多余的滚动空间
-            flex_open()
-            
-            //滚动到指定位置
-            srcoll_to(index,'smooth',()=>{
-                next() 
-                //关闭多余的滚动空间
-                flex_close()
-            })
+
             //全屏化thum
-            store.index_array[index].class = 'container_article'
+            setTimeout(()=>{next()},300)
+            store.index_array[index].to_top = get_card_to_top(index)
+            store.index_array[index].class = 'container_article_totop'
 
             //遮挡内容
             contents_cover(index)
@@ -306,6 +300,11 @@ const store = useStore()
         scrollto(store.scroll_position + a.getBoundingClientRect().top,val,fn)
     }
 
+    //计算cover 距离顶部的距离
+    let get_card_to_top = (index)=>{
+        let a = document.getElementsByClassName('comp')[index]
+        return a.getBoundingClientRect().top
+    }
 
 
 
@@ -386,6 +385,7 @@ const store = useStore()
     height:200px;
 }
 .main_conatiner{
+    --background-color:#242427;
     width: 100%;
     position:absolute;
     display:flex;
@@ -395,7 +395,7 @@ const store = useStore()
     position:absolute;
     left:0;
     overflow: hidden;
-    background-color:#242427;
+    background-color:var(--background-color);
 
 }
 .comp_container{
@@ -468,7 +468,7 @@ h2{
 
 .switch_container{
     border-radius: 50px;
-    border:white 0.5px solid;
+    background-color: rgb(12, 12, 13);
     display: flex;
     
     width:80%;
@@ -480,9 +480,10 @@ h2{
 .switch_container > h3 {
     width: 50%;
     font-size: 18px;
-    padding:16px 0px;
+    padding:24px 0px;
     text-align: center;
     z-index: 1;
+    color:white;
     cursor: pointer;
 }
 
@@ -495,19 +496,19 @@ h2{
 
 .switch_background{
     position:absolute;
-    background-color: white;
+    background-color: var(--background-color);
     z-index: 0;
     border-radius: 50px;
     transition: var(--animation-slow);
 }
 .on_active{
-    color:black;
-    font-weight: 700;
+    opacity: 1;
+    font-weight: 400;
     transition: var(--animation-slow);
 }
 .not_active{
-    color:rgba(255, 255, 255, 0.564);
-    font-weight: 500;
+    opacity: 0.5;
+    font-weight: 200;
     transition: var(--animation-slow);
 }
 

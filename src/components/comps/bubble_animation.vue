@@ -29,11 +29,22 @@ onMounted(() => {
 const { width, height } = useElementSize(container);
 
 function createBall(centerX, centerY, initial = false, isBottomLayer = false) {
-  const numberOfBalls = initial ? 10 : Math.floor(Math.random() * 4) + 2;
+  const numberOfBalls = ()=>{
+    if(initial){
+      return 10
+    }else{
+      if(!isBottomLayer){
+        return Math.floor(Math.random() * 3) + 1
+      }else{
+        return 1
+      }
+    }
+  }
+  
   const ballsArray = isBottomLayer ? ballsBottom : ballsTop;
   const speedFactor = isBottomLayer ? 3.5 : 2.5; // 底部小球速度
   const sizeFactor = isBottomLayer ? 0.8 : 1; // 底部小球尺寸
-  for (let i = 0; i < numberOfBalls; i++) {
+  for (let i = 0; i < numberOfBalls(); i++) {
     const angle = Math.random() * Math.PI * 2;
     const speed = speedFactor;
     const distance = initial ? main_size.value + 5 : 0;
