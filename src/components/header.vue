@@ -447,12 +447,15 @@
     .inner_container{
         width:100%;
         max-width: 1000px;
-        margin:0 30px 0 0 ;
+        margin:0 0 0 0 ;
         height:100%;
         display:flex;
         justify-content: space-between;
         align-items: center;
         
+    }
+    .inart_con .inner_container{
+        margin:0 30px 0 0 ;
     }
     .back_conatiner{
         display: flex;
@@ -615,12 +618,10 @@
         border-radius: 25px;
         
     }
+
+
 @media (max-width: 1000px){
-    .inner_container{
-        width:80%;
-        
-        
-    }
+
     .nav_list_container{
         display: none;
     }
@@ -634,5 +635,53 @@
         display: inline-block;
         z-index: 14;
     }
+
+
+    .inart_con{
+        width:90%;
+    }
+
+    .inart_con .outer3_container{
+        background: transparent; 
+        box-shadow: none;
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
+    }
+    .inart_con .inner_container{
+        width:100%;
+        margin:0
+    }
+
+    .inart_con .back_conatiner{
+        background-color: transparent;
+    }
+    .inart_con .back_conatiner h3{
+        display: none;
+    }
+    
+    .inart_con .back_conatiner div{
+        background-color: #1516168b;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        width:60px;
+        height:60px;
+        
+    }
+
+    .inart_con .back_conatiner div img{
+        filter:invert(1)
+    }
+
+    .inart_con .nav_list_container_mv{
+
+        width:60px;
+        height:60px;
+        background-color: #1516168b;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 100px;
+        opacity: 1;
+    }
+
 }
     </style>

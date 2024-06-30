@@ -2,7 +2,7 @@
 
 <div class="main_container">
     <transit/> 
-
+    <div ref='ani_el' class="routin_ani_conatiner">
     <div class = "ov_section_container bc_s">
         <div class="ov_content_container">
             <h4>TRANSIT</h4>
@@ -235,7 +235,7 @@
     </div>  
 
 
-
+</div>
 
     <the_footer :use_data="{
         index: store.index_array.findIndex((item)=> item.name == 'LETS_GO'),
@@ -272,21 +272,21 @@ import VLazyImage from "v-lazy-image"
 //引入hooks
 import {animation_queue_route_in,animation_queue_route_out,animation_queue_before_route_in} from'../../hooks/use_art_page_functions'
 //依赖引入
-import { computed,onMounted,onBeforeMount} from 'vue' 
+import { computed,onMounted,onBeforeMount,ref} from 'vue' 
 import useStore from '../../store/index'
 import { onBeforeRouteLeave } from 'vue-router';
 
 
 const store = useStore()
-
+const ani_el = ref(null)
     let page_id = store.index_array.findIndex((item)=> item.name == 'TRANSIT' )
 
     onBeforeMount(()=>{
-        animation_queue_before_route_in(page_id)
+        animation_queue_before_route_in(page_id,ani_el)
     })
 
     onMounted(()=>{
-        animation_queue_route_in(page_id)
+        animation_queue_route_in(page_id,ani_el)
     })
 
     onBeforeRouteLeave((to,from,next)=>{
@@ -412,6 +412,11 @@ const store = useStore()
 </script>
 
 <style scoped>
+
+.routin_ani_conatiner{
+    width: 100%;
+    position:relative;
+}
 .main_container{
     width:100%;
     display:flex;

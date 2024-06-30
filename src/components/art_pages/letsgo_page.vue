@@ -3,6 +3,7 @@
 <div class="main_container">
     <letsgo/> 
 
+    <div ref='ani_el' class="routin_ani_conatiner">
     <div class = "ov_section_container bc_s">
         <div class="ov_content_container">
             <h4>LET'S GO</h4>
@@ -554,7 +555,7 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
         </div>
     </div>  
 
-
+    </div>
 
     <the_footer :use_data="{
         index: store.index_array.findIndex((item)=> item.name == 'NEBU'),
@@ -575,7 +576,7 @@ Users can easily create a travel plan in Let's Go and start adding their favorit
 //依赖引入
 import useStore from '../../store/index'
 import { onBeforeRouteLeave } from 'vue-router'
-import {onMounted,onBeforeMount} from 'vue' 
+import {onMounted,onBeforeMount,ref} from 'vue' 
 
 //hook引入
 import {animation_queue_route_in,animation_queue_route_out,animation_queue_before_route_in} from'../../hooks/use_art_page_functions.js'
@@ -600,14 +601,16 @@ import bubble_animation from '../comps/bubble_animation.vue'
 
 const store = useStore()
 
+    const ani_el = ref(null)
+
     let page_id = store.index_array.findIndex((item)=> item.name == 'LETS_GO' )
 
     onBeforeMount(()=>{
-        animation_queue_before_route_in(page_id)
+        animation_queue_before_route_in(page_id,ani_el)
     })
 
     onMounted(()=>{
-        animation_queue_route_in(page_id)
+        animation_queue_route_in(page_id,ani_el)
        
     })
 
@@ -817,6 +820,10 @@ const store = useStore()
 </script>
 
 <style scoped>
+.routin_ani_conatiner{
+    width: 100%;
+    position:relative;
+}
 
 .main_container{
     width:100%;

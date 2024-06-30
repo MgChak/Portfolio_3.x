@@ -2,7 +2,7 @@
 
 <div class="main_container">
     <nebu/> 
-
+<div ref='ani_el' class="routin_ani_conatiner">
     <div class = "ov_section_container bc_s">
         <div class="ov_content_container">
             <h4>NEBU</h4>
@@ -357,7 +357,7 @@ The primary objective of our project is to enhance the safety, ease, and comfort
         <v-lazy-image :src="images['background_2.jpg']" :src-placeholder="images['background_2@s.jpg']" class="sp_background_img"/>
     </div> 
 
-
+</div>
     <the_footer :use_data="{
         index: store.index_array.findIndex((item)=> item.name == 'TRANSIT'),
         b_color:'#000000',
@@ -386,7 +386,7 @@ import vimeo_container from '../comps/vimeo_container.vue'
 //引入hooks
 import {animation_queue_route_in,animation_queue_route_out,animation_queue_before_route_in} from'../../hooks/use_art_page_functions'
 //依赖引入
-import {onMounted,onBeforeMount} from 'vue' 
+import {onMounted,onBeforeMount,ref} from 'vue' 
 import useStore from '../../store/index'
 import { onBeforeRouteLeave } from 'vue-router';
 
@@ -395,14 +395,16 @@ import { onBeforeRouteLeave } from 'vue-router';
 
 const store = useStore()
 
+const ani_el = ref(null)
+
     let page_id = store.index_array.findIndex((item)=> item.name == 'NEBU' )
 
     onBeforeMount(()=>{
-        animation_queue_before_route_in(page_id)
+        animation_queue_before_route_in(page_id,ani_el)
     })
     
     onMounted(()=>{
-        animation_queue_route_in(page_id)
+        animation_queue_route_in(page_id,ani_el)
     })
 
     onBeforeRouteLeave((to,from,next)=>{
@@ -501,6 +503,10 @@ const store = useStore()
 </script>
 
 <style scoped>
+.routin_ani_conatiner{
+    width: 100%;
+    position:relative;
+}
 
 .main_container{
     width:100%;

@@ -2,12 +2,13 @@ import useStore from '../store/index'
 import {tracker_toggle} from '../hooks/use_mouse_tracker_toggle'
 import {scrollto} from '../hooks/use_scroll'
 import { s_lock,s_unlock } from '../hooks/use_page_scroll_locker'
+import { gsap } from "gsap";
 import {screen_cover,screen_open,contents_open, contents_cover} from '../hooks/use_full_sreen_cover'
 
 
 
 //进入前初始化
-let animation_queue_before_route_in =(page_id)=>{
+let animation_queue_before_route_in =(page_id,el)=>{
     const store = useStore()
 
     //锁定滚动
@@ -15,6 +16,7 @@ let animation_queue_before_route_in =(page_id)=>{
 
     //将thum全屏化_set
     store.index_array[page_id].class = 'container_index_set'
+
 
     //关闭footer的路由动画
     store.footer_is_rout_out = false
@@ -31,7 +33,7 @@ let animation_queue_before_route_in =(page_id)=>{
     
 }
  //进入时初始化与动画队列
- let animation_queue_route_in =(page_id)=>{
+ let animation_queue_route_in =(page_id,el)=>{
     const store = useStore()
 
     //打开屏幕遮罩
@@ -41,6 +43,9 @@ let animation_queue_before_route_in =(page_id)=>{
 
         // //将thum全屏化_set
         // store.index_array[page_id].class = 'container_index_set'
+
+        //复位文章渐进动画
+        article_animation(el,'set')
     
         // //将thum调整为文章内状态
         store.index_array[page_id].class = 'container_article'
@@ -51,6 +56,8 @@ let animation_queue_before_route_in =(page_id)=>{
         store.is_navbar_open = true
         //打开文字内容
         contents_open()
+        //播放文章渐进动画
+        article_animation(el,'ani')
         
         setTimeout(()=>{
             //解锁滚动
@@ -118,6 +125,25 @@ let animation_queue_route_out =(page_id,to,next)=>{
 
     }
     
+}
+
+//为传入的文章div添加渐进动画
+let article_animation = (el,type)=>{
+    if (type == "set"){
+        gsap.set(el.value,{
+            y:100,
+            opacity:0,
+        })
+    }else if (type == "ani"){
+        gsap.to(el.value,{
+            y:0,
+            opacity:1,
+            duration:0.6,
+            ease:'ease-out',
+        })
+    }
+
+
 }
         
 

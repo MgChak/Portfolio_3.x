@@ -5,7 +5,7 @@
 
                 <img ref="img1" src="../../../assets/thum_cards/let/L.png" class="largephone" alt="">
                 <img ref="img2" src="../../../assets/thum_cards/let/S.png" class="smallphone" alt="">
-                <div ref="img3"class="backcircle"></div>
+                <img ref="img3" src="../../../assets/thum_cards/let/c.svg" class="backcircle" alt="">
             </div>
         
             
@@ -67,13 +67,14 @@ const store = useStore()
                 },{
                     el:img3,
                     animations:{
+                        yPercent: -86,
                         scale:2.5,
                     }
                 }],
             article:[{
                     el:el,
                     animations:{
-                        height:thum_height(),
+                        height:()=>thum_height(),
                         width:'100vw',
                         maxWidth:'100vw',
                         borderRadius:'0px',
@@ -81,22 +82,23 @@ const store = useStore()
                 },{
                     el:img1,
                     animations:{
-                        xPercent: -7,
-                        yPercent: 38,
-                        scale:0.75,
+                        xPercent: 2,
+                        yPercent: 40,
+                        scale:0.55,
                         delay:0.2
                     }
                 },{
                     el:img2,
                     animations:{
-                        xPercent: 18,
-                        yPercent: 28,
-                        scale:0.85,
+                        xPercent: 6,
+                        yPercent: 23,
+                        scale:0.6,
                         delay:0.2
                     }
                 },{
                     el:img3,
                     animations:{
+                        yPercent: -86,
                         scale:3,
                         delay:0.4
                     }
@@ -127,6 +129,7 @@ const store = useStore()
                 },{
                     el:img3,
                     animations:{
+                        yPercent: -71,
                         scale:2.5,
                     }
                 }]
@@ -150,15 +153,12 @@ const store = useStore()
     background-repeat: no-repeat;
 }
 .backcircle{
-    width:300px;
-    height:300px;
-    background-color:#8EF658;
+    width:50%;
     position: absolute;
-    bottom:-150px;
+    bottom:0px;
     right:0;
     left:0;
     margin:0 auto;
-    border-radius: 300px;
 }
 
 .background{

@@ -13,6 +13,8 @@ let handle_el_container_size = (width, height)=>{
     }else{
         return height.value + "px"
     }
+
+    
 }
 
 
@@ -112,7 +114,7 @@ let thum_height = ()=>{
     }else{
         max_h = store.page_width*0.8*3/4
     }
-    return max_h + "px"
+    return max_h 
     
 }
 let thum_width = ()=>{
