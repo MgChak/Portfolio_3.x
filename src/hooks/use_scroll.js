@@ -57,7 +57,6 @@ let smooth_to = (dr, fn) => {
 };
 
 let jump_to = (dr)=>{
-
     window.scroll(0,dr)
 }
 

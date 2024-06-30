@@ -29,7 +29,7 @@ let contents_cover = (index)=>{
 
 let contents_open = ()=>{
     const store = useStore()
-    store.full_cover_class_2 = 'show'
+    setTimeout(()=>{store.full_cover_class_2 = 'show'},100)
     // rewrite_z_index_class()
 }
 

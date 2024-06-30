@@ -2,15 +2,15 @@
 
 
     <div class="main_container" v-if="props.infor_obj.type=='main'">
-        <div v-if = "store.page_width>=750" class="list_container" ref="el">
+        <!-- <div v-if = "store.page_width>=750" class="list_container" ref="el">
             <div class="item_container">
                 <h1>{{ props.infor_obj.text}}</h1>
                 <div class="sub_container">
                     <h2>{{ props.infor_obj.bio }}</h2>
                 </div> 
             </div>
-        </div>
-        <div v-if = "store.page_width < 750" class="list_container" :style="{width : 100+'%'}">
+        </div> -->
+        <div class="list_container" :style="{width : 100+'%'}">
             <div class="item_container">
                 <h1>{{ props.infor_obj.text}}</h1>
                 <div class="time_line"></div>
@@ -98,11 +98,14 @@ const store = useStore()
     flex:none;
     gap:5px;
 }
-.time_container{
-    display: flex;
-    gap:16px;
-    align-items: center;
-}
+
+.item_container{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap:0px;
+        flex:none;
+    }
 .time_line{
     flex:1;
     background-color: var(--main-light-100);
@@ -125,8 +128,8 @@ h1{
 h2{
     font-size: 20px;
     font-weight: 400;
-    text-transform: uppercase;
     color:var(--main-light-100);
+    opacity: 0.5;
     line-height: 20px;
     flex:none;
 }

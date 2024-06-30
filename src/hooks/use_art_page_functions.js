@@ -14,7 +14,7 @@ let animation_queue_before_route_in =(page_id)=>{
     s_lock()
 
     //将thum全屏化_set
-    store.index_array[page_id].class = 'container_article_set'
+    store.index_array[page_id].class = 'container_index_set'
 
     //关闭footer的路由动画
     store.footer_is_rout_out = false
@@ -38,9 +38,13 @@ let animation_queue_before_route_in =(page_id)=>{
     screen_open()
 
     //关闭路由后存在，否则删掉
+
+        // //将thum全屏化_set
+        // store.index_array[page_id].class = 'container_index_set'
     
-         //将thum调整为文章内状态
+        // //将thum调整为文章内状态
         store.index_array[page_id].class = 'container_article'
+        console.log(store.index_array[page_id].class)
         // 赋值路由动画速度
         store.footer_animation = 'var(--animation-slow)'
         //打开导航栏

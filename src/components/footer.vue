@@ -67,7 +67,6 @@ const store = useStore()
     }
 
     let handle_click = ()=>{
-        store.index_array[index].class = 'container_article'
         contents_cover(index)
         footer_opacity.value = 0
         router.push(store.index_array[index].navto)

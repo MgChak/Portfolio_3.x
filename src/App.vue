@@ -124,7 +124,7 @@ const w_size = useWindowSize()
   position: fixed;
   top:0;
   left:0;
-  background-color: black;
+  background-color: #1C1E20;
   z-index:9;
   pointer-events: none;
   
@@ -135,9 +135,10 @@ const w_size = useWindowSize()
   position: fixed;
   top:0;
   left:0;
-  background-color: rgb(0, 0, 0);
+  background-color: #1C1E20;
   z-index:5;
   pointer-events: none;
+  backdrop-filter: blur(30px);
 }
 
 .bottom{
@@ -154,10 +155,12 @@ const w_size = useWindowSize()
 
 .show{
   opacity: 0;
-  transition: all 0.2s ease-out;
+  /* transform: translateY(105%); */
+  transition: all 0.3s ease-out;
 }
 .cover{
   opacity: 1;
+  /* transform: translateY(0); */
   transition: all 0.2s ease-in;
 }
 .footer_blur{

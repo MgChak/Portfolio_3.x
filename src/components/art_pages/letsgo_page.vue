@@ -19,9 +19,7 @@
 
     <div class = "section_container bc_b">
         <div class="content_container">
-            <div class="content_block_texts_40 ">
-                <vimeo_container :vimeolink="{radio:16,link:'https://player.vimeo.com/video/928606447?muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
-            </div>
+            
             <div class="content_block_flex">
                 <h1>Overview</h1>
                 <link_button :prototype_links = 'case_study_button'/>

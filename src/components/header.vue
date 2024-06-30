@@ -48,8 +48,10 @@
 
                 <div class="back_conatiner" @click="handle_nav_click(0,'works')"
                     >
-                    <img src="../assets/icons/arrow_circle_left.svg" alt="" class="icon">
-                    <h3>Back to Index</h3>
+                    <div>
+                        <img src="../assets/icons/arrow_back.svg" alt="" class="icon">
+                    </div>
+                    <h3>Works</h3>
                 </div>
 
                 <div class="nav_list_container" >
@@ -361,6 +363,9 @@
     </script>
     
     <style scoped>
+    .web_logo{
+        width:150px;
+    }
     .outer_container{
         position:fixed;
         left:0;
@@ -392,7 +397,7 @@
     }
     .inart_con{
         width:var(--content-width);
-        max-width:650px;
+        max-width:450px;
         display: flex;
         margin-top: 24px;
         justify-content: space-between;
@@ -409,8 +414,8 @@
         align-items: center;
     }
     .outer3_container{
-        background:var(--color-glass-dark-full);
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        background:rgba(44, 44, 44, 0.648);
+        box-shadow: 0px 0px 6px rgba(20, 20, 20, 0.25);
         backdrop-filter: blur(9.5px); 
         -webkit-backdrop-filter: blur(9.5px);
         width:100%;
@@ -442,7 +447,7 @@
     .inner_container{
         width:100%;
         max-width: 1000px;
-        margin:0 30px;
+        margin:0 30px 0 0 ;
         height:100%;
         display:flex;
         justify-content: space-between;
@@ -451,11 +456,24 @@
     }
     .back_conatiner{
         display: flex;
+        height:100%;
         justify-content: center;
         align-items: center;
-        gap:4px;
+        gap:16px;
         cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.274);
+        padding:0 40px 0 8px;
+        border-radius: 100px;
     }
+        .back_conatiner > div{
+            width:50px;
+            height:50px;
+            border-radius: 40px;
+            background-color:#9ba1a76f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     .nav_list_container{
         width:fit-content;
         height:fit-content;

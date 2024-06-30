@@ -253,6 +253,7 @@ const store = useStore()
             //全屏化thum
             setTimeout(()=>{next()},300)
             store.index_array[index].to_top = get_card_to_top(index)
+            console.log(get_card_to_top(index))
             store.index_array[index].class = 'container_article_totop'
 
             //遮挡内容
@@ -355,6 +356,8 @@ const store = useStore()
         var index = store.index_array.findIndex((i)=>i.id == id)
         router.push(store.index_array[index].navto) 
         
+        
+        
     }
     //处理hover事件
     let handle_card_hover = (val,e)=>{
@@ -385,7 +388,7 @@ const store = useStore()
     height:200px;
 }
 .main_conatiner{
-    --background-color:#242427;
+    --background-color:#272a2c;
     width: 100%;
     position:absolute;
     display:flex;

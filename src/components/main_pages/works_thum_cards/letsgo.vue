@@ -5,6 +5,7 @@
 
                 <img ref="img1" src="../../../assets/thum_cards/let/L.png" class="largephone" alt="">
                 <img ref="img2" src="../../../assets/thum_cards/let/S.png" class="smallphone" alt="">
+                <div ref="img3"class="backcircle"></div>
             </div>
         
             
@@ -35,7 +36,7 @@ const store = useStore()
 
     const img1 = ref(null)
     const img2 =ref(null)
-
+    const img3 =ref(null)
     
 
     watchPostEffect(()=>{
@@ -52,16 +53,21 @@ const store = useStore()
                 },{
                     el:img1,
                     animations:{
-                        xPercent: 0,
-                        yPercent: 31,
-                        scale:0.35,
+                        xPercent: -4,
+                        yPercent: 41,
+                        scale:0.7,
                     }
                 },{
                     el:img2,
                     animations:{
-                        xPercent: -2,
-                        yPercent: 19,
-                        scale:0.3,
+                        xPercent: 12,
+                        yPercent: 14,
+                        scale:0.7,
+                    }
+                },{
+                    el:img3,
+                    animations:{
+                        scale:2.5,
                     }
                 }],
             article:[{
@@ -75,16 +81,24 @@ const store = useStore()
                 },{
                     el:img1,
                     animations:{
-                        xPercent: -3,
-                        yPercent: 41,
-                        scale:0.65,
+                        xPercent: -7,
+                        yPercent: 38,
+                        scale:0.75,
+                        delay:0.2
                     }
                 },{
                     el:img2,
                     animations:{
-                        xPercent: 10,
-                        yPercent: 26,
-                        scale:0.45,
+                        xPercent: 18,
+                        yPercent: 28,
+                        scale:0.85,
+                        delay:0.2
+                    }
+                },{
+                    el:img3,
+                    animations:{
+                        scale:3,
+                        delay:0.4
                     }
                 }],
             index:[{
@@ -100,15 +114,20 @@ const store = useStore()
                     el:img1,
                     animations:{
                         xPercent: -4,
-                        yPercent: 31,
-                        scale:0.5,
+                        yPercent: 41,
+                        scale:0.7,
                     }
                 },{
                     el:img2,
                     animations:{
-                        xPercent: 1,
-                        yPercent: 24,
-                        scale:0.45,
+                        xPercent: 12,
+                        yPercent: 14,
+                        scale:0.7,
+                    }
+                },{
+                    el:img3,
+                    animations:{
+                        scale:2.5,
                     }
                 }]
         })
@@ -129,6 +148,17 @@ const store = useStore()
     background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+.backcircle{
+    width:300px;
+    height:300px;
+    background-color:#8EF658;
+    position: absolute;
+    bottom:-150px;
+    right:0;
+    left:0;
+    margin:0 auto;
+    border-radius: 300px;
 }
 
 .background{

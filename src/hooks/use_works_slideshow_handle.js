@@ -36,6 +36,10 @@ let thum_ani_render = (name,data_obj)=>{
         ease:"ease"
     }
 
+    let animation_setting_fast = {//通用动画设置
+        duration: 0.3,
+        ease:"ease-in"
+    }
     
 
     let animation_render_loop = (type, render_data)=>{//根据传入的数据量，生成等量的gasp动画
@@ -57,11 +61,10 @@ let thum_ani_render = (name,data_obj)=>{
 
         }else if (type == "ani_totop"){
             render_data[0].animations.y = store.index_array[index].to_top * -1
-            console.log(render_data[0])
             render_data.forEach((item)=> {//循环设置状态/无动画
                 gsap.to(item.el.value,{
                     ...item.animations,
-                    ...animation_setting_normal,
+                    ...animation_setting_fast,
                 })
             });
 
@@ -78,7 +81,7 @@ let thum_ani_render = (name,data_obj)=>{
     }else if(a =='container_index'){            
         animation_render_loop('ani',data_obj.index)
     }else if(a =='container_article_totop'){            
-        animation_render_loop('ani_totop',data_obj.article)
+        animation_render_loop('ani_totop',data_obj.index)
     }else if (a =='container_footer_set'){
         animation_render_loop('set',data_obj.footer)
     }else if(a =='container_article_set'){
