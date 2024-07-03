@@ -6,9 +6,10 @@
     
         <div class="inner_container" v-if="store.navbar_status == 0">
     
-            <img src="../assets/logo/logo2.svg" alt="" class="web_logo">
-    
-            
+            <div class="logo_con">
+            <DotLottieVue autoplay loop ref="playerRef" src="../../public/logo.lottie" class="web_logo_ani"/>
+            <img src="../assets/logo/logo2.svg" alt="" class="web_logo_text">
+            </div>
             <div class="nav_list_container" >
     
                 <!-- 根据path_now属性是否等于自身navto属性，决定是否绑定active class -->
@@ -125,6 +126,8 @@
     import {computed,ref,watch} from 'vue'
     import {useRouter} from 'vue-router'
     import useStore from '../store/index.js'
+
+    import { DotLottieVue } from '@lottiefiles/dotlottie-vue'
     //引入图标
     import close from '../assets/icons/close.svg'
     import menu from '../assets/icons/menu.svg'
@@ -363,8 +366,18 @@
     </script>
     
     <style scoped>
-    .web_logo{
-        width:150px;
+    .web_logo_ani{
+        width:70px;
+    }
+    .web_logo_text{
+        width:100px ;
+        margin-top: 20px;
+    }
+    .logo_con{
+        display: flex;
+        height:100%;
+        gap:4px
+
     }
     .outer_container{
         position:fixed;
