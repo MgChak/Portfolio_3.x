@@ -133,7 +133,7 @@ let article_animation = (el,type)=>{
         gsap.set(el.value,{
             y:100,
             transformOrigin: "top center",
-            scaleY:4,
+            scaleY:1,
             opacity:0,
         })
     }else if (type == "ani"){

@@ -208,11 +208,308 @@
                 <h3>After identifying two key pain points, I developed two personas based on earlier research. These personas help me better understand our target users and design solutions that effectively address their needs, improving the product's user experience.</h3>
             </div>
             <img_slideshow :slideshow_arr = 'personas'/> 
-            <img_slideshow :slideshow_arr = 'frames1'/> 
+        </div>  
+    </div> 
+
+    <div class = "main_section_container">
+        <div class="section_title_container">
+            <h1>Design</h1>
+        </div>
+        <div class="sub_section_container">
+            <div class="sub_title_block">
+                <h2>Site Map</h2>
+            </div>
+            <div class="body_block">
+                <h3>After identifying key user pain points and creating personas, I started with designing the sitemap to plan the app's main features. This step established clear navigation between the main pages and laid the foundation for a smooth user experience. </h3>
+            </div>
+            <v-lazy-image :src="images['sit1.png']" :src-placeholder="images['sit1@s.png']"/>
+        </div>
+        <div class="sub_section_container">
+            <div class="sub_title_block">
+                <h2>Design System</h2>
+            </div>
+            <div class="body_block">
+                <h3>I developed a design system for the project, using green as the primary color and implementing dark mode to highlight the travel theme and appeal to young people's modern aesthetics. This system ensures consistency in visual style across the app, enhancing user experience and development efficiency.</h3>
+            </div>
+            <img_slideshow :slideshow_arr = 'design_system'/> 
+            <v-lazy-image :src="images['style3.png']" :src-placeholder="images['style3@s.png']"/>
         </div>
     </div> 
 
+    <div class = "main_section_container">
+        <div class="section_title_container">
+            <h1>Feature Design Process
+                <br>_Ai Generator</h1>
+        </div>
+        <div class="sub_section_container">
+            <v-lazy-image :src="images['ai1.png']" :src-placeholder="images['ai1@s.png']"/>
+        </div>
+        <div class="sub_section_container">
+            <div class="sub_title_block">
+                <h2>Idea vs Plan</h2>
+            </div>
+            <div class="body_block">
+                <h3>The first user pain point is the frustration often associated with making travel plans. Research shows that users usually have a basic idea of their itinerary after deciding to travel. While discussing these ideas with friends is enjoyable, turning them into a detailed plan can be tedious. This has led me to wonder: </h3>
+            </div>
+            <div class="body_block_highlight">
+                <h3>Why is sharing travel ideas enjoyable, but creating a detailed travel plan often leads to a decline in users' moods?</h3>
+            </div>
+            <div class="body_block">
+                <h3>Sharing travel ideas is fun because it lets users dream about their adventures. But, making a detailed travel plan can be a mood killer because it involves boring, time-consuming tasks like looking up logistics, aligning schedules, and booking things. Moving from dreaming to doing often brings stress and frustration.</h3>
+            </div>
+            <div class="cards_container">
+                <div style="width:100%;">
+                    <v-lazy-image :src="images['mo1.png']" :src-placeholder="images['mo1@s.png']"/>
+                </div>
+                <div style="width:100%;">
+                    <v-lazy-image :src="images['mo2.png']" :src-placeholder="images['mo2@s.png']"/>
+                </div>
+             </div>
+        </div>
+        <div class="sub_section_container">
+            <div class="sub_title_block">
+                <h2>Solution Ideation</h2>
+            </div>
+            <div class="body_block">
+                <h3>If we could effectively utilize AI to allow users to simply share their initial travel ideas, and then have the AI handle all related tasks such as researching routes, coordinating schedules, and making bookings, it would significantly ease their burden. This approach would not only prevent mood declines caused by planning stress but also greatly enhance the overall experience of planning trips.</h3>
+            </div>
+            <vimeo_container  :vimeolink="{radio:16,link:'https://player.vimeo.com/video/988653076?muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
+        </div>
+        <div class="sub_section_container">
+            <div class="sub_title_block">
+                <h2>Concept Animation</h2>
+            </div>
+            <div class="body_block">
+                <h3>I added a team chat feature to "Let's Go" allowing users to easily share ideas with their travel companions. The AI will review the group chat to automatically create and update events in the travel plan based on the discussion. Check out the animation below to see how it works.</h3>
+            </div>
+            <vimeo_container  :vimeolink="{radio:16,link:'https://player.vimeo.com/video/988653061?muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
 
+        </div>
+        <div class="sub_section_container">
+            <div class="sub_title_block">
+                <h2>Idea Improvement</h2>
+            </div>
+            <div class="body_block">
+                <h3>During the interviews, I noticed that users still have concerns about AI, especially when it creates complete travel plans without their knowledge. This can unsettle users and reduce their engagement in the planning process. To address this issue, I designed a solution that ensures users can monitor AI's actions on their travel plans in real time. As shown in the illustration below, before AI starts planning based on user discussions, it notifies the user, ensuring transparency and control. This design not only builds trust but also significantly improves the overall user experience.</h3>
+            </div>
+            <v-lazy-image :src="images['improve.png']" :src-placeholder="images['improve@s.png']"/>
+        </div>
+        <div class="sub_section_container">
+            <div class="sub_title_block">
+                <h2>Sketch & Wireframe</h2>
+            </div>
+            <div class="body_block">
+                <h3>After identifying the solution, I created initial sketches to explore UI layouts, interactions and animations. I then created wireframes from these sketches, crucial for Hi-Fi prototyping. These wireframes clarify the structure of each page, ensuring the design meets both functional and aesthetic expectations.</h3>
+            </div>
+            <v-lazy-image :src="images['sketch1.png']" :src-placeholder="images['sketch1@s.png']"/>
+            <v-lazy-image :src="images['wire1.png']" :src-placeholder="images['wire1@s.png']"/>
+        </div>
+        <div class="sub_section_container">
+            <div class="sub_title_block">
+                <h2>Final Design : Hi-Fi Prototype</h2>
+            </div>
+            <div class="body_block">
+                <h3>In the high-fidelity prototype demonstration, when users mention wanting to visit Disneyland during a chat, the AI immediately recognizes this and automatically adds an event to the travel plan. A button on the bottom right of the screen uses animation and text to alert users that a new event has been added. </h3>
+            </div>
+            <vimeo_container  :vimeolink="{radio:4,link:'https://player.vimeo.com/video/988628469?muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
+        </div>
+        <div class="sub_section_container">
+            <div class="sub_title_block">
+                <h2>Final Design : Frames</h2>
+            </div>
+            <img_slideshow :slideshow_arr = 'frames1'/> 
+        </div>
+        <div class="sub_section_container">
+            <div class="sub_title_block">
+                <h2>Micro Interaction</h2>
+            </div>
+            <div class="body_block">
+                <h3>By using micro-animations, users can more intuitively understand the actions AI takes on their travel plans. I have designed different micro-animations for each scenario.</h3>
+            </div>
+            <div class="cards_container">
+                <div class="flex center_center">
+                    <div class="microani_container">
+                        <DotLottieVue autoplay loop ref="playerRef" useFrameInterpolation="true" src="/add.lottie" class="web_logo_ani"/>
+                        <h3>Add</h3>
+                    </div>
+                    <div class="microani_container">
+                        <DotLottieVue autoplay loop useFrameInterpolation="true" src="/edit.lottie" class="web_logo_ani"/>
+                        <h3>Delete</h3>
+                    </div>
+                </div>
+                <div class="flex center_center">
+                    <div class="microani_container">
+                        <DotLottieVue autoplay loop useFrameInterpolation="true" src="/delete.lottie" class="web_logo_ani"/>
+                        <h3>Edit</h3>
+                    </div>
+                    <div class="microani_container">
+                        <DotLottieVue autoplay loop useFrameInterpolation="true" src="/switch.lottie" class="web_logo_ani"/>
+                        <h3>Switch</h3>
+                    </div>
+                </div>
+             </div>
+        </div>
+        <div class="sub_section_container">
+            <div class="sub_title_block">
+                <h2>Testing Result & Iteration</h2>
+            </div>
+            <div class="body_block">
+                <div class="list01">
+                    <h3>Testing Feedback:</h3>
+                    <ul>
+                        <li>It's hard for users to notice the animations in the button.</li>
+                        <li>Users have to open the history page to find out what events have been added, which can be cumbersome.</li>
+                    </ul>
+                    <h3>Feedback Analysis:</h3>
+                    <ul>
+                        <li>I need to make the notifications more noticeable to users.</li>
+                        <li>I also need to introduce new notification methods to convey additional information beyond just the type of action, making it easier for users to recognize AI's behavior.</li>
+                    </ul>
+                    <h3>Improvement:</h3>
+                    <ul>
+                        <li>Since users focus on the middle or lower part of the screen while chatting, I moved the button there for easier visibility.</li>
+                        <li>Beside micro-animation play,  key information about the AI actions is also briefly displayed.</li>
+                        <li>I added a number on the button to display the count of unread action histories.</li>
+                    </ul>
+                </div>
+            </div>
+            <v-lazy-image :src="images['test1.png']" :src-placeholder="images['test1@s.png']"/>
+        </div>
+    </div> 
+
+    <div class = "main_section_container">
+        <div class="section_title_container">
+            <h1>Feature Design Process
+                <br>_Packing</h1>
+        </div>
+        <div class="sub_section_container">
+            <v-lazy-image :src="images['pack1.png']" :src-placeholder="images['pack1@s.png']"/>
+        </div>
+        <div class="sub_section_container">
+            <div class="sub_title_block">
+                <h2>Packing</h2>
+            </div>
+            <div class="body_block">
+                <h3>During the research phase, I noticed that users often forget to pack important items, which decreases their travel experience. To prevent this, users spend a lot of time researching and thinking about what essentials to take. This increases their anxiety when making packing lists and packing. Therefore, I started to think:</h3>
+            </div>
+            <div class="body_block_highlight">
+                <h3>How to ensure users don't overlook any important items while creating their packing list and packing their bags.</h3>
+            </div>
+            <div class="body_block">
+                <h3> If achieved, "Let's Go" could significantly enhance users' sense of security and reduce stress during travel preparations. This not only prevents negative emotional impacts but also improves the overall travel experience.</h3>
+            </div>
+        </div>
+        <div class="sub_section_container">
+            <div class="sub_title_block">
+                <h2>Solution Ideation</h2>
+            </div>
+            <div class="body_block">
+                <h3>Therefore, I hope that "Let's Go" not only offers a basic packing list feature but also includes two additional AI-driven functions. These functions will help users determine what items to bring and assist them with a final check of their luggage, ensuring they are well-prepared and enhancing their travel experience.</h3>
+            </div>
+            <div class="cards_container">
+                <div class="card_03" style="background-color: #ACF0A6;">
+                    <img :src="images['pack2.svg']" alt="">
+                    <div>
+                        <h2 style="color: var(--background-color);" >Item Rec-List</h2>
+                        <h3 style="color: var(--background-color);">A item recommendation list generated by AI.</h3>
+                    </div>
+                </div>
+                <div class="card_03" style="background-color: #D9A9FF;">
+                    <img :src="images['pack3.svg']" alt="">
+                    <div>
+                        <h2 style="color: var(--background-color);" >Packing Scanner</h2>
+                        <h3 style="color: var(--background-color);">Assist users with a final check of their packed items.</h3>
+                    </div>
+                </div>
+             </div>
+        </div>
+        <div class="sub_section_container">
+            <div class="sub_title_block">
+                <h2>Sketch & Wireframe</h2>
+            </div>
+            <div class="body_block">
+                <h3>Here are the sketches and wireframes for the item recommendation feature. I carefully considered the user experience before finalizing the interaction patterns and UI design, aiming to create a simple yet engaging interaction.</h3>
+            </div>
+            <v-lazy-image :src="images['sketch2.png']" :src-placeholder="images['sketch2@s.png']"/>
+            <v-lazy-image :src="images['wire2.png']" :src-placeholder="images['wire2@s.png']"/>
+        </div>
+        <div class="sub_section_container">
+            <div class="sub_title_block">
+                <h2>Final Design : Hi-Fi Prototype</h2>
+            </div>
+            <div class="body_block">
+                <h3>In the high-fidelity prototype demonstration, when users mention wanting to visit Disneyland during a chat, the AI immediately recognizes this and automatically adds an event to the travel plan. A button on the bottom right of the screen uses animation and text to alert users that a new event has been added. </h3>
+            </div>
+            <vimeo_container  :vimeolink="{radio:4,link:'https://player.vimeo.com/video/988636968?muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
+        </div>
+        <div class="sub_section_container">
+            <div class="sub_title_block">
+                <h2>Final Design : Frames</h2>
+            </div>
+            <img_slideshow :slideshow_arr = 'frames2'/> 
+        </div>
+        <div class="sub_section_container">
+            <div class="sub_title_block">
+                <h2>Testing Result & Iteration</h2>
+            </div>
+            <div class="body_block">
+                <div class="list01">
+                    <h3>Testing Feedback:</h3>
+                    <ul>
+                        <li>Many users don't know how to interact with this feature.</li>
+                        <li>Users want to be able to close recommendation list.</li>
+                        <li>The page looks cluttered.</li>
+                        <li>Users may still find it difficult to decide whether they need a particular item.</li>
+                    </ul>
+                    <h3>Feedback Analysis:</h3>
+                    <ul>
+                        <li>The feature page displays too much information.</li>
+                        <li>Lacks necessary interaction guidance.</li>
+                        <li>Lack of reference information to help users understand the necessity of each item and make decisions.</li>
+                    </ul>
+                    <h3>Improvement:</h3>
+                    <ul>
+                        <li>Separate the recommendation feature to allow users to turn it on and off.</li>
+                        <li>When the feature is enabled, hide unrelated information to keep the page clean and organized.</li>
+                        <li>Add arrow icons to help users understand the interaction.</li>
+                        <li>Display ratings for each item from other users to help users make decisions.</li>
+                    </ul>
+                </div>
+            </div>
+            <v-lazy-image :src="images['impeove2.png']" :src-placeholder="images['impeove2@s.png']"/>
+        </div>
+        <div class="sub_section_container">
+            <div class="sub_title_block">
+                <h2>Storyboard</h2>
+            </div>
+            <div class="body_block">
+                <h3>I created a storyboard for the second feature of the packing list. This storyboard shows the user experience I want to deliver in real life. I hope this feature can help users quickly check their luggage.</h3>
+            </div>
+            <v-lazy-image :src="images['story.png']" :src-placeholder="images['story@s.png']"/>
+        </div>
+        <div class="sub_section_container">
+            <div class="sub_title_block">
+                <h2>Final Design : Life Demo</h2>
+            </div>
+            <div class="body_block">
+                <h3>In the high-fidelity prototype demonstration, when users mention wanting to visit Disneyland during a chat, the AI immediately recognizes this and automatically adds an event to the travel plan. A button on the bottom right of the screen uses animation and text to alert users that a new event has been added. </h3>
+            </div>
+            <vimeo_container  :vimeolink="{radio:4,link:'https://player.vimeo.com/video/988653082?muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
+        </div>
+    </div> 
+
+    <div class = "main_section_container">
+        <div class="section_title_container">
+            <h1>Next...</h1>
+        </div>
+        <div class="sub_section_container">
+            <div class="body_block">
+                <h3>The reason behind my decision to design this travel app, 'Let's Go', arose during the winter of 2022 when I planned a trip with friends and we struggled to create a travel plan. Despite numerous attempts, we couldn't find an appropriate tool. 'Let's Go' was designed with the intent to make the process of planning trips more enjoyable and relaxed. With the progression of AI technology, I aim to continuously add more interesting features to 'Let's Go', and I look forward to the day when it becomes a real app.</h3>
+            </div>
+            <v-lazy-image :src="images['p1.png']" :src-placeholder="images['p1@s.png']"/>
+            
+        </div>
+    </div> 
 
 </div>
 
@@ -238,6 +535,7 @@
 import useStore from '../../store/index'
 import { onBeforeRouteLeave } from 'vue-router'
 import {onMounted,onBeforeMount,ref} from 'vue' 
+import { DotLottieVue } from '@lottiefiles/dotlottie-vue'
 
 //hook引入
 import {animation_queue_route_in,animation_queue_route_out,animation_queue_before_route_in} from'../../hooks/use_art_page_functions.js'
@@ -317,6 +615,15 @@ const store = useStore()
             [[images['per2.png'],images['per2@s.png']],""],
         ]
     }  
+    let design_system = { 
+        color:'var(--p-color-font-white-60)',
+        type:'img',
+        resize:false,
+        contents:[
+            [[images['style1.png'],images['style1@s.png']],""],
+            [[images['style2.png'],images['style2@s.png']],""],
+        ]
+    }  
 
     let frames1 = { 
         color:'var(--p-color-font-white-60)',
@@ -328,6 +635,18 @@ const store = useStore()
             [[images['frame2.png'],images['frame2@s.png']],""],
             [[images['frame3.png'],images['frame3@s.png']],""],
             [[images['frame4.png'],images['frame4@s.png']],""]
+        ]
+    }  
+    let frames2 = { 
+        color:'var(--p-color-font-white-60)',
+        type:'img',
+        resize:false,
+        radio:4,
+        contents:[
+            [[images['frame5.png'],images['frame5@s.png']],""],
+            [[images['frame6.png'],images['frame6@s.png']],""],
+            [[images['frame7.png'],images['frame7@s.png']],""],
+            [[images['frame8.png'],images['frame8@s.png']],""]
         ]
     }  
 
@@ -477,6 +796,7 @@ a:hover{
     align-items: center;
 }
 
+
 .gap_40_container{
     display: flex;
     flex-direction: column;
@@ -586,6 +906,47 @@ a:hover{
     .card_02 > h3{
         text-align: center;
     }
+
+.card_03{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap:32px;
+    padding:40px 32px;
+    /* background: black; */
+    border-radius: 20px;
+    align-self:stretch;
+    flex:1;
+}
+    .card_03 > img{
+        width:80px;
+        height:80px;
+    }
+    .card_03 > div > h2{
+        font-weight: 700;
+    }
+    .card_03 > div > h3{
+        line-height: 150%;
+    }
+/* ----------------------------------------------------------cards */
+.list01{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+}
+    .list01 > ul{
+        list-style: number;
+        border-left:2px solid var(--p-color-font-white-60);
+        margin-left:32px;
+        padding-left: 48px;
+    }
+    .list01 >ul> li{
+        font-size: 20px;
+        color:var(--p-color-font-white-60);
+        line-height: 200%;
+        font-weight: 400;
+    }
 /* ----------------------------------------------------------breaklines */
 .breakline{
     width: 70%;
@@ -637,7 +998,16 @@ img{
         width:40%;
     }
 
-
+.microani_container
+{
+    display: flex;
+    flex-direction: column;
+    gap:16px;
+    padding:8px 0px;
+    align-items: center;
+    justify-content: center;
+    flex:1;
+}
 @media (max-width: 1000px){
 
 
