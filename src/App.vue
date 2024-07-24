@@ -156,7 +156,7 @@ const w_size = useWindowSize()
 .show{
   opacity: 0;
   /* transform: translateY(105%); */
-  transition: all 0.3s ease-out;
+  transition: all 0.15s ease-out;
 }
 .cover{
   opacity: 1;

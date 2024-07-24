@@ -83,7 +83,7 @@ let animation_queue_route_out =(page_id,to,next)=>{
         //标记开启路由的页面
         store.router_page = page_id
         //将thum全屏化
-        store.index_array[page_id].class = 'container_index'  
+        store.index_array[page_id].class = 'container_article_tocenter'  
         //遮罩文字
         contents_cover(page_id)
 
@@ -133,7 +133,7 @@ let article_animation = (el,type)=>{
         gsap.set(el.value,{
             y:100,
             transformOrigin: "top center",
-            scaleY:1.5,
+            scaleY:4,
             opacity:0,
         })
     }else if (type == "ani"){

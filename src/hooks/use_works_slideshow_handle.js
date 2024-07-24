@@ -70,6 +70,15 @@ let thum_ani_render = (name,data_obj)=>{
                 })
             });
 
+        }else if (type == "ani_tocenter"){
+            render_data[0].animations.y = store.page_height*store.center_coef
+            render_data.forEach((item)=> {//循环设置状态/无动画
+                gsap.to(item.el.value,{
+                    ...item.animations,
+                    ...animation_setting_fast,
+                })
+            });
+
         }else{
             console.log('type='+type)
         }
@@ -84,6 +93,8 @@ let thum_ani_render = (name,data_obj)=>{
         animation_render_loop('ani',data_obj.index)
     }else if(a =='container_article_totop'){            
         animation_render_loop('ani_totop',data_obj.index)
+    }else if(a =='container_article_tocenter'){            
+        animation_render_loop('ani_tocenter',data_obj.index)
     }else if (a =='container_footer_set'){
         animation_render_loop('set',data_obj.footer)
     }else if(a =='container_article_set'){
@@ -117,22 +128,39 @@ let thum_height = ()=>{
     return max_h 
     
 }
-let thum_width = ()=>{
-    const store = useStore()
-    var max_w
-    if (store.page_width >= 1280){
-        max_w = 1200
-    }else{
-        max_w = store.page_width*0.8
-    }
 
-    return max_w /store.page_width
-    
-}
+// let thum_width = ()=>{
+//     const store = useStore()
+//     var width
+
+//     if (store.page_width >= 1280){
+//         width = "1000px"
+//     }else{
+//         width = "100vw"
+//     }
+//     return width 
+// }
+
+// let thum_border=()=>{
+
+//     const store = useStore()
+//     var radius
+
+//     if (store.page_width >= 1280){
+//         radius = "20px"
+//     }else{
+//         radius = "0px"
+//     }
+//     return radius
+
+// }
+
+
 export {
     handle_el_container_size,
     thum_ani_render,
     handle_z_index,
     thum_height,
-    thum_width
+    // thum_width,
+    // thum_border
 }

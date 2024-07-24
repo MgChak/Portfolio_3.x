@@ -14,12 +14,10 @@ export default  createRouter({
     routes:[
       //main pages
       {   
-        path:'/',
-        redirect:'/works',
-      },{   
           name:'works',
-          path:'/works',                             
+          path:'/',                             
           component: works,
+          alias:'/works'
       },{   
         name:'playground',
         path:'/playground',

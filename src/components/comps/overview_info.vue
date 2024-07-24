@@ -32,6 +32,7 @@
 .blocks_container{
     width:100%;
     display: flex;
+    flex-direction: column;
     gap:24px;
     flex-wrap:wrap;
 }

@@ -1,13 +1,13 @@
 <template>
 <div ref="outer_container" class="outer_container">
-    <div v-if="store.navbar_status == 0" class="outer2_container container"  @mouseover= "handle_hover()">
+    <div v-show="store.navbar_status == 0" class="outer2_container container"  @mouseover= "handle_hover()">
     
         <!-- 默认全功能导航 -->
     
-        <div class="inner_container" v-if="store.navbar_status == 0">
+        <div class="inner_container">
     
             <div class="logo_con">
-            <DotLottieVue autoplay loop ref="playerRef" src="../../public/logo.lottie" class="web_logo_ani"/>
+            <DotLottieVue autoplay loop ref="playerRef" useFrameInterpolation="true" src="../../public/logo.lottie" class="web_logo_ani"/>
             <img src="../assets/logo/logo2.svg" alt="" class="web_logo_text">
             </div>
             <div class="nav_list_container" >
@@ -41,11 +41,11 @@
         </div> 
 
     </div>
-    <div class="inart_con" v-if="store.navbar_status == 1">
+    <div class="inart_con" v-show ="store.navbar_status == 1">
 
         <div  ref="con" class="outer3_container container_art" @mouseover= "handle_hover()">
 
-            <div class="inner_container" v-if="store.navbar_status == 1">
+            <div class="inner_container">
 
                 <div class="back_conatiner" @click="handle_nav_click(0,'works')"
                     >
@@ -188,14 +188,6 @@
         })
 
 
-        //根据不同状态修改导航栏classname
-        let navbar_status_class = computed(()=>{
-            if(store.navbar_status == 0){
-                return 'container'
-            }else if(store.navbar_status == 1){
-                return 'container_art'
-            }
-        })
 
         //处理hover
         let handle_hover= ()=>{
@@ -255,29 +247,11 @@
         })
 
 
-        //
-        let nav_width = computed(()=>{
-            var a
-            if (store.scroll_position>=store.page_height && store.navbar_status == 1){
-                a = 80
-            }else{
-                a = 0
-            }
-            return a+"px"
-        })
 
-        let navbar_status_style2 = computed(()=>{
-            if(store.navbar_status == 0){
-                return '0px'
-            }else if(store.navbar_status == 1){
-                return '80px'
-            }
-        })
+        //控制回到顶部动画
 
         let con = ref(null)
         let bac = ref(null)
-
-        
 
         let animation_open = ()=>{
             var tl = gsap.timeline(); 
@@ -332,6 +306,15 @@
         }
 
 
+        //是否为第一次进入的标记
+        var isFirst = true
+        watch(()=>store.navbar_status,()=>{
+            if(store.navbar_status != 1){
+                isFirst = true
+                animation_close() 
+            }
+        })
+
         //监听滚动位置
         const isGreaterThanPageHeight = computed(() => store.scroll_position >= store.page_height);
         watch(isGreaterThanPageHeight, (newValue, oldValue) => {
@@ -342,9 +325,13 @@
                 }
                 // 当条件从true变为false时触发另一个动画
                 else if (!newValue && oldValue) {
-                    animation_close() 
+                    if (!isFirst){//判断是否需要延迟
+                            animation_close() 
+                    }
                 }
-            }   
+                setTimeout(()=>{isFirst = false},300)
+
+            }
             
         });
         //监听菜单打开

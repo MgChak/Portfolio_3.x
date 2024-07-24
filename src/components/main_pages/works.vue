@@ -195,7 +195,8 @@ const store = useStore()
         if(store.is_route_to_work){
 
             //跳转到指定位置
-            srcoll_to(store.router_page,'jump')
+            srcoll_to(store.router_page,'jump')//本组件独占函数
+ 
             
         }else{
            
@@ -294,11 +295,12 @@ const store = useStore()
 
         
     }
-    //滚动到指定位置
+    //滚动到指定位置//本组件独占
+
     let srcoll_to = (index,val,fn)=>{
         let a = document.getElementsByClassName('comp')[index]
         a.getBoundingClientRect().top
-        scrollto(store.scroll_position + a.getBoundingClientRect().top,val,fn)
+        scrollto(store.scroll_position + a.getBoundingClientRect().top - store.page_height*store.center_coef,val,fn)
     }
 
     //计算cover 距离顶部的距离
@@ -388,7 +390,7 @@ const store = useStore()
     height:200px;
 }
 .main_conatiner{
-    --background-color:#272a2c;
+    --background-color:#1C1E20;
     width: 100%;
     position:absolute;
     display:flex;
