@@ -208,6 +208,7 @@
                 <h3>After identifying two key pain points, I developed two personas based on earlier research. These personas help me better understand our target users and design solutions that effectively address their needs, improving the product's user experience.</h3>
             </div>
             <img_slideshow :slideshow_arr = 'personas'/> 
+            <img_slideshow :slideshow_arr = 'frames1'/> 
         </div>
     </div> 
 
@@ -308,12 +309,25 @@ const store = useStore()
 
     //Slideshow
     let personas = { 
-        color:'var(--p-color-main)',
+        color:'var(--p-color-font-white-60)',
         type:'img',
         resize:false,
         contents:[
             [[images['per1.png'],images['per1@s.png']],""],
             [[images['per2.png'],images['per2@s.png']],""],
+        ]
+    }  
+
+    let frames1 = { 
+        color:'var(--p-color-font-white-60)',
+        type:'img',
+        resize:false,
+        radio:4,
+        contents:[
+            [[images['frame1.png'],images['frame1@s.png']],""],
+            [[images['frame2.png'],images['frame2@s.png']],""],
+            [[images['frame3.png'],images['frame3@s.png']],""],
+            [[images['frame4.png'],images['frame4@s.png']],""]
         ]
     }  
 

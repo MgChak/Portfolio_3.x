@@ -93,6 +93,9 @@ const store = useStore()
         }else{
             r_w = width.value*9/16
         }
+        if(props.slideshow_arr.radio == 4){//启用4/3
+            r_w = r_w = width.value*3/4
+        }
         return r_w
     }) 
     //视频响应式高度

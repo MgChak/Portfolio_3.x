@@ -41,7 +41,7 @@
         </div> 
 
     </div>
-    <div class="inart_con" v-show ="store.navbar_status == 1">
+    <div class="inart_con" v-show ="store.navbar_status == 1" >
 
         <div  ref="con" class="outer3_container container_art" @mouseover= "handle_hover()">
 
@@ -52,7 +52,7 @@
                     <div>
                         <img src="../assets/icons/arrow_back.svg" alt="" class="icon">
                     </div>
-                    <h3>Works</h3>
+                    <h3 style="font-size: 14px;">Works</h3>
                 </div>
 
                 <div class="nav_list_container" >
@@ -64,13 +64,7 @@
                         @click="handle_nav_click(n.id,n.navto)"
                     >
 
-                        <div class="dot_container">
-                            
-                            <div class="dot"></div>
-                        
-                        </div>
-
-                        <h1 class="nav_text">{{n.text}}</h1>
+                        <h1 style="font-size: 14px;" class="nav_text">{{n.text}}</h1>
 
                     </div>  
 
@@ -387,7 +381,7 @@
     }
     .container_art{
         
-        height:66px;
+        height: 60px;
         border-radius: 40px;
         display:flex;
         justify-content: space-between;
@@ -397,9 +391,9 @@
     }
     .inart_con{
         width:var(--content-width);
-        max-width:450px;
+        max-width:400px;
         display: flex;
-        margin-top: 24px;
+        margin-top: 8px;
         justify-content: space-between;
     }
     .outer2_container{
@@ -465,12 +459,12 @@
         gap:16px;
         cursor: pointer;
         background-color: rgba(0, 0, 0, 0.274);
-        padding:0 40px 0 8px;
+        padding:0 35px 0 8px;
         border-radius: 100px;
     }
         .back_conatiner > div{
-            width:50px;
-            height:50px;
+            width:45px;
+            height:45px;
             border-radius: 40px;
             background-color:#9ba1a76f;
             display: flex;
@@ -644,8 +638,8 @@
     .inart_con .outer3_container{
         background: transparent; 
         box-shadow: none;
-        backdrop-filter: blur(0px);
-        -webkit-backdrop-filter: blur(0px);
+        backdrop-filter: initial;
+        -webkit-backdrop-filter: initial;
     }
     .inart_con .inner_container{
         width:100%;
