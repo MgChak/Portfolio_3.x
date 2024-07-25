@@ -155,7 +155,6 @@ h3{
     h2{
         font-size: 15px;
         font-weight: 400;
-        text-transform: uppercase;
         color:var(--main-light-100);
         flex:none;
     }
@@ -184,7 +183,6 @@ h3{
     h2{
         font-size: 15px;
         font-weight: 400;
-        text-transform: uppercase;
         color:var(--main-light-100);
         flex:none;
     }

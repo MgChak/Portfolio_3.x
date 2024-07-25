@@ -177,7 +177,7 @@ const store = useStore()
 h3{
     color:white;
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 600;
     padding:8px 24px;
     transition:var(--animation-slow);
     

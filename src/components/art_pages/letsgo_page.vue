@@ -518,8 +518,8 @@
     <the_footer :use_data="{
         index: store.index_array.findIndex((item)=> item.name == 'NEBU'),
         b_color:'--p-color-main',
-        f_color:'#000000',
-        t_color:'#ffffff'
+        f_color:'#ffffff',
+        t_color:'#000000'
     }">
         <nebu/>
     </the_footer>

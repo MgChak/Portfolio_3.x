@@ -164,7 +164,7 @@ export default defineStore("Main",{
                     id:1,
                     comp:'letsgo',
                     name:'LETS_GO',
-                    text:'Lets Go',
+                    text:"Let's Go",
                     bio:'AI powered app travel app design | Solo Designer',
                     time:'2022 fall - LIVE',
                     sub_color:'#8CE547',
