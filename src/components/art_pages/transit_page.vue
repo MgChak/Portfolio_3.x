@@ -8,8 +8,7 @@
             <h4>TRANSIT</h4>
             <div class="breakline bc_w1"></div>
             <overview_info :ov_data="ov_data" />
-            <div class="breakline bc_w1"></div>
-            <h3>This project is a redesign of Transit, with the revamped UI and functionality offering users a more stylish visual experience and an improved user experience.</h3>
+           
         </div>
     </div>  
 
@@ -456,6 +455,9 @@ h3{
     font-weight: 400;
     line-height: 40px;
     color:var(--p-color-font-white-60);
+
+    max-width: 650px;
+    margin:0 auto;
 }
     h3.fc_s{
         font-weight: 600;
@@ -601,7 +603,7 @@ img{
     background:var(--p-color-sub)
 }
 .bc_b{
-    background:black;
+    background:#1C1E20;
 }
 .bc_w6{
     background:var(--p-color-font-white-60);

@@ -1,7 +1,7 @@
 <template>
 
    <div class="com_footer_main_container">
-        <div style="width:100%" class="breakline"></div>
+        <div style="width:100%" class="breakline2"></div>
         <div class="footer_content_container">
             <div class="contact_container">
                 <h3 class="linkout icon" @click="handle_linkout(1)">LinkedIn</h3>
@@ -12,8 +12,8 @@
             <div style="width:100%; opacity: 0.2; " class="breakline hideline"></div>
             <div class="logo_container">
                 <img src="../assets/chak_name.svg" alt="">
-                <h1>CHAKSHING LAM</h1>
-                <h2>UX / UI & PRODUCT DESIGNER</h2>
+                <!-- <h1>CHAKSHING LAM</h1>
+                <h2>UX / UI & PRODUCT DESIGNER</h2> -->
             </div>
         </div>
         <div style="width:85%;max-width: 1000px; opacity: 0.2; " class="breakline"></div>
@@ -48,8 +48,13 @@
     align-items: center;
     padding-bottom: 40px;
     gap:40px;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(18, 18, 19);
     z-index: 15;
+}
+.breakline2{
+    height:1px;
+    opacity: 0.5;
+    flex:none;
 }
 .breakline{
     height:1px;

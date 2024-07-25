@@ -4,7 +4,7 @@
         <div class="shadowing"></div>
         <div class="flex_container" :style="{height:flex_height}" >
             <div class="el_conatiner"  ref="img" >
-                <img class="title_container" src="../../../assets/thum_cards/intro.svg" alt="">
+                <img class="title_container" src="../../../assets/thum_cards/top3.svg" alt="">
             </div>
         </div>
         <code_c/>
@@ -101,8 +101,8 @@ const store = useStore()
 .el_conatiner{
     position:relative;
     padding-top:100px;
-    max-width: 750px;
-    width:70%;
+    max-width: 700px;
+    width:80%;
     height:600px;
     display: flex;
     justify-content: center;

@@ -8,8 +8,6 @@
             <h4>NEBU</h4>
             <div class="breakline bc_w1"></div>
             <overview_info :ov_data="ov_data" />
-            <div class="breakline bc_w1"></div>
-            <h3>Introducing Nebu, the In-Vehicle Robot crafted specifically for your Mars adventure! Nebu brings holographic displays to life, offering a wide range of entertainment options and an immersive experience. </h3>
         </div>
     </div>  
 
@@ -37,19 +35,19 @@
                     <div class="content_block_list">
                         <div class="list_i">
                             <div class="dot"></div>
-                            <h3>Environmental simulation <br>_ interaction & UX/UI design.</h3>
+                            <h5>Environmental simulation <br>_ interaction & UX/UI design.</h5>
                         </div>
                         <div class="list_i">
                             <div class="dot"></div>
-                            <h3>Robot-face display design.</h3>
+                            <h5>Robot-face display design.</h5>
                         </div>
                         <div class="list_i">
                             <div class="dot"></div>
-                            <h3>Robot skins and animation design.</h3>
+                            <h5>Robot skins and animation design.</h5>
                         </div>
                         <div class="list_i">
                             <div class="dot"></div>
-                            <h3>Navigation feature design.</h3>
+                            <h5>Navigation feature design.</h5>
                         </div>
                     </div>
                 </div>
@@ -61,23 +59,23 @@
                     <div class="content_block_list">
                         <div class="list_i">
                             <div class="dot"></div>
-                            <h3>Chakshing Lam ( IXD )</h3>
+                            <h5>Chakshing Lam ( IXD )</h5>
                         </div>
                         <div class="list_i">
                             <div class="dot"></div>
-                            <h3>Edward Tsai ( IXD )</h3>
+                            <h5>Edward Tsai ( IXD )</h5>
                         </div>
                         <div class="list_i">
                             <div class="dot"></div>
-                            <h3>Zeo Zhang ( IND )</h3>
+                            <h5>Zeo Zhang ( IND )</h5>
                         </div>
                         <div class="list_i">
                             <div class="dot"></div>
-                            <h3>Emily Tedja  ( IND )</h3>
+                            <h5>Emily Tedja  ( IND )</h5>
                         </div>
                         <div class="list_i">
                             <div class="dot"></div>
-                            <h3>Jiayu Wang ( GR )</h3>
+                            <h5>Jiayu Wang ( GR )</h5>
                         </div>
                     </div>
                 </div>
@@ -205,7 +203,7 @@ The primary objective of our project is to enhance the safety, ease, and comfort
         <div class="content_container">
             <div class="content_block_texts_24">
                 <h1 class="fc_m">Customizable</h1>
-                <h3>To cater to the diverse preferences of as many users as possible, we have equipped Nebu with a 360-degree display screen. This feature allows users to customize Nebu's 'skin' to their liking, whether they prefer solid colors, images, or even animations. This customization ensures that every user has a unique and personal companion robot experience.</h3>
+                <h3>To cater to the diverse preferences of as many users as possible, we have equipped Nebu with a 360-degree display screen. This feature allows users to customize Nebu's 'skin' to their liking, whether they prefer solid colors, images, or even animations. This customization ensures that every user has a unique experience.</h3>
             </div>
             <div class="pp_container" style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/901211431?muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="nebu_skin"></iframe></div>
         </div>
@@ -339,7 +337,7 @@ The primary objective of our project is to enhance the safety, ease, and comfort
         <div class="content_container">
             <div class="content_block_texts_24">
                 <h1>Next...</h1>
-                <h3>Designing a commercial space travel experience is a vast and challenging endeavor. Due to time constraints in production, our current focus has been primarily on the visual and interactive design of the companion robot Nebu. Beyond visual customization, we should consider expanding the range of features and activities available on the spaceship to cater to the diverse needs of travelers. Additionally, it would be beneficial to explore the types of activities and accommodations that NebuLine could offer on Mars, ensuring a well-rounded and satisfying experience for all. As for the future, we anticipate delving deeper into the broader aspects of interstellar travel, continually evolving and enhancing the user experience.</h3>
+                <h3>Designing commercial space travel involves focusing on the visual and interactive aspects of the companion robot, Nebu, due to production time constraints. We plan to expand spaceship features and activities to meet diverse traveler needs and explore possible activities and accommodations on Mars with NebuLine. Looking ahead, we aim to further enhance the broader user experience of interstellar travel.</h3>
             </div>
             <link_button :prototype_links = 'case_study_button_dark'/>
             <v-lazy-image :src="images['s2_6.png']" :src-placeholder="images['s2_6@s.png']"/>
@@ -466,21 +464,21 @@ const ani_el = ref(null)
     let case_study_button = {
         main_color:'#000000',
         sub_color:'var(--p-color-main)',
-        width:180,
+        width:210,
         text:'PRESENTATION',
         link:'https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=14-5230&t=QQI6hKGLwnpZBfID-1&scaling=min-zoom&page-id=14%3A3693&mode=design',
     }
     let case_study_button_dark = {
         main_color:'var(--p-color-sub)',
         sub_color:'var(--p-color-main)',
-        width:180,
+        width:210,
         text:'PRESENTATION',
         link:'https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=14-5230&t=QQI6hKGLwnpZBfID-1&scaling=min-zoom&page-id=14%3A3693&mode=design',
     }
     let research_button_dark = {
         main_color:'var(--p-color-sub)',
         sub_color:'var(--p-color-main)',
-        width:157,
+        width:170,
         text:'RESEARCH',
         link:'https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=14-6607&t=zi2twlrOCafqzPlO-1&scaling=min-zoom&page-id=14%3A6606&mode=design',
     }
@@ -488,7 +486,7 @@ const ani_el = ref(null)
     let vp_button_1 = {
         main_color:'var(--p-color-main)',
         sub_color:'var(--p-color-sub)',
-        width:185,
+        width:210,
         text:'Video Prototype',
         link:'https://vimeo.com/901211459?share=copy',
     }
@@ -530,7 +528,7 @@ h1{
     font-size: 40px;
     font-style: normal;
     font-weight: 700;
-    line-height: 50px; 
+    line-height: 150%; 
     color:var(--p-color-main);
 
 }
@@ -545,8 +543,19 @@ h3{
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 40px;
+    line-height: 200%;
     color:var(--p-color-font-white-60);
+
+    max-width: 650px;
+    margin:0 auto;
+}
+h5{
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 200%;
+    color:var(--p-color-font-white-60);
+
 }
 
 
@@ -754,7 +763,7 @@ img{
     background:var(--p-color-sub)
 }
 .bc_b{
-    background:black;
+    background:#1C1E20;
 }
 .bc_w6{
     background:var(--p-color-font-white-60);

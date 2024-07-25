@@ -459,6 +459,7 @@ h2{
 .content_block_texts > h3{
     font-size: 15px;
     font-weight: 200;
+    line-height: 150%;
     color:var(--main-light-100);
     opacity: 0.7;
 }

@@ -65,7 +65,7 @@
                         <h4>AI Generator <br>
                             Based on Conversation</h4>
                     </div>
-                    <link_button :prototype_links = 'case_study_button'/>
+                    <link_button :prototype_links = 'button_scroll_ai'/>
                 </div>
                 <vimeo_container class="iframe_block_flex_row" :vimeolink="{radio:4,link:'https://player.vimeo.com/video/988628489?muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
             </div>
@@ -78,7 +78,7 @@
                         <h4>AI Packing<br>
                           Recommendation</h4>
                     </div>
-                    <link_button :prototype_links = 'case_study_button'/>
+                    <link_button :prototype_links = 'button_scroll_list'/>
                 </div>
                 <vimeo_container class="iframe_block_flex_row" :vimeolink="{radio:4,link:'https://player.vimeo.com/video/988636983?muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
             </div>
@@ -90,7 +90,7 @@
                     <div class="sub_title_block">
                         <h4>AI Packing Scanner</h4>
                     </div>
-                    <link_button :prototype_links = 'case_study_button'/>
+                    <link_button :prototype_links = 'button_scroll_list'/>
                 </div>
                 <vimeo_container class="iframe_block_flex_row" :vimeolink="{radio:4,link:'https://player.vimeo.com/video/989225504?muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
             </div>
@@ -236,7 +236,7 @@
         </div>
     </div> 
 
-    <div class = "main_section_container">
+    <div ref="ai" class = "main_section_container">
         <div class="section_title_container">
             <h1>Feature Design Process
                 <br>_Ai Generator</h1>
@@ -377,7 +377,7 @@
         </div>
     </div> 
 
-    <div class = "main_section_container">
+    <div ref="list" class = "main_section_container">
         <div class="section_title_container">
             <h1>Feature Design Process
                 <br>_Packing</h1>
@@ -438,7 +438,7 @@
                 <h2>Final Design : Hi-Fi Prototype</h2>
             </div>
             <div class="body_block">
-                <h3>In the high-fidelity prototype demonstration, when users mention wanting to visit Disneyland during a chat, the AI immediately recognizes this and automatically adds an event to the travel plan. A button on the bottom right of the screen uses animation and text to alert users that a new event has been added. </h3>
+                <h3>The Paking feature provides a recommended packing list based on the user's travel destination. For example, in cold regions, Let's Go suggests bringing warm clothing. The item cards display the percentage of users who take these items to the destination, offering a reference for users. Users can also click on the cards to see more details. To add an item to the list, users simply need to swipe down.</h3>
             </div>
             <vimeo_container  :vimeolink="{radio:4,link:'https://player.vimeo.com/video/988636968?muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
         </div>
@@ -492,7 +492,7 @@
                 <h2>Final Design : Life Demo</h2>
             </div>
             <div class="body_block">
-                <h3>In the high-fidelity prototype demonstration, when users mention wanting to visit Disneyland during a chat, the AI immediately recognizes this and automatically adds an event to the travel plan. A button on the bottom right of the screen uses animation and text to alert users that a new event has been added. </h3>
+                <h3>Compared to a screen recording of the Figma prototype, I believe a live demo prototype can demonstrate this feature more vividly. Let's Go's luggage scanning feature automatically checks off and reorders the packing list by scanning items captured by the camera. It also adds any items that appear in the video but aren't listed to the packing list. This feature is designed to help users perform a final check before departure, ensuring they don't forget any essentials.</h3>
             </div>
             <vimeo_container  :vimeolink="{radio:4,link:'https://player.vimeo.com/video/988653082?muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
         </div>
@@ -506,7 +506,7 @@
             <div class="body_block">
                 <h3>The reason behind my decision to design this travel app, 'Let's Go', arose during the winter of 2022 when I planned a trip with friends and we struggled to create a travel plan. Despite numerous attempts, we couldn't find an appropriate tool. 'Let's Go' was designed with the intent to make the process of planning trips more enjoyable and relaxed. With the progression of AI technology, I aim to continuously add more interesting features to 'Let's Go', and I look forward to the day when it becomes a real app.</h3>
             </div>
-            <v-lazy-image :src="images['p1.png']" :src-placeholder="images['p1@s.png']"/>
+            <v-lazy-image :src="images['next.png']" :src-placeholder="images['next@s.png']"/>
             
         </div>
     </div> 
@@ -596,14 +596,30 @@ const store = useStore()
     }
 
     //按钮数据
-    let case_study_button = {
+    const ai =ref(null)
+    const list =ref(null)
+
+    let button_scroll_ai = {
         main_color:'var(--background-color)',
         action:'scroll',
+        target:ai,
         sub_color:'var(--p-color-font-white-100)',
         width:220,
         text:'See More Details',
         link:'https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=14-5230&t=QQI6hKGLwnpZBfID-1&scaling=min-zoom&page-id=14%3A3693&mode=design',
     }
+
+    let button_scroll_list = {
+        main_color:'var(--background-color)',
+        action:'scroll',
+        target:list,
+        sub_color:'var(--p-color-font-white-100)',
+        width:220,
+        text:'See More Details',
+        link:'https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=14-5230&t=QQI6hKGLwnpZBfID-1&scaling=min-zoom&page-id=14%3A3693&mode=design',
+    }
+
+    
 
     //Slideshow
     let personas = { 
@@ -631,10 +647,10 @@ const store = useStore()
         resize:false,
         radio:4,
         contents:[
-            [[images['frame1.png'],images['frame1@s.png']],""],
-            [[images['frame2.png'],images['frame2@s.png']],""],
-            [[images['frame3.png'],images['frame3@s.png']],""],
-            [[images['frame4.png'],images['frame4@s.png']],""]
+            [[images['frame1.png'],images['frame1@s.png']],"Chat Page"],
+            [[images['frame2.png'],images['frame2@s.png']],"Chat Page - Typing"],
+            [[images['frame3.png'],images['frame3@s.png']],"AI Generation History"],
+            [[images['frame4.png'],images['frame4@s.png']],"Plan Detail Page / Events List"]
         ]
     }  
     let frames2 = { 
@@ -643,10 +659,10 @@ const store = useStore()
         resize:false,
         radio:4,
         contents:[
-            [[images['frame5.png'],images['frame5@s.png']],""],
-            [[images['frame6.png'],images['frame6@s.png']],""],
-            [[images['frame7.png'],images['frame7@s.png']],""],
-            [[images['frame8.png'],images['frame8@s.png']],""]
+            [[images['frame5.png'],images['frame5@s.png']],"Home Page"],
+            [[images['frame6.png'],images['frame6@s.png']],"Packing List"],
+            [[images['frame7.png'],images['frame7@s.png']],"Packing Rec List"],
+            [[images['frame8.png'],images['frame8@s.png']],"Rec Item Detail"]
         ]
     }  
 
@@ -799,6 +815,7 @@ a:hover{
 
 .gap_40_container{
     display: flex;
+    width:100%;
     flex-direction: column;
     gap:40px
 }
@@ -807,26 +824,7 @@ a:hover{
     flex-direction: column;
     gap:16px
 }
-.pp_container{
-    overflow: hidden;
-    border-radius: 20px;
-    background-color: black;
-    z-index: 0;
-}
 
-.pp_container::after{
-    content:'Loading...';
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 30px;
-    color:var(--p-color-font-white-60);
-    position: absolute;
-    left:50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-}
 /* -----------------------------------------------------blocks */
 
 .sub_title_block{
@@ -1008,6 +1006,8 @@ img{
     justify-content: center;
     flex:1;
 }
+
+
 @media (max-width: 1000px){
 
 
@@ -1016,31 +1016,42 @@ img{
     padding:60px 0px;
     gap:40px
 }    
-h4{
+h6{
     font-size: 60px;
     line-height: 60px; 
 
 }
-.content_block_flex{
-    flex-direction: column;
-    align-items: flex-start;
-    gap:24px;
+h1{
+    font-size: 50px;
+}
+h2{
+    font-size: 35px;
+}
+h4{
+    font-size: 25px;
+}
+.main_section_container{
+    padding:80px 0px 80px 0px;
+    gap:80px
+}
+.sub_section_container{
+    gap:40px
 }
 
-.content_block_buttons{
+.flex_container_reverse,
+.flex_container{
+    flex-direction: column;
+}
+.gap_40_container{
+
+    gap:16px
+}
+.cards_container{
     flex-direction: column;
 
 }
-
-.content_block_row_flex-reverse{
+.card_03{
     flex-direction: column;
-}
-.content_block_row_defult{
-    flex-direction: column;
-}
-.flex_half_size_img{
-    width:100%;
-    flex:none;
 }
 
 }
@@ -1049,6 +1060,7 @@ h4{
 .content_block_multi_grid{
     flex-direction: column;
 }
+
 
 
 }

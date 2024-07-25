@@ -35,7 +35,12 @@ const store = useStore()
     let props = defineProps(['prototype_links'])
 
     let handle_click = ()=>{
-        window.open(props.prototype_links.link)
+        if(props.prototype_links.action=='scroll'){
+            props.prototype_links.target.value.scrollIntoView({ behavior: 'smooth' })
+        }else{
+            window.open(props.prototype_links.link)
+        }
+       
     }
 
     var button = ref(null)

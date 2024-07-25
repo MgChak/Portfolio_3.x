@@ -22,19 +22,12 @@
         <img ref="me" class="me" src="../../assets/about/me.png" alt="">
     </div>
 
-    <div class="about_contents_container">
-        <div ref="breakline1" class="breakline"></div>
-        <div class="contact_container">
-                <h3 class="linkout icon" @click="handle_linkout(1)">LinkedIn</h3>
-                <h3 class="linkout icon" @click="handle_linkout(2)">Instagram</h3>
-                <h3 class=" icon">562-832-5022</h3>
-                <h3 class=" icon">chakshinglam@gmail.com</h3>
-        </div>
-        <div ref="breakline2" class="breakline"></div>
-    </div>
     <div ref="contents" class="about_contents_container contents" style="gap:24px">
         <h1>ABOUT ME</h1>
-        <h3>Hello, I'm Chakshing Lam, a UX/UI & product designer with a multifaceted educational background encompassing UX/UI design, graphic design, fine arts, and front-end programming. My fervent passion for design fuels my constant quest for innovation and pushing the envelope in creativity. In every project, I aim to craft intuitive, captivating, and visually extraordinary designs that not only fulfill but surpass client expectations. I eagerly anticipate the opportunity to apply my skills and zeal to any upcoming projects. Thank you for your time in getting to know a bit about me.</h3>
+        <h3>Hey there! I'm a UX/UI designer passionate about elevating user experiences with innovative design solutions. My journey in design started with a love for visuals and interactivity, aiming to turn complex challenges into sleek, engaging interfaces.</h3>
+        <h3>Throughout my career, I've not only built up a solid set of skills but also took on the exciting task of developing my own portfolio website to showcase my technical prowess and creative flair. I'm well-versed in a variety of design tools like Figma and Adobe Creative Suite and have hands-on programming skills in HTML, CSS, JavaScript, and Vue.js.</h3>
+        <h3>My work goes beyond just making things look good and function well—I focus on enhancing user interaction through dynamic graphic design. I believe great design solves problems and sparks emotional connections. In this AI-driven age, I'm also keen on exploring how to integrate AI into user experience design to keep pushing the envelope in interface and experience innovation.</h3>
+        <h3>Thanks for stopping by my site! I hope you find something inspiring. If you'd like to chat about potential collaborations or just want to drop a suggestion, feel free to reach out through the contact info on my site!</h3>
     </div>
     <div class="placeholder"></div>
     <com_footer/>
@@ -173,7 +166,7 @@ gsap.registerPlugin(CustomEase);
     align-items: center;
     position:relative;
     width:100%;
-    background: linear-gradient(180deg, #1c2429 0%, #0A141A 100%);
+    background: #1C1E20;
     gap:80px;
 }
 .about_contents_container{
@@ -281,10 +274,10 @@ img{
 }
 
 h1{
-    font-size: 40px;
+    font-size: 60px;
     font-style: normal;
     font-weight: 700;
-    line-height: 40px; 
+    line-height: 150%; 
     color:white;
 
 }
@@ -292,8 +285,8 @@ h3{
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 30px;
-    color:rgba(255, 255, 255, 0.612);
+    line-height: 200%;
+    color:rgba(255, 255, 255, 0.7);
 }
 
 .linkout{
