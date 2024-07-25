@@ -191,7 +191,7 @@ export default defineStore("Main",{
                     comp:'transit',
                     name:'TRANSIT',
                     text:'Transit',
-                    bio:'NAVIGATION APP REDESIGN - SOLO DESIGNER',
+                    bio:'Navigation App Redesign | Solo Designer',
                     time:'2022 spring',
                     sub_color:'#11F4DB ',
                     navto:'transit',
