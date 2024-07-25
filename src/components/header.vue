@@ -7,7 +7,7 @@
         <div class="inner_container">
     
             <div class="logo_con">
-            <DotLottieVue autoplay loop ref="playerRef" useFrameInterpolation="true" src="../../public/logo.lottie" class="web_logo_ani"/>
+            <DotLottieVue autoplay loop ref="playerRef" useFrameInterpolation="true" src="/logo.lottie" class="web_logo_ani"/>
             <img src="../assets/logo/logo2.svg" alt="" class="web_logo_text">
             </div>
             <div class="nav_list_container" >

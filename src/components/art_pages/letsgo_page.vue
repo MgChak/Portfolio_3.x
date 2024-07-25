@@ -311,7 +311,7 @@
             <div class="body_block">
                 <h3>In the high-fidelity prototype demonstration, when users mention wanting to visit Disneyland during a chat, the AI immediately recognizes this and automatically adds an event to the travel plan. A button on the bottom right of the screen uses animation and text to alert users that a new event has been added. </h3>
             </div>
-            <vimeo_container  :vimeolink="{radio:4,link:'https://player.vimeo.com/video/988628469?muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
+            <vimeo_container  :vimeolink="{radio:4,link:'https://player.vimeo.com/video/988628458?muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
         </div>
         <div class="sub_section_container">
             <div class="sub_title_block">
@@ -327,23 +327,23 @@
                 <h3>By using micro-animations, users can more intuitively understand the actions AI takes on their travel plans. I have designed different micro-animations for each scenario.</h3>
             </div>
             <div class="cards_container">
-                <div class="flex center_center">
+                <div class="flex center_center" style="flex:1">
                     <div class="microani_container">
-                        <DotLottieVue autoplay loop ref="playerRef" useFrameInterpolation="true" src="/add.lottie" class="web_logo_ani"/>
+                        <DotLottieVue autoplay loop ref="playerRef" useFrameInterpolation="true" src="/add.lottie" class="lottie_ani"/>
                         <h3>Add</h3>
                     </div>
                     <div class="microani_container">
-                        <DotLottieVue autoplay loop useFrameInterpolation="true" src="/edit.lottie" class="web_logo_ani"/>
-                        <h3>Delete</h3>
-                    </div>
-                </div>
-                <div class="flex center_center">
-                    <div class="microani_container">
-                        <DotLottieVue autoplay loop useFrameInterpolation="true" src="/delete.lottie" class="web_logo_ani"/>
+                        <DotLottieVue autoplay loop useFrameInterpolation="true" src="/edit.lottie" class="lottie_ani"/>
                         <h3>Edit</h3>
                     </div>
+                </div>
+                <div class="flex center_center" style="flex:1">
                     <div class="microani_container">
-                        <DotLottieVue autoplay loop useFrameInterpolation="true" src="/switch.lottie" class="web_logo_ani"/>
+                        <DotLottieVue autoplay loop useFrameInterpolation="true" src="/delete.lottie" class="lottie_ani"/>
+                        <h3>Delete</h3>
+                    </div>
+                    <div class="microani_container">
+                        <DotLottieVue autoplay loop useFrameInterpolation="true" src="/switch.lottie" class="lottie_ani"/>
                         <h3>Switch</h3>
                     </div>
                 </div>
@@ -650,7 +650,7 @@ const store = useStore()
             [[images['frame1.png'],images['frame1@s.png']],"Chat Page"],
             [[images['frame2.png'],images['frame2@s.png']],"Chat Page - Typing"],
             [[images['frame3.png'],images['frame3@s.png']],"AI Generation History"],
-            [[images['frame4.png'],images['frame4@s.png']],"Plan Detail Page / Events List"]
+            [[images['frame4.png'],images['frame4@s.png']],"Plan Details Page"]
         ]
     }  
     let frames2 = { 
@@ -1004,9 +1004,13 @@ img{
     padding:8px 0px;
     align-items: center;
     justify-content: center;
-    flex:1;
+    width:100%;
 }
-
+.lottie_ani{
+    width:100%;
+    max-width: 250px;
+    
+}
 
 @media (max-width: 1000px){
 
