@@ -4,10 +4,14 @@
         <div style="width:100%" class="breakline2"></div>
         <div class="footer_content_container">
             <div class="contact_container">
-                <h3 class="linkout icon" @click="handle_linkout(1)">LinkedIn</h3>
-                <h3 class="linkout icon" @click="handle_linkout(2)">Instagram</h3>
-                <h3 class=" icon">562-832-5022</h3>
-                <h3 class=" icon">chakshinglam@gmail.com</h3>
+                <div class="line_con icon1">
+                    <h3 class="linkout icon" @click="handle_linkout(1)">LinkedIn</h3>
+                    <h3 class="linkout icon" @click="handle_linkout(2)">Instagram</h3>
+                </div>
+                <div class="line_con icon2">
+                    <h3 class=" icon">562-832-5022</h3>
+                    <h3 class=" icon">chakshinglam@gmail.com</h3>
+                </div>
             </div>
             <div style="width:100%; opacity: 0.2; " class="breakline hideline"></div>
             <div class="logo_container">
@@ -79,47 +83,40 @@
 .contact_container{
     display: flex;
     flex-direction: column;
-    gap:8px;
+    gap:24px;
 }
 img{
     width: 150px;
 }
 .linkout{
-    text-decoration: underline;
+    text-decoration: none;
     cursor: pointer;
 }
-.linkout::after{
-    content: ' ';
-    display: inline-block;
-    width:18px;
-    height:18px;
-    background-image: url('../assets/icons/arrow_circle_right_w.svg');
-    background-size: cover;
-    position: relative;
-    left:4px;
-    top:2px;
-}
 
+.line_con{
+    display:flex;
+    gap:24px;
+}
 .icon::before{
     content: ' ';
     display: inline-block;
-    width:18px;
-    height:18px;
+    width:20px;
+    height:20px;
     background-size: cover;
     position: relative;
     top:2px;
     margin-right: 16px;
 }
-    .icon:nth-child(1)::before{
+    .icon1>.icon:nth-child(1)::before{
         background-image: url('../assets/logo/link.svg');
     }
-    .icon:nth-child(2)::before{
+    .icon1>.icon:nth-child(2)::before{
         background-image: url('../assets/logo/ins.svg');
     }
-    .icon:nth-child(3)::before{
+    .icon2>.icon:nth-child(1)::before{
         background-image: url('../assets/logo/call.svg');
     }
-    .icon:nth-child(4)::before{
+    .icon2>.icon:nth-child(2)::before{
         background-image: url('../assets/logo/mail.svg');
         width:18px;
         height:15px;
@@ -142,14 +139,22 @@ h2{
    
 }
 h3{
-    color:white;
+    color:rgba(255, 255, 255, 0.7);
     font-weight: 200;
+    font-size: 17px;
+    
+}
+.icon{
+    width:180px;
+}
+.icon2>.icon:nth-child(2){
+    width:250px;
 }
 @media (max-width: 750px) {
  
     .footer_content_container{
         flex-direction: column-reverse;
-        gap:20px;
+        gap:32px;
     }
     .logo_container{
         align-items: start;
@@ -157,6 +162,9 @@ h3{
     }
     .contact_container{
         width:100%;
+    }
+    .line_con{
+        flex-direction: column;
     }
         
 

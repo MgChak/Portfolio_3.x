@@ -5,355 +5,275 @@
 <div ref='ani_el' class="routin_ani_conatiner">
     <div class = "ov_section_container bc_s">
         <div class="ov_content_container">
-            <h4>NEBU</h4>
+            <h6>NEBU</h6>
             <div class="breakline bc_w1"></div>
             <overview_info :ov_data="ov_data" />
         </div>
     </div>  
 
 
-    <div class = "section_container">
-        <div class="content_container">
-            <div class="content_block_center">
-                <v-lazy-image class="sp_nasa_img" :src="images['nasa.png']" :src-placeholder="images['nasa@s.png']"/>
-
-                <h3 style="text-align:center;">A collaborative project <br>sponsored by NASA.</h3>
-            </div>
-        </div>
-        
-        <v-lazy-image :src="images['background_2.jpg']" :src-placeholder="images['background_2@s.jpg']" class="sp_background_img"/>
-    </div> 
-
-    <div class = "section_container bc_s">
-        <div class="content_container">
+    <div class = "main_section_container">
+        <div class="sub_section_container" style="position:relative;display:flex;flex-direction: column;justify-content: center; align-items: center; padding:120px 0;">
             
-            
-            <div class="content_block_flex_2">
-                
-                <div class="content_container_inflex">
-                    <h1>My Main Tasks</h1>
-                    <div class="content_block_list">
-                        <div class="list_i">
-                            <div class="dot"></div>
-                            <h5>Environmental simulation <br>_ interaction & UX/UI design.</h5>
-                        </div>
-                        <div class="list_i">
-                            <div class="dot"></div>
-                            <h5>Robot-face display design.</h5>
-                        </div>
-                        <div class="list_i">
-                            <div class="dot"></div>
-                            <h5>Robot skins and animation design.</h5>
-                        </div>
-                        <div class="list_i">
-                            <div class="dot"></div>
-                            <h5>Navigation feature design.</h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="breakline_h bc_w1"></div>
-
-                <div class="content_container_inflex">
-                    <h1>Team APOGEE</h1>
-                    <div class="content_block_list">
-                        <div class="list_i">
-                            <div class="dot"></div>
-                            <h5>Chakshing Lam ( IXD )</h5>
-                        </div>
-                        <div class="list_i">
-                            <div class="dot"></div>
-                            <h5>Edward Tsai ( IXD )</h5>
-                        </div>
-                        <div class="list_i">
-                            <div class="dot"></div>
-                            <h5>Zeo Zhang ( IND )</h5>
-                        </div>
-                        <div class="list_i">
-                            <div class="dot"></div>
-                            <h5>Emily Tedja  ( IND )</h5>
-                        </div>
-                        <div class="list_i">
-                            <div class="dot"></div>
-                            <h5>Jiayu Wang ( GR )</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <v-lazy-image style="width:200px;" :src="images['nasa.png']" :src-placeholder="images['nasa@s.png']"/>
+            <h3 style="text-align:center;">A collaborative project <br>sponsored by NASA.</h3>
+            <v-lazy-image :src="images['background_2.jpg']" :src-placeholder="images['background_2@s.jpg']" style="width:100%;height:100%;position:absolute;z-index:-1;"/>
         </div>
-        
-    </div> 
 
-
-
-    <div class = "section_container bc_b">
-        <div class="content_container">
-            <div class="content_block_flex">
-                <h1>NABU</h1>
-                <link_button :prototype_links = 'case_study_button'/>
-            </div>
-            <div class="content_block_texts">
+        <div class="section_title_container">
+            <h1>Overview</h1>
+        </div>
+        <div class="sub_section_container">
+            <div class="sub_title_block">
                 <h2>Space Travel Companion</h2>
-                <h3>This project is centered on designing for space tourism, anticipating a future around 2060 when orbital space travel around Earth becomes commonplace. We envision a time when people are not only orbiting Earth but also seeking to travel to Mars.
-The primary objective of our project is to enhance the safety, ease, and comfort of tourists' journeys to Mars.</h3>
+            </div>
+            <div class="body_block">
+                <h3>This project is centered on designing for space tourism, anticipating a future around 2060 when orbital space travel around Earth becomes commonplace. We envision a time when people are not only orbiting Earth but also seeking to travel to Mars. The primary objective of our project is to enhance the safety, ease, and comfort of tourists' journeys to Mars.</h3>
             </div>
             <v-lazy-image :src="images['o_1.png']" :src-placeholder="images['o_1@s.png']"/>
-            <div class="content_block_texts">
+        </div>
+
+        <div class="sub_section_container">
+            <div class="sub_title_block">
+                <h2>My Main Tasks</h2>
+            </div>
+            <div class="body_block">
+                <div class="list01">
+                    <ul>
+                        <li><h3>Environmental simulation _ interaction & UX/UI design.</h3></li>
+                        <li><h3>Robot-face display design.</h3></li>
+                        <li><h3>Robot skins and animation design.</h3></li>
+                        <li><h3>Navigation feature design.</h3></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="sub_section_container">
+            <div class="sub_title_block">
+                <h2>Note</h2>
+            </div>
+            <div class="body_block">
+                <h3>This page showcases only the parts of the projects that I was responsible for designing. 
+                    <br>If you would like to view the complete projects or need more detailed information, please feel free to contact me.
+                </h3>
+            </div>
+        </div>
+
+        <div class="sub_section_container">
+            <div class="sub_title_block">
                 <h2>Holographic Projection</h2>
-                <h3>Nebu, equipped with two retractable hemispherical holographic projectors, can create 360-degree holographic projections, greatly enhancing interaction possibilities.</h3>
+            </div>
+            <div class="body_block">
+                <h3>Nebu, equipped with two retractable hemispherical holographic projectors, can create 360-degree holographic projections, greatly enhancing interaction possibilities.
+                </h3>
             </div>
             <v-lazy-image :src="images['s1_1.png']" :src-placeholder="images['s1_1@s.png']"/>
-            <div class="content_block_texts">
+        </div>
+
+        <div class="sub_section_container">
+            <div class="sub_title_block">
                 <h2>Environmental Simulation</h2>
-                <h3>Nebu uses holographic projections to simulate enjoyable scenes, reducing mental stress in enclosed spaces. Its AI analyzes user preferences to automatically select the most suitable scene.</h3>
+            </div>
+            <div class="body_block">
+                <h3>Nebu uses holographic projections to simulate enjoyable scenes, reducing mental stress in enclosed spaces. Its AI analyzes user preferences to automatically select the most suitable scene.
+                </h3>
             </div>
             <v-lazy-image :src="images['n1.png']" :src-placeholder="images['n1@s.png']"/>
         </div>
+        
     </div> 
+    
+    <div class="main_section_container">
+        <div class="section_title_container">
+            <h1>Environmental Simulation <br>_ Interaction & UX/UI</h1>
+        </div>
 
-
-    <div class = "section_container">
-        <div class="content_container">
-            <div class="content_block_texts_24">
-                <h1>Environmental Simulation <br>_ Interaction & UX/UI</h1>
-                <h3>In the process of environmental simulation, users have the flexibility to adjust the simulated scenes not only through voice command but also via a control panel. Nebu will project a control panel around the user's hand using holographic projection. Furthermore, Nebu will monitor the user's hand movements through a camera, enabling responsive interaction based on these gestures.</h3>
+        <div class="sub_section_container">
+            <div class="sub_title_block">
+                <h2>Final Design : Hi-Fi Prototype</h2>
             </div>
-            <link_button :prototype_links = 'vp_button_1'/>
+            <div class="body_block">
+                <h3>In the process of environmental simulation, users have the flexibility to adjust the simulated scenes not only through voice command but also via a control panel. Nebu will project a control panel around the user's hand using holographic projection. Furthermore, Nebu will monitor the user's hand movements through a camera, enabling responsive interaction based on these gestures. </h3>
+            </div>
             <vimeo_container  :vimeolink="{radio:16,link:'https://player.vimeo.com/video/901211459?muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
         </div>
-        <v-lazy-image :src="images['background_2.jpg']" :src-placeholder="images['background_2@s.jpg']" class="sp_background_img"/>
-    </div> 
 
-    <div class = "section_container bc_s">
-        <div class="content_container">
-            <div class="content_block_texts">
-                    <h2>Task</h2>
-                    <h3 >Design an interactive mode that allows users to adjust the environmental content of holographic projections, including lighting, seasons, and scenery.</h3>
+        <div class="sub_section_container">
+            <div class="sub_title_block">
+                <h2>Task</h2>
+            </div>
+            <div class="body_block">
+                <h3>Design an interactive mode that allows users to adjust the environmental content of holographic projections, including lighting, seasons, and scenery.</h3>
             </div>
         </div>
 
-        <div class="content_container">
-            <div class="content_block_texts">
+        <div class="sub_section_container">
+            <div class="sub_title_block">
                 <h2>Challenge</h2>
-                <h3 >This was the first time I attempted to design an interface and interaction mode in 3D space. As with all design challenges, I look forward to taking them on so I can grow and learn. So, before I even jumped into Figma, I did some initial sketching and explorations on paper to gather some ideas.</h3>
             </div>
-        </div>
-
-        <div class="content_container">
-            <div class="content_block_texts">
-                <h2>Initial Sketch</h2>
+            <div class="body_block">
+                <h3>This was the first time I attempted to design an interface and interaction mode in 3D space. As with all design challenges, I look forward to taking them on so I can grow and learn. So, before I even jumped into Figma, I did some initial sketching and explorations on paper to gather some ideas.</h3>
             </div>
             <v-lazy-image :src="images['in1.png']" :src-placeholder="images['in1@s.png']"/>
         </div>
 
-
-        <div class="content_container">
-            <div class="content_block_texts">
+        <div class="sub_section_container">
+            <div class="sub_title_block">
                 <h2>Design</h2>
-                <h3 >Unlike designing traditional screen interfaces, when designing interactive pages in 3D space, the addition of a completely new dimension requires me to consider the real-world usage scenarios of users interacting with these UIs.</h3>
+            </div>
+            <div class="body_block">
+                <h3>Unlike designing traditional screen interfaces, when designing interactive pages in 3D space, the addition of a completely new dimension requires me to consider the real-world usage scenarios of users interacting with these UIs.</h3>
             </div>
             <v-lazy-image :src="images['in2.png']" :src-placeholder="images['in2@s.png']"/>
         </div>
 
-        <div class="content_container">
-            <div class="content_block_texts">
+        <div class="sub_section_container">
+            <div class="sub_title_block">
                 <h2>Issue</h2>
-                <h3 >In this design, users can control holographic simulations via a panel, achieving all intended functionalities. Yet, it lacks the futuristic feel we aimed for and doesn't significantly advance beyond traditional interactions. Its complexity might also confuse new users. I'll aim for a more natural and innovative approach to reduce distractions and enhance the immersive relaxation experience.</h3>
+            </div>
+            <div class="body_block">
+                <h3>In this design, users can control holographic simulations via a panel, achieving all intended functionalities. Yet, it lacks the futuristic feel we aimed for and doesn't significantly advance beyond traditional interactions. Its complexity might also confuse new users. I'll aim for a more natural and innovative approach to reduce distractions and enhance the immersive relaxation experience.</h3>
             </div>
             <v-lazy-image :src="images['in3.png']" :src-placeholder="images['in3@s.png']"/>
         </div>
 
-        <div class="content_container">
-            <div class="content_block_texts">
+        <div class="sub_section_container">
+            <div class="sub_title_block">
                 <h2>New Sketch</h2>
-                <h3 >Therefore, I started sketching again. This time, I wanted to use as simple visual presentations as possible to allow users to control complex functions. At the same time, I aimed to pair this with intuitive gesture controls to minimize the learning curve.</h3>
+            </div>
+            <div class="body_block">
+                <h3>Therefore, I started sketching again. This time, I wanted to use as simple visual presentations as possible to allow users to control complex functions. At the same time, I aimed to pair this with intuitive gesture controls to minimize the learning curve.</h3>
             </div>
             <v-lazy-image :src="images['in4.png']" :src-placeholder="images['in4@s.png']"/>
         </div>
-            
-    </div> 
 
-    <div class = "section_container bc_b">
-        <div class="content_container">
-            <div class="content_block_texts">
+        <div class="sub_section_container">
+            <div class="sub_title_block">
                 <h2>Interaction _ Select</h2>
-                <h3 >In the interface, users select options by pointing their fingers at the target buttons. The selected button enlarges, and its function is displayed above it for clarity. Simultaneously, the left side of the panel shows the current menu level the user is navigating, ensuring an intuitive and user-friendly experience.</h3>
+            </div>
+            <div class="body_block">
+                <h3>In the interface, users select options by pointing their fingers at the target buttons. The selected button enlarges, and its function is displayed above it for clarity. Simultaneously, the left side of the panel shows the current menu level the user is navigating, ensuring an intuitive and user-friendly experience.</h3>
             </div>
             <vimeo_container  :vimeolink="{radio:16,link:'https://player.vimeo.com/video/924237286?muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
         </div>
 
-        <div class="content_container">
-            <div class="content_block_texts">
+        <div class="sub_section_container">
+            <div class="sub_title_block">
                 <h2>Interaction _ Swipe</h2>
-                <h3 >For menus with more than four options, additional buttons are minimized and hidden. Activating the scroll feature is as simple as using two fingers, which then displays a scrollbar at the top of the panel. Users can scroll through the menu to easily locate their desired function.</h3>
+            </div>
+            <div class="body_block">
+                <h3>For menus with more than four options, additional buttons are minimized and hidden. Activating the scroll feature is as simple as using two fingers, which then displays a scrollbar at the top of the panel. Users can scroll through the menu to easily locate their desired function.</h3>
             </div>
             <vimeo_container  :vimeolink="{radio:16,link:'https://player.vimeo.com/video/924237278?muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
         </div>
 
-        <div class="content_container">
-            <div class="content_block_texts">
+        <div class="sub_section_container">
+            <div class="sub_title_block">
                 <h2>Interaction _ Back To</h2>
-                <h3 >When users are in the third or fourth level of the menu, they can quickly return to the main menu using the 'Back To' feature. To activate this function, users simply extend a second finger while selecting the 'Back' button. <br> Additionally, by bending the second finger, users can choose the specific menu level they want to return to, ensuring a swift and intuitive navigation experience.</h3>
+            </div>
+            <div class="body_block">
+                <h3>When users are in the third or fourth level of the menu, they can quickly return to the main menu using the 'Back To' feature. To activate this function, users simply extend a second finger while selecting the 'Back' button. <br> Additionally, by bending the second finger, users can choose the specific menu level they want to return to, ensuring a swift and intuitive navigation experience.</h3>
             </div>
             <vimeo_container  :vimeolink="{radio:16,link:'https://player.vimeo.com/video/924237270?muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
         </div>
     </div>
 
-    <div class = "section_container">
-        <div class="content_container">
-            <div class="content_block_texts_24">
-                <h1 class="fc_m">Customizable</h1>
+    <div class="main_section_container">
+        <div class="section_title_container">
+            <h1>Customizable</h1>
+        </div>
+
+        <div class="sub_section_container">
+            <div class="sub_title_block">
+                <h2>Final Design : Hi-Fi Prototype</h2>
+            </div>
+            <div class="body_block">
                 <h3>To cater to the diverse preferences of as many users as possible, we have equipped Nebu with a 360-degree display screen. This feature allows users to customize Nebu's 'skin' to their liking, whether they prefer solid colors, images, or even animations. This customization ensures that every user has a unique experience.</h3>
             </div>
-            <div class="pp_container" style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/901211431?muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="nebu_skin"></iframe></div>
-        </div>
-        <v-lazy-image :src="images['background_2.jpg']" :src-placeholder="images['background_2@s.jpg']" class="sp_background_img"/>
-        
-        <div class="content_container">
-            <div class="content_block_texts_24">
-                <div class="content_block_multi_grid">
-                    <div class="content_block_multi_grid_line">
-                        <div class="content_block_multi_grid_item">
-                            <v-lazy-image :src="images['c1.png']" :src-placeholder="images['c1@s.png']"/>
-                        </div>
-                        <div class="content_block_multi_grid_item">
-                            <v-lazy-image :src="images['c2.png']" :src-placeholder="images['c2@s.png']"/>
-                        </div>
-                    </div>
-                    <div class="content_block_multi_grid_line">
-                        <div class="content_block_multi_grid_item">
-                            <v-lazy-image :src="images['c3.png']" :src-placeholder="images['c3@s.png']"/>
-                        </div>
-                        <div class="content_block_multi_grid_item">
-                            <v-lazy-image :src="images['c4.png']" :src-placeholder="images['c4@s.png']"/>
-                        </div>
-                    </div> 
-                </div>
-                <div class="content_block_multi_grid">
-                    <div class="content_block_multi_grid_line">
-                        <div class="content_block_multi_grid_item">
-                            <v-lazy-image :src="images['c5.png']" :src-placeholder="images['c5@s.png']"/>
-                        </div>
-                        <div class="content_block_multi_grid_item">
-                            <v-lazy-image :src="images['c6.png']" :src-placeholder="images['c6@s.png']"/>
-                        </div>
-                    </div>
-                    <div class="content_block_multi_grid_line">
-                        <div class="content_block_multi_grid_item">
-                            <v-lazy-image :src="images['c7.png']" :src-placeholder="images['c7@s.png']"/>
-                        </div>
-                        <div class="content_block_multi_grid_item">
-                            <v-lazy-image :src="images['c8.png']" :src-placeholder="images['c8@s.png']"/>
-                        </div>
-                    </div> 
-                </div>
+            <vimeo_container  :vimeolink="{radio:16,link:'https://player.vimeo.com/video/901211431?muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}" />
+ 
+            <div class="flex center_center" style="flex:1;justify-content: space-between;">
+                <div style="width:20%"><v-lazy-image :src="images['c1.png']" :src-placeholder="images['c1@s.png']"/></div>
+                <div style="width:20%"><v-lazy-image :src="images['c2.png']" :src-placeholder="images['c2@s.png']"/></div>
+                <div style="width:20%"><v-lazy-image :src="images['c1.png']" :src-placeholder="images['c1@s.png']"/></div>
+                <div style="width:20%"><v-lazy-image :src="images['c2.png']" :src-placeholder="images['c2@s.png']"/></div>
+            </div>
+            <div class="flex center_center" style="flex:1;justify-content: space-between;">
+                <div style="width:20%"><v-lazy-image :src="images['c5.png']" :src-placeholder="images['c5@s.png']"/></div>
+                <div style="width:20%"><v-lazy-image :src="images['c6.png']" :src-placeholder="images['c6@s.png']"/></div>
+                <div style="width:20%"><v-lazy-image :src="images['c7.png']" :src-placeholder="images['c7@s.png']"/></div>
+                <div style="width:20%"><v-lazy-image :src="images['c8.png']" :src-placeholder="images['c8@s.png']"/></div>
             </div>
         </div>
-    </div> 
 
-    <div class = "section_container bc_s">
-
-        <div class="content_container">
-            <div class="content_block_texts">
+        <div class="sub_section_container">
+            <div class="sub_title_block">
                 <h2>Challenge</h2>
-                <h3 >Due to the tight project timeline, our team had to work on the hardware and UI designs simultaneously. So, before we decided on the final shape of the robot, I began designing the facial display for Nebu. I explored many possibilities, including detailed animal images and simple geometric combinations. Ultimately, to make Nebu appeal to as wide an audience as possible (as a companion robot for space commercial travel), we decided on a simple facial design with customizable skin displays.</h3>
             </div>
-        </div>
-        <div class="content_container">
-            <div class="content_block_texts">
-                <h2>Initial Sketch</h2>
+            <div class="body_block">
+                <h3>Due to the tight project timeline, our team had to work on the hardware and UI designs simultaneously. So, before we decided on the final shape of the robot, I began designing the facial display for Nebu. I explored many possibilities, including detailed animal images and simple geometric combinations. Ultimately, to make Nebu appeal to as wide an audience as possible (as a companion robot for space commercial travel), we decided on a simple facial design with customizable skin displays.</h3>
             </div>
             <v-lazy-image :src="images['f1.png']" :src-placeholder="images['f1@s.png']"/>
             <v-lazy-image :src="images['f2.png']" :src-placeholder="images['f2@s.png']"/>
+
+        </div>
+    </div>
+
+
+    <div class="main_section_container">
+        <div class="section_title_container">
+            <h1>Additional Applications</h1>
         </div>
 
-    </div> 
-
-
-    
-
-
-
-
-
-
-    <!-- <div class = "section_container">
-        <div class="content_container">
-            
-            <h1 >DEFINE PROBLEMS</h1>
-            <v-lazy-image :src="images['p_1.png']" :src-placeholder="images['p_1@s.png']"/>
-            <div class="content_block_texts">
-                <h2 >Boredom and Isolation </h2>
-                <h3 >During the extended journey, passengers may experience anxiety and boredom, longing for more entertaining ways to spend their time.</h3>
-            </div>
-            <div class="content_block_texts">
-                <h2 >Health Issues in Zero Gravity</h2>
-                <h3 >In zero gravity, passengers may feel physical discomfort and uncertainty about maintaining their health, worrying about the prolonged impact on their bodies.</h3>
-            </div>
-        </div>
-        <v-lazy-image :src="images['background_2.jpg']" :src-placeholder="images['background_2@s.jpg']" class="sp_background_img"/>
-    </div>  -->
-
-
-
-
-    <div class = "section_container bc_b">
-        <div class="content_container">
-            <div class="content_block_texts_24">
-                <h1>Additional Applications:</h1>
-            </div>
-        </div>
-
-        <div class="content_container">
-            <div class="content_block_texts">
+        <div class="sub_section_container">
+            <div class="sub_title_block">
                 <h2>Caption Display & Navigation</h2>
+            </div>
+            <div class="body_block">
                 <h3>To enhance communication between Nebu and its users, the words spoken by Nebu will be displayed in speech bubbles above its head. Additionally, when guiding users to their destination, Nebu will project a guiding line in front of the user, providing a more intuitive understanding of the direction to proceed.</h3>
             </div>
             <v-lazy-image :src="images['s1_2.png']" :src-placeholder="images['s1_2@s.png']"/>
         </div>
 
-        <div class="content_container">
-            <div class="content_block_texts">
+        <div class="sub_section_container">
+            <div class="sub_title_block">
                 <h2>UI Display</h2>
+            </div>
+            <div class="body_block">
                 <h3>The holographic projection capability of Nebu takes user interaction to a new level by enabling the projection of complex UI content directly into the air. This innovation not only facilitates effortless reading but also simplifies the user's interaction with the system. By bringing interface into a more accessible, three-dimensional space, it enhances user engagement and ease of use.</h3>
             </div>
             <v-lazy-image :src="images['s1_3.png']" :src-placeholder="images['s1_3@s.png']"/>
         </div>
+    </div>
 
+    <div class="main_section_container">
+        <div class="section_title_container">
+            <h1>Next...</h1>
+        </div>
 
-        <!-- <div class="content_container">
-            <div class="content_block_flex">
-                <h2>More Storyboards</h2>
-                <link_button :prototype_links = 'case_study_button_dark'/>
-            </div>
-            <img_slideshow :slideshow_arr = 'highlight_arry'/> 
-        </div> -->
-    </div> 
-
-
-   
-    
-    <div class = "section_container">
-        <div class="content_container">
-            <div class="content_block_texts_24">
-                <h1>Next...</h1>
+        <div class="sub_section_container">
+            <div class="body_block">
                 <h3>Designing commercial space travel involves focusing on the visual and interactive aspects of the companion robot, Nebu, due to production time constraints. We plan to expand spaceship features and activities to meet diverse traveler needs and explore possible activities and accommodations on Mars with NebuLine. Looking ahead, we aim to further enhance the broader user experience of interstellar travel.</h3>
             </div>
-            <link_button :prototype_links = 'case_study_button_dark'/>
             <v-lazy-image :src="images['s2_6.png']" :src-placeholder="images['s2_6@s.png']"/>
         </div>
 
-        <div class="breakline bc_w1"></div>
+        <div class="section_title_container">
+            <h1>Thanks</h1>
+        </div>
 
-        <div class="content_container">
-            <div class="content_block_texts_24">
-                <h1>Thanks</h1>
+        <div class="sub_section_container">
+            <div class="body_block">
                 <h3>I would like to extend my special thanks to every member of Team Apogee. Your professionalism and exceptional design skills have significantly contributed to our project over the past fourteen weeks. I am deeply grateful for your dedication and the outstanding work each of you has delivered.</h3>
+                <h3>Team：<br>Chakshing Lam ( IXD ) | Edward Tsai ( IXD ) | Zeo Zhang ( IND ) | Emily Tedja ( IND ) | Jiayu Wang ( GR )</h3>
+            
             </div>
             <v-lazy-image :src="images['team.png']" :src-placeholder="images['team@s.png']"/>
         </div>
-        <v-lazy-image :src="images['background_2.jpg']" :src-placeholder="images['background_2@s.jpg']" class="sp_background_img"/>
-    </div> 
+    </div>
+
+    
 
 </div>
     <the_footer :use_data="{
@@ -377,8 +297,6 @@ import nebu from'../main_pages/works_thum_cards/nebu.vue'
 import transit from'../main_pages/works_thum_cards/transit.vue'
 import the_footer from '../footer.vue'
 import overview_info from '../comps/overview_info.vue'
-import link_button from '../comps/link_button.vue'
-import img_slideshow from '../comps/img_slideshow.vue'
 import VLazyImage from "v-lazy-image"
 import vimeo_container from '../comps/vimeo_container.vue'
 //引入hooks
@@ -432,72 +350,6 @@ const ani_el = ref(null)
 
 
 
-    //高光功能
-    let highlight_arry = {
-        color:'var(--p-color-main)',
-        type:'img',
-        resize:false,
-        contents:[
-            [[images['h_1.png'],images['h_1@s.png']],"Caption Display & Navigation"],
-            [[images['h_2.png'],images['h_2@s.png']],"Interface Display"],
-            [[images['h_3.png'],images['h_3@s.png']],"Environmental Simulation"],
-            [[images['h_4.png'],images['h_4@s.png']],"Environmental Simulation _ Interaction"],
-        ]
-    }    
-
-
-    //研究总结
-    let research_arry = {
-        color:'var(--p-color-main)',
-        type:'img',
-        resize:false,
-        contents:[
-            [[images['r_1.png'],images['r_1@s.png']],"Research about robot shape"],
-            [[images['r_2.png'],images['r_2@s.png']],"Tracking human physical staus in space"],
-            [[images['r_3.png'],images['r_3@s.png']],"Tracking human physical staus in space"],
-            [[images['r_4.png'],images['r_4@s.png']],"About the maintenance of robots"],
-            [[images['r_5.png'],images['r_5@s.png']],"Issues might encounter in the spaceship"]
-        ]
-    }  
-
-     //按钮依赖
-    let case_study_button = {
-        main_color:'#000000',
-        sub_color:'var(--p-color-main)',
-        width:210,
-        text:'PRESENTATION',
-        link:'https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=14-5230&t=QQI6hKGLwnpZBfID-1&scaling=min-zoom&page-id=14%3A3693&mode=design',
-    }
-    let case_study_button_dark = {
-        main_color:'var(--p-color-sub)',
-        sub_color:'var(--p-color-main)',
-        width:210,
-        text:'PRESENTATION',
-        link:'https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=14-5230&t=QQI6hKGLwnpZBfID-1&scaling=min-zoom&page-id=14%3A3693&mode=design',
-    }
-    let research_button_dark = {
-        main_color:'var(--p-color-sub)',
-        sub_color:'var(--p-color-main)',
-        width:170,
-        text:'RESEARCH',
-        link:'https://www.figma.com/proto/Q2E9KzAWQUHdTwmmM6G0qH/MyWeb_Assets?type=design&node-id=14-6607&t=zi2twlrOCafqzPlO-1&scaling=min-zoom&page-id=14%3A6606&mode=design',
-    }
-
-    let vp_button_1 = {
-        main_color:'var(--p-color-main)',
-        sub_color:'var(--p-color-sub)',
-        width:210,
-        text:'Video Prototype',
-        link:'https://vimeo.com/901211459?share=copy',
-    }
-
-
-
-
-
-    
-
-
 </script>
 
 <style scoped>
@@ -515,21 +367,21 @@ const ani_el = ref(null)
     left:0;
     overflow: hidden;
 
-    /* background: black; */
+    background: #1C1E20;
+    --background-color:#1C1E20;
+    --p-color-font-white-100:rgba(255, 255, 255, 0.95);
+    --p-color-font-white-60: rgba(255, 255, 255, 0.75);
+    --line-color:rgba(255, 255, 255, 0.15);
 
-    --p-color-main:#77DEFF;
-    --p-color-sub:#141416;
-    --p-color-font-white-100:rgb(248, 251, 246);
-    --p-color-font-white-60: rgb(171, 171, 171);
   
 }
 
 h1{
-    font-size: 40px;
+    font-size: 60px;
     font-style: normal;
     font-weight: 700;
     line-height: 150%; 
-    color:var(--p-color-main);
+    color:var(--p-color-font-white-100);
 
 }
 h2{
@@ -542,47 +394,38 @@ h2{
 h3{
     font-size: 20px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 200%;
     color:var(--p-color-font-white-60);
-
-    max-width: 650px;
-    margin:0 auto;
-}
-h5{
-    font-size: 17px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 200%;
-    color:var(--p-color-font-white-60);
-
 }
 
 
 h4{
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    color:var(--p-color-font-white-60);
+}
+h6{
     font-size: 90px;
     font-style: normal;
     font-weight: 900;
     line-height: 90px;
     color:var(--p-color-font-white-60);
 }
-
-
-
-
-.section_container{
-    width:100%;
-    padding:150px 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap:80px;
-    position:relative;
+a{
+    text-decoration: underline;
+    cursor: pointer;
+    color:inherit;
 }
+a:hover{
+    color:var(--p-color-main)
+}
+/* -------------------------------------------------------containers */
 .ov_section_container{
     width:100%;
-    padding:80px 0px;
+    padding:80px 0px 0px 0px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -597,138 +440,200 @@ h4{
     flex-direction: column;
     gap:24px
 }
-.content_container{
+
+
+
+.main_section_container{
+    width:100%;
+    padding:80px 0px 80px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:80px
+}
+
+
+.sub_section_container{
     width:var(--content-width);
     max-width:var(--max-content-width);
     display: flex;
     flex-direction: column;
     gap:40px
 }
+.section_title_container{
+    width:var(--content-width);
+    max-width:var(--max-content-width);
+    display: flex;
+    flex-direction: column;
+}
 
-.content_block_flex{
+.flex_container{
+    width:100%;
+    display: flex;
+    gap:24px;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex_container_reverse{
+    width:100%;
+    display: flex;
+    flex-direction: row-reverse;
+    gap:24px;
+    justify-content: space-between;
+    align-items: center;
+}
+.cards_container{
+    width:100%;
+    display: flex;
+    gap:16px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.gap_40_container{
+    display: flex;
+    width:100%;
+    flex-direction: column;
+    gap:40px
+}
+.gap_16_container{
+    display: flex;
+    flex-direction: column;
+    gap:16px
+}
+
+/* -----------------------------------------------------blocks */
+
+.sub_title_block{
     width:100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.content_block_flex_2{
+
+.body_block{
     width:100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: top;
-}
-.content_container_inflex{
-    max-width:var(--max-content-width);
+    max-width: 650px;
+    margin:0 auto;
     display: flex;
     flex-direction: column;
-    width:340px;
-    gap:40px;
-    
-}
-.content_block_texts{
-    width:100%;
-    display: flex;
-    flex-direction: column;
-    gap:8px
-}
-.content_block_texts_24{
-    width:100%;
-    display: flex;
-    flex-direction: column;
-    gap:24px
-}
-.content_block_center{
-    width:100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap:24px
+    gap:8px;
 }
 
-.content_block_buttons{
+.body_block_highlight{
     width:100%;
-    display: flex;
-    gap:24px
-}
-.content_block_list{
-    width:100%;
+    max-width: 650px;
+    margin:0 auto;
     display: flex;
     flex-direction: column;
-    gap:8px
+    gap:8px;
+    border-left: var(--p-color-font-white-100) 6px solid;
 }
-.list_i{
-    display: flex;
-}
-.dot{
-    width:30px;
-    height:30px;
-    display: flex;
-    flex:none;
-    justify-content: center;
-    align-items: center;
-}
-.dot::after{
-    display: block;
-    content:'';
-    width:4px;
-    height:4px;
-    background-color: var(--p-color-font-white-60);
-    border-radius: 4px;
-}
-.pp_container{
-    overflow: hidden;
-    border-radius: 20px;
-    background-color: black;
-    z-index: 0;
-}
-
-.pp_container::after{
-    content:'Loading...';
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 30px;
-    color:var(--p-color-font-white-60);
-    position: absolute;
-    left:50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-}
-.content_block_multi_grid{
-    width:100%;
-    display: flex;
-    gap:24px;
-}
-    .content_block_multi_grid_line{
-        width:100%;
-        flex:1;
-        display:flex;
-        gap:24px;
+    .body_block_highlight > h3{
+        font-size: 25px;
+        font-weight: 700;
+        padding-left: 16px;
+        color:var(--p-color-font-white-100)
     }
-        .content_block_multi_grid_item{
-            width:100%;
-            flex:1;
-        }
-.cardshadow{
-    box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.50);
-}
 
+
+
+.iframe_block_flex_row {
+    width:100%;
+    max-width: 650px;
+    flex:none;
+    display: flex;
+    flex-direction: column;
+}
+/* ----------------------------------------------------------cards */
+.card_01{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:32px;
+    padding:32px;
+    /* background: black; */
+    border-radius: 20px;
+    align-self:stretch;
+    flex:1;
+}
+    .card_01 > img{
+        width:60px;
+        height:60px;
+    }
+
+.card_02{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap:32px;
+    padding:40px 32px;
+    /* background: black; */
+    border-radius: 20px;
+    align-self:stretch;
+    flex:1;
+}
+    .card_02 > img{
+        width:80px;
+        height:80px;
+    }
+    .card_02 > h3{
+        text-align: center;
+    }
+
+.card_03{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap:32px;
+    padding:40px 32px;
+    /* background: black; */
+    border-radius: 20px;
+    align-self:stretch;
+    flex:1;
+}
+    .card_03 > img{
+        width:80px;
+        height:80px;
+    }
+    .card_03 > div > h2{
+        font-weight: 700;
+    }
+    .card_03 > div > h3{
+        line-height: 150%;
+    }
+/* ----------------------------------------------------------cards */
+.list01{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+}
+    .list01 > ul{
+        list-style: number;
+        border-left:2px solid var(--p-color-font-white-60);
+        margin-left:32px;
+        padding-left: 48px;
+    }
+    .list01 >ul> li{
+        font-size: 20px;
+        color:var(--p-color-font-white-60);
+        line-height: 200%;
+        font-weight: 400;
+    }
+/* ----------------------------------------------------------breaklines */
 .breakline{
     width: 70%;
     max-width: 320px;
     height:0.5px;
     opacity: 0.3;
+    background-color: var(--line-color);
 }
-.breakline_h{
-    height: 160px;
-    max-width: 320px;
-    width:0.5px;
-    opacity: 0.3;
-    margin-top: auto;
-    margin-bottom: auto;
-}
+
+/* ------------------------------------------------------tags */
 .center{
     margin:0 auto;
 }
@@ -739,119 +644,126 @@ img{
 .no_radius{
     border-radius: 0px;
 }
+/* ------------------------------------------------------flex system */
+.flex{
+    display: flex;
+}
+.flex_column{
+    display: flex;
+    flex-direction: column;
+}
+.gap_16{
+    gap:16px;
+}
+.center_center{
+    justify-content: center;
+    align-items: center;
+}
+/* ------------------------------------------------------------scope */
+.logo_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 125px;
+    width:40%;
+    background-color: black;
+    border-radius: 20px;
+    align-self:stretch;
+}
+    .logo_box> div{
+        min-width: 60px;
+        width:40%;
+    }
 
-
-
-
-
-.fc_m{
-    color:var(--p-color-main)
-}
-.fc_s{
-    color:var(--p-color-sub)
-}
-.fc_w1{
-    color:var(--p-color-font-white-100)
-}
-.fc_w6{
-    color:var(--p-color-font-white-60)
-}
-.bc_m{
-    background:var(--p-color-main)
-}
-.bc_s{
-    background:var(--p-color-sub)
-}
-.bc_b{
-    background:#1C1E20;
-}
-.bc_w6{
-    background:var(--p-color-font-white-60);
-}
-.bc_w1{
-    background:var(--p-color-font-white-100);
-}
-.sp_background_img{
+.microani_container
+{
+    display: flex;
+    flex-direction: column;
+    gap:16px;
+    padding:8px 0px;
+    align-items: center;
+    justify-content: center;
     width:100%;
-    height:100%;
-    position: absolute;
-    left:0;
-    top:0;
-    z-index:-1;
-    border-radius: 0;
+}
+.lottie_ani{
+    width:100%;
+    max-width: 250px;
     
 }
-.sp_nasa_img{
-    width:200px;
-}
-.team_m{
-    margin-top: 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap:8px;
-}
-.team_img{
-    overflow: hidden;
-    width:100px;
-    height:100px;
-    border-radius: 100px;
-    border:1.5px var(--p-color-font-white-60) solid;
-}
-.teaminfo{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 
+@media (max-width: 1000px){
 
-
-@media (max-width: 800px){
-    .breakline_h{
-        display: none;
-    }
 
 .ov_section_container{
     width:100%;
     padding:60px 0px;
     gap:40px
 }    
-h4{
+h6{
     font-size: 60px;
     line-height: 60px; 
 
 }
-.content_block_flex{
+h1{
+    font-size: 50px;
+}
+h2{
+    font-size: 35px;
+}
+h3{
+    font-size: 20px;
+}
+h4{
+    font-size: 25px;
+}
+.main_section_container{
+    padding:80px 0px 80px 0px;
+    gap:80px
+}
+.sub_section_container{
+    gap:40px
+}
+
+.flex_container_reverse,
+.flex_container{
     flex-direction: column;
-    align-items: flex-start;
-    gap:24px;
 }
-.content_block_flex_2{
-    flex-direction: column;
-    align-items: flex-start;
-    gap:80px;
-}
+.gap_40_container{
 
-.content_block_buttons{
+    gap:16px
+}
+.cards_container{
     flex-direction: column;
 
 }
-
-.team_m{
-    flex-direction: row;
-    gap:24px;
-}
-.team_img{
-    width:65px;
-    height:65px;
-}
-.teaminfo{
-    justify-content: flex-start;
-    align-items: flex-start;
+.card_03{
+    flex-direction: column;
 }
 
+}
+@media (max-width: 800px){
+
+.content_block_multi_grid{
+    flex-direction: column;
+}
+
+.main_section_container{
+    padding:40px 0px 40px 0px;
+    gap:40px
+}
+.sub_section_container{
+    gap:24px
+}
+h1{
+    font-size: 40px;
+}
+h2{
+    font-size: 24px;
+}
+h3{
+    font-size: 17px;
+}
 
 }
+
 </style>

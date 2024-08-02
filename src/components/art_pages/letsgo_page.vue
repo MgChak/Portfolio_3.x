@@ -715,7 +715,7 @@ h2{
 h3{
     font-size: 20px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 200%;
     color:var(--p-color-font-white-60);
 }
@@ -903,6 +903,7 @@ a:hover{
     }
     .card_02 > h3{
         text-align: center;
+        font-weight: 500;
     }
 
 .card_03{
@@ -1031,6 +1032,9 @@ h1{
 h2{
     font-size: 35px;
 }
+h3{
+    font-size: 20px;
+}
 h4{
     font-size: 25px;
 }
@@ -1065,7 +1069,22 @@ h4{
     flex-direction: column;
 }
 
-
+.main_section_container{
+    padding:40px 0px 40px 0px;
+    gap:40px
+}
+.sub_section_container{
+    gap:24px
+}
+h1{
+    font-size: 40px;
+}
+h2{
+    font-size: 24px;
+}
+h3{
+    font-size: 17px;
+}
 
 }
 

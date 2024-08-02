@@ -162,7 +162,7 @@ h3{
         display: flex;
         flex-direction: column;
         align-items: start;
-        gap:0px;
+        gap:4px;
         flex:none;
     }
     .time_line{
@@ -192,7 +192,7 @@ h3{
         display: flex;
         flex-direction: column;
         align-items: start;
-        gap:0px;
+        gap:4px;
     }
     .time_line{
         flex:1;

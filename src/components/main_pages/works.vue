@@ -20,7 +20,7 @@
                 <div :style="switch_background_style" class="switch_background"></div>
             </div>
         </div>
-        <div style ="width:1px;height:80px;"></div>
+        <div class="placetaker"></div>
         <!-- design -->
         <div class = 'comp_container' v-show = "works_pages_status == 0 "
             v-for="i in store.index_array" :key="i.id" 
@@ -559,7 +559,10 @@ h2{
     display: flex;
     flex-direction: column;
 }
-
+.placetaker{
+    width:1px;
+    height:80px;
+}
 
 @media (max-width: 750px) {
     .breakline{
@@ -589,7 +592,16 @@ h2{
 }
 .content_block_texts > h2{
     font-size: 18px;
+    
 
+}
+.comp_container_switch{
+
+    padding-top:32px;
+
+}
+.placetaker{
+    height:32px;
 }
     
 }
