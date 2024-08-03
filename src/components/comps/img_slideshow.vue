@@ -286,15 +286,15 @@ const store = useStore()
     }
     //处理触摸-结束
     let touch_end=(e)=>{
+        //打开动画
+        list_transition.value = 'var(--animation-slow)'
+        //关闭触摸跟随
+        is_touch.value = false
         if(touch_moving_start > touch_moving){
             page_move('next')
         }else if(touch_moving_start < touch_moving){
             page_move('pre')
         }
-        //打开动画
-        list_transition.value = 'var(--animation-slow)'
-        //关闭触摸跟随
-        is_touch.value = false
         //解除移动方向的锁定
         movedr = -1
     }
@@ -377,6 +377,10 @@ const store = useStore()
     }
     //拖拽结束
     let drag_end=(e)=>{
+         //打开动画
+         list_transition.value = 'var(--animation-slow)'
+        //关闭触摸跟随
+        is_touch.value = false
         if(isDrag){
            
             if(touch_moving_start >= touch_moving){
@@ -388,10 +392,7 @@ const store = useStore()
             tracker_toggle('hidden')
           
         }
-         //打开动画
-         list_transition.value = 'var(--animation-slow)'
-        //关闭触摸跟随
-        is_touch.value = false
+        
         //解除移动方向的锁定
         movedr = -1
         stopTimer = setTimeout(()=>{
